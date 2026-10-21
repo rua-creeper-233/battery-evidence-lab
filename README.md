@@ -6,7 +6,7 @@
 
 公开入口：[Battery Evidence Lab](https://rua-creeper-233.github.io/battery-evidence-lab/)。
 
-源码仓库保持私有，网页单独公开；只部署经过检查的 `docs/`。
+源码仓库与网页公开；网页只部署经过检查的 `docs/`，个人文库和本机上下文不进入仓库。
 
 ## 当前状态
 
