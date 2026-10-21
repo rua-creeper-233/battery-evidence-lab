@@ -122,7 +122,7 @@ def prepare_chrome(source: str, page: str, shared_css: str) -> str:
     footer = (
         '<footer class="site-footer" data-site-footer><span>Battery Evidence Lab</span>'
         '<a href="./guides/PROJECT_STATUS.md">项目记录</a>'
-        f'<a href="{REPOSITORY_URL}" target="_blank" rel="noopener noreferrer">GitHub</a>'
+        f'<a href="{REPOSITORY_URL}" target="_blank" rel="noopener noreferrer">源码（私有）</a>'
         '</footer>'
     )
     source = re.sub(r'<script\b[^>]*src="\./nav-overflow\.js"[^>]*></script>', '', source)

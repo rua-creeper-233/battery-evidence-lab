@@ -6,6 +6,8 @@
 
 公开入口：[Battery Evidence Lab](https://rua-creeper-233.github.io/battery-evidence-lab/)。
 
+源码仓库保持私有，网页单独公开；只部署经过检查的 `docs/`。
+
 ## 当前状态
 
 <!-- CURRENT_STATUS_START -->
@@ -137,6 +139,6 @@ GitHub Actions 检查 `main` 后部署 `docs/`。完成一轮有实际验证的�
 
 克隆后用 `git config core.hooksPath .githooks` 启用本地推送检查。若默认 Python 不可用，通过环境变量 `PUBLICATION_PYTHON` 指定解释器。检查同时覆盖实际推送的分支或标签，不只检查当前分支。
 
-发布前检查公开包、完整暂存快照和候选历史。新公开仓库必须通过 `python history_safety.py --no-baseline`；推送与拉取请求自动检查，通过后才部署。私人文库、机构访问记录与 distill 不进入仓库，详见 [项目发布规则](AGENTS.md)。
+发布前检查公开包、完整暂存快照和候选历史。发布仓库必须通过 `python history_safety.py --no-baseline`；推送与拉取请求自动检查，通过后才部署。私人文库、机构访问记录与 distill 不进入仓库，即使仓库为私有也不例外，详见 [项目发布规则](AGENTS.md)。
 
 下一步优先做独立科研问题评测、关键论文参数人工核验、可追踪结构来源与计算结果检查。研究建议结合可用数据、算力和目标体系确定。

@@ -44,7 +44,7 @@ jobs:
         run: python history_safety.py --no-baseline --full-inventory
 
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && !github.event.repository.private
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: checks
     runs-on: ubuntu-latest
     permissions:
