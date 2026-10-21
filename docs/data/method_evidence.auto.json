@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "visibility": "public_sanitized",
+  "review_status": "public_payload_empty",
+  "notice_zh": "方法证据和正文定位信息仅在本机受控记录中使用；公开载荷不包含本地持有、页码定位、提取时间或私有链接。",
+  "papers": {}
+}

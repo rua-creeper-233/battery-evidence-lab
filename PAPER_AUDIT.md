@@ -1,0 +1,118 @@
+# 论文真实性与分级核验（历史审计）
+
+> 2026-10-08：以下保留各历史批次的核验过程，旧数量不是当前库大小。当前唯一 DOI、全文与训练数据统计见 [当前项目状态](guides/PROJECT_STATUS.md)；新增书目核验记录见 `data/paper_expansion_20261008.json`。Crossref/出版者书目核验不代表已通过 WOS 核验，也不代表已获取正文。
+
+## 2026-09-15 第二批：AI与聚合物电解质
+
+当前58篇，16篇有WOS UT，其余42篇仅DOI/出版社核验。新增3篇均取得公开正文；正文真实性、软件使用和复现资源分别核对。下方旧数量仅作历史。
+
+| 新增论文 | 核验入口 | 核心用途 |
+|---|---|---|
+| Xie et al. 2019, Graph dynamical networks for unsupervised learning of atomic scale dynamics in materials | [Nature Communications](https://doi.org/10.1038/s41467-019-10663-6) | MD轨迹的无监督动力学分析；不是机器学习势 |
+| Xie et al. 2022, Accelerating amorphous polymer electrolyte screening by learning to reduce errors in molecular dynamics simulated properties | [Nature Communications](https://doi.org/10.1038/s41467-022-30994-1) | LAMMPS数据＋多任务图网络；MedeA不是Materials Studio，不标MS |
+| Wang et al. 2023, Design principles for sodium superionic conductors | [Nature Communications](https://doi.org/10.1038/s41467-023-43436-3) | VASP/DFT研究锂钠导体配位差异 |
+
+复现起点：GDyNets作者代码与论文声明的Materials Cloud轨迹链接已附在条目；polymernet提供模型代码和补充性质数据，原文说明完整原始MD轨迹未公开，不能把性质表当轨迹文件。本轮未执行这些训练，也未宣称在当前软件版本下可直接运行。
+
+2026-09-15 新增3篇开放研究论文，逐篇检查原文与方法。当前55篇中16篇有WOS UT，其余39篇不声称WOS核验。以下旧日期统计保留为历史。
+
+| 新增论文 | 原文核验入口 | 方法与阅读目标 |
+|---|---|---|
+| He et al. 2017, Origin of fast ion diffusion in super-ionic conductors | [作者托管开放正文](https://terpconnect.umd.edu/~yfmo/He_Mo-SIC-ncomms15893.pdf) | AIMD＋NEB；理解协同迁移，不将单离子路径等同全部输运机制 |
+| Smith & Siegel 2020, Low-temperature paddlewheel effect in glassy solid electrolytes | [出版社正文](https://www.nature.com/articles/s41467-020-15245-5) | MS Amorphous Cell/COMPASS II构型生成→VASP AIMD；不把MS初始建模误称为生产MD |
+| Wang et al. 2023, Design principles for NASICON super-ionic conductors | [出版社正文](https://www.nature.com/articles/s41467-023-40669-0) | 文献挖掘＋VASP稳定性筛选＋实验；不误标成机器学习势论文 |
+
+建议学习顺序：先看He的机制图，再看Smith的建模—分析流程，最后看Wang的数据筛选流程。这些是研究实例，不是零基础软件操作手册；正文链接、软件使用与数据可用性须分别判断。
+
+核验日期：2026-09-14（本轮新增9篇；既有43篇保留原核验记录）
+
+结论：这次历史快照的 52 条书目已核对 DOI 与出版社或权威索引记录。核心论文另有 WOS 书目标识，其他条目的核验来源在目录中分别记录。
+
+## 2026-09-14 新增：Materials Studio、SEI 与 ReaxFF
+
+| 论文 | DOI / 核验入口 | 纳入原因 |
+|---|---|---|
+| Wu et al., 2023. Effect of the Electric Double Layer… | [JACS](https://doi.org/10.1021/jacs.2c11807) | Forcite/COMPASS III 电解液界面 MD＋DFT |
+| Sheng et al., 2024. Unraveling the Hydrolysis Mechanism of LiPF6… | [Nano Letters](https://doi.org/10.1021/acs.nanolett.3c01682) | Forcite/COMPASS II 溶剂化与水解 |
+| Li et al., 2024. A polymeric artificial solid electrolyte interface… | [ChemComm](https://doi.org/10.1039/d4cc03688c) | Materials Studio/Amorphous Cell 人工 SEI |
+| Wu et al., 2025. Reactivity of Carbonyl-Containing Solid Polymer Electrolytes… | [ACS APM](https://doi.org/10.1021/acsapm.4c03883) | Forcite 预平衡＋VASP AIMD |
+| Zhang et al., 2025. Simulating solid electrolyte interphase formation… | [EES](https://doi.org/10.1039/d5ee01030f) | MS 扩散参数＋DFT＋相场/COMSOL |
+| Chen et al., 2025. De-solvation of heteroalkali cations… | [Nature Communications](https://doi.org/10.1038/s41467-025-66197-7) | Forcite/COMPASS III＋DMol3 |
+| Hossain et al., 2020. Lithium-electrolyte solvation and reaction… | [JCP](https://doi.org/10.1063/5.0003333) | DFT 数据参数化电解液 ReaxFF |
+| Wang et al., 2018. Review on modeling of the anode SEI… | [npj Computational Materials](https://doi.org/10.1038/s41524-018-0064-0) | DFT/AIMD/经典与反应 MD/连续体的 SEI 综述 |
+| Shi et al., 2021. Application of Reaction Force Field Molecular Dynamics… | [Frontiers](https://doi.org/10.3389/fchem.2020.634379) | 锂硫、硅负极、电解液与 SEI 的 ReaxFF 综述 |
+
+六篇 `MS` 标签均由论文 Methods 或补充信息中的软件/模块记录支持，不以标题关键词猜测。新增条目的出版社、PubMed/OpenAlex 或机构仓储来源已逐条记录在 `data/papers.json` 的 `verification.sources`；其中 4 篇已取得并校验公开正文，其余 5 篇只提供 DOI/出版社回退。
+
+## 2026-09-14 新增：预训练、微调和不确定性
+
+| 论文 | DOI / 正式记录 | 学习用途 |
+|---|---|---|
+| Batatia et al., 2025. A foundation model for atomistic materials chemistry | [JCP](https://doi.org/10.1063/5.0297006)，[作者预印本](https://arxiv.org/abs/2401.00096) | MACE-MP-0推理、MD与目标域验证 |
+| Radova et al., 2025. Fine-tuning foundation models of materials interatomic potentials with frozen transfer learning | [出版社](https://www.nature.com/articles/s41524-025-01727-x) | 小数据、冻结层、学习曲线对照 |
+| Bilbrey et al., 2025. Uncertainty quantification for neural network potential foundation models | [出版社](https://www.nature.com/articles/s41524-025-01572-y)，[作者代码](https://github.com/pnnl/SNAP) | 不确定性校准、过度自信与主动学习 |
+
+新增三篇均逐项对照Crossref的题名、完整作者名单、年份、期刊和DOI。方法卡中的复现步骤为本库整理，不是已执行的复现结果。后两篇的原文案例不是锂电池，不把跨体系迁移当成已经验证的结论。
+
+## 核心论文：16 篇 DOI＋WOS UT 已核验
+
+| # | 年份 | 简称 | DOI | WOS UT |
+|---:|---:|---|---|---|
+| 1 | 2016 | Urban：Computational understanding of Li-ion batteries | [10.1038/npjcompumats.2016.2](https://doi.org/10.1038/npjcompumats.2016.2) | `WOS:000426821500008` |
+| 2 | 1997 | Aydinol：Ab initio lithium intercalation | [10.1103/PhysRevB.56.1354](https://doi.org/10.1103/PhysRevB.56.1354) | `WOS:A1997XM76600066` |
+| 3 | 1998 | Ceder：First-principles-guided cathode identification | [10.1038/33647](https://doi.org/10.1038/33647) | `WOS:000073129000051` |
+| 4 | 2001 | Van der Ven：Ionic diffusion with nondilute carriers | [10.1103/PhysRevB.64.184307](https://doi.org/10.1103/PhysRevB.64.184307) | `WOS:000172239400054` |
+| 5 | 2011 | Ong：Li/Na voltage, stability and barriers | [10.1039/C1EE01782A](https://doi.org/10.1039/C1EE01782A) | `WOS:000294306900068` |
+| 6 | 2013 | Ong：Li10±1MP2X12 superionic conductors | [10.1039/C2EE23355J](https://doi.org/10.1039/C2EE23355J) | `WOS:000312337700019` |
+| 7 | 2013 | Shi：Li2CO3 defects and SEI diffusion | [10.1021/jp310591u](https://doi.org/10.1021/jp310591u) | `WOS:000318536600001` |
+| 8 | 2017 | Sendek：12,831 solid conductor candidates | [10.1039/C6EE02697D](https://doi.org/10.1039/C6EE02697D) | `WOS:000395208000028` |
+| 9 | 2020 | Baktash：Li-argyrodite diffusion | [10.1038/s41524-020-00432-1](https://doi.org/10.1038/s41524-020-00432-1) | `WOS:000584639000001` |
+| 10 | 2022 | Chen：M3GNet universal potential | [10.1038/s43588-022-00349-3](https://doi.org/10.1038/s43588-022-00349-3) | `WOS:000890324500016` |
+| 11 | 2024 | Sawada：NNP screening of doped solid electrolytes | [10.1038/s41598-024-62054-7](https://doi.org/10.1038/s41598-024-62054-7) | `WOS:001229023500115` |
+| 12 | 2022 | Ling：Battery informatics review | [10.1038/s41524-022-00713-x](https://doi.org/10.1038/s41524-022-00713-x) | `WOS:000757839700001` |
+| 13 | 2000 | Henkelman：CI-NEB | [10.1063/1.1329672](https://doi.org/10.1063/1.1329672) | `WOS:000165584900005` |
+| 14 | 2010 | Leung：Initial SEI AIMD | [10.1039/B925853A](https://doi.org/10.1039/B925853A) | `WOS:000278824400004` |
+| 15 | 2012 | Mo：LGPS first-principles study | [10.1021/cm203303y](https://doi.org/10.1021/cm203303y) | `WOS:000298908400006` |
+| 16 | 2023 | Deng：CHGNet | [10.1038/s42256-023-00716-3](https://doi.org/10.1038/s42256-023-00716-3) | `WOS:001085170400007` |
+
+本地全文的来源、页数、哈希与缺失项另见 [FULLTEXT_AUDIT.md](FULLTEXT_AUDIT.md)。当前核心正文为 16/16；新增方法论文尚未保存的正文仍提供 DOI/出版社回退，不会被系统伪装成已有全文或 WOS 已核验。
+
+## 第一批入门方法论文：12 篇 DOI＋出版社记录已核验
+
+| # | 年份 | 用途 | 论文 | DOI | 核验入口 |
+|---:|---:|---|---|---|---|
+| 17 | 2025 | VASPKIT逐步协议 | Empowering materials science with VASPKIT | [10.1038/s41596-025-01160-w](https://doi.org/10.1038/s41596-025-01160-w) | [Nature Protocols](https://www.nature.com/articles/s41596-025-01160-w) |
+| 18 | 2021 | VASPKIT功能与示例 | VASPKIT: A user-friendly interface… | [10.1016/j.cpc.2021.108033](https://doi.org/10.1016/j.cpc.2021.108033) | [Computer Physics Communications](https://www.sciencedirect.com/science/article/pii/S0010465521001454) |
+| 19 | 2013 | pymatgen与电池相图 | Python Materials Genomics (pymatgen)… | [10.1016/j.commatsci.2012.10.028](https://doi.org/10.1016/j.commatsci.2012.10.028) | [Computational Materials Science](https://www.sciencedirect.com/science/article/pii/S0927025612006295) |
+| 20 | 2017 | ASE结构、MD与NEB | The atomic simulation environment… | [10.1088/1361-648X/aa680e](https://doi.org/10.1088/1361-648X/aa680e) | [IOP](https://doi.org/10.1088/1361-648X/aa680e) |
+| 21 | 2025 | atomate2可复现工作流 | Atomate2: modular workflows for materials science | [10.1039/D5DD00019J](https://doi.org/10.1039/D5DD00019J) | [Digital Discovery](https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00019j) |
+| 22 | 2013 | Materials Project数据来源 | Commentary: The Materials Project… | [10.1063/1.4812323](https://doi.org/10.1063/1.4812323) | [APL Materials](https://doi.org/10.1063/1.4812323) |
+| 23 | 2014 | IDPP-NEB初始路径 | Improved initial guess for minimum energy path calculations | [10.1063/1.4878664](https://doi.org/10.1063/1.4878664) | [Journal of Chemical Physics](https://doi.org/10.1063/1.4878664) |
+| 24 | 2018 | AIMD扩散统计流程 | Statistical variances of diffusional properties… | [10.1038/s41524-018-0074-y](https://doi.org/10.1038/s41524-018-0074-y) | [npj Computational Materials](https://www.nature.com/articles/s41524-018-0074-y) |
+| 25 | 2004 | 正极电压与DFT+U | First-principles prediction of redox potentials… | [10.1103/PhysRevB.70.235121](https://doi.org/10.1103/PhysRevB.70.235121) | [Physical Review B](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.70.235121) |
+| 26 | 2025 | MLIP实用选型指南 | A practical guide to machine learning interatomic potentials… | [10.1016/j.cossms.2025.101214](https://doi.org/10.1016/j.cossms.2025.101214) | [作者公开稿](https://arxiv.org/abs/2503.09814) |
+| 27 | 2015 | phonopy与声子热力学 | First principles phonon calculations in materials science | [10.1016/j.scriptamat.2015.07.021](https://doi.org/10.1016/j.scriptamat.2015.07.021) | [Scripta Materialia](https://doi.org/10.1016/j.scriptamat.2015.07.021) |
+| 28 | 2018 | VASP能带/DOS后处理 | sumo: Command-line tools for plotting… | [10.21105/joss.00717](https://doi.org/10.21105/joss.00717) | [JOSS](https://joss.theoj.org/papers/10.21105/joss.00717) |
+
+## 第二批方法与进阶论文：12 篇 DOI＋出版社记录已核验
+
+| # | 年份 | 用途 | 论文 | DOI | 核验入口 |
+|---:|---:|---|---|---|---|
+| 29 | 2018 | Deep Potential训练与MD | DeePMD-kit: A deep learning package… | [10.1016/j.cpc.2018.03.016](https://doi.org/10.1016/j.cpc.2018.03.016) | [Computer Physics Communications](https://www.sciencedirect.com/science/article/pii/S0010465518300882) |
+| 30 | 2020 | 主动学习生成势函数数据 | DP-GEN: A concurrent learning platform… | [10.1016/j.cpc.2020.107206](https://doi.org/10.1016/j.cpc.2020.107206) | [Computer Physics Communications](https://www.sciencedirect.com/science/article/pii/S001046552030045X) |
+| 31 | 2022 | 等变势与锂扩散 | E(3)-equivariant graph neural networks… | [10.1038/s41467-022-29939-5](https://doi.org/10.1038/s41467-022-29939-5) | [Nature Communications](https://www.nature.com/articles/s41467-022-29939-5) |
+| 32 | 2023 | 大规模局域等变MD | Learning local equivariant representations… | [10.1038/s41467-023-36329-y](https://doi.org/10.1038/s41467-023-36329-y) | [Nature Communications](https://www.nature.com/articles/s41467-023-36329-y) |
+| 33 | 2021 | GPR/GAP系统入门 | Gaussian Process Regression for Materials and Molecules | [10.1021/acs.chemrev.1c00022](https://doi.org/10.1021/acs.chemrev.1c00022) | [Chemical Reviews](https://pubs.acs.org/doi/10.1021/acs.chemrev.1c00022) |
+| 34 | 2022 | 经典与机器学习势MD | LAMMPS - a flexible simulation tool… | [10.1016/j.cpc.2021.108171](https://doi.org/10.1016/j.cpc.2021.108171) | [Computer Physics Communications](https://www.sciencedirect.com/science/article/pii/S0010465521002836) |
+| 35 | 2016 | 可追溯计算工作流 | AiiDA: automated interactive infrastructure… | [10.1016/j.commatsci.2015.09.013](https://doi.org/10.1016/j.commatsci.2015.09.013) | [Computational Materials Science](https://www.sciencedirect.com/science/article/pii/S0927025615005820) |
+| 36 | 2020 | SOAP等结构描述符 | DScribe: Library of descriptors… | [10.1016/j.cpc.2019.106949](https://doi.org/10.1016/j.cpc.2019.106949) | [Computer Physics Communications](https://www.sciencedirect.com/science/article/pii/S0010465519303042) |
+| 37 | 2018 | 晶体图神经网络基线 | Crystal Graph Convolutional Neural Networks… | [10.1103/PhysRevLett.120.145301](https://doi.org/10.1103/PhysRevLett.120.145301) | [Physical Review Letters](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.145301) |
+| 38 | 2020 | 材料机器学习标准评测 | Benchmarking materials property prediction methods… | [10.1038/s41524-020-00406-3](https://doi.org/10.1038/s41524-020-00406-3) | [npj Computational Materials](https://www.nature.com/articles/s41524-020-00406-3) |
+| 39 | 2010 | 石墨负极热力学与动力学 | Thermodynamic and kinetic properties of the Li-graphite system… | [10.1103/PhysRevB.82.125416](https://doi.org/10.1103/PhysRevB.82.125416) | [Physical Review B](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.125416) |
+| 40 | 2024 | 晶体点缺陷工作流 | pymatgen-analysis-defects… | [10.21105/joss.05941](https://doi.org/10.21105/joss.05941) | [JOSS](https://joss.theoj.org/papers/10.21105/joss.05941) |
+
+## “已核验”不等于什么
+
+- 不等于 52 篇都可以免费获得出版社 PDF；全文权限取决于开放获取、作者公开稿或学校订阅。
+- 不等于每篇都是任何具体问题的唯一最佳论文；它们是覆盖电压、扩散、界面、固态电解质、高通量和机器学习势的首批方法学语料。
+- 不等于摘要和正文中的结论已经复现；计算参数与数值仍需从原文、补充信息和实际复算中验证。

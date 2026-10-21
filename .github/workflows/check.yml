@@ -1,0 +1,65 @@
+name: publication-checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install the small test dependency set
+        run: python -m pip install -r requirements.txt
+      - name: Run Python unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Run JavaScript unit tests
+        shell: bash
+        run: |
+          for test in tests/test_*.mjs; do
+            [ "${test##*/}" = "search_parity_runner.mjs" ] && continue
+            node --test "$test"
+          done
+      - name: Rebuild and verify the publication bundle
+        run: |
+          python build_pages.py
+          git diff --exit-code -- docs static
+      - name: Scan the complete staged snapshot
+        run: python publication_safety.py --staged
+      - name: Scan the deployable files
+        run: python publication_safety.py --public-bundle
+      - name: Reject forbidden paths anywhere in candidate history
+        run: python history_safety.py --no-baseline --full-inventory
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && !github.event.repository.private
+    needs: checks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: Publish the checked site
+        id: publish
+        uses: actions/deploy-pages@v4

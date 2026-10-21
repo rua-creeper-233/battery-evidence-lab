@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rua-creeper-233.github.io/battery-evidence-lab/sitemap.xml

@@ -1,0 +1,74 @@
+/* Focused landing-page presentation; legacy evidence components remain intact. */
+:root {
+  --home-accent: var(--forest);
+  --home-highlight: var(--mint);
+}
+body { background: var(--paper); }
+.site-nav { position: sticky; top: 0; z-index: 5; padding: 12px 0; background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(12px); }
+.site-nav-links { gap: 3px; }
+.site-nav-links a { color: var(--muted); font-weight: 700; }
+.site-nav-links a[aria-current="page"] { color: #fff; background: var(--home-accent); }
+.home-tabs { justify-content: flex-start; gap: 4px; margin: 0; }
+.home-tabs a, .home-tabs button { min-height: 44px; }
+.home-tabs a[aria-selected="true"], .home-tabs button[aria-selected="true"] { color: #fff; background: var(--home-accent); }
+.site-nav-links a:focus-visible, .home-tabs a:focus-visible, .home-tabs button:focus-visible { outline-color: var(--accent); }
+.shell > header { position: relative; display: block; min-height: 250px; border-bottom: 0; padding: 90px 4px 22px; }
+header .header-actions { position: absolute; right: 4px; top: 14px; gap: 6px; }
+.header-buttons .outline-btn { min-height: 40px; padding: 0 12px; white-space: nowrap; font-size: 12px; }
+header > div:first-child { width: 100%; text-align: center; }
+header .sub { margin-left: auto; margin-right: auto; }
+.shell > header h1 { margin: 0 0 14px; font-size: clamp(30px, 4vw, 48px); }
+header .sub { max-width: 590px; font-size: 16px; }
+.title-map-notice, .project-progress { color: var(--muted); font-size: 12px; }
+main { display: block; padding-top: 0; }
+/* The home tab controller owns .is-active; keep this state scoped to the page panels. */
+main > [data-home-panel] { display: none; }
+main > [data-home-panel].is-active { display: block; }
+#research-question.is-active { max-width: 1100px; margin: 0 auto; background: transparent; border: 0; box-shadow: none; }
+#research-question > .composer, #research-question > .examples, #research-question > #answer { max-width: 900px; margin-left: auto; margin-right: auto; }
+#research-question .composer { grid-template-columns: 1fr auto; align-items: stretch; }
+#research-question textarea { height: 64px; min-height: 64px; border-radius: 999px; padding: 18px 22px; box-shadow: 0 8px 30px #173f3512; }
+#research-question #ask { min-width: 112px; border-radius: 999px; }
+#research-question .agent-toggle, #research-question .search-guide { max-width: 720px; margin-left: auto; margin-right: auto; }
+#research-question .examples { justify-content: center; margin-top: 22px; }
+#research-question .empty { min-height: 65px; padding: 22px 8px; font-size: 12px; line-height: 1.6; }
+.static-answer { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); }
+.static-answer > summary { cursor: pointer; color: var(--home-accent); font-weight: 700; }
+.static-extension { margin-top: 22px; }
+.static-extension-card { margin: 10px 0; }
+.static-extension-card p + p { margin-top: 9px; }
+.static-extension-card details { margin-top: 12px; font-size: 13px; line-height: 1.65; }
+.research-knowledge { margin-bottom: 28px; }
+.research-knowledge > h2 { font-size: 20px; }
+.knowledge-card { margin-top: 15px; padding: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow-wrap: anywhere; }
+.knowledge-card h3 { margin-top: 8px; font-size: 19px; }
+.knowledge-card summary { cursor: pointer; font-weight: 650; color: var(--green); }
+.knowledge-card details { margin: 16px 0; }
+.knowledge-sources small { display: block; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.knowledge-sources li { margin-bottom: 10px; }
+#library.is-active { display: flex; max-width: 1000px; margin: 0 auto; position: static; max-height: none; }
+#library .paper-list { max-height: 60vh; }
+#tutorials.is-active, #future-directions.is-active { max-width: 1000px; margin: 0 auto; }
+.robot-widget { position: fixed; right: 22px; bottom: 20px; z-index: 7; display: grid; justify-items: end; gap: 8px; }
+.robot-button { width: 58px; height: 58px; padding: 0; border: 2px solid var(--home-accent); border-radius: 50%; background: var(--card); color: var(--home-accent); box-shadow: 0 8px 25px #173f3533; }
+.robot-button svg { width: 34px; height: 34px; }
+.robot-bubble { max-width: min(310px, calc(100vw - 36px)); padding: 11px 13px; border: 1px solid #b9d1c4; border-radius: 13px 13px 4px 13px; background: var(--card); color: var(--ink); font-size: 13px; line-height: 1.5; box-shadow: 0 10px 30px #173f351c; }
+.robot-actions { display: flex; gap: 6px; }
+.robot-actions button { min-height: 44px; padding: 0 10px; border-radius: 8px; font-size: 12px; }
+.robot-actions button.secondary { background: var(--mint); color: var(--home-accent); }
+.site-footer { max-width: 1200px; margin: 28px auto 0; padding: 20px 24px 8px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.page-sources { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
+.page-sources a { color: var(--green); }
+@media (max-width: 620px) {
+  .shell { padding: 12px 16px 72px; }
+  .shell > header { min-height: 230px; padding: 84px 0 24px; }
+  header .header-actions { width: auto; }
+  #research-question .composer { grid-template-columns: minmax(0, 1fr); }
+  #research-question textarea { min-height: 88px; height: 88px; padding: 14px 16px; border-radius: 16px; font-size: 16px; }
+  #research-question #ask { min-height: 48px; }
+  .robot-widget { right: 12px; bottom: 12px; }
+  .workspace { padding: 16px 0; }
+  .evidence-grid { grid-template-columns: minmax(0, 1fr); }
+  .e-card { overflow-wrap: anywhere; }
+  .site-footer { padding-inline: 16px; }
+}

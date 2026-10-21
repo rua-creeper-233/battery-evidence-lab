@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Battery Evidence Lab</title>
+  <style>
+
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; }
+
+    a { color: var(--green); }
+    .shell { position: relative; max-width: 1420px; margin: 0 auto; padding: 34px; }
+    header { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding: 18px 4px 30px; border-bottom: 1px solid var(--line); }
+    .eyebrow { color: var(--orange); font: 700 12px/1.2 ui-monospace, monospace; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { margin: 8px 0 7px; font: 680 clamp(31px, 4vw, 58px)/1.05 Georgia, "Noto Serif SC", serif; letter-spacing: -.035em; }
+    .sub { color: var(--muted); max-width: 760px; line-height: 1.7; }
+    .header-actions { display: grid; justify-items: end; gap: 12px; }
+    .stats { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+    .stat { padding: 8px 12px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; font-size: 12px; white-space: nowrap; }
+    .stat.connected { border-color: #65a784; background: #e9f7ee; color: #11563b; }
+    .header-buttons { display: flex; gap: 12px; }
+    .outline-btn { min-height: 42px; border: 1px solid #9eb2a6; background: #fff; color: var(--green); }
+    main { display: grid; grid-template-columns: minmax(0, 1fr) 370px; gap: 24px; padding-top: 26px; }
+    .panel { background: color-mix(in srgb, var(--card) 94%, transparent); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+    .workspace { padding: 24px; }
+    .composer { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
+    textarea { width: 100%; min-height: 88px; resize: vertical; border: 1px solid #bdc9c1; border-radius: 13px; padding: 15px 16px; background: white; color: var(--ink); font: inherit; line-height: 1.6; outline: none; }
+    textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px #16664718; }
+    button { border: 0; border-radius: 12px; padding: 0 20px; background: var(--green); color: white; font: 700 14px/1 sans-serif; cursor: pointer; }
+    button:hover { filter: brightness(.96); transform: translateY(-1px); }
+    button:disabled { opacity: .55; cursor: wait; transform: none; }
+    .examples { display: flex; flex-wrap: wrap; gap: 8px; margin: 13px 0 4px; }
+    .chip { border: 1px solid var(--line); background: #fbfbf7; color: #45534d; border-radius: 999px; padding: 8px 12px; font-size: 12px; cursor: pointer; }
+    .chip:hover { border-color: #91aa9b; color: var(--green); }
+    .search-guide { margin: 12px 0 0; padding: 12px 13px; border: 1px solid var(--line); border-radius: 12px; background: #fbfcf8; color: var(--muted); font-size: 12px; line-height: 1.65; }
+    .search-guide summary { color: var(--green); font-weight: 750; cursor: pointer; }
+    .search-guide code { padding: 2px 5px; border-radius: 5px; background: #edf3ee; color: #294b3c; }
+    .agent-toggle { display:flex; align-items:center; gap:8px; margin-top:12px; color:var(--muted); font-size:12px; }
+    .agent-trace { margin-top:12px; padding:12px 12px; border:1px solid var(--line); border-radius:12px; background:#fbfcf8; font-size:12px; color:var(--muted); }
+    .empty { min-height: 430px; display: grid; place-content: center; text-align: center; color: var(--muted); padding: 50px; }
+    .empty .mark { margin: auto; width: 76px; height: 76px; display: grid; place-content: center; border-radius: 22px; background: var(--mint); color: var(--green); font: 700 29px Georgia, serif; transform: rotate(-4deg); }
+    .empty h2 { color: var(--ink); margin: 20px 0 8px; font: 600 23px Georgia, "Noto Serif SC", serif; }
+    .result { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 20px; }
+    .result h3 { font: 650 21px Georgia, "Noto Serif SC", serif; margin: 22px 0 12px; }
+    .result p, .result li { line-height: 1.76; }
+    .result ol, .result ul { padding-left: 23px; }
+    .notice { padding: 12px 13px; border-left: 3px solid var(--orange); background: #fff3e9; color: #744324; border-radius: 5px 12px 12px 5px; font-size: 13px; line-height: 1.55; }
+    .evidence-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 12px; margin-top: 18px; }
+    .e-card { padding: 15px; border: 1px solid var(--line); border-radius: 13px; background: #fff; }
+    .e-card .year { font: 700 12px ui-monospace, monospace; color: var(--orange); }
+    .e-card h4 { font-size: 14px; line-height: 1.42; margin: 7px 0; }
+    .e-card p { font-size: 12px; color: var(--muted); line-height: 1.5; margin: 0; }
+    .e-card .doi { display: inline-block; margin-top: 12px; font-size: 12px; }
+    .paper-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+    .paper-actions a, .paper-actions button { min-height: 34px; display: inline-flex; align-items: center; border-radius: 12px; padding: 0 12px; font: 700 12px/1 sans-serif; text-decoration: none; }
+    .paper-actions .zotero { background: var(--green); color: white; }
+    .paper-actions .local-pdf { background: #245a8d; color: white; }
+    .paper-actions .wos { background: #edf0ec; color: var(--ink); border: 1px solid var(--line); }
+    .paper-actions .doi-link { background: #fff4ea; color: #8c451e; border: 1px solid #ecd3c2; }
+    aside { padding: 18px; height: max-content; position: sticky; top: 18px; max-height: calc(100vh - 36px); display: flex; flex-direction: column; }
+    .aside-head { padding: 5px 4px 14px; display: flex; align-items: center; justify-content: space-between; }
+    .aside-head h2 { font: 650 19px Georgia, "Noto Serif SC", serif; margin: 0; }
+    .count { color: var(--muted); font-size: 12px; }
+    #filter { width: 100%; padding: 12px 12px; border: 1px solid var(--line); border-radius: 12px; font: inherit; background: #fff; }
+    .tag-filters { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .filter-chip { min-height: 30px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: #fafbf8; color: #53615a; font: 700 12px/1 sans-serif; }
+    .filter-chip:hover { border-color: #7ba18c; color: var(--green); }
+    .filter-chip.active { background: var(--green); border-color: var(--green); color: white; }
+    .filter-chip:disabled { opacity: .52; cursor: not-allowed; }
+    .filter-note { margin: 8px 2px 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .paper-list { overflow: auto; padding: 12px 2px 2px; }
+    .paper { padding: 13px 12px; border-bottom: 1px solid #e6e9e4; cursor: pointer; }
+    .paper:hover { background: #f1f7f2; border-radius: 12px; }
+    .paper .meta { color: var(--orange); font: 700 12px ui-monospace, monospace; }
+    .paper .level { display: inline-block; margin-left: 6px; padding: 3px 6px; border-radius: 999px; background: var(--mint); color: var(--green); font: 700 12px/1 sans-serif; }
+    .paper h3 { font-size: 13px; line-height: 1.4; margin: 5px 0; }
+    .paper p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .paper-tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 7px 0 6px; }
+    .paper-tag { display: inline-flex; align-items: center; min-height: 21px; padding: 0 7px; border-radius: 999px; background: #edf3ef; color: #315849; font: 750 12px/1 sans-serif; }
+    .paper-tag.kind { background: #fff0e4; color: #9a4a21; }
+    .paper-tag.method { background: #e7f0f8; color: #245a82; }
+    .paper-tag.route { background: #eee8fb; color: #5d428e; text-decoration: none; }
+    .modal { position: fixed; inset: 0; background: #102018b8; padding: 5vw; display: none; place-items: center; z-index: 10; }
+    .modal.open { display: grid; }
+    .modal-card { max-width: 850px; max-height: 85vh; overflow: auto; padding: 28px; background: var(--card); border-radius: 18px; box-shadow: 0 30px 100px #0006; }
+    .modal-card.narrow { width: min(720px, 100%); }
+    .modal-card h2 { font: 650 26px/1.3 Georgia, "Noto Serif SC", serif; }
+    .close { float: right; background: #e9ede9; color: var(--ink); height: 36px; padding: 0 13px; }
+    .upload-intro { color: var(--muted); line-height: 1.65; margin: 0 0 20px; }
+    .connection-box { padding: 15px; margin-bottom: 18px; border: 1px solid var(--line); border-radius: 13px; background: #f1f6f2; }
+    .connection-box h3, .upload-form h3 { margin: 0 0 12px; font: 650 17px Georgia, "Noto Serif SC", serif; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+    .form-grid .wide { grid-column: 1 / -1; }
+    .field { display: grid; gap: 6px; color: #435149; font-size: 13px; font-weight: 650; }
+    .field input { width: 100%; min-height: 43px; padding: 12px 12px; border: 1px solid #bdc9c1; border-radius: 12px; background: #fff; color: var(--ink); font: 500 14px/1.4 inherit; }
+    .field input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px #16664718; }
+    .field small { color: var(--muted); font-weight: 400; line-height: 1.5; }
+    .connection-actions, .upload-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+    .connection-actions button, .upload-actions button { min-height: 42px; }
+    .service-message { color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .service-message.good { color: var(--green); font-weight: 700; }
+    .service-message.bad { color: #a23e2a; font-weight: 700; }
+    .upload-result { display: none; margin-top: 16px; padding: 14px; border-radius: 12px; background: #eef6f0; line-height: 1.65; }
+    .upload-result.show { display: block; }
+    .tag { display: inline-block; margin: 4px 4px 0 0; padding: 5px 8px; background: var(--mint); color: var(--green); border-radius: 999px; font-size: 12px; }
+    .relation { font: 12px/1.5 ui-monospace, monospace; padding: 8px 12px; background: #f1f3ef; margin: 6px 0; border-radius: 8px; }
+    @media (max-width: 950px) { main { grid-template-columns: 1fr; } aside { position: static; max-height: none; } .paper-list { max-height: 480px; } }
+    @media (max-width: 620px) { .shell { padding: 18px; } header { align-items: start; flex-direction: column; } .header-actions { justify-items: start; } .stats { justify-content: flex-start; } .composer, .form-grid { grid-template-columns: 1fr; } .form-grid .wide { grid-column: auto; } button { min-height: 48px; } .workspace { padding: 17px; } }
+    .site-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 4px 16px; border-bottom: 1px solid var(--line); }
+    .site-nav .brand { color: var(--ink); font: 700 12px/1 ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
+    .site-nav-links { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+    .site-nav-links a { padding: 8px 12px; border-radius: 999px; color: var(--muted); font-size: 12px; text-decoration: none; }
+    .site-nav-links a:hover, .site-nav-links a:focus-visible { background: var(--mint); color: var(--green); outline: none; }
+    .hero-note { display: inline-flex; align-items: center; gap: 8px; margin-top: 17px; color: var(--green); font-size: 12px; font-weight: 700; }
+    .hero-note::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 4px #c65f2520; }
+    .future-section { margin-top: 28px; padding: 34px; background: #18382e; color: #edf7ef; border: 1px solid #2c5c49; border-radius: 20px; box-shadow: 0 22px 58px rgba(28, 53, 43, .16); }
+    .future-section .eyebrow { color: #e6ad70; }
+    .future-section h2 { max-width: 760px; margin: 12px 0 12px; color: #fff; font: 650 clamp(27px, 3vw, 43px)/1.15 Georgia, "Noto Serif SC", serif; letter-spacing: -.025em; }
+    .future-lede { max-width: 850px; margin: 0; color: #c7ded0; line-height: 1.8; }
+    .future-meta { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0 24px; }
+    .future-meta span { padding: 7px 12px; border: 1px solid #527866; border-radius: 999px; color: #d3e8d8; font-size: 12px; }
+    .future-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+    .future-card { display: flex; flex-direction: column; min-height: 220px; padding: 20px; background: #f7fbf4; color: var(--ink); border-radius: 15px; }
+    .future-card.featured { grid-column: 1 / -1; background: #e5f1e5; }
+    .future-card .future-index { color: var(--orange); font: 700 12px ui-monospace, monospace; letter-spacing: .08em; }
+    .future-card h3 { margin: 7px 0 8px; font: 650 19px/1.3 Georgia, "Noto Serif SC", serif; }
+    .future-card p { margin: 0; color: #526158; font-size: 13px; line-height: 1.7; }
+    .future-card .future-question { margin-top: 13px; padding-top: 12px; border-top: 1px solid #cadbc9; color: #244f3d; font-size: 12px; line-height: 1.6; }
+    .future-card .future-question strong { color: var(--green); }
+    .future-card .future-links { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 16px; }
+    .future-links a { display: inline-flex; padding: 6px 8px; border-radius: 7px; background: #d9e9da; color: #1b5b41; font-size: 12px; font-weight: 750; text-decoration: none; }
+    .future-links a:hover { background: #c5dec9; }
+    .future-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 21px; color: #b8d1c0; font-size: 12px; line-height: 1.6; }
+    .future-bottom a { color: #f0c487; }
+    .future-teaser { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-top: 28px; padding: 25px 28px; background: #e4efe5; border: 1px solid #c0d5c4; border-radius: 17px; }
+    .future-teaser h2 { margin: 8px 0 6px; color: var(--ink); font: 650 26px/1.2 Georgia, "Noto Serif SC", serif; }
+    .future-teaser p { max-width: 760px; margin: 0; color: #526158; font-size: 13px; line-height: 1.7; }
+    .future-teaser-link { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 7px; padding: 12px 15px; border-radius: 12px; background: var(--green); color: white; font-size: 12px; font-weight: 750; text-decoration: none; }
+    .future-teaser-link:hover { background: #0f5438; }
+    @media (max-width: 720px) { .site-nav { align-items: flex-start; flex-direction: column; } .site-nav-links { justify-content: flex-start; } .future-section { padding: 22px 18px; } .future-grid { grid-template-columns: 1fr; } .future-card.featured { grid-column: auto; } .future-bottom { align-items: flex-start; flex-direction: column; } .future-teaser { align-items: flex-start; flex-direction: column; padding: 21px 18px; } }
+  </style>
+  <link rel="stylesheet" href="./tutorials.css" />
+  <style data-lab-ui-inline>/* Shared quiet visual baseline. Pages keep their existing structure/content. */
+:root {
+  --paper: #fafbf8;
+  --ink: #203029;
+  --muted: #5d6a63;
+  --card: #ffffff;
+  --line: #dbe3dc;
+  --green: #2e6b50;
+  --forest: #123f35;
+  --mint: #edf5ef;
+  --accent: #b26a31;
+  --orange: var(--accent);
+  --blue: #245a8d;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 90px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; }
+a { color: var(--green); text-underline-offset: 3px; }
+button, input, select, textarea { font: inherit; }
+h1, h2, h3, h4 { font-family: inherit; }
+html body [hidden] { display: none; }
+.shell, .site-nav, .site-nav-links, .home-tabs { min-width: 0; }
+button, input, select, textarea, summary, a { outline-offset: 3px; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); }
+.shell { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.site-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 0 16px; border-bottom: 1px solid var(--line); }
+.brand { color: var(--ink); font: 700 12px/1.4 ui-monospace, monospace; text-decoration: none; white-space: nowrap; }
+.site-nav-links, .home-tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.site-nav-links.overflow-left, .home-tabs.overflow-left { box-shadow: inset 2px 0 var(--line); }
+.site-nav-links.overflow-right, .home-tabs.overflow-right { border-inline-end: 2px solid var(--line); }
+@supports (mask-image: linear-gradient(to right, #000, transparent)) {
+  .overflow-left:not(.overflow-right) { mask-image: linear-gradient(to right, transparent, #000 18px); }
+  .overflow-right:not(.overflow-left) { mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent); }
+  .overflow-left.overflow-right { mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent); }
+  .overflow-focus, .site-nav-links:focus-within, .home-tabs:focus-within { mask-image: none; }
+}
+.site-nav-links > .home-tabs { flex: 0 0 auto; width: auto; overflow: visible; margin: 0; }
+.site-nav-links a, .home-tabs a, .home-tabs button { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--muted); font-size: 13px; font-weight: 650; text-decoration: none; cursor: pointer; }
+.site-nav-links a:hover, .site-nav-links a[aria-current="page"], .home-tabs a:hover, .home-tabs a[aria-selected="true"], .home-tabs button:hover, .home-tabs button[aria-selected="true"] { background: var(--mint); color: var(--forest); }
+.site-nav-links a[aria-current="page"], .home-tabs a[aria-current="page"], .home-tabs button[aria-selected="true"] { border-color: var(--line); }
+header { align-items: flex-start; }
+header h1, .future-section h1 { font-size: clamp(28px, 4vw, 36px); }
+.panel, .card, .topic, .resource, .paper-card, .e-card, .future-section, .band, .code-section, .tutorials, .future-teaser, .modal-card, .roadmap, .roadmap-item { border-radius: 8px; box-shadow: none; }
+.future-section, .band { background: #f0f5f0; border-color: var(--line); color: var(--ink); }
+.future-section h1, .future-section h2, .band h2, .future-section .eyebrow { color: var(--green); }
+.future-lede, .band p, .future-card p, .step p { color: var(--muted); }
+.future-card, .step { border: 1px solid var(--line); border-radius: 7px; background: var(--card); }
+.future-card.featured { background: #f4f8f4; }
+.filter-chip, .chip, .stat, .future-meta span, .meta span { border-radius: 5px; }
+.future-meta span { color: var(--muted); border-color: var(--line); }
+.future-bottom { color: var(--muted); }
+.future-bottom a { color: var(--green); }
+.notice { background: #f3f7f3; border-left-color: var(--green); color: #52655b; }
+button { min-height: 44px; border-radius: 6px; }
+summary { min-height: 32px; }
+.stat { padding: 7px 9px; font-size: 12px; }
+.paper-title-en, .paper-title-zh { display: block; }
+.paper-title-zh { margin-top: 3px; color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.45; }
+.project-progress, .title-map-notice, .scope-note { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.project-progress { margin: 10px 0 0; }
+.title-map-notice { margin: 5px 0 0; }
+.service-details { max-width: 330px; color: var(--muted); font-size: 12px; text-align: right; }
+.service-details summary, .scope-note summary { cursor: pointer; }
+.service-details .stats { margin-top: 10px; gap: 6px; }
+.workspace .empty { min-height: 240px; }
+.workspace .empty .mark { transform: none; width: 52px; height: 52px; border-radius: 8px; }
+.examples, .paper-tags { gap: 6px; }
+.agent-trace { max-height: 120px; overflow: auto; }
+.scope-note { margin-top: 14px; }
+.route-shortcuts { margin: 14px 0 0; padding: 12px 14px; border: 1px solid var(--line); background: var(--card); border-radius: 8px; font-size: 12px; }
+.route-shortcuts summary { cursor: pointer; color: var(--green); }
+.route-shortcuts p { color: var(--muted); line-height: 1.6; }
+.route-shortcuts .links { display: flex; flex-wrap: wrap; gap: 9px 16px; }
+.site-footer { display: flex; flex-wrap: wrap; gap: 12px 24px; max-width: 1200px; margin: 28px auto 0; padding: 20px 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.answer-mode { color: var(--muted); font-size: 13px; }
+.page-sources { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
+.page-sources a { color: var(--green); }
+@media (max-width: 1000px) { .site-nav { align-items: flex-start; flex-direction: column; } .site-nav-links { max-width: 100%; } }
+@media (max-width: 700px) { .shell { padding: 16px; } }
+@media (max-width: 620px) {
+  .site-nav-links, .home-tabs { width: 100%; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: thin; }
+  .site-nav-links a, .home-tabs a, .home-tabs button { flex: 0 0 auto; white-space: nowrap; }
+}
+</style>
+  <link rel="stylesheet" href="./home.css" />
+  <link rel="stylesheet" href="./battery_explorer.css" />
+<script src="./lab-ui.js"></script>
+<meta name="description" content="检索电池材料计算论文，查阅 DFT、MD、机器学习势的知识、操作流程与来源。"><meta property="og:title" content="Battery Evidence Lab"><meta property="og:description" content="检索电池材料计算论文，查阅 DFT、MD、机器学习势的知识、操作流程与来源。"><meta property="og:type" content="website"><meta property="og:url" content="https://rua-creeper-233.github.io/battery-evidence-lab/index.html"><meta property="og:image" content="https://rua-creeper-233.github.io/battery-evidence-lab/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://rua-creeper-233.github.io/battery-evidence-lab/index.html"><link rel="icon" type="image/svg+xml" href="./favicon.svg"></head>
+<body>
+  <div class="shell">
+    <nav class="site-nav" aria-label="页面导航"><a class="brand" href="./index.html#research-question">Battery Evidence Lab</a><div class="site-nav-links"><div class="home-tabs" role="tablist" aria-label="首页工具"><a href="#research-question" id="tab-research-question" role="tab" aria-controls="research-question" aria-selected="true" tabindex="0" data-home-tab="research-question">证据问答</a><a href="#library" id="tab-library" role="tab" aria-controls="library" aria-selected="false" tabindex="-1" data-home-tab="library">论文库</a><a href="#tutorials" id="tab-tutorials" role="tab" aria-controls="tutorials" aria-selected="false" tabindex="-1" data-home-tab="tutorials">教程</a></div><a href="./future-directions.html">未来方向</a><a href="./ai-battery-applications.html">AI 应用</a><a href="./foundations.html">基础地图</a><a href="./learning-route.html">学习路线</a><a href="./domestic-papers.html">国内论文</a></div></nav>
+    <header id="top">
+      <div>
+        <h1>Battery Evidence Lab</h1>
+        <div class="sub">电池材料计算，从问题找到证据。</div>
+        <p class="project-progress" data-project-progress>211 篇论文 · 更新于 2026-10-21</p>
+      </div>
+      <div class="header-actions">
+        <div class="header-buttons">
+          <span class="stat"><b id="paperCount">—</b> 篇论文</span>
+          <button class="outline-btn" id="openUpload" type="button">上传与连接</button>
+        </div>
+        <details class="service-details" id="serviceDetails"><summary>服务状态</summary><div class="stats">
+          <span class="stat" id="starterStat">方法路线 · 检测中</span>
+          <span class="stat" id="zoteroStat">Zotero 深链 · 检测中</span>
+          <span class="stat" id="apiStat">本地服务 · 未连接</span>
+          <span class="stat" id="ragStat">RAG · 未配置</span>
+        </div></details>
+      </div>
+    </header>
+
+    <main>
+      <section id="research-question" class="panel workspace" data-home-panel="research-question" role="tabpanel" aria-labelledby="tab-research-question" tabindex="0">
+        <div class="composer">
+          <textarea id="question" rows="1" aria-label="证据问题" placeholder="搜索论文，或问一个电池材料计算问题…"></textarea>
+          <button id="ask">检索证据</button>
+        </div>
+        <label class="agent-toggle"><input id="toolAgent" type="checkbox" /> Agent 模式（需本地服务）</label>
+        <div class="examples">
+          <span class="chip">如何计算正极平均嵌锂电压？</span>
+          <span class="chip">NEB 和 AIMD 研究扩散有什么区别？</span>
+          <span class="chip">给我一个 LGPS 机器学习势的落地流程</span>
+          <span class="chip">怎么判断电极和固态电解质界面稳定？</span>
+        </div>
+        <details class="search-guide">
+          <summary>怎样让检索更准？查看查询语法</summary>
+          按“材料＋任务＋方法＋输出量”提问，例如 <code>LGPS + 锂扩散 + AIMD + 扩散系数</code>。可加
+          <code>tag:DFT</code>、<code>tag:MD</code>、<code>tag:VASP</code>、<code>tag:MS</code>，以及
+          <code>type:方法论文</code> 或 <code>type:进展论文</code>。系统会显示查询扩展和每篇论文的命中理由。
+        </details>
+        <div id="answer" class="empty">
+          <div>搜索论文，或从下面的电池结构开始。</div>
+        </div>
+        <section id="batteryExplorer" class="battery-explorer" aria-label="从电池结构查找论文">
+          <p>电池结构选读正在加载；关键词检索与论文库仍可正常使用。</p>
+          <noscript>请启用 JavaScript 使用交互示意图；也可通过上方论文库浏览。</noscript>
+        </section>
+      </section>
+
+      <aside id="library" class="panel" data-home-panel="library" role="tabpanel" aria-labelledby="tab-library" tabindex="0">
+        <div class="aside-head"><h2>论文证据库</h2><span class="count">点击查看数据卡</span></div>
+        <input id="filter" placeholder="关键词，或 tag:DFT / type:方法论文" />
+        <div id="tagFilters" class="tag-filters">
+          <button class="filter-chip" type="button" data-tag="DFT">DFT</button>
+          <button class="filter-chip" type="button" data-tag="MD">MD</button>
+          <button class="filter-chip" type="button" data-tag="VASP">VASP</button>
+          <button class="filter-chip" type="button" data-tag="MS">MS</button>
+          <button class="filter-chip" type="button" data-tag="方法论文">方法论文</button>
+          <button class="filter-chip" type="button" data-tag="进展论文">进展论文</button>
+        </div>
+        <div class="filter-note">MS = BIOVIA Materials Studio；仅方法明确使用才标注。<span id="listCount"></span></div>
+        <div id="paperList" class="paper-list"></div>
+      </aside>
+    </main>
+    <section id="future-directions" class="future-teaser" data-home-panel="future-directions" aria-labelledby="futureTitle">
+      <div>
+        <div class="eyebrow">研究机会</div>
+        <h2 id="futureTitle">电池材料计算的下一组问题</h2>
+        <p>查看研究切口、对应 DOI、复现与验证清单。学习路线页另按当前论文库整理了 8 个前沿专题。</p>
+      </div>
+      <a class="future-teaser-link" href="./future-directions.html">打开未来方向页 <span aria-hidden="true">↗</span></a>
+    </section>
+    <section id="tutorials" class="panel tutorials" data-home-panel="tutorials" role="tabpanel" aria-labelledby="tab-tutorials" tabindex="0">
+      <div class="eyebrow">从第一个模型开始</div>
+      <h2 id="tutorialTitle">材料计算入门小课堂</h2>
+      <p class="tutorial-intro">先认识界面和文件，再跑通一个小算例。每一步都有示意图、操作提示和验收目标；无需查阅论文，也无需连接本地服务。</p>
+      <p class="tutorial-intro">推荐顺序：零基础先读 DFT，想动手建模选 MS，已有服务器环境再跟练 VASP。</p>
+      <p class="tutorial-intro"><a href="./guides/AGENT_IMPLEMENTATION_GUIDE.md">工具Agent实现说明</a> · <a href="./guides/BATTERY_RESEARCH_ROADMAP_20260918.md">电池研究路线图</a></p>
+      <div class="tutorial-switch" role="group" aria-label="选择教程"><button type="button" data-course="dft" aria-pressed="false">DFT · 原理与电池应用</button><button type="button" data-course="ms" aria-pressed="true">MS · 图形界面建模</button><button type="button" data-course="vasp" aria-pressed="false">VASP · 第一性原理计算</button><button type="button" data-course="md" aria-pressed="false">MD · 从轨迹到物性</button></div>
+      <div id="tutorialContent"></div>
+      <p class="tutorial-footnote">图为操作示意。跟练前准备软件授权与计算环境；菜单按实际版本查找，输出按各节验收项检查。</p>
+    </section>
+  </div>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" id="close">关闭</button>
+      <div id="detail"></div>
+    </div>
+  </div>
+
+  <div id="uploadModal" class="modal" aria-hidden="true">
+    <div class="modal-card narrow">
+      <button class="close" id="closeUpload" type="button">关闭</button>
+      <h2>上传文献到本地证据库</h2>
+      <p class="upload-intro">PDF 会发送到你自己启动的本地服务，完成格式校验、元数据识别、全文索引和关键词提取。GitHub 仓库与公开静态页面不会保存 PDF。</p>
+      <div class="connection-box">
+        <h3>连接本地服务</h3>
+        <div class="form-grid">
+          <label class="field wide">HTTPS 服务地址
+            <input id="apiBase" type="url" placeholder="https://随机名称.trycloudflare.com" autocomplete="url" />
+            <small>本机直接打开 127.0.0.1 页面时可留空；从 GitHub Pages 使用时填写隧道地址。</small>
+          </label>
+          <label class="field wide">本次访问密钥
+            <input id="apiToken" type="password" placeholder="启动共享服务时显示的临时密钥" autocomplete="off" />
+            <small>仅留在当前页面内存中；刷新、离开页面或断开连接后清除。</small>
+          </label>
+        </div>
+        <div class="connection-actions">
+          <button id="testApi" type="button">测试连接</button>
+          <button id="disconnectApi" class="outline-btn" type="button">断开连接</button>
+          <span id="serviceMessage" class="service-message">尚未测试</span>
+        </div>
+      </div>
+      <form id="uploadForm" class="upload-form">
+        <h3>论文信息</h3>
+        <div class="form-grid">
+          <label class="field wide">PDF 文件
+            <input id="paperFile" name="file" type="file" accept="application/pdf,.pdf" required />
+          </label>
+          <label class="field wide">标题（可选）
+            <input name="title" placeholder="留空时尝试从 PDF 元数据或首页识别" />
+          </label>
+          <label class="field">DOI（可选）
+            <input name="doi" placeholder="10.xxxx/xxxxx" />
+          </label>
+          <label class="field">年份（可选）
+            <input name="year" inputmode="numeric" placeholder="2025" />
+          </label>
+          <label class="field">期刊（可选）
+            <input name="journal" placeholder="Journal name" />
+          </label>
+          <label class="field">作者（可选）
+            <input name="authors" placeholder="作者之间使用分号" />
+          </label>
+        </div>
+        <div class="upload-actions">
+          <button id="submitUpload" type="submit">上传、校验并加入库</button>
+          <span class="service-message">单个 PDF 最大 50 MiB</span>
+        </div>
+        <div id="uploadResult" class="upload-result" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+<script src="./dft_lessons.js"></script>
+<script src="./beginner_lessons.js"></script>
+<script src="./md_lessons.js"></script>
+<script src="./tutorials.js"></script>
+<script src="./browser_agent.js"></script>
+<script src="./static_qa.js"></script>
+<script src="./research_knowledge.js"></script>
+<script src="./battery_explorer.js"></script>
+<script>
+    const staticMode = location.protocol === "file:" || location.hostname.endsWith("github.io");
+    const localMode = ['127.0.0.1', 'localhost', '::1'].includes(location.hostname);
+    const readStorage = (store, key) => { try { return store.getItem(key) || ''; } catch (_) { return ''; } };
+    // Retire the old persistent token without reading it into this page.
+    try { sessionStorage.removeItem('battery-agent-api-token'); } catch (_) {}
+    const state = {
+      papers: [], zotero: {}, literature: {}, methods: {}, paperTags: {}, searchConfig: {}, learningRoute: null, activeTag: '',
+      apiBase: readStorage(localStorage, 'battery-agent-api-base'),
+      apiToken: '', connectionDisabled: false,
+      backendConnected: false, staticQa: null, researchKnowledge: null
+    };
+    window.state = state;
+    let batteryMapPromise = null;
+    let batteryMapCleanup = null;
+    let batteryMapGeneration = 0;
+    async function refreshBatteryExplorer() {
+      const root = document.querySelector('#batteryExplorer');
+      if (!root || typeof window.BatteryExplorer?.mount !== 'function') return;
+      const generation = ++batteryMapGeneration;
+      try {
+        if (!batteryMapPromise) batteryMapPromise = fetch('./data/battery_components.json', {cache:'no-store'}).then(response => {
+          if (!response.ok) throw new Error('component map unavailable');
+          return response.json();
+        });
+        const data = await batteryMapPromise;
+        if (generation !== batteryMapGeneration) return;
+        if (typeof batteryMapCleanup === 'function') batteryMapCleanup();
+        const explorer = window.BatteryExplorer.mount(root, {
+          data, papers: state.papers, onOpen: id => showPaper(id),
+          titleZh: paper => window.LabUI?.titleZh?.(paper) || paper.title_zh || ''
+        });
+        batteryMapCleanup = typeof explorer === 'function' ? explorer : () => explorer?.cleanup?.();
+      } catch (_) {
+        if (generation !== batteryMapGeneration) return;
+        if (typeof batteryMapCleanup === 'function') batteryMapCleanup();
+        batteryMapCleanup = null;
+        batteryMapPromise = null;
+        root.textContent = '电池结构暂未加载，请使用上方检索或论文库。';
+      }
+    }
+    const normalizeApiBase = value => String(value || '').trim().replace(/\/+$/, '');
+    let connectionGeneration = 0;
+    function saveConnection() {
+      const base = normalizeApiBase(document.querySelector('#apiBase').value);
+      if (base) {
+        const url = new URL(base);
+        const loopback = ['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname);
+        if ((url.protocol !== 'https:' && !(url.protocol === 'http:' && loopback)) || url.username || url.password || url.search || url.hash) throw new Error('请填写不含账号、查询参数或片段的 HTTPS 服务地址。');
+      }
+      state.apiBase = base;
+      state.apiToken = document.querySelector('#apiToken').value.trim();
+      state.connectionDisabled = false;
+      connectionGeneration += 1;
+      try { localStorage.setItem('battery-agent-api-base', state.apiBase); } catch (_) {}
+    }
+    function hasBackend() { return !state.connectionDisabled && (localMode || Boolean(state.apiBase)); }
+    function apiUrl(path) { return localMode ? path : `${state.apiBase}${path}`; }
+    function apiHeaders(extra={}) {
+      const headers = {...extra};
+      if (state.apiToken) headers.Authorization = `Bearer ${state.apiToken}`;
+      return headers;
+    }
+    async function apiFetch(path, options={}) {
+      if (!hasBackend()) throw new Error('尚未填写本地服务地址。');
+      const generation = connectionGeneration;
+      const response = await fetch(apiUrl(path), {...options, headers: apiHeaders(options.headers || {})});
+      if (generation !== connectionGeneration) throw new Error('连接已变更，请重试。');
+      if (!response.ok) {
+        let message = `服务返回 HTTP ${response.status}`;
+        try { message = (await response.json()).error || message; } catch (_) {}
+        throw new Error(message);
+      }
+      return {
+        ok: response.ok, status: response.status,
+        async json() {
+          const payload = await response.json();
+          if (generation !== connectionGeneration) throw new Error('连接已变更，请重试。');
+          return payload;
+        }
+      };
+    }
+    const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+    const inline = text => escapeHtml(text)
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>');
+    function markdown(text) {
+      const lines = text.split('\n'); let html = '', list = null;
+      const close = () => { if (list) { html += `</${list}>`; list = null; } };
+      for (const raw of lines) {
+        const line = raw.trim();
+        if (!line) { close(); continue; }
+        if (line.startsWith('### ')) { close(); html += `<h3>${inline(line.slice(4))}</h3>`; continue; }
+        const ordered = line.match(/^\d+\.\s+(.*)$/);
+        if (ordered) { if (list !== 'ol') { close(); list='ol'; html += '<ol>'; } html += `<li>${inline(ordered[1])}</li>`; continue; }
+        if (line.startsWith('- ')) { if (list !== 'ul') { close(); list='ul'; html += '<ul>'; } html += `<li>${inline(line.slice(2))}</li>`; continue; }
+        close(); html += `<p>${inline(line)}</p>`;
+      }
+      close(); return html;
+    }
+    function zoteroRecord(p) { return state.zotero[(p.doi || '').toLowerCase()] || null; }
+    function linkButtons(p) {
+      const record = zoteroRecord(p);
+      const localRecord = state.literature[p.id] || {};
+      const localPdf = localMode && localRecord.status === 'downloaded'
+        ? `<a class="local-pdf" target="_blank" rel="noreferrer" href="/local-pdf/${encodeURIComponent(p.id)}.pdf">打开本地 PDF${localRecord.pages ? ` · ${localRecord.pages}页` : ''}</a>`
+        : '';
+      const zotero = record?.attachment_key
+        ? `<a class="zotero" href="zotero://open-pdf/library/items/${encodeURIComponent(record.attachment_key)}">在 Zotero 打开原文</a>`
+        : record?.item_key
+          ? `<a class="zotero" href="zotero://select/library/items/${encodeURIComponent(record.item_key)}">在 Zotero 查看条目</a>`
+          : '';
+      const wosLabel = record?.attachment_key ? 'WOS 备用入口' : record?.item_key ? 'WOS 补全文' : 'WOS 查找全文';
+      const wos = p.wos_uid
+        ? `<a class="wos" target="_blank" rel="noreferrer" href="https://www.webofscience.com/wos/woscc/full-record/${encodeURIComponent(p.wos_uid)}">${wosLabel}</a>`
+        : p.doi
+          ? `<button class="wos" onclick="openWos('${escapeHtml(p.doi)}')">${wosLabel}</button>`
+          : `<span class="wos">待补 DOI / WOS</span>`;
+      const doi = p.doi ? `<a class="doi-link" target="_blank" rel="noreferrer" href="https://doi.org/${encodeURIComponent(p.doi)}">出版社 / DOI</a>` : '';
+      return `<div class="paper-actions">${localPdf}${zotero}${wos}${doi}</div>`;
+    }
+    async function openWos(doi) {
+      try { await navigator.clipboard.writeText(doi); } catch (_) {}
+      window.open('https://www.webofscience.com/wos/woscc/basic-search', '_blank', 'noopener');
+      alert(`DOI 已复制：${doi}\n请在 WOS 基本检索中选择“DOI”字段后粘贴。`);
+    }
+    window.openWos = openWos;
+    function paperTagPills(p) {
+      const ordinary = (p.display_tags || []).map(tag => {
+        const kind = ['方法论文','进展论文','综述'].includes(tag) ? 'kind' : 'method';
+        return `<span class="paper-tag ${kind}">${escapeHtml(tag)}</span>`;
+      }).join('');
+      const routeMap = state.learningRoute?.papers?.[p.id];
+      if (!routeMap) return ordinary;
+      const stage = state.learningRoute.stages?.find(item => item.id === routeMap.stage);
+      const stagePill = stage
+        ? `<a class="paper-tag route" href="./learning-route.html#stage-${encodeURIComponent(stage.id)}">路线 · ${escapeHtml(stage.label)}</a>`
+        : '';
+      const frontierPills = (routeMap.frontiers || []).map(frontierId => {
+        const frontier = (state.learningRoute.frontiers || []).find(item => item.id === frontierId);
+        return frontier ? `<a class="paper-tag route" href="./learning-route.html#frontier-${encodeURIComponent(frontier.id)}">前沿 · ${escapeHtml(frontier.label)}</a>` : '';
+      }).join('');
+      return ordinary + stagePill + frontierPills;
+    }
+    function paperCard(p) {
+      const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(p, p.title || p.role) : `<span class="paper-title-en">${escapeHtml(p.title || p.role)}</span>`;
+      const summary = window.LabUI?.paperSummary?.(p) || p.summary || p.role || '';
+      return `<article class="e-card" data-paper-id="${escapeHtml(p.id)}"><span class="year">${p.year} · ${escapeHtml(p.journal)}</span><div class="paper-tags">${paperTagPills(p)}</div><h4>${titleHtml}</h4><p>${escapeHtml(summary)}</p>${linkButtons(p)}</article>`;
+    }
+    function renderList(filter='') {
+      const typed = String(filter || '').trim();
+      const activeFilter = state.activeTag
+        ? `${['方法论文','进展论文'].includes(state.activeTag) ? 'type' : 'tag'}:${state.activeTag}`
+        : '';
+      const query = [typed, activeFilter].filter(Boolean).join(' ');
+      const papers = query
+        ? window.BatteryBrowserAgent.searchDetailed(query, state.papers, state.papers.length, state.searchConfig).results
+        : state.papers;
+      document.querySelector('#paperList').innerHTML = papers.map(p => { const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(p) : `<span class="paper-title-en">${escapeHtml(p.title)}</span>`; return `<div class="paper" data-id="${escapeHtml(p.id)}"><span class="meta">${p.year} · ${escapeHtml(p.journal)}</span>${p.difficulty ? `<span class="level">${escapeHtml(p.difficulty)}</span>` : ''}<div class="paper-tags">${paperTagPills(p)}</div><h3>${titleHtml}</h3><p>${escapeHtml(p.role)}</p></div>`; }).join('') || '<div class="notice">没有满足当前关键词和标签的论文。</div>';
+      document.querySelector('#listCount').textContent = `当前 ${papers.length}/${state.papers.length} 篇`;
+      document.querySelectorAll('.paper').forEach(el => el.onclick = () => showPaper(el.dataset.id));
+    }
+    function showPaper(id) {
+      const p = state.papers.find(item => item.id === id); if (!p) return;
+      state.openPaperId = id;
+      const authorNames = p.authors || [];
+      const authorLine = authorNames.length > 12
+        ? `${authorNames.slice(0, 12).join('；')}；等（共 ${authorNames.length} 位，完整名单见出版社页面）`
+        : authorNames.join('；');
+      const tags = [...(p.display_tags || []), ...(p.tags_zh || []), ...(p.methods || [])].map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
+      const evidence = (p.evidence || []).map(e => `<li>${escapeHtml(e.claim)} <small>（${escapeHtml(e.basis)}；${escapeHtml(e.strength)}）</small></li>`).join('');
+      const relations = (p.relations || []).map(r => `<div class="relation">${escapeHtml(r.source)} —[${escapeHtml(r.relation)}]→ ${escapeHtml(r.target)}</div>`).join('');
+      const protocolSteps = (p.protocol_steps || []).map(step => `<li>${escapeHtml(step)}</li>`).join('');
+      const protocolBlock = protocolSteps
+        ? `<h3>复现规划</h3><ol>${protocolSteps}</ol>`
+        : '';
+      const resources = (p.resources || []).filter(r => {
+        try { return new URL(r.url).protocol === 'https:'; } catch (_) { return false; }
+      }).map(r => `<li><a target="_blank" rel="noopener noreferrer" href="${escapeHtml(r.url)}">${escapeHtml(r.label)}</a></li>`).join('');
+      const learningBlock = `${p.scope_note ? `<h3>适用范围与迁移边界</h3><p>${escapeHtml(p.scope_note)}</p>` : ''}${resources ? `<h3>代码、数据与复现入口</h3><ul>${resources}</ul>` : ''}`;
+      const local = state.literature[p.id] || {};
+      const localStatus = localMode && state.backendConnected ? (local.status === 'downloaded' ? `本地全文：${local.pages ? `${local.pages} 页` : '已下载'}${local.text_chunks ? ` · ${local.text_chunks} 个检索片段` : ''}` : '本地全文：未记录') : '';
+      const methodRecord = state.methods[p.id] || {};
+      const methods = (methodRecord.evidence || []).slice(0, 12).map(item => {
+        const locator = localMode && local.status === 'downloaded'
+          ? `<a target="_blank" rel="noreferrer" href="${escapeHtml(item.local_pdf_url)}">PDF p.${item.page}</a>`
+          : `p.${item.page}`;
+        return `<li><strong>${escapeHtml(item.label_zh)}</strong> · ${locator} · <code>${escapeHtml(item.signal)}</code></li>`;
+      }).join('');
+      const methodBlock = methods
+        ? `<h3>正文方法定位</h3><p>显示前 12 条匹配，点页码查看上下文。</p><ul>${methods}</ul>` : '';
+      const verification = window.LabUI?.verificationLabel?.(p.verification?.doi) || '书目核验状态待补充';
+      const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(p) : `<span class="paper-title-en">${escapeHtml(p.title)}</span>`;
+      document.querySelector('#detail').innerHTML = `<div class="eyebrow">${p.year} · ${escapeHtml(p.journal)} · ${escapeHtml(p.document_type)}${p.difficulty ? ` · ${escapeHtml(p.difficulty)}` : ''}</div><h2>${titleHtml}</h2><p>${escapeHtml(authorLine)}</p><p>${escapeHtml(window.LabUI?.paperSummary?.(p) || p.summary || '')}</p><div>${tags}</div>${linkButtons(p)}${learningBlock}${protocolBlock}${evidence ? `<h3>论文要点</h3><ul>${evidence}</ul>` : ''}${relations ? `<h3>知识关系</h3>${relations}` : ''}${methodBlock}<p class="paper-meta">${escapeHtml(verification)}${p.wos_uid ? ' · WOS 记录已核验' : ''}${localStatus ? ` · ${escapeHtml(localStatus)}` : ''}</p>`;
+      document.querySelector('#modal').classList.add('open');
+    }
+    let askGeneration = 0;
+    function staticExtensionHtml(extension) {
+      if (!extension) return '';
+      const cards = Array.isArray(extension.cards) ? extension.cards : [];
+      const cardHtml = cards.map(card => {
+        const primary = card.primary || {};
+        const related = Array.isArray(card.related) ? card.related : [];
+        const links = (primary.source_urls || []).filter(url => { try { return new URL(url).protocol === 'https:'; } catch (_) { return false; } }).map(url => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">来源</a>`).join(' · ');
+        return `<article class="e-card static-extension-card"><span class="year">目录导读</span><h4>${escapeHtml(card.title || card.paper_id || '')}</h4>${card.title_zh ? `<p>${escapeHtml(card.title_zh)}</p>` : ''}<p><strong>${escapeHtml(primary.question || primary.intent || '相关知识')}</strong></p><p>${escapeHtml(primary.answer || '暂无静态摘要。')}</p>${links ? `<p>${links}</p>` : ''}${related.length ? `<details><summary>相关知识（${related.length}）</summary>${related.map(item => `<p><strong>${escapeHtml(item.question || item.intent || '')}</strong>：${escapeHtml(item.answer || '')}</p>`).join('')}</details>` : ''}</article>`;
+      }).join('');
+      return cardHtml ? `<section class="static-extension" aria-labelledby="staticExtensionTitle"><h3 id="staticExtensionTitle">${escapeHtml(extension.label || '静态知识延伸')}</h3>${cardHtml}</section>` : '';
+    }
+    function researchKnowledgeHtml(result) {
+      if (!Array.isArray(result?.cards) || !result.cards.length) return '';
+      const labels = {foundation:'基础知识', workflow:'计算流程', faq:'常见问题'};
+      const cards = result.cards.map(card => {
+        const refs = (card.sources || []).map(source => {
+          const paper = state.papers.find(p => p.id === source.paper_id && p.doi === source.doi);
+          if (!paper) return '';
+          const title = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(paper) : escapeHtml(paper.title);
+          return `<li><a href="?paper=${encodeURIComponent(paper.id)}" target="_blank" rel="noopener noreferrer">${title}</a> · <a href="https://doi.org/${encodeURIComponent(paper.doi)}" target="_blank" rel="noopener noreferrer">DOI</a><small>${escapeHtml(source.locator)} · ${escapeHtml(source.note)}</small></li>`;
+        }).join('');
+        const docs = (card.documentation || []).filter(doc => {try {return new URL(doc.url).protocol === 'https:';} catch (_) {return false;}}).map(doc => `<li><a href="${escapeHtml(doc.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(doc.label)}</a> · ${escapeHtml(doc.locator)}</li>`).join('');
+        return `<article class="knowledge-card"><span class="paper-tag">${labels[card.kind] || '专题问答'}</span><h3>${escapeHtml(card.question)}</h3><p>${escapeHtml(card.answer)}</p><details open><summary>操作步骤与验收</summary><ol>${card.steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol><h4>检查什么</h4><ul>${card.checks.map(check => `<li>${escapeHtml(check)}</li>`).join('')}</ul></details><p class="notice">适用边界：${escapeHtml(card.boundary)}</p><details><summary>对应论文与官方文档</summary><ul class="knowledge-sources">${refs}${docs}</ul></details></article>`;
+      }).join('');
+      return `<section class="research-knowledge" aria-labelledby="researchKnowledgeTitle"><h2 id="researchKnowledgeTitle">基础知识与计算问答</h2>${cards}</section>`;
+    }
+    function staticAnswerHtml(data, extension, knowledge) {
+      return `<details class="static-answer" open><summary>静态检索与知识延伸</summary><p class="answer-mode">规则检索 · 人工整理的知识与目录导读</p>${researchKnowledgeHtml(knowledge)}${markdown(data.answer_markdown || '')}<div class="evidence-grid">${(data.papers || []).map(paperCard).join('')}</div>${staticExtensionHtml(extension)}</details>`;
+    }
+    async function ask() {
+      const question = document.querySelector('#question').value.trim(); if (!question) return;
+      const btn = document.querySelector('#ask'); if (btn.disabled) return;
+      const generation = ++askGeneration;
+      btn.disabled = true; btn.textContent = '检索中…';
+      const target = document.querySelector('#answer'); target.className = 'result'; target.innerHTML = '<p>正在组织证据和计算检查项…</p>';
+      let extension = null;
+      let deterministic = null;
+      let knowledge = null;
+      try {
+        deterministic = window.BatteryBrowserAgent.answer(question, state.papers, state.searchConfig);
+        try {
+          knowledge = window.BatteryResearchKnowledge?.lookup(question, state.papers, state.researchKnowledge, {limit:3}) || null;
+        } catch (_) { knowledge = null; }
+        try {
+          extension = typeof window.BatteryStaticQA?.lookup === 'function'
+            ? window.BatteryStaticQA.lookup(question, deterministic.papers || [], state.staticQa, {limit: 3}) : null;
+        } catch (_) { extension = null; }
+        let data;
+        let apiPrimary = false;
+        try {
+          const endpoint = document.querySelector('#toolAgent').checked ? '/api/agent' : '/api/chat';
+          const response = await apiFetch(endpoint, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({question})});
+          const payload = await response.json();
+          if (!payload || typeof payload !== 'object' || typeof payload.answer_markdown !== 'string') throw new Error('服务返回的回答格式无效');
+          data = payload; apiPrimary = true;
+        } catch (error) {
+          data = deterministic;
+          data.agent = {...(data.agent || {}), notice: hasBackend() ? '本地服务未响应，显示规则检索结果。' : '规则检索 · 人工整理的知识与目录导读'};
+        }
+        if (generation !== askGeneration) return;
+        const ragLabel = data.agent?.mode === 'tool_agent'
+          ? '工具 Agent 已完成受限检索、证据读取与引用校验。'
+          : data.rag?.used
+          ? `RAG 已启用 · ${data.rag.model || data.rag.provider || '外部模型'} · 引用校验通过`
+          : data.rag?.enabled
+            ? `RAG 已配置但本次回退到规则回答：${data.rag.reason || '未通过验证'}`
+            : '当前为可解释检索＋规则回答；配置本地/远程模型后启用证据约束 RAG。';
+        const trace = data.agent?.trace || [];
+        const traceHtml = trace.length ? `<details class="agent-trace"><summary>工具轨迹（${trace.length}步）</summary><ul>${trace.map(row => `<li>${escapeHtml(row.tool || row.model || 'step')}${row.error ? `：${escapeHtml(row.error)}` : ''}</li>`).join('')}</ul></details>` : '';
+        const sourceNotice = data.agent?.mode === 'tool_agent' || data.rag?.used ? ragLabel : '规则检索 · 人工整理的知识与目录导读';
+        const primaryHtml = `<p class="answer-mode">${escapeHtml(data.agent?.notice || sourceNotice)}</p>${markdown(data.answer_markdown || '')}${traceHtml}<div class="evidence-grid">${(data.papers || []).map(paperCard).join('')}</div>`;
+        target.innerHTML = apiPrimary ? `${primaryHtml}${staticAnswerHtml(deterministic, extension, knowledge)}` : `${researchKnowledgeHtml(knowledge)}${primaryHtml}${staticExtensionHtml(extension)}`;
+      } catch (error) { if (generation === askGeneration) target.innerHTML = `<div class="notice">${escapeHtml(error.message)}<br>已保留确定性静态结果，请重试或检查本地服务。</div>${deterministic ? staticAnswerHtml(deterministic, extension, knowledge) : ''}`; }
+      finally { if (generation === askGeneration) { btn.disabled = false; btn.textContent = '检索证据'; } }
+    }
+    function setServiceMessage(text, kind='') {
+      const target = document.querySelector('#serviceMessage');
+      target.textContent = text;
+      target.className = `service-message ${kind}`.trim();
+    }
+    function updateApiStat() {
+      const stat = document.querySelector('#apiStat');
+      stat.textContent = state.backendConnected ? '本地服务 · 已连接' : '本地服务 · 未连接';
+      stat.classList.toggle('connected', state.backendConnected);
+    }
+    function openUploadModal() {
+      document.querySelector('#apiBase').value = state.apiBase;
+      document.querySelector('#apiToken').value = state.apiToken;
+      document.querySelector('#uploadModal').classList.add('open');
+    }
+    function closeUploadModal() {
+      document.querySelector('#uploadModal').classList.remove('open');
+      document.querySelector('#apiToken').value = '';
+    }
+    function disconnectApi() {
+      state.apiToken = ''; state.apiBase = ''; state.backendConnected = false;
+      state.connectionDisabled = true; state.zotero = {}; state.literature = {}; state.methods = {};
+      connectionGeneration += 1; askGeneration += 1;
+      document.querySelector('#apiToken').value = ''; document.querySelector('#apiBase').value = '';
+      try { localStorage.removeItem('battery-agent-api-base'); } catch (_) {}
+      try { sessionStorage.removeItem('battery-agent-api-token'); } catch (_) {}
+      setServiceMessage('本页已断开，使用静态检索。');
+      updateApiStat();
+      const btn = document.querySelector('#ask'); btn.disabled = false; btn.textContent = '检索证据';
+      document.querySelector('#detail').innerHTML = ''; document.querySelector('#modal').classList.remove('open');
+      const answer = document.querySelector('#answer'); answer.className = 'empty'; answer.textContent = '连接已断开，可继续检索。';
+      document.querySelector('#ragStat').textContent = 'RAG · 未连接';
+      document.querySelector('#zoteroStat').textContent = 'Zotero · 未连接';
+    }
+    async function testConnection() {
+      setServiceMessage('正在连接…');
+      try {
+        saveConnection();
+        const response = await apiFetch('/api/papers', {cache:'no-store'});
+        const payload = await response.json();
+        state.backendConnected = true;
+        setServiceMessage(`连接成功：当前 ${payload.papers.length} 篇论文`, 'good');
+        updateApiStat();
+        await loadData();
+      } catch (error) {
+        state.backendConnected = false;
+        setServiceMessage(error.message, 'bad');
+        updateApiStat();
+      }
+    }
+    async function uploadPaper(event) {
+      event.preventDefault();
+      try { saveConnection(); } catch (error) { setServiceMessage(error.message, 'bad'); return; }
+      const file = document.querySelector('#paperFile').files[0];
+      const resultBox = document.querySelector('#uploadResult');
+      if (!file) { resultBox.className = 'upload-result show'; resultBox.textContent = '请选择 PDF 文件。'; return; }
+      if (!localMode && !state.apiBase) { resultBox.className = 'upload-result show'; resultBox.textContent = '请先填写 HTTPS 服务地址并测试连接。'; return; }
+      const button = document.querySelector('#submitUpload');
+      button.disabled = true; button.textContent = '正在校验与建立索引…';
+      resultBox.className = 'upload-result show'; resultBox.textContent = '上传完成前请保持本地服务运行。';
+      try {
+        const form = new FormData(event.currentTarget);
+        const response = await apiFetch('/api/upload', {method:'POST', body:form});
+        const payload = await response.json();
+        const keywords = (payload.keywords || []).map(row => `<span class="tag">${escapeHtml(row.term)}</span>`).join('');
+        const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(payload.paper) : `<span class="paper-title-en">${escapeHtml(payload.paper.title)}</span>`;
+        resultBox.innerHTML = `<strong>${payload.created ? '已新增论文' : '已补充现有条目'}</strong><br>${titleHtml}<br>${payload.paper.doi ? `DOI：${escapeHtml(payload.paper.doi)}<br>` : ''}PDF：${payload.pdf.pages} 页，已加入全文索引。<div style="margin-top:8px">${keywords || '未提取到关键词'}</div>`;
+        state.backendConnected = true;
+        updateApiStat();
+        await loadData();
+      } catch (error) {
+        resultBox.textContent = `上传失败：${error.message}`;
+      } finally {
+        button.disabled = false; button.textContent = '上传、校验并加入库';
+      }
+    }
+    document.querySelector('#ask').onclick = ask;
+    document.querySelector('#question').addEventListener('keydown', event => {
+      if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+        event.preventDefault(); return ask();
+      }
+    });
+    document.querySelectorAll('.chip').forEach(chip => chip.onclick = () => { document.querySelector('#question').value = chip.textContent; ask(); });
+    document.querySelector('#filter').oninput = e => renderList(e.target.value);
+    document.querySelectorAll('.filter-chip').forEach(button => button.onclick = () => {
+      state.activeTag = state.activeTag === button.dataset.tag ? '' : button.dataset.tag;
+      document.querySelectorAll('.filter-chip').forEach(item => item.classList.toggle('active', item.dataset.tag === state.activeTag));
+      renderList(document.querySelector('#filter').value);
+    });
+    document.querySelector('#close').onclick = () => document.querySelector('#modal').classList.remove('open');
+    document.querySelector('#modal').onclick = e => { if (e.target.id === 'modal') e.currentTarget.classList.remove('open'); };
+    document.querySelector('#openUpload').onclick = openUploadModal;
+    document.querySelector('#closeUpload').onclick = closeUploadModal;
+    document.querySelector('#uploadModal').onclick = e => { if (e.target.id === 'uploadModal') closeUploadModal(); };
+    document.querySelector('#uploadModal').addEventListener('keydown', e => { if (e.key === 'Escape') closeUploadModal(); });
+    document.querySelector('#testApi').onclick = testConnection;
+    document.querySelector('#disconnectApi').onclick = disconnectApi;
+    document.querySelector('#uploadForm').onsubmit = uploadPaper;
+    async function loadData() {
+      fetch('./data/research_knowledge.json', {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(data => { state.researchKnowledge = data; }).catch(() => {state.researchKnowledge = null;});
+      // Optional metadata guidance must not delay the core catalog/search UI.
+      fetch('./data/static_qa.json', {cache:'no-store'}).then(async staticResponse => {
+        if (!staticResponse.ok) throw new Error(`static QA HTTP ${staticResponse.status}`);
+        const staticPayload = await staticResponse.json();
+        state.staticQa = staticPayload && typeof staticPayload === 'object' ? staticPayload : null;
+      }).catch(() => { state.staticQa = null; });
+      try {
+        const api = await apiFetch('/api/papers', {cache:'no-store'});
+        state.papers = (await api.json()).papers;
+        state.backendConnected = true;
+      } catch (_) {
+        state.papers = await fetch('./data/papers.json').then(r => r.json());
+        state.backendConnected = false;
+      }
+      try {
+        const tagPayload = state.backendConnected
+          ? await apiFetch('/api/paper-tags', {cache:'no-store'}).then(r => r.json())
+          : await fetch('./data/paper_tags.json', {cache:'no-store'}).then(r => r.json());
+        state.paperTags = tagPayload.papers || {};
+      } catch (_) { state.paperTags = {}; }
+      state.papers = state.papers.map(p => ({...p, ...(state.paperTags[p.id] || {}), title_zh: window.LabUI?.titleZh ? window.LabUI.titleZh(p) : ''}));
+      try {
+        const routeResponse = await fetch('./data/learning_route.json', {cache:'no-store'});
+        if (!routeResponse.ok) throw new Error(`route HTTP ${routeResponse.status}`);
+        const routePayload = await routeResponse.json();
+        state.learningRoute = routePayload && typeof routePayload === 'object' ? routePayload : null;
+        if (state.learningRoute?.papers) {
+          const stages = Object.fromEntries((state.learningRoute.stages || []).map(item => [item.id, item]));
+          const frontiers = Object.fromEntries((state.learningRoute.frontiers || []).map(item => [item.id, item]));
+          state.papers = state.papers.map(p => {
+            const route = state.learningRoute.papers[p.id];
+            if (!route) return p;
+            return {...p, learning_route_stage: stages[route.stage]?.label || route.stage, learning_route_frontiers: (route.frontiers || []).map(id => frontiers[id]?.label || id).join(' ')};
+          });
+        }
+      } catch (_) { state.learningRoute = null; }
+      try {
+        state.searchConfig = state.backendConnected
+          ? await apiFetch('/api/search-config', {cache:'no-store'}).then(r => r.json())
+          : await fetch('./data/search_config.json', {cache:'no-store'}).then(r => r.json());
+      } catch (_) { state.searchConfig = {}; }
+      try {
+        const health = state.backendConnected ? await apiFetch('/api/health', {cache:'no-store'}).then(r => r.json()) : null;
+        const rag = health?.rag || {};
+        const ragStat = document.querySelector('#ragStat');
+        ragStat.textContent = rag.enabled ? `RAG · ${rag.model || '已连接'}` : 'RAG · 未配置';
+        ragStat.classList.toggle('connected', Boolean(rag.enabled));
+      } catch (_) { document.querySelector('#ragStat').textContent = 'RAG · 未配置'; }
+      try {
+        const zoteroPayload = localMode && state.backendConnected
+          ? await apiFetch('/api/zotero-links', {cache:'no-store'}).then(r => r.json())
+          : await fetch('./data/zotero-links.json', {cache:'no-store'}).then(r => r.ok ? r.json() : ({}));
+        state.zotero = zoteroPayload.items || zoteroPayload;
+      } catch (_) { state.zotero = {}; }
+      try {
+        const methodPayload = state.backendConnected
+          ? await apiFetch('/api/methods', {cache:'no-store'}).then(r => r.json())
+          : await fetch('./data/method_evidence.auto.json', {cache:'no-store'}).then(r => r.ok ? r.json() : ({}));
+        state.methods = methodPayload.papers || {};
+      } catch (_) { state.methods = {}; }
+      if (state.backendConnected) {
+        try {
+          const literaturePayload = await apiFetch('/api/literature', {cache:'no-store'}).then(r => r.json());
+          state.literature = literaturePayload.papers || {};
+        } catch (_) { state.literature = {}; }
+      }
+      document.querySelector('#paperCount').textContent = state.papers.length;
+      const starterCount = state.papers.filter(p => p.collection === 'starter').length;
+      document.querySelector('#starterStat').textContent = `方法路线 · ${starterCount} 篇`;
+      document.querySelectorAll('.filter-chip').forEach(button => {
+        const count = state.papers.filter(p => (p.display_tags || []).includes(button.dataset.tag)).length;
+        button.textContent = `${button.dataset.tag} · ${count}`;
+        button.disabled = count === 0;
+        button.title = count ? `筛选 ${button.dataset.tag}` : `当前库没有严格满足 ${button.dataset.tag} 定义的论文`;
+      });
+      const zoteroRows = Object.values(state.zotero);
+      document.querySelector('#zoteroStat').textContent = !localMode
+        ? 'Zotero 深链 · 仅本机版显示'
+        : `Zotero ${zoteroRows.length} · PDF ${zoteroRows.filter(row => row.attachment_key).length}`;
+      updateApiStat();
+      renderList();
+      // Optional component navigation never blocks search, detail links or APIs.
+      refreshBatteryExplorer();
+      const requestedPaper = new URLSearchParams(location.search).get('paper');
+      if (requestedPaper) {
+        if (state.papers.some(p => p.id === requestedPaper)) showPaper(requestedPaper);
+        else setServiceMessage(`未找到论文：${requestedPaper}`, 'bad');
+      }
+      // Optional translations must never block the canonical English catalog.
+      window.LabUI?.ready?.then(() => {
+        if (!window.LabUI?.titleZh || state.papers.every(p => p.title_zh === window.LabUI.titleZh(p))) return;
+        state.papers = state.papers.map(p => ({...p, title_zh: window.LabUI.titleZh(p)}));
+        renderList(document.querySelector('#filter').value);
+        if (state.openPaperId && document.querySelector('#modal').classList.contains('open')) showPaper(state.openPaperId);
+      }).catch(() => {});
+    }
+    loadData();
+  </script>
+<script src="./home.js"></script>
+<footer class="site-footer" data-site-footer><span>Battery Evidence Lab</span><a href="./guides/PROJECT_STATUS.md">项目记录</a><a href="https://github.com/rua-creeper-233/battery-evidence-lab" target="_blank" rel="noopener noreferrer">GitHub</a></footer><script src="./nav-overflow.js" defer></script></body>
+</html>

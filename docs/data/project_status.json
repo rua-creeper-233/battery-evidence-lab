@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-21",
+  "papers": 211,
+  "recent_2023_onward": 108,
+  "publication_years": {
+    "1964": 1,
+    "1965": 1,
+    "1967": 1,
+    "1976": 1,
+    "1984": 1,
+    "1985": 1,
+    "1989": 2,
+    "1993": 1,
+    "1994": 2,
+    "1996": 2,
+    "1997": 2,
+    "1998": 2,
+    "1999": 1,
+    "2000": 2,
+    "2001": 1,
+    "2003": 1,
+    "2004": 1,
+    "2006": 2,
+    "2007": 1,
+    "2010": 4,
+    "2011": 2,
+    "2012": 2,
+    "2013": 4,
+    "2014": 2,
+    "2015": 3,
+    "2016": 6,
+    "2017": 6,
+    "2018": 8,
+    "2019": 7,
+    "2020": 12,
+    "2021": 9,
+    "2022": 12,
+    "2023": 12,
+    "2024": 29,
+    "2025": 47,
+    "2026": 20
+  },
+  "publication_types": {
+    "Article": 58,
+    "Commentary": 2,
+    "Letter": 1,
+    "Mini Review": 1,
+    "Paper": 95,
+    "Perspective": 5,
+    "Protocol": 1,
+    "Review": 27,
+    "Review Article": 2,
+    "Software Article": 11,
+    "Theoretical Article": 5,
+    "Viewpoint": 1,
+    "研究论文": 2
+  },
+  "wos_records": 16,
+  "tags": {
+    "DFT": 101,
+    "MD": 75,
+    "MS": 8,
+    "VASP": 32,
+    "方法论文": 69,
+    "综述": 30,
+    "观点": 5,
+    "进展论文": 142
+  },
+  "datasets": {
+    "train": {
+      "rows": 793,
+      "exists": true,
+      "sha256": "5ec187c0ca65e447d301c13b7529c56381794cd066df32efff3cd90c2bbde6ab",
+      "categories": {
+        "comparison": 69,
+        "evidence_insufficient": 140,
+        "factual": 211,
+        "limitation": 140,
+        "source_access": 93,
+        "workflow": 140
+      }
+    },
+    "validation": {
+      "rows": 78,
+      "exists": true,
+      "sha256": "d7efcdaf0f96965c82ae064df05bbef9319d7ca7aa80955ef8545ff3d0b637ac",
+      "categories": {
+        "comparison": 7,
+        "evidence_insufficient": 14,
+        "factual": 19,
+        "limitation": 14,
+        "source_access": 10,
+        "workflow": 14
+      }
+    },
+    "test": {
+      "rows": 127,
+      "exists": true,
+      "sha256": "4df02e19bad31c4abc51923b845037a4428a3c7cab641eb7d18182bad01018de",
+      "categories": {
+        "comparison": 11,
+        "evidence_insufficient": 22,
+        "factual": 32,
+        "limitation": 22,
+        "source_access": 18,
+        "workflow": 22
+      }
+    }
+  },
+  "dataset_rows": 998,
+  "static_qa": {
+    "catalog_papers": 211,
+    "rows": 844,
+    "evidence_level": "curated_metadata"
+  },
+  "research_knowledge": {
+    "cards": 40,
+    "by_kind": {
+      "foundation": 11,
+      "faq": 17,
+      "workflow": 12
+    },
+    "reference_papers": 17
+  },
+  "training_smoke": null,
+  "model_status": "Prepared QA datasets retained; no model retraining performed for this release.",
+  "scope": "Counts refer to the curated catalog, educational metadata, and dataset rows; local full-text holdings and indexing remain private."
+}

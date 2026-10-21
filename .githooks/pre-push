@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+set -eu
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root"
+python_bin=${PUBLICATION_PYTHON:-python}
+"$python_bin" publication_safety.py --public-bundle
+"$python_bin" publication_safety.py --staged
+"$python_bin" history_safety.py --no-baseline --full-inventory
+
+# Git supplies one ref update per line.  Audit each pushed local snapshot,
+# including dirty alternate branches/tags that are not the current checkout.
+while read -r local_ref local_oid remote_ref remote_oid; do
+    case "$local_oid" in
+        ""|0000000000000000000000000000000000000000|000000000000000000000000000000000000000000000000000000000000000000000000)
+            continue
+            ;;
+    esac
+    "$python_bin" publication_safety.py --revision "$local_oid"
+    "$python_bin" history_safety.py --no-baseline --full-inventory --candidate "$local_oid"
+done

@@ -1,0 +1,43 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+
+const code = fs.readFileSync(new URL('../static/browser_agent.js', import.meta.url), 'utf8');
+const papers = JSON.parse(fs.readFileSync(new URL('../data/papers.json', import.meta.url), 'utf8'));
+const tags = JSON.parse(fs.readFileSync(new URL('../data/paper_tags.json', import.meta.url), 'utf8')).papers;
+const config = JSON.parse(fs.readFileSync(new URL('../data/search_config.json', import.meta.url), 'utf8'));
+const titles = JSON.parse(fs.readFileSync(new URL('../data/paper_titles_zh.json', import.meta.url), 'utf8')).papers;
+const merged = papers.map(paper => ({display_tags: [], ...paper, ...(tags[paper.id] || {}), title_zh: titles[paper.id]?.title_zh || ''}));
+const context = vm.createContext({window:{}});
+vm.runInContext(code, context);
+const agent = context.window.BatteryBrowserAgent;
+
+const vasp = agent.searchDetailed('tag:VASP 入门', merged, 30, config);
+assert.ok(vasp.results.length > 0);
+assert.ok(vasp.results.every(paper => paper.display_tags.includes('VASP')));
+assert.match(vasp.results[0].retrieval.reason, /VASP/);
+assert.equal(agent.search('zzzz-not-a-real-material-token', merged, 5, config).length, 0);
+assert.deepEqual(Array.from(agent.search('DOI: https://doi.org/10.1038/S41524-020-00406-3.', merged, 5, config), p => p.id), ['dunn2020_matbench']);
+assert.ok(agent.search('固态聚合物电解质', merged, 5, config).some(p => p.id === 'tan2026_pemd'));
+assert.equal(agent.search('10.1038/s41524-020-00406-30', merged, 5, config).length, 0);
+assert.match(agent.answer('10.3390/ma17081810', merged, config).answer_markdown, /元数据入口（待核验）/);
+for (const query of ['文献', '开路电压', '聚合物电解质']) {
+  assert.ok(agent.searchDetailed(query, merged, 5, config).query.expanded_terms.length > 0);
+}
+for (const query of ['AI for Science', 'ai FOR science']) {
+  assert.ok(agent.searchDetailed(query, merged, 5, config).query.expanded_terms.includes('ai4science'));
+}
+assert.equal(agent.taskType('VASP 入门如何设置 INCAR？'), 'dft_setup');
+assert.equal(merged.filter(paper => paper.display_tags.includes('MS')).length, 8);
+assert.deepEqual(Array.from(agent.search('DOI:10.1039/d2dt01769e', merged, 5, config), p => p.id), ['tang2022_2d_anode_screening']);
+assert.ok(agent.search('paddlewheel', merged, 5, config).some(p => p.id === 'smith2020_paddlewheel_ms'));
+assert.ok(agent.search('NASICON', merged, 5, config).some(p => p.id === 'wang2023_nasicon_design'));
+const ms = agent.searchDetailed('tag:MS 电解液', merged, 20, config);
+assert.ok(agent.search('GDyNets', merged, 5, config).some(p => p.id === 'xie2019_gdynet'));
+assert.ok(agent.search('短时MD', merged, 5, config).some(p => p.id === 'xie2022_polymernet'));
+for (const id of ['xie2019_gdynet','xie2022_polymernet']) {
+  assert.ok(!merged.find(p => p.id === id).display_tags.includes('MS'));
+}
+assert.ok(ms.results.length > 0);
+assert.ok(ms.results.every(paper => paper.display_tags.includes('MS')));
+console.log('Browser retrieval: weighted search, filters, reasons, honest no-hit PASS');

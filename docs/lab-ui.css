@@ -1,0 +1,84 @@
+/* Shared quiet visual baseline. Pages keep their existing structure/content. */
+:root {
+  --paper: #fafbf8;
+  --ink: #203029;
+  --muted: #5d6a63;
+  --card: #ffffff;
+  --line: #dbe3dc;
+  --green: #2e6b50;
+  --forest: #123f35;
+  --mint: #edf5ef;
+  --accent: #b26a31;
+  --orange: var(--accent);
+  --blue: #245a8d;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 90px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; }
+a { color: var(--green); text-underline-offset: 3px; }
+button, input, select, textarea { font: inherit; }
+h1, h2, h3, h4 { font-family: inherit; }
+html body [hidden] { display: none; }
+.shell, .site-nav, .site-nav-links, .home-tabs { min-width: 0; }
+button, input, select, textarea, summary, a { outline-offset: 3px; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); }
+.shell { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.site-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 0 16px; border-bottom: 1px solid var(--line); }
+.brand { color: var(--ink); font: 700 12px/1.4 ui-monospace, monospace; text-decoration: none; white-space: nowrap; }
+.site-nav-links, .home-tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.site-nav-links.overflow-left, .home-tabs.overflow-left { box-shadow: inset 2px 0 var(--line); }
+.site-nav-links.overflow-right, .home-tabs.overflow-right { border-inline-end: 2px solid var(--line); }
+@supports (mask-image: linear-gradient(to right, #000, transparent)) {
+  .overflow-left:not(.overflow-right) { mask-image: linear-gradient(to right, transparent, #000 18px); }
+  .overflow-right:not(.overflow-left) { mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent); }
+  .overflow-left.overflow-right { mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent); }
+  .overflow-focus, .site-nav-links:focus-within, .home-tabs:focus-within { mask-image: none; }
+}
+.site-nav-links > .home-tabs { flex: 0 0 auto; width: auto; overflow: visible; margin: 0; }
+.site-nav-links a, .home-tabs a, .home-tabs button { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--muted); font-size: 13px; font-weight: 650; text-decoration: none; cursor: pointer; }
+.site-nav-links a:hover, .site-nav-links a[aria-current="page"], .home-tabs a:hover, .home-tabs a[aria-selected="true"], .home-tabs button:hover, .home-tabs button[aria-selected="true"] { background: var(--mint); color: var(--forest); }
+.site-nav-links a[aria-current="page"], .home-tabs a[aria-current="page"], .home-tabs button[aria-selected="true"] { border-color: var(--line); }
+header { align-items: flex-start; }
+header h1, .future-section h1 { font-size: clamp(28px, 4vw, 36px); }
+.panel, .card, .topic, .resource, .paper-card, .e-card, .future-section, .band, .code-section, .tutorials, .future-teaser, .modal-card, .roadmap, .roadmap-item { border-radius: 8px; box-shadow: none; }
+.future-section, .band { background: #f0f5f0; border-color: var(--line); color: var(--ink); }
+.future-section h1, .future-section h2, .band h2, .future-section .eyebrow { color: var(--green); }
+.future-lede, .band p, .future-card p, .step p { color: var(--muted); }
+.future-card, .step { border: 1px solid var(--line); border-radius: 7px; background: var(--card); }
+.future-card.featured { background: #f4f8f4; }
+.filter-chip, .chip, .stat, .future-meta span, .meta span { border-radius: 5px; }
+.future-meta span { color: var(--muted); border-color: var(--line); }
+.future-bottom { color: var(--muted); }
+.future-bottom a { color: var(--green); }
+.notice { background: #f3f7f3; border-left-color: var(--green); color: #52655b; }
+button { min-height: 44px; border-radius: 6px; }
+summary { min-height: 32px; }
+.stat { padding: 7px 9px; font-size: 12px; }
+.paper-title-en, .paper-title-zh { display: block; }
+.paper-title-zh { margin-top: 3px; color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.45; }
+.project-progress, .title-map-notice, .scope-note { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.project-progress { margin: 10px 0 0; }
+.title-map-notice { margin: 5px 0 0; }
+.service-details { max-width: 330px; color: var(--muted); font-size: 12px; text-align: right; }
+.service-details summary, .scope-note summary { cursor: pointer; }
+.service-details .stats { margin-top: 10px; gap: 6px; }
+.workspace .empty { min-height: 240px; }
+.workspace .empty .mark { transform: none; width: 52px; height: 52px; border-radius: 8px; }
+.examples, .paper-tags { gap: 6px; }
+.agent-trace { max-height: 120px; overflow: auto; }
+.scope-note { margin-top: 14px; }
+.route-shortcuts { margin: 14px 0 0; padding: 12px 14px; border: 1px solid var(--line); background: var(--card); border-radius: 8px; font-size: 12px; }
+.route-shortcuts summary { cursor: pointer; color: var(--green); }
+.route-shortcuts p { color: var(--muted); line-height: 1.6; }
+.route-shortcuts .links { display: flex; flex-wrap: wrap; gap: 9px 16px; }
+.site-footer { display: flex; flex-wrap: wrap; gap: 12px 24px; max-width: 1200px; margin: 28px auto 0; padding: 20px 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.answer-mode { color: var(--muted); font-size: 13px; }
+.page-sources { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
+.page-sources a { color: var(--green); }
+@media (max-width: 1000px) { .site-nav { align-items: flex-start; flex-direction: column; } .site-nav-links { max-width: 100%; } }
+@media (max-width: 700px) { .shell { padding: 16px; } }
+@media (max-width: 620px) {
+  .site-nav-links, .home-tabs { width: 100%; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: thin; }
+  .site-nav-links a, .home-tabs a, .home-tabs button { flex: 0 0 auto; white-space: nowrap; }
+}
