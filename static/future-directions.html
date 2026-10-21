@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>未来方向 · Battery Evidence Lab</title>
+  <style>
+
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Inter,"Noto Sans SC","Microsoft YaHei",sans-serif; }
+
+    a { color:var(--green); }
+    .shell { position:relative; max-width:1200px; margin:0 auto; padding:34px; }
+    .site-nav { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:0 4px 16px; border-bottom:1px solid var(--line); }
+    .brand { color:var(--ink); font:700 12px/1 ui-monospace,monospace; text-decoration:none; }
+    .site-nav-links { display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end; }
+    .site-nav-links a { padding:8px 12px; border-radius:999px; color:var(--muted); font-size:12px; text-decoration:none; }
+    .site-nav-links a:hover,.site-nav-links a:focus-visible { background:#d9eee2; color:var(--green); outline:none; }
+    .future-section { margin-top:28px; padding:34px; background:#18382e; color:#edf7ef; border:1px solid #2c5c49; border-radius:20px; box-shadow:0 22px 58px rgba(28,53,43,.16); }
+    .eyebrow { color:#e6ad70; font:700 12px/1.2 ui-monospace,monospace; letter-spacing:.13em; text-transform:uppercase; }
+    h1 { max-width:800px; margin:12px 0 12px; color:#fff; font:650 clamp(31px,4vw,54px)/1.1 Georgia,"Noto Serif SC",serif; letter-spacing:-.035em; }
+    .future-lede { max-width:880px; margin:0; color:#c7ded0; line-height:1.8; }
+    .future-meta { display:flex; gap:12px; flex-wrap:wrap; margin:20px 0 24px; }
+    .future-meta span { padding:7px 12px; border:1px solid #527866; border-radius:999px; color:#d3e8d8; font-size:12px; }
+    .future-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
+    .future-card { display:flex; flex-direction:column; min-height:220px; padding:20px; background:#f7fbf4; color:var(--ink); border-radius:15px; }
+    .future-card.featured { grid-column:1 / -1; background:#e5f1e5; }
+    .future-index { color:var(--orange); font:700 12px ui-monospace,monospace; letter-spacing:.08em; }
+    .future-card h2 { margin:7px 0 8px; font:650 20px/1.3 Georgia,"Noto Serif SC",serif; }
+    .future-card p { margin:0; color:#526158; font-size:13px; line-height:1.7; }
+    .future-question { margin-top:13px; padding-top:12px; border-top:1px solid #cadbc9; color:#244f3d; font-size:12px; line-height:1.6; }
+    .future-question strong { color:var(--green); }
+    .future-links { display:flex; gap:6px; flex-wrap:wrap; margin-top:auto; padding-top:16px; }
+    .future-links a { display:inline-flex; padding:6px 8px; border-radius:7px; background:#d9e9da; color:#1b5b41; font-size:12px; font-weight:750; text-decoration:none; }
+    .future-links a:hover { background:#c5dec9; }
+    .future-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:21px; color:#b8d1c0; font-size:12px; line-height:1.6; }
+    .future-bottom a { color:#f0c487; }
+    .roadmap { margin-top:24px; padding:24px; background:#f7fbf4; color:var(--ink); border:1px solid #cadbc9; border-radius:15px; }
+    .roadmap h2 { margin:0 0 8px; font:650 25px/1.3 Georgia,"Noto Serif SC",serif; }
+    .roadmap-lede { margin:0 0 16px; color:#526158; font-size:13px; line-height:1.75; }
+    .roadmap-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .roadmap-item { padding:14px; background:#e5f1e5; border-radius:12px; }
+    .roadmap-item h3 { margin:0 0 5px; color:#244f3d; font-size:14px; }
+    .roadmap-item p { margin:0; color:#526158; font-size:12px; line-height:1.65; }
+    .roadmap-item a { font-weight:650; }
+    .roadmap-note { margin:15px 0 0; padding-top:13px; border-top:1px solid #cadbc9; color:#526158; font-size:12px; line-height:1.7; }
+    @media(max-width:720px) { .shell{padding:18px}.site-nav{align-items:flex-start;flex-direction:column}.site-nav-links{justify-content:flex-start}.future-section{padding:22px 18px}.future-grid{grid-template-columns:1fr}.future-card.featured{grid-column:auto}.roadmap{padding:18px}.roadmap-grid{grid-template-columns:1fr}.future-bottom{align-items:flex-start;flex-direction:column} }
+  </style>
+  <style data-lab-ui-inline>/* Shared quiet visual baseline. Pages keep their existing structure/content. */
+:root {
+  --paper: #fafbf8;
+  --ink: #203029;
+  --muted: #5d6a63;
+  --card: #ffffff;
+  --line: #dbe3dc;
+  --green: #2e6b50;
+  --forest: #123f35;
+  --mint: #edf5ef;
+  --accent: #b26a31;
+  --orange: var(--accent);
+  --blue: #245a8d;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 90px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; }
+a { color: var(--green); text-underline-offset: 3px; }
+button, input, select, textarea { font: inherit; }
+h1, h2, h3, h4 { font-family: inherit; }
+html body [hidden] { display: none; }
+.shell, .site-nav, .site-nav-links, .home-tabs { min-width: 0; }
+button, input, select, textarea, summary, a { outline-offset: 3px; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); }
+.shell { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.site-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 0 16px; border-bottom: 1px solid var(--line); }
+.brand { color: var(--ink); font: 700 12px/1.4 ui-monospace, monospace; text-decoration: none; white-space: nowrap; }
+.site-nav-links, .home-tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.site-nav-links.overflow-left, .home-tabs.overflow-left { box-shadow: inset 2px 0 var(--line); }
+.site-nav-links.overflow-right, .home-tabs.overflow-right { border-inline-end: 2px solid var(--line); }
+@supports (mask-image: linear-gradient(to right, #000, transparent)) {
+  .overflow-left:not(.overflow-right) { mask-image: linear-gradient(to right, transparent, #000 18px); }
+  .overflow-right:not(.overflow-left) { mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent); }
+  .overflow-left.overflow-right { mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent); }
+  .overflow-focus, .site-nav-links:focus-within, .home-tabs:focus-within { mask-image: none; }
+}
+.site-nav-links > .home-tabs { flex: 0 0 auto; width: auto; overflow: visible; margin: 0; }
+.site-nav-links a, .home-tabs a, .home-tabs button { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--muted); font-size: 13px; font-weight: 650; text-decoration: none; cursor: pointer; }
+.site-nav-links a:hover, .site-nav-links a[aria-current="page"], .home-tabs a:hover, .home-tabs a[aria-selected="true"], .home-tabs button:hover, .home-tabs button[aria-selected="true"] { background: var(--mint); color: var(--forest); }
+.site-nav-links a[aria-current="page"], .home-tabs a[aria-current="page"], .home-tabs button[aria-selected="true"] { border-color: var(--line); }
+header { align-items: flex-start; }
+header h1, .future-section h1 { font-size: clamp(28px, 4vw, 36px); }
+.panel, .card, .topic, .resource, .paper-card, .e-card, .future-section, .band, .code-section, .tutorials, .future-teaser, .modal-card, .roadmap, .roadmap-item { border-radius: 8px; box-shadow: none; }
+.future-section, .band { background: #f0f5f0; border-color: var(--line); color: var(--ink); }
+.future-section h1, .future-section h2, .band h2, .future-section .eyebrow { color: var(--green); }
+.future-lede, .band p, .future-card p, .step p { color: var(--muted); }
+.future-card, .step { border: 1px solid var(--line); border-radius: 7px; background: var(--card); }
+.future-card.featured { background: #f4f8f4; }
+.filter-chip, .chip, .stat, .future-meta span, .meta span { border-radius: 5px; }
+.future-meta span { color: var(--muted); border-color: var(--line); }
+.future-bottom { color: var(--muted); }
+.future-bottom a { color: var(--green); }
+.notice { background: #f3f7f3; border-left-color: var(--green); color: #52655b; }
+button { min-height: 44px; border-radius: 6px; }
+summary { min-height: 32px; }
+.stat { padding: 7px 9px; font-size: 12px; }
+.paper-title-en, .paper-title-zh { display: block; }
+.paper-title-zh { margin-top: 3px; color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.45; }
+.project-progress, .title-map-notice, .scope-note { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.project-progress { margin: 10px 0 0; }
+.title-map-notice { margin: 5px 0 0; }
+.service-details { max-width: 330px; color: var(--muted); font-size: 12px; text-align: right; }
+.service-details summary, .scope-note summary { cursor: pointer; }
+.service-details .stats { margin-top: 10px; gap: 6px; }
+.workspace .empty { min-height: 240px; }
+.workspace .empty .mark { transform: none; width: 52px; height: 52px; border-radius: 8px; }
+.examples, .paper-tags { gap: 6px; }
+.agent-trace { max-height: 120px; overflow: auto; }
+.scope-note { margin-top: 14px; }
+.route-shortcuts { margin: 14px 0 0; padding: 12px 14px; border: 1px solid var(--line); background: var(--card); border-radius: 8px; font-size: 12px; }
+.route-shortcuts summary { cursor: pointer; color: var(--green); }
+.route-shortcuts p { color: var(--muted); line-height: 1.6; }
+.route-shortcuts .links { display: flex; flex-wrap: wrap; gap: 9px 16px; }
+.site-footer { display: flex; flex-wrap: wrap; gap: 12px 24px; max-width: 1200px; margin: 28px auto 0; padding: 20px 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.answer-mode { color: var(--muted); font-size: 13px; }
+.page-sources { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
+.page-sources a { color: var(--green); }
+@media (max-width: 1000px) { .site-nav { align-items: flex-start; flex-direction: column; } .site-nav-links { max-width: 100%; } }
+@media (max-width: 700px) { .shell { padding: 16px; } }
+@media (max-width: 620px) {
+  .site-nav-links, .home-tabs { width: 100%; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: thin; }
+  .site-nav-links a, .home-tabs a, .home-tabs button { flex: 0 0 auto; white-space: nowrap; }
+}
+</style>
+<script src="./lab-ui.js"></script>
+<meta name="description" content="从电池材料计算综述中选择研究问题，查看对应论文、复现任务与验证方法。"><meta property="og:title" content="未来方向 · Battery Evidence Lab"><meta property="og:description" content="从电池材料计算综述中选择研究问题，查看对应论文、复现任务与验证方法。"><meta property="og:type" content="website"><meta property="og:url" content="https://rua-creeper-233.github.io/battery-evidence-lab/future-directions.html"><meta property="og:image" content="https://rua-creeper-233.github.io/battery-evidence-lab/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://rua-creeper-233.github.io/battery-evidence-lab/future-directions.html"><link rel="icon" type="image/svg+xml" href="./favicon.svg"></head>
+<body>
+
+  <div class="shell">
+    <nav class="site-nav" aria-label="页面导航"><a class="brand" href="./index.html#research-question">Battery Evidence Lab</a><div class="site-nav-links"><a href="./index.html#research-question">证据问答</a><a href="./index.html#library">论文库</a><a href="./index.html#tutorials">教程</a><a href="./future-directions.html" aria-current="page">未来方向</a><a href="./ai-battery-applications.html">AI 应用</a><a href="./foundations.html">基础地图</a><a href="./learning-route.html">学习路线</a><a href="./domestic-papers.html">国内论文</a></div></nav>
+    <main class="future-section" aria-labelledby="futureTitle">
+      <div class="eyebrow">研究机会</div>
+      <h1 id="futureTitle">电池材料计算的下一组问题</h1>
+      <p class="future-lede">以下问题来自近年综述和展望的共同判断，每个都可以先做小规模验证。链接指向原始 DOI；“建议问题”和“验证路径”是本站的研究设计。</p>
+      <p class="project-progress" data-project-progress>211 篇论文 · 更新于 2026-10-21</p>
+      <details class="route-shortcuts"><summary>按当前 211 篇论文查阅 8 个前沿专题</summary><p>本页概括研究切口；更细的论文分组、基础要求与验证清单见学习路线。</p><div class="links"><a href="./learning-route.html#frontier-mlip_transport_and_sse">固态电解质与离子输运</a><a href="./learning-route.html#frontier-interfaces_sei_and_dendrites">界面与 SEI/CEI</a><a href="./learning-route.html#frontier-liquid_and_polymer_electrolytes">液态与聚合物电解质</a><a href="./learning-route.html#frontier-cathodes_defects_and_redox">正极、缺陷与氧化还原</a><a href="./learning-route.html#frontier-ai_screening_and_uq">AI 筛选与不确定性</a><a href="./learning-route.html#frontier-multiscale_and_validation">多尺度与实验验证</a><a href="./learning-route.html#frontier-mlip_reliability_and_data_efficiency">MLIP 可靠性与效率</a><a href="./learning-route.html#frontier-autonomous_workflows">可审计工作流与 AI 闭环</a></div></details>
+      <div class="future-meta"><span>综述与展望优先</span><span>每个方向配一个小验证</span><span>适合 DFT · AIMD · MLIP</span></div>
+      <div class="future-grid">
+        <article class="future-card featured">
+          <div class="future-index">01 · 反应性界面</div>
+          <h2>反应性、非晶化 SEI 的 MLIP 与主动学习</h2>
+          <p>综述共同指出，SEI 的成核、断键与溶剂分解同时包含复杂化学反应和长时间尺度结构演化。下一步是用 DFT/AIMD 发现反应事件，再用不确定性驱动的主动学习补齐稀有构型。</p>
+          <div class="future-question"><strong>学生问题：</strong>在 Li 金属与碳酸酯电解液小界面中，主动学习是否能以更少的 DFT 标注捕获首个稳定无机/有机 SEI 层？<br><strong>验证：</strong>留出不同温度和不同初始界面的测试集；比较能量、力、反应事件、扩散系数与短程结构。</div>
+          <div class="future-links"><a href="https://doi.org/10.1038/s41578-025-00817-y" target="_blank" rel="noreferrer">Nat Rev Mater 2025</a><a href="https://doi.org/10.1016/j.jechem.2025.08.058" target="_blank" rel="noreferrer">J Energy Chem 2026</a><a href="https://doi.org/10.1039/D5MH01525A" target="_blank" rel="noreferrer">Mater Horiz 2026</a></div>
+        </article>
+        <article class="future-card">
+          <div class="future-index">02 · 迁移</div>
+          <h2>非平衡与领域专用基础势</h2>
+          <p>材料势的泛化会受到化学空间、温度、应力和非平衡轨迹影响。新趋势是基础模型与领域专用微调并行，用数据覆盖和不确定性估计管理迁移风险。</p>
+          <div class="future-question"><strong>学生问题：</strong>一个在晶体和短 AIMD 上训练的势，迁移到缺陷或界面时，哪类构型最先失效？<br><strong>验证：</strong>按化学环境、温度和缺陷类型分层留出测试；报告外推检测而非只报平均 MAE。</div>
+          <div class="future-links"><a href="https://doi.org/10.1038/s44456-026-00014-4" target="_blank" rel="noreferrer">MLFF Perspective 2026</a><a href="https://doi.org/10.1126/sciadv.aea0638" target="_blank" rel="noreferrer">Sci Adv 2025</a></div>
+        </article>
+        <article class="future-card">
+          <div class="future-index">03 · 长程效应</div>
+          <h2>长程电荷与电场效应</h2>
+          <p>固态电解质与界面中的离子迁移不只由局部短程环境决定。电荷、极化和电场会影响势垒与空间电荷层，局部截断模型因此可能产生系统偏差。</p>
+          <div class="future-question"><strong>学生问题：</strong>在一个小型硫化物电解质界面中，加入电荷感知或长程修正后，Li 迁移势垒是否更接近 DFT？<br><strong>验证：</strong>对比不同界面厚度、净电荷与外场条件下的 NEB/AIMD；检查尺寸收敛和电荷守恒。</div>
+          <div class="future-links"><a href="https://doi.org/10.1038/s41578-025-00817-y" target="_blank" rel="noreferrer">Nat Rev Mater 2025</a><a href="https://doi.org/10.1016/j.jechem.2025.08.058" target="_blank" rel="noreferrer">J Energy Chem 2026</a></div>
+        </article>
+        <article class="future-card">
+          <div class="future-index">04 · 跨尺度</div>
+          <h2>DFT/AIMD → MLMD → 连续尺度与实验反馈</h2>
+          <p>可落地的路线需要把电子结构、原子轨迹、介观输运和实验表征接起来。每一层都应保留误差边界，并用实验扩散系数、阻抗或结构谱反向校准。</p>
+          <div class="future-question"><strong>学生问题：</strong>能否用一套小规模 DFT/AIMD→MLMD 流程，预测固态电解质的温度依赖扩散，并与公开实验数据进行数量级校验？<br><strong>验证：</strong>做时间步长、超胞、温度和模型版本的消融；分别比较 MSD、Arrhenius 活化能和结构指纹。</div>
+          <div class="future-links"><a href="https://doi.org/10.1126/sciadv.aea0638" target="_blank" rel="noreferrer">Sci Adv 2025</a><a href="https://doi.org/10.1039/D5MH01525A" target="_blank" rel="noreferrer">Mater Horiz 2026</a><a href="https://doi.org/10.1002/aenm.202304480" target="_blank" rel="noreferrer">Adv Energy Mater 2024</a></div>
+        </article>
+        <article class="future-card">
+          <div class="future-index">05 · 设计</div>
+          <h2>面向合成的多目标材料设计</h2>
+          <p>只优化离子电导率会忽略稳定性、可合成性、成本和工艺窗口。综述展望把“性能预测”推进到“合成约束下的设计”，需要把文献、结构生成和实验可行性放到同一个闭环。</p>
+          <div class="future-question"><strong>学生问题：</strong>在一组已知硫化物固态电解质中，能否同时优化离子电导、稳定性代理指标和元素/工艺约束，并给出可解释的候选排序？<br><strong>验证：</strong>时间切分外测；报告 Pareto 前沿、重复训练方差、候选去重和至少一个公开实验回溯。</div>
+          <div class="future-links"><a href="https://doi.org/10.1021/acsenergylett.4c00821" target="_blank" rel="noreferrer">ACS Energy Lett 2024</a><a href="https://doi.org/10.1002/aenm.202304480" target="_blank" rel="noreferrer">Adv Energy Mater 2024</a></div>
+        </article>
+      </div>
+      <section class="roadmap" aria-labelledby="roadmapTitle">
+        <h2 id="roadmapTitle">一条可执行的电池模拟路线</h2>
+        <p class="roadmap-lede">从一个可复现的问题开始，按证据需要增加工具。核心是 Python/Linux/Git、基础电化学与热力学、结构工作流和重复验证；反应性 SEI、带电界面与连续尺度需要更多资源。</p>
+        <div class="roadmap-grid">
+          <div class="roadmap-item"><h3>01 · 基础与结构</h3><p>先掌握 Python、Linux、Git；用 ASE/pymatgen 建结构和流程，VESTA 做结构检查。<a href="https://wiki.fysik.dtu.dk/ase/">ASE</a>、<a href="https://pymatgen.org/">pymatgen</a>。</p></div>
+          <div class="roadmap-item"><h3>02 · 电子结构与路径</h3><p>有组内许可再用 VASP；否则按课题选择 QE/CP2K。做 DFT 收敛和 NEB（<a href="https://ase.gitlab.io/ase/ase/neb.html">ASE NEB</a>），不要把单一路径当全局唯一机制。</p></div>
+          <div class="roadmap-item"><h3>03 · 动力学与势</h3><p>AIMD 用第一性原理程序；LAMMPS 用于经典 MD/MLMD，MDAnalysis/OVITO 分析轨迹。MLIP 起步只选 MACE 或 DeePMD 之一（<a href="https://docs.lammps.org/">LAMMPS</a> · <a href="https://mace-docs.readthedocs.io/en/latest/">MACE</a> · <a href="https://docs.deepmodeling.com/projects/deepmd/en/latest/">DeePMD</a>）。</p></div>
+          <div class="roadmap-item"><h3>04 · HPC 与可选尺度</h3><p>学会 Slurm 和资源记录；PyBaMM/COMSOL 是问题需要时的可选连续尺度模块，不是入门必修。6GB 笔记本适合学习和小检查，不能替代课题组集群。</p></div>
+        </div>
+        <p class="roadmap-note"><strong>建议顺序：</strong>先复现一个聚合物/电解质输运结果（与已有聚合物材料背景衔接），再加小型 DFT/NEB/AIMD 基准；有验证过的数据和资源后才尝试 MLIP，最后把一个机制与实验或公开测量对照。实验应按主张匹配，并尽可能匹配样品制备、温度、压力、SOC 和老化状态：结构/相↔XRD/中子（Raman 补充局域键合），输运↔变温 EIS/PFG-NMR，界面产物↔XPS/ToF-SIMS/TEM，电芯行为↔循环/EIS；这些观测不是严格一一等价，也不是每篇论文都需要完整实验包。<a href="https://docs.materialsproject.org/methodology/materials-methodology/calculation-details/gga%2Bu-calculations/parameters-and-convergence">DFT 收敛参考</a> · <a href="https://doi.org/10.1002/jcc.27090">扩散不确定性</a> · <a href="https://doi.org/10.1002/celc.202100108">EIS 综述</a></p>
+      </section>
+      <div class="future-bottom"><span>2026-10-08 新增：少数据 MLIP 适配/蒸馏、MD 溶剂化代理模型与固态电池 MLIP Perspective；<a href="./ai-battery-applications.html#recent">查看近期应用和实现路径</a>。证据范围：综述/展望提供方向判断；本站补充的学生问题、测试清单与优先级属于研究设计建议。</span><a href="./guides/BATTERY_COMPUTATION_FUTURE_DIRECTIONS.md">查看完整研究备忘录 →</a></div>
+    </main>
+  </div>
+<footer class="site-footer" data-site-footer><span>Battery Evidence Lab</span><a href="./guides/PROJECT_STATUS.md">项目记录</a><a href="https://github.com/rua-creeper-233/battery-evidence-lab" target="_blank" rel="noopener noreferrer">GitHub</a></footer><script src="./nav-overflow.js" defer></script></body>
+</html>

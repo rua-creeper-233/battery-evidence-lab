@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-21",
+  "note": "结构以常见石墨负极、液态电解液锂离子电池为例，非按比例；文献也覆盖其他电极、聚合物/无机固态电解质及钠体系，并不都采用图中结构。分类根据已核验题录与库内简述人工选读，不代替逐篇全文审阅；跨部位论文不重复计入主库。",
+  "sources": [
+    {
+      "label": "DOE：电池结构与离子通道（公开环评附录）",
+      "url": "https://www.energy.gov/sites/default/files/2023-09/KORE_PowerEA_Sept_2023_Appendices.pdf"
+    },
+    {
+      "label": "Argonne：锂离子电池材料与结构综述",
+      "url": "https://publications.anl.gov/anlpubs/2024/10/192209.pdf"
+    },
+    {
+      "label": "DOE：下一代电池与固态电解质",
+      "url": "https://www.energy.gov/cmei/ammto/breaking-it-down-next-generation-batteries"
+    }
+  ],
+  "components": [
+    {
+      "id": "cathode",
+      "label": "正极",
+      "label_en": "Positive electrode",
+      "description": "从活性材料的组成与结构出发，研究嵌离子电压、相稳定性、缺陷与循环中的结构变化。图中的颗粒层是复合电极示意，不代表单一晶体。",
+      "scope": "此处按研究部位选读；正极电压、容量、界面稳定性是不同主张，不能用单个能量或能带图代替完整验证。",
+      "papers": [
+        {
+          "paper_id": "ceder1998_cathode_design",
+          "doi": "10.1038/33647",
+          "relation": "direct",
+          "reason": "第一性原理辅助设计层状氧化物正极的经典研究。"
+        },
+        {
+          "paper_id": "aydinol1997_voltage",
+          "doi": "10.1103/PhysRevB.56.1354",
+          "relation": "direct",
+          "reason": "嵌入反应、电压与参考态的基础方法出处。"
+        },
+        {
+          "paper_id": "zhou2004_dftu_voltage",
+          "doi": "10.1103/PhysRevB.70.235121",
+          "relation": "direct",
+          "reason": "过渡金属正极氧化还原电压与 DFT+U 方法。"
+        },
+        {
+          "paper_id": "ong2011_li_na",
+          "doi": "10.1039/C1EE01782A",
+          "relation": "direct",
+          "reason": "锂/钠嵌入电极的第一性原理性质比较，体系范围须分别核对。"
+        },
+        {
+          "paper_id": "hu2025_lmfp_active_learning",
+          "doi": "10.1016/j.cclet.2024.110344",
+          "relation": "direct",
+          "reason": "主动学习筛选磷酸锰铁锂正极的近期例子。"
+        },
+        {
+          "paper_id": "cn_shi2023_oxygen_vacancy_clusters",
+          "doi": "10.7498/aps.72.20222300",
+          "relation": "direct",
+          "reason": "中文原文：富锂锰基层状正极的氧空位簇与热力学。"
+        },
+        {
+          "paper_id": "cn_zhong2021_rare_earth_lfp",
+          "doi": "10.7498/aps.70.20210227",
+          "relation": "direct",
+          "reason": "中文原文：稀土掺杂磷酸铁锂的电子结构与性能机制。"
+        }
+      ]
+    },
+    {
+      "id": "anode",
+      "label": "负极",
+      "label_en": "Negative electrode",
+      "description": "关注离子吸附/嵌入、扩散、容量和体积/相结构变化。图中用石墨片层表示一种常见负极，实际文献还涵盖硅和二维材料。",
+      "scope": "吸附能、理论容量或单条 NEB 路径不是可直接投产的筛选结论；应同时检查结构、参考态、动力学与稳定性。",
+      "papers": [
+        {
+          "paper_id": "persson2010_graphite",
+          "doi": "10.1103/PhysRevB.82.125416",
+          "relation": "direct",
+          "reason": "石墨负极的热力学、相行为及锂扩散。"
+        },
+        {
+          "paper_id": "tang2022_2d_anode_screening",
+          "doi": "10.1039/d2dt01769e",
+          "relation": "direct",
+          "reason": "高通量二维负极材料筛选的具体研究。"
+        },
+        {
+          "paper_id": "cn_aps2024_vs2",
+          "doi": "10.7498/aps.73.20231681",
+          "relation": "direct",
+          "reason": "中文原文：VS₂ 负极的结构、吸附、迁移与容量。"
+        },
+        {
+          "paper_id": "cn_shen2021_si_graphene",
+          "doi": "10.7498/aps.70.20210521",
+          "relation": "direct",
+          "reason": "中文原文：硅团簇/石墨烯负极的吸附与稳定性。"
+        },
+        {
+          "paper_id": "leung2010_sei_aimd",
+          "doi": "10.1039/B925853A",
+          "relation": "related",
+          "reason": "锂化石墨与电解液接触后的初始反应；重点是负极侧界面，不是石墨体相容量。"
+        }
+      ]
+    },
+    {
+      "id": "electrolyte",
+      "label": "电解质",
+      "label_en": "Electrolyte",
+      "description": "离子通过电解质迁移。液体会浸润隔膜及电极孔隙；聚合物和无机固态电解质是不同模型与技术路线。",
+      "scope": "图中的蓝色孔隙相表示液体，不应把所有固态电解质理解为一层液体或隔膜。扩散、电导、溶剂化、分解稳定性要分别定义与验证。",
+      "papers": [
+        {
+          "paper_id": "tan2026_pemd",
+          "doi": "10.1039/d5dd00454c",
+          "relation": "direct",
+          "reason": "PEO/LiTFSI 聚合物电解质的建模、MD 与分析流程。"
+        },
+        {
+          "paper_id": "kuhn2026_hitpoly",
+          "doi": "10.1016/j.matt.2026.102922",
+          "relation": "direct",
+          "reason": "聚合物电解质的高通量 MD 与贝叶斯优化。"
+        },
+        {
+          "paper_id": "xie2022_polymernet",
+          "doi": "10.1038/s41467-022-30994-1",
+          "relation": "direct",
+          "reason": "以 MD 数据加速聚合物电解质性质预测。"
+        },
+        {
+          "paper_id": "cn_shen2020_polymer",
+          "doi": "10.19328/j.cnki.1006-1630.2020.02.002",
+          "relation": "direct",
+          "reason": "中文综述：单离子导电聚合物电解质。"
+        },
+        {
+          "paper_id": "wu2023_edl_ms",
+          "doi": "10.1021/jacs.2c11807",
+          "relation": "direct",
+          "reason": "液态电解液及带电界面模型；与界面分区交叉选读。"
+        },
+        {
+          "paper_id": "sheng2024_lipf6_hydrolysis_ms",
+          "doi": "10.1021/acs.nanolett.3c01682",
+          "relation": "direct",
+          "reason": "碳酸酯电解液中的 LiPF₆ 溶剂化与水解。"
+        },
+        {
+          "paper_id": "recent_10_1039_d5dd00025d",
+          "doi": "10.1039/d5dd00025d",
+          "relation": "direct",
+          "reason": "液态电解液的机器学习势性质评估；目标域需另行验证。"
+        },
+        {
+          "paper_id": "recent_10_1038_s41467-025-67982-0",
+          "doi": "10.1038/s41467-025-67982-0",
+          "relation": "direct",
+          "reason": "锂盐液态电解液的领域机器学习势与 MD。"
+        },
+        {
+          "paper_id": "ong2013_lgps",
+          "doi": "10.1039/C2EE23355J",
+          "relation": "direct",
+          "reason": "LGPS 家族的稳定性、电化学窗口与离子传导。"
+        },
+        {
+          "paper_id": "mo2012_lgps_aimd",
+          "doi": "10.1021/cm203303y",
+          "relation": "direct",
+          "reason": "LGPS 的离子输运和稳定性从头算研究。"
+        },
+        {
+          "paper_id": "he2017_concerted_diffusion",
+          "doi": "10.1038/ncomms15893",
+          "relation": "direct",
+          "reason": "固态电解质中的协同离子迁移机制。"
+        },
+        {
+          "paper_id": "he2018_aimd_statistics",
+          "doi": "10.1038/s41524-018-0074-y",
+          "relation": "related",
+          "reason": "AIMD 扩散/电导分析的采样与误差估计；是统计方法参考，不是新的电解质材料。"
+        },
+        {
+          "paper_id": "baktash2020_argyrodite_aimd",
+          "doi": "10.1038/s41524-020-00432-1",
+          "relation": "direct",
+          "reason": "硫银锗矿型固态电解质的 AIMD 扩散研究。"
+        },
+        {
+          "paper_id": "sawada2024_nnp_sse",
+          "doi": "10.1038/s41598-024-62054-7",
+          "relation": "direct",
+          "reason": "掺杂 LGPS 的神经网络势与分子动力学。"
+        },
+        {
+          "paper_id": "wang2023_nasicon_design",
+          "doi": "10.1038/s41467-023-40669-0",
+          "relation": "direct",
+          "reason": "NASICON 钠固态电解质的计算设计。"
+        },
+        {
+          "paper_id": "cn_he2022_halide_cation",
+          "doi": "10.7498/aps.71.20221050",
+          "relation": "direct",
+          "reason": "中文原文：卤化物固态电解质的阳离子、缺陷与迁移。"
+        }
+      ]
+    },
+    {
+      "id": "separator",
+      "label": "隔膜",
+      "label_en": "Separator",
+      "description": "在液态电池示意中，它是吸持电解液的多孔电子绝缘隔层：允许离子通行，阻止正负极直接接触。",
+      "scope": "当前 211 篇规范书目中尚未核实专门研究隔膜材料的论文，暂不以电解质论文冒充。部分固态电池不另设独立隔膜；图中结构不是通用必选构型。",
+      "papers": []
+    },
+    {
+      "id": "interface",
+      "label": "界面 · SEI / CEI",
+      "label_en": "Interfaces & interphases",
+      "description": "电极与电解质接触区域可能发生反应，形成 SEI 或 CEI；固态体系还要考虑接触、粘附、分解与离子迁移。",
+      "scope": "高亮是界面区域的示意，不表示均一且同厚度的独立材料层。不同文献研究 SEI、人工界面或固–固接触，结论不能直接互换。",
+      "papers": [
+        {
+          "paper_id": "leung2010_sei_aimd",
+          "doi": "10.1039/B925853A",
+          "relation": "direct",
+          "reason": "锂化石墨/电解液接触后的初始 SEI 形成。"
+        },
+        {
+          "paper_id": "shi2013_sei_li2co3",
+          "doi": "10.1021/jp310591u",
+          "relation": "direct",
+          "reason": "Li₂CO₃ 型 SEI 中的缺陷与离子迁移。"
+        },
+        {
+          "paper_id": "wu2023_edl_ms",
+          "doi": "10.1021/jacs.2c11807",
+          "relation": "direct",
+          "reason": "电极电双层、还原反应与 SEI 形成的界面模型。"
+        },
+        {
+          "paper_id": "takenaka2026_sei_mlff",
+          "doi": "10.1038/s41524-026-02271-y",
+          "relation": "direct",
+          "reason": "机器学习力场 MD 研究锂金属上的早期 SEI 形成。"
+        },
+        {
+          "paper_id": "yang2026_oxygen_sei",
+          "doi": "10.1002/advs.76563",
+          "relation": "direct",
+          "reason": "硫化物固态电解质与锂金属界面中的输运问题。"
+        },
+        {
+          "paper_id": "dou2024_li_alloy_sei",
+          "doi": "10.3866/pku.whxb202305039",
+          "relation": "direct",
+          "reason": "锂合金相与 SEI 内的离子输运。"
+        },
+        {
+          "paper_id": "li2024_polymeric_asei_ms",
+          "doi": "10.1039/d4cc03688c",
+          "relation": "direct",
+          "reason": "聚合物人工 SEI：不是体相聚合物电解质。"
+        },
+        {
+          "paper_id": "cn_you2021_lipon_li_interface",
+          "doi": "10.7498/aps.70.20202214",
+          "relation": "direct",
+          "reason": "中文原文：晶态/非晶 LiPON 与锂金属固–固界面。"
+        },
+        {
+          "paper_id": "recent_10_1016_j_jechem_2025_03_007",
+          "doi": "10.1016/j.jechem.2025.03.007",
+          "relation": "direct",
+          "reason": "InterOptimus：界面结构匹配与构建的计算流程。"
+        },
+        {
+          "paper_id": "cn_10_19799_j_cnki_2095-4239_2022_0504",
+          "doi": "10.19799/j.cnki.2095-4239.2022.0504",
+          "relation": "direct",
+          "reason": "中文综述：SEI 的多尺度计算研究。"
+        },
+        {
+          "paper_id": "cn_10_19799_j_cnki_2095-4239_2024_0586",
+          "doi": "10.19799/j.cnki.2095-4239.2024.0586",
+          "relation": "direct",
+          "reason": "中文综述：锂金属 SEI 的形成与生长。"
+        }
+      ]
+    },
+    {
+      "id": "collectors",
+      "label": "集流体",
+      "label_en": "Current collectors",
+      "description": "将活性层中的电子接入外电路。图示采用常见锂离子电池的正极侧铝、石墨负极侧铜；不是所有化学体系都使用相同金属。",
+      "scope": "当前规范书目中尚未核实专门研究集流体材料的论文，因此不把一般电极论文放入此类。实际金属选择还受电位窗口、合金化、腐蚀与工艺约束。",
+      "papers": []
+    }
+  ]
+}

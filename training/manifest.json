@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "generated_by": "training/generate_dataset.py",
+  "source_files": [
+    "data/papers.json",
+    "data/answer_guidance.json",
+    "data/answer_regression.json",
+    "data/search_training.json"
+  ],
+  "policy": "metadata_only_no_fulltext_or_pdf_text",
+  "split_rule": "sha256(paper_group_or_example_id)[0] % 7 == 0 -> eval; paper groups stay together",
+  "grouped_by_source_paper": true,
+  "train_total": 398,
+  "counts": {
+    "qa_factual": 216,
+    "qa_workflow": 108,
+    "qa_refusal": 108,
+    "tool_traces": 25,
+    "eval": 59,
+    "total": 457
+  }
+}

@@ -1,0 +1,43 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.venv-lora/
+finetune/outputs/
+.env
+downloads/
+papers/
+*.pdf
+*.ris
+*.ciw
+*.enw
+zotero.sqlite*
+data/fulltext_chunks.jsonl
+literature/text/
+literature/pdfs/
+literature/manifest.json
+private/
+# Local privacy audit reports and workstation metadata are never publication sources.
+SECURITY_PRIVACY_AUDIT_*.md
+msd.json
+# Local model checkpoints and exported weights must stay on the user's computer.
+training/checkpoints/
+training/output/
+training/*.safetensors
+training/*.bin
+training/*.gguf
+models/
+# The local QLoRA output path is deliberately outside the source tree's
+# evidence data and must never be uploaded with the website.
+outputs/
+*.pt
+*.pth
+# Local workspace state and migration snapshots never belong in a publication index.
+distill/
+.codex/
+.agents/
+private_backups/
+backups/
+old_manifest.json
+local_auth/
+local_logs/
