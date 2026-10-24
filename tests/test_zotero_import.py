@@ -16,6 +16,15 @@ from import_zotero_library import (
 
 
 class ZoteroImportTests(unittest.TestCase):
+    def test_personal_import_report_stays_private_and_creates_parent(self) -> None:
+        import import_zotero_library as module
+        self.assertEqual(module.REPORT_PATH.parent, module.ROOT / "private")
+        with tempfile.TemporaryDirectory() as tmp:
+            report = Path(tmp) / "private" / "audit.md"
+            with patch.object(module, "REPORT_PATH", report):
+                module.write_report([], {}, {})
+            self.assertTrue(report.is_file())
+
     def test_normalize_doi(self) -> None:
         self.assertEqual(
             normalize_doi("https://doi.org/10.1038/S43588-022-00349-3."),

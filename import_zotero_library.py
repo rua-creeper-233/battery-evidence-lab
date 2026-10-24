@@ -24,7 +24,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parent
 PAPERS_PATH = ROOT / "data" / "papers.json"
 MANIFEST_PATH = ROOT / "literature" / "manifest.json"
-REPORT_PATH = ROOT / "ZOTERO_IMPORT_AUDIT.md"
+REPORT_PATH = ROOT / "private" / "ZOTERO_IMPORT_AUDIT.md"
 BASE = "http://127.0.0.1:23119"
 COMMON_TAG = "battery-materials-agent"
 
@@ -311,6 +311,7 @@ def write_report(
         else:
             state = "未在 Zotero 中核验到"
         lines.append(f"- {paper['title']} — `{doi}` — {action.get('item', '未处理')}；{state}")
+    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
