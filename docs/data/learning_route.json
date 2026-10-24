@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-21",
+  "as_of": "2026-10-25",
   "policy": "baseline 是科研中反复查验的常备参考。每篇论文有唯一主阶段，也可被多个专题引用；实验与验证按研究主张选择。",
   "evidence_basis": "按题名、方法记录和人工摘要安排阅读顺序。",
   "stages": [
@@ -119,6 +119,7 @@
         "按研究主张选择数值对照与物理实验，不把所有测试列成固定套餐。"
       ],
       "paper_ids": [
+        "henkelman2000_cineb",
         "kresse1993_liquid_metals",
         "kresse1994_ge_transition",
         "kresse1996_vasp_efficiency",
@@ -130,7 +131,6 @@
         "grimme2010_dftd",
         "monkhorst1976_kpoints",
         "methfessel1989_smearing",
-        "henkelman2000_cineb",
         "henkelman2000_neb_tangent",
         "henkelman2006_bader",
         "marzari1997_wannier",
@@ -400,6 +400,7 @@
         "wang2021_vaspkit",
         "ong2013_pymatgen",
         "larsen2017_ase",
+        "ganose2025_atomate2",
         "jain2013_materials_project",
         "togo2015_phonopy",
         "ganose2018_sumo",
@@ -407,24 +408,23 @@
         "pizzi2016_aiida",
         "himanen2020_dscribe",
         "dunn2020_matbench",
+        "shen2024_pymatgen_defects",
         "wang2018_sei_modeling_review",
         "shi2021_reaxff_battery_review",
         "deringer2019_mlip_review",
         "mishin2021_mlip_review",
         "unke2021_mlff_review",
         "mueller2020_mlip_models",
+        "qi2021_electrolyte_dataset",
         "peled2017_sei_review",
         "fireworks2015_workflow",
         "mathew2017_atomate",
         "talirz2020_materials_cloud",
         "ward2016_matminer",
-        "qi2021_electrolyte_dataset",
-        "li2024_sse_property_prediction_review",
         "dutra2025_sse_atomistic_ml_review",
         "wang2025_battery_ml_paradigms",
+        "li2024_sse_property_prediction_review",
         "szymanski2024_computational_synthesis",
-        "ganose2025_atomate2",
-        "shen2024_pymatgen_defects",
         "cn_10_14062_j_issn_0454-5648_20220818",
         "cn_aps2024_vs2",
         "cn_shen2020_polymer",
@@ -553,44 +553,37 @@
         "选一条主线深入；并不要求一个硕士课题同时完成所有方法和物理实验。"
       ],
       "paper_ids": [
-        "aydinol1997_voltage",
-        "vanderven2001_diffusion",
-        "persson2010_graphite",
+        "tan2026_pemd",
+        "subramanyam2025_entropy_data",
+        "xie2022_polymernet",
         "he2017_concerted_diffusion",
         "smith2020_paddlewheel_ms",
+        "aydinol1997_voltage",
+        "vanderven2001_diffusion",
         "ong2011_li_na",
         "ong2013_lgps",
         "shi2013_sei_li2co3",
         "sendek2017_sse_screening",
         "baktash2020_argyrodite_aimd",
+        "chen2022_m3gnet",
         "leung2010_sei_aimd",
         "mo2012_lgps_aimd",
         "smidstrup2014_idpp",
         "he2018_aimd_statistics",
-        "xie2022_polymernet",
+        "zhou2004_dftu_voltage",
+        "wang2018_deepmdkit",
+        "zhang2020_dpgen",
+        "batzner2022_nequip",
+        "deringer2021_gpr_gap",
         "xie2018_cgcnn",
-        "hossain2020_reaxff_electrolyte",
-        "kang2006_li_mobility",
-        "du2014_lgps_mobility",
-        "bhandari2016_lgps_conduction",
-        "xu2012_stringlike_migration",
-        "swift2019_space_charge",
-        "nachimuthu2022_se_doped_lgps",
-        "muy2015_high_throughput_sse",
-        "recent_10_1038_s41597-020-00602-2",
-        "recent_10_1016_j_mechmat_2024_105237",
-        "recent_10_1002_aenm_202201497",
-        "subramanyam2025_entropy_data",
-        "stottmeister2023_sei_alkali",
+        "persson2010_graphite",
         "wu2023_edl_ms",
         "sheng2024_lipf6_hydrolysis_ms",
         "li2024_polymeric_asei_ms",
         "wu2025_spe_aimd_ms",
         "zhang2025_sei_phasefield_ms",
         "chen2025_heteroalkali_ms",
-        "qi2024_lgps_ml_aimd",
-        "tan2026_pemd",
-        "zhou2004_dftu_voltage",
+        "hossain2020_reaxff_electrolyte",
         "behler2007_nnp",
         "behler2011_symmetry_functions",
         "bartok2010_gap",
@@ -600,14 +593,21 @@
         "vandermause2020_active_learning",
         "jinnouchi2020_otf_mlff",
         "jinnouchi2019_melting_mlff",
-        "deringer2021_gpr_gap",
-        "batzner2022_nequip",
-        "chen2022_m3gnet",
-        "wang2018_deepmdkit",
-        "zhang2020_dpgen",
+        "bernstein2019_self_guided",
+        "kang2006_li_mobility",
+        "du2014_lgps_mobility",
+        "bhandari2016_lgps_conduction",
+        "xu2012_stringlike_migration",
+        "muy2015_high_throughput_sse",
+        "swift2019_space_charge",
+        "qi2024_lgps_ml_aimd",
+        "nachimuthu2022_se_doped_lgps",
+        "stottmeister2023_sei_alkali",
+        "recent_10_1016_j_mechmat_2024_105237",
         "recent_10_1038_s41524-024-01332-4",
         "recent_10_1038_s41524-024-01222-9",
-        "bernstein2019_self_guided",
+        "recent_10_1002_aenm_202201497",
+        "recent_10_1038_s41597-020-00602-2",
         "tang2022_2d_anode_screening",
         "ma2022_3d_electrochemical_thermal_lithium",
         "yang2023_electrochemical_thermal_component",
@@ -617,7 +617,41 @@
         "cn_li2024_latp_migration",
         "cn_you2021_lipon_li_interface",
         "cn_he2022_halide_cation",
-        "cn_wang2022_ligand_field"
+        "cn_wang2022_ligand_field",
+        "sep2022_1016_j_cclet_2022_03_065",
+        "sep2022_3390_ma15227912",
+        "sep2022_1021_acsami_2c15101",
+        "sep2023_1021_acsami_3c01311",
+        "sep2023_1073_pnas_2314264120",
+        "sep2024_1038_s41467_024_54313_y",
+        "sep2024_1016_j_jpowsour_2023_233979",
+        "sep2025_1039_d5ta06024a",
+        "sep2025_1002_batt_202500434",
+        "sep2021_1016_j_jtice_2021_01_031",
+        "sep2021_1038_s41598_021_81644_3",
+        "sep2022_1002_ceat_202000218",
+        "sep2022_1007_s10570_022_04873_3",
+        "sep2022_1021_acsaem_1c03548",
+        "sep2023_1016_j_memsci_2023_121617",
+        "sep2023_1021_acsnano_2c09526",
+        "sep2026_3390_batteries12090347",
+        "sep2025_1016_j_fub_2025_100064",
+        "collector2021_1038_s41467_021_25848_1",
+        "collector2021_1021_acsami_1c13896",
+        "collector2023_1002_ente_202300053",
+        "collector2023_1002_adma_202206762",
+        "collector2023_1021_acsami_3c08109",
+        "collector2023_1016_j_mtener_2023_101341",
+        "collector2023_1016_j_jallcom_2023_171393",
+        "collector2024_1021_acsami_3c14693",
+        "collector2024_1016_j_jcis_2024_02_014",
+        "collector2024_1002_eem2_12768",
+        "collector2024_1039_d4ta05955g",
+        "collector2024_1021_acsnano_4c04507",
+        "collector2024_3390_batteries10100369",
+        "collector2024_1038_s41529_024_00453_x",
+        "collector2025_1149_1945_7111_ada641",
+        "collector2024_1002_cssc_202400164"
       ]
     },
     {
@@ -792,7 +826,9 @@
         "cn_aps2025_liquid",
         "cn_aps2026_ml_dft",
         "cn_li2025_latp_surface",
-        "cn_xu2024_big_data_design"
+        "cn_xu2024_big_data_design",
+        "collector2026_1039_d6ta00180g",
+        "collector2026_1002_aenm_71291"
       ]
     }
   ],
@@ -877,9 +913,9 @@
         "wang2025_dpa_sse",
         "you2024_llzo_pca_deepmd",
         "zhang2024_mlmd_size_conductivity",
+        "recent_10_1038_s41524-026-02023-y",
         "recent_10_1103_physrevmaterials_8_115407",
         "recent_10_1021_acs_chemmater_5c02352",
-        "recent_10_1038_s41524-026-02023-y",
         "cn_10_14062_j_issn_0454-5648_20220818",
         "cn_li2024_latp_migration",
         "cn_li2025_latp_surface",
@@ -962,21 +998,21 @@
         "原子尺度短时反应不能直接推导电芯循环寿命或枝晶全尺度演化。"
       ],
       "paper_ids": [
-        "shi2013_sei_li2co3",
-        "leung2010_sei_aimd",
-        "stottmeister2023_sei_alkali",
         "yang2026_oxygen_sei",
         "takenaka2026_sei_mlff",
+        "shi2013_sei_li2co3",
+        "leung2010_sei_aimd",
+        "wu2023_edl_ms",
+        "zhang2025_sei_phasefield_ms",
+        "stottmeister2023_sei_alkali",
         "wang2025_ai_sse_interface",
         "li2025_sei_effective_mlips",
         "kim2024_llzo_lco_interface_mlff",
-        "wu2023_edl_ms",
-        "zhang2025_sei_phasefield_ms",
         "recent_10_1002_adfm_202313188",
+        "recent_10_1016_j_est_2026_121104",
         "recent_10_1038_s41524-025-01747-7",
         "recent_10_1038_s41524-025-01615-4",
         "recent_10_1038_s41467-025-62824-5",
-        "recent_10_1016_j_est_2026_121104",
         "recent_10_1016_j_jpowsour_2025_237670",
         "dou2024_li_alloy_sei",
         "li2024_phase_field_dendrite",
@@ -984,7 +1020,9 @@
         "cn_10_19799_j_cnki_2095-4239_2024_0586",
         "cn_li2025_latp_surface",
         "cn_you2021_lipon_li_interface",
-        "cn_shen2021_si_graphene"
+        "cn_shen2021_si_graphene",
+        "collector2026_1039_d6ta00180g",
+        "collector2026_1002_aenm_71291"
       ]
     },
     {
@@ -1071,16 +1109,16 @@
         "tan2026_pemd",
         "kuhn2026_hitpoly",
         "xie2022_polymernet",
-        "hossain2020_reaxff_electrolyte",
         "sheng2024_lipf6_hydrolysis_ms",
         "wu2025_spe_aimd_ms",
+        "hossain2020_reaxff_electrolyte",
         "recent_10_1039_d4ta06675h",
+        "recent_10_1038_s41467-025-56322-x",
         "recent_10_1039_d6eb00024j",
         "recent_10_1016_j_ensm_2025_104826",
+        "recent_10_1002_adsu_202500413",
         "recent_10_1039_d5dd00025d",
         "recent_10_1038_s41467-025-67982-0",
-        "recent_10_1038_s41467-025-56322-x",
-        "recent_10_1002_adsu_202500413",
         "cn_aps2025_liquid",
         "cn_shen2020_polymer"
       ]
@@ -1163,14 +1201,14 @@
         "aydinol1997_voltage",
         "ceder1998_cathode_design",
         "zhou2004_dftu_voltage",
-        "kang2006_li_mobility",
         "shen2024_pymatgen_defects",
+        "kang2006_li_mobility",
         "recent_10_1016_j_mtener_2025_101841",
+        "recent_10_1039_d4ta03452j",
         "recent_10_1021_jacsau_5c00526",
         "recent_10_1021_acsenergylett_5c02723",
         "recent_10_1016_j_jpowsour_2025_239008",
         "recent_10_1021_acsami_5c11818",
-        "recent_10_1039_d4ta03452j",
         "cn_aps2024_vs2",
         "cn_shi2023_oxygen_vacancy_clusters",
         "cn_zhong2021_rare_earth_lfp",
@@ -1252,18 +1290,18 @@
         "未知合成/制造约束时不能声称工业最优。"
       ],
       "paper_ids": [
-        "butler2018_ml_materials_review",
-        "ling2022_battery_informatics",
-        "sendek2017_sse_screening",
-        "dunn2020_matbench",
-        "subramanyam2025_entropy_data",
         "kuhn2026_hitpoly",
+        "subramanyam2025_entropy_data",
+        "butler2018_ml_materials_review",
+        "sendek2017_sse_screening",
+        "ling2022_battery_informatics",
+        "dunn2020_matbench",
         "bilbrey2025_uq",
         "recent_10_1021_jacs_4c14455",
         "recent_10_1038_s41467-025-67663-y",
-        "recent_10_1038_s41524-025-01905-x",
         "recent_10_1038_s41586-025-09951-7",
         "recent_10_1016_j_rser_2025_116633",
+        "recent_10_1038_s41524-025-01905-x",
         "hu2025_lmfp_active_learning",
         "cn_10_14062_j_issn_0454-5648_20220818",
         "cn_10_19799_j_cnki_2095-4239_2022_0051",
@@ -1348,12 +1386,12 @@
       "paper_ids": [
         "urban2016_computational_review",
         "he2018_aimd_statistics",
-        "swift2019_space_charge",
         "zhang2025_sei_phasefield_ms",
+        "swift2019_space_charge",
         "wang2024_mlip_scaling_review",
-        "recent_10_1016_j_cej_2025_163801",
-        "recent_10_1038_s41524-025-01735-x",
         "recent_10_1038_s41524-025-01615-4",
+        "recent_10_1038_s41524-025-01735-x",
+        "recent_10_1016_j_cej_2025_163801",
         "cn_10_19799_j_cnki_2095-4239_2022_0504",
         "cn_10_19799_j_cnki_2095-4239_2024_0586"
       ]
@@ -2648,116 +2686,99 @@
     "grossfield2019_uncertainty_sampling": {
       "stage": "baseline",
       "frontiers": [],
-      "rationale": "先建立采样、相关性与误差报告习惯，再进入性质解释。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "先建立采样、相关性与误差报告习惯，再进入性质解释。"
     },
     "chodera2016_equilibration_detection": {
       "stage": "baseline",
       "frontiers": [],
-      "rationale": "在计算性质前先形成可审计的平衡化截断流程。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "在计算性质前先形成可审计的平衡化截断流程。"
     },
     "flyvbjerg1989_correlated_error": {
       "stage": "baseline",
       "frontiers": [],
-      "rationale": "为轨迹均值和输运性质补上相关性与误差条基础。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "为轨迹均值和输运性质补上相关性与误差条基础。"
     },
     "lejaeghere2016_dft_reproducibility": {
       "stage": "baseline",
       "frontiers": [
         "mlip_reliability_and_data_efficiency"
       ],
-      "rationale": "仅作为 MLIP 可靠性与数据效率的基础标注/验证参考，不把 DFT 数值精度当作 MLIP 结果。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "仅作为 MLIP 可靠性与数据效率的基础标注/验证参考，不把 DFT 数值精度当作 MLIP 结果。"
     },
     "bosoni2024_dft_precision_workflows": {
       "stage": "baseline",
       "frontiers": [
         "mlip_reliability_and_data_efficiency"
       ],
-      "rationale": "提供 MLIP 标注前的电子结构baseline和数据效率核验框架；不把该文当作 MLIP 结果。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "提供 MLIP 标注前的电子结构baseline和数据效率核验框架；不把该文当作 MLIP 结果。"
     },
     "wilkinson2016_fair_principles": {
       "stage": "baseline",
       "frontiers": [
         "autonomous_workflows"
       ],
-      "rationale": "为自动化工作流提供可追踪、可获取和可复用的数据治理约束。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "为自动化工作流提供可追踪、可获取和可复用的数据治理约束。"
     },
     "hohenberg1964_inhomogeneous_electron_gas": {
       "stage": "baseline",
       "frontiers": [],
-      "rationale": "作为电子结构理论出处，支撑理解 DFT 输入与适用边界。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "作为电子结构理论出处，支撑理解 DFT 输入与适用边界。"
     },
     "kohn1965_self_consistent_dft": {
       "stage": "baseline",
       "frontiers": [],
-      "rationale": "作为 DFT 自洽求解和交换关联近似的理论baseline。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "作为 DFT 自洽求解和交换关联近似的理论baseline。"
     },
     "verlet1967_classical_fluids": {
       "stage": "baseline",
       "frontiers": [],
-      "rationale": "作为经典 MD 数值推进和统计量计算的历史参考。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "作为经典 MD 数值推进和统计量计算的历史参考。"
     },
     "nose1984_constant_temperature_md": {
       "stage": "baseline",
       "frontiers": [],
-      "rationale": "为 MD 系综选择、恒温设置和采样诊断提供理论出处。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "为 MD 系综选择、恒温设置和采样诊断提供理论出处。"
+    },
+    "hoover1985_canonical_dynamics": {
+      "stage": "baseline",
+      "frontiers": [],
+      "rationale": "作为恒温 MD 正则采样假设的理论出处，配合实际分布诊断。"
     },
     "hu2025_lmfp_active_learning": {
       "stage": "frontier",
       "frontiers": [
         "ai_screening_and_uq"
       ],
-      "rationale": "主动学习用于正极候选筛选，适合作为数据质量、多目标权衡与预算分配的前沿案例。",
-      "evidence_basis": "依据出版商记录、题名和正文方法范围；不把主动学习扩写为未核实的DFT或软件协议。"
+      "rationale": "主动学习用于正极候选筛选，适合作为数据质量、多目标权衡与预算分配的前沿案例。"
     },
     "tang2022_2d_anode_screening": {
       "stage": "intermediate",
       "frontiers": [],
-      "rationale": "二维负极筛选同时涉及稳定性、能带、容量、体积变化和NEB势垒，适合进阶筛选流程。",
-      "evidence_basis": "依据正文计算细节与出版商记录；参数复现仍需逐项核对原文。"
+      "rationale": "二维负极筛选同时涉及稳定性、能带、容量、体积变化和NEB势垒，适合进阶筛选流程。"
     },
     "dou2024_li_alloy_sei": {
       "stage": "frontier",
       "frontiers": [
         "interfaces_sei_and_dendrites"
       ],
-      "rationale": "锂合金相与SEI离子输运连接高通量筛选和界面机制，属于界面/SEI前沿案例。",
-      "evidence_basis": "依据出版商记录和论文方法范围；不补写未核实的完整参数、代码或软件版本。"
+      "rationale": "锂合金相与SEI离子输运连接高通量筛选和界面机制，属于界面/SEI前沿案例。"
     },
     "ma2022_3d_electrochemical_thermal_lithium": {
       "stage": "intermediate",
       "frontiers": [],
-      "rationale": "三维电化学-热耦合析锂模型适合作为电芯尺度参数设计的进阶入口。",
-      "evidence_basis": "依据中文出版页与PDF核验的模型题名、COMSOL 5.4方法证据。"
+      "rationale": "三维电化学-热耦合析锂模型适合作为电芯尺度参数设计的进阶入口。"
     },
     "yang2023_electrochemical_thermal_component": {
       "stage": "intermediate",
       "frontiers": [],
-      "rationale": "电化学-热耦合组件产热分析可作为P2D到热模型的进阶案例。",
-      "evidence_basis": "依据中文出版页与PDF核验的模型范围；求解器未知处保持未知。"
+      "rationale": "电化学-热耦合组件产热分析可作为P2D到热模型的进阶案例。"
     },
     "li2024_phase_field_dendrite": {
       "stage": "frontier",
       "frontiers": [
         "interfaces_sei_and_dendrites"
       ],
-      "rationale": "相场描述各向异性锂离子输运和枝晶抑制，适合作为界面/枝晶前沿案例。",
-      "evidence_basis": "依据出版商记录和正文方法范围；仅记录MATLAB相场研究，不补写未核实参数或代码。"
-    },
-    "hoover1985_canonical_dynamics": {
-      "stage": "baseline",
-      "frontiers": [],
-      "rationale": "作为恒温 MD 正则采样假设的理论出处，配合实际分布诊断。",
-      "evidence_basis": "依据已核验的 DOI 出版记录、题名和方法范围作教学归类；不代表工业标准认证、已完成复现或原文操作协议。"
+      "rationale": "相场描述各向异性锂离子输运和枝晶抑制，适合作为界面/枝晶前沿案例。"
     },
     "cn_10_19799_j_cnki_2095-4239_2022_0504": {
       "stage": "baseline",
@@ -2765,8 +2786,7 @@
         "interfaces_sei_and_dendrites",
         "multiscale_and_validation"
       ],
-      "rationale": "中文常备方法地图：反复查验SEI问题该用什么尺度、模型之间交换什么变量；不是已获行业认证的计算标准。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "中文常备方法地图：反复查验SEI问题该用什么尺度、模型之间交换什么变量；不是已获行业认证的计算标准。"
     },
     "cn_10_14062_j_issn_0454-5648_20220818": {
       "stage": "beginner",
@@ -2774,8 +2794,7 @@
         "mlip_transport_and_sse",
         "ai_screening_and_uq"
       ],
-      "rationale": "先建立固态电解质机器学习的任务、描述符和验证地图，再选一个小数据任务；不作为可直接复制的软件协议。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "先建立固态电解质机器学习的任务、描述符和验证地图，再选一个小数据任务；不作为可直接复制的软件协议。"
     },
     "cn_10_19799_j_cnki_2095-4239_2022_0051": {
       "stage": "baseline",
@@ -2783,8 +2802,7 @@
         "ai_screening_and_uq",
         "autonomous_workflows"
       ],
-      "rationale": "中文科研常备自查：反复核对数据、特征、模型、留出测试与实验复核，补研究设计素养；不是机器学习工业标准。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "中文科研常备自查：反复核对数据、特征、模型、留出测试与实验复核，补研究设计素养；不是机器学习工业标准。"
     },
     "cn_10_19799_j_cnki_2095-4239_2024_0586": {
       "stage": "intermediate",
@@ -2792,8 +2810,7 @@
         "interfaces_sei_and_dendrites",
         "multiscale_and_validation"
       ],
-      "rationale": "在已有电子结构和MD基础上比较SEI形成、生长模型及时间尺度边界；机器学习+kMC属于研究展望而非现成通用方案。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "在已有电子结构和MD基础上比较SEI形成、生长模型及时间尺度边界；机器学习+kMC属于研究展望而非现成通用方案。"
     },
     "cn_aps2025_liquid": {
       "stage": "frontier",
@@ -2801,16 +2818,14 @@
         "liquid_and_polymer_electrolytes",
         "mlip_reliability_and_data_efficiency"
       ],
-      "rationale": "铝电池离子液体的DFT标注—深度势—MD案例，可研究采样与目标输运的独立验证；不能当锂电解液通用势。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "铝电池离子液体的DFT标注—深度势—MD案例，可研究采样与目标输运的独立验证；不能当锂电解液通用势。"
     },
     "cn_aps2024_vs2": {
       "stage": "beginner",
       "frontiers": [
         "cathodes_defects_and_redox"
       ],
-      "rationale": "以理想二维负极串起结构、电子态、吸附、NEB和容量定义；适合读论文模块，先缩成一个受控小算例。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "以理想二维负极串起结构、电子态、吸附、NEB和容量定义；适合读论文模块，先缩成一个受控小算例。"
     },
     "cn_aps2026_ml_dft": {
       "stage": "frontier",
@@ -2818,40 +2833,35 @@
         "mlip_reliability_and_data_efficiency",
         "autonomous_workflows"
       ],
-      "rationale": "理解AI加速电子结构的多条路线，与能量/力机器学习势分开；属于跨材料方法进展，不是电池专用验证。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "理解AI加速电子结构的多条路线，与能量/力机器学习势分开；属于跨材料方法进展，不是电池专用验证。"
     },
     "cn_shen2020_polymer": {
       "stage": "beginner",
       "frontiers": [
         "liquid_and_polymer_electrolytes"
       ],
-      "rationale": "用高分子背景建立链段、迁移数和电导率概念；这是2020年基础选读，不冒充最新模拟协议。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "用高分子背景建立链段、迁移数和电导率概念；这是2020年基础选读，不冒充最新模拟协议。"
     },
     "cn_chen2024_mlmd_nucleation": {
       "stage": "intermediate",
       "frontiers": [
         "mlip_reliability_and_data_efficiency"
       ],
-      "rationale": "进阶补ML势、序参量和稀有事件采样；通用凝固综述迁移到电池时须重新验证，不能只靠力误差。",
-      "evidence_basis": "依据期刊元数据及已核对的中文正文方法/讨论范围；按阅读用途分类，不代表工业标准、已经复现或发表保证。"
+      "rationale": "进阶补ML势、序参量和稀有事件采样；通用凝固综述迁移到电池时须重新验证，不能只靠力误差。"
     },
     "cn_shi2023_oxygen_vacancy_clusters": {
       "stage": "intermediate",
       "frontiers": [
         "cathodes_defects_and_redox"
       ],
-      "rationale": "从单一能量计算进入缺陷热力学与参考态分析，适合进阶正极稳定性研究；不能把一个更低形成能当成全部性能更优。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "从单一能量计算进入缺陷热力学与参考态分析，适合进阶正极稳定性研究；不能把一个更低形成能当成全部性能更优。"
     },
     "cn_li2024_latp_migration": {
       "stage": "intermediate",
       "frontiers": [
         "mlip_transport_and_sse"
       ],
-      "rationale": "需要先掌握DFT收敛、缺陷和NEB端点；进阶比较多机制迁移，而不是从摘要复制一个最小势垒。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "需要先掌握DFT收敛、缺陷和NEB端点；进阶比较多机制迁移，而不是从摘要复制一个最小势垒。"
     },
     "cn_li2025_latp_surface": {
       "stage": "frontier",
@@ -2859,32 +2869,28 @@
         "mlip_transport_and_sse",
         "interfaces_sei_and_dendrites"
       ],
-      "rationale": "界面/表面可能推翻体相结论，作为固态电解质和界面交叉前沿；读前先复核2024年LATP体相迁移案例。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "界面/表面可能推翻体相结论，作为固态电解质和界面交叉前沿；读前先复核2024年LATP体相迁移案例。"
     },
     "cn_you2021_lipon_li_interface": {
       "stage": "intermediate",
       "frontiers": [
         "interfaces_sei_and_dendrites"
       ],
-      "rationale": "已有结构优化和MD统计基础后进入固固界面建模，不把复杂界面AIMD作为零基础第一算例。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "已有结构优化和MD统计基础后进入固固界面建模，不把复杂界面AIMD作为零基础第一算例。"
     },
     "cn_zhong2021_rare_earth_lfp": {
       "stage": "beginner",
       "frontiers": [
         "cathodes_defects_and_redox"
       ],
-      "rationale": "入门练读计算论文的结构—电子—迁移模块和对照设计；实际完整复现仍需磁性、DFT+U和缺陷基础。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "入门练读计算论文的结构—电子—迁移模块和对照设计；实际完整复现仍需磁性、DFT+U和缺陷基础。"
     },
     "cn_shen2021_si_graphene": {
       "stage": "beginner",
       "frontiers": [
         "interfaces_sei_and_dendrites"
       ],
-      "rationale": "从可控制的吸附位点和参考态开始，作为入门负极小算例；先复核定义与收敛，不把整套复杂构型一次做完。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "从可控制的吸附位点和参考态开始，作为入门负极小算例；先复核定义与收敛，不把整套复杂构型一次做完。"
     },
     "cn_he2022_halide_cation": {
       "stage": "intermediate",
@@ -2892,16 +2898,14 @@
         "mlip_transport_and_sse",
         "ai_screening_and_uq"
       ],
-      "rationale": "将组分、缺陷占位、稳定性与路径连接，适合进阶固态电解质筛选；不能只按单项分数排序。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "将组分、缺陷占位、稳定性与路径连接，适合进阶固态电解质筛选；不能只按单项分数排序。"
     },
     "cn_wang2022_ligand_field": {
       "stage": "intermediate",
       "frontiers": [
         "cathodes_defects_and_redox"
       ],
-      "rationale": "主阶段为进阶，同时供baseline中文常备组反复查阅理论定义；不因主题基础就把整篇当成容易的入门课。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "主阶段为进阶，同时供baseline中文常备组反复查阅理论定义；不因主题基础就把整篇当成容易的入门课。"
     },
     "cn_xu2024_big_data_design": {
       "stage": "frontier",
@@ -2910,8 +2914,191 @@
         "autonomous_workflows",
         "mlip_transport_and_sse"
       ],
-      "rationale": "进入AI多精度筛选前沿，重点研究筛选效率、目标域可靠性和证据链；作为流程参考而非保证发表的选题清单。",
-      "evidence_basis": "依据期刊DOI记录、作者顺序与中文正文方法/结果核验；练习为本站建议，并非已完成复现。"
+      "rationale": "进入AI多精度筛选前沿，重点研究筛选效率、目标域可靠性和证据链；作为流程参考而非保证发表的选题清单。"
+    },
+    "sep2022_1016_j_cclet_2022_03_065": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "将多孔 separator 相纳入总自由能，研究孔径对 Li+ 重分布和枝晶生长的影响。"
+    },
+    "sep2022_3390_ma15227912": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "模拟 separator 厚度和表面涂层对锂枝晶形貌与短路风险的影响。"
+    },
+    "sep2022_1021_acsami_2c15101": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "体积响应 TPU/PVDF-SiO2 separator 调节离子通道并提供热关断；摘要明确包含实验和 AIMD。"
+    },
+    "sep2023_1021_acsami_3c01311": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "仿生 EAA separator 的羧基促进 Li+ 脱溶剂化并固定阴离子，选择性输运由 MD 进一步确认。"
+    },
+    "sep2023_1073_pnas_2314264120": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "polyimine aerogel separator 同时提升 Li+ 扩散和机械抗枝晶能力。"
+    },
+    "sep2024_1038_s41467_024_54313_y": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "3D digital-twin 模拟 Si 膨胀导致 PE/HM separator 孔塌陷与机械关断，并用高负载 Si 全电池验证。"
+    },
+    "sep2024_1016_j_jpowsour_2023_233979": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "由 separator 实测孔结构建立 3D FEM，连接机械载荷、孔隙率变化和析锂。"
+    },
+    "sep2025_1039_d5ta06024a": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "采用三维电化学与传热耦合模型，研究勃姆石隔膜涂层、枝晶短路与局部热积累。"
+    },
+    "sep2025_1002_batt_202500434": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "3D 模型显式跟踪 separator 饱和度、湿润速率、孔隙率和入口毛细压力。"
+    },
+    "sep2021_1016_j_jtice_2021_01_031": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "直接比较干态与多种盐电解液浸泡 polyolefin separator 的热收缩、分解和湿态机械强度。"
+    },
+    "sep2021_1038_s41598_021_81644_3": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "原位 XRD 研究 PP/PE/PP 三层 separator 在 Li-ion 电池充放电中的晶格结构变化。"
+    },
+    "sep2022_1002_ceat_202000218": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "FCS–PEI–SiO2 改性将疏水 PTFE 转为高润湿、高吸液且高温稳定的 LIB separator。"
+    },
+    "sep2022_1007_s10570_022_04873_3": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "纤维素纸/聚合物/纳米 SiO2 复合 separator 提升润湿、阻燃、热尺寸稳定性并在多种 LIB 电极中验证。"
+    },
+    "sep2022_1021_acsaem_1c03548": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "polyimide/Si3N4 whisker 海绵状连通孔 separator，明确测试润湿、Li+ 迁移和高温耐受。"
+    },
+    "sep2023_1016_j_memsci_2023_121617": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "OPBI@SCOF separator 以孔结构和极性基团调节 Li+ 传输、润湿及热尺寸稳定性，并测试 Li 对称电池枝晶抑制。"
+    },
+    "sep2023_1021_acsnano_2c09526": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "研究陶瓷涂层如何改变锂离子电池隔膜的电解液润湿行为。"
+    },
+    "sep2026_3390_batteries12090347": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "采用玻璃片与SBR水性涂层，提高聚乙烯隔膜的润湿性和热稳定性。"
+    },
+    "sep2025_1016_j_fub_2025_100064": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "比较五种 separator 的材料级机械测试和整电芯 crush，直接连接 separator 损伤、内短路和热失控。"
+    },
+    "collector2021_1038_s41467_021_25848_1": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "缺电子/缺陷碳集流体调控SEI与锂成核，并在高面容量NCM811无负极电池中验证。"
+    },
+    "collector2021_1021_acsami_1c13896": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "Cu三维主体原位引入CuO/SnO2亲锂基质，改善成核、离子通量与体积应变。"
+    },
+    "collector2023_1002_ente_202300053": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "二氧化硅修饰多孔Cu调节Li+通量与润湿，三维结构分散电流并容纳体积变化。"
+    },
+    "collector2023_1002_adma_202206762": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "固态电池中调节Cu上的Li金属润湿与接触，改善无负极沉积；同时涉及固态界面接触力学。"
+    },
+    "collector2023_1021_acsami_3c08109": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "FCVA制备Zn3N2/Cu，Zn/N位点改善Li成核并减少枝晶与死锂。"
+    },
+    "collector2023_1016_j_mtener_2023_101341": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "碳修饰超三维Cu降低成核势垒并形成无机富集界面，验证无负极循环。"
+    },
+    "collector2023_1016_j_jallcom_2023_171393": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "Au预沉积三维集流体降低Li成核势垒，并以高面积网络均化沉积。"
+    },
+    "collector2024_1021_acsami_3c14693": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "比较Au、Pt、C种子层对固态无负极Li成核、润湿和形貌的影响。"
+    },
+    "collector2024_1016_j_jcis_2024_02_014": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "三维梯度结构与亲锂纳米层协同调节Li的底向上沉积及电流分布。"
+    },
+    "collector2024_1002_eem2_12768": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "激光构建具有晶体取向选择性的三维Cu，利用晶面亲锂性与几何面积改善沉积。"
+    },
+    "collector2024_1039_d4ta05955g": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "Ag-Cu纳米线/MWCNT泡沫降低局部电流，柔性多孔骨架缓冲挤压应力，Ag提供成核位点。"
+    },
+    "collector2024_1021_acsnano_4c04507": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "预锂化Ag/Cu三维碳纤维亲锂—疏锂梯度层调控沉积/剥离并减少不可逆锂损失。"
+    },
+    "collector2024_3390_batteries10100369": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "喷墨打印Ag位点调节Cu/Li界面成核与沉积，直接用于无负极电池。"
+    },
+    "collector2024_1038_s41529_024_00453_x": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "比较新鲜与退役Al集流体的钝化、溶解和表面变化，并联系电极黏附/接触衰减；不是综述。"
+    },
+    "collector2025_1149_1945_7111_ada641": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "比较LiFSI、LiPF6和LiBF4下Al阳极溶解与钝化膜化学，涉及高电压腐蚀。"
+    },
+    "collector2024_1002_cssc_202400164": {
+      "stage": "intermediate",
+      "frontiers": [],
+      "rationale": "LiFSI碳酸酯电解液中循环与电位加速Al腐蚀，F−穿透钝化层并生成AlF3裂纹。"
+    },
+    "collector2026_1039_d6ta00180g": {
+      "stage": "frontier",
+      "frontiers": [
+        "interfaces_sei_and_dendrites"
+      ],
+      "rationale": "结合Ni(111)/Cu(111)电沉积实验与计算比较Li成核、表面扩散及耐腐蚀性，直接面向无负极集流体选择。"
+    },
+    "collector2026_1002_aenm_71291": {
+      "stage": "frontier",
+      "frontiers": [
+        "interfaces_sei_and_dendrites"
+      ],
+      "rationale": "原子探针追踪无负极循环后Cu晶界/结点中的Li滞留及近表层纳米晶化，直接支持集流体内部锂损失机制。"
     }
   },
   "candidates": [],

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-21",
+  "as_of": "2026-10-25",
   "note": "结构以常见石墨负极、液态电解液锂离子电池为例，非按比例；文献也覆盖其他电极、聚合物/无机固态电解质及钠体系，并不都采用图中结构。分类根据已核验题录与库内简述人工选读，不代替逐篇全文审阅；跨部位论文不重复计入主库。",
   "sources": [
     {
@@ -217,8 +217,123 @@
       "label": "隔膜",
       "label_en": "Separator",
       "description": "在液态电池示意中，它是吸持电解液的多孔电子绝缘隔层：允许离子通行，阻止正负极直接接触。",
-      "scope": "当前 211 篇规范书目中尚未核实专门研究隔膜材料的论文，暂不以电解质论文冒充。部分固态电池不另设独立隔膜；图中结构不是通用必选构型。",
-      "papers": []
+      "scope": "涵盖多孔隔膜的润湿、孔结构、力学和热稳定，以及枝晶相关模拟；聚合物固态电解质与多孔隔膜按研究对象分别阅读。",
+      "papers": [
+        {
+          "paper_id": "li2024_phase_field_dendrite",
+          "doi": "10.3866/pku.whxb202305053",
+          "relation": "direct",
+          "reason": "复用库内已核验隔膜/枝晶相场研究，作为隔膜机制主线的既有参考。"
+        },
+        {
+          "paper_id": "sep2022_1016_j_cclet_2022_03_065",
+          "doi": "10.1016/j.cclet.2022.03.065",
+          "relation": "direct",
+          "reason": "将多孔 separator 相纳入总自由能，研究孔径对 Li+ 重分布和枝晶生长的影响。"
+        },
+        {
+          "paper_id": "sep2022_3390_ma15227912",
+          "doi": "10.3390/ma15227912",
+          "relation": "direct",
+          "reason": "模拟 separator 厚度和表面涂层对锂枝晶形貌与短路风险的影响。"
+        },
+        {
+          "paper_id": "sep2022_1021_acsami_2c15101",
+          "doi": "10.1021/acsami.2c15101",
+          "relation": "direct",
+          "reason": "体积响应 TPU/PVDF-SiO2 separator 调节离子通道并提供热关断；摘要明确包含实验和 AIMD。"
+        },
+        {
+          "paper_id": "sep2023_1021_acsami_3c01311",
+          "doi": "10.1021/acsami.3c01311",
+          "relation": "direct",
+          "reason": "仿生 EAA separator 的羧基促进 Li+ 脱溶剂化并固定阴离子，选择性输运由 MD 进一步确认。"
+        },
+        {
+          "paper_id": "sep2023_1073_pnas_2314264120",
+          "doi": "10.1073/pnas.2314264120",
+          "relation": "direct",
+          "reason": "polyimine aerogel separator 同时提升 Li+ 扩散和机械抗枝晶能力。"
+        },
+        {
+          "paper_id": "sep2024_1038_s41467_024_54313_y",
+          "doi": "10.1038/s41467-024-54313-y",
+          "relation": "direct",
+          "reason": "3D digital-twin 模拟 Si 膨胀导致 PE/HM separator 孔塌陷与机械关断，并用高负载 Si 全电池验证。"
+        },
+        {
+          "paper_id": "sep2024_1016_j_jpowsour_2023_233979",
+          "doi": "10.1016/j.jpowsour.2023.233979",
+          "relation": "direct",
+          "reason": "由 separator 实测孔结构建立 3D FEM，连接机械载荷、孔隙率变化和析锂。"
+        },
+        {
+          "paper_id": "sep2025_1039_d5ta06024a",
+          "doi": "10.1039/d5ta06024a",
+          "relation": "direct",
+          "reason": "采用三维电化学与传热耦合模型，研究勃姆石隔膜涂层、枝晶短路与局部热积累。"
+        },
+        {
+          "paper_id": "sep2025_1002_batt_202500434",
+          "doi": "10.1002/batt.202500434",
+          "relation": "direct",
+          "reason": "3D 模型显式跟踪 separator 饱和度、湿润速率、孔隙率和入口毛细压力。"
+        },
+        {
+          "paper_id": "sep2021_1016_j_jtice_2021_01_031",
+          "doi": "10.1016/j.jtice.2021.01.031",
+          "relation": "direct",
+          "reason": "直接比较干态与多种盐电解液浸泡 polyolefin separator 的热收缩、分解和湿态机械强度。"
+        },
+        {
+          "paper_id": "sep2021_1038_s41598_021_81644_3",
+          "doi": "10.1038/s41598-021-81644-3",
+          "relation": "direct",
+          "reason": "原位 XRD 研究 PP/PE/PP 三层 separator 在 Li-ion 电池充放电中的晶格结构变化。"
+        },
+        {
+          "paper_id": "sep2022_1002_ceat_202000218",
+          "doi": "10.1002/ceat.202000218",
+          "relation": "direct",
+          "reason": "FCS–PEI–SiO2 改性将疏水 PTFE 转为高润湿、高吸液且高温稳定的 LIB separator。"
+        },
+        {
+          "paper_id": "sep2022_1007_s10570_022_04873_3",
+          "doi": "10.1007/s10570-022-04873-3",
+          "relation": "direct",
+          "reason": "纤维素纸/聚合物/纳米 SiO2 复合 separator 提升润湿、阻燃、热尺寸稳定性并在多种 LIB 电极中验证。"
+        },
+        {
+          "paper_id": "sep2022_1021_acsaem_1c03548",
+          "doi": "10.1021/acsaem.1c03548",
+          "relation": "direct",
+          "reason": "polyimide/Si3N4 whisker 海绵状连通孔 separator，明确测试润湿、Li+ 迁移和高温耐受。"
+        },
+        {
+          "paper_id": "sep2023_1016_j_memsci_2023_121617",
+          "doi": "10.1016/j.memsci.2023.121617",
+          "relation": "direct",
+          "reason": "OPBI@SCOF separator 以孔结构和极性基团调节 Li+ 传输、润湿及热尺寸稳定性，并测试 Li 对称电池枝晶抑制。"
+        },
+        {
+          "paper_id": "sep2023_1021_acsnano_2c09526",
+          "doi": "10.1021/acsnano.2c09526",
+          "relation": "direct",
+          "reason": "研究陶瓷涂层如何改变锂离子电池隔膜的电解液润湿行为。"
+        },
+        {
+          "paper_id": "sep2026_3390_batteries12090347",
+          "doi": "10.3390/batteries12090347",
+          "relation": "direct",
+          "reason": "采用玻璃片与SBR水性涂层，提高聚乙烯隔膜的润湿性和热稳定性。"
+        },
+        {
+          "paper_id": "sep2025_1016_j_fub_2025_100064",
+          "doi": "10.1016/j.fub.2025.100064",
+          "relation": "direct",
+          "reason": "比较五种 separator 的材料级机械测试和整电芯 crush，直接连接 separator 损伤、内短路和热失控。"
+        }
+      ]
     },
     {
       "id": "interface",
@@ -300,8 +415,117 @@
       "label": "集流体",
       "label_en": "Current collectors",
       "description": "将活性层中的电子接入外电路。图示采用常见锂离子电池的正极侧铝、石墨负极侧铜；不是所有化学体系都使用相同金属。",
-      "scope": "当前规范书目中尚未核实专门研究集流体材料的论文，因此不把一般电极论文放入此类。实际金属选择还受电位窗口、合金化、腐蚀与工艺约束。",
-      "papers": []
+      "scope": "涵盖锂金属用集流体的成核与沉积，以及铝集流体的钝化腐蚀；正极侧铝腐蚀与负极侧锂沉积采用各自的电化学条件。",
+      "papers": [
+        {
+          "paper_id": "collector2021_1038_s41467_021_25848_1",
+          "doi": "10.1038/s41467-021-25848-1",
+          "relation": "direct",
+          "reason": "缺电子/缺陷碳集流体调控SEI与锂成核，并在高面容量NCM811无负极电池中验证。"
+        },
+        {
+          "paper_id": "collector2021_1021_acsami_1c13896",
+          "doi": "10.1021/acsami.1c13896",
+          "relation": "direct",
+          "reason": "Cu三维主体原位引入CuO/SnO2亲锂基质，改善成核、离子通量与体积应变。"
+        },
+        {
+          "paper_id": "collector2023_1002_ente_202300053",
+          "doi": "10.1002/ente.202300053",
+          "relation": "direct",
+          "reason": "二氧化硅修饰多孔Cu调节Li+通量与润湿，三维结构分散电流并容纳体积变化。"
+        },
+        {
+          "paper_id": "collector2023_1002_adma_202206762",
+          "doi": "10.1002/adma.202206762",
+          "relation": "direct",
+          "reason": "固态电池中调节Cu上的Li金属润湿与接触，改善无负极沉积；同时涉及固态界面接触力学。"
+        },
+        {
+          "paper_id": "collector2023_1021_acsami_3c08109",
+          "doi": "10.1021/acsami.3c08109",
+          "relation": "direct",
+          "reason": "FCVA制备Zn3N2/Cu，Zn/N位点改善Li成核并减少枝晶与死锂。"
+        },
+        {
+          "paper_id": "collector2023_1016_j_mtener_2023_101341",
+          "doi": "10.1016/j.mtener.2023.101341",
+          "relation": "direct",
+          "reason": "碳修饰超三维Cu降低成核势垒并形成无机富集界面，验证无负极循环。"
+        },
+        {
+          "paper_id": "collector2023_1016_j_jallcom_2023_171393",
+          "doi": "10.1016/j.jallcom.2023.171393",
+          "relation": "direct",
+          "reason": "Au预沉积三维集流体降低Li成核势垒，并以高面积网络均化沉积。"
+        },
+        {
+          "paper_id": "collector2024_1021_acsami_3c14693",
+          "doi": "10.1021/acsami.3c14693",
+          "relation": "direct",
+          "reason": "比较Au、Pt、C种子层对固态无负极Li成核、润湿和形貌的影响。"
+        },
+        {
+          "paper_id": "collector2024_1016_j_jcis_2024_02_014",
+          "doi": "10.1016/j.jcis.2024.02.014",
+          "relation": "direct",
+          "reason": "三维梯度结构与亲锂纳米层协同调节Li的底向上沉积及电流分布。"
+        },
+        {
+          "paper_id": "collector2024_1002_eem2_12768",
+          "doi": "10.1002/eem2.12768",
+          "relation": "direct",
+          "reason": "激光构建具有晶体取向选择性的三维Cu，利用晶面亲锂性与几何面积改善沉积。"
+        },
+        {
+          "paper_id": "collector2024_1039_d4ta05955g",
+          "doi": "10.1039/d4ta05955g",
+          "relation": "direct",
+          "reason": "Ag-Cu纳米线/MWCNT泡沫降低局部电流，柔性多孔骨架缓冲挤压应力，Ag提供成核位点。"
+        },
+        {
+          "paper_id": "collector2024_1021_acsnano_4c04507",
+          "doi": "10.1021/acsnano.4c04507",
+          "relation": "direct",
+          "reason": "预锂化Ag/Cu三维碳纤维亲锂—疏锂梯度层调控沉积/剥离并减少不可逆锂损失。"
+        },
+        {
+          "paper_id": "collector2024_3390_batteries10100369",
+          "doi": "10.3390/batteries10100369",
+          "relation": "direct",
+          "reason": "喷墨打印Ag位点调节Cu/Li界面成核与沉积，直接用于无负极电池。"
+        },
+        {
+          "paper_id": "collector2024_1038_s41529_024_00453_x",
+          "doi": "10.1038/s41529-024-00453-x",
+          "relation": "direct",
+          "reason": "比较新鲜与退役Al集流体的钝化、溶解和表面变化，并联系电极黏附/接触衰减；不是综述。"
+        },
+        {
+          "paper_id": "collector2025_1149_1945_7111_ada641",
+          "doi": "10.1149/1945-7111/ada641",
+          "relation": "direct",
+          "reason": "比较LiFSI、LiPF6和LiBF4下Al阳极溶解与钝化膜化学，涉及高电压腐蚀。"
+        },
+        {
+          "paper_id": "collector2024_1002_cssc_202400164",
+          "doi": "10.1002/cssc.202400164",
+          "relation": "direct",
+          "reason": "LiFSI碳酸酯电解液中循环与电位加速Al腐蚀，F−穿透钝化层并生成AlF3裂纹。"
+        },
+        {
+          "paper_id": "collector2026_1039_d6ta00180g",
+          "doi": "10.1039/d6ta00180g",
+          "relation": "direct",
+          "reason": "结合Ni(111)/Cu(111)电沉积实验与计算比较Li成核、表面扩散及耐腐蚀性，直接面向无负极集流体选择。"
+        },
+        {
+          "paper_id": "collector2026_1002_aenm_71291",
+          "doi": "10.1002/aenm.71291",
+          "relation": "direct",
+          "reason": "原子探针追踪无负极循环后Cu晶界/结点中的Li滞留及近表层纳米晶化，直接支持集流体内部锂损失机制。"
+        }
+      ]
     }
   ]
 }

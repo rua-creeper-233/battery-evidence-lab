@@ -27,10 +27,11 @@ GUIDE_NAMES = (
     "RELEASE_20261021_BATTERY_MAP.md",
     "RELEASE_20261021_CLARITY.md",
     "RELEASE_20261021_MIGRATION.md",
+    "RELEASE_20261025_COMPONENTS_INSIGHTS.md",
 )
 PAGE_NAMES = ("index.html", "future-directions.html", "ai-battery-applications.html", "foundations.html")
-ASSET_NAMES = ("favicon.svg", "share-card.png", "nav-overflow.js", "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css", "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css", "battery_explorer.js", "home.css", "home.js", "tutorials.js", "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js")
-DATA_NAMES = ("papers.json", "paper_tags.json", "search_config.json", "project_status.json", "learning_route.json", "paper_titles_zh.json", "domestic_papers.json", "static_qa.json", "research_knowledge.json", "battery_components.json")
+ASSET_NAMES = ("favicon.svg", "share-card.png", "nav-overflow.js", "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css", "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css", "battery_explorer.js", "paper_insights.js", "paper_insights.css", "home.css", "home.js", "tutorials.js", "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js")
+DATA_NAMES = ("papers.json", "paper_tags.json", "search_config.json", "project_status.json", "learning_route.json", "paper_titles_zh.json", "domestic_papers.json", "static_qa.json", "research_knowledge.json", "battery_components.json", "paper_insights.json")
 
 
 def progress_text(status: dict) -> str:
@@ -77,6 +78,13 @@ def write_utf8(path: Path, content: str) -> None:
 def main() -> None:
     papers_path = ROOT / "data" / "papers.json"
     papers = json.loads(papers_path.read_text(encoding="utf-8"))
+    insights_path = ROOT / "data" / "paper_insights.json"
+    if insights_path.is_file():
+        from validate_paper_insights import validate as validate_paper_insights
+        insights = json.loads(insights_path.read_text(encoding="utf-8"))
+        errors = validate_paper_insights(insights, papers)
+        if errors:
+            raise publication_safety.PublicationSafetyError("invalid paper insights: " + "; ".join(errors))
 
     # Validate every sensitive source before the first docs mutation.
     publication_safety.validate_public_zotero_map(ROOT / "static" / "data" / "zotero-links.json")
@@ -150,7 +158,7 @@ def main() -> None:
         copy(ROOT / "guides" / guide, DOCS / "guides" / guide)
     for name in DATA_NAMES:
         copy(ROOT / "data" / name, DOCS / "data" / name)
-    for name in ("project_status.json", "paper_titles_zh.json", "static_qa.json", "research_knowledge.json", "battery_components.json"):
+    for name in ("project_status.json", "paper_titles_zh.json", "static_qa.json", "research_knowledge.json", "battery_components.json", "paper_insights.json"):
         copy(ROOT / "data" / name, ROOT / "static" / "data" / name)
     (DOCS / "data").mkdir(parents=True, exist_ok=True)
     write_utf8(DOCS / "data" / "method_evidence.auto.json", json.dumps(public_method, ensure_ascii=False, indent=2) + "\n")

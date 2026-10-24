@@ -1,0 +1,5 @@
+.paper-insights { margin-top: 18px; padding-top: 6px; border-top: 1px solid var(--line, #e6e9e4); }
+.paper-insights h4 { margin: 14px 0 5px; color: var(--ink, #23352c); font-size: 14px; }
+.paper-insight-item, .paper-insight-relations li { margin: 7px 0; line-height: 1.5; }
+.paper-insight-source { display: block; color: var(--muted, #69766f); font-size: 11px; margin-top: 2px; }
+.paper-insight-kind { margin-left: 7px; color: #8c5a2b; font-size: 11px; font-style: normal; }

@@ -1,0 +1,1749 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-25",
+  "methodology": {
+    "reference_title": "面向AI_for_Science的科技文献数据集体系构建研究——以有机太阳能电池领域为例",
+    "reference_url": "https://link.cnki.net/urlid/10.1478.G2.20260303.1619.002",
+    "implemented_layers": "L1–L2：人工整理研究问题、体系、方法、结果、证据与关系",
+    "note": "逐条区分正文、摘要与已有目录整理；复现提示标记为阅读建议，实体关系采用轻量人工整理。"
+  },
+  "papers": {
+    "tan2026_pemd": {
+      "paper_id": "tan2026_pemd",
+      "doi": "10.1039/d5dd00454c",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "tan2026_pemd：summary / methods / evidence / protocol_steps"
+        },
+        {
+          "id": "c",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "tan2026_pemd：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "研究如何把聚合物电解质构建、参数化、分子动力学和输运分析串成可重复流程。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "对象是无定形聚合物电解质，示例覆盖PEO/LiTFSI。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "流程结合量子化学参数化、OPLS-AA、GROMACS分子动力学及电导和扩散后处理。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者将工作流和分析工具公开，论文摘要所述目标是提高聚合物电解质高通量模拟的一致性。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "无定形聚合物的链段弛豫、盐浓度和有限轨迹会改变输运估计，结果只适用于已验证的组成与采样协议。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先按仓库示例固定软件版本，完成一个PEO/LiTFSI冒烟算例，再独立报告轨迹数、拟合区间、单位和统计误差。",
+            "source_refs": [
+              "c"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "PEMD workflow",
+          "predicate": "supports",
+          "object": "polymer-electrolyte transport analysis",
+          "source_refs": [
+            "d",
+            "c"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "kuhn2026_hitpoly": {
+      "paper_id": "kuhn2026_hitpoly",
+      "doi": "10.1016/j.matt.2026.102922",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "kuhn2026_hitpoly：summary / methods / evidence / protocol_steps"
+        },
+        {
+          "id": "a",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "kuhn2026_hitpoly：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "研究贝叶斯优化能否在高通量聚合物电解质MD中更有效地分配计算预算。",
+            "source_refs": [
+              "d",
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "候选包括聚合物电解质及LiTFSI和钠盐相关体系。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "方法是文献热启动贝叶斯优化结合高通量分子动力学，并以输运性质作为评价目标。",
+            "source_refs": [
+              "d",
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "论文摘要报告在大候选空间中选择有限数量的聚合物进行实际模拟，并分析结构与输运关联。",
+            "source_refs": [
+              "d",
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "BO排序受初始文献数据、分子表示和MD噪声影响，候选优先级不能直接解释为实验性能。",
+            "source_refs": [
+              "d",
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时分别记录候选池、初始训练集、BO批次和随机基线，避免把候选空间数量写成计算次数。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "Bayesian optimization",
+          "predicate": "allocates",
+          "object": "polymer MD screening budget",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "xie2022_polymernet": {
+      "paper_id": "xie2022_polymernet",
+      "doi": "10.1038/s41467-022-30994-1",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://www.nature.com/articles/s41467-022-30994-1",
+          "scope": "abstract",
+          "locator": "出版社摘要"
+        },
+        {
+          "id": "c",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "xie2022_polymernet：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "研究如何降低无定形聚合物电解质MD性质估计的误差和昂贵采样成本。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "体系是无定形聚合物电解质和LiTFSI，关注离子与聚合物输运。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "方法把大量短时MD与少量长时MD结合，并训练多任务图神经网络预测性质误差。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "论文将慢弛豫、多时间尺度和重复采样确定为筛选瓶颈，并提出学习误差校正来加速筛选。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "误差校正模型依赖训练化学空间和MD协议；换聚合物、盐浓度或力场后需重新做独立测试。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先复现仓库中的数据划分和一个输运任务，再比较短轨迹、长轨迹与独立测试集误差。",
+            "source_refs": [
+              "c"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "multitask graph network",
+          "predicate": "reduces error in",
+          "object": "MD-simulated polymer transport properties",
+          "source_refs": [
+            "d",
+            "c"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "takenaka2026_sei_mlff": {
+      "paper_id": "takenaka2026_sei_mlff",
+      "doi": "10.1038/s41524-026-02271-y",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "takenaka2026_sei_mlff：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "研究锂金属表面早期固态电解质界面的形成反应序列。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "对象是锂金属—电解液界面及其初始SEI。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "采用第一性原理训练的机器学习力场分子动力学，并自动识别反应。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "摘要报告了反应顺序、反应概率、产物形成速率及SEI分层特征的统计分析。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "早期SEI反应网络受界面组成、温度和势函数训练域影响，不能直接外推到长期循环或其他电解液。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "若取得正文和补充材料，应先核对力场训练域与反应识别阈值，再做短轨迹稳定性测试。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "first-principles-trained ML force field",
+          "predicate": "drives",
+          "object": "SEI formation molecular dynamics",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "zhang2024_mlmd_size_conductivity": {
+      "paper_id": "zhang2024_mlmd_size_conductivity",
+      "doi": "10.1016/j.aichem.2024.100051",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "zhang2024_mlmd_size_conductivity：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "研究机器学习MD中固态电解质超胞尺寸如何影响锂离子电导估计。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "研究对象是Li3YCl6固态电解质。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "方法比较不同尺寸体系的机器学习分子动力学扩散和电导分析。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "摘要强调小超胞和高温训练数据选择会影响室温电导推断。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "有限尺寸误差与温度外推耦合，Li3YCl6的尺寸结论不能直接当作其他晶体电解质的通用修正。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "至少做三个盒尺寸并保持势、温度协议和扩散拟合窗口一致，报告有限尺寸误差。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "simulation cell size",
+          "predicate": "affects",
+          "object": "predicted Li-ion conductivity",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "geng2025_vaspkit_protocol": {
+      "paper_id": "geng2025_vaspkit_protocol",
+      "doi": "10.1038/s41596-025-01160-w",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "geng2025_vaspkit_protocol：summary / methods / evidence / protocol_steps"
+        },
+        {
+          "id": "c",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "geng2025_vaspkit_protocol：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "提供从VASP输入准备到结果分析的可执行协议。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "示例覆盖周期材料、石墨烯、Pt、CsPbI3和液态水。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "协议覆盖输入生成、能带/DOS、声子、光学性质和分子动力学分析。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "文章以逐步操作和示例数据说明VASPKIT如何连接VASP前处理与后处理。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "工具输出仍受赝势、泛函、截断能和k点等VASP设置控制，示例流程不能替代目标体系收敛测试。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "按协议先跑一个示例，保存INCAR/KPOINTS/POTCAR版本和VASPKIT命令，再迁移到电池材料。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "VASPKIT",
+          "predicate": "facilitates",
+          "object": "VASP input and result analysis",
+          "source_refs": [
+            "d",
+            "c"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "wang2021_vaspkit": {
+      "paper_id": "wang2021_vaspkit",
+      "doi": "10.1016/j.cpc.2021.108033",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "wang2021_vaspkit：summary / methods / evidence / protocol_steps"
+        },
+        {
+          "id": "c",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "wang2021_vaspkit：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "建立面向VASP高通量计算和分析的用户界面。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "对象是周期材料的VASP输入、输出和批处理任务。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "工具支持对称性分析、超胞、k路径、电子结构、弹性和电荷分析。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "论文展示了VASPKIT将前处理、后处理和命令行批处理整合到统一工作流。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "批处理和自动生成不决定泛函、赝势或收敛标准，工具结果仍需对目标体系做独立收敛检查。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先用官方版本复现一个能带或弹性示例，并人工检查生成输入与VASP版本兼容性。",
+            "source_refs": [
+              "c"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "VASPKIT",
+          "predicate": "automates",
+          "object": "VASP preprocessing and postprocessing",
+          "source_refs": [
+            "d",
+            "c"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "deng2023_chgnet": {
+      "paper_id": "deng2023_chgnet",
+      "doi": "10.1038/s42256-023-00716-3",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://www.nature.com/articles/s42256-023-00716-3",
+          "scope": "article",
+          "locator": "abstract; performance evaluation; applications"
+        },
+        {
+          "id": "c",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "deng2023_chgnet：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "构建能利用磁矩信息表达电荷相关化学的预训练通用神经网络势。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "应用包括LixMnO2、LixFePO4、石榴石型锂导体和Na2V2(PO4)3。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "CHGNet在Materials Project轨迹的能量、力、应力和磁矩上预训练，并用于弛豫、MD和相图分析。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "摘要报告模型可用于电荷知情MD、温度相图和锂扩散；正文给出含磁矩训练的能量、力、应力和磁矩测试误差。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "预训练势对化学空间、磁态和局域配位敏感；界面反应或新元素体系应先做DFT对照再决定是否微调。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "用仓库固定版本先做结构弛豫与能量/力检查，再对目标电解质比较CHGNet与少量DFT/AIMD。",
+            "source_refs": [
+              "c"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "magnetic-moment-informed CHGNet",
+          "predicate": "models",
+          "object": "charge-sensitive atomistic behaviour",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "chen2022_m3gnet": {
+      "paper_id": "chen2022_m3gnet",
+      "doi": "10.1038/s43588-022-00349-3",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://www.nature.com/articles/s43588-022-00349-3",
+          "scope": "article",
+          "locator": "abstract and data availability"
+        },
+        {
+          "id": "c",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "chen2022_m3gnet：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "构建覆盖广泛化学空间、可用于结构弛豫和动力学的通用图深度学习势。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "训练和应用覆盖Materials Project晶体及广泛元素组合。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "M3GNet使用带三体相互作用的图网络，并学习结构弛豫数据库中的能量、力和应力。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "出版商摘要报告模型用于结构弛豫、动力学和性质预测，并在大规模假想晶体筛选中产生候选后以DFT复核。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "筛选能量适合候选排序而非最终稳定性判定；固态电解质扩散和反应需用目标体系DFT或实验进一步验证。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先用公开实现复现一个结构弛豫，再对目标体系抽样做DFT能量、力和应力对照。",
+            "source_refs": [
+              "c"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "M3GNet",
+          "predicate": "enables",
+          "object": "large-scale crystal relaxation and screening",
+          "source_refs": [
+            "d",
+            "c"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "batzner2022_nequip": {
+      "paper_id": "batzner2022_nequip",
+      "doi": "10.1038/s41467-022-29939-5",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://www.nature.com/articles/s41467-022-29939-5",
+          "scope": "article",
+          "locator": "abstract and results"
+        },
+        {
+          "id": "c",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "batzner2022_nequip：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "研究E(3)等变图网络能否以较少第一性原理构型学习准确的原子间势。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "验证包含水、非晶固体、固气界面和锂超离子导体。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "NequIP使用E(3)等变卷积学习能量和力，并以学习曲线比较数据效率。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "模型在多种体系展示了较高的数据效率；正文在甲酸盐/Cu表面催化体系中报告用2500个构型训练后的分元素力误差。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "等变模型的数据效率仍受参考理论和构型覆盖控制；锂导体训练不能直接外推到任意电池界面。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "按仓库配置固定截断半径、等变阶数和训练/验证划分，并画学习曲线而非只报单点误差。",
+            "source_refs": [
+              "c"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "E(3)-equivariant NequIP",
+          "predicate": "improves data efficiency for",
+          "object": "interatomic-potential learning",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "zhang2018_deep_potential": {
+      "paper_id": "zhang2018_deep_potential",
+      "doi": "10.1103/physrevlett.120.143001",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "zhang2018_deep_potential：summary / methods / evidence / protocol_steps"
+        },
+        {
+          "id": "c",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "zhang2018_deep_potential：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "提出可扩展的深度势分子动力学模型，使大体系模拟接近量子力学参考。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "出版商记录将方法定位于凝聚态和水等原子体系。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "方法学习局域环境到势能面的映射，并将深度势用于分子动力学。",
+            "source_refs": [
+              "d",
+              "c"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "论文摘要的核心贡献是把量子精度近似与可扩展MD结合；具体体系指标需回到正文核对。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "深度势的可靠性取决于训练域、截断和参考数据；方法论文本身不构成固态电解质专属验证。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "用DeepMD-kit示例先检查数据格式、单位、邻居表和能量/力验证，再构建电解质专属训练集。",
+            "source_refs": [
+              "c"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "Deep Potential",
+          "predicate": "enables",
+          "object": "scalable quantum-informed molecular dynamics",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "wang2025_dpa_sse": {
+      "paper_id": "wang2025_dpa_sse",
+      "doi": "10.1038/s41524-025-01764-6",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "wang2025_dpa_sse：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "构建覆盖较广、精度较高的硫化物固态电解质预训练深度势。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "对象是Li-P-S及相关硫化物固态电解质化学空间。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "研究围绕DFT数据、深度势训练和长时间尺度MD输运评估。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "摘要报告模型覆盖范围、精度和离子输运应用是主要评估维度。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "硫化物势的输运结论受Li-P-S组成覆盖、温度和长时采样影响，跨化学空间使用前应做独立验证。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "取得作者模型后先做元素/组成域检查，再以独立DFT构型和多温度扩散测试验证。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "pre-trained deep potential",
+          "predicate": "covers",
+          "object": "sulfide solid-electrolyte chemical space",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "kim2024_llzo_lco_interface_mlff": {
+      "paper_id": "kim2024_llzo_lco_interface_mlff",
+      "doi": "10.1016/j.ensm.2024.103842",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "kim2024_llzo_lco_interface_mlff：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "用机器学习原子间势探查固态电池固固界面的退化过程。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "界面由LLZO固态电解质和LiCoO2正极组成。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "方法是大规模机器学习势分子动力学，观察界面结构、应力和输运变化。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "摘要将界面降解和原子尺度模拟联系起来，为固态电池界面机理分析提供案例。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "界面退化对化学计量、应变和势训练域敏感，原子尺度模拟结果不能直接换算为全电池寿命。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现应先核对界面化学计量、应变和势的训练域，再比较界面与体相的局域结构和扩散统计。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "LLZO/LCO interface",
+          "predicate": "is probed by",
+          "object": "machine-learning interatomic-potential MD",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "ong2013_lgps": {
+      "paper_id": "ong2013_lgps",
+      "doi": "10.1039/C2EE23355J",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "ong2013_lgps：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "同时评估Li10±1MP2X12家族的相稳定性、电化学稳定性和离子电导。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "体系包含LGPS及Li10±1MP2X12硫化物/氧化物超离子导体家族。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "方法结合DFT相图、电化学稳定性分析和AIMD离子输运估计。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "论文把高电导与热力学/电化学稳定性放在同一筛选框架，而不是只按单一电导指标排序。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "相稳定和电化学窗口依赖化学势参考与温度；体相稳定性不能直接替代界面反应和循环稳定性。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时分别画相图、稳定窗口和扩散统计，并注明化学势参考和AIMD采样时间。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "LGPS-family assessment",
+          "predicate": "combines",
+          "object": "phase, electrochemical, and transport criteria",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "recent_10_1103_physrevmaterials_8_115407": {
+      "paper_id": "recent_10_1103_physrevmaterials_8_115407",
+      "doi": "10.1103/physrevmaterials.8.115407",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "recent_10_1103_physrevmaterials_8_115407：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "比较Li6PS5Cl固态电解质体相与晶界中的原子扩散。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "对象是Li6PS5Cl及其晶界模型。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "采用机器学习原子间势进行原子尺度动力学和扩散分析。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "出版商记录明确将体相扩散、晶界扩散和机器学习势作为论文主题。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "晶界扩散依赖晶界取向、缺陷浓度和势的训练覆盖，体相—晶界差异不能脱离这些模型条件解释。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先获得正文后固定晶界取向、势版本和温度协议，分别计算体相与晶界的MSD和扩散系数。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "Li6PS5Cl grain boundary",
+          "predicate": "is compared with",
+          "object": "bulk Li diffusion",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "li2024_phase_field_dendrite": {
+      "paper_id": "li2024_phase_field_dendrite",
+      "doi": "10.3866/pku.whxb202305053",
+      "sources": [
+        {
+          "id": "d",
+          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
+          "scope": "catalog",
+          "locator": "li2024_phase_field_dendrite：summary / methods / evidence / protocol_steps"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "研究定制电解液或隔膜的各向异性锂离子输运能否抑制枝晶生长。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "对象是锂金属、液态电解质/隔膜和枝晶形貌演化。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "采用相场模型描述锂沉积与各向异性离子输运，论文记录使用MATLAB。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "摘要将各向异性传输与枝晶抑制建立模型层面的因果联系。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "枝晶形貌对迁移张量、界面能、沉积边界和网格分辨率敏感，参数化结果需与独立实验或尺度分析对照。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现应先做各向同性基线，再单独改变迁移张量各向异性并报告网格、时间步和边界条件。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "anisotropic Li-ion transport",
+          "predicate": "inhibits",
+          "object": "phase-field dendrite growth",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "collector2021_1038_s41467_021_25848_1": {
+      "paper_id": "collector2021_1038_s41467_021_25848_1",
+      "doi": "10.1038/s41467-021-25848-1",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1038/s41467-021-25848-1",
+          "scope": "article",
+          "locator": "PDF p.1 Abstract; p.11 Methods"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "无负极锂金属电池中，如何通过集流体表面缺陷调控SEI和锂沉积均匀性？",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "systems": [
+          {
+            "text": "多空位缺陷碳集流体、含锂非水电解液及NCM811正极组成的无负极电池。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "text": "结合模拟与实验，比较碳表面电子缺乏、SEI形成及锂成核和生长。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "方法部分给出ZIF-8包覆、碳化制备缺陷碳，以及半电池和无负极全电池测试。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者观察到多空位缺陷对应更均匀的SEI和更致密的锂沉积。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "摘要报告：在文中贫液条件下，无负极扣式全电池循环超过50次后保留约90%初始容量。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "limits": [
+          {
+            "text": "比较循环结果时同步核对面容量、电解液用量、正极载量及电流密度，避免跨工况直接排序。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先建立原始碳与缺陷碳对照，再对照相同条件下的成核、沉积形貌和循环数据。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "把半电池结果与无负极全电池结果分别记录，提取电解液组成和锂库存边界。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "多空位碳表面",
+          "predicate": "调控",
+          "object": "SEI形成与锂成核",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "sep2024_1038_s41467_024_54313_y": {
+      "paper_id": "sep2024_1038_s41467_024_54313_y",
+      "doi": "10.1038/s41467-024-54313-y",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1038/s41467-024-54313-y",
+          "scope": "article",
+          "locator": "PDF p.1 Abstract; p.9 Methods"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "硅负极体积膨胀是否会压塌隔膜孔道，进而放大全电池失效？",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "systems": [
+          {
+            "text": "硅负极全电池、商业聚乙烯隔膜，以及作者制备的高模量隔膜。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "text": "机电结构表征结合数字孪生压缩模拟，关联局部压应力、孔结构和离子传输。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "制备与比较高模量隔膜，并在高面容量软包硅全电池中测试。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者将硅膨胀引起的局部孔塌缩识别为隔膜机械关断机制，孔结构变化进一步加剧反应不均匀。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "摘要报告文中高模量隔膜软包全电池在4.5 mA/cm²充电条件下循环400次后保留88%容量。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "limits": [
+          {
+            "text": "文中的大于1 GPa模量目标来自特定压缩模型；迁移到其他隔膜或电芯时应重新匹配几何、载荷及孔结构。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "从隔膜厚度、孔隙结构、模量及硅膨胀载荷建立参数表，先复核压缩后孔结构变化。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "把力学表征、传输阻力和全电池循环三组结果串联，检查因果链是否同时得到支持。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "硅负极膨胀",
+          "predicate": "导致局部压缩",
+          "object": "聚乙烯隔膜孔道",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "collector2024_1038_s41529_024_00453_x": {
+      "paper_id": "collector2024_1038_s41529_024_00453_x",
+      "doi": "10.1038/s41529-024-00453-x",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1038/s41529-024-00453-x",
+          "scope": "article",
+          "locator": "PDF p.1 Abstract; p.9 Methods"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "铝集流体钝化层的形成、破裂和腐蚀怎样影响锂离子电池循环性能？",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "systems": [
+          {
+            "text": "铝箔集流体与LiCoO₂相关电池，方法采用1 M LiPF₆及EC/DEC/FEC体积比3:6:1电解液。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "text": "比较新鲜与回收铝箔，跟踪电压相关钝化、局部腐蚀及电极完整性。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "结合表面与电化学分析，研究EC吸附、Al–F–O生成和钝化层应力开裂。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者提出充电中钝化层受新生成颗粒挤压、破裂和再次生成，导致铝基体持续消耗。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "摘要将局部腐蚀与EC吸附及充电电压联系起来，并特别讨论4.4 V和4.8 V条件。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "limits": [
+          {
+            "text": "核对电解液、含水量、最高电压及铝箔历史后再比较腐蚀；这不是锂在铜集流体上成核的证据。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先整理电解液组成、箔材处理、充电上限及表面分析时点，区分回收箔与新鲜箔。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "复核钝化层形貌、界面阻抗和不可逆电流是否随工况一致变化。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "电压相关钝化层破裂",
+          "predicate": "促进",
+          "object": "铝集流体局部腐蚀",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "sep2021_1038_s41598_021_81644_3": {
+      "paper_id": "sep2021_1038_s41598_021_81644_3",
+      "doi": "10.1038/s41598-021-81644-3",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1038/s41598-021-81644-3",
+          "scope": "article",
+          "locator": "PDF p.1 Abstract"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "PP/PE/PP三层隔膜为何在不同充电倍率下出现异常晶格膨胀？",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "systems": [
+          {
+            "text": "商业聚丙烯/聚乙烯/聚丙烯三层微孔隔膜及含EC的锂离子电池环境。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "text": "原位X射线衍射观察晶格变化，结合电化学阻抗和高分辨扫描电镜检查孔结构。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "用DFT检验锂离子和EC分子插入PP或PE结构的热力学可能性。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者发现低电流密度充电时PP和PE晶格变化显著，并将其与更大的阻抗变化关联。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "DFT结果支持所建模型中锂离子与EC插入的热力学有利性，用于解释异常膨胀。",
+            "kind": "reported",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "limits": [
+          {
+            "text": "插入能描述热力学倾向；要讨论实际插入速率或长期失效，还需动力学和时间尺度证据。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "对齐倍率、充电状态和原位XRD峰位，先重建晶格参数随状态变化的图。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          },
+          {
+            "text": "再检查DFT聚合物结构、插入构型和参考能定义，把模拟与倍率相关实验分别比较。",
+            "kind": "reading_guide",
+            "source_refs": [
+              "a"
+            ]
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "锂离子与EC插入模型",
+          "predicate": "解释",
+          "object": "三层隔膜晶格膨胀",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    }
+  }
+}

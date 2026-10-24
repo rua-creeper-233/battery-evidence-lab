@@ -15924,5 +15924,3242 @@
         "https://esst.cip.com.cn/article/2024/2095-4239/2095-4239-2024-13-9-2920.shtml"
       ]
     }
+  },
+  {
+    "id": "sep2022_1016_j_cclet_2022_03_065",
+    "title": "Understanding the separator pore size inhibition effect on lithium dendrite via phase-field simulations",
+    "authors": [
+      "Yajie Li",
+      "Geng Zhang",
+      "Bin Chen",
+      "Wei Zhao",
+      "Liting Sha",
+      "Da Wang",
+      "Jia Yu",
+      "Siqi Shi"
+    ],
+    "year": 2022,
+    "journal": "Chinese Chemical Letters",
+    "document_type": "Paper",
+    "doi": "10.1016/j.cclet.2022.03.065",
+    "url": "https://doi.org/10.1016/j.cclet.2022.03.065",
+    "role": "将多孔 separator 相纳入总自由能，研究孔径对 Li+ 重分布和枝晶生长的影响。",
+    "systems": [
+      "Li-metal/Li-ion electrolyte/porous separator"
+    ],
+    "methods": [
+      "phase-field simulation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "将多孔 separator 相纳入总自由能，研究孔径对 Li+ 重分布和枝晶生长的影响。",
+    "scope_note": "研究对象：Li-metal/Li-ion electrolyte/porous separator。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "将多孔 separator 相纳入总自由能，研究孔径对 Li+ 重分布和枝晶生长的影响。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1016/j.cclet.2022.03.065"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1016/j.cclet.2022.03.065"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Yajie",
+        "family": "Li"
+      },
+      {
+        "given": "Geng",
+        "family": "Zhang"
+      },
+      {
+        "given": "Bin",
+        "family": "Chen"
+      },
+      {
+        "given": "Wei",
+        "family": "Zhao"
+      },
+      {
+        "given": "Liting",
+        "family": "Sha"
+      },
+      {
+        "given": "Da",
+        "family": "Wang"
+      },
+      {
+        "given": "Jia",
+        "family": "Yu"
+      },
+      {
+        "given": "Siqi",
+        "family": "Shi"
+      }
+    ]
+  },
+  {
+    "id": "sep2022_3390_ma15227912",
+    "title": "Influences of Separator Thickness and Surface Coating on Lithium Dendrite Growth: A Phase-Field Study",
+    "authors": [
+      "Yajie Li",
+      "Liting Sha",
+      "Peili Lv",
+      "Na Qiu",
+      "Wei Zhao",
+      "Bin Chen",
+      "Pu Hu",
+      "Geng Zhang"
+    ],
+    "year": 2022,
+    "journal": "Materials",
+    "document_type": "Paper",
+    "doi": "10.3390/ma15227912",
+    "url": "https://doi.org/10.3390/ma15227912",
+    "role": "模拟 separator 厚度和表面涂层对锂枝晶形貌与短路风险的影响。",
+    "systems": [
+      "Li-metal/electrolyte/porous separator half-cell"
+    ],
+    "methods": [
+      "electrochemical phase-field model"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "模拟 separator 厚度和表面涂层对锂枝晶形貌与短路风险的影响。",
+    "scope_note": "研究对象：Li-metal/electrolyte/porous separator half-cell。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "模拟 separator 厚度和表面涂层对锂枝晶形貌与短路风险的影响。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.3390/ma15227912"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.3390/ma15227912"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Yajie",
+        "family": "Li"
+      },
+      {
+        "given": "Liting",
+        "family": "Sha"
+      },
+      {
+        "given": "Peili",
+        "family": "Lv"
+      },
+      {
+        "given": "Na",
+        "family": "Qiu"
+      },
+      {
+        "given": "Wei",
+        "family": "Zhao"
+      },
+      {
+        "given": "Bin",
+        "family": "Chen"
+      },
+      {
+        "given": "Pu",
+        "family": "Hu"
+      },
+      {
+        "given": "Geng",
+        "family": "Zhang"
+      }
+    ]
+  },
+  {
+    "id": "sep2022_1021_acsami_2c15101",
+    "title": "Ion Flux Self-Regulation Strategy with a Volume-Responsive Separator for Lithium Metal Batteries",
+    "authors": [
+      "Chuan Shi",
+      "Lei Zhang",
+      "Xiuting Wang",
+      "Tong Sun",
+      "Zhen Jiang",
+      "Jinbao Zhao"
+    ],
+    "year": 2022,
+    "journal": "ACS Applied Materials & Interfaces",
+    "document_type": "Paper",
+    "doi": "10.1021/acsami.2c15101",
+    "url": "https://doi.org/10.1021/acsami.2c15101",
+    "role": "体积响应 TPU/PVDF-SiO2 separator 调节离子通道并提供热关断；摘要明确包含实验和 AIMD。",
+    "systems": [
+      "lithium-metal battery"
+    ],
+    "methods": [
+      "separator fabrication and electrochemical testing",
+      "ab initio molecular dynamics analysis"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "体积响应 TPU/PVDF-SiO2 separator 调节离子通道并提供热关断；摘要明确包含实验和 AIMD。",
+    "scope_note": "研究对象：lithium-metal battery。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "体积响应 TPU/PVDF-SiO2 separator 调节离子通道并提供热关断；摘要明确包含实验和 AIMD。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1021/acsami.2c15101"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1021/acsami.2c15101"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Chuan",
+        "family": "Shi"
+      },
+      {
+        "given": "Lei",
+        "family": "Zhang"
+      },
+      {
+        "given": "Xiuting",
+        "family": "Wang"
+      },
+      {
+        "given": "Tong",
+        "family": "Sun"
+      },
+      {
+        "given": "Zhen",
+        "family": "Jiang"
+      },
+      {
+        "given": "Jinbao",
+        "family": "Zhao"
+      }
+    ]
+  },
+  {
+    "id": "sep2023_1021_acsami_3c01311",
+    "title": "Bioinspired Separator with Ion-Selective Nanochannels for Lithium Metal Batteries",
+    "authors": [
+      "Yi Chen",
+      "Philip Mickel",
+      "Huijie Pei",
+      "Yingfeng Wen",
+      "Xin Guan",
+      "Yun Wang",
+      "Xuyang Wang",
+      "Omar Al Mhtachem",
+      "Cheng Zhang",
+      "Hui Nie",
+      "Xingping Zhou",
+      "Petr Kral",
+      "Xiaolin Xie"
+    ],
+    "year": 2023,
+    "journal": "ACS Applied Materials & Interfaces",
+    "document_type": "Paper",
+    "doi": "10.1021/acsami.3c01311",
+    "url": "https://doi.org/10.1021/acsami.3c01311",
+    "role": "仿生 EAA separator 的羧基促进 Li+ 脱溶剂化并固定阴离子，选择性输运由 MD 进一步确认。",
+    "systems": [
+      "lithium-metal battery"
+    ],
+    "methods": [
+      "separator characterization and Li-metal cell testing",
+      "molecular dynamics simulation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "仿生 EAA separator 的羧基促进 Li+ 脱溶剂化并固定阴离子，选择性输运由 MD 进一步确认。",
+    "scope_note": "研究对象：lithium-metal battery。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "仿生 EAA separator 的羧基促进 Li+ 脱溶剂化并固定阴离子，选择性输运由 MD 进一步确认。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1021/acsami.3c01311"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1021/acsami.3c01311"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Yi",
+        "family": "Chen"
+      },
+      {
+        "given": "Philip",
+        "family": "Mickel"
+      },
+      {
+        "given": "Huijie",
+        "family": "Pei"
+      },
+      {
+        "given": "Yingfeng",
+        "family": "Wen"
+      },
+      {
+        "given": "Xin",
+        "family": "Guan"
+      },
+      {
+        "given": "Yun",
+        "family": "Wang"
+      },
+      {
+        "given": "Xuyang",
+        "family": "Wang"
+      },
+      {
+        "given": "Omar Al",
+        "family": "Mhtachem"
+      },
+      {
+        "given": "Cheng",
+        "family": "Zhang"
+      },
+      {
+        "given": "Hui",
+        "family": "Nie"
+      },
+      {
+        "given": "Xingping",
+        "family": "Zhou"
+      },
+      {
+        "given": "Petr",
+        "family": "Kral"
+      },
+      {
+        "given": "Xiaolin",
+        "family": "Xie"
+      }
+    ]
+  },
+  {
+    "id": "sep2023_1073_pnas_2314264120",
+    "title": "A polyimine aerogel separator with electron cloud design to boost Li-ion transport for stable Li metal batteries",
+    "authors": [
+      "Luoyi Ding",
+      "Xinyang Yue",
+      "Xinhai Zhang",
+      "Yuanmao Chen",
+      "Jijiang Liu",
+      "Zhangqin Shi",
+      "Zhiyong Wang",
+      "Xuzhou Yan",
+      "Zheng Liang"
+    ],
+    "year": 2023,
+    "journal": "Proceedings of the National Academy of Sciences",
+    "document_type": "Paper",
+    "doi": "10.1073/pnas.2314264120",
+    "url": "https://doi.org/10.1073/pnas.2314264120",
+    "role": "polyimine aerogel separator 同时提升 Li+ 扩散和机械抗枝晶能力。",
+    "systems": [
+      "lithium-metal battery"
+    ],
+    "methods": [
+      "separator fabrication and electrochemical testing",
+      "mechanical characterization"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "polyimine aerogel separator 同时提升 Li+ 扩散和机械抗枝晶能力。",
+    "scope_note": "研究对象：lithium-metal battery。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "polyimine aerogel separator 同时提升 Li+ 扩散和机械抗枝晶能力。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1073/pnas.2314264120"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1073/pnas.2314264120"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Luoyi",
+        "family": "Ding"
+      },
+      {
+        "given": "Xinyang",
+        "family": "Yue"
+      },
+      {
+        "given": "Xinhai",
+        "family": "Zhang"
+      },
+      {
+        "given": "Yuanmao",
+        "family": "Chen"
+      },
+      {
+        "given": "Jijiang",
+        "family": "Liu"
+      },
+      {
+        "given": "Zhangqin",
+        "family": "Shi"
+      },
+      {
+        "given": "Zhiyong",
+        "family": "Wang"
+      },
+      {
+        "given": "Xuzhou",
+        "family": "Yan"
+      },
+      {
+        "given": "Zheng",
+        "family": "Liang"
+      }
+    ]
+  },
+  {
+    "id": "sep2024_1038_s41467_024_54313_y",
+    "title": "Mechanical shutdown of battery separators: Silicon anode failure",
+    "authors": [
+      "Ji-Young Seo",
+      "Suhwan Kim",
+      "Jung-Hui Kim",
+      "Yong-Hyeok Lee",
+      "Jin-Young Shin",
+      "Somi Jeong",
+      "Dong-Wook Sung",
+      "Yong Min Lee",
+      "Sang-Young Lee"
+    ],
+    "year": 2024,
+    "journal": "Nature Communications",
+    "document_type": "Paper",
+    "doi": "10.1038/s41467-024-54313-y",
+    "url": "https://doi.org/10.1038/s41467-024-54313-y",
+    "role": "3D digital-twin 模拟 Si 膨胀导致 PE/HM separator 孔塌陷与机械关断，并用高负载 Si 全电池验证。",
+    "systems": [
+      "Si full cell with PE/HM separator"
+    ],
+    "methods": [
+      "3D digital-twin simulation",
+      "mechanical compression simulation",
+      "high-loading Si full-cell testing"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "3D digital-twin 模拟 Si 膨胀导致 PE/HM separator 孔塌陷与机械关断，并用高负载 Si 全电池验证。",
+    "scope_note": "研究对象：Si full cell with PE/HM separator。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "3D digital-twin 模拟 Si 膨胀导致 PE/HM separator 孔塌陷与机械关断，并用高负载 Si 全电池验证。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1038/s41467-024-54313-y"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1038/s41467-024-54313-y"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Ji-Young",
+        "family": "Seo"
+      },
+      {
+        "given": "Suhwan",
+        "family": "Kim"
+      },
+      {
+        "given": "Jung-Hui",
+        "family": "Kim"
+      },
+      {
+        "given": "Yong-Hyeok",
+        "family": "Lee"
+      },
+      {
+        "given": "Jin-Young",
+        "family": "Shin"
+      },
+      {
+        "given": "Somi",
+        "family": "Jeong"
+      },
+      {
+        "given": "Dong-Wook",
+        "family": "Sung"
+      },
+      {
+        "given": "Yong Min",
+        "family": "Lee"
+      },
+      {
+        "given": "Sang-Young",
+        "family": "Lee"
+      }
+    ]
+  },
+  {
+    "id": "sep2024_1016_j_jpowsour_2023_233979",
+    "title": "Quantification of lithium deposition under mechano-electrochemical coupling effect",
+    "authors": [
+      "Na Li",
+      "Zhichao Chu",
+      "Chenchen Liu",
+      "Shuai Fu",
+      "Jinbao Fan",
+      "Le Yang",
+      "Yikun Wu",
+      "Wei-Li Song",
+      "Hao-Sen Chen",
+      "Shuqiang Jiao"
+    ],
+    "year": 2024,
+    "journal": "Journal of Power Sources",
+    "document_type": "Paper",
+    "doi": "10.1016/j.jpowsour.2023.233979",
+    "url": "https://doi.org/10.1016/j.jpowsour.2023.233979",
+    "role": "由 separator 实测孔结构建立 3D FEM，连接机械载荷、孔隙率变化和析锂。",
+    "systems": [
+      "Si-graphite full cell with separator"
+    ],
+    "methods": [
+      "in-situ optical microscopy",
+      "3D finite-element separator reconstruction",
+      "lithium-deposition model"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "由 separator 实测孔结构建立 3D FEM，连接机械载荷、孔隙率变化和析锂。",
+    "scope_note": "研究对象：Si-graphite full cell with separator。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "由 separator 实测孔结构建立 3D FEM，连接机械载荷、孔隙率变化和析锂。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1016/j.jpowsour.2023.233979"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1016/j.jpowsour.2023.233979"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Na",
+        "family": "Li"
+      },
+      {
+        "given": "Zhichao",
+        "family": "Chu"
+      },
+      {
+        "given": "Chenchen",
+        "family": "Liu"
+      },
+      {
+        "given": "Shuai",
+        "family": "Fu"
+      },
+      {
+        "given": "Jinbao",
+        "family": "Fan"
+      },
+      {
+        "given": "Le",
+        "family": "Yang"
+      },
+      {
+        "given": "Yikun",
+        "family": "Wu"
+      },
+      {
+        "given": "Wei-Li",
+        "family": "Song"
+      },
+      {
+        "given": "Hao-Sen",
+        "family": "Chen"
+      },
+      {
+        "given": "Shuqiang",
+        "family": "Jiao"
+      }
+    ]
+  },
+  {
+    "id": "sep2025_1039_d5ta06024a",
+    "title": "Simulation of electrical and thermal characteristics of a short circuit inside a boehmite composite separator",
+    "authors": [
+      "Hao Zhang",
+      "Ling Yang",
+      "Xingxu Gao",
+      "Yilai Gao",
+      "Haowei Hua",
+      "Xiaoli Fan",
+      "Xianli Huang",
+      "Tao Wang",
+      "Jianping He"
+    ],
+    "year": 2025,
+    "journal": "Journal of Materials Chemistry A",
+    "document_type": "Paper",
+    "doi": "10.1039/d5ta06024a",
+    "url": "https://doi.org/10.1039/D5TA06024A",
+    "role": "采用三维电化学与传热耦合模型，研究勃姆石隔膜涂层、枝晶短路与局部热积累。",
+    "systems": [
+      "boehmite composite separator in lithium-ion battery"
+    ],
+    "methods": [
+      "3D electrochemical-heat-transfer coupled simulation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "采用三维电化学与传热耦合模型，研究勃姆石隔膜涂层、枝晶短路与局部热积累。",
+    "scope_note": "研究对象：boehmite composite separator in lithium-ion battery。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "采用三维电化学与传热耦合模型，研究勃姆石隔膜涂层、枝晶短路与局部热积累。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1039/D5TA06024A"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1039/D5TA06024A"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Hao",
+        "family": "Zhang"
+      },
+      {
+        "given": "Ling",
+        "family": "Yang"
+      },
+      {
+        "given": "Xingxu",
+        "family": "Gao"
+      },
+      {
+        "given": "Yilai",
+        "family": "Gao"
+      },
+      {
+        "given": "Haowei",
+        "family": "Hua"
+      },
+      {
+        "given": "Xiaoli",
+        "family": "Fan"
+      },
+      {
+        "given": "Xianli",
+        "family": "Huang"
+      },
+      {
+        "given": "Tao",
+        "family": "Wang"
+      },
+      {
+        "given": "Jianping",
+        "family": "He"
+      }
+    ]
+  },
+  {
+    "id": "sep2025_1002_batt_202500434",
+    "title": "3D Resolved Computational Modeling to Simulate the Electrolyte Wetting of a Lithium‐Ion Battery Cell with 18650 Format",
+    "authors": [
+      "Emmanuel Yerumoh",
+      "Imelda Cardenas‐Sierra",
+      "Francisco Fernandez",
+      "Alejandro A. Franco"
+    ],
+    "year": 2025,
+    "journal": "Batteries & Supercaps",
+    "document_type": "Paper",
+    "doi": "10.1002/batt.202500434",
+    "url": "https://doi.org/10.1002/batt.202500434",
+    "role": "3D 模型显式跟踪 separator 饱和度、湿润速率、孔隙率和入口毛细压力。",
+    "systems": [
+      "18650 graphite/NMC111 lithium-ion cell"
+    ],
+    "methods": [
+      "3D resolved computational wetting model"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "3D 模型显式跟踪 separator 饱和度、湿润速率、孔隙率和入口毛细压力。",
+    "scope_note": "研究对象：18650 graphite/NMC111 lithium-ion cell。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "3D 模型显式跟踪 separator 饱和度、湿润速率、孔隙率和入口毛细压力。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1002/batt.202500434"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1002/batt.202500434"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Emmanuel",
+        "family": "Yerumoh"
+      },
+      {
+        "given": "Imelda",
+        "family": "Cardenas‐Sierra"
+      },
+      {
+        "given": "Francisco",
+        "family": "Fernandez"
+      },
+      {
+        "given": "Alejandro A.",
+        "family": "Franco"
+      }
+    ]
+  },
+  {
+    "id": "sep2021_1016_j_jtice_2021_01_031",
+    "title": "Pry into the thermal and mechanical properties of electrolyte-soaked separators",
+    "authors": [
+      "Hao Cui",
+      "Youzhi Song",
+      "Li Sheng",
+      "Li Wang",
+      "Hong Xu",
+      "Guangyu Tian",
+      "Xiangming He"
+    ],
+    "year": 2021,
+    "journal": "Journal of the Taiwan Institute of Chemical Engineers",
+    "document_type": "Paper",
+    "doi": "10.1016/j.jtice.2021.01.031",
+    "url": "https://doi.org/10.1016/j.jtice.2021.01.031",
+    "role": "直接比较干态与多种盐电解液浸泡 polyolefin separator 的热收缩、分解和湿态机械强度。",
+    "systems": [
+      "polyolefin separators with LiPF6, LiFSI or LiTFSI electrolytes"
+    ],
+    "methods": [
+      "thermal shrinkage testing",
+      "mechanical testing of dry and electrolyte-soaked separators"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "直接比较干态与多种盐电解液浸泡 polyolefin separator 的热收缩、分解和湿态机械强度。",
+    "scope_note": "研究对象：polyolefin separators with LiPF6, LiFSI or LiTFSI electrolytes。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "直接比较干态与多种盐电解液浸泡 polyolefin separator 的热收缩、分解和湿态机械强度。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1016/j.jtice.2021.01.031"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1016/j.jtice.2021.01.031"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Hao",
+        "family": "Cui"
+      },
+      {
+        "given": "Youzhi",
+        "family": "Song"
+      },
+      {
+        "given": "Li",
+        "family": "Sheng"
+      },
+      {
+        "given": "Li",
+        "family": "Wang"
+      },
+      {
+        "given": "Hong",
+        "family": "Xu"
+      },
+      {
+        "given": "Guangyu",
+        "family": "Tian"
+      },
+      {
+        "given": "Xiangming",
+        "family": "He"
+      }
+    ]
+  },
+  {
+    "id": "sep2021_1038_s41598_021_81644_3",
+    "title": "Preferential lattice expansion of polypropylene in a trilayer polypropylene/polyethylene/polypropylene microporous separator in Li-ion batteries",
+    "authors": [
+      "Wen-Dung Hsu",
+      "Po-Wei Yang",
+      "Hung-Yuan Chen",
+      "Po-Hsien Wu",
+      "Pin-Chin Wu",
+      "Chih-Wei Hu",
+      "Lakshmanan Saravanan",
+      "Yen-Fa Liao",
+      "Yen-Teng Su",
+      "Dinesh Bhalothia",
+      "Tsan-Yao Chen",
+      "Chia-Chin Chang"
+    ],
+    "year": 2021,
+    "journal": "Scientific Reports",
+    "document_type": "Paper",
+    "doi": "10.1038/s41598-021-81644-3",
+    "url": "https://doi.org/10.1038/s41598-021-81644-3",
+    "role": "原位 XRD 研究 PP/PE/PP 三层 separator 在 Li-ion 电池充放电中的晶格结构变化。",
+    "systems": [
+      "PP/PE/PP trilayer separator in lithium-ion battery"
+    ],
+    "methods": [
+      "in-situ X-ray diffraction"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "原位 XRD 研究 PP/PE/PP 三层 separator 在 Li-ion 电池充放电中的晶格结构变化。",
+    "scope_note": "研究对象：PP/PE/PP trilayer separator in lithium-ion battery。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "原位 XRD 研究 PP/PE/PP 三层 separator 在 Li-ion 电池充放电中的晶格结构变化。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1038/s41598-021-81644-3"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1038/s41598-021-81644-3"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Wen-Dung",
+        "family": "Hsu"
+      },
+      {
+        "given": "Po-Wei",
+        "family": "Yang"
+      },
+      {
+        "given": "Hung-Yuan",
+        "family": "Chen"
+      },
+      {
+        "given": "Po-Hsien",
+        "family": "Wu"
+      },
+      {
+        "given": "Pin-Chin",
+        "family": "Wu"
+      },
+      {
+        "given": "Chih-Wei",
+        "family": "Hu"
+      },
+      {
+        "given": "Lakshmanan",
+        "family": "Saravanan"
+      },
+      {
+        "given": "Yen-Fa",
+        "family": "Liao"
+      },
+      {
+        "given": "Yen-Teng",
+        "family": "Su"
+      },
+      {
+        "given": "Dinesh",
+        "family": "Bhalothia"
+      },
+      {
+        "given": "Tsan-Yao",
+        "family": "Chen"
+      },
+      {
+        "given": "Chia-Chin",
+        "family": "Chang"
+      }
+    ]
+  },
+  {
+    "id": "sep2022_1002_ceat_202000218",
+    "title": "Enhanced Wettability of a PTFE Porous Membrane for a High‐Temperature Stable Lithium‐Ion Battery Separator",
+    "authors": [
+      "Hongxia Guo",
+      "Mingye Li",
+      "Fan Li",
+      "Qizhen Zhu",
+      "Yao Zhao",
+      "Feng Wang",
+      "Zhenping Qin"
+    ],
+    "year": 2022,
+    "journal": "Chemical Engineering & Technology",
+    "document_type": "Paper",
+    "doi": "10.1002/ceat.202000218",
+    "url": "https://doi.org/10.1002/ceat.202000218",
+    "role": "FCS–PEI–SiO2 改性将疏水 PTFE 转为高润湿、高吸液且高温稳定的 LIB separator。",
+    "systems": [
+      "PTFE porous separator in lithium-ion battery"
+    ],
+    "methods": [
+      "surface modification",
+      "dynamic contact-angle and electrolyte-uptake measurements",
+      "cell electrochemical testing"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "FCS–PEI–SiO2 改性将疏水 PTFE 转为高润湿、高吸液且高温稳定的 LIB separator。",
+    "scope_note": "研究对象：PTFE porous separator in lithium-ion battery。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "FCS–PEI–SiO2 改性将疏水 PTFE 转为高润湿、高吸液且高温稳定的 LIB separator。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1002/ceat.202000218"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1002/ceat.202000218"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Hongxia",
+        "family": "Guo"
+      },
+      {
+        "given": "Mingye",
+        "family": "Li"
+      },
+      {
+        "given": "Fan",
+        "family": "Li"
+      },
+      {
+        "given": "Qizhen",
+        "family": "Zhu"
+      },
+      {
+        "given": "Yao",
+        "family": "Zhao"
+      },
+      {
+        "given": "Feng",
+        "family": "Wang"
+      },
+      {
+        "given": "Zhenping",
+        "family": "Qin"
+      }
+    ]
+  },
+  {
+    "id": "sep2022_1007_s10570_022_04873_3",
+    "title": "Cellulose-ceramic composite flexible paper separator with improved wettability and flame retardant properties for lithium-ion batteries",
+    "authors": [
+      "Mononita Das",
+      "Pradip Sekhar Das",
+      "Rajendra Nath Basu",
+      "Mir Wasim Raja"
+    ],
+    "year": 2022,
+    "journal": "Cellulose",
+    "document_type": "Paper",
+    "doi": "10.1007/s10570-022-04873-3",
+    "url": "https://doi.org/10.1007/s10570-022-04873-3",
+    "role": "纤维素纸/聚合物/纳米 SiO2 复合 separator 提升润湿、阻燃、热尺寸稳定性并在多种 LIB 电极中验证。",
+    "systems": [
+      "MCMB, LiCoO2 and LiFePO4 lithium-ion cells"
+    ],
+    "methods": [
+      "aqueous wet-coating fabrication",
+      "thermal, wettability and mechanical testing",
+      "coin-cell cycling"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "纤维素纸/聚合物/纳米 SiO2 复合 separator 提升润湿、阻燃、热尺寸稳定性并在多种 LIB 电极中验证。",
+    "scope_note": "研究对象：MCMB, LiCoO2 and LiFePO4 lithium-ion cells。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "纤维素纸/聚合物/纳米 SiO2 复合 separator 提升润湿、阻燃、热尺寸稳定性并在多种 LIB 电极中验证。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1007/s10570-022-04873-3"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1007/s10570-022-04873-3"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Mononita",
+        "family": "Das"
+      },
+      {
+        "given": "Pradip Sekhar",
+        "family": "Das"
+      },
+      {
+        "given": "Rajendra Nath",
+        "family": "Basu"
+      },
+      {
+        "given": "Mir Wasim",
+        "family": "Raja"
+      }
+    ]
+  },
+  {
+    "id": "sep2022_1021_acsaem_1c03548",
+    "title": "Highly Connective Spongy Polyimide Separators Blended with Inorganic Whiskers for High-Performance Lithium-Ion Batteries",
+    "authors": [
+      "Peilong Zhou",
+      "Dongxu Yao",
+      "Hanqin Liang",
+      "Jinwei Yin",
+      "Yongfeng Xia",
+      "Yu-Ping Zeng"
+    ],
+    "year": 2022,
+    "journal": "ACS Applied Energy Materials",
+    "document_type": "Paper",
+    "doi": "10.1021/acsaem.1c03548",
+    "url": "https://doi.org/10.1021/acsaem.1c03548",
+    "role": "polyimide/Si3N4 whisker 海绵状连通孔 separator，明确测试润湿、Li+ 迁移和高温耐受。",
+    "systems": [
+      "polyimide/Si3N4 separator in lithium-ion battery"
+    ],
+    "methods": [
+      "nonsolvent-induced phase separation",
+      "thermal and wettability characterization",
+      "Li+ transfer and cell cycling tests"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "polyimide/Si3N4 whisker 海绵状连通孔 separator，明确测试润湿、Li+ 迁移和高温耐受。",
+    "scope_note": "研究对象：polyimide/Si3N4 separator in lithium-ion battery。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "polyimide/Si3N4 whisker 海绵状连通孔 separator，明确测试润湿、Li+ 迁移和高温耐受。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1021/acsaem.1c03548"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1021/acsaem.1c03548"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Peilong",
+        "family": "Zhou"
+      },
+      {
+        "given": "Dongxu",
+        "family": "Yao"
+      },
+      {
+        "given": "Hanqin",
+        "family": "Liang"
+      },
+      {
+        "given": "Jinwei",
+        "family": "Yin"
+      },
+      {
+        "given": "Yongfeng",
+        "family": "Xia"
+      },
+      {
+        "given": "Yu-Ping",
+        "family": "Zeng"
+      }
+    ]
+  },
+  {
+    "id": "sep2023_1016_j_memsci_2023_121617",
+    "title": "Inhibition of lithium dendrite growth by high-thermal-stability separator containing sulfonated covalent organic frameworks and polybenzimidazole",
+    "authors": [
+      "Yu Min",
+      "Tiedong Liu",
+      "Bin Zhang",
+      "Li Guo",
+      "Aogui Wu",
+      "Dongxia Xian",
+      "Lei Wang"
+    ],
+    "year": 2023,
+    "journal": "Journal of Membrane Science",
+    "document_type": "Paper",
+    "doi": "10.1016/j.memsci.2023.121617",
+    "url": "https://doi.org/10.1016/j.memsci.2023.121617",
+    "role": "OPBI@SCOF separator 以孔结构和极性基团调节 Li+ 传输、润湿及热尺寸稳定性，并测试 Li 对称电池枝晶抑制。",
+    "systems": [
+      "lithium-metal symmetric and full cells"
+    ],
+    "methods": [
+      "composite separator fabrication and characterization",
+      "thermal and wettability testing",
+      "Li symmetric-cell cycling"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "OPBI@SCOF separator 以孔结构和极性基团调节 Li+ 传输、润湿及热尺寸稳定性，并测试 Li 对称电池枝晶抑制。",
+    "scope_note": "研究对象：lithium-metal symmetric and full cells。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "OPBI@SCOF separator 以孔结构和极性基团调节 Li+ 传输、润湿及热尺寸稳定性，并测试 Li 对称电池枝晶抑制。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1016/j.memsci.2023.121617"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1016/j.memsci.2023.121617"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Yu",
+        "family": "Min"
+      },
+      {
+        "given": "Tiedong",
+        "family": "Liu"
+      },
+      {
+        "given": "Bin",
+        "family": "Zhang"
+      },
+      {
+        "given": "Li",
+        "family": "Guo"
+      },
+      {
+        "given": "Aogui",
+        "family": "Wu"
+      },
+      {
+        "given": "Dongxia",
+        "family": "Xian"
+      },
+      {
+        "given": "Lei",
+        "family": "Wang"
+      }
+    ]
+  },
+  {
+    "id": "sep2023_1021_acsnano_2c09526",
+    "title": "Mechanistic Insight into Wettability Enhancement of Lithium-Ion Batteries Using a Ceramic-Coated Layer",
+    "authors": [
+      "Dong Hyup Jeon",
+      "Jung-Hoon Song",
+      "Jonghyeok Yun",
+      "Jong-Won Lee"
+    ],
+    "year": 2023,
+    "journal": "ACS Nano",
+    "document_type": "Paper",
+    "doi": "10.1021/acsnano.2c09526",
+    "url": "https://doi.org/10.1021/acsnano.2c09526",
+    "role": "研究陶瓷涂层如何改变锂离子电池隔膜的电解液润湿行为。",
+    "systems": [
+      "ceramic-coated separator in lithium-ion battery"
+    ],
+    "methods": [
+      "separator coating characterization",
+      "wettability and electrochemical analysis"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "研究陶瓷涂层如何改变锂离子电池隔膜的电解液润湿行为。",
+    "scope_note": "研究对象：ceramic-coated separator in lithium-ion battery。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "研究陶瓷涂层如何改变锂离子电池隔膜的电解液润湿行为。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1021/acsnano.2c09526"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1021/acsnano.2c09526"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Dong Hyup",
+        "family": "Jeon"
+      },
+      {
+        "given": "Jung-Hoon",
+        "family": "Song"
+      },
+      {
+        "given": "Jonghyeok",
+        "family": "Yun"
+      },
+      {
+        "given": "Jong-Won",
+        "family": "Lee"
+      }
+    ]
+  },
+  {
+    "id": "sep2026_3390_batteries12090347",
+    "title": "Thermally Robust and Highly Wettable Polyethylene Separators for Lithium-Metal Batteries Using Water-Based Processing of a Glass Platelet Coating",
+    "authors": [
+      "Philipp Rank",
+      "Sebastian Müllner",
+      "Thorsten Gerdes",
+      "Christina Roth"
+    ],
+    "year": 2026,
+    "journal": "Batteries",
+    "document_type": "Paper",
+    "doi": "10.3390/batteries12090347",
+    "url": "https://doi.org/10.3390/batteries12090347",
+    "role": "采用玻璃片与SBR水性涂层，提高聚乙烯隔膜的润湿性和热稳定性。",
+    "systems": [
+      "glass-coated PE separator in lithium-metal battery"
+    ],
+    "methods": [
+      "water-based coating fabrication",
+      "thermal shrinkage, porosity, wettability and ionic-conductivity testing",
+      "lithium-metal cell testing"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "采用玻璃片与SBR水性涂层，提高聚乙烯隔膜的润湿性和热稳定性。",
+    "scope_note": "研究对象：glass-coated PE separator in lithium-metal battery。",
+    "collection": "core",
+    "difficulty": "前沿",
+    "evidence": [
+      {
+        "claim": "采用玻璃片与SBR水性涂层，提高聚乙烯隔膜的润湿性和热稳定性。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.3390/batteries12090347"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.3390/batteries12090347"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Philipp",
+        "family": "Rank"
+      },
+      {
+        "given": "Sebastian",
+        "family": "Müllner"
+      },
+      {
+        "given": "Thorsten",
+        "family": "Gerdes"
+      },
+      {
+        "given": "Christina",
+        "family": "Roth"
+      }
+    ]
+  },
+  {
+    "id": "sep2025_1016_j_fub_2025_100064",
+    "title": "Enhancing lithium-ion battery safety: A comparative study of separator performance under mechanical abuse",
+    "authors": [
+      "Alexander Hahn",
+      "Magdalena Ruf",
+      "Stefan Doose",
+      "Arno Kwade"
+    ],
+    "year": 2025,
+    "journal": "Future Batteries",
+    "document_type": "Paper",
+    "doi": "10.1016/j.fub.2025.100064",
+    "url": "https://doi.org/10.1016/j.fub.2025.100064",
+    "role": "比较五种 separator 的材料级机械测试和整电芯 crush，直接连接 separator 损伤、内短路和热失控。",
+    "systems": [
+      "lithium-ion cells with five separator types"
+    ],
+    "methods": [
+      "separator material-level mechanical abuse tests",
+      "cell crush testing",
+      "thermal runaway/emission comparison"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "隔膜",
+      "锂离子电池"
+    ],
+    "summary": "比较五种 separator 的材料级机械测试和整电芯 crush，直接连接 separator 损伤、内短路和热失控。",
+    "scope_note": "研究对象：lithium-ion cells with five separator types。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "比较五种 separator 的材料级机械测试和整电芯 crush，直接连接 separator 损伤、内短路和热失控。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1016/j.fub.2025.100064"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1016/j.fub.2025.100064"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Alexander",
+        "family": "Hahn"
+      },
+      {
+        "given": "Magdalena",
+        "family": "Ruf"
+      },
+      {
+        "given": "Stefan",
+        "family": "Doose"
+      },
+      {
+        "given": "Arno",
+        "family": "Kwade"
+      }
+    ]
+  },
+  {
+    "id": "collector2021_1038_s41467_021_25848_1",
+    "title": "An electron-deficient carbon current collector for anode-free Li-metal batteries",
+    "authors": [
+      "Hyeokjin Kwon",
+      "Ju-Hyuk Lee",
+      "Youngil Roh",
+      "Jaewon Baek",
+      "Dong Jae Shin",
+      "Jong Keon Yoon",
+      "Hoe Jin Ha",
+      "Je Young Kim",
+      "Hee-Tak Kim"
+    ],
+    "year": 2021,
+    "journal": "Nature Communications",
+    "document_type": "Paper",
+    "doi": "10.1038/s41467-021-25848-1",
+    "url": "https://www.nature.com/articles/s41467-021-25848-1",
+    "role": "缺电子/缺陷碳集流体调控SEI与锂成核，并在高面容量NCM811无负极电池中验证。",
+    "systems": [
+      "Li-NCM811",
+      "carbonate electrolyte",
+      "anode-free"
+    ],
+    "methods": [
+      "electrochemical cycling",
+      "surface/electronic characterization",
+      "full-cell validation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "缺电子/缺陷碳集流体调控SEI与锂成核，并在高面容量NCM811无负极电池中验证。",
+    "scope_note": "研究对象：Li-NCM811；carbonate electrolyte；anode-free。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "缺电子/缺陷碳集流体调控SEI与锂成核，并在高面容量NCM811无负极电池中验证。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://www.nature.com/articles/s41467-021-25848-1"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://www.nature.com/articles/s41467-021-25848-1"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Hyeokjin",
+        "family": "Kwon"
+      },
+      {
+        "given": "Ju-Hyuk",
+        "family": "Lee"
+      },
+      {
+        "given": "Youngil",
+        "family": "Roh"
+      },
+      {
+        "given": "Jaewon",
+        "family": "Baek"
+      },
+      {
+        "given": "Dong Jae",
+        "family": "Shin"
+      },
+      {
+        "given": "Jong Keon",
+        "family": "Yoon"
+      },
+      {
+        "given": "Hoe Jin",
+        "family": "Ha"
+      },
+      {
+        "given": "Je Young",
+        "family": "Kim"
+      },
+      {
+        "given": "Hee-Tak",
+        "family": "Kim"
+      }
+    ]
+  },
+  {
+    "id": "collector2021_1021_acsami_1c13896",
+    "title": "Uniform Deposition of Li-Metal Anodes Guided by 3D Current Collectors with In Situ Modification of the Lithiophilic Matrix",
+    "authors": [
+      "Chenyi Sun",
+      "Yinghui Yang",
+      "Xiufang Bian",
+      "Rongzhang Guan",
+      "Chao Wang",
+      "Dujiang Lu",
+      "Li Gao",
+      "Dongmei Zhang"
+    ],
+    "year": 2021,
+    "journal": "ACS Applied Materials & Interfaces",
+    "document_type": "Paper",
+    "doi": "10.1021/acsami.1c13896",
+    "url": "https://pubs.acs.org/doi/10.1021/acsami.1c13896",
+    "role": "Cu三维主体原位引入CuO/SnO2亲锂基质，改善成核、离子通量与体积应变。",
+    "systems": [
+      "Li metal",
+      "Cu-CuO-SnO2 collector"
+    ],
+    "methods": [
+      "ammonia oxidation",
+      "electrochemical cycling",
+      "morphology characterization"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "Cu三维主体原位引入CuO/SnO2亲锂基质，改善成核、离子通量与体积应变。",
+    "scope_note": "研究对象：Li metal；Cu-CuO-SnO2 collector。",
+    "collection": "core",
+    "difficulty": "入门进阶",
+    "evidence": [
+      {
+        "claim": "Cu三维主体原位引入CuO/SnO2亲锂基质，改善成核、离子通量与体积应变。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://pubs.acs.org/doi/10.1021/acsami.1c13896"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://pubs.acs.org/doi/10.1021/acsami.1c13896"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Chenyi",
+        "family": "Sun"
+      },
+      {
+        "given": "Yinghui",
+        "family": "Yang"
+      },
+      {
+        "given": "Xiufang",
+        "family": "Bian"
+      },
+      {
+        "given": "Rongzhang",
+        "family": "Guan"
+      },
+      {
+        "given": "Chao",
+        "family": "Wang"
+      },
+      {
+        "given": "Dujiang",
+        "family": "Lu"
+      },
+      {
+        "given": "Li",
+        "family": "Gao"
+      },
+      {
+        "given": "Dongmei",
+        "family": "Zhang"
+      }
+    ]
+  },
+  {
+    "id": "collector2023_1002_ente_202300053",
+    "title": "Silica‐Modified 3D Porous Copper Current Collectors Toward Stable Lithium Metal Anodes",
+    "authors": [
+      "Wenfeng Jiang",
+      "Shun Wang",
+      "Yun Wang",
+      "Jianhua Hu",
+      "Dong Yang",
+      "Wei Zhang"
+    ],
+    "year": 2023,
+    "journal": "Energy Technology",
+    "document_type": "Paper",
+    "doi": "10.1002/ente.202300053",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/ente.202300053",
+    "role": "二氧化硅修饰多孔Cu调节Li+通量与润湿，三维结构分散电流并容纳体积变化。",
+    "systems": [
+      "Li metal",
+      "silica/porous Cu"
+    ],
+    "methods": [
+      "porous Cu fabrication",
+      "surface modification",
+      "electrochemical cycling"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "二氧化硅修饰多孔Cu调节Li+通量与润湿，三维结构分散电流并容纳体积变化。",
+    "scope_note": "研究对象：Li metal；silica/porous Cu。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "二氧化硅修饰多孔Cu调节Li+通量与润湿，三维结构分散电流并容纳体积变化。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1002/ente.202300053"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://onlinelibrary.wiley.com/doi/10.1002/ente.202300053"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Wenfeng",
+        "family": "Jiang"
+      },
+      {
+        "given": "Shun",
+        "family": "Wang"
+      },
+      {
+        "given": "Yun",
+        "family": "Wang"
+      },
+      {
+        "given": "Jianhua",
+        "family": "Hu"
+      },
+      {
+        "given": "Dong",
+        "family": "Yang"
+      },
+      {
+        "given": "Wei",
+        "family": "Zhang"
+      }
+    ]
+  },
+  {
+    "id": "collector2023_1002_adma_202206762",
+    "title": "Stable Anode‐Free All‐Solid‐State Lithium Battery through Tuned Metal Wetting on the Copper Current Collector",
+    "authors": [
+      "Yixian Wang",
+      "Yijie Liu",
+      "Mai Nguyen",
+      "Jaeyoung Cho",
+      "Naman Katyal",
+      "Bairav S. Vishnugopi",
+      "Hongchang Hao",
+      "Ruyi Fang",
+      "Nan Wu",
+      "Pengcheng Liu",
+      "Partha P. Mukherjee",
+      "Jagjit Nanda",
+      "Graeme Henkelman",
+      "John Watt",
+      "David Mitlin"
+    ],
+    "year": 2023,
+    "journal": "Advanced Materials",
+    "document_type": "Paper",
+    "doi": "10.1002/adma.202206762",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36445936/",
+    "role": "固态电池中调节Cu上的Li金属润湿与接触，改善无负极沉积；同时涉及固态界面接触力学。",
+    "systems": [
+      "Li sulfide solid electrolyte",
+      "Cu collector",
+      "anode-free"
+    ],
+    "methods": [
+      "solid-state cell assembly",
+      "wetting/contact analysis",
+      "electrochemical cycling",
+      "DFT"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "固态电池中调节Cu上的Li金属润湿与接触，改善无负极沉积；同时涉及固态界面接触力学。",
+    "scope_note": "研究对象：Li sulfide solid electrolyte；Cu collector；anode-free。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "固态电池中调节Cu上的Li金属润湿与接触，改善无负极沉积；同时涉及固态界面接触力学。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36445936/"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/36445936/"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Yixian",
+        "family": "Wang"
+      },
+      {
+        "given": "Yijie",
+        "family": "Liu"
+      },
+      {
+        "given": "Mai",
+        "family": "Nguyen"
+      },
+      {
+        "given": "Jaeyoung",
+        "family": "Cho"
+      },
+      {
+        "given": "Naman",
+        "family": "Katyal"
+      },
+      {
+        "given": "Bairav S.",
+        "family": "Vishnugopi"
+      },
+      {
+        "given": "Hongchang",
+        "family": "Hao"
+      },
+      {
+        "given": "Ruyi",
+        "family": "Fang"
+      },
+      {
+        "given": "Nan",
+        "family": "Wu"
+      },
+      {
+        "given": "Pengcheng",
+        "family": "Liu"
+      },
+      {
+        "given": "Partha P.",
+        "family": "Mukherjee"
+      },
+      {
+        "given": "Jagjit",
+        "family": "Nanda"
+      },
+      {
+        "given": "Graeme",
+        "family": "Henkelman"
+      },
+      {
+        "given": "John",
+        "family": "Watt"
+      },
+      {
+        "given": "David",
+        "family": "Mitlin"
+      }
+    ]
+  },
+  {
+    "id": "collector2023_1021_acsami_3c08109",
+    "title": "Lithiophilic Zn3N2-Modified Cu Current Collectors by a Novel FCVA Technology for Stable Anode-Free Lithium Metal Batteries",
+    "authors": [
+      "Yaohui Zhu",
+      "Shuai Wu",
+      "Lan Zhang",
+      "Bo Zhang",
+      "Bin Liao"
+    ],
+    "year": 2023,
+    "journal": "ACS Applied Materials & Interfaces",
+    "document_type": "Paper",
+    "doi": "10.1021/acsami.3c08109",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37649386/",
+    "role": "FCVA制备Zn3N2/Cu，Zn/N位点改善Li成核并减少枝晶与死锂。",
+    "systems": [
+      "Li metal",
+      "Zn3N2-Cu",
+      "anode-free"
+    ],
+    "methods": [
+      "FCVA coating",
+      "electrochemical cycling",
+      "surface characterization"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "FCVA制备Zn3N2/Cu，Zn/N位点改善Li成核并减少枝晶与死锂。",
+    "scope_note": "研究对象：Li metal；Zn3N2-Cu；anode-free。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "FCVA制备Zn3N2/Cu，Zn/N位点改善Li成核并减少枝晶与死锂。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37649386/"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/37649386/"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Yaohui",
+        "family": "Zhu"
+      },
+      {
+        "given": "Shuai",
+        "family": "Wu"
+      },
+      {
+        "given": "Lan",
+        "family": "Zhang"
+      },
+      {
+        "given": "Bo",
+        "family": "Zhang"
+      },
+      {
+        "given": "Bin",
+        "family": "Liao"
+      }
+    ]
+  },
+  {
+    "id": "collector2023_1016_j_mtener_2023_101341",
+    "title": "Super-three-dimensional lithiophilic Cu-based current collector for anode-free lithium metal battery",
+    "authors": [
+      "Nanrui Li",
+      "Tianqi Jia",
+      "Yanru Liu",
+      "Yunfei Ouyang",
+      "Yao Lv",
+      "Geng Zhong",
+      "Yufeng Wang",
+      "Bo Sun",
+      "Sirong Lu",
+      "Shifei Huang",
+      "Feiyu Kang",
+      "Yidan Cao"
+    ],
+    "year": 2023,
+    "journal": "Materials Today Energy",
+    "document_type": "Paper",
+    "doi": "10.1016/j.mtener.2023.101341",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2468606923000977",
+    "role": "碳修饰超三维Cu降低成核势垒并形成无机富集界面，验证无负极循环。",
+    "systems": [
+      "Li metal",
+      "carbon-modified Cu",
+      "anode-free"
+    ],
+    "methods": [
+      "3D Cu fabrication",
+      "surface modification",
+      "Li||Cu cycling",
+      "full-cell testing"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "碳修饰超三维Cu降低成核势垒并形成无机富集界面，验证无负极循环。",
+    "scope_note": "研究对象：Li metal；carbon-modified Cu；anode-free。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "碳修饰超三维Cu降低成核势垒并形成无机富集界面，验证无负极循环。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2468606923000977"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S2468606923000977"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Nanrui",
+        "family": "Li"
+      },
+      {
+        "given": "Tianqi",
+        "family": "Jia"
+      },
+      {
+        "given": "Yanru",
+        "family": "Liu"
+      },
+      {
+        "given": "Yunfei",
+        "family": "Ouyang"
+      },
+      {
+        "given": "Yao",
+        "family": "Lv"
+      },
+      {
+        "given": "Geng",
+        "family": "Zhong"
+      },
+      {
+        "given": "Yufeng",
+        "family": "Wang"
+      },
+      {
+        "given": "Bo",
+        "family": "Sun"
+      },
+      {
+        "given": "Sirong",
+        "family": "Lu"
+      },
+      {
+        "given": "Shifei",
+        "family": "Huang"
+      },
+      {
+        "given": "Feiyu",
+        "family": "Kang"
+      },
+      {
+        "given": "Yidan",
+        "family": "Cao"
+      }
+    ]
+  },
+  {
+    "id": "collector2023_1016_j_jallcom_2023_171393",
+    "title": "Effect of 3D lithiophilic current collector for anode-free Li ion batteries",
+    "authors": [
+      "Eunhwan Kim",
+      "Wonwoo Choi",
+      "Seokgyu Ryu",
+      "Yeji Yun",
+      "Sungjin Jo",
+      "Jeeyoung Yoo"
+    ],
+    "year": 2023,
+    "journal": "Journal of Alloys and Compounds",
+    "document_type": "Paper",
+    "doi": "10.1016/j.jallcom.2023.171393",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0925838823026968",
+    "role": "Au预沉积三维集流体降低Li成核势垒，并以高面积网络均化沉积。",
+    "systems": [
+      "Li metal",
+      "Au-3D collector",
+      "anode-free"
+    ],
+    "methods": [
+      "Au deposition",
+      "electrochemical cycling",
+      "morphology analysis"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "Au预沉积三维集流体降低Li成核势垒，并以高面积网络均化沉积。",
+    "scope_note": "研究对象：Li metal；Au-3D collector；anode-free。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "Au预沉积三维集流体降低Li成核势垒，并以高面积网络均化沉积。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0925838823026968"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0925838823026968"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Eunhwan",
+        "family": "Kim"
+      },
+      {
+        "given": "Wonwoo",
+        "family": "Choi"
+      },
+      {
+        "given": "Seokgyu",
+        "family": "Ryu"
+      },
+      {
+        "given": "Yeji",
+        "family": "Yun"
+      },
+      {
+        "given": "Sungjin",
+        "family": "Jo"
+      },
+      {
+        "given": "Jeeyoung",
+        "family": "Yoo"
+      }
+    ]
+  },
+  {
+    "id": "collector2024_1021_acsami_3c14693",
+    "title": "Influence of Au, Pt, and C Seed Layers on Lithium Nucleation Dynamics for Anode-Free Solid-State Batteries",
+    "authors": [
+      "André Müller",
+      "Luis Paravicini",
+      "Jȩdrzej Morzy",
+      "Maximilian Krause",
+      "Joel Casella",
+      "Nicolas Osenciat",
+      "Moritz H. Futscher",
+      "Yaroslav E. Romanyuk"
+    ],
+    "year": 2024,
+    "journal": "ACS Applied Materials & Interfaces",
+    "document_type": "Paper",
+    "doi": "10.1021/acsami.3c14693",
+    "url": "https://pubs.acs.org/doi/10.1021/acsami.3c14693",
+    "role": "比较Au、Pt、C种子层对固态无负极Li成核、润湿和形貌的影响。",
+    "systems": [
+      "Li metal",
+      "solid-state electrolyte",
+      "Au/Pt/C collector seeds",
+      "anode-free"
+    ],
+    "methods": [
+      "seed-layer deposition",
+      "solid-state electrochemistry",
+      "nucleation analysis"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "比较Au、Pt、C种子层对固态无负极Li成核、润湿和形貌的影响。",
+    "scope_note": "研究对象：Li metal；solid-state electrolyte；Au/Pt/C collector seeds；anode-free。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "比较Au、Pt、C种子层对固态无负极Li成核、润湿和形貌的影响。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://pubs.acs.org/doi/10.1021/acsami.3c14693"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://pubs.acs.org/doi/10.1021/acsami.3c14693"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "André",
+        "family": "Müller"
+      },
+      {
+        "given": "Luis",
+        "family": "Paravicini"
+      },
+      {
+        "given": "Jȩdrzej",
+        "family": "Morzy"
+      },
+      {
+        "given": "Maximilian",
+        "family": "Krause"
+      },
+      {
+        "given": "Joel",
+        "family": "Casella"
+      },
+      {
+        "given": "Nicolas",
+        "family": "Osenciat"
+      },
+      {
+        "given": "Moritz H.",
+        "family": "Futscher"
+      },
+      {
+        "given": "Yaroslav E.",
+        "family": "Romanyuk"
+      }
+    ]
+  },
+  {
+    "id": "collector2024_1016_j_jcis_2024_02_014",
+    "title": "Gradient three-dimensional current collector with lithiophilic nanolayer regulation for efficient lithium metal anode construction",
+    "authors": [
+      "Hao Yang",
+      "Weishang Jia",
+      "Jingfang Zhang",
+      "Yuchi Liu",
+      "Zihao Wang",
+      "Yaoyue Yang",
+      "Lanxiang Feng",
+      "Xinxiu Yan",
+      "Tao Li",
+      "Wei Zou",
+      "Jingze Li"
+    ],
+    "year": 2024,
+    "journal": "Journal of Colloid and Interface Science",
+    "document_type": "Paper",
+    "doi": "10.1016/j.jcis.2024.02.014",
+    "url": "https://doi.org/10.1016/j.jcis.2024.02.014",
+    "role": "三维梯度结构与亲锂纳米层协同调节Li的底向上沉积及电流分布。",
+    "systems": [
+      "Li metal",
+      "gradient 3D collector"
+    ],
+    "methods": [
+      "3D collector fabrication",
+      "nanolayer coating",
+      "electrochemical testing"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "三维梯度结构与亲锂纳米层协同调节Li的底向上沉积及电流分布。",
+    "scope_note": "研究对象：Li metal；gradient 3D collector。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "三维梯度结构与亲锂纳米层协同调节Li的底向上沉积及电流分布。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1016/j.jcis.2024.02.014"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1016/j.jcis.2024.02.014"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Hao",
+        "family": "Yang"
+      },
+      {
+        "given": "Weishang",
+        "family": "Jia"
+      },
+      {
+        "given": "Jingfang",
+        "family": "Zhang"
+      },
+      {
+        "given": "Yuchi",
+        "family": "Liu"
+      },
+      {
+        "given": "Zihao",
+        "family": "Wang"
+      },
+      {
+        "given": "Yaoyue",
+        "family": "Yang"
+      },
+      {
+        "given": "Lanxiang",
+        "family": "Feng"
+      },
+      {
+        "given": "Xinxiu",
+        "family": "Yan"
+      },
+      {
+        "given": "Tao",
+        "family": "Li"
+      },
+      {
+        "given": "Wei",
+        "family": "Zou"
+      },
+      {
+        "given": "Jingze",
+        "family": "Li"
+      }
+    ]
+  },
+  {
+    "id": "collector2024_1002_eem2_12768",
+    "title": "Laser‐Constructing 3D Copper Current Collector with Crystalline Orientation Selectivity for Stable Lithium Metal Batteries",
+    "authors": [
+      "Hui Li",
+      "Gang Wang",
+      "Jin Hu",
+      "Jun Li",
+      "Jiaxu Huang",
+      "Shaolin Xu"
+    ],
+    "year": 2024,
+    "journal": "ENERGY & ENVIRONMENTAL MATERIALS",
+    "document_type": "Paper",
+    "doi": "10.1002/eem2.12768",
+    "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/eem2.12768",
+    "role": "激光构建具有晶体取向选择性的三维Cu，利用晶面亲锂性与几何面积改善沉积。",
+    "systems": [
+      "Li metal",
+      "3D Cu"
+    ],
+    "methods": [
+      "laser fabrication",
+      "crystallographic characterization",
+      "electrochemical testing"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "激光构建具有晶体取向选择性的三维Cu，利用晶面亲锂性与几何面积改善沉积。",
+    "scope_note": "研究对象：Li metal；3D Cu。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "激光构建具有晶体取向选择性的三维Cu，利用晶面亲锂性与几何面积改善沉积。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/eem2.12768"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://onlinelibrary.wiley.com/doi/full/10.1002/eem2.12768"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Hui",
+        "family": "Li"
+      },
+      {
+        "given": "Gang",
+        "family": "Wang"
+      },
+      {
+        "given": "Jin",
+        "family": "Hu"
+      },
+      {
+        "given": "Jun",
+        "family": "Li"
+      },
+      {
+        "given": "Jiaxu",
+        "family": "Huang"
+      },
+      {
+        "given": "Shaolin",
+        "family": "Xu"
+      }
+    ]
+  },
+  {
+    "id": "collector2024_1039_d4ta05955g",
+    "title": "3D soft lithiophilic current collector of Ag-CuNW/MWCNT@melamine foam enables dendrite-free lithium metal anodes",
+    "authors": [
+      "Song-Bai Xiang",
+      "Xiyu Zhang",
+      "Yue Hou",
+      "Wenjing Li",
+      "Chengri Yin",
+      "Zhenxing Yin"
+    ],
+    "year": 2024,
+    "journal": "Journal of Materials Chemistry A",
+    "document_type": "Paper",
+    "doi": "10.1039/d4ta05955g",
+    "url": "https://pubs.rsc.org/sr/content/articlelanding/2024/ta/d4ta05955g",
+    "role": "Ag-Cu纳米线/MWCNT泡沫降低局部电流，柔性多孔骨架缓冲挤压应力，Ag提供成核位点。",
+    "systems": [
+      "Li metal",
+      "Ag-CuNW/MWCNT foam"
+    ],
+    "methods": [
+      "nanowire assembly",
+      "Ag replacement reaction",
+      "long-term electrochemical cycling"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "Ag-Cu纳米线/MWCNT泡沫降低局部电流，柔性多孔骨架缓冲挤压应力，Ag提供成核位点。",
+    "scope_note": "研究对象：Li metal；Ag-CuNW/MWCNT foam。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "Ag-Cu纳米线/MWCNT泡沫降低局部电流，柔性多孔骨架缓冲挤压应力，Ag提供成核位点。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://pubs.rsc.org/sr/content/articlelanding/2024/ta/d4ta05955g"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://pubs.rsc.org/sr/content/articlelanding/2024/ta/d4ta05955g"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Song-Bai",
+        "family": "Xiang"
+      },
+      {
+        "given": "Xiyu",
+        "family": "Zhang"
+      },
+      {
+        "given": "Yue",
+        "family": "Hou"
+      },
+      {
+        "given": "Wenjing",
+        "family": "Li"
+      },
+      {
+        "given": "Chengri",
+        "family": "Yin"
+      },
+      {
+        "given": "Zhenxing",
+        "family": "Yin"
+      }
+    ]
+  },
+  {
+    "id": "collector2024_1021_acsnano_4c04507",
+    "title": "Chemical Prelithiated 3D Lithiophilic/-Phobic Interlayer Enables Long-Term Li Plating/Stripping",
+    "authors": [
+      "Sandro Schöner",
+      "Dana Schmidt",
+      "Xinchang Chen",
+      "Krzysztof Dzieciol",
+      "Roland Schierholz",
+      "Pengfei Cao",
+      "Ahmad Ghamlouche",
+      "Fabian Jeschull",
+      "Anna Windmüller",
+      "Chih-Long Tsai",
+      "Xunfan Liao",
+      "Hans Kungl",
+      "Gui-Ming Zhong",
+      "Yiwang Chen",
+      "Hermann Tempel",
+      "Shicheng Yu",
+      "Rüdiger-A. Eichel"
+    ],
+    "year": 2024,
+    "journal": "ACS Nano",
+    "document_type": "Paper",
+    "doi": "10.1021/acsnano.4c04507",
+    "url": "https://pubs.acs.org/doi/10.1021/acsnano.4c04507",
+    "role": "预锂化Ag/Cu三维碳纤维亲锂—疏锂梯度层调控沉积/剥离并减少不可逆锂损失。",
+    "systems": [
+      "Li metal",
+      "Ag/Cu carbon-fiber interlayer",
+      "anode-free/zero-excess"
+    ],
+    "methods": [
+      "chemical prelithiation",
+      "3D interlayer fabrication",
+      "zero-excess electrochemistry"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "预锂化Ag/Cu三维碳纤维亲锂—疏锂梯度层调控沉积/剥离并减少不可逆锂损失。",
+    "scope_note": "研究对象：Li metal；Ag/Cu carbon-fiber interlayer；anode-free/zero-excess。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "预锂化Ag/Cu三维碳纤维亲锂—疏锂梯度层调控沉积/剥离并减少不可逆锂损失。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://pubs.acs.org/doi/10.1021/acsnano.4c04507"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://pubs.acs.org/doi/10.1021/acsnano.4c04507"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Sandro",
+        "family": "Schöner"
+      },
+      {
+        "given": "Dana",
+        "family": "Schmidt"
+      },
+      {
+        "given": "Xinchang",
+        "family": "Chen"
+      },
+      {
+        "given": "Krzysztof",
+        "family": "Dzieciol"
+      },
+      {
+        "given": "Roland",
+        "family": "Schierholz"
+      },
+      {
+        "given": "Pengfei",
+        "family": "Cao"
+      },
+      {
+        "given": "Ahmad",
+        "family": "Ghamlouche"
+      },
+      {
+        "given": "Fabian",
+        "family": "Jeschull"
+      },
+      {
+        "given": "Anna",
+        "family": "Windmüller"
+      },
+      {
+        "given": "Chih-Long",
+        "family": "Tsai"
+      },
+      {
+        "given": "Xunfan",
+        "family": "Liao"
+      },
+      {
+        "given": "Hans",
+        "family": "Kungl"
+      },
+      {
+        "given": "Gui-Ming",
+        "family": "Zhong"
+      },
+      {
+        "given": "Yiwang",
+        "family": "Chen"
+      },
+      {
+        "given": "Hermann",
+        "family": "Tempel"
+      },
+      {
+        "given": "Shicheng",
+        "family": "Yu"
+      },
+      {
+        "given": "Rüdiger-A.",
+        "family": "Eichel"
+      }
+    ]
+  },
+  {
+    "id": "collector2024_3390_batteries10100369",
+    "title": "Inkjet-Printed Silver Lithiophilic Sites on Copper Current Collectors: Tuning the Interfacial Electrochemistry for Anode-Free Lithium Batteries",
+    "authors": [
+      "Seyedalireza Mirbagheri",
+      "Eugenio Gibertini",
+      "Luca Magagnin"
+    ],
+    "year": 2024,
+    "journal": "Batteries",
+    "document_type": "Paper",
+    "doi": "10.3390/batteries10100369",
+    "url": "https://www.mdpi.com/2313-0105/10/10/369",
+    "role": "喷墨打印Ag位点调节Cu/Li界面成核与沉积，直接用于无负极电池。",
+    "systems": [
+      "Li metal",
+      "Ag-patterned Cu",
+      "anode-free"
+    ],
+    "methods": [
+      "inkjet printing",
+      "Li nucleation tests",
+      "anode-free cycling"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "喷墨打印Ag位点调节Cu/Li界面成核与沉积，直接用于无负极电池。",
+    "scope_note": "研究对象：Li metal；Ag-patterned Cu；anode-free。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "喷墨打印Ag位点调节Cu/Li界面成核与沉积，直接用于无负极电池。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://www.mdpi.com/2313-0105/10/10/369"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://www.mdpi.com/2313-0105/10/10/369"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Seyedalireza",
+        "family": "Mirbagheri"
+      },
+      {
+        "given": "Eugenio",
+        "family": "Gibertini"
+      },
+      {
+        "given": "Luca",
+        "family": "Magagnin"
+      }
+    ]
+  },
+  {
+    "id": "collector2024_1038_s41529_024_00453_x",
+    "title": "Passivation and corrosion of Al current collectors in lithium-ion batteries",
+    "authors": [
+      "Pin Du",
+      "Jiale Wan",
+      "Jiakang Qu",
+      "Hongwei Xie",
+      "Dihua Wang",
+      "Huayi Yin"
+    ],
+    "year": 2024,
+    "journal": "npj Materials Degradation",
+    "document_type": "Paper",
+    "doi": "10.1038/s41529-024-00453-x",
+    "url": "https://www.nature.com/articles/s41529-024-00453-x",
+    "role": "比较新鲜与退役Al集流体的钝化、溶解和表面变化，并联系电极黏附/接触衰减；不是综述。",
+    "systems": [
+      "Al cathode collector",
+      "Li-ion electrolyte"
+    ],
+    "methods": [
+      "surface spectroscopy",
+      "electrochemical corrosion tests",
+      "morphology analysis"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "比较新鲜与退役Al集流体的钝化、溶解和表面变化，并联系电极黏附/接触衰减；不是综述。",
+    "scope_note": "研究对象：Al cathode collector；Li-ion electrolyte。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "比较新鲜与退役Al集流体的钝化、溶解和表面变化，并联系电极黏附/接触衰减；不是综述。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://www.nature.com/articles/s41529-024-00453-x"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://www.nature.com/articles/s41529-024-00453-x"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Pin",
+        "family": "Du"
+      },
+      {
+        "given": "Jiale",
+        "family": "Wan"
+      },
+      {
+        "given": "Jiakang",
+        "family": "Qu"
+      },
+      {
+        "given": "Hongwei",
+        "family": "Xie"
+      },
+      {
+        "given": "Dihua",
+        "family": "Wang"
+      },
+      {
+        "given": "Huayi",
+        "family": "Yin"
+      }
+    ]
+  },
+  {
+    "id": "collector2025_1149_1945_7111_ada641",
+    "title": "Anodic Dissolution of the Aluminum Current Collector in Lithium-ion Cells with LiFSI, LiPF6, and LiBF4",
+    "authors": [
+      "Kilian M. Scheer",
+      "Meredith Tulloch",
+      "Ines Hamam",
+      "Jeffin James Abraham",
+      "Michel B. Johnson",
+      "Michael Metzger"
+    ],
+    "year": 2025,
+    "journal": "Journal of The Electrochemical Society",
+    "document_type": "Paper",
+    "doi": "10.1149/1945-7111/ada641",
+    "url": "https://doi.org/10.1149/1945-7111/ada641",
+    "role": "比较LiFSI、LiPF6和LiBF4下Al阳极溶解与钝化膜化学，涉及高电压腐蚀。",
+    "systems": [
+      "Al cathode collector",
+      "LiFSI/LiPF6/LiBF4 electrolytes"
+    ],
+    "methods": [
+      "potentiodynamic corrosion",
+      "surface chemistry",
+      "salt comparison"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "比较LiFSI、LiPF6和LiBF4下Al阳极溶解与钝化膜化学，涉及高电压腐蚀。",
+    "scope_note": "研究对象：Al cathode collector；LiFSI/LiPF6/LiBF4 electrolytes。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "比较LiFSI、LiPF6和LiBF4下Al阳极溶解与钝化膜化学，涉及高电压腐蚀。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://doi.org/10.1149/1945-7111/ada641"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://doi.org/10.1149/1945-7111/ada641"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Kilian M.",
+        "family": "Scheer"
+      },
+      {
+        "given": "Meredith",
+        "family": "Tulloch"
+      },
+      {
+        "given": "Ines",
+        "family": "Hamam"
+      },
+      {
+        "given": "Jeffin James",
+        "family": "Abraham"
+      },
+      {
+        "given": "Michel B.",
+        "family": "Johnson"
+      },
+      {
+        "given": "Michael",
+        "family": "Metzger"
+      }
+    ]
+  },
+  {
+    "id": "collector2024_1002_cssc_202400164",
+    "title": "Study of the Corrosion Behavior of Cathode Current Collector in LiFSI Electrolyte",
+    "authors": [
+      "Zijie Yuan",
+      "Yongjing Wang",
+      "Yaqi Chen",
+      "Xiaodong Zhu",
+      "Shizhao Xiong",
+      "Zhongxiao Song"
+    ],
+    "year": 2024,
+    "journal": "ChemSusChem",
+    "document_type": "Paper",
+    "doi": "10.1002/cssc.202400164",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/cssc.202400164",
+    "role": "LiFSI碳酸酯电解液中循环与电位加速Al腐蚀，F−穿透钝化层并生成AlF3裂纹。",
+    "systems": [
+      "Al cathode collector",
+      "LiFSI EC/EMC"
+    ],
+    "methods": [
+      "cycling aging",
+      "corrosion current analysis",
+      "surface morphology/speciation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "LiFSI碳酸酯电解液中循环与电位加速Al腐蚀，F−穿透钝化层并生成AlF3裂纹。",
+    "scope_note": "研究对象：Al cathode collector；LiFSI EC/EMC。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "LiFSI碳酸酯电解液中循环与电位加速Al腐蚀，F−穿透钝化层并生成AlF3裂纹。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1002/cssc.202400164"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://onlinelibrary.wiley.com/doi/10.1002/cssc.202400164"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Zijie",
+        "family": "Yuan"
+      },
+      {
+        "given": "Yongjing",
+        "family": "Wang"
+      },
+      {
+        "given": "Yaqi",
+        "family": "Chen"
+      },
+      {
+        "given": "Xiaodong",
+        "family": "Zhu"
+      },
+      {
+        "given": "Shizhao",
+        "family": "Xiong"
+      },
+      {
+        "given": "Zhongxiao",
+        "family": "Song"
+      }
+    ]
+  },
+  {
+    "id": "collector2026_1039_d6ta00180g",
+    "title": "Electrochemical and computational insights into lithium nucleation at Ni(111) and Cu(111) surfaces for anode-free Li-metal batteries",
+    "authors": [
+      "Katarina Cicvarić",
+      "Lars Mannich",
+      "Susana Suttor",
+      "Wang Hu",
+      "Vitaly Alexandrov",
+      "Aliaksandr S. Bandarenka"
+    ],
+    "year": 2026,
+    "journal": "Journal of Materials Chemistry A",
+    "document_type": "Paper",
+    "doi": "10.1039/d6ta00180g",
+    "url": "https://pubs.rsc.org/en/content/articlelanding/2026/ta/d6ta00180g",
+    "role": "结合Ni(111)/Cu(111)电沉积实验与计算比较Li成核、表面扩散及耐腐蚀性，直接面向无负极集流体选择。",
+    "systems": [
+      "Li metal",
+      "Ni(111)/Cu(111) collectors",
+      "anode-free"
+    ],
+    "methods": [
+      "electrodeposition",
+      "DFT/computational analysis",
+      "surface characterization"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "结合Ni(111)/Cu(111)电沉积实验与计算比较Li成核、表面扩散及耐腐蚀性，直接面向无负极集流体选择。",
+    "scope_note": "研究对象：Li metal；Ni(111)/Cu(111) collectors；anode-free。",
+    "collection": "core",
+    "difficulty": "前沿",
+    "evidence": [
+      {
+        "claim": "结合Ni(111)/Cu(111)电沉积实验与计算比较Li成核、表面扩散及耐腐蚀性，直接面向无负极集流体选择。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://pubs.rsc.org/en/content/articlelanding/2026/ta/d6ta00180g"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://pubs.rsc.org/en/content/articlelanding/2026/ta/d6ta00180g"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Katarina",
+        "family": "Cicvarić"
+      },
+      {
+        "given": "Lars",
+        "family": "Mannich"
+      },
+      {
+        "given": "Susana",
+        "family": "Suttor"
+      },
+      {
+        "given": "Wang",
+        "family": "Hu"
+      },
+      {
+        "given": "Vitaly",
+        "family": "Alexandrov"
+      },
+      {
+        "given": "Aliaksandr S.",
+        "family": "Bandarenka"
+      }
+    ]
+  },
+  {
+    "id": "collector2026_1002_aenm_71291",
+    "title": "Atomic‐Scale Tracing of Lithium Trapped in Copper Current Collectors",
+    "authors": [
+      "Tong Li",
+      "Carlo Franke",
+      "Ziyuan Lyu",
+      "Omair Ashfaq",
+      "Mervyn Soans",
+      "Mohsen Sotoudeh",
+      "Thomas Diemant",
+      "Jun Xia",
+      "Aleksander Kostka",
+      "Dominic Bresser"
+    ],
+    "year": 2026,
+    "journal": "Advanced Energy Materials",
+    "document_type": "Paper",
+    "doi": "10.1002/aenm.71291",
+    "url": "https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/aenm.71291",
+    "role": "原子探针追踪无负极循环后Cu晶界/结点中的Li滞留及近表层纳米晶化，直接支持集流体内部锂损失机制。",
+    "systems": [
+      "Li metal",
+      "Cu collector",
+      "zero-excess"
+    ],
+    "methods": [
+      "atom probe tomography",
+      "depth-resolved chemical mapping",
+      "electrochemical cycling"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "集流体",
+      "锂金属电池"
+    ],
+    "summary": "原子探针追踪无负极循环后Cu晶界/结点中的Li滞留及近表层纳米晶化，直接支持集流体内部锂损失机制。",
+    "scope_note": "研究对象：Li metal；Cu collector；zero-excess。",
+    "collection": "core",
+    "difficulty": "前沿",
+    "evidence": [
+      {
+        "claim": "原子探针追踪无负极循环后Cu晶界/结点中的Li滞留及近表层纳米晶化，直接支持集流体内部锂损失机制。",
+        "basis": "公开出版记录及摘要选读",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [
+      {
+        "label": "出版商公开记录",
+        "url": "https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/aenm.71291"
+      }
+    ],
+    "verification": {
+      "doi": "verified_crossref_2026-10-25",
+      "publisher": "candidate_public_source_2026-10-25",
+      "sources": [
+        "https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/aenm.71291"
+      ]
+    },
+    "author_details": [
+      {
+        "given": "Tong",
+        "family": "Li"
+      },
+      {
+        "given": "Carlo",
+        "family": "Franke"
+      },
+      {
+        "given": "Ziyuan",
+        "family": "Lyu"
+      },
+      {
+        "given": "Omair",
+        "family": "Ashfaq"
+      },
+      {
+        "given": "Mervyn",
+        "family": "Soans"
+      },
+      {
+        "given": "Mohsen",
+        "family": "Sotoudeh"
+      },
+      {
+        "given": "Thomas",
+        "family": "Diemant"
+      },
+      {
+        "given": "Jun",
+        "family": "Xia"
+      },
+      {
+        "given": "Aleksander",
+        "family": "Kostka"
+      },
+      {
+        "given": "Dominic",
+        "family": "Bresser"
+      }
+    ]
   }
 ]

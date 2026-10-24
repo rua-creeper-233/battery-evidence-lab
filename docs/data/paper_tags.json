@@ -11,14 +11,14 @@
     "观点": "Perspective/Opinion 类观点文章；不等同于系统综述"
   },
   "counts": {
-    "DFT": 101,
-    "MD": 75,
+    "DFT": 104,
+    "MD": 77,
     "MS": 8,
     "VASP": 32,
     "方法论文": 69,
     "综述": 30,
     "观点": 5,
-    "进展论文": 142
+    "进展论文": 178
   },
   "papers": {
     "tan2026_pemd": {
@@ -1067,8 +1067,8 @@
         ],
         "MD": [
           "AIMD",
-          "molecular dynamics",
-          "Molecular Dynamics"
+          "Molecular Dynamics",
+          "molecular dynamics"
         ],
         "VASP": [
           "VASP"
@@ -1192,8 +1192,8 @@
           "DFT"
         ],
         "MD": [
-          "molecular dynamics",
-          "Molecular Dynamics"
+          "Molecular Dynamics",
+          "molecular dynamics"
         ]
       },
       "tag_policy": "curated_metadata_v1"
@@ -3357,6 +3357,364 @@
           "molecular dynamics"
         ]
       },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2022_1016_j_cclet_2022_03_065": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2022_3390_ma15227912": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2022_1021_acsami_2c15101": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "DFT",
+        "MD"
+      ],
+      "display_tags": [
+        "进展论文",
+        "DFT",
+        "MD"
+      ],
+      "tag_basis": {
+        "DFT": [
+          "ab initio"
+        ],
+        "MD": [
+          "AIMD",
+          "molecular dynamics"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2023_1021_acsami_3c01311": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "MD"
+      ],
+      "display_tags": [
+        "进展论文",
+        "MD"
+      ],
+      "tag_basis": {
+        "MD": [
+          "molecular dynamics"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2023_1073_pnas_2314264120": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2024_1038_s41467_024_54313_y": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2024_1016_j_jpowsour_2023_233979": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2025_1039_d5ta06024a": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2025_1002_batt_202500434": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2021_1016_j_jtice_2021_01_031": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2021_1038_s41598_021_81644_3": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2022_1002_ceat_202000218": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2022_1007_s10570_022_04873_3": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2022_1021_acsaem_1c03548": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2023_1016_j_memsci_2023_121617": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2023_1021_acsnano_2c09526": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2026_3390_batteries12090347": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "sep2025_1016_j_fub_2025_100064": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2021_1038_s41467_021_25848_1": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2021_1021_acsami_1c13896": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2023_1002_ente_202300053": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2023_1002_adma_202206762": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "DFT"
+      ],
+      "display_tags": [
+        "进展论文",
+        "DFT"
+      ],
+      "tag_basis": {
+        "DFT": [
+          "DFT"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2023_1021_acsami_3c08109": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2023_1016_j_mtener_2023_101341": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2023_1016_j_jallcom_2023_171393": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2024_1021_acsami_3c14693": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2024_1016_j_jcis_2024_02_014": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2024_1002_eem2_12768": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2024_1039_d4ta05955g": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2024_1021_acsnano_4c04507": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2024_3390_batteries10100369": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2024_1038_s41529_024_00453_x": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2025_1149_1945_7111_ada641": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2024_1002_cssc_202400164": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2026_1039_d6ta00180g": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "DFT"
+      ],
+      "display_tags": [
+        "进展论文",
+        "DFT"
+      ],
+      "tag_basis": {
+        "DFT": [
+          "DFT"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "collector2026_1002_aenm_71291": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
       "tag_policy": "curated_metadata_v1"
     }
   }

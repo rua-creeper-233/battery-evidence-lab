@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-19",
+  "as_of": "2026-10-25",
   "notice": "英文原文附中文参考译名；中文原文保留原题、不重复显示同名译文。引用以出版时原题和DOI为准。",
   "papers": {
     "tan2026_pemd": {
@@ -1057,6 +1057,186 @@
       "title": "基于大数据的电池新材料设计",
       "title_zh": "基于大数据的电池新材料设计",
       "doi": "10.19799/j.cnki.2095-4239.2024.0565"
+    },
+    "sep2022_1016_j_cclet_2022_03_065": {
+      "title": "Understanding the separator pore size inhibition effect on lithium dendrite via phase-field simulations",
+      "title_zh": "相场模拟揭示隔膜孔径对锂枝晶的抑制作用",
+      "doi": "10.1016/j.cclet.2022.03.065"
+    },
+    "sep2022_3390_ma15227912": {
+      "title": "Influences of Separator Thickness and Surface Coating on Lithium Dendrite Growth: A Phase-Field Study",
+      "title_zh": "隔膜厚度和表面涂层对锂枝晶生长影响的相场研究",
+      "doi": "10.3390/ma15227912"
+    },
+    "sep2022_1021_acsami_2c15101": {
+      "title": "Ion Flux Self-Regulation Strategy with a Volume-Responsive Separator for Lithium Metal Batteries",
+      "title_zh": "采用体积响应隔膜的离子通量自调节策略",
+      "doi": "10.1021/acsami.2c15101"
+    },
+    "sep2023_1021_acsami_3c01311": {
+      "title": "Bioinspired Separator with Ion-Selective Nanochannels for Lithium Metal Batteries",
+      "title_zh": "具有离子选择性纳米通道的仿生隔膜用于锂金属电池",
+      "doi": "10.1021/acsami.3c01311"
+    },
+    "sep2023_1073_pnas_2314264120": {
+      "title": "A polyimine aerogel separator with electron cloud design to boost Li-ion transport for stable Li metal batteries",
+      "title_zh": "采用电子云设计提升锂离子传输的聚亚胺气凝胶隔膜",
+      "doi": "10.1073/pnas.2314264120"
+    },
+    "sep2024_1038_s41467_024_54313_y": {
+      "title": "Mechanical shutdown of battery separators: Silicon anode failure",
+      "title_zh": "电池隔膜的机械关断与硅负极失效",
+      "doi": "10.1038/s41467-024-54313-y"
+    },
+    "sep2024_1016_j_jpowsour_2023_233979": {
+      "title": "Quantification of lithium deposition under mechano-electrochemical coupling effect",
+      "title_zh": "机电化学耦合效应下锂沉积的定量研究",
+      "doi": "10.1016/j.jpowsour.2023.233979"
+    },
+    "sep2025_1039_d5ta06024a": {
+      "title": "Simulation of electrical and thermal characteristics of a short circuit inside a boehmite composite separator",
+      "title_zh": "勃姆石复合隔膜内部短路的电学与热学特性模拟",
+      "doi": "10.1039/d5ta06024a"
+    },
+    "sep2025_1002_batt_202500434": {
+      "title": "3D Resolved Computational Modeling to Simulate the Electrolyte Wetting of a Lithium‐Ion Battery Cell with 18650 Format",
+      "title_zh": "18650锂离子电池电解液润湿的三维解析计算建模",
+      "doi": "10.1002/batt.202500434"
+    },
+    "sep2021_1016_j_jtice_2021_01_031": {
+      "title": "Pry into the thermal and mechanical properties of electrolyte-soaked separators",
+      "title_zh": "浸润电解液隔膜的热学与力学性质",
+      "doi": "10.1016/j.jtice.2021.01.031"
+    },
+    "sep2021_1038_s41598_021_81644_3": {
+      "title": "Preferential lattice expansion of polypropylene in a trilayer polypropylene/polyethylene/polypropylene microporous separator in Li-ion batteries",
+      "title_zh": "锂离子电池三层聚丙烯/聚乙烯/聚丙烯微孔隔膜中聚丙烯的择优晶格膨胀",
+      "doi": "10.1038/s41598-021-81644-3"
+    },
+    "sep2022_1002_ceat_202000218": {
+      "title": "Enhanced Wettability of a PTFE Porous Membrane for a High‐Temperature Stable Lithium‐Ion Battery Separator",
+      "title_zh": "高温稳定锂离子电池用PTFE多孔膜的润湿性增强",
+      "doi": "10.1002/ceat.202000218"
+    },
+    "sep2022_1007_s10570_022_04873_3": {
+      "title": "Cellulose-ceramic composite flexible paper separator with improved wettability and flame retardant properties for lithium-ion batteries",
+      "title_zh": "具有改进润湿性和阻燃性能的纤维素—陶瓷复合柔性纸隔膜",
+      "doi": "10.1007/s10570-022-04873-3"
+    },
+    "sep2022_1021_acsaem_1c03548": {
+      "title": "Highly Connective Spongy Polyimide Separators Blended with Inorganic Whiskers for High-Performance Lithium-Ion Batteries",
+      "title_zh": "与无机晶须共混的高连通海绵状聚酰亚胺隔膜",
+      "doi": "10.1021/acsaem.1c03548"
+    },
+    "sep2023_1016_j_memsci_2023_121617": {
+      "title": "Inhibition of lithium dendrite growth by high-thermal-stability separator containing sulfonated covalent organic frameworks and polybenzimidazole",
+      "title_zh": "含磺化共价有机框架和聚苯并咪唑的高热稳定隔膜抑制锂枝晶",
+      "doi": "10.1016/j.memsci.2023.121617"
+    },
+    "sep2023_1021_acsnano_2c09526": {
+      "title": "Mechanistic Insight into Wettability Enhancement of Lithium-Ion Batteries Using a Ceramic-Coated Layer",
+      "title_zh": "陶瓷涂层提升锂离子电池润湿性的机理研究",
+      "doi": "10.1021/acsnano.2c09526"
+    },
+    "sep2026_3390_batteries12090347": {
+      "title": "Thermally Robust and Highly Wettable Polyethylene Separators for Lithium-Metal Batteries Using Water-Based Processing of a Glass Platelet Coating",
+      "title_zh": "水性玻璃片涂层制备的高热稳定高润湿聚乙烯隔膜",
+      "doi": "10.3390/batteries12090347"
+    },
+    "sep2025_1016_j_fub_2025_100064": {
+      "title": "Enhancing lithium-ion battery safety: A comparative study of separator performance under mechanical abuse",
+      "title_zh": "机械滥用条件下锂离子电池隔膜性能的比较研究",
+      "doi": "10.1016/j.fub.2025.100064"
+    },
+    "collector2021_1038_s41467_021_25848_1": {
+      "title": "An electron-deficient carbon current collector for anode-free Li-metal batteries",
+      "title_zh": "用于无负极锂金属电池的缺电子碳集流体",
+      "doi": "10.1038/s41467-021-25848-1"
+    },
+    "collector2021_1021_acsami_1c13896": {
+      "title": "Uniform Deposition of Li-Metal Anodes Guided by 3D Current Collectors with In Situ Modification of the Lithiophilic Matrix",
+      "title_zh": "原位改性亲锂基质引导锂金属均匀沉积的三维集流体",
+      "doi": "10.1021/acsami.1c13896"
+    },
+    "collector2023_1002_ente_202300053": {
+      "title": "Silica‐Modified 3D Porous Copper Current Collectors Toward Stable Lithium Metal Anodes",
+      "title_zh": "面向稳定锂金属负极的二氧化硅改性三维多孔铜集流体",
+      "doi": "10.1002/ente.202300053"
+    },
+    "collector2023_1002_adma_202206762": {
+      "title": "Stable Anode‐Free All‐Solid‐State Lithium Battery through Tuned Metal Wetting on the Copper Current Collector",
+      "title_zh": "通过调节铜集流体上的金属润湿实现稳定无负极全固态锂电池",
+      "doi": "10.1002/adma.202206762"
+    },
+    "collector2023_1021_acsami_3c08109": {
+      "title": "Lithiophilic Zn3N2-Modified Cu Current Collectors by a Novel FCVA Technology for Stable Anode-Free Lithium Metal Batteries",
+      "title_zh": "新型FCVA技术制备亲锂Zn3N2改性铜集流体用于稳定无负极锂金属电池",
+      "doi": "10.1021/acsami.3c08109"
+    },
+    "collector2023_1016_j_mtener_2023_101341": {
+      "title": "Super-three-dimensional lithiophilic Cu-based current collector for anode-free lithium metal battery",
+      "title_zh": "用于无负极锂金属电池的超三维亲锂铜基集流体",
+      "doi": "10.1016/j.mtener.2023.101341"
+    },
+    "collector2023_1016_j_jallcom_2023_171393": {
+      "title": "Effect of 3D lithiophilic current collector for anode-free Li ion batteries",
+      "title_zh": "三维亲锂集流体对无负极锂离子电池的影响",
+      "doi": "10.1016/j.jallcom.2023.171393"
+    },
+    "collector2024_1021_acsami_3c14693": {
+      "title": "Influence of Au, Pt, and C Seed Layers on Lithium Nucleation Dynamics for Anode-Free Solid-State Batteries",
+      "title_zh": "Au、Pt和C种子层对无负极固态电池锂成核动力学的影响",
+      "doi": "10.1021/acsami.3c14693"
+    },
+    "collector2024_1016_j_jcis_2024_02_014": {
+      "title": "Gradient three-dimensional current collector with lithiophilic nanolayer regulation for efficient lithium metal anode construction",
+      "title_zh": "具有亲锂纳米层调控的梯度三维集流体用于构建锂金属负极",
+      "doi": "10.1016/j.jcis.2024.02.014"
+    },
+    "collector2024_1002_eem2_12768": {
+      "title": "Laser‐Constructing 3D Copper Current Collector with Crystalline Orientation Selectivity for Stable Lithium Metal Batteries",
+      "title_zh": "具有晶体取向选择性的激光构建三维铜集流体用于稳定锂金属电池",
+      "doi": "10.1002/eem2.12768"
+    },
+    "collector2024_1039_d4ta05955g": {
+      "title": "3D soft lithiophilic current collector of Ag-CuNW/MWCNT@melamine foam enables dendrite-free lithium metal anodes",
+      "title_zh": "Ag-Cu纳米线/MWCNT泡沫三维柔性亲锂集流体实现无枝晶锂金属负极",
+      "doi": "10.1039/d4ta05955g"
+    },
+    "collector2024_1021_acsnano_4c04507": {
+      "title": "Chemical Prelithiated 3D Lithiophilic/-Phobic Interlayer Enables Long-Term Li Plating/Stripping",
+      "title_zh": "化学预锂化三维亲锂/疏锂中间层实现长期锂沉积/剥离",
+      "doi": "10.1021/acsnano.4c04507"
+    },
+    "collector2024_3390_batteries10100369": {
+      "title": "Inkjet-Printed Silver Lithiophilic Sites on Copper Current Collectors: Tuning the Interfacial Electrochemistry for Anode-Free Lithium Batteries",
+      "title_zh": "铜集流体上喷墨打印银亲锂位点调控无负极锂电池界面电化学",
+      "doi": "10.3390/batteries10100369"
+    },
+    "collector2024_1038_s41529_024_00453_x": {
+      "title": "Passivation and corrosion of Al current collectors in lithium-ion batteries",
+      "title_zh": "锂离子电池中铝集流体的钝化与腐蚀",
+      "doi": "10.1038/s41529-024-00453-x"
+    },
+    "collector2025_1149_1945_7111_ada641": {
+      "title": "Anodic Dissolution of the Aluminum Current Collector in Lithium-ion Cells with LiFSI, LiPF6, and LiBF4",
+      "title_zh": "含LiFSI、LiPF6和LiBF4的锂离子电池中铝集流体的阳极溶解",
+      "doi": "10.1149/1945-7111/ada641"
+    },
+    "collector2024_1002_cssc_202400164": {
+      "title": "Study of the Corrosion Behavior of Cathode Current Collector in LiFSI Electrolyte",
+      "title_zh": "LiFSI电解液中正极集流体腐蚀行为研究",
+      "doi": "10.1002/cssc.202400164"
+    },
+    "collector2026_1039_d6ta00180g": {
+      "title": "Electrochemical and computational insights into lithium nucleation at Ni(111) and Cu(111) surfaces for anode-free Li-metal batteries",
+      "title_zh": "无负极锂金属电池中Ni(111)与Cu(111)表面锂成核的电化学与计算研究",
+      "doi": "10.1039/d6ta00180g"
+    },
+    "collector2026_1002_aenm_71291": {
+      "title": "Atomic‐Scale Tracing of Lithium Trapped in Copper Current Collectors",
+      "title_zh": "铜集流体中滞留锂的原子尺度追踪",
+      "doi": "10.1002/aenm.71291"
     }
   }
 }

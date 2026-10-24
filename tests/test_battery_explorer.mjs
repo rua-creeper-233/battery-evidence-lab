@@ -17,8 +17,10 @@ assert.deepEqual(Array.from(api.componentIds), ['cathode', 'anode', 'electrolyte
 const resolved = api.resolve(data, papers);
 assert.equal(resolved.ok, true, resolved.errors?.join('; '));
 assert.equal(resolved.components.length, 6);
-assert.equal(resolved.components.flatMap((c) => c.papers).length, 39);
-assert.equal(new Set(resolved.components.flatMap((c) => c.papers).map((r) => r.paper_id)).size, 37);
+assert.equal(resolved.components.flatMap((c) => c.papers).length, 76);
+assert.equal(new Set(resolved.components.flatMap((c) => c.papers).map((r) => r.paper_id)).size, 74);
+assert.equal(resolved.components.find(c => c.id === 'separator').papers.length, 19);
+assert.equal(resolved.components.find(c => c.id === 'collectors').papers.length, 18);
 
 function invalid(mutator) {
   const copy = structuredClone(data);
@@ -110,8 +112,10 @@ assert.equal(mountTarget.querySelector('.battery-explorer__paper-open'), null, '
 assert.equal(document.activeElement, identity, 'close restores focus to selected pin');
 stalePaper.dispatch('click'); assert.equal(opens, 1, 'removed paper handlers are inert');
 pins[3].dispatch('click');
-assert.match(mountTarget.querySelector('.battery-explorer__empty').textContent, /没有已核验/);
+assert.ok(mountTarget.querySelector('.battery-explorer__paper-open'), 'expanded separator category exposes its papers');
 mounted2.update({ data: sparse, papers });
 assert.equal(mountTarget.querySelector('.battery-explorer__paper-open'), null, 'update resets to unselected state');
+mountTarget.querySelectorAll('.battery-explorer__pin')[3].dispatch('click');
+assert.match(mountTarget.querySelector('.battery-explorer__empty').textContent, /没有已核验/);
 mounted2.cleanup(); assert.equal(mountTarget.children.length, 0);
 console.log('Battery explorer: resolver safety, 6 figure pins, hover/focus, titleZh escaping, paper callback, selection, cleanup PASS');

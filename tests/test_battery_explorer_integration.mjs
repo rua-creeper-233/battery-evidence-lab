@@ -16,11 +16,11 @@ assert.match(html, /if \(typeof batteryMapCleanup === 'function'\) batteryMapCle
 assert.deepEqual(staticMap, sourceMap, 'static deployment asset must match curated source map');
 assert.equal(staticMap.components.length, 6);
 const refs = staticMap.components.flatMap((component) => component.papers);
-assert.equal(refs.length, 39);
-assert.equal(new Set(refs.map((ref) => ref.paper_id)).size, 37);
+assert.equal(refs.length, 76);
+assert.equal(new Set(refs.map((ref) => ref.paper_id)).size, 74);
 for (const ref of refs) {
   const canonical = catalog.find((paper) => paper.id === ref.paper_id);
   assert.ok(canonical, `missing canonical paper ${ref.paper_id}`);
   assert.equal(ref.doi, canonical.doi, `stale DOI for ${ref.paper_id}`);
 }
-console.log('Battery explorer integration: guarded optional mount, asset paths, copied map, 39 refs/37 papers PASS');
+console.log('Battery explorer integration: guarded optional mount, asset paths, copied map, 76 refs/74 papers PASS');

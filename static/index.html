@@ -229,7 +229,7 @@ summary { min-height: 32px; }
   <link rel="stylesheet" href="./home.css" />
   <link rel="stylesheet" href="./battery_explorer.css" />
 <script src="./lab-ui.js"></script>
-<meta name="description" content="检索电池材料计算论文，查阅 DFT、MD、机器学习势的知识、操作流程与来源。"><meta property="og:title" content="Battery Evidence Lab"><meta property="og:description" content="检索电池材料计算论文，查阅 DFT、MD、机器学习势的知识、操作流程与来源。"><meta property="og:type" content="website"><meta property="og:url" content="https://rua-creeper-233.github.io/battery-evidence-lab/index.html"><meta property="og:image" content="https://rua-creeper-233.github.io/battery-evidence-lab/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://rua-creeper-233.github.io/battery-evidence-lab/index.html"><link rel="icon" type="image/svg+xml" href="./favicon.svg"></head>
+<link rel="stylesheet" href="./paper_insights.css"><meta name="description" content="检索电池材料计算论文，查阅 DFT、MD、机器学习势的知识、操作流程与来源。"><meta property="og:title" content="Battery Evidence Lab"><meta property="og:description" content="检索电池材料计算论文，查阅 DFT、MD、机器学习势的知识、操作流程与来源。"><meta property="og:type" content="website"><meta property="og:url" content="https://rua-creeper-233.github.io/battery-evidence-lab/index.html"><meta property="og:image" content="https://rua-creeper-233.github.io/battery-evidence-lab/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://rua-creeper-233.github.io/battery-evidence-lab/index.html"><link rel="icon" type="image/svg+xml" href="./favicon.svg"></head>
 <body>
   <div class="shell">
     <nav class="site-nav" aria-label="页面导航"><a class="brand" href="./index.html#research-question">Battery Evidence Lab</a><div class="site-nav-links"><div class="home-tabs" role="tablist" aria-label="首页工具"><a href="#research-question" id="tab-research-question" role="tab" aria-controls="research-question" aria-selected="true" tabindex="0" data-home-tab="research-question">证据问答</a><a href="#library" id="tab-library" role="tab" aria-controls="library" aria-selected="false" tabindex="-1" data-home-tab="library">论文库</a><a href="#tutorials" id="tab-tutorials" role="tab" aria-controls="tutorials" aria-selected="false" tabindex="-1" data-home-tab="tutorials">教程</a></div><a href="./future-directions.html">未来方向</a><a href="./ai-battery-applications.html">AI 应用</a><a href="./foundations.html">基础地图</a><a href="./learning-route.html">学习路线</a><a href="./domestic-papers.html">国内论文</a></div></nav>
@@ -237,7 +237,7 @@ summary { min-height: 32px; }
       <div>
         <h1>Battery Evidence Lab</h1>
         <div class="sub">电池材料计算，从问题找到证据。</div>
-        <p class="project-progress" data-project-progress>211 篇论文 · 更新于 2026-10-21</p>
+        <p class="project-progress" data-project-progress>247 篇论文 · 更新于 2026-10-25</p>
       </div>
       <div class="header-actions">
         <div class="header-buttons">
@@ -385,6 +385,7 @@ summary { min-height: 32px; }
 <script src="./static_qa.js"></script>
 <script src="./research_knowledge.js"></script>
 <script src="./battery_explorer.js"></script>
+<script src="./paper_insights.js"></script>
 <script>
     const staticMode = location.protocol === "file:" || location.hostname.endsWith("github.io");
     const localMode = ['127.0.0.1', 'localhost', '::1'].includes(location.hostname);
@@ -579,7 +580,8 @@ summary { min-height: 32px; }
         ? `<h3>正文方法定位</h3><p>显示前 12 条匹配，点页码查看上下文。</p><ul>${methods}</ul>` : '';
       const verification = window.LabUI?.verificationLabel?.(p.verification?.doi) || '书目核验状态待补充';
       const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(p) : `<span class="paper-title-en">${escapeHtml(p.title)}</span>`;
-      document.querySelector('#detail').innerHTML = `<div class="eyebrow">${p.year} · ${escapeHtml(p.journal)} · ${escapeHtml(p.document_type)}${p.difficulty ? ` · ${escapeHtml(p.difficulty)}` : ''}</div><h2>${titleHtml}</h2><p>${escapeHtml(authorLine)}</p><p>${escapeHtml(window.LabUI?.paperSummary?.(p) || p.summary || '')}</p><div>${tags}</div>${linkButtons(p)}${learningBlock}${protocolBlock}${evidence ? `<h3>论文要点</h3><ul>${evidence}</ul>` : ''}${relations ? `<h3>知识关系</h3>${relations}` : ''}${methodBlock}<p class="paper-meta">${escapeHtml(verification)}${p.wos_uid ? ' · WOS 记录已核验' : ''}${localStatus ? ` · ${escapeHtml(localStatus)}` : ''}</p>`;
+      const paperInsights = window.PaperInsights?.renderHtml(p.id) || '';
+      document.querySelector('#detail').innerHTML = `<div class="eyebrow">${p.year} · ${escapeHtml(p.journal)} · ${escapeHtml(p.document_type)}${p.difficulty ? ` · ${escapeHtml(p.difficulty)}` : ''}</div><h2>${titleHtml}</h2><p>${escapeHtml(authorLine)}</p><p>${escapeHtml(window.LabUI?.paperSummary?.(p) || p.summary || '')}</p><div>${tags}</div>${linkButtons(p)}${learningBlock}${protocolBlock}${evidence && !paperInsights ? `<h3>论文要点</h3><ul>${evidence}</ul>` : ''}${relations && !paperInsights ? `<h3>知识关系</h3>${relations}` : ''}${paperInsights}${methodBlock}<p class="paper-meta">${escapeHtml(verification)}${p.wos_uid ? ' · WOS 记录已核验' : ''}${localStatus ? ` · ${escapeHtml(localStatus)}` : ''}</p>`;
       document.querySelector('#modal').classList.add('open');
     }
     let askGeneration = 0;
@@ -779,6 +781,7 @@ summary { min-height: 32px; }
         state.paperTags = tagPayload.papers || {};
       } catch (_) { state.paperTags = {}; }
       state.papers = state.papers.map(p => ({...p, ...(state.paperTags[p.id] || {}), title_zh: window.LabUI?.titleZh ? window.LabUI.titleZh(p) : ''}));
+      window.PaperInsights?.load('./data/paper_insights.json', state.papers).then(() => { if (state.openPaperId && document.querySelector('#modal').classList.contains('open')) showPaper(state.openPaperId); }).catch(() => {});
       try {
         const routeResponse = await fetch('./data/learning_route.json', {cache:'no-store'});
         if (!routeResponse.ok) throw new Error(`route HTTP ${routeResponse.status}`);

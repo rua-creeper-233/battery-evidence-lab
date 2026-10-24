@@ -16,7 +16,7 @@ PAPERS = ROOT / "data" / "papers.json"
 TITLES = ROOT / "data" / "paper_titles_zh.json"
 ROUTE = ROOT / "data" / "learning_route.json"
 OUT = ROOT / "data" / "static_qa.json"
-AS_OF = "2026-10-21"
+AS_OF = "2026-10-25"
 
 GENERIC_ROLE = "面向电池电解液、固态电解质、正极/界面模拟的可复用计算文献。"
 GENERIC_CROSSREF_PREFIX = "基于 Crossref 出版社元数据核验："
