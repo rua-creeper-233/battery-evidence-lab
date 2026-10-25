@@ -70,3 +70,5 @@ assert.equal(t.window.LabUI.verificationLabel('not_checked'), '书目核验状�
 assert.equal(t.window.LabUI.verificationLabel('<img onerror=x>'), '书目核验状态待补充');
 assert.equal(t.window.LabUI.paperSummary({role:'面向电池电解液、固态电解质、正极/界面模拟的可复用计算文献。',summary:'基于 Crossref 出版社元数据核验：Title。摘要/正文参数仍需按来源逐项复核。'}), '内容摘录待补充');
 assert.equal(t.window.LabUI.paperSummary({role:'扩散机制',summary:'研究了协同离子扩散。'}), '扩散机制 · 研究了协同离子扩散。');
+assert.equal(t.window.LabUI.paperSummary({role:'研究了协同离子扩散',summary:'研究了协同离子扩散。'}), '研究了协同离子扩散。');
+assert.equal(t.window.LabUI.paperSummary({role:'DFT calculation.',summary:'DFT calculation'}), 'DFT calculation');

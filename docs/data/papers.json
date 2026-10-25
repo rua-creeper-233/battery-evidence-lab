@@ -130,7 +130,7 @@
       "公开代码"
     ],
     "summary": "在约170万假想聚合物候选空间中用文献热启动贝叶斯优化选择候选，实际迭代评估767种均聚物，并分析结构与输运的关联。",
-    "scope_note": "不是170万次MD计算。期刊记录2026-07-16在线；本地合法下载可采用arXiv:2602.17595v1预印本，标题略异，不能冒充期刊最终版。模拟筛选不代表已经完成实验验证。",
+    "scope_note": "约170万候选空间与实际评估的767种聚合物是不同规模。方法细节按arXiv:2602.17595v1预印本标明版本，期刊标题与预印本标题略有差异。",
     "evidence": [
       {
         "claim": "作者提供HiTPoly代码和数据，适合比较相同预算下的BO与随机筛选。",
@@ -434,7 +434,7 @@
       "入门"
     ],
     "summary": "面向分子与材料科学的机器学习综述，可作为理解数据与模型如何参与材料研究的入口；不是某个电池体系的计算复现报告。",
-    "scope_note": "不能因这是一篇机器学习综述就推断作者使用了MS或VASP。结构化元数据，附件映射须由本地接口核实。",
+    "scope_note": "面向分子与材料科学的机器学习综述，覆盖表示、建模与应用；研究范围不限于电池。",
     "evidence": [
       {
         "claim": "Nature于2018年发表这篇分子与材料机器学习综述，卷559，页547–555。",
@@ -5179,7 +5179,6 @@
       "方法论文"
     ],
     "summary": "建立平面波赝势框架下的第一性原理分子动力学方法。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -5213,7 +5212,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.47.558"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "kresse1994_ge_transition",
@@ -5247,7 +5247,6 @@
       "VASP"
     ],
     "summary": "用第一性原理分子动力学研究锗的液态金属到非晶半导体转变。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -5274,7 +5273,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.49.14251"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "kresse1996_vasp_efficiency",
@@ -5306,7 +5306,6 @@
       "方法论文"
     ],
     "summary": "介绍平面波基组和高效自洽总能量计算实现。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -5340,7 +5339,8 @@
       "sources": [
         "https://doi.org/10.1016/0927-0256(96)00008-0"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "blochl1994_paw",
@@ -5374,7 +5374,6 @@
       "方法论文"
     ],
     "summary": "提出投影缀加波方法，把平面波效率与全电子波函数描述联系起来。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -5408,7 +5407,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.50.17953"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "kresse1999_paw",
@@ -5442,7 +5442,6 @@
       "方法论文"
     ],
     "summary": "推导PAW总能量、力和应力的实现形式并给出测试。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -5476,7 +5475,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.59.1758"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "perdew1996_pbe",
@@ -5510,7 +5510,6 @@
       "方法论文"
     ],
     "summary": "提出广义梯度近似PBE形式，是电池材料DFT计算常用泛函的理论来源。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -5544,7 +5543,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevlett.77.3865"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "dudarev1998_lsda_u",
@@ -5578,7 +5578,6 @@
       "方法论文"
     ],
     "summary": "讨论LSDA+U对NiO电子结构、能量损失谱和结构稳定性的影响。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -5612,7 +5611,8 @@
       "sources": [
         "https://doi.org/10.1103/PhysRevB.57.1505"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "heyd2003_hse",
@@ -5645,7 +5645,6 @@
       "方法论文"
     ],
     "summary": "提出屏蔽库仑势杂化泛函，为HSE06等常用设置奠定基础。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -5679,7 +5678,8 @@
       "sources": [
         "https://doi.org/10.1063/1.1564060"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "grimme2010_dftd",
@@ -5714,7 +5714,6 @@
       "方法论文"
     ],
     "summary": "给出覆盖广泛元素的DFT-D色散修正参数化。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -5748,7 +5747,8 @@
       "sources": [
         "https://doi.org/10.1063/1.3382344"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "monkhorst1976_kpoints",
@@ -5781,7 +5781,6 @@
       "方法论文"
     ],
     "summary": "提出Monkhorst-Pack特殊k点取样方案。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -5815,7 +5814,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.13.5188"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "methfessel1989_smearing",
@@ -5848,7 +5848,6 @@
       "方法论文"
     ],
     "summary": "提出高精度布里渊区积分展宽方案，帮助理解ISMEAR和SIGMA选择。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -5882,7 +5881,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.40.3616"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "henkelman2000_neb_tangent",
@@ -5916,7 +5916,6 @@
       "方法论文"
     ],
     "summary": "改进弹性带方法中的切线估计以提高最小能量路径稳定性。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -5950,7 +5949,8 @@
       "sources": [
         "https://doi.org/10.1063/1.1323224"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "henkelman2006_bader",
@@ -5986,7 +5986,6 @@
       "方法论文"
     ],
     "summary": "提出快速稳健的Bader电荷密度分解算法。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -6020,7 +6019,8 @@
       "sources": [
         "https://doi.org/10.1016/j.commatsci.2005.04.010"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "marzari1997_wannier",
@@ -6052,7 +6052,6 @@
       "电子结构"
     ],
     "summary": "提出复合能带的最大局域Wannier函数构造方法。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -6079,7 +6078,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.56.12847"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "behler2007_nnp",
@@ -6113,7 +6113,6 @@
       "方法论文"
     ],
     "summary": "提出将高维势能面分解为原子贡献的神经网络表示。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -6147,7 +6146,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevlett.98.146401"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "behler2011_symmetry_functions",
@@ -6178,7 +6178,6 @@
       "方法论文"
     ],
     "summary": "系统讨论构建高维神经网络势的原子中心对称函数。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -6212,7 +6211,8 @@
       "sources": [
         "https://doi.org/10.1063/1.3553717"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "bartok2010_gap",
@@ -6247,7 +6247,6 @@
       "方法论文"
     ],
     "summary": "用高斯过程回归从局域化学环境学习接近量子力学精度的势能面。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -6281,7 +6280,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevlett.104.136403"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "thompson2015_snap",
@@ -6317,7 +6317,6 @@
       "方法论文"
     ],
     "summary": "提出谱邻居分析势并展示自动生成量子精度原子间势的方法。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -6351,7 +6350,8 @@
       "sources": [
         "https://doi.org/10.1016/j.jcp.2014.12.018"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "zhang2018_deep_potential",
@@ -6387,7 +6387,6 @@
       "方法论文"
     ],
     "summary": "提出可扩展的深度势模型，在大规模MD中逼近量子力学精度。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -6421,7 +6420,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevlett.120.143001"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "podryabinkin2017_active_learning",
@@ -6452,7 +6452,6 @@
       "方法论文"
     ],
     "summary": "利用主动学习和模型不确定性选择新的第一性原理训练构型。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "进阶",
@@ -6486,7 +6485,8 @@
       "sources": [
         "https://doi.org/10.1016/j.commatsci.2017.08.031"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "vandermause2020_active_learning",
@@ -6522,7 +6522,6 @@
       "MLMD"
     ],
     "summary": "研究在线主动学习原子间势的训练、采样和大规模模拟流程。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -6549,7 +6548,8 @@
       "sources": [
         "https://doi.org/10.1038/s41524-020-0283-z"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "jinnouchi2020_otf_mlff",
@@ -6585,7 +6585,6 @@
       "主动学习"
     ],
     "summary": "展示在线学习机器学习原子间势以扩展第一性原理分子动力学规模。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -6612,7 +6611,8 @@
       "sources": [
         "https://doi.org/10.1021/acs.jpclett.0c01061"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "jinnouchi2019_melting_mlff",
@@ -6647,7 +6647,6 @@
       "主动学习"
     ],
     "summary": "将在线机器学习力场用于熔点计算并讨论训练数据生成。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -6674,7 +6673,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.100.014105"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "bernstein2019_self_guided",
@@ -6706,7 +6706,6 @@
       "势能面"
     ],
     "summary": "研究无需预先知道结构的势能面探索和自引导学习策略。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -6733,7 +6732,8 @@
       "sources": [
         "https://doi.org/10.1038/s41524-019-0236-6"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "deringer2019_mlip_review",
@@ -6765,7 +6765,6 @@
       "方法论文"
     ],
     "summary": "综述机器学习原子间势的表示、训练、验证和材料应用。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -6799,7 +6798,8 @@
       "sources": [
         "https://doi.org/10.1002/adma.201902765"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "mishin2021_mlip_review",
@@ -6829,7 +6829,6 @@
       "方法论文"
     ],
     "summary": "讨论机器学习势的构建、精度、迁移性和材料模拟应用。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -6863,7 +6862,8 @@
       "sources": [
         "https://doi.org/10.1016/j.actamat.2021.116980"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "unke2021_mlff_review",
@@ -6903,7 +6903,6 @@
       "方法论文"
     ],
     "summary": "综述机器学习力场的表示、训练、动力学和不确定性问题。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -6937,7 +6936,8 @@
       "sources": [
         "https://doi.org/10.1021/acs.chemrev.0c01111"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "mueller2020_mlip_models",
@@ -6969,7 +6969,6 @@
       "方法论文"
     ],
     "summary": "比较不同机器学习原子间势模型的表示、训练和适用范围。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -7003,7 +7002,8 @@
       "sources": [
         "https://doi.org/10.1063/1.5126336"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "kang2006_li_mobility",
@@ -7035,7 +7035,6 @@
       "正极"
     ],
     "summary": "分析影响层状锂过渡金属氧化物中Li迁移率的结构和化学因素。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -7062,7 +7061,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevb.74.094105"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "du2014_lgps_mobility",
@@ -7097,7 +7097,6 @@
       "固态电解质"
     ],
     "summary": "从第一性原理分析LGPS结构、热力学稳定性和Li+迁移。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -7124,7 +7123,8 @@
       "sources": [
         "https://doi.org/10.1021/jp5000039"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "bhandari2016_lgps_conduction",
@@ -7159,7 +7159,6 @@
       "固态电解质"
     ],
     "summary": "研究LGPS超离子传导的结构与动力学起源。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -7186,7 +7185,8 @@
       "sources": [
         "https://doi.org/10.1021/acs.jpcc.6b10967"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "xu2012_stringlike_migration",
@@ -7219,7 +7219,6 @@
       "固态电解质"
     ],
     "summary": "报道一维串状协同锂离子迁移并分析其动力学特征。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -7246,7 +7245,8 @@
       "sources": [
         "https://doi.org/10.1063/1.4737397"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "muy2015_high_throughput_sse",
@@ -7286,7 +7286,6 @@
       "方法论文"
     ],
     "summary": "建立高通量筛选固态锂离子导体候选材料的计算流程。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -7320,7 +7319,8 @@
       "sources": [
         "https://doi.org/10.1016/j.isci.2019.05.036"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "swift2019_space_charge",
@@ -7354,7 +7354,6 @@
       "电化学"
     ],
     "summary": "用第一性原理预测全固态电池中的电势和空间电荷层。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -7381,7 +7380,8 @@
       "sources": [
         "https://doi.org/10.1103/physrevlett.122.167701"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "qi2024_lgps_ml_aimd",
@@ -7423,7 +7423,6 @@
       "LGPS"
     ],
     "summary": "结合机器学习和第一性原理研究LGPS原子构型与离子扩散。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -7450,7 +7449,8 @@
       "sources": [
         "https://doi.org/10.3390/ma17081810"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "nachimuthu2022_se_doped_lgps",
@@ -7491,7 +7491,6 @@
       "掺杂"
     ],
     "summary": "研究硒掺杂对LGPS耐湿性和锂离子输运性质的影响。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -7518,7 +7517,8 @@
       "sources": [
         "https://doi.org/10.1016/j.mtchem.2022.101223"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "stottmeister2023_sei_alkali",
@@ -7553,7 +7553,6 @@
       "界面"
     ],
     "summary": "用从头算模拟探索碱金属负极上固态电解质界面膜形成。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -7580,7 +7579,8 @@
       "sources": [
         "https://doi.org/10.1002/batt.202300156"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "qi2021_electrolyte_dataset",
@@ -7620,7 +7620,6 @@
       "电解液"
     ],
     "summary": "提供锂电池电解液和界面物种的量子化学计算数据。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -7654,7 +7653,8 @@
       "sources": [
         "https://doi.org/10.1038/s41597-021-00986-9"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "peled2017_sei_review",
@@ -7685,7 +7685,6 @@
       "电解液"
     ],
     "summary": "回顾SEI研究历史、形成机制、表征方法和未来问题。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门",
@@ -7719,7 +7718,8 @@
       "sources": [
         "https://doi.org/10.1149/2.1441707jes"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "fireworks2015_workflow",
@@ -7762,7 +7762,6 @@
       "方法论文"
     ],
     "summary": "介绍FireWorks动态工作流系统及其高通量材料计算应用。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -7796,7 +7795,8 @@
       "sources": [
         "https://doi.org/10.1002/cpe.3505"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "mathew2017_atomate",
@@ -7828,7 +7828,6 @@
       "方法论文"
     ],
     "summary": "介绍生成、执行和分析材料科学计算工作流的高层接口。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门进阶",
@@ -7862,7 +7861,8 @@
       "sources": [
         "https://doi.org/10.1016/j.commatsci.2017.07.030"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "talirz2020_materials_cloud",
@@ -7893,7 +7893,6 @@
       "方法论文"
     ],
     "summary": "介绍Materials Cloud开放计算科学平台及其数据和工作流服务。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门",
@@ -7927,7 +7926,8 @@
       "sources": [
         "https://doi.org/10.1038/s41597-020-00637-5"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "ward2016_matminer",
@@ -7974,7 +7974,6 @@
       "方法论文"
     ],
     "summary": "介绍matminer材料数据挖掘工具包及其特征化流程。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "starter",
     "difficulty": "入门",
@@ -8008,7 +8007,8 @@
       "sources": [
         "https://doi.org/10.1016/j.commatsci.2018.05.018"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "dutra2025_sse_atomistic_ml_review",
@@ -8047,7 +8047,6 @@
       "固态电解质"
     ],
     "summary": "从结构、缺陷、离子输运和界面稳定性总结DFT、AIMD与机器学习方法，并讨论采样、尺度和实验验证瓶颈。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "review",
     "difficulty": "入门进阶",
@@ -8074,7 +8073,8 @@
       "sources": [
         "https://doi.org/10.1038/s41578-025-00817-y"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "wang2025_ai_sse_interface",
@@ -8111,7 +8111,6 @@
       "界面"
     ],
     "summary": "讨论数据质量、结构—性质预测、生成式设计、界面稳定性和实验验证之间的闭环。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "review",
     "difficulty": "入门进阶",
@@ -8138,7 +8137,8 @@
       "sources": [
         "https://doi.org/10.1126/sciadv.aea0638"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "jain2026_ml_sse_pipelines",
@@ -8176,7 +8176,6 @@
       "固态电解质"
     ],
     "summary": "系统比较数据稀缺、迁移学习、主动学习、多目标优化、可解释AI、生成模型和物理信息模型。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "review",
     "difficulty": "入门进阶",
@@ -8203,7 +8202,8 @@
       "sources": [
         "https://doi.org/10.1039/d5mh01525a"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "yan2026_sse_mlff_training_perspective",
@@ -8239,7 +8239,6 @@
       "固态电解质"
     ],
     "summary": "比较训练集规模、局域环境覆盖、离子输运和相变任务的需求，强调用结构覆盖评估长时间模拟可靠性。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "review",
     "difficulty": "进阶",
@@ -8266,7 +8265,8 @@
       "sources": [
         "https://doi.org/10.1038/s44456-026-00014-4"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "chen2026_mlips_assb_review",
@@ -8304,7 +8304,6 @@
       "固态电池"
     ],
     "summary": "讨论MLIP替代昂贵DFT进行大体系和长时间尺度模拟的机会，以及长程静电、反应性、多组分体系等挑战。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "review",
     "difficulty": "进阶",
@@ -8331,7 +8330,8 @@
       "sources": [
         "https://doi.org/10.1016/j.jechem.2025.08.058"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "wang2025_battery_ml_paradigms",
@@ -8362,7 +8362,6 @@
       "机器学习"
     ],
     "summary": "强调数据集质量、跨体系泛化和模型预测到实验验证之间的断点。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "review",
     "difficulty": "入门进阶",
@@ -8389,7 +8388,8 @@
       "sources": [
         "https://doi.org/10.1038/s41524-025-01575-9"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "wang2024_mlip_scaling_review",
@@ -8427,7 +8427,6 @@
       "MD"
     ],
     "summary": "梳理MLIP数据、表示、算法、软件和应用，重点讨论数据集、迁移性、泛化与精度—复杂度权衡。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "review",
     "difficulty": "入门进阶",
@@ -8454,7 +8453,8 @@
       "sources": [
         "https://doi.org/10.1016/j.isci.2024.109673"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "li2025_sei_effective_mlips",
@@ -8495,7 +8495,6 @@
       "SEI"
     ],
     "summary": "通过主动学习扩充无定形构型，训练MTP并用GNN势扩展模拟，比较扩散、RDF、声子和弹性等性质。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -8522,7 +8521,8 @@
       "sources": [
         "https://doi.org/10.1039/d5mh01343g"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "wang2025_dpa_sse",
@@ -8566,7 +8566,6 @@
       "固态电解质"
     ],
     "summary": "构建具有较广覆盖范围的预训练深度势，讨论训练数据、精度和长时间尺度离子输运。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -8631,7 +8630,8 @@
         "given": "Zhicheng",
         "family": "Zhong"
       }
-    ]
+    ],
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "you2024_llzo_pca_deepmd",
@@ -8674,7 +8674,6 @@
       "固态电解质"
     ],
     "summary": "结合数据库、DFT和二体势构建训练集，用PCA评估大体系构型是否落在训练域内，并验证相变温度和热膨胀。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -8701,7 +8700,8 @@
       "sources": [
         "https://doi.org/10.1038/s41524-024-01240-7"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "kim2024_llzo_lco_interface_mlff",
@@ -8743,7 +8743,6 @@
       "界面"
     ],
     "summary": "通过大规模分子模拟观察固态电解质—正极界面的结构、应力和输运变化，为器件尺度界面建模提供案例。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -8770,7 +8769,8 @@
       "sources": [
         "https://doi.org/10.1016/j.ensm.2024.103842"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "zhang2024_mlmd_size_conductivity",
@@ -8807,7 +8807,6 @@
       "固态电解质"
     ],
     "summary": "展示小超胞AIMD可能高估室温电导率，强调机器学习MD的尺寸效应和高温数据选取。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "core",
     "difficulty": "进阶",
@@ -8834,7 +8833,8 @@
       "sources": [
         "https://doi.org/10.1016/j.aichem.2024.100051"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "li2024_sse_property_prediction_review",
@@ -8879,7 +8879,6 @@
       "固态电解质"
     ],
     "summary": "介绍固态电解质分类、传导机制、机器学习数据来源和性质预测任务，并讨论数据质量、泛化和实验验证。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "review",
     "difficulty": "入门",
@@ -8906,7 +8905,8 @@
       "sources": [
         "https://doi.org/10.1002/aenm.202304480"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "szymanski2024_computational_synthesis",
@@ -8941,7 +8941,6 @@
       "电池材料"
     ],
     "summary": "总结从热力学、反应路径和前驱体选择出发的计算引导合成，并指出计算预测与真实合成之间的关键缺口。",
-    "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
     "publication_status": "published",
     "collection": "perspective",
     "difficulty": "入门进阶",
@@ -8968,7 +8967,8 @@
       "sources": [
         "https://doi.org/10.1021/acsenergylett.4c00821"
       ]
-    }
+    },
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_acs_jctc_4c00190",
@@ -9008,7 +9008,6 @@
       "并行计算"
     ],
     "summary": "提出图神经网络原子势的可扩展并行计算方法。可用于学习 MLIP 与 MD 引擎的接口，但应用到电池仍须额外验证目标化学空间和物性。作者 arXiv 稿与正式 DOI 对应，二者的版本需区分。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9047,7 +9046,8 @@
     "publication_date": "2024-06-11",
     "publication_date_precision": "day",
     "online_date": "2024-05-30",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_jacs_4c14455",
@@ -9078,7 +9078,6 @@
       "机器学习势"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Data-Efficient Multifidelity Training for High-Fidelity Machine Learning Interatomic Potentials。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9109,7 +9108,8 @@
     "publication_date": "2025-01-08",
     "publication_date_precision": "day",
     "online_date": "2024-12-17",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_acsmaterialslett_5c00093",
@@ -9133,7 +9133,6 @@
       "机器学习"
     ],
     "summary": "基于 Crossref 出版社元数据核验：CHIPS-FF: Evaluating Universal Machine Learning Force Fields for Material Properties。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9164,7 +9163,8 @@
     "publication_date": "2025-06-02",
     "publication_date_precision": "day",
     "online_date": "2025-05-05",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_acsmaterialslett_5c00336",
@@ -9198,7 +9198,6 @@
       "固态电解质"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Assessment and Application of Universal Machine Learning Interatomic Potentials in Solid-State Electrolyte Research。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9229,7 +9228,8 @@
     "publication_date": "2025-10-06",
     "publication_date_precision": "day",
     "online_date": "2025-09-09",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_acs_chemmater_6c01051",
@@ -9277,7 +9277,6 @@
       "界面"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine Learning\nInteratomic Potentials for Modeling\nSolid-State Batteries。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9308,7 +9307,8 @@
     "publication_date": "2026-09-28",
     "publication_date_precision": "day",
     "online_date": "2026-09-28",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1557_s43579-026-00928-9",
@@ -9338,7 +9338,6 @@
       "界面"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine-learning interatomic potentials for interfaces in all-solid-state batteries: Perspectives on training data, model selection, and validation。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9369,7 +9368,8 @@
     "publication_date": "2026-06",
     "publication_date_precision": "month",
     "online_date": "2026-02-18",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-026-02023-y",
@@ -9423,7 +9423,6 @@
       "模型蒸馏"
     ],
     "summary": "用预训练 MACE 进行构型采样并补充 DFT 标签，适配后向轻量 NEP 蒸馏；同时检验势垒、扩散与 MD 稳定性。少数据结果的适用范围是文中验证的体系，不能推广为任意材料的样本量保证。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9454,7 +9453,8 @@
     "publication_date": "2026-03-17",
     "publication_date_precision": "day",
     "online_date": "2026-03-17",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1039_d4ta06675h",
@@ -9487,7 +9487,6 @@
       "电池材料"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Computational prediction of solvation structures in calcium battery electrolytes。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9518,7 +9517,8 @@
     "publication_date": "2024",
     "publication_date_precision": "year",
     "online_date": "2024",
-    "online_date_precision": "year"
+    "online_date_precision": "year",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1002_adfm_202313188",
@@ -9557,7 +9557,6 @@
       "负极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：A Perspective on the Molecular Modeling of Electrolyte Decomposition Reactions for Solid Electrolyte Interphase Growth in Lithium‐Ion Batteries。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9588,7 +9587,8 @@
     "publication_date": "2024-07",
     "publication_date_precision": "month",
     "online_date": "2024-03-10",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41467-025-65496-3",
@@ -9622,7 +9622,6 @@
       "界面"
     ],
     "summary": "基于 Crossref 出版社元数据核验：A foundation machine learning potential with polarizable long-range interactions for materials modelling。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9653,7 +9652,8 @@
     "publication_date": "2025-11-25",
     "publication_date_precision": "day",
     "online_date": "2025-11-25",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_mechmat_2024_105237",
@@ -9680,7 +9680,6 @@
       "MD"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Enhancing robustness in machine-learning-accelerated molecular dynamics: A multi-model nonparametric probabilistic approach。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9711,7 +9710,8 @@
     "publication_date": "2025-03",
     "publication_date_precision": "month",
     "online_date": "2025-03",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_est_2026_121104",
@@ -9748,7 +9748,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine learning interatomic potential enables interface-level insights into cathode/solid electrolyte adhesion in sodium-ion batteries。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9779,7 +9778,8 @@
     "publication_date": "2026-04",
     "publication_date_precision": "month",
     "online_date": "2026-04",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41586-023-06735-9",
@@ -9809,7 +9809,6 @@
       "电解液"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Scaling deep learning for materials discovery。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9840,7 +9839,8 @@
     "publication_date": "2023-12-07",
     "publication_date_precision": "day",
     "online_date": "2023-11-29",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41467-025-56322-x",
@@ -9875,7 +9875,6 @@
       "固态电解质"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Disorder-induced enhancement of lithium-ion transport in solid-state electrolytes。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9906,7 +9905,8 @@
     "publication_date": "2025-01-26",
     "publication_date_precision": "day",
     "online_date": "2025-01-26",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_jechem_2025_03_007",
@@ -9939,7 +9939,6 @@
       "界面"
     ],
     "summary": "基于 Crossref 出版社元数据核验：InterOptimus: An AI-assisted robust workflow for screening ground-state heterogeneous interface structures in lithium batteries。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -9970,7 +9969,8 @@
     "publication_date": "2025-07",
     "publication_date_precision": "month",
     "online_date": "2025-07",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_mtener_2025_101841",
@@ -10004,7 +10004,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine learning study on the structural evolution of high-nickel layered cathodes。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10035,7 +10034,8 @@
     "publication_date": "2025-04",
     "publication_date_precision": "month",
     "online_date": "2025-04",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-025-01747-7",
@@ -10075,7 +10075,6 @@
       "负极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine-learning-accelerated mechanistic exploration of interface modification in lithium metal anode。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10106,7 +10105,8 @@
     "publication_date": "2025-07-28",
     "publication_date_precision": "day",
     "online_date": "2025-07-28",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-025-01615-4",
@@ -10144,7 +10144,6 @@
       "负极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Unraveling charge effects on interface reactions and dendrite growth in lithium metal anode。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10175,7 +10174,8 @@
     "publication_date": "2025-05-05",
     "publication_date_precision": "day",
     "online_date": "2025-05-05",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41467-025-62824-5",
@@ -10215,7 +10215,6 @@
       "界面"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Observation of dendrite formation at Li metal-electrolyte interface by a machine-learning enhanced constant potential framework。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10246,7 +10245,8 @@
     "publication_date": "2025-08-11",
     "publication_date_precision": "day",
     "online_date": "2025-08-11",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_jpowsour_2025_237670",
@@ -10284,7 +10284,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Surface orientation-dependent adhesion behavior in Na-cathode and solid-state electrolyte interfaces using machine learning interatomic potential。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10315,7 +10314,8 @@
     "publication_date": "2025-10",
     "publication_date_precision": "month",
     "online_date": "2025-10",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1039_d5cc04921k",
@@ -10342,7 +10342,6 @@
       "固态电解质"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Data-driven atomistic modeling of crystalline and glassy solid-state electrolytes。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10373,7 +10372,8 @@
     "publication_date": "2025",
     "publication_date_precision": "year",
     "online_date": "2025",
-    "online_date_precision": "year"
+    "online_date_precision": "year",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1039_d6eb00024j",
@@ -10416,7 +10416,6 @@
       "溶剂化采样"
     ],
     "summary": "结合 MD 溶剂化采样与结构感知机器学习，预测热构型的 HOMO/LUMO 和能隙。应按配方/化学空间验证；轨道能代理不等于实测电化学稳定窗口或直接计算完整 SEI 反应。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10447,7 +10446,8 @@
     "publication_date": "2026",
     "publication_date_precision": "year",
     "online_date": "2026",
-    "online_date_precision": "year"
+    "online_date_precision": "year",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_ensm_2025_104826",
@@ -10474,7 +10474,6 @@
       "电解液"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Electrolyte engineering for lithium-ion batteries: Mechanistic insights into the development of electrolyte from atomic-scale simulation。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10505,7 +10504,8 @@
     "publication_date": "2026-01",
     "publication_date_precision": "month",
     "online_date": "2026-01",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1039_d4ta03452j",
@@ -10535,7 +10535,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine learning interatomic potentials in engineering perspective for developing cathode materials。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10566,7 +10565,8 @@
     "publication_date": "2024",
     "publication_date_precision": "year",
     "online_date": "2024",
-    "online_date_precision": "year"
+    "online_date_precision": "year",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1103_physrevmaterials_8_115407",
@@ -10601,7 +10601,6 @@
       "电解液"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Atomistic modeling of bulk and grain boundary diffusion in solid electrolyte\n                    \n                      \n                        \n                          Li\n                          6\n                        \n                        \n                          PS\n                          5\n                        \n                        Cl\n                      \n                    \n                    using machine-learning interatomic potentials。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10632,7 +10631,8 @@
     "publication_date": "2024-11-21",
     "publication_date_precision": "day",
     "online_date": "2024-11-21",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-024-01332-4",
@@ -10657,7 +10657,6 @@
       "机器学习势"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Cartesian atomic cluster expansion for machine learning interatomic potentials。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10688,7 +10687,8 @@
     "publication_date": "2024-07-18",
     "publication_date_precision": "day",
     "online_date": "2024-07-18",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-024-01227-4",
@@ -10721,7 +10721,6 @@
       "数据集"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Robust training of machine learning interatomic potentials with dimensionality reduction and stratified sampling。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10752,7 +10751,8 @@
     "publication_date": "2024-02-26",
     "publication_date_precision": "day",
     "online_date": "2024-02-26",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-025-01623-4",
@@ -10780,7 +10780,6 @@
       "机器学习势"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Cartesian atomic moment machine learning interatomic potentials。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10811,7 +10810,8 @@
     "publication_date": "2025-05-09",
     "publication_date_precision": "day",
     "online_date": "2025-05-09",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41467-025-63852-x",
@@ -10843,7 +10843,6 @@
       "界面"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine learning of charges and long-range interactions from energies and forces。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10874,7 +10873,8 @@
     "publication_date": "2025-10-01",
     "publication_date_precision": "day",
     "online_date": "2025-10-01",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41467-025-67663-y",
@@ -10907,7 +10907,6 @@
       "机器学习势"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Evidential deep learning for interatomic potentials。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -10938,7 +10937,8 @@
     "publication_date": "2025-12-20",
     "publication_date_precision": "day",
     "online_date": "2025-12-20",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-025-01735-x",
@@ -10974,7 +10974,6 @@
       "负极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Navigating chemical design spaces for metal-ion batteries via machine-learning-guided phase-field simulations。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11005,7 +11004,8 @@
     "publication_date": "2025-07-24",
     "publication_date_precision": "day",
     "online_date": "2025-07-24",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-024-01222-9",
@@ -11031,7 +11031,6 @@
       "机器学习势"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Electronic Moment Tensor Potentials include both electronic and vibrational degrees of freedom。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11062,7 +11061,8 @@
     "publication_date": "2024-02-21",
     "publication_date_precision": "day",
     "online_date": "2024-02-21",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-025-01650-1",
@@ -11091,7 +11091,6 @@
       "机器学习势"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Universal machine learning interatomic potentials are ready for phonons。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11122,7 +11121,8 @@
     "publication_date": "2025-06-12",
     "publication_date_precision": "day",
     "online_date": "2025-06-12",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-025-01714-2",
@@ -11149,7 +11149,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Dynamic oxygen-redox evolution of cathode reactions based on the multistate equilibrium potential model。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11180,7 +11179,8 @@
     "publication_date": "2025-07-02",
     "publication_date_precision": "day",
     "online_date": "2025-07-02",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_jacsau_5c00526",
@@ -11212,7 +11212,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：A Universal Machine Learning Framework Driven by Artificial Intelligence for Ion Battery Cathode Material Design。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11243,7 +11242,8 @@
     "publication_date": "2025-08-25",
     "publication_date_precision": "day",
     "online_date": "2025-07-23",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_acsenergylett_5c02723",
@@ -11271,7 +11271,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine-Learning-Accelerated Development of High-Nickel NCM Cathodes via Multivariable Co-optimization。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11302,7 +11301,8 @@
     "publication_date": "2025-11-14",
     "publication_date_precision": "day",
     "online_date": "2025-10-11",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_cej_2025_163801",
@@ -11333,7 +11333,6 @@
       "电解液"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Combined machine learning and computational protocols to predict electrolyte behavior and SEI formation in Li-metal batteries。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11364,7 +11363,8 @@
     "publication_date": "2025-07",
     "publication_date_precision": "month",
     "online_date": "2025-07",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1002_adsu_202500413",
@@ -11399,7 +11399,6 @@
       "数据集"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Data‐Driven Lithium Salt Design for Long‐Cycle Lithium Metal Battery。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11430,7 +11429,8 @@
     "publication_date": "2025-09",
     "publication_date_precision": "month",
     "online_date": "2025-06-02",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41586-025-09951-7",
@@ -11460,7 +11460,6 @@
       "电池材料"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Discovery Learning predicts battery cycle life from minimal experiments。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11491,7 +11490,8 @@
     "publication_date": "2026-02-05",
     "publication_date_precision": "day",
     "online_date": "2026-02-04",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1039_d5cp02726h",
@@ -11521,7 +11521,6 @@
       "电解液"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Screening of potential candidates for solid electrolyte interphase materials for lithium-ion batteries through a data-driven approach。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11552,7 +11551,8 @@
     "publication_date": "2025",
     "publication_date_precision": "year",
     "online_date": "2025",
-    "online_date_precision": "year"
+    "online_date_precision": "year",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_rser_2025_116633",
@@ -11586,7 +11586,6 @@
       "电池材料"
     ],
     "summary": "基于 Crossref 出版社元数据核验：AI-driven exploration and design of inorganic battery materials。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11617,7 +11616,8 @@
     "publication_date": "2026-04",
     "publication_date_precision": "month",
     "online_date": "2026-04",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_acs_chemmater_5c02352",
@@ -11648,7 +11648,6 @@
       "固态电解质"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Performance-Based Selection of Machine Learning Interatomic Potentials for Studying Solid-State Electrolytes。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11679,7 +11678,8 @@
     "publication_date": "2026-04-14",
     "publication_date_precision": "day",
     "online_date": "2026-04-02",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-025-01905-x",
@@ -11709,7 +11709,6 @@
       "数据集"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Heterogeneous ensemble enables a universal uncertainty metric for atomistic foundation models。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11740,7 +11739,8 @@
     "publication_date": "2025-12-17",
     "publication_date_precision": "day",
     "online_date": "2025-12-17",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-024-01451-y",
@@ -11774,7 +11774,6 @@
       "数据集"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Machine learning interatomic potential with DFT accuracy for general grain boundaries in α-Fe。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11805,7 +11804,8 @@
     "publication_date": "2024-11-13",
     "publication_date_precision": "day",
     "online_date": "2024-11-13",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_jpowsour_2025_239008",
@@ -11838,7 +11838,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Molecular dynamics study on effect of crystal defects in NCM811 cathode structure based on machine learning potential。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11869,7 +11868,8 @@
     "publication_date": "2026-02",
     "publication_date_precision": "month",
     "online_date": "2026-02",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_acsami_5c11818",
@@ -11902,7 +11902,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Probing Surface Degradation Pathways of Charged Nickel-Oxide Cathode Materials Using Machine-Learning Interatomic Potentials。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11933,7 +11932,8 @@
     "publication_date": "2025-10-08",
     "publication_date_precision": "day",
     "online_date": "2025-09-25",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1002_aenm_202201497",
@@ -11968,7 +11968,6 @@
       "正极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Al‐Doping Driven Suppression of Capacity and Voltage Fadings in 4d‐Element Containing Li‐Ion‐Battery Cathode Materials: Machine Learning and Density Functional Theory。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -11999,7 +11998,8 @@
     "publication_date": "2022-08",
     "publication_date_precision": "month",
     "online_date": "2022-06-25",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41597-020-00602-2",
@@ -12025,7 +12025,6 @@
       "界面"
     ],
     "summary": "基于 Crossref 出版社元数据核验：A database of battery materials auto-generated using ChemDataExtractor。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -12056,7 +12055,8 @@
     "publication_date": "2020-08-06",
     "publication_date_precision": "day",
     "online_date": "2020-08-06",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1073_pnas_2214357120",
@@ -12102,7 +12102,6 @@
       "负极"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Data-driven electrolyte design for lithium metal anodes。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -12133,7 +12132,8 @@
     "publication_date": "2023-03-07",
     "publication_date_precision": "day",
     "online_date": "2023-02-27",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1016_j_commatsci_2024_113074",
@@ -12159,7 +12159,6 @@
       "机器学习势"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Active learning for SNAP interatomic potentials via Bayesian predictive uncertainty。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -12190,7 +12189,8 @@
     "publication_date": "2024-06",
     "publication_date_precision": "month",
     "online_date": "2024-06",
-    "online_date_precision": "month"
+    "online_date_precision": "month",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1021_acs_jpcb_6c02837",
@@ -12220,7 +12220,6 @@
       "电解液"
     ],
     "summary": "基于 Crossref 出版社元数据核验：Benchmarking on-the-Fly\nMachine Learning Force Fields\nfor Ion Hydration: Structure, Coordination, and Exchange Dynamics\nacross Monovalent and Divalent Cations。摘要/正文参数仍需按来源逐项复核。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -12251,7 +12250,8 @@
     "publication_date": "2026-09-17",
     "publication_date_precision": "day",
     "online_date": "2026-09-02",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41524-025-01571-z",
@@ -12297,7 +12297,6 @@
       "基准评估"
     ],
     "summary": "LiTraj 提供势垒与迁移轨迹数据，比较性质预测模型与通用原子势。复现时先区分 BVSE 代理和 DFT 标签，按材料或结构来源留出，不能把同源路径随机划分后的分数当作外推能力。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -12336,7 +12335,8 @@
     "publication_date": "2025-05-13",
     "publication_date_precision": "day",
     "online_date": "2025-05-13",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1039_d5dd00025d",
@@ -12383,7 +12383,6 @@
       "VASP"
     ],
     "summary": "以液态溶剂与电解液物性检验预训练 SevenNet-0，说明通用势仍可能有领域偏差，需要补充参考数据和微调。建议先复现一个配方、温度和密度对照，再扩展输运；论文的领域修正不是所有电解液通用准确性的保证。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -12426,7 +12425,8 @@
     "publication_date": "2025",
     "publication_date_precision": "year",
     "online_date": "2025-05-07",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "recent_10_1038_s41467-025-67982-0",
@@ -12474,7 +12474,6 @@
       "并发学习"
     ],
     "summary": "围绕电解液化学空间构建领域原子势，结合并发学习和 MLMD 筛选。复现应从已覆盖的小配方出发，检查模型元素与环境域、参考计算一致性、配位和输运误差，再测试未见配方。DOI 年份不是正式卷年，须区分在线日期与最终引用。",
-    "scope_note": "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
     "publication_status": "published",
     "collection": "recent_verified_20261008",
     "difficulty": "进阶",
@@ -12517,7 +12516,8 @@
     "publication_date": "2026",
     "publication_date_precision": "year",
     "online_date": "2025-12-31",
-    "online_date_precision": "day"
+    "online_date_precision": "day",
+    "scope_note": "结构化元数据。"
   },
   {
     "id": "grossfield2019_uncertainty_sampling",

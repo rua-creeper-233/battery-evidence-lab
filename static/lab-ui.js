@@ -54,6 +54,8 @@
     const summary = String(paper?.summary || '').trim();
     const usefulRole = /面向电池电解液、固态电解质、正极\/界面模拟的可复用计算文献/.test(role) ? '' : role;
     const usefulSummary = /^基于\s*(?:Crossref\s*)?出版社元数据核验[:：]/i.test(summary) ? '' : summary;
+    const comparable = value => value.normalize('NFKC').replace(/\s+/g, ' ').replace(/[。.!！；;]+$/, '').trim();
+    if (usefulRole && usefulSummary && comparable(usefulRole) === comparable(usefulSummary)) return usefulSummary;
     return [usefulRole, usefulSummary].filter(Boolean).join(' · ') || '内容摘录待补充';
   };
   window.LabUI = { ready, progressReady, escapeHtml, titleZh, paperTitleHtml, metadata, verificationLabel, paperSummary, get titles() { return map; } };

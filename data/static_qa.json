@@ -3,7 +3,7 @@
   "as_of": "2026-10-25",
   "catalog_count": 247,
   "qa_count": 988,
-  "catalog_fingerprint": "eb67dafcedd951f3419ebe5c2cdcece4c921a9602f006386f9be98d7e5c31f4f",
+  "catalog_fingerprint": "0310c4f5fa5d978c0c99678fab50beb1aa4d7cb6ab6552034292df1710a3d9c3",
   "static_extension": true,
   "evidence_level": "curated_metadata",
   "entries": [
@@ -112,7 +112,7 @@
           "id": "kuhn2026_hitpoly:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：不是170万次MD计算。期刊记录2026-07-16在线；本地合法下载可采用arXiv:2602.17595v1预印本，标题略异，不能冒充期刊最终版。模拟筛选不代表已经完成实验验证。",
+          "answer": "范围提示：约170万候选空间与实际评估的767种聚合物是不同规模。方法细节按arXiv:2602.17595v1预印本标明版本，期刊标题与预印本标题略有差异。",
           "source_fields": [
             "scope_note"
           ],
@@ -368,7 +368,7 @@
           "id": "butler2018_ml_materials_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：不能因这是一篇机器学习综述就推断作者使用了MS或VASP。结构化元数据，附件映射须由本地接口核实。",
+          "answer": "范围提示：面向分子与材料科学的机器学习综述，覆盖表示、建模与应用；研究范围不限于电池。",
           "source_fields": [
             "scope_note"
           ],
@@ -4208,7 +4208,7 @@
           "id": "kresse1993_liquid_metals:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4272,7 +4272,7 @@
           "id": "kresse1994_ge_transition:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4336,7 +4336,7 @@
           "id": "kresse1996_vasp_efficiency:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4400,7 +4400,7 @@
           "id": "blochl1994_paw:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4464,7 +4464,7 @@
           "id": "kresse1999_paw:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4528,7 +4528,7 @@
           "id": "perdew1996_pbe:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4592,7 +4592,7 @@
           "id": "dudarev1998_lsda_u:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4656,7 +4656,7 @@
           "id": "heyd2003_hse:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4720,7 +4720,7 @@
           "id": "grimme2010_dftd:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4784,7 +4784,7 @@
           "id": "monkhorst1976_kpoints:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4848,7 +4848,7 @@
           "id": "methfessel1989_smearing:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4912,7 +4912,7 @@
           "id": "henkelman2000_neb_tangent:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -4976,7 +4976,7 @@
           "id": "henkelman2006_bader:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5040,7 +5040,7 @@
           "id": "marzari1997_wannier:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5104,7 +5104,7 @@
           "id": "behler2007_nnp:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5168,7 +5168,7 @@
           "id": "behler2011_symmetry_functions:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5232,7 +5232,7 @@
           "id": "bartok2010_gap:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5296,7 +5296,7 @@
           "id": "thompson2015_snap:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5360,7 +5360,7 @@
           "id": "zhang2018_deep_potential:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5424,7 +5424,7 @@
           "id": "podryabinkin2017_active_learning:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5488,7 +5488,7 @@
           "id": "vandermause2020_active_learning:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5552,7 +5552,7 @@
           "id": "jinnouchi2020_otf_mlff:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5616,7 +5616,7 @@
           "id": "jinnouchi2019_melting_mlff:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5680,7 +5680,7 @@
           "id": "bernstein2019_self_guided:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5744,7 +5744,7 @@
           "id": "deringer2019_mlip_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5808,7 +5808,7 @@
           "id": "mishin2021_mlip_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5872,7 +5872,7 @@
           "id": "unke2021_mlff_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -5936,7 +5936,7 @@
           "id": "mueller2020_mlip_models:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6000,7 +6000,7 @@
           "id": "kang2006_li_mobility:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6064,7 +6064,7 @@
           "id": "du2014_lgps_mobility:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6128,7 +6128,7 @@
           "id": "bhandari2016_lgps_conduction:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6192,7 +6192,7 @@
           "id": "xu2012_stringlike_migration:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6256,7 +6256,7 @@
           "id": "muy2015_high_throughput_sse:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6320,7 +6320,7 @@
           "id": "swift2019_space_charge:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6384,7 +6384,7 @@
           "id": "qi2024_lgps_ml_aimd:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6448,7 +6448,7 @@
           "id": "nachimuthu2022_se_doped_lgps:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6512,7 +6512,7 @@
           "id": "stottmeister2023_sei_alkali:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6576,7 +6576,7 @@
           "id": "qi2021_electrolyte_dataset:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6640,7 +6640,7 @@
           "id": "peled2017_sei_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6704,7 +6704,7 @@
           "id": "fireworks2015_workflow:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6768,7 +6768,7 @@
           "id": "mathew2017_atomate:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6832,7 +6832,7 @@
           "id": "talirz2020_materials_cloud:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6896,7 +6896,7 @@
           "id": "ward2016_matminer:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -6960,7 +6960,7 @@
           "id": "dutra2025_sse_atomistic_ml_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7024,7 +7024,7 @@
           "id": "wang2025_ai_sse_interface:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7088,7 +7088,7 @@
           "id": "jain2026_ml_sse_pipelines:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7152,7 +7152,7 @@
           "id": "yan2026_sse_mlff_training_perspective:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7216,7 +7216,7 @@
           "id": "chen2026_mlips_assb_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7280,7 +7280,7 @@
           "id": "wang2025_battery_ml_paradigms:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7344,7 +7344,7 @@
           "id": "wang2024_mlip_scaling_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7408,7 +7408,7 @@
           "id": "li2025_sei_effective_mlips:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7472,7 +7472,7 @@
           "id": "wang2025_dpa_sse:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7536,7 +7536,7 @@
           "id": "you2024_llzo_pca_deepmd:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7600,7 +7600,7 @@
           "id": "kim2024_llzo_lco_interface_mlff:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7664,7 +7664,7 @@
           "id": "zhang2024_mlmd_size_conductivity:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7728,7 +7728,7 @@
           "id": "li2024_sse_property_prediction_review:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7792,7 +7792,7 @@
           "id": "szymanski2024_computational_synthesis:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7856,7 +7856,7 @@
           "id": "recent_10_1021_acs_jctc_4c00190:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7920,7 +7920,7 @@
           "id": "recent_10_1021_jacs_4c14455:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -7984,7 +7984,7 @@
           "id": "recent_10_1021_acsmaterialslett_5c00093:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8048,7 +8048,7 @@
           "id": "recent_10_1021_acsmaterialslett_5c00336:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8112,7 +8112,7 @@
           "id": "recent_10_1021_acs_chemmater_6c01051:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8176,7 +8176,7 @@
           "id": "recent_10_1557_s43579-026-00928-9:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8240,7 +8240,7 @@
           "id": "recent_10_1038_s41524-026-02023-y:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8304,7 +8304,7 @@
           "id": "recent_10_1039_d4ta06675h:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8368,7 +8368,7 @@
           "id": "recent_10_1002_adfm_202313188:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8432,7 +8432,7 @@
           "id": "recent_10_1038_s41467-025-65496-3:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8496,7 +8496,7 @@
           "id": "recent_10_1016_j_mechmat_2024_105237:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8560,7 +8560,7 @@
           "id": "recent_10_1016_j_est_2026_121104:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8624,7 +8624,7 @@
           "id": "recent_10_1038_s41586-023-06735-9:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8688,7 +8688,7 @@
           "id": "recent_10_1038_s41467-025-56322-x:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8752,7 +8752,7 @@
           "id": "recent_10_1016_j_jechem_2025_03_007:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8816,7 +8816,7 @@
           "id": "recent_10_1016_j_mtener_2025_101841:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8880,7 +8880,7 @@
           "id": "recent_10_1038_s41524-025-01747-7:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -8944,7 +8944,7 @@
           "id": "recent_10_1038_s41524-025-01615-4:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9008,7 +9008,7 @@
           "id": "recent_10_1038_s41467-025-62824-5:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9072,7 +9072,7 @@
           "id": "recent_10_1016_j_jpowsour_2025_237670:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9136,7 +9136,7 @@
           "id": "recent_10_1039_d5cc04921k:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9200,7 +9200,7 @@
           "id": "recent_10_1039_d6eb00024j:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9264,7 +9264,7 @@
           "id": "recent_10_1016_j_ensm_2025_104826:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9328,7 +9328,7 @@
           "id": "recent_10_1039_d4ta03452j:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9392,7 +9392,7 @@
           "id": "recent_10_1103_physrevmaterials_8_115407:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9456,7 +9456,7 @@
           "id": "recent_10_1038_s41524-024-01332-4:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9520,7 +9520,7 @@
           "id": "recent_10_1038_s41524-024-01227-4:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9584,7 +9584,7 @@
           "id": "recent_10_1038_s41524-025-01623-4:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9648,7 +9648,7 @@
           "id": "recent_10_1038_s41467-025-63852-x:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9712,7 +9712,7 @@
           "id": "recent_10_1038_s41467-025-67663-y:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9776,7 +9776,7 @@
           "id": "recent_10_1038_s41524-025-01735-x:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9840,7 +9840,7 @@
           "id": "recent_10_1038_s41524-024-01222-9:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9904,7 +9904,7 @@
           "id": "recent_10_1038_s41524-025-01650-1:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -9968,7 +9968,7 @@
           "id": "recent_10_1038_s41524-025-01714-2:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10032,7 +10032,7 @@
           "id": "recent_10_1021_jacsau_5c00526:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10096,7 +10096,7 @@
           "id": "recent_10_1021_acsenergylett_5c02723:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10160,7 +10160,7 @@
           "id": "recent_10_1016_j_cej_2025_163801:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10224,7 +10224,7 @@
           "id": "recent_10_1002_adsu_202500413:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10288,7 +10288,7 @@
           "id": "recent_10_1038_s41586-025-09951-7:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10352,7 +10352,7 @@
           "id": "recent_10_1039_d5cp02726h:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10416,7 +10416,7 @@
           "id": "recent_10_1016_j_rser_2025_116633:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10480,7 +10480,7 @@
           "id": "recent_10_1021_acs_chemmater_5c02352:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10544,7 +10544,7 @@
           "id": "recent_10_1038_s41524-025-01905-x:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10608,7 +10608,7 @@
           "id": "recent_10_1038_s41524-024-01451-y:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10672,7 +10672,7 @@
           "id": "recent_10_1016_j_jpowsour_2025_239008:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10736,7 +10736,7 @@
           "id": "recent_10_1021_acsami_5c11818:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10800,7 +10800,7 @@
           "id": "recent_10_1002_aenm_202201497:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10864,7 +10864,7 @@
           "id": "recent_10_1038_s41597-020-00602-2:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10928,7 +10928,7 @@
           "id": "recent_10_1073_pnas_2214357120:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -10992,7 +10992,7 @@
           "id": "recent_10_1016_j_commatsci_2024_113074:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -11056,7 +11056,7 @@
           "id": "recent_10_1021_acs_jpcb_6c02837:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -11120,7 +11120,7 @@
           "id": "recent_10_1038_s41524-025-01571-z:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -11184,7 +11184,7 @@
           "id": "recent_10_1039_d5dd00025d:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],
@@ -11248,7 +11248,7 @@
           "id": "recent_10_1038_s41467-025-67982-0:limitations",
           "intent": "limitations",
           "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
-          "answer": "范围提示：本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。",
+          "answer": "范围提示：结构化元数据。",
           "source_fields": [
             "scope_note"
           ],

@@ -71,6 +71,16 @@ def build_status(date: str, smoke_output: Path | None = None) -> dict:
     smoke = smoke_status(smoke_output) if smoke_output else None
     static_qa = None
     research_knowledge = None
+    paper_insights = None
+    insights_path = ROOT / "data/paper_insights.json"
+    if insights_path.exists():
+        from validate_paper_insights import validate as validate_insights
+        insights = read_json(insights_path, {})
+        errors = validate_insights(insights, papers)
+        if errors:
+            raise ValueError("invalid structured paper insights: " + "; ".join(errors))
+        records = insights["papers"]
+        paper_insights = {"cards": len(records), "condition_cards": sum(bool(r["sections"].get("conditions")) for r in records.values())}
     knowledge_path = ROOT / "data/research_knowledge.json"
     if knowledge_path.exists():
         from validate_research_knowledge import validate as validate_knowledge
@@ -97,6 +107,7 @@ def build_status(date: str, smoke_output: Path | None = None) -> dict:
             "dataset_rows": sum(item["rows"] for item in datasets.values()),
             "static_qa": static_qa,
             "research_knowledge": research_knowledge,
+            "paper_insights": paper_insights,
             "training_smoke": smoke,
             "model_status": ("Five-step GPU pipeline smoke completed; no formal retraining or scientific accuracy evaluation."
                              if smoke else "Prepared QA datasets retained; no model retraining performed for this release."),
@@ -109,11 +120,14 @@ def render_status(status: dict) -> str:
                   if status.get("training_smoke") else "本版本未重新训练模型。")
     static_qa = status.get("static_qa")
     knowledge = status.get("research_knowledge")
+    insights = status.get("paper_insights")
     static_note = (f"静态导读：{static_qa['catalog_papers']} 篇论文 × 4 类，共 {static_qa['rows']} 条；"
                    "按公开目录整理研究主题、方法标签、范围与阅读路线。\n\n"
                    if static_qa else "")
     if knowledge:
         static_note = (f"专题科研问答：{knowledge['cards']} 个，分基础知识、计算流程和常见问题，引用 {knowledge['reference_papers']} 篇库内论文及官方文档，附操作步骤和验收项。\n\n" + static_note)
+    if insights:
+        static_note = (f"结构化论文要点：{insights['cards']} 篇，其中{insights['condition_cards']}篇含计算/实验条件或理论假设；逐条保留来源，区分文献事实与阅读建议。\n\n" + static_note)
     return (f"# 当前项目状态\n\n统计日期：{status['as_of']}。由 `update_project_status.py` 根据实际库、索引与数据集生成。\n\n"
             f"| 项目 | 实际数量 |\n|---|---:|\n| 公开精选论文（唯一 DOI） | {status['papers']} |\n"
             f"| 2023 年及以后论文 | {status['recent_2023_onward']} |\n| 已有 WOS UT | {status['wos_records']} |\n"
@@ -150,6 +164,7 @@ def main() -> None:
         summary = (f"\n统计日期 **{status['as_of']}**：**{status['papers']} 篇唯一 DOI**；WOS UT **{status['wos_records']} 条**。\n\n"
                    + (f"静态导读：**{status['static_qa']['rows']} 条 / {status['static_qa']['catalog_papers']} 篇**，用于检索后的目录导读。\n\n" if status.get("static_qa") else "")
                    + (f"专题科研问答：**{status['research_knowledge']['cards']} 个**，包含基础知识、计算步骤、检查清单、常见问题与引用边界。\n\n" if status.get("research_knowledge") else "")
+                   + (f"结构化论文要点：**{status['paper_insights']['cards']} 篇**，其中{status['paper_insights']['condition_cards']}篇含条件或理论假设，逐条标注来源。\n\n" if status.get("paper_insights") else "")
                    +
                    f"QLoRA 数据：**{rows['train']['rows']} 训练 / {rows['validation']['rows']} 验证 / {rows['test']['rows']} 测试**。{model_note}；数量与哈希详见 [当前状态](guides/PROJECT_STATUS.md)。\n")
         path.write_text(prefix + start + summary + end + suffix, encoding="utf-8")

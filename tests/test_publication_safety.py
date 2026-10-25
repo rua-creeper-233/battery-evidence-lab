@@ -16,6 +16,14 @@ from publication_safety import (
 
 
 class PublicationSafetyTests(unittest.TestCase):
+    def test_personal_library_holding_notes_are_not_public_metadata(self):
+        for note in ('本地' + '尚未保存全文', '本机' + '全文可用性由映射记录', '用户已自行' + '加入Zotero'):
+            with self.subTest(note=note):
+                for encoded in (False, True):
+                    findings = scan_text(json.dumps({'scope_note': note}, ensure_ascii=encoded), 'data/papers.json')
+                    self.assertTrue(any(f.type == 'personal_library_status' for f in findings))
+        self.assertEqual(scan_text(json.dumps({'scope_note':'聚合物电解质的离子迁移与界面稳定性'}, ensure_ascii=False), 'data/papers.json'), [])
+
     @staticmethod
     def _png_bytes(*, metadata=False, trailing=b"", dimensions=(1200, 630)):
         def chunk(kind, payload):

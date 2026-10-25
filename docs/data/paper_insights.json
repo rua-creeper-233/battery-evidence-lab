@@ -14,21 +14,28 @@
       "sources": [
         {
           "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "tan2026_pemd：summary / methods / evidence / protocol_steps"
+          "url": "https://doi.org/10.1039/d5dd00454c",
+          "scope": "article",
+          "locator": "PDF pp.1-6 Abstract; Introduction; §§2.1-2.4; p.10 Results"
         },
         {
           "id": "c",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "tan2026_pemd：summary / methods / evidence / protocol_steps"
+          "url": "https://doi.org/10.1039/d5dd00454c",
+          "scope": "article",
+          "locator": "PDF pp.1-6 Abstract; Introduction; §§2.1-2.4; p.10 Results；文章中的代码/数据入口声明"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "研究如何把聚合物电解质构建、参数化、分子动力学和输运分析串成可重复流程。",
+            "text": "将聚合物构建、OPLS-AA参数化、多尺度MD和输运/稳定性分析整合为可追踪的高通量流程。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "检验标准化流程能否在PEO/LiTFSI和更大聚合物集合中复现实验输运趋势。",
             "source_refs": [
               "d"
             ],
@@ -37,7 +44,14 @@
         ],
         "systems": [
           {
-            "text": "对象是无定形聚合物电解质，示例覆盖PEO/LiTFSI。",
+            "text": "对象是无定形固体聚合物电解质，示例重点为PEO/LiTFSI，也包括PEC/LiTFSI。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "作者构建了656种均聚物，并对200种聚合物电解质进行规模化电导计算。",
             "source_refs": [
               "d"
             ],
@@ -46,27 +60,53 @@
         ],
         "methods": [
           {
-            "text": "流程结合量子化学参数化、OPLS-AA、GROMACS分子动力学及电导和扩散后处理。",
+            "text": "短链参数经XMLGeneator/Foyer扩展到长链，电荷由多构象RESP/RESP2拟合并作端基保留、内部周期映射。",
             "source_refs": [
-              "d",
-              "c"
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "GROMACS流程包括目标密度无定形盒、能量最小化、恒温平衡、线性升降温退火和生产轨迹；后处理计算扩散、电导、迁移数及溶剂化结构。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "输运分析使用电荷加权集体位移的涨落关系计算电导，保留离子间相关项；阳离子迁移数由Onsager输运矩阵得到（Table 1）。",
+            "source_refs": [
+              "d"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "作者将工作流和分析工具公开，论文摘要所述目标是提高聚合物电解质高通量模拟的一致性。",
+            "text": "656种均聚物构建成功率为100%；18个有实验记录的体系电导相关性Spearman r=0.819、log10电导MAE=0.684。",
             "source_refs": [
-              "d",
-              "c"
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "PEO/LiTFSI中电导随Li:EO比呈非单调变化，约0.10–0.12附近达到峰值；氧化窗口15个体系的排序相关性Spearman r=0.754、MAE=0.473 V。",
+            "source_refs": [
+              "d"
             ],
             "kind": "reported"
           }
         ],
         "limits": [
           {
-            "text": "无定形聚合物的链段弛豫、盐浓度和有限轨迹会改变输运估计，结果只适用于已验证的组成与采样协议。",
+            "text": "作者指出链长收敛、有限轨迹和高盐浓度的离子相关会影响输运估计；已验证协议之外不能直接外推。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "力场参数、温度退火窗口和电荷映射是结果可迁移性的关键审计点。",
             "source_refs": [
               "d"
             ],
@@ -75,22 +115,62 @@
         ],
         "reproduction": [
           {
-            "text": "先按仓库示例固定软件版本，完成一个PEO/LiTFSI冒烟算例，再独立报告轨迹数、拟合区间、单位和统计误差。",
+            "text": "按GitHub中的PEMD v1.1.0示例固定输入拓扑、坐标和GROMACS mdp，先跑PEO/LiTFSI冒烟算例。",
             "source_refs": [
-              "c"
+              "c",
+              "d"
             ],
             "kind": "reading_guide"
+          },
+          {
+            "text": "逐项记录Li:EO比、目标温度、退火设置、轨迹长度和电导拟合区间，并与18体系基准比较。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "对长链至少检查参数映射、净电荷重归一化和链长收敛，再报告扩散与电导。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "生产MD的默认模拟时间为200 ns；正文将该设置用于聚合物电解质输运采样。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "PEO/LiTFSI电导峰值对应Li:EO约0.10–0.12。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ]
       },
       "relations": [
         {
           "subject": "PEMD workflow",
-          "predicate": "supports",
-          "object": "polymer-electrolyte transport analysis",
+          "predicate": "integrates",
+          "object": "polymer construction, parameterization, MD, and transport analysis",
           "source_refs": [
             "d",
             "c"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "Li:EO ratio",
+          "predicate": "controls",
+          "object": "PEO/LiTFSI conductivity",
+          "source_refs": [
+            "d"
           ],
           "kind": "reported"
         }
@@ -102,31 +182,44 @@
       "sources": [
         {
           "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "kuhn2026_hitpoly：summary / methods / evidence / protocol_steps"
+          "url": "https://arxiv.org/abs/2602.17595v1",
+          "scope": "article",
+          "locator": "arXiv:2602.17595v1 作者稿（与期刊版本分别引用）；PDF pp.1-15 Abstract; Methods; Results and Discussion"
         },
         {
-          "id": "a",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "kuhn2026_hitpoly：summary / methods / evidence / protocol_steps"
+          "id": "c",
+          "url": "https://arxiv.org/abs/2602.17595v1",
+          "scope": "article",
+          "locator": "arXiv:2602.17595v1 作者稿（与期刊版本分别引用）；PDF pp.1-15 Abstract; Methods; Results and Discussion；文章中的代码/数据入口声明"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "研究贝叶斯优化能否在高通量聚合物电解质MD中更有效地分配计算预算。",
+            "text": "研究文献热启动的批量贝叶斯优化能否在大规模聚合物电解质候选空间中节省MD筛选预算。",
             "source_refs": [
-              "d",
-              "a"
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "进一步解析支化结构、酮基和Li/Na输运机制与高电导之间的关系。",
+            "source_refs": [
+              "d"
             ],
             "kind": "reported"
           }
         ],
         "systems": [
           {
-            "text": "候选包括聚合物电解质及LiTFSI和钠盐相关体系。",
+            "text": "虚拟搜索空间含约1.66–1.7百万均聚物候选，涵盖聚烯烃、聚酯、聚醚、聚碳酸酯、聚酰胺和有机硫等。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "MD候选使用LiTFSI，并另比较Na阳离子输运；PEO/LiTFSI作为基准。",
             "source_refs": [
               "d"
             ],
@@ -135,49 +228,106 @@
         ],
         "methods": [
           {
-            "text": "方法是文献热启动贝叶斯优化结合高通量分子动力学，并以输运性质作为评价目标。",
+            "text": "MolFormer嵌入作为结构表示，Gaussian process surrogate预测电导、迁移数、离子团簇和Li扩散；已有实验数据用于warm start。",
             "source_refs": [
-              "d",
-              "a"
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "每批BO选择候选做MD，以cluster Nernst–Einstein方法计算电导，并用100 ps间隔的轨迹分解离子跳跃机制。",
+            "source_refs": [
+              "d"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "论文摘要报告在大候选空间中选择有限数量的聚合物进行实际模拟，并分析结构与输运关联。",
+            "text": "作者迭代评估767个均聚物；优化后发现支化架构和酮基与更强的离子跳跃贡献相关。",
             "source_refs": [
-              "d",
-              "a"
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "高电导前30名中27个具有线性支链；45批优化中后期继续采样到接近PEO的候选但性能增益趋于有限。",
+            "source_refs": [
+              "d"
             ],
             "kind": "reported"
           }
         ],
         "limits": [
           {
-            "text": "BO排序受初始文献数据、分子表示和MD噪声影响，候选优先级不能直接解释为实验性能。",
+            "text": "低于10^-5 S/cm时100 ns轨迹可能不足以稳定估计电导，且BO结果受初始文献数据、表示和MD噪声影响。",
             "source_refs": [
-              "d",
-              "a"
+              "d"
             ],
             "kind": "reading_guide"
+          },
+          {
+            "text": "计算温度与实验数据存在约50 K偏移，候选排序不能直接等价于室温实验性能。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ],
         "reproduction": [
           {
-            "text": "复现时分别记录候选池、初始训练集、BO批次和随机基线，避免把候选空间数量写成计算次数。",
+            "text": "固定1.66百万候选池、MolFormer版本、初始106个LiTFSI实验样本和每批BO选择规则。",
             "source_refs": [
-              "a"
+              "d"
             ],
             "kind": "reading_guide"
+          },
+          {
+            "text": "将1 M盐、393 K计算温度、100 ns生产轨迹和cNE后处理写入运行表，另设随机候选基线。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "分别优化电导、迁移数×电导和扩散×电导，并用独立轨迹检查低电导候选的统计误差。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "用于筛选的LiTFSI浓度固定为1 M；生产MD在393 K运行。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "高电导聚合物的cNE电导和迁移数据作者引用100 ns内趋于收敛；离子跳跃分解按100 ps频率采样。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ]
       },
       "relations": [
         {
-          "subject": "Bayesian optimization",
+          "subject": "batch Bayesian optimization",
           "predicate": "allocates",
-          "object": "polymer MD screening budget",
+          "object": "polymer-MD screening budget",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "branched/ketone motifs",
+          "predicate": "associate with",
+          "object": "enhanced ion-hopping contribution",
           "source_refs": [
             "d"
           ],
@@ -192,8 +342,8 @@
         {
           "id": "d",
           "url": "https://www.nature.com/articles/s41467-022-30994-1",
-          "scope": "abstract",
-          "locator": "出版社摘要"
+          "scope": "article",
+          "locator": "PDF p.2 sampling/convergence; p.8 Methods; p.9 transport-property calculation"
         },
         {
           "id": "c",
@@ -229,6 +379,13 @@
               "c"
             ],
             "kind": "reported"
+          },
+          {
+            "text": "MD使用LAMMPS与PCFF+；电导采用cluster Nernst–Einstein的cNE₀近似，以相应离子自扩散系数近似带电团簇扩散系数。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ],
         "findings": [
@@ -247,6 +404,13 @@
               "d"
             ],
             "kind": "reading_guide"
+          },
+          {
+            "text": "作者将50 ns结果作为近似收敛参考，同时指出部分聚合物在50 ns仍未完全收敛。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ],
         "reproduction": [
@@ -256,6 +420,22 @@
               "c"
             ],
             "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "模拟温度353 K，LiTFSI为每千克聚合物1.5 mol；体系含50对Li⁺/TFSI⁻，每条链主链含150个原子，离子电荷缩放因子0.7。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "先平衡5 ns，再比较5 ns与50 ns生产轨迹；rRESPA外层步长2 fs、内层0.5 fs。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ]
       },
@@ -278,15 +458,28 @@
       "sources": [
         {
           "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "takenaka2026_sei_mlff：summary / methods / evidence / protocol_steps"
+          "url": "https://doi.org/10.1038/s41524-026-02271-y",
+          "scope": "article",
+          "locator": "接收稿 ARTICLE IN PRESS；PDF pp.3-16 Abstract; Results; Methods; Supplementary figure captions"
+        },
+        {
+          "id": "c",
+          "url": "https://doi.org/10.1038/s41524-026-02271-y",
+          "scope": "article",
+          "locator": "接收稿 ARTICLE IN PRESS；PDF pp.3-16 Abstract; Results; Methods; Supplementary figure captions；文章中的代码/数据入口声明"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "研究锂金属表面早期固态电解质界面的形成反应序列。",
+            "text": "用机器学习力场MD解析锂金属—LiFSI/EC界面早期SEI的反应识别、顺序、概率和产物生成速率。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "检验浓度是否改变SEI中无机/有机组分及反应路径。",
             "source_refs": [
               "d"
             ],
@@ -295,7 +488,14 @@
         ],
         "systems": [
           {
-            "text": "对象是锂金属—电解液界面及其初始SEI。",
+            "text": "体系是锂金属表面与LiFSI/EC电解液，比较LiFSI:EC=1:13.8、1:6和1:1.5三种浓度。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "结果重现内层富氧、外层含氟的SEI分层特征，并追踪LiF、Li2O等产物。",
             "source_refs": [
               "d"
             ],
@@ -304,7 +504,14 @@
         ],
         "methods": [
           {
-            "text": "采用第一性原理训练的机器学习力场分子动力学，并自动识别反应。",
+            "text": "使用PFP v6.0.0通用机器学习力场模拟界面，并以PBE-D3第一性原理构型验证；通过自动键连通性算法提取反应事件并检查识别阈值。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "FPMD用于300/400/500 K势验证；MLFF-MD对五条独立轨迹做系综平均和深度剖面分析。",
             "source_refs": [
               "d"
             ],
@@ -313,7 +520,21 @@
         ],
         "findings": [
           {
-            "text": "摘要报告了反应顺序、反应概率、产物形成速率及SEI分层特征的统计分析。",
+            "text": "反应首先集中于锂表面，随后反应频率下降；约500 ps后未出现新的分解路径或产物。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "更高盐浓度产生更多界面分解产物，路径包含FSI−裂解生成LiF/Li2O以及EC分解。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "内层氧化物富集、外层氟化物富集的结构与实验特征一致。",
             "source_refs": [
               "d"
             ],
@@ -322,7 +543,14 @@
         ],
         "limits": [
           {
-            "text": "早期SEI反应网络受界面组成、温度和势函数训练域影响，不能直接外推到长期循环或其他电解液。",
+            "text": "反应网络依赖ML力场训练域、键识别阈值和有限的500 ps早期时间窗，不代表长期循环SEI演化。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "浓度效应是在LiFSI/EC三组条件下建立，换盐或溶剂需重新验证。",
             "source_refs": [
               "d"
             ],
@@ -331,21 +559,69 @@
         ],
         "reproduction": [
           {
-            "text": "若取得正文和补充材料，应先核对力场训练域与反应识别阈值，再做短轨迹稳定性测试。",
+            "text": "先用公开仓库的模型、反应识别伪代码和输入输出样例复现实验性短轨迹。",
+            "source_refs": [
+              "c",
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "固定300 K、1 fs步长、论文给定的模拟盒、每浓度五条轨迹，并保存每1 fs快照。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "分别对1:13.8、1:6、1:1.5统计反应事件、产物量和z向密度剖面，再做阈值敏感性分析。",
             "source_refs": [
               "d"
             ],
             "kind": "reading_guide"
           }
+        ],
+        "conditions": [
+          {
+            "text": "界面主模拟在300 K、1 fs步长下进行，Langevin热浴作用于Li表面区域；每种浓度有5条独立轨迹。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "界面轨迹延伸至500 ps；电解液先NVT平衡后与锂接触。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "体相FPMD在300、400、500 K使用1.0 fs步长；输运验证含NPT平衡后300 K NVT生产。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
         ]
       },
       "relations": [
         {
-          "subject": "first-principles-trained ML force field",
-          "predicate": "drives",
-          "object": "SEI formation molecular dynamics",
+          "subject": "salt concentration",
+          "predicate": "changes",
+          "object": "SEI product accumulation and depth profile",
           "source_refs": [
             "d"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "MLFF-MD",
+          "predicate": "resolves",
+          "object": "early Li-metal SEI reaction sequence",
+          "source_refs": [
+            "d",
+            "c"
           ],
           "kind": "reported"
         }
@@ -357,15 +633,22 @@
       "sources": [
         {
           "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "zhang2024_mlmd_size_conductivity：summary / methods / evidence / protocol_steps"
+          "url": "https://doi.org/10.1016/j.aichem.2024.100051",
+          "scope": "article",
+          "locator": "PDF pp.1-8 Abstract; §§2.2-2.4; §§3.1-3.3; Conclusion"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "研究机器学习MD中固态电解质超胞尺寸如何影响锂离子电导估计。",
+            "text": "量化MLMD中超胞尺寸和采样时长对Li3YCl6低温电导与超离子转变的影响。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "检验高温AIMD训练数据能否支持大尺寸、长时MLMD的室温外推。",
             "source_refs": [
               "d"
             ],
@@ -374,7 +657,7 @@
         ],
         "systems": [
           {
-            "text": "研究对象是Li3YCl6固态电解质。",
+            "text": "基准固态电解质为Li3YCl6，比较1×1×2与2×2×4超胞。",
             "source_refs": [
               "d"
             ],
@@ -383,7 +666,14 @@
         ],
         "methods": [
           {
-            "text": "方法比较不同尺寸体系的机器学习分子动力学扩散和电导分析。",
+            "text": "用不确定性驱动主动学习从约40万AIMD构型选1845个训练EANN势；90:10随机训练/测试并以全AIMD集独立检验。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "LAMMPS MLMD用MSD求扩散系数，再以Nernst–Einstein关系求电导；TRAVIS和OVITO用于分析。",
             "source_refs": [
               "d"
             ],
@@ -392,7 +682,21 @@
         ],
         "findings": [
           {
-            "text": "摘要强调小超胞和高温训练数据选择会影响室温电导推断。",
+            "text": "小超胞在室温给出7.73 mS/cm，而2×2×4大超胞约为0.23 mS/cm；约420 K附近出现超离子转变。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "长达10 ns的轨迹显著减小低温统计波动；大胞在约480 K以上与小胞电导更接近。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "高水平PBE EANN在300 K外推电导约0.34 mS/cm、300–420 K活化能0.51 eV。",
             "source_refs": [
               "d"
             ],
@@ -401,28 +705,81 @@
         ],
         "limits": [
           {
-            "text": "有限尺寸误差与温度外推耦合，Li3YCl6的尺寸结论不能直接当作其他晶体电解质的通用修正。",
+            "text": "尺寸效应、AIMD训练覆盖和泛函差异共同影响电导；Li3YCl6的收敛尺寸不能当作所有固态电解质的通用值。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "1000 K因AIMD采样不足被排除，短轨迹或单一小胞会放大统计和周期边界伪通道。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "从高温AIMD轨迹执行主动学习并保留1845构型、90:10划分及独立全轨迹测试。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "在1×1×2和2×2×4胞均使用1 fs步长、100 fs Nose–Hoover时间常数，并将生产时长延长到10 ns。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "用MSD拟合和Nernst–Einstein换算分别报告300 K电导、活化能及尺寸误差。",
             "source_refs": [
               "d"
             ],
             "kind": "reading_guide"
           }
         ],
-        "reproduction": [
+        "conditions": [
           {
-            "text": "至少做三个盒尺寸并保持势、温度协议和扩散拟合窗口一致，报告有限尺寸误差。",
+            "text": "MLMD步长1 fs、构型每2 fs输出，Nose–Hoover恒温器时间常数100 fs；生产扩展至10 ns。",
             "source_refs": [
               "d"
             ],
-            "kind": "reading_guide"
+            "kind": "reported"
+          },
+          {
+            "text": "对比1×1×2和2×2×4超胞；后者含480个原子。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "训练数据为约40万AIMD构型中主动学习选出的1845个，训练/测试比90:10。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ]
       },
       "relations": [
         {
-          "subject": "simulation cell size",
-          "predicate": "affects",
-          "object": "predicted Li-ion conductivity",
+          "subject": "supercell size",
+          "predicate": "controls",
+          "object": "finite-size Li-ion conductivity estimate",
+          "source_refs": [
+            "d"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "active-learning EANN",
+          "predicate": "enables",
+          "object": "long-time large-cell MLMD",
           "source_refs": [
             "d"
           ],
@@ -436,21 +793,21 @@
       "sources": [
         {
           "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "geng2025_vaspkit_protocol：summary / methods / evidence / protocol_steps"
+          "url": "https://doi.org/10.1038/s41596-025-01160-w",
+          "scope": "article",
+          "locator": "PDF pp.1-12 Protocol abstract; Limitations; Materials; Procedures"
         },
         {
           "id": "c",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "geng2025_vaspkit_protocol：summary / methods / evidence / protocol_steps"
+          "url": "https://doi.org/10.1038/s41596-025-01160-w",
+          "scope": "article",
+          "locator": "PDF pp.1-12 Protocol abstract; Limitations; Materials; Procedures；文章中的代码/数据入口声明"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "提供从VASP输入准备到结果分析的可执行协议。",
+            "text": "提供从POSCAR读取、VASP输入生成、计算提交到结果后处理的可执行VASPKIT协议。",
             "source_refs": [
               "d"
             ],
@@ -459,7 +816,14 @@
         ],
         "systems": [
           {
-            "text": "示例覆盖周期材料、石墨烯、Pt、CsPbI3和液态水。",
+            "text": "示例包含CsPbI3、Pt、16个H2O液态水盒、H2分子和Pt(111)电催化表面。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "协议覆盖晶体结构、EOS、弹性、能带/费米面、光学、声子、催化和MD分析。",
             "source_refs": [
               "d"
             ],
@@ -468,17 +832,31 @@
         ],
         "methods": [
           {
-            "text": "协议覆盖输入生成、能带/DOS、声子、光学性质和分子动力学分析。",
+            "text": "VASPKIT分为preprocessing和postprocessing：生成INCAR/POTCAR/KPOINTS、标准胞和应变结构，再解析VASP输出。",
             "source_refs": [
               "d",
               "c"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "示例用任务102生成KPOINTS，任务201生成弹性应变输入；EOS任务205拟合体积—能量/压力关系。",
+            "source_refs": [
+              "d"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "文章以逐步操作和示例数据说明VASPKIT如何连接VASP前处理与后处理。",
+            "text": "协议将交互菜单、Linux管道和输入文件三种运行方式统一到同一任务ID体系。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "文章明确指出VASPKIT可自动化标准分析，但复杂场景仍需手工脚本和VASP原始文档。",
             "source_refs": [
               "d"
             ],
@@ -487,7 +865,14 @@
         ],
         "limits": [
           {
-            "text": "工具输出仍受赝势、泛函、截断能和k点等VASP设置控制，示例流程不能替代目标体系收敛测试。",
+            "text": "输出受VASP泛函、赝势、截断能、k点及体系收敛性限制；自动生成模板不替代目标材料的收敛测试。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "文中示例是教程体系，不能把其数值设置直接迁移为电池材料的通用参数。",
             "source_refs": [
               "d"
             ],
@@ -496,20 +881,57 @@
         ],
         "reproduction": [
           {
-            "text": "按协议先跑一个示例，保存INCAR/KPOINTS/POTCAR版本和VASPKIT命令，再迁移到电池材料。",
+            "text": "先用CsPbI3或Pt示例跑通VASPKIT安装、任务102和VASP小计算，保存版本与输入输出。",
             "source_refs": [
               "d",
               "c"
             ],
             "kind": "reading_guide"
+          },
+          {
+            "text": "迁移弹性计算前将结构转换为标准常规胞，并逐个检查INCAR、POSCAR、POTCAR和KPOINTS。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "用任务205做EOS时记录所选EOS模型、体积范围和间隔数，再独立核对拟合残差。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "液态水示例含16个H2O、7.82 Å立方盒，对应约1 g/cm3；H2示例为10 Å立方盒。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "KPOINTS示例使用k-spacing 0.03 (2π/Å)；费米面示例要求小于0.005 Å−1的致密网格。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "弹性示例INPUT.in使用3D、7个应变点−0.015至0.015；EOS示例Vinet拟合体积10–13.7 Å3、100间隔。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ]
       },
       "relations": [
         {
           "subject": "VASPKIT",
-          "predicate": "facilitates",
-          "object": "VASP input and result analysis",
+          "predicate": "automates",
+          "object": "VASP preprocessing and postprocessing",
           "source_refs": [
             "d",
             "c"
@@ -524,21 +946,21 @@
       "sources": [
         {
           "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "wang2021_vaspkit：summary / methods / evidence / protocol_steps"
+          "url": "https://arxiv.org/abs/1908.08269v6",
+          "scope": "article",
+          "locator": "arXiv:1908.08269v6 作者稿（与期刊版本分别引用）；PDF pp.1-8 Abstract; §§2.1-3.2; Figures 1-5"
         },
         {
           "id": "c",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "wang2021_vaspkit：summary / methods / evidence / protocol_steps"
+          "url": "https://arxiv.org/abs/1908.08269v6",
+          "scope": "article",
+          "locator": "arXiv:1908.08269v6 作者稿（与期刊版本分别引用）；PDF pp.1-8 Abstract; §§2.1-3.2; Figures 1-5；文章中的代码/数据入口声明"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "建立面向VASP高通量计算和分析的用户界面。",
+            "text": "建立可交互也可命令行批处理的VASP高通量输入生成、计算管理和性质分析界面。",
             "source_refs": [
               "d"
             ],
@@ -547,7 +969,14 @@
         ],
         "systems": [
           {
-            "text": "对象是周期材料的VASP输入、输出和批处理任务。",
+            "text": "工具面向周期材料的结构、弹性、电子、光学、磁性、电荷密度和分子动力学输出。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "论文示例包含Pt、CsPbI3、石墨烯、MoS2、SnO、磷烯和液态水等。",
             "source_refs": [
               "d"
             ],
@@ -556,17 +985,31 @@
         ],
         "methods": [
           {
-            "text": "工具支持对称性分析、超胞、k路径、电子结构、弹性和电荷分析。",
+            "text": "前处理支持对称性/标准胞、超胞与异质结、INCAR/POTCAR/KPOINTS和高对称k路径生成；后处理读取OUTCAR等计算弹性、DOS、能带、光学和MD统计。",
             "source_refs": [
               "d",
               "c"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "弹性模块采用能量—应变法；对立方示例在−2%至+2%范围、0.5%步长拟合二阶弹性常数。",
+            "source_refs": [
+              "d"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "论文展示了VASPKIT将前处理、后处理和命令行批处理整合到统一工作流。",
+            "text": "VASPKIT将交互模式与bash脚本命令行模式统一，使多个结构的输入生成和输出提取可批量执行。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "k路径工具先识别空间群、晶系和Bravais格子，再构造标准常规胞/原胞以生成建议路径。",
             "source_refs": [
               "d"
             ],
@@ -575,31 +1018,79 @@
         ],
         "limits": [
           {
-            "text": "批处理和自动生成不决定泛函、赝势或收敛标准，工具结果仍需对目标体系做独立收敛检查。",
+            "text": "自动化工具不决定泛函、赝势、k点和收敛阈值；这些设置仍需针对目标体系独立收敛。",
             "source_refs": [
               "d"
             ],
             "kind": "reading_guide"
+          },
+          {
+            "text": "弹性常数依赖标准常规胞和应变范围，结果不能脱离坐标基和拟合区间比较。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ],
         "reproduction": [
           {
-            "text": "先用官方版本复现一个能带或弹性示例，并人工检查生成输入与VASP版本兼容性。",
+            "text": "从官方版本和一个Pt/晶体POSCAR开始，先复现结构标准化、任务输入生成和k路径输出。",
             "source_refs": [
+              "c",
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "弹性复现时固定−2%至+2%、0.5%步长及能量—应变二阶拟合，并检查标准常规胞。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "批量运行前保存VASPKIT版本、VASP版本、POTCAR来源和命令行输入，逐项核对输出文件。",
+            "source_refs": [
+              "d",
               "c"
             ],
             "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "立方弹性示例的应变范围为−2%至+2%，步长0.5%。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "液态水示例使用16个H2O、7.82 Å盒；k路径根据空间群和标准胞转换生成。",
+            "source_refs": [
+              "d"
+            ],
+            "kind": "reported"
           }
         ]
       },
       "relations": [
         {
           "subject": "VASPKIT",
-          "predicate": "automates",
-          "object": "VASP preprocessing and postprocessing",
+          "predicate": "connects",
+          "object": "VASP input generation and high-throughput analysis",
           "source_refs": [
             "d",
             "c"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "standard conventional cell",
+          "predicate": "conditions",
+          "object": "elastic tensor and k-path interpretation",
+          "source_refs": [
+            "d"
           ],
           "kind": "reported"
         }
@@ -869,70 +1360,107 @@
       "doi": "10.1103/physrevlett.120.143001",
       "sources": [
         {
-          "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "zhang2018_deep_potential：summary / methods / evidence / protocol_steps"
-        },
-        {
-          "id": "c",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "zhang2018_deep_potential：summary / methods / evidence / protocol_steps"
+          "id": "a",
+          "url": "https://arxiv.org/abs/1707.09571v2",
+          "scope": "article",
+          "locator": "arXiv:1707.09571v2 作者稿（与期刊版本分别引用）；PDF pp.2–3 Abstract/Introduction; pp.5–8 method and validation; pp.10–13 applications"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "提出可扩展的深度势分子动力学模型，使大体系模拟接近量子力学参考。",
+            "text": "提出能把ab initio能量和力转化为可扩展分子动力学势的Deep Potential Molecular Dynamics（DeePMD）方法。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "systems": [
           {
-            "text": "出版商记录将方法定位于凝聚态和水等原子体系。",
+            "text": "验证对象包括液态水、冰Ih以及小分子和周期性材料；水和冰的训练数据来自路径积分或经典AIMD。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "methods": [
           {
-            "text": "方法学习局域环境到势能面的映射，并将深度势用于分子动力学。",
+            "text": "每个原子的局域环境先变换到保持平移、旋转和置换对称性的局域坐标，再由深层前馈网络给出原子能量，体系能量是原子能量求和。",
             "source_refs": [
-              "d",
-              "c"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "损失函数联合能量、原子力和virial误差，训练中逐步提高能量/力权重并降低virial权重。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "水体系使用64个H2O分子；示例条件包括1 bar、300 K液态水，1 bar、273 K冰Ih，以及1 bar、330 K和2.13 kbar、238 K冰。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "用于比较的DeePMD轨迹延长到300 ps；分子算例使用阻尼时间0.1 ps的Langevin恒温器，水与冰算例采用各自的模拟协议。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "论文摘要的核心贡献是把量子精度近似与可扩展MD结合；具体体系指标需回到正文核对。",
+            "text": "作者报告水和冰的能量、力与virial预测达到接近AIMD的精度，并可复现水的平均能量、密度、RDF和ADF。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "计算成本随体系规模近似线性增长，且模型可并行化；论文将其作为比AIMD更长时间和更大体系的途径。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "limits": [
           {
-            "text": "深度势的可靠性取决于训练域、截断和参考数据；方法论文本身不构成固态电解质专属验证。",
+            "text": "模型精度依赖训练构型覆盖；论文示例主要是水、冰和少数分子/材料，不能把对称描述符或局域截断自动视为任意化学空间均可转移。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reading_guide"
           }
         ],
         "reproduction": [
           {
-            "text": "用DeepMD-kit示例先检查数据格式、单位、邻居表和能量/力验证，再构建电解质专属训练集。",
+            "text": "先固定训练数据的AIMD层级、温压条件和局域截断定义，再分别报告能量、力、virial误差。",
             "source_refs": [
-              "c"
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "复现水例时使用64 H2O并对照300 ps轨迹的平均能量、密度和RDF/ADF，而非只比较单步能量。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "扩展到电解质前，加入未见温度和构型的独立测试，检查局域环境覆盖。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reading_guide"
           }
@@ -940,11 +1468,20 @@
       },
       "relations": [
         {
-          "subject": "Deep Potential",
-          "predicate": "enables",
-          "object": "scalable quantum-informed molecular dynamics",
+          "subject": "DeePMD local-environment neural network",
+          "predicate": "approximates",
+          "object": "ab initio energies and forces for molecular dynamics",
           "source_refs": [
-            "d"
+            "a"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "local decomposition",
+          "predicate": "enables",
+          "object": "near-linear scaling with system size",
+          "source_refs": [
+            "a"
           ],
           "kind": "reported"
         }
@@ -955,63 +1492,121 @@
       "doi": "10.1038/s41524-025-01764-6",
       "sources": [
         {
-          "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "wang2025_dpa_sse：summary / methods / evidence / protocol_steps"
+          "id": "a",
+          "url": "https://arxiv.org/abs/2406.18263v2",
+          "scope": "article",
+          "locator": "arXiv:2406.18263v2 作者稿（与期刊版本分别引用）；PDF pp.1–2 Abstract; pp.4–7 training data/model; pp.8–12 evaluation and conductivity"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "构建覆盖较广、精度较高的硫化物固态电解质预训练深度势。",
+            "text": "构建覆盖多种硫化物固态电解质、可用于离子输运和掺杂筛选的预训练深度势DPA-SSE。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "systems": [
           {
-            "text": "对象是Li-P-S及相关硫化物固态电解质化学空间。",
+            "text": "训练体系包括LGPS型、argyrodite和Li7P3S11，并纳入Li2S、P2S5、LiX及锂金属等分解/组分体系。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "methods": [
           {
-            "text": "研究围绕DFT数据、深度势训练和长时间尺度MD输运评估。",
+            "text": "DPA-SSE基于DPA-2局域描述符和注意力架构，原子力由势能对坐标求导；模型可预训练后少量数据微调，并用蒸馏得到更快的动态模型。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "离子电导由Li MSD得到扩散系数，再用σ(T)=V(ze)kBTD并以修正Arrhenius关系拟合温度依赖。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "训练集覆盖15种元素、41个体系和54771个带DFT能量/力/virial标签的快照；DP-GEN采样NPT温度0–1200 K、压力0–2 GPa。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "DFT标注使用VASP PAW、PBEsol、600 eV平面波截断和KSPACING=0.3；DPA-2 repinit截断半径为9.0 Å。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "DPA-SSE预训练使用初始学习率0.001，衰减至3.51×10⁻⁸，总训练步数为12,000,000。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "摘要报告模型覆盖范围、精度和离子输运应用是主要评估维度。",
+            "text": "摘要和结果报告测试集能量MAE 1.58 meV/atom、力MAE 30.28 meV/Å，并能描述最高1150 K动态轨迹且能量分辨率低于2 meV/atom。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "预训练模型用约十分之一训练数据微调时可达到接近从头训练模型的表现；蒸馏模型用于降低通用模型动态模拟成本。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "作者将模型用于多种硫化物电解质离子输运，并报告与实验电导相符的趋势/数值。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "limits": [
           {
-            "text": "硫化物势的输运结论受Li-P-S组成覆盖、温度和长时采样影响，跨化学空间使用前应做独立验证。",
+            "text": "大温压训练范围支持转移但不替代目标组成的独立验证；电导公式明确假设离子相关性可忽略，相关性显著时需谨慎解释。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reading_guide"
           }
         ],
         "reproduction": [
           {
-            "text": "取得作者模型后先做元素/组成域检查，再以独立DFT构型和多温度扩散测试验证。",
+            "text": "先按论文的元素/体系范围和PBEsol-600 eV标注条件检查数据清单，再比较预训练、微调和从头训练的同一测试集误差。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "做电导时同步报告MSD窗口、温度点、体积和相关性假设，并单独验证1150 K附近的动态稳定性。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "将蒸馏模型与教师模型在同一超胞和轨迹上比较速度、能量/力误差和Li扩散，而不只比较单点MAE。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reading_guide"
           }
@@ -1019,11 +1614,20 @@
       },
       "relations": [
         {
-          "subject": "pre-trained deep potential",
-          "predicate": "covers",
-          "object": "sulfide solid-electrolyte chemical space",
+          "subject": "DPA-SSE pre-trained model",
+          "predicate": "supports",
+          "object": "transferable sulfide-electrolyte ion-transport simulation",
           "source_refs": [
-            "d"
+            "a"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "teacher-model distillation",
+          "predicate": "reduces cost of",
+          "object": "dynamic simulation",
+          "source_refs": [
+            "a"
           ],
           "kind": "reported"
         }
@@ -1034,63 +1638,114 @@
       "doi": "10.1016/j.ensm.2024.103842",
       "sources": [
         {
-          "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "kim2024_llzo_lco_interface_mlff：summary / methods / evidence / protocol_steps"
+          "id": "a",
+          "url": "https://doi.org/10.1016/j.ensm.2024.103842",
+          "scope": "article",
+          "locator": "PDF pp.1–3 Abstract/Introduction; pp.3–6 Methods and ML validation; pp.7–11 interface results"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "用机器学习原子间势探查固态电池固固界面的退化过程。",
+            "text": "用机器学习原子间势解析LLZO固态电解质/LiCoO2正极界面在非平衡高温下的初始降解。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "systems": [
           {
-            "text": "界面由LLZO固态电解质和LiCoO2正极组成。",
+            "text": "体系覆盖立方LLZO、层状LCO、不同Li浓度的LLZO–LCO混合/界面模型，以及Co掺杂非晶LLZO。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "methods": [
           {
-            "text": "方法是大规模机器学习势分子动力学，观察界面结构、应力和输运变化。",
+            "text": "使用n2p2中的Behler–Parrinello神经网络势，径向/角向对称函数截断6 Å；数据含晶态、非晶态、混合物和界面AIMD构型，随机10%作为测试集。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "用MLMD在NVT、2000 K、100 ps运行所有数据类型，并每1 ps取快照与DFT能量/力比较；随后调查不同界面几何和Li浓度的Co扩散/偏聚。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "训练数据共12651个结构；LLZO/LCO数据含1000–2000 K和4000 K AIMD构型，MLMD验证温度为2000 K。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "模型训练RMSE为7.54 meV/atom和0.348 eV/Å；各体系R2分别大于0.89（能量）和0.96（力）。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "摘要将界面降解和原子尺度模拟联系起来，为固态电池界面机理分析提供案例。",
+            "text": "Li亏缺界面出现严重无序、阳离子混合和Co从LCO向LLZO的互扩散；Li充足界面较有序但仍出现元素偏聚。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "互扩散Co倾向在LLZO晶界偏聚形成Co-rich区域，作者将其与富Co二次相的前驱形成联系；该过程对块体晶态LLZO的Li输运影响不显著。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "模型在2000 K快照上的典型误差为晶态LLZO 4.3 meV/atom、0.14 eV/Å，LCO 8.0 meV/atom、0.19 eV/Å；复杂界面仍保持约15.5–17.9 meV/atom能量误差。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "limits": [
           {
-            "text": "界面退化对化学计量、应变和势训练域敏感，原子尺度模拟结果不能直接换算为全电池寿命。",
+            "text": "2000 K、100 ps加速模拟用于观察早期非平衡演化，不等同于实际烧结或循环时间尺度；界面结果还依赖Li浓度、几何取向和训练构型覆盖。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reading_guide"
           }
         ],
         "reproduction": [
           {
-            "text": "复现应先核对界面化学计量、应变和势的训练域，再比较界面与体相的局域结构和扩散统计。",
+            "text": "按12651结构的材料类别和10%独立测试划分重建训练/验证，先检查6 Å描述符截断下的能量、力和R2。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "用2000 K、NVT、100 ps和1 ps采样复现模型稳定性，再分别比较Li亏缺与Li充足界面的Co扩散和元素偏聚。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "将界面取向、Li浓度、晶界位置和Co-rich区域判据写入结果表，避免把单一界面构型外推为普遍规律。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reading_guide"
           }
@@ -1098,11 +1753,20 @@
       },
       "relations": [
         {
-          "subject": "LLZO/LCO interface",
-          "predicate": "is probed by",
-          "object": "machine-learning interatomic-potential MD",
+          "subject": "interfacial Li deficiency",
+          "predicate": "promotes",
+          "object": "LLZO–LCO disorder and Co interdiffusion",
           "source_refs": [
-            "d"
+            "a"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "interdiffused Co",
+          "predicate": "segregates at",
+          "object": "LLZO grain boundaries",
+          "source_refs": [
+            "a"
           ],
           "kind": "reported"
         }
@@ -1113,63 +1777,114 @@
       "doi": "10.1039/C2EE23355J",
       "sources": [
         {
-          "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "ong2013_lgps：summary / methods / evidence / protocol_steps"
+          "id": "a",
+          "url": "https://doi.org/10.1039/C2EE23355J",
+          "scope": "article",
+          "locator": "PDF pp.1–2 Abstract/Introduction; pp.3–5 phase and electrochemical methods; pp.6–9 results"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "同时评估Li10±1MP2X12家族的相稳定性、电化学稳定性和离子电导。",
+            "text": "用第一性原理比较Li10±1MP2X12（M=Ge、Si、Sn、Al、P；X=O、S、Se）的相稳定性、电化学稳定性和Li+电导。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "systems": [
           {
-            "text": "体系包含LGPS及Li10±1MP2X12硫化物/氧化物超离子导体家族。",
+            "text": "核心体系是LGPS型Li10GeP2S12及其阳离子/阴离子替代物，包含有序化Li、Ge/P部分占位和不同晶格参数。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "methods": [
           {
-            "text": "方法结合DFT相图、电化学稳定性分析和AIMD离子输运估计。",
+            "text": "相稳定性采用PBE-GGA总能量和Li–M–P–X计算相图；k点密度下限按500/N（N为原胞原子数）设置。部分占位结构先按静电能筛选30个构型，再做DFT弛豫。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "电化学稳定性结合HSE带隙与开放Li化学势的grand-potential相图；Li扩散由AIMD均方位移得到。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "AIMD采用2 fs步长：100 K初始，1000步（2 ps）升至600–1200 K，NVT/Nosé–Hoover平衡5000步（10 ps），随后40–400 ps扩散采样。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "扩散系数用三维MSD斜率计算，并排除熔化或M–X键断裂的轨迹段。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "论文把高电导与热力学/电化学稳定性放在同一筛选框架，而不是只按单一电导指标排序。",
+            "text": "LGPS被计算为Li–Ge–P–S相图中的亚稳相，并预测低电压被Li还原、高电压脱Li分解；3.6 eV带隙与钝化解释了表观大于5 V窗口。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "LGPS的c方向扩散最快，但AIMD还发现a–b平面通道；Si和Sn等价替代对稳定性和电导影响较小，氧替代物不稳定且电导显著低于硫化物，Se替代仅边际提高电导并牺牲电化学稳定性。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "缩小晶格参数会显著降低Li+电导，而放大晶格的增益较小，作者据此认为S2−尺寸接近该结构框架的最优值。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "limits": [
           {
-            "text": "相稳定和电化学窗口依赖化学势参考与温度；体相稳定性不能直接替代界面反应和循环稳定性。",
+            "text": "grand-potential分析只考虑Li与电极交换的一条反应路径，未覆盖正极非Li元素反应；部分占位的有限构型也不等于完整无序平均。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reading_guide"
           }
         ],
         "reproduction": [
           {
-            "text": "复现时分别画相图、稳定窗口和扩散统计，并注明化学势参考和AIMD采样时间。",
+            "text": "复现相稳定性时保留PBE、k点密度、结构排序和30构型筛选步骤，并独立核查最低DFT构型不必等于最低静电构型。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "复现扩散时沿用2 fs、600–1200 K升温/平衡和40–400 ps采样，报告排除熔化段及MSD拟合窗口。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "比较替代物时同时记录相图分解能、HSE带隙和方向分辨扩散，避免只用单一室温电导排序。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reading_guide"
           }
@@ -1177,11 +1892,20 @@
       },
       "relations": [
         {
-          "subject": "LGPS-family assessment",
-          "predicate": "combines",
-          "object": "phase, electrochemical, and transport criteria",
+          "subject": "anion substitution in LGPS framework",
+          "predicate": "controls",
+          "object": "phase/electrochemical stability and Li conductivity",
           "source_refs": [
-            "d"
+            "a"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "AIMD mean-square displacement",
+          "predicate": "quantifies",
+          "object": "directional Li+ diffusion",
+          "source_refs": [
+            "a"
           ],
           "kind": "reported"
         }
@@ -1192,63 +1916,121 @@
       "doi": "10.1103/physrevmaterials.8.115407",
       "sources": [
         {
-          "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "recent_10_1103_physrevmaterials_8_115407：summary / methods / evidence / protocol_steps"
+          "id": "a",
+          "url": "https://arxiv.org/abs/2407.04126v2",
+          "scope": "article",
+          "locator": "arXiv:2407.04126v2 作者稿（与期刊版本分别引用）；PDF pp.1–4 Abstract/structures; pp.5–9 MTP active learning and MD; pp.10–26 diffusion results"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "比较Li6PS5Cl固态电解质体相与晶界中的原子扩散。",
+            "text": "用主动学习MTP比较Li6PS5Cl有序/无序体相和三类晶界的Li自扩散，并优化晶界结构。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "systems": [
           {
-            "text": "对象是Li6PS5Cl及其晶界模型。",
+            "text": "对象为Li6PS5Cl，包含阴离子有序体相、S/Cl 50%混排体相和Σ3(11̄2)[110]、Σ3(1̄11)[110]、Σ5(001)[001]三种晶界。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "methods": [
           {
-            "text": "采用机器学习原子间势进行原子尺度动力学和扩散分析。",
+            "text": "MTP主动学习从低阶预训练开始，循环进行标准主动学习、DFT标注和逐级提高MTP level；以扩散系数作为质量目标。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "大规模MD在LAMMPS中用验证MTP运行，MSD斜率给出扩散系数，Arrhenius关系拟合温度依赖。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "GB模型含16380–19656原子，垂直晶界方向GB间距大于65 Å；三种GB宽度在600 K约16.7–28.8 Å。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "MD步长2 fs；结构先在600 K、NPT平衡0.2 ns，再在1 ns内淬冷至1 K并做共轭梯度优化。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "最终平衡/扩散模拟使用level-18 MTP（807个拟合参数）；有序体相600 K参考扩散系数约20×10−7 cm2/s。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "出版商记录明确将体相扩散、晶界扩散和机器学习势作为论文主题。",
+            "text": "主动学习得到的扩散系数标准差随MTP level升高而降低；作者以level 18平衡精度和计算成本。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "论文将三类GB与有序/无序体相的扩散系数和机制分开报告，显示GB结构与阴离子无序会改变Li扩散而不能只用理想体相替代。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "DFT与MTP的径向分布函数对比用于验证结构采样，且GB模型训练误差高于体相，提示界面构型更难学习。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "limits": [
           {
-            "text": "晶界扩散依赖晶界取向、缺陷浓度和势的训练覆盖，体相—晶界差异不能脱离这些模型条件解释。",
+            "text": "GB扩散系数对GB取向、宽度、原子数和有限采样敏感；MTP level升高虽降低模型间差异但显著增加计算成本。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reading_guide"
           }
         ],
         "reproduction": [
           {
-            "text": "先获得正文后固定晶界取向、势版本和温度协议，分别计算体相与晶界的MSD和扩散系数。",
+            "text": "先按三种CSL取向和表中原子数/尺寸建模，并明确50% S/Cl交换规则。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "重建600 K退火0.2 ns、1 ns淬冷和2 fs步长流程，再用独立MTP/DFT RDF检查晶界结构。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "对每个MTP level和多个随机训练集重复扩散，报告有限采样与势参数变化的标准差。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reading_guide"
           }
@@ -1256,11 +2038,20 @@
       },
       "relations": [
         {
-          "subject": "Li6PS5Cl grain boundary",
-          "predicate": "is compared with",
-          "object": "bulk Li diffusion",
+          "subject": "active-learning MTP",
+          "predicate": "accelerates",
+          "object": "bulk and grain-boundary Li diffusion simulations",
           "source_refs": [
-            "d"
+            "a"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "GB structure and anion disorder",
+          "predicate": "modulate",
+          "object": "Li self-diffusion in Li6PS5Cl",
+          "source_refs": [
+            "a"
           ],
           "kind": "reported"
         }
@@ -1268,66 +2059,110 @@
     },
     "li2024_phase_field_dendrite": {
       "paper_id": "li2024_phase_field_dendrite",
-      "doi": "10.3866/pku.whxb202305053",
+      "doi": "10.3866/PKU.WHXB202305053",
       "sources": [
         {
-          "id": "d",
-          "url": "https://rua-creeper-233.github.io/battery-evidence-lab/data/papers.json",
-          "scope": "catalog",
-          "locator": "li2024_phase_field_dendrite：summary / methods / evidence / protocol_steps"
+          "id": "a",
+          "url": "https://doi.org/10.3866/PKU.WHXB202305053",
+          "scope": "article",
+          "locator": "PDF pp.1–2 Abstract; pp.3–8 phase-field model/results; pp.10–12 conclusions"
         }
       ],
       "sections": {
         "research_question": [
           {
-            "text": "研究定制电解液或隔膜的各向异性锂离子输运能否抑制枝晶生长。",
+            "text": "用电化学相场模型研究电解质本征、外加电势和隔膜结构诱导的各向异性Li+输运如何改变锂枝晶生长。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "systems": [
           {
-            "text": "对象是锂金属、液态电解质/隔膜和枝晶形貌演化。",
+            "text": "体系是锂金属电沉积、各向异性电解质扩散张量和倾斜层片隔膜；模型比较Dyy/Dxx和隔膜基体倾角。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "methods": [
           {
-            "text": "采用相场模型描述锂沉积与各向异性离子输运，论文记录使用MATLAB。",
+            "text": "作者用自编MATLAB电化学相场代码，将Li+扩散率写成二阶张量并分解为x向Dxx和y向Dyy，联立浓度、电势与界面形貌演化。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "通过改变扩散各向异性比值和隔膜基体倾角，比较界面浓度梯度、枝晶尖端电势梯度、生长速度和短路时间。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "重点算例使用Dyy:Dxx=10:1和隔膜基体倾角arctan(0.5)，并与各向同性/其他倾角进行比较。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "findings": [
           {
-            "text": "摘要将各向异性传输与枝晶抑制建立模型层面的因果联系。",
+            "text": "提高Dyy:Dxx可通过纵向Li+补给和减弱横向“卷入”缓解界面浓度梯度，从而降低枝晶生长驱动力。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "电势诱导的界面快速扩散层可减小枝晶尖端周围电势梯度并使形貌更均匀；较大隔膜矩阵倾角可降低枝晶速度、延长路径和推迟短路。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "作者将Dyy:Dxx=10:1与arctan(0.5)倾角组合作为抑制枝晶的有希望设计。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reported"
           }
         ],
         "limits": [
           {
-            "text": "枝晶形貌对迁移张量、界面能、沉积边界和网格分辨率敏感，参数化结果需与独立实验或尺度分析对照。",
+            "text": "这是二维/相场参数研究，结果依赖扩散张量、界面和电化学方程的设定；文中“有希望”是模型筛选结论，不是已完成电池验证。",
             "source_refs": [
-              "d"
+              "a"
             ],
             "kind": "reading_guide"
           }
         ],
         "reproduction": [
           {
-            "text": "复现应先做各向同性基线，再单独改变迁移张量各向异性并报告网格、时间步和边界条件。",
+            "text": "先复现各向同性基线，再逐一改变Dyy:Dxx并保持其他相场参数不变，输出浓度梯度和枝晶速度。",
             "source_refs": [
-              "d"
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "按文中Dyy:Dxx=10:1和arctan(0.5)重建隔膜算例，记录短路时间和枝晶路径长度。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "将电势诱导扩散层与隔膜倾角效应分开做消融，避免把两种各向异性机制混在同一结论中。",
+            "source_refs": [
+              "a"
             ],
             "kind": "reading_guide"
           }
@@ -1335,11 +2170,20 @@
       },
       "relations": [
         {
-          "subject": "anisotropic Li-ion transport",
-          "predicate": "inhibits",
-          "object": "phase-field dendrite growth",
+          "subject": "anisotropic Li+ diffusion",
+          "predicate": "reduces",
+          "object": "interfacial concentration gradient and dendrite driving force",
           "source_refs": [
-            "d"
+            "a"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "tilted separator matrix",
+          "predicate": "extends",
+          "object": "dendrite-growth pathway and short-circuit time",
+          "source_refs": [
+            "a"
           ],
           "kind": "reported"
         }
@@ -1740,6 +2584,910 @@
           "object": "三层隔膜晶格膨胀",
           "source_refs": [
             "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "collector2024_1021_acsnano_4c04507": {
+      "paper_id": "collector2024_1021_acsnano_4c04507",
+      "doi": "10.1021/acsnano.4c04507",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1021/acsnano.4c04507",
+          "scope": "article",
+          "locator": "PDF pp.1–3 Abstract/Introduction; pp.4–8 interlayer preparation/characterization; pp.9–15 plating, stripping and cell results"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "研究化学预锂化的三维亲锂/疏锂复合中间层能否在无负极锂金属电池中均匀沉积/剥离Li并延长寿命。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "中间层由Ag亲锂组分、Cu疏锂组分和三维多孔碳纤维基体组成，施加在平面Cu集流体上；零过量Li电池直接从正极沉积Li。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "中间层浸泡并直接加热n-butyllithium/hexane溶液形成约10 nm的Li2O、锂羧酸盐、锂碳酸盐和LiH表面涂层；用表面/结构表征与Li plating/stripping测试评价。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "作者比较平面Cu与复合中间层的沉积形貌、界面副反应、应力缓冲和零过量全电池循环。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "预锂化表面涂层厚度约10 nm；复合碳纤维的亲锂–疏锂梯度和多孔结构被用于分散Li离子/电子通量。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "零过量Li电池在1.17 C下循环300次，摘要报告容量衰减可忽略。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "预锂化反应消耗碳纤维杂原子缺陷并形成Li-rich表面化合物，调节中间层离子和电子电导。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "单根碳纤维上的亲锂–疏锂梯度促进均匀Li沉积，多孔骨架缓解沉积应力并降低副反应；作者将这些机制归因于较少的集中沉积和Li损失。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "制备的零过量Li电池在1.17 C下可循环300次且容量几乎不衰减。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "摘要/正文的循环结果属于特定中间层、正极、面容量和电解液组合；“长期”不能直接外推到更高倍率或不同集流体。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "严格记录Ag/Cu比例、碳纤维孔结构、n-butyllithium浓度/浸泡与加热步骤，并用表面化学确认约10 nm涂层。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "将平面Cu对照与中间层样品在相同Li面容量、倍率和电解液下比较沉积形貌、库仑效率及副反应。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "复现全电池时同时报告正极载量、N/P（零过量）、1.17 C定义和300次循环后的容量保持，避免只写“长寿命”。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "prelithiated Ag/Cu-carbon-fiber interlayer",
+          "predicate": "homogenizes",
+          "object": "Li plating/stripping on Cu collector",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "porous composite interlayer",
+          "predicate": "buffers",
+          "object": "stress and interfacial Li loss",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "hohenberg1964_inhomogeneous_electron_gas": {
+      "paper_id": "hohenberg1964_inhomogeneous_electron_gas",
+      "doi": "10.1103/PhysRev.136.B864",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1103/PhysRev.136.B864",
+          "scope": "article",
+          "locator": "PDF pp.1–3 abstract/introduction and exact general formulation; pp.4–8 density expansions"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "把受外势作用的相互作用电子气的基态能量问题改写成密度函数的变分问题。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "体系是外部势 v(r) 中、具有库仑相互作用的电子气；论文一般论证先限定为非简并基态。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "定理使用非简并基态假设，并把密度积分固定为电子数；外势只在加性常数意义下由基态密度确定。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "证明存在与外势无关的普适泛函 F[n]，总能量 E_v[n]=∫v(r)n(r)dr+F[n] 在可实现密度中对真实基态密度取极小。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "对近均匀密度和缓慢变化密度展开 F[n]，系数联系到均匀电子气的相关能与响应函数。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "该论证提供了密度泛函理论的基态能量框架，但没有给出一般体系中 F[n] 的可计算闭式表达。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "非简并条件、可实现密度和基态变分性质是论证边界；梯度展开不能正确描述快速密度振荡或壳层结构。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先选一个固定电子数和外势，检查候选密度满足归一化，再比较能量泛函在密度扰动下是否在参考密度附近降低。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "分别构造近均匀与缓慢变化密度测试，记录何处进入快速振荡并停止套用梯度展开。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "把‘存在普适泛函’与具体交换-相关近似分开记录，不把定理当成数值泛函配方。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "nondegenerate ground-state density",
+          "predicate": "determines up to a constant",
+          "object": "external potential and ground-state problem",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "kohn1965_self_consistent_dft": {
+      "paper_id": "kohn1965_self_consistent_dft",
+      "doi": "10.1103/PhysRev.140.A1133",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1103/PhysRev.140.A1133",
+          "scope": "article",
+          "locator": "PDF pp.1–3 ground-state equations and local approximation; pp.4–6 finite-temperature/spin extensions and appendix"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "在Hohenberg–Kohn密度框架中建立可自洽求解、并近似包含交换与相关效应的方程。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "讨论静态、非均匀相互作用电子气，并扩展到有限温度和自旋磁场情形。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "局域近似把交换-相关能写成均匀电子气每粒子交换-相关能的密度积分；论文指出结果在缓慢变化或高密度极限精确。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "将普适泛函拆为非相互作用动能 T_s[n] 与交换-相关项，再用辅助单粒子方程和密度自洽闭合问题。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "给出与Hartree/Hartree–Fock类比的局域有效势，并讨论短波长密度振荡修正。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "交换-相关均匀电子气化学势作为有效势项进入自洽方程；论文同时明确简单方案一般会因密度变化过快和有限边界而产生误差。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "‘DFT精确’只对应精确泛函；本文局域交换-相关近似并非对任意材料都精确，快速密度变化和边界效应需要额外检验。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先固定离散网格、电子数和外势，交替解辅助单粒子方程与更新密度，直到能量和密度同时收敛。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "用均匀/缓慢变化密度与快速振荡密度两组测试，对照交换-相关近似的适用边界。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "单独记录T_s、Hartree和交换-相关势贡献，避免把有效单粒子轨道能直接解释成总能量或电压。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "local exchange-correlation potential",
+          "predicate": "enters",
+          "object": "self-consistent auxiliary one-particle equations",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "kresse1996_vasp_efficiency": {
+      "paper_id": "kresse1996_vasp_efficiency",
+      "doi": "10.1016/0927-0256(96)00008-0",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1016/0927-0256(96)00008-0",
+          "scope": "article",
+          "locator": "PDF pp.15–18 abstract/introduction; pp.20–35 algorithms, pseudopotentials and benchmark results"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "提高平面波基组下金属和半导体ab initio总能计算的效率，使大体系结构优化和分子动力学可行。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "对象为周期性金属与半导体，方法实现于VASP总能计算程序。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "计算以平面波展开和赝势为基础；效率与截断能、k点采样、电子迭代收敛及体系金属性相关，论文以其基准算例比较。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "论文讨论平面波总能、共轭梯度/残差最小化式电子态优化、超软赝势以及金属占据处理的组合。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "通过结构优化、力和总能基准以及并行实现评估效率，而非把单一计算设置宣称为通用配方。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者报告这些算法和超软赝势能显著降低平面波计算的基组成本，使金属和半导体总能计算更高效。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "效率和精度仍依赖赝势、截断能、k点与电子收敛测试；程序方法论文的基准不能替代目标材料的收敛验证。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "选一个小金属和一个半导体，逐步提高截断能与k点密度，分别报告总能、力和应力变化。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "固定赝势版本和占据/展宽方案，再比较电子迭代收敛阈值对结构优化的影响。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "在电池候选结构上先做端点总能收敛，再把同一收敛标准带入电压或路径计算。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "ultrasoft pseudopotential and plane-wave algorithms",
+          "predicate": "reduce cost of",
+          "object": "periodic-material total-energy calculations",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "henkelman2000_cineb": {
+      "paper_id": "henkelman2000_cineb",
+      "doi": "10.1063/1.1329672",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1063/1.1329672",
+          "scope": "article",
+          "locator": "PDF pp.1–2 introduction/NEB force projection; pp.3–4 CI-NEB and variable springs"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "改进nudged elastic band方法，使最小能量路径上的最高鞍点能够严格收敛。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "示例是CH4/Ir(111)和H2/Si(100)解离吸附，使用平面波DFT能量面。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "路径两端是固定的初态和终态极小点；CI-NEB在普通NEB预弛豫后选最高能图像爬升，示例采用PW91与超软赝势。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "普通NEB只保留真实力的路径垂直分量和弹簧力的路径平行分量；爬升图像反转平行真实力并去除弹簧力。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "按图像能量改变弹簧常数，把分辨率集中到势垒附近。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "CI-NEB在相近计算成本下把最高图像推到鞍点，避免普通NEB对窄势垒插值低估。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "CI-NEB给出鞍点和最小能量路径，不等于扩散系数或完整动力学速率；速率还需过渡态理论假设、频率及温度/熵信息。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先充分弛豫两个端点，再用数个中间图像做普通NEB，确认路径连续后才启用爬升图像。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "增加图像数并比较恒定/可变弹簧常数下的鞍点能量和最大力，而不是只看插值峰值。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "若要报告速率，另行说明过渡态理论、频率和势垒温度假设，不能把NEB势垒直接称为扩散系数。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "climbing image",
+          "predicate": "converges to",
+          "object": "highest saddle point on a minimum-energy path",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "aydinol1997_voltage": {
+      "paper_id": "aydinol1997_voltage",
+      "doi": "10.1103/PhysRevB.56.1354",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1103/PhysRevB.56.1354",
+          "scope": "article",
+          "locator": "PDF pp.1–2 abstract/voltage definition; pp.3–6 computational method; pp.7–12 intercalation-voltage results and limits"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "用第一性原理总能研究锂在金属氧化物和二硫属化物中的嵌入及平均开路电压。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "研究对象包括LixMO2等嵌锂氧化物/二硫属化物，重点比较LiCoO2及相关端点结构。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "计算采用平面波、超软赝势和交换-相关近似；电压由两个锂含量端点与金属Li的Gibbs/总能差求平均值。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "对嵌锂反应Liₓ₁MO₂ + Δx Li → Liₓ₂MO₂，平均电压V̄ = −ΔG/(Δx F)；ΔG按每摩尔化学式计，Δx = x₂ − x₁，F为法拉第常数。计算中以总能差近似反应自由能。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "对候选结构进行原子位置和晶格优化，再比较总能与实验电压趋势。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "论文报告总能方法可得到合理的平均嵌锂电压，并指出计算值与实验存在系统偏差；锂无序使完整V(x)曲线不能仅由少数有序端点总能确定。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "端点平均电压不等于每个组成的电压曲线；中间组成的构型无序、有限温度和稳定相范围需要额外自由能/构型处理。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "为每个候选材料固定x1、x2和金属Li参考态，分别完成结构与电子收敛后再计算端点能差。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "同时列出端点组成、反应式、电子转移数和单位换算，避免把总能差直接当电压。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "若要画V(x)，为中间组成显式枚举有序构型或建立自由能模型，并把其假设与端点平均值分开报告。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "endpoint reaction free-energy difference",
+          "predicate": "determines",
+          "object": "average intercalation voltage between x1 and x2",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "ceder1998_cathode_design": {
+      "paper_id": "ceder1998_cathode_design",
+      "doi": "10.1038/33647",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1038/33647",
+          "scope": "article",
+          "locator": "PDF pp.1–2 abstract/introduction and calculations; p.2 experimental validation; p.3 references"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "用第一性原理计算预筛选可逆嵌锂正极，降低经验搜索材料组成的成本。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "研究LiCoO2、LiAlO2及LiAlyCo1−yO2固溶体，关注电压、可逆容量和结构稳定性。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "计算使用超软赝势总能；实验样品为R3̅m结构的LiAlyCo1−yO2，电池采用LiPF6/EC–DEC电解液并在分步充电后平衡测量。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "用Li插入反应三个化合物的能量差计算两组成间平均电位，并检查电荷密度变化解释氧参与电子交换。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          },
+          {
+            "text": "合成Al/Co混合氢氧化物前驱体并制备电池，比较预测电压与平衡开路电压。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者报告Al取代提高预测和实测电压趋势；Li(Co,Al)O2中氧参与电子交换，并通过实验观察到Al含量增加时平衡电压系统升高。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "计算是端点之间平均电压，而实验只覆盖部分组成范围，不能直接作定量逐点比较；高电压电解液稳定性、容量和循环衰减仍限制实用性。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先复现LiCoO2/Al取代体系的端点反应能，并明确平均电压的两个组成端点和电子转移数。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "对预测电压同时检查结构稳定性、电子绝缘性和可达组成，不能只按高电压排序。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "实验对照时匹配充放电组成窗口与平衡时间，避免把部分窗口的OCV直接当作全循环平均电压。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "Al substitution in Li(Co,Al)O2",
+          "predicate": "raises",
+          "object": "intercalation voltage while changing mass/cost",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        },
+        {
+          "subject": "average endpoint voltage calculation",
+          "predicate": "guides",
+          "object": "experimental cathode prescreening",
+          "source_refs": [
+            "a"
+          ],
+          "kind": "reported"
+        }
+      ]
+    },
+    "sep2023_1021_acsami_3c01311": {
+      "paper_id": "sep2023_1021_acsami_3c01311",
+      "doi": "10.1021/acsami.3c01311",
+      "sources": [
+        {
+          "id": "abstract",
+          "url": "https://doi.org/10.1021/acsami.3c01311",
+          "scope": "abstract",
+          "locator": "ACS publisher page, Abstract"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "能否通过隔膜孔表面的功能位点，减弱阴离子自由迁移引起的浓差极化并改善锂沉积？",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "聚乙烯-共-丙烯酸（EAA）隔膜，孔表面羧基构成仿生离子选择性通道，用于锂金属电池。",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "结合隔膜制备与电化学测试，并用分子动力学支持选择性离子输运机制。",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "功能位点是分布在孔表面的羧基；摘要报告的锂离子迁移数最高为0.67。",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者将选择性输运归因于羧基对锂离子脱溶剂化和阴离子固定的协同作用。",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "比较迁移数前，先从方法中确认电解液、测量定义、极化与阻抗处理；迁移数和总电导率分别记录。",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先做商业聚烯烃与EAA隔膜的对照表：孔隙率、孔径、厚度、润湿、迁移数和阻抗。",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "从方法和补充材料提取MD模型、电荷与离子配位定义，再对照羧基附近的离子分布及动力学。",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reading_guide"
+          },
+          {
+            "text": "把模拟机制与电池循环分开核对，并保持电解液及测试条件一致。",
+            "source_refs": [
+              "abstract"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "subject": "EAA孔表面羧基",
+          "predicate": "促进",
+          "object": "锂离子脱溶剂化与阴离子固定",
+          "source_refs": [
+            "abstract"
           ],
           "kind": "reported"
         }

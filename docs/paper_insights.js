@@ -1,7 +1,7 @@
 (function (root) {
   'use strict';
   const SECTION_LABELS = {
-    research_question: '研究问题', systems: '系统与对象', methods: '方法',
+    research_question: '研究问题', systems: '系统与对象', methods: '方法', conditions: '计算与实验条件',
     findings: '主要发现', limits: '局限与边界', reproduction: '复现提示'
   };
   const SECTION_ORDER = Object.keys(SECTION_LABELS);

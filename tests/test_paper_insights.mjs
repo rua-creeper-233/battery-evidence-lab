@@ -9,6 +9,11 @@ const data = {schema_version:1,as_of:'2026-10-25',methodology:{reference_title:'
 assert.ok(api.setData(data));
 const html = api.renderHtml('cai-2024');
 assert.match(html, /&lt;safe&gt;/); assert.match(html, /p\. 2/); assert.equal(api.renderHtml('missing'), '');
+const conditions = structuredClone(data);
+conditions.papers['cai-2024'].sections.conditions = [{text:'A sourced condition',source_refs:['s'],kind:'reported'}];
+api.setData(conditions);
+assert.match(api.renderHtml('cai-2024'), /计算与实验条件/);
+assert.match(api.renderHtml('cai-2024'), /A sourced condition/);
 const malformed = structuredClone(data);
 malformed.papers['cai-2024'].sources[0].locator = '';
 assert.equal(api.normalize(malformed), null);

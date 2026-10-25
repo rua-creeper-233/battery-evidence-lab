@@ -55,7 +55,7 @@ def build_record(row: dict[str, Any]) -> dict[str, Any]:
         "properties": [],
         "tags_zh": tags,
         "summary": row.get("summary", ""),
-        "scope_note": "本条为 DOI/出版社记录核验的结构化元数据；结构化元数据，具体参数、页码和适用边界必须回到出版社正文或补充材料核对。",
+        "scope_note": "结构化元数据。",
         "publication_status": "published",
         "collection": row.get("collection", "core"),
         "difficulty": row.get("difficulty", "进阶"),

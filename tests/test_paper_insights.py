@@ -10,6 +10,12 @@ def good():
 
 class PaperInsightsValidationTests(unittest.TestCase):
     def test_valid(self): self.assertEqual(validator.validate(good()), [])
+    def test_conditions_keep_claim_provenance(self):
+        value = good()
+        value['papers']['cai-2024']['sections']['conditions'] = [{'text':'The reported cell condition.','source_refs':['s1'],'kind':'reported'}]
+        self.assertEqual(validator.validate(value), [])
+        value['papers']['cai-2024']['sections']['conditions'][0]['source_refs'] = ['unknown']
+        self.assertTrue(validator.validate(value))
     def test_unknown_private_field_fails(self):
         value=good(); value["papers"]["cai-2024"]["private_path"]="C:/secret.pdf"; self.assertTrue(validator.validate(value))
     def test_missing_ref_fails(self):

@@ -29,7 +29,9 @@ FORBIDDEN_PATH = re.compile(
 _INSTITUTION_TRACE_SUBJECTS = ("华南" + "师范大学", "华" + "师", "西安" + "交通大学", "西" + "交")
 _INSTITUTION_TRACE_EVENTS = (("机构" + "会话"), ("校内" + "授权"), ("授权" + "下载"))
 _INSTITUTION_TRACE_PATTERN = rf"(?:{'|'.join(map(re.escape, _INSTITUTION_TRACE_SUBJECTS))}).{{0,20}}(?:{'|'.join(map(re.escape, _INSTITUTION_TRACE_EVENTS))})"
+_PERSONAL_LIBRARY_TRACE_PATTERN = "(?:本地" + "尚未保存全文|本机" + "全文可用性|用户已自行" + r"加入\s*Zotero)"
 CONTENT_RULES = (
+    ("personal_library_status", re.compile(_PERSONAL_LIBRARY_TRACE_PATTERN, re.I)),
     ("credential_format", re.compile(r"(?:AKIA[0-9A-Z]{16}|-----BEGIN (?:RSA|OPENSSH|EC|DSA) PRIVATE KEY-----|Bearer\s+(?!test[-_]|example[-_]|placeholder[-_])[A-Za-z0-9._-]{20,}|\bgh[pousr]_[A-Za-z0-9]{20,}|\bgithub_pat_[A-Za-z0-9_]{20,}|\bsk-(?:proj-|ant-)?[A-Za-z0-9_-]{20,})", re.I)),
     ("signed_url", re.compile(r"https?://[^\s\"']+(?:[?&](?:sig|signature|x-amz-signature|token|expires|x-goog-signature)=|drive\.usercontent\.google\.com/download\?id=)[^\s\"']*", re.I)),
     ("zotero_private_key", re.compile(r"zotero://(?:items/|(?:open-pdf|select)/(?:library|groups/\d+)/items/)[A-Z0-9]{8}(?=[/?#\s\"']|$)", re.I)),
@@ -191,6 +193,12 @@ def scan_text(text: str, path: str = "<memory>", *, include_structured_fields: b
             elif isinstance(value, list):
                 for item in value:
                     walk(item, parent_key)
+            elif isinstance(value, str):
+                # JSON may encode Unicode, slashes or identifier characters.
+                # Check the decoded value as well as its serialized text.
+                for kind, rule in CONTENT_RULES:
+                    if rule.search(value) and not any(f.type == kind for f in findings):
+                        findings.append(Finding(path, 1, kind))
 
         for value in values:
             walk(value)

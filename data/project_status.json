@@ -71,7 +71,7 @@
     "train": {
       "rows": 793,
       "exists": true,
-      "sha256": "5ec187c0ca65e447d301c13b7529c56381794cd066df32efff3cd90c2bbde6ab",
+      "sha256": "bbce7f72ca7c5b5b65f798a3499dfb2c0819c65294617899b9bd7ebb9bea9bb6",
       "categories": {
         "comparison": 69,
         "evidence_insufficient": 140,
@@ -84,7 +84,7 @@
     "validation": {
       "rows": 78,
       "exists": true,
-      "sha256": "d7efcdaf0f96965c82ae064df05bbef9319d7ca7aa80955ef8545ff3d0b637ac",
+      "sha256": "c45e7b60de79f4498ca8f056b2b35873773881b8b16176f324835f285efd27e8",
       "categories": {
         "comparison": 7,
         "evidence_insufficient": 14,
@@ -97,7 +97,7 @@
     "test": {
       "rows": 127,
       "exists": true,
-      "sha256": "4df02e19bad31c4abc51923b845037a4428a3c7cab641eb7d18182bad01018de",
+      "sha256": "9d65abc5f9decd5dcc76aef0282d6029ee1d9a2de413e43440b61c47991462ce",
       "categories": {
         "comparison": 11,
         "evidence_insufficient": 22,
@@ -122,6 +122,10 @@
       "workflow": 12
     },
     "reference_papers": 17
+  },
+  "paper_insights": {
+    "cards": 28,
+    "condition_cards": 21
   },
   "training_smoke": null,
   "model_status": "Prepared QA datasets retained; no model retraining performed for this release.",

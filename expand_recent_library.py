@@ -56,7 +56,7 @@ def norm(doi: str) -> str:
 
 def enrich_record(record: dict[str, Any]) -> dict[str, Any]:
     """Attach short, publisher-grounded method descriptions; no numeric guesses."""
-    record["scope_note"] = "本条简述基于出版社元数据或公开摘要；资料范围由 verification.fulltext 记录。具体参数、结果和页码须核对正文与补充材料，不能据元数据补猜。"
+    record["scope_note"] = "结构化元数据。"
     detail = {
         "10.1038/s41524-025-01571-z": {
             "role": "LiTraj 锂离子迁移势垒与轨迹基准；用于检验模型而非只展示训练误差。",

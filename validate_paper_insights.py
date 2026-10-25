@@ -10,7 +10,7 @@ PAPER = {"paper_id", "doi", "sources", "sections", "relations"}
 SOURCE = {"id", "url", "scope", "locator"}
 ITEM = {"text", "source_refs", "kind"}
 REL = {"subject", "predicate", "object", "source_refs", "kind"}
-SECTIONS = {"research_question", "systems", "methods", "findings", "limits", "reproduction"}
+SECTIONS = {"research_question", "systems", "methods", "conditions", "findings", "limits", "reproduction"}
 SCOPES = {"abstract", "article", "author_code", "catalog"}
 DOI = re.compile(r"^10\.\d{4,9}/\S+$", re.I)
 
