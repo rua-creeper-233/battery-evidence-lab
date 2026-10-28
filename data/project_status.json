@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-25",
-  "papers": 247,
-  "recent_2023_onward": 134,
+  "as_of": "2026-10-28",
+  "papers": 256,
+  "recent_2023_onward": 143,
   "publication_years": {
     "1964": 1,
     "1965": 1,
@@ -37,12 +37,12 @@
     "2021": 13,
     "2022": 18,
     "2023": 21,
-    "2024": 39,
-    "2025": 51,
-    "2026": 23
+    "2024": 41,
+    "2025": 56,
+    "2026": 25
   },
   "publication_types": {
-    "Article": 58,
+    "Article": 67,
     "Commentary": 2,
     "Letter": 1,
     "Mini Review": 1,
@@ -58,60 +58,63 @@
   },
   "wos_records": 16,
   "tags": {
-    "DFT": 104,
-    "MD": 77,
+    "DFT": 107,
+    "MD": 84,
     "MS": 8,
     "VASP": 32,
     "方法论文": 69,
     "综述": 30,
     "观点": 5,
-    "进展论文": 178
+    "进展论文": 187
   },
   "datasets": {
     "train": {
-      "rows": 793,
+      "rows": 1323,
       "exists": true,
-      "sha256": "bbce7f72ca7c5b5b65f798a3499dfb2c0819c65294617899b9bd7ebb9bea9bb6",
+      "sha256": "517a83b2d4dbd2412b847cabd46e648f0e7d717fd81c970eafe9218bd095677b",
       "categories": {
-        "comparison": 69,
-        "evidence_insufficient": 140,
-        "factual": 211,
-        "limitation": 140,
-        "source_access": 93,
-        "workflow": 140
+        "comparison": 99,
+        "evidence_insufficient": 200,
+        "factual": 298,
+        "limitation": 200,
+        "paper_insight": 202,
+        "source_access": 124,
+        "workflow": 200
       }
     },
     "validation": {
-      "rows": 78,
+      "rows": 195,
       "exists": true,
-      "sha256": "c45e7b60de79f4498ca8f056b2b35873773881b8b16176f324835f285efd27e8",
+      "sha256": "318fd0bb0f3053212f937a663790d187dbc752605c1c9ff4016661ff626c37d8",
       "categories": {
-        "comparison": 7,
-        "evidence_insufficient": 14,
-        "factual": 19,
-        "limitation": 14,
-        "source_access": 10,
-        "workflow": 14
+        "comparison": 14,
+        "evidence_insufficient": 28,
+        "factual": 39,
+        "limitation": 28,
+        "paper_insight": 41,
+        "source_access": 17,
+        "workflow": 28
       }
     },
     "test": {
-      "rows": 127,
+      "rows": 185,
       "exists": true,
-      "sha256": "9d65abc5f9decd5dcc76aef0282d6029ee1d9a2de413e43440b61c47991462ce",
+      "sha256": "3c9224f2a7e3743193468e9711966f207553e6382548a4e476009afdc5591154",
       "categories": {
-        "comparison": 11,
-        "evidence_insufficient": 22,
-        "factual": 32,
-        "limitation": 22,
-        "source_access": 18,
-        "workflow": 22
+        "comparison": 14,
+        "evidence_insufficient": 28,
+        "factual": 40,
+        "limitation": 28,
+        "paper_insight": 30,
+        "source_access": 17,
+        "workflow": 28
       }
     }
   },
-  "dataset_rows": 998,
+  "dataset_rows": 1703,
   "static_qa": {
-    "catalog_papers": 247,
-    "rows": 988,
+    "catalog_papers": 256,
+    "rows": 1024,
     "evidence_level": "curated_metadata"
   },
   "research_knowledge": {
@@ -124,7 +127,7 @@
     "reference_papers": 17
   },
   "paper_insights": {
-    "cards": 28,
+    "cards": 45,
     "condition_cards": 21
   },
   "training_smoke": null,

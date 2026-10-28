@@ -26,6 +26,14 @@ training/output/
 training/*.safetensors
 training/*.bin
 training/*.gguf
+# Local training/evaluation payloads and source-group manifests never enter
+# the public repository. Generator code, schemas, and documentation remain
+# trackable.
+training/*.jsonl
+training/manifest.json
+training/expanded_manifest.json
+finetune/data/*.jsonl
+finetune/data/manifest.json
 models/
 # The local QLoRA output path is deliberately outside the source tree's
 # evidence data and must never be uploaded with the website.

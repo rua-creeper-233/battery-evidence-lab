@@ -49,9 +49,9 @@ class StaticQATest(unittest.TestCase):
     data = json.loads((ROOT / "data" / "static_qa.json").read_text(encoding="utf-8"))
     papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
     self.assertTrue(build_static_qa.validate(data, papers))
-    self.assertEqual(len(data["entries"]), 247)
-    self.assertEqual(sum(len(e["qas"]) for e in data["entries"]), 988)
-    self.assertEqual(len({e["doi"] for e in data["entries"]}), 247)
+    self.assertEqual(len(data["entries"]), 256)
+    self.assertEqual(sum(len(e["qas"]) for e in data["entries"]), 1024)
+    self.assertEqual(len({e["doi"] for e in data["entries"]}), 256)
     self.assertTrue(all(q["source_urls"] == [f"https://doi.org/{e['doi']}"] for e in data["entries"] for q in e["qas"]))
     self.assertEqual(data["as_of"], "2026-10-25")
 

@@ -1,108 +1,111 @@
-# GitHub Pages＋本地科研服务共享指南
+# Sharing the public site and a local research service
 
-更新：2026-10-21。当前论文数量见 [项目状态](guides/PROJECT_STATUS.md)。公开站点采用新仓库入口；模型推理、上传与全文检索需要本地后端。
+The public site is static. Uploads, local full-text retrieval, keyword extraction, and optional model calls require a backend running on your computer. The backend can be exposed temporarily through an HTTPS tunnel.
 
-## 先分清两部分
+![Sharing boundary: a browser loads public GitHub Pages assets and, only with a temporary key, calls the local backend through an HTTPS tunnel.](static/assets/docs/local-data-boundary.svg)
+
+## Two separate parts
 
 ```text
-访问者浏览器
-├─ 打开固定网址 ──> GitHub Pages（HTML/CSS/JS、精选论文公开元数据）
-└─ 带临时密钥调用 ──> HTTPS Tunnel ──> 你电脑的 127.0.0.1:8765
-                                          ├─ 上传 PDF
-                                          ├─ 全文与关键词索引
-                                          └─ 本地科研问答
+Visitor browser
+├─ fixed URL ───────────────> GitHub Pages
+│                              HTML/CSS/JS and selected public metadata
+└─ temporary key + HTTPS ──> tunnel ──> 127.0.0.1:8765
+                                             ├─ PDF upload
+                                             ├─ full-text and keyword index
+                                             └─ local research answers
 ```
 
-GitHub Pages 是静态托管，不能直接运行 Python。它适合提供固定入口；需要上传、全文检索和关键词提取时，再由浏览器通过 HTTPS 隧道调用你电脑上的服务。
+GitHub Pages cannot run Python. It is suitable for a fixed public entry point. The tunnel is needed only when a browser must call the service on your computer.
 
-固定网页：<https://rua-creeper-233.github.io/battery-evidence-lab/>
+Fixed website: <https://rua-creeper-233.github.io/battery-evidence-lab/>
 
-## 场景一：只让访问者浏览
+## Scenario 1: browse only
 
-直接把固定网页发给访问者即可。你的电脑可以关机，访问者仍能查看 当前精选论文元数据、DOI/WOS 入口和静态规则问答。
+Send the fixed website URL. Your computer may be offline and visitors can still view the selected public metadata, DOI/WOS links, and static rule-based answers.
 
-限制：不能上传论文，不能访问你刚加入的私人文献，也不能使用本地全文检索。
+This mode cannot upload papers, read newly added private literature, or use local full-text retrieval.
 
-## 场景二：临时开放上传与本地检索
+## Scenario 2: temporary upload and local retrieval
 
-最简单的方法是双击项目根目录的 `start-share.bat`。它会打开 GitHub Pages，并调用下面的 PowerShell 共享脚本；窗口必须保持开启。
+Double-click `start-share.bat`, or run the sharing script from the repository root. Keep the terminal open for the whole session.
 
-### 第一次准备
+### First-time setup
 
-1. 安装 Python 依赖：
+Install the Python dependencies:
 
-   ```powershell
-   python -m pip install -r requirements.txt
-   ```
+```powershell
+python -m pip install -r requirements.txt
+```
 
-2. 安装 Cloudflare Tunnel：
+Install Cloudflare Tunnel:
 
-   ```powershell
-   winget install --id Cloudflare.cloudflared
-   ```
+```powershell
+winget install --id Cloudflare.cloudflared
+```
 
-3. 关闭并重新打开 PowerShell，让 `cloudflared` 进入命令搜索路径。
+Close and reopen PowerShell so that `cloudflared` is on the command search path.
 
-### 每次与访问者共享
+### Each sharing session
 
-1. 在项目目录运行：
+1. Run:
 
    ```powershell
    .\start-share.ps1
    ```
 
-   如果 PowerShell 阻止脚本执行，可运行：
+   If PowerShell blocks script execution, use:
 
    ```powershell
    powershell -NoProfile -ExecutionPolicy Bypass -File .\start-share.ps1
    ```
 
-2. 终端先显示一串临时访问密钥，随后显示形如 `https://random-name.trycloudflare.com` 的地址。
-3. 打开固定 GitHub 网页，点击右上角“上传文献”。
-4. 填入隧道地址和临时访问密钥，点击“测试连接”。
-5. 连接成功后选择 PDF；标题、DOI、年份、期刊和作者可以手工补充，也可以留空让程序尝试识别。
-6. 把固定 GitHub 网页、当次隧道地址和当次访问密钥通过可信渠道发给访问者。
-7. 用完后在共享终端按 `Ctrl+C`。隧道、本地服务和访问密钥一起失效。
+2. Copy the temporary access key shown in the terminal and wait for an address such as `https://random-name.trycloudflare.com`.
+3. Open the fixed GitHub Pages site and select **Upload literature**.
+4. Enter the tunnel address and temporary key, then select **Test connection**.
+5. Select a PDF. Title, DOI, year, journal, and authors can be entered manually or left for the program to identify.
+6. Send the fixed site, the current tunnel address, and the current key through a trusted channel.
+7. Press `Ctrl+C` in the sharing terminal when finished. The tunnel, local service, and key then stop working together.
 
-必须满足：你的电脑保持开机、联网，共享终端保持运行。Quick Tunnel 地址每次启动都会变化，适合演示、组会和短期协作，不适合无人值守的长期服务。
+The computer must stay powered on and connected, and the sharing terminal must remain open. A Quick Tunnel address changes each time it starts. It is suitable for a demonstration, group meeting, or short collaboration, not an unattended permanent service.
 
-## 安全边界
+## Security boundary
 
-- 跨域来源只允许 `https://rua-creeper-233.github.io`；
-- 远程 API 请求必须带当次随机访问密钥；
-- 密钥不写入 Git，只保存在当前浏览器标签页；
-- 远程访问永远拿不到 Zotero 条目键和附件键；
-- 远程访问不能下载或打开你电脑里的 PDF；
-- 上传 PDF 和新增文献元数据位于 Git 忽略目录，不会进入 GitHub Pages；
-- 单个上传文件上限为 50 MiB，已有不同 PDF 时不会静默覆盖。
+- Cross-origin requests allow only `https://rua-creeper-233.github.io`.
+- Remote API requests must include the current random access key.
+- The key is not written to Git and stays in the current browser tab.
+- Remote users do not receive Zotero item keys or attachment keys.
+- Remote users cannot download or open PDFs stored on your computer through this interface.
+- Uploaded PDFs and new metadata stay in Git-ignored local paths and are not deployed to GitHub Pages.
+- A single uploaded file is limited to 50 MiB. An existing different PDF is not silently overwritten.
 
-即使有这些限制，也只应把访问密钥发给可信的访问者或组员，并在不用时关闭共享进程。
+Send the access key only to trusted visitors or group members, and stop the sharing process when it is no longer needed.
 
-## 场景三：长期稳定的本地后端地址
+## Scenario 3: a stable backend address
 
-固定 GitHub 网页不需要变化；变化的是 API 地址。若不想每次填写新的 `trycloudflare.com` 地址，需要：
+The fixed GitHub Pages URL can remain unchanged. Only the API address changes. For a stable address:
 
-1. 准备一个由 Cloudflare 管理 DNS 的自有域名；
-2. 创建 named Cloudflare Tunnel；
-3. 把例如 `battery-api.example.com` 路由到 `http://127.0.0.1:8765`；
-4. 让 `cloudflared` 作为 Windows 服务运行；
-5. 在服务前增加 Cloudflare Access，或继续保留本项目的访问密钥；
-6. 仍要保证你的电脑长期在线。
+1. Use a domain whose DNS is managed by Cloudflare.
+2. Create a named Cloudflare Tunnel.
+3. Route a hostname such as `battery-api.example.com` to `http://127.0.0.1:8765`.
+4. Run `cloudflared` as a Windows service.
+5. Add Cloudflare Access, or retain this project's access key.
+6. Keep the computer online for as long as the service is needed.
 
-如果没有自有域名，先使用 Quick Tunnel。不要把 Python 服务直接绑定到公网网卡，也不要在路由器上裸开 8765 端口。
+Without a domain, use a Quick Tunnel. Do not bind the Python service to a public network interface or expose port 8765 directly on a router.
 
-## API 接口
+## API endpoints
 
-- `GET /api/health`：服务状态；
-- `GET /api/capabilities`：上传限制、关键词接口版本和隐私策略；
-- `POST /api/upload`：`multipart/form-data` 上传 PDF；
-- `POST /api/keywords`：传 `text` 或 `paper_id`，返回版本化关键词结果；
-- `POST /api/chat`：调用本地全文检索与回答。
+- `GET /api/health`: service status.
+- `GET /api/capabilities`: upload limits, keyword API version, and privacy policy.
+- `POST /api/upload`: `multipart/form-data` PDF upload.
+- `POST /api/keywords`: send `text` or `paper_id` and receive versioned keywords.
+- `POST /api/chat`: local full-text retrieval and answer generation.
 
-关键词接口当前为 `v1`，提供者为 `builtin-domain-frequency`。以后可以在后端替换为 KeyBERT、LLM 或专门的材料科学模型，网页端无需更改请求路径。
+The keyword interface is currently `v1`, provided by `builtin-domain-frequency`. A later backend can replace it with KeyBERT, an LLM, or a materials-science model without changing the web request path.
 
-## 官方参考
+## Official references
 
-- GitHub Pages 是静态站点托管：<https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages>
-- Cloudflare Quick Tunnel：<https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/>
-- 正式 Cloudflare Tunnel 配置：<https://developers.cloudflare.com/tunnel/setup/>
+- [GitHub Pages: What is GitHub Pages?](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
+- [Cloudflare Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/)
+- [Cloudflare Tunnel setup](https://developers.cloudflare.com/tunnel/setup/)

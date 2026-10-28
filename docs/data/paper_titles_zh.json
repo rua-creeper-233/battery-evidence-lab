@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-25",
+  "as_of": "2026-10-28",
   "notice": "英文原文附中文参考译名；中文原文保留原题、不重复显示同名译文。引用以出版时原题和DOI为准。",
   "papers": {
     "tan2026_pemd": {
@@ -1237,6 +1237,51 @@
       "title": "Atomic‐Scale Tracing of Lithium Trapped in Copper Current Collectors",
       "title_zh": "铜集流体中滞留锂的原子尺度追踪",
       "doi": "10.1002/aenm.71291"
+    },
+    "exp20261028_10_1002_advs_202504997": {
+      "title": "Integrating Molecular Dynamics and Machine Learning for Solvation-Guided Electrolyte Optimization in Lithium Metal Batteries",
+      "title_zh": "分子动力学与机器学习结合的溶剂化引导锂金属电池电解液优化",
+      "doi": "10.1002/advs.202504997"
+    },
+    "exp20261028_10_1038_s42256_025_01173_w": {
+      "title": "A unified predictive and generative solution for liquid electrolyte formulation",
+      "title_zh": "液体电解液配方的统一预测与生成方案",
+      "doi": "10.1038/s42256-025-01173-w"
+    },
+    "exp20261028_10_1039_d4ta00721b": {
+      "title": "Machine-learning assisted high-throughput discovery of solid-state electrolytes for Li-ion batteries",
+      "title_zh": "机器学习辅助的锂离子电池固态电解质高通量发现",
+      "doi": "10.1039/d4ta00721b"
+    },
+    "exp20261028_10_1007_s40843_025_3346_4": {
+      "title": "Accelerated discovery of solid-state battery properties enabled by active learning approaches",
+      "title_zh": "主动学习加速固态电池性质发现",
+      "doi": "10.1007/s40843-025-3346-4"
+    },
+    "exp20261028_10_1016_j_jechem_2025_06_072": {
+      "title": "A large-scale on-the-fly machine learning molecular dynamics simulation to explore lithium metal battery interfaces",
+      "title_zh": "大规模即时机器学习分子动力学探索锂金属电池界面",
+      "doi": "10.1016/j.jechem.2025.06.072"
+    },
+    "exp20261028_10_1063_5_0288380": {
+      "title": "Machine learning-accelerated path integral molecular dynamics simulations of reactive organic electrolytes",
+      "title_zh": "机器学习加速反应性有机电解液路径积分分子动力学",
+      "doi": "10.1063/5.0288380"
+    },
+    "exp20261028_10_1038_s42256_025_01009_7": {
+      "title": "A predictive machine learning force-field framework for liquid electrolyte development",
+      "title_zh": "面向液体电解液开发的预测性机器学习力场框架",
+      "doi": "10.1038/s42256-025-01009-7"
+    },
+    "exp20261028_10_1039_d5dd00508f": {
+      "title": "DBMLFF: linear scaling machine learning force fields via electron density decomposition for molecular electrolytes",
+      "title_zh": "DBMLFF：通过电子密度分解构建分子电解液线性尺度机器学习力场",
+      "doi": "10.1039/d5dd00508f"
+    },
+    "exp20261028_10_1038_s41467_024_47070_5": {
+      "title": "An integrated high-throughput robotic platform and active learning approach for accelerated discovery of optimal electrolyte formulations",
+      "title_zh": "高通量机器人平台与主动学习加速最优电解液配方发现",
+      "doi": "10.1038/s41467-024-47070-5"
     }
   }
 }

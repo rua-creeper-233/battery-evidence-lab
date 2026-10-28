@@ -71,7 +71,7 @@ class HistorySafetyTests(unittest.TestCase):
             {"literature/manifest.json"},
         )
 
-    def test_training_manifest_is_not_forbidden(self):
+    def test_training_manifest_is_forbidden(self):
         root = self.make_repo()
         path = root / "training" / "manifest.json"
         path.parent.mkdir()
@@ -79,8 +79,8 @@ class HistorySafetyTests(unittest.TestCase):
         git(root, "add", ".")
         git(root, "commit", "-m", "training manifest")
         report = history_safety.audit_history(root, baseline=None, candidate="HEAD")
-        self.assertTrue(report["history_clean"])
-        self.assertEqual(report["candidate"]["forbidden_paths"], [])
+        self.assertFalse(report["history_clean"])
+        self.assertEqual(report["candidate"]["forbidden_paths"][0]["path"], "training/manifest.json")
 
     def test_staged_uncommitted_path_does_not_affect_head_inventory(self):
         root = self.make_repo()

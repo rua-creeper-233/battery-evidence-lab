@@ -22,6 +22,8 @@ class PublicationSafetyError(ValueError):
 PUBLIC_ZOTERO_KEYS = {"visibility", "items"}
 FORBIDDEN_PATH = re.compile(
     r"(?:^|/)(?:private|distill|\.codex|\.agents|private_backups|backups|literature/(?:pdfs|text)|models?|outputs?|training/(?:checkpoints|output))(?:/|$)|"
+    r"(?:^|/)training/(?:(?:[^/]+/)*[^/]+\.jsonl|manifest\.json|expanded_manifest\.json)$|"
+    r"(?:^|/)finetune/data/(?:(?:[^/]+/)*[^/]+\.jsonl|manifest\.json)$|"
     r"(?:^|/)(?:local[_-](?:auth|authentication|logs?)|(?:\.?)auth|(?:\.?)logs?)(?:/|$)|"
     r"(?:^|/)\.env(?:[./]|$)|(?:^|/)(?:fulltext_chunks\.jsonl|old_manifest\.json|zotero-links\.local\.json|SECURITY_PRIVACY_AUDIT_[^/]+\.md)$|"
     r"(?:^|/)literature/manifest\.json$|(?:\.(?:pdf|safetensors|gguf|bin|pt|pth|zip|7z|sqlite)(?:-shm|-wal)?$)", re.I

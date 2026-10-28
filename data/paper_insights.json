@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-25",
+  "as_of": "2026-10-28",
   "methodology": {
     "reference_title": "面向AI_for_Science的科技文献数据集体系构建研究——以有机太阳能电池领域为例",
     "reference_url": "https://link.cnki.net/urlid/10.1478.G2.20260303.1619.002",
@@ -3492,6 +3492,1017 @@
           "kind": "reported"
         }
       ]
+    },
+    "sep2022_1016_j_cclet_2022_03_065": {
+      "paper_id": "sep2022_1016_j_cclet_2022_03_065",
+      "doi": "10.1016/j.cclet.2022.03.065",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1016/j.cclet.2022.03.065",
+          "scope": "abstract",
+          "locator": "PDF p.1, Abstract and graphical abstract where present"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "隔膜孔径如何改变局部离子分布与锂沉积形貌？",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "多孔隔膜、电解液与锂沉积界面。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "相场模型把隔膜相纳入电化学总自由能，计算离子重新分布。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "在所研究孔径大于临界晶核的条件下，较密的小孔使电极表面离子浓度更均匀，沉积更平滑。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "此结论有临界晶核尺度条件，不能直接外推为孔径越小越好。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "比较孔径前固定孔隙率、边界电流、网格和初始晶核；分别检查浓度场与沉积形貌。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "sep2024_1016_j_jpowsour_2023_233979": {
+      "paper_id": "sep2024_1016_j_jpowsour_2023_233979",
+      "doi": "10.1016/j.jpowsour.2023.233979",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1016/j.jpowsour.2023.233979",
+          "scope": "abstract",
+          "locator": "PDF p.1, Abstract and graphical abstract where present"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "隔膜变形、电流密度与可逆及不可逆锂沉积如何关联？",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "受机械载荷的隔膜及锂沉积体系。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "结合截面原位光学观察、图像二值化、滴定气相色谱和三维有限元隔膜模型。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者将隔膜微结构变化与电化学场联系，并构建多场耦合下的沉积失效相图。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "图像识别、不可逆锂定量与模型预测是不同证据，应分别报告误差。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先复核孔结构重建和变形响应，再比较相同电流密度与载荷下的沉积结果。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "sep2021_1016_j_jtice_2021_01_031": {
+      "paper_id": "sep2021_1016_j_jtice_2021_01_031",
+      "doi": "10.1016/j.jtice.2021.01.031",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1016/j.jtice.2021.01.031",
+          "scope": "abstract",
+          "locator": "PDF p.1, Abstract and graphical abstract where present"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "干态隔膜测试能否代表浸润电解液后的热学与力学响应？",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "干态与不同电解液浸润的聚烯烃隔膜。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "对照升温条件下干湿隔膜的热收缩和机械性质。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "摘要报告溶剂增强热收缩，浸润态机械性质下降，并讨论不同锂盐参与分解的影响。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "干湿状态不同的强度或收缩率不能直接当成同一条件下的材料排名。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "比较前注明浸润溶剂、锂盐、温度及试样方向，保留干态对照。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "sep2023_1016_j_memsci_2023_121617": {
+      "paper_id": "sep2023_1016_j_memsci_2023_121617",
+      "doi": "10.1016/j.memsci.2023.121617",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1016/j.memsci.2023.121617",
+          "scope": "abstract",
+          "locator": "PDF p.1, Abstract and graphical abstract where present"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "如何同时改善隔膜热稳定性与离子输运以抑制枝晶？",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "磺化共价有机框架与聚芳醚苯并咪唑复合隔膜。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "采用耐热聚合物基体，并利用框架微结构及极性官能团调控离子输运。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者把聚合物热性能与框架对离子传输的调节作为复合隔膜的双重设计机制。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "材料设计机制不能单独确定电池寿命，需结合电解液和电极测试条件。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "将基体、填料比例与隔膜厚度分开控制，再评估热收缩、润湿与电池测试。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "sep2025_1016_j_fub_2025_100064": {
+      "paper_id": "sep2025_1016_j_fub_2025_100064",
+      "doi": "10.1016/j.fub.2025.100064",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1016/j.fub.2025.100064",
+          "scope": "abstract",
+          "locator": "PDF p.1, Abstract and graphical abstract where present"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "隔膜材料级力学测试能否预测电芯受挤压时的失效？",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "聚烯烃与无纺布隔膜以及使用相应隔膜制备的电芯。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "结合两类隔膜材料测试与半球压头电芯挤压测试。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者比较隔膜类型对短路、承载和热失控行为的影响，材料级与电芯级响应均被考察。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "材料试样的力学优势不自动等于整电芯在所有滥用条件下更安全。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "保留材料级和电芯级两层验证，统一荷电状态、试样及加载条件后再比较。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "collector2023_1016_j_mtener_2023_101341": {
+      "paper_id": "collector2023_1016_j_mtener_2023_101341",
+      "doi": "10.1016/j.mtener.2023.101341",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2468606923000977",
+          "scope": "abstract",
+          "locator": "PDF p.1, Abstract and graphical abstract where present"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "三维结构与亲锂表面如何共同调节无负极电池锂沉积？",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "具有亲锂修饰层的三维铜网集流体。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "在三维铜网上热解间苯二酚甲醛树脂，形成含氧缺陷碳与分散铜氧化物位点。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "摘要将亲锂修饰层与三维结构联系到成核过电位降低和更均匀的沉积。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "几何效应与表面化学效应应分开验证，不能只凭最终循环表现归因。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "分别设置平面铜、三维铜与表面修饰三维铜对照，核对沉积容量和电流密度。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "collector2023_1016_j_jallcom_2023_171393": {
+      "paper_id": "collector2023_1016_j_jallcom_2023_171393",
+      "doi": "10.1016/j.jallcom.2023.171393",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0925838823026968",
+          "scope": "abstract",
+          "locator": "PDF p.1, Abstract and graphical abstract where present"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "金预沉积与三维集流体结构如何影响无负极电池？",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "醚系电解液、金预沉积三维铜集流体与磷酸铁锂电极。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "比较金预沉积三维铜与裸二维铜，并考察沉积和电池循环。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者把更均匀沉积与较少电解液分解联系到金预沉积和三维结构对局部电流密度的调节。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "特定醚系电解液条件下的结果不能直接推广到所有无负极电池。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "比较时匹配电解液、正极负载和沉积容量，并用单独的几何与表面修饰对照检查归因。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "collector2024_1016_j_jcis_2024_02_014": {
+      "paper_id": "collector2024_1016_j_jcis_2024_02_014",
+      "doi": "10.1016/j.jcis.2024.02.014",
+      "sources": [
+        {
+          "id": "a",
+          "url": "https://doi.org/10.1016/j.jcis.2024.02.014",
+          "scope": "abstract",
+          "locator": "PDF p.1, Abstract and graphical abstract where present"
+        }
+      ],
+      "sections": {
+        "research_question": [
+          {
+            "text": "梯度亲锂修饰能否调节三维支架中的锂沉积位置？",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "systems": [
+          {
+            "text": "银、锡纳米层选择性修饰的三维铜泡沫。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "通过置换反应修饰铜泡沫，利用银与锡亲锂性差异设计梯度结构。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "图文摘要把梯度修饰与沉积位置控制、支架空间利用及倍率表现联系起来。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "表面亲锂性、梯度方向与实际沉积位置的关系需要形貌证据支持。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "区分均匀修饰与梯度修饰对照，观察支架内部沉积位置，而不只看表面图像。",
+            "source_refs": [
+              "a"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1002_advs_202504997": {
+      "paper_id": "exp20261028_10_1002_advs_202504997",
+      "doi": "10.1002/advs.202504997",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40587841/",
+          "scope": "abstract",
+          "locator": "publisher abstract and section 4.1"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "LiFSI/DEE/LiNFS and 166 salt-solvent electrolyte formulations for lithium-metal batteries",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "high-throughput molecular dynamics; machine learning; descriptor benchmarking; experimental validation",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "将高通量分子动力学、机器学习和实验评价结合，用于锂金属电池混合电解液的溶剂化引导优化。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1038_s42256_025_01173_w": {
+      "paper_id": "exp20261028_10_1038_s42256_025_01173_w",
+      "doi": "10.1038/s42256-025-01173-w",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://www.nature.com/articles/s42256-025-01173-w",
+          "scope": "abstract",
+          "locator": "publisher abstract; article received/accepted/published metadata"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "liquid electrolyte molecular mixtures for lithium batteries",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "physics-informed predictive model; permutation-invariant architecture; inverse generative model; molecular simulation; experimental validation",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "提出同时进行电解液性质预测与配方生成的统一框架，将文献、分子模拟和实验数据用于多条件约束的液体电解液设计。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1039_d4ta00721b": {
+      "paper_id": "exp20261028_10_1039_d4ta00721b",
+      "doi": "10.1039/d4ta00721b",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://materialstheory.org/publication/wang_2024_jmca/wang_2024_jmca.pdf",
+          "scope": "abstract",
+          "locator": "first-page abstract, DOI and screening-workflow description"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "Li-containing inorganic solid-state electrolytes for Li-ion batteries",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "high-throughput DFT/ML-IAP screening; ab initio molecular dynamics; tree-based machine learning; tiered validation workflow",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "使用通用ML-IAP替代部分DFT进行大规模固态电解质筛选，并用分层流程复核可合成性、界面稳定性和Li+电导率。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1007_s40843_025_3346_4": {
+      "paper_id": "exp20261028_10_1007_s40843_025_3346_4",
+      "doi": "10.1007/s40843-025-3346-4",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://www.sciengine.com/parse/pdf/2095-8226/C4BCC78B20A0433F8259910ECD04587F.pdf?attname=C4BCC78B20A0433F8259910ECD04587F.pdf",
+          "scope": "abstract",
+          "locator": "PDF first-page abstract"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "lithium-containing solid-state electrolyte compounds, including Li4.5TiO3.25 and Li2VCl5",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "active learning; high-throughput regression screening; ab initio molecular dynamics; experimental validation",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "用主动学习和多种回归模型进行锂基固态电解质高通量筛选，再用AIMD和实验验证高电导候选。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1016_j_jechem_2025_06_072": {
+      "paper_id": "exp20261028_10_1016_j_jechem_2025_06_072",
+      "doi": "10.1016/j.jechem.2025.06.072",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2095495625005479",
+          "scope": "abstract",
+          "locator": "article abstract and author/DOI metadata"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "lithium-metal anode/electrolyte interfaces",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "on-the-fly machine-learning molecular dynamics; reactive interfacial simulation; large-scale atomistic modeling",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "开发大规模on-the-fly MLMD框架，研究锂金属—电解液界面副反应和电解液分解。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1063_5_0288380": {
+      "paper_id": "exp20261028_10_1063_5_0288380",
+      "doi": "10.1063/5.0288380",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41065153/",
+          "scope": "abstract",
+          "locator": "abstract and DOI/author metadata"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "reactive hydrogen-bonded organic electrolytes",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "DFT-trained machine-learning potentials; path-integral molecular dynamics; reactive electrolyte simulation",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "用DFT训练的机器学习势加速反应性有机电解液的路径积分分子动力学，面向量子核效应与输运机理研究。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1038_s42256_025_01009_7": {
+      "paper_id": "exp20261028_10_1038_s42256_025_01009_7",
+      "doi": "10.1038/s42256-025-01009-7",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://www.nature.com/articles/s42256-025-01009-7",
+          "scope": "abstract",
+          "locator": "publisher abstract and article metadata"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "liquid electrolytes for lithium batteries",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "physics-inspired graph equivariant transformer; machine-learning force field; molecular dynamics; quantum-mechanical training data",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "提出BAMBOO预测性机器学习力场，用于液体锂电电解液的分子动力学、结构和输运性质建模。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1039_d5dd00508f": {
+      "paper_id": "exp20261028_10_1039_d5dd00508f",
+      "doi": "10.1039/d5dd00508f",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://pubs.rsc.org/en/content/articlehtml/2026/dd/d5dd00508f",
+          "scope": "abstract",
+          "locator": "article abstract, author list, article information"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "multi-component molecular electrolytes relevant to battery transport and interfaces",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "electron-density decomposition; linear-scaling machine-learning force field; multi-component electrolyte molecular dynamics",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "提出基于电子密度分解的线性尺度ML力场DBMLFF，用于多组分电解液的大规模MD。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
+    },
+    "exp20261028_10_1038_s41467_024_47070_5": {
+      "paper_id": "exp20261028_10_1038_s41467_024_47070_5",
+      "doi": "10.1038/s41467-024-47070-5",
+      "sources": [
+        {
+          "id": "s",
+          "url": "https://www.nature.com/articles/s41467-024-47070-5",
+          "scope": "abstract",
+          "locator": "article abstract and author/DOI metadata"
+        }
+      ],
+      "sections": {
+        "systems": [
+          {
+            "text": "redox-active organic molecules in organic solvents for redox-flow battery electrolytes",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "methods": [
+          {
+            "text": "high-throughput experimentation; robotic platform; active learning; solubility screening",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "将高通量机器人实验与主动学习结合，针对有机氧化还原液流电池电解液溶解度进行样本高效筛选。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先取得方法与数据说明，核对体系、训练覆盖范围、轨迹独立性和性质定义，再设计小规模验证。",
+            "source_refs": [
+              "s"
+            ],
+            "kind": "reading_guide"
+          }
+        ]
+      },
+      "relations": []
     }
   }
 }

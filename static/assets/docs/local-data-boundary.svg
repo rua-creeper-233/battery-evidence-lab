@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">Battery Evidence Lab local data boundary</title>
+  <desc id="desc">Public static assets can be deployed. Private PDFs, Zotero data, credentials, access records, and model weights remain local. A temporary HTTPS tunnel exposes only selected API operations with a temporary key.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3b5875" /></marker>
+    <style>
+      .box{stroke:#23384d;stroke-width:2;rx:16;}
+      .head{font:700 22px system-ui,sans-serif;fill:#17324d}
+      .body{font:16px system-ui,sans-serif;fill:#294257}
+      .note{font:14px system-ui,sans-serif;fill:#486075}
+      .line{stroke:#3b5875;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#bd5b4f;stroke-width:3;stroke-dasharray:9 8;fill:none}
+    </style>
+  </defs>
+  <rect width="1100" height="560" fill="#f7fafc" />
+  <text x="48" y="52" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Public and local data boundary</text>
+  <text x="48" y="80" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">The public site is static. Sharing is an explicit, temporary path to selected local API operations.</text>
+
+  <rect x="48" y="130" width="300" height="250" class="box" fill="#e8f2fb" stroke="#23384d" stroke-width="2" rx="16" />
+  <text x="78" y="170" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Public package</text>
+  <text x="78" y="210" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Static pages and assets</text>
+  <text x="78" y="238" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Selected paper metadata</text>
+  <text x="78" y="266" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Generators and schemas</text>
+  <text x="78" y="294" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Public examples</text>
+  <text x="78" y="340" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">May be deployed to GitHub Pages</text>
+
+  <rect x="400" y="130" width="300" height="250" class="box" fill="#fff4df" stroke="#23384d" stroke-width="2" rx="16" />
+  <text x="430" y="170" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Controlled bridge</text>
+  <text x="430" y="210" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">HTTPS tunnel</text>
+  <text x="430" y="238" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Temporary access key</text>
+  <text x="430" y="266" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Restricted Origin</text>
+  <text x="430" y="294" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Selected API routes</text>
+  <text x="430" y="340" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">Stop the process to revoke access</text>
+
+  <rect x="752" y="130" width="300" height="250" class="box" fill="#fceceb" stroke="#23384d" stroke-width="2" rx="16" />
+  <text x="782" y="170" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Local-only material</text>
+  <text x="782" y="210" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">PDFs and full-text indexes</text>
+  <text x="782" y="238" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Private Zotero data</text>
+  <text x="782" y="266" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Credentials and access records</text>
+  <text x="782" y="294" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Model weights and manifests</text>
+  <text x="782" y="340" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">Never publish in the public package</text>
+
+  <path d="M348 255 H394" class="line" stroke="#3b5875" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+  <path d="M700 255 H746" class="line" stroke="#3b5875" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+  <path d="M348 410 H752" class="dash" stroke="#bd5b4f" stroke-width="3" stroke-dasharray="9 8" fill="none" />
+  <text x="386" y="444" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">No automatic path from public assets to local files</text>
+</svg>

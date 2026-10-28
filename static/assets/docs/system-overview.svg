@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">Battery Evidence Lab system overview</title>
+  <desc id="desc">A static browser can work alone. An optional local backend retrieves local evidence and can call an optional language model. QLoRA training is a separate local workflow.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3b5875" /></marker>
+    <style>
+      .box{stroke:#23384d;stroke-width:2;rx:16;}
+      .head{font:700 22px system-ui,sans-serif;fill:#17324d}
+      .body{font:16px system-ui,sans-serif;fill:#294257}
+      .note{font:14px system-ui,sans-serif;fill:#486075}
+      .line{stroke:#3b5875;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1100" height="560" fill="#f7fafc" />
+  <text x="48" y="52" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Battery Evidence Lab: four layers</text>
+  <text x="48" y="80" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">Static browsing is independent. Retrieval, model calls, and QLoRA remain optional local workflows.</text>
+
+  <rect x="48" y="125" width="300" height="170" class="box" fill="#e8f2fb" stroke="#23384d" stroke-width="2" rx="16" />
+  <text x="76" y="165" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Static browser</text>
+  <text x="76" y="202" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Public HTML, CSS, JS</text>
+  <text x="76" y="230" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Curated metadata</text>
+  <text x="76" y="258" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Rule-based answers</text>
+
+  <rect x="400" y="125" width="300" height="170" class="box" fill="#e8f5ed" stroke="#23384d" stroke-width="2" rx="16" />
+  <text x="428" y="165" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Local backend</text>
+  <text x="428" y="202" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Metadata and PDF index</text>
+  <text x="428" y="230" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Retrieval and uploads</text>
+  <text x="428" y="258" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Restricted agent tools</text>
+
+  <rect x="752" y="125" width="300" height="170" class="box" fill="#fff4df" stroke="#23384d" stroke-width="2" rx="16" />
+  <text x="780" y="165" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Optional LLM</text>
+  <text x="780" y="202" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">OpenAI-compatible endpoint</text>
+  <text x="780" y="230" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Receives selected evidence</text>
+  <text x="780" y="258" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Citation checks can fall back</text>
+
+  <path d="M348 210 H394" class="line" stroke="#3b5875" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+  <path d="M700 210 H746" class="line" stroke="#3b5875" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+  <text x="428" y="113" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">Optional connection</text>
+  <text x="780" y="113" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">Optional model call</text>
+
+  <rect x="240" y="370" width="620" height="125" class="box" fill="#f0ebfa" stroke="#23384d" stroke-width="2" rx="16" />
+  <text x="270" y="412" class="head" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">Separate QLoRA workflow</text>
+  <text x="270" y="446" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Train response format using cited, source-separated examples.</text>
+  <text x="270" y="474" class="body" font-family="Arial, sans-serif" font-size="15" fill="#294257">Keep train, validation and test payloads on the local machine.</text>
+  <path d="M550 305 V364" class="line" stroke="#3b5875" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+  <text x="570" y="342" class="note" font-family="Arial, sans-serif" font-size="12" fill="#486075">local data only</text>
+</svg>

@@ -19161,5 +19161,499 @@
         "family": "Bresser"
       }
     ]
+  },
+  {
+    "id": "exp20261028_10_1002_advs_202504997",
+    "title": "Integrating Molecular Dynamics and Machine Learning for Solvation-Guided Electrolyte Optimization in Lithium Metal Batteries",
+    "authors": [
+      "Xiwang Chang",
+      "Yang Yang",
+      "Weiheng Xu",
+      "Zhe Wang",
+      "Wenhan Li",
+      "Hongda Gao",
+      "Dubin Huang",
+      "Aijun Li",
+      "Yaofeng Zhu"
+    ],
+    "year": 2025,
+    "journal": "Advanced Science",
+    "document_type": "Article",
+    "doi": "10.1002/advs.202504997",
+    "url": "https://doi.org/10.1002/advs.202504997",
+    "role": "将高通量分子动力学、机器学习和实验评价结合，用于锂金属电池混合电解液的溶剂化引导优化。",
+    "systems": [
+      "LiFSI/DEE/LiNFS and 166 salt-solvent electrolyte formulations for lithium-metal batteries"
+    ],
+    "methods": [
+      "high-throughput molecular dynamics",
+      "machine learning",
+      "descriptor benchmarking",
+      "experimental validation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "将高通量分子动力学、机器学习和实验评价结合，用于锂金属电池混合电解液的溶剂化引导优化。",
+    "scope_note": "已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "将高通量分子动力学、机器学习和实验评价结合，用于锂金属电池混合电解液的溶剂化引导优化。",
+        "basis": "https://pubmed.ncbi.nlm.nih.gov/40587841/",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/40587841/"
+      ]
+    }
+  },
+  {
+    "id": "exp20261028_10_1038_s42256_025_01173_w",
+    "title": "A unified predictive and generative solution for liquid electrolyte formulation",
+    "authors": [
+      "Zhenze Yang",
+      "Yifan Wu",
+      "Xu Han",
+      "Ziqing Zhang",
+      "Haoen Lai",
+      "Zhenliang Mu",
+      "Tianze Zheng",
+      "Siyuan Liu",
+      "Zhichen Pu",
+      "Zhi Wang",
+      "Zhiao Yu",
+      "Sheng Gong",
+      "Wen Yan"
+    ],
+    "year": 2026,
+    "journal": "Nature Machine Intelligence",
+    "document_type": "Article",
+    "doi": "10.1038/s42256-025-01173-w",
+    "url": "https://doi.org/10.1038/s42256-025-01173-w",
+    "role": "提出同时进行电解液性质预测与配方生成的统一框架，将文献、分子模拟和实验数据用于多条件约束的液体电解液设计。",
+    "systems": [
+      "liquid electrolyte molecular mixtures for lithium batteries"
+    ],
+    "methods": [
+      "physics-informed predictive model",
+      "permutation-invariant architecture",
+      "inverse generative model",
+      "molecular simulation",
+      "experimental validation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "提出同时进行电解液性质预测与配方生成的统一框架，将文献、分子模拟和实验数据用于多条件约束的液体电解液设计。",
+    "scope_note": "已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "提出同时进行电解液性质预测与配方生成的统一框架，将文献、分子模拟和实验数据用于多条件约束的液体电解液设计。",
+        "basis": "https://www.nature.com/articles/s42256-025-01173-w",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://www.nature.com/articles/s42256-025-01173-w"
+      ]
+    }
+  },
+  {
+    "id": "exp20261028_10_1039_d4ta00721b",
+    "title": "Machine-learning assisted high-throughput discovery of solid-state electrolytes for Li-ion batteries",
+    "authors": [
+      "Xingyu Guo",
+      "Zhenbin Wang",
+      "Ji-Hui Yang",
+      "Xin-Gao Gong"
+    ],
+    "year": 2024,
+    "journal": "Journal of Materials Chemistry A",
+    "document_type": "Article",
+    "doi": "10.1039/d4ta00721b",
+    "url": "https://doi.org/10.1039/d4ta00721b",
+    "role": "使用通用ML-IAP替代部分DFT进行大规模固态电解质筛选，并用分层流程复核可合成性、界面稳定性和Li+电导率。",
+    "systems": [
+      "Li-containing inorganic solid-state electrolytes for Li-ion batteries"
+    ],
+    "methods": [
+      "high-throughput DFT/ML-IAP screening",
+      "ab initio molecular dynamics",
+      "tree-based machine learning",
+      "tiered validation workflow"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "使用通用ML-IAP替代部分DFT进行大规模固态电解质筛选，并用分层流程复核可合成性、界面稳定性和Li+电导率。",
+    "scope_note": "已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "使用通用ML-IAP替代部分DFT进行大规模固态电解质筛选，并用分层流程复核可合成性、界面稳定性和Li+电导率。",
+        "basis": "https://materialstheory.org/publication/wang_2024_jmca/wang_2024_jmca.pdf",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://materialstheory.org/publication/wang_2024_jmca/wang_2024_jmca.pdf"
+      ]
+    }
+  },
+  {
+    "id": "exp20261028_10_1007_s40843_025_3346_4",
+    "title": "Accelerated discovery of solid-state battery properties enabled by active learning approaches",
+    "authors": [
+      "Mohamed Ait Tamerd",
+      "Xiaoting Lin",
+      "Ji'an Wang",
+      "Limin Cai",
+      "Abdelilah Lahmar",
+      "Jiwei Ma",
+      "Menghao Yang"
+    ],
+    "year": 2025,
+    "journal": "Science China Materials",
+    "document_type": "Article",
+    "doi": "10.1007/s40843-025-3346-4",
+    "url": "https://doi.org/10.1007/s40843-025-3346-4",
+    "role": "用主动学习和多种回归模型进行锂基固态电解质高通量筛选，再用AIMD和实验验证高电导候选。",
+    "systems": [
+      "lithium-containing solid-state electrolyte compounds, including Li4.5TiO3.25 and Li2VCl5"
+    ],
+    "methods": [
+      "active learning",
+      "high-throughput regression screening",
+      "ab initio molecular dynamics",
+      "experimental validation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "用主动学习和多种回归模型进行锂基固态电解质高通量筛选，再用AIMD和实验验证高电导候选。",
+    "scope_note": "已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "用主动学习和多种回归模型进行锂基固态电解质高通量筛选，再用AIMD和实验验证高电导候选。",
+        "basis": "https://www.sciengine.com/parse/pdf/2095-8226/C4BCC78B20A0433F8259910ECD04587F.pdf?attname=C4BCC78B20A0433F8259910ECD04587F.pdf",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://www.sciengine.com/parse/pdf/2095-8226/C4BCC78B20A0433F8259910ECD04587F.pdf?attname=C4BCC78B20A0433F8259910ECD04587F.pdf"
+      ]
+    }
+  },
+  {
+    "id": "exp20261028_10_1016_j_jechem_2025_06_072",
+    "title": "A large-scale on-the-fly machine learning molecular dynamics simulation to explore lithium metal battery interfaces",
+    "authors": [
+      "Yi-Lin Niu",
+      "Xiang Chen",
+      "Tian-Chen Zhang",
+      "Yu-Chen Gao",
+      "Yao-Peng Chen",
+      "Nan Yao",
+      "Zhong-Heng Fu",
+      "Qiang Zhang"
+    ],
+    "year": 2025,
+    "journal": "Journal of Energy Chemistry",
+    "document_type": "Article",
+    "doi": "10.1016/j.jechem.2025.06.072",
+    "url": "https://doi.org/10.1016/j.jechem.2025.06.072",
+    "role": "开发大规模on-the-fly MLMD框架，研究锂金属—电解液界面副反应和电解液分解。",
+    "systems": [
+      "lithium-metal anode/electrolyte interfaces"
+    ],
+    "methods": [
+      "on-the-fly machine-learning molecular dynamics",
+      "reactive interfacial simulation",
+      "large-scale atomistic modeling"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "开发大规模on-the-fly MLMD框架，研究锂金属—电解液界面副反应和电解液分解。",
+    "scope_note": "已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "开发大规模on-the-fly MLMD框架，研究锂金属—电解液界面副反应和电解液分解。",
+        "basis": "https://www.sciencedirect.com/science/article/pii/S2095495625005479",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S2095495625005479"
+      ]
+    }
+  },
+  {
+    "id": "exp20261028_10_1063_5_0288380",
+    "title": "Machine learning-accelerated path integral molecular dynamics simulations of reactive organic electrolytes",
+    "authors": [
+      "Michael S. Chen",
+      "Alan Robledo",
+      "Christian Schäfer",
+      "Katherine Y. Han",
+      "Cecilia Clementi",
+      "Mark E. Tuckerman"
+    ],
+    "year": 2025,
+    "journal": "The Journal of Chemical Physics",
+    "document_type": "Article",
+    "doi": "10.1063/5.0288380",
+    "url": "https://doi.org/10.1063/5.0288380",
+    "role": "用DFT训练的机器学习势加速反应性有机电解液的路径积分分子动力学，面向量子核效应与输运机理研究。",
+    "systems": [
+      "reactive hydrogen-bonded organic electrolytes"
+    ],
+    "methods": [
+      "DFT-trained machine-learning potentials",
+      "path-integral molecular dynamics",
+      "reactive electrolyte simulation"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "用DFT训练的机器学习势加速反应性有机电解液的路径积分分子动力学，面向量子核效应与输运机理研究。",
+    "scope_note": "方法迁移参考：原文研究氢键有机电解液中的质子输运，不能直接当作锂离子电池的验证结果。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "用DFT训练的机器学习势加速反应性有机电解液的路径积分分子动力学，面向量子核效应与输运机理研究。",
+        "basis": "https://pubmed.ncbi.nlm.nih.gov/41065153/",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/41065153/"
+      ]
+    }
+  },
+  {
+    "id": "exp20261028_10_1038_s42256_025_01009_7",
+    "title": "A predictive machine learning force-field framework for liquid electrolyte development",
+    "authors": [
+      "Sheng Gong",
+      "Yumin Zhang",
+      "Zhenliang Mu",
+      "Zhichen Pu",
+      "Hongyi Wang",
+      "Xu Han",
+      "Zhiao Yu",
+      "Mengyi Chen",
+      "Tianze Zheng",
+      "Zhi Wang",
+      "Lifei Chen",
+      "Zhenze Yang",
+      "Xiaojie Wu",
+      "Shaochen Shi",
+      "Weihao Gao",
+      "Wen Yan",
+      "Liang Xiang"
+    ],
+    "year": 2025,
+    "journal": "Nature Machine Intelligence",
+    "document_type": "Article",
+    "doi": "10.1038/s42256-025-01009-7",
+    "url": "https://doi.org/10.1038/s42256-025-01009-7",
+    "role": "提出BAMBOO预测性机器学习力场，用于液体锂电电解液的分子动力学、结构和输运性质建模。",
+    "systems": [
+      "liquid electrolytes for lithium batteries"
+    ],
+    "methods": [
+      "physics-inspired graph equivariant transformer",
+      "machine-learning force field",
+      "molecular dynamics",
+      "quantum-mechanical training data"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "提出BAMBOO预测性机器学习力场，用于液体锂电电解液的分子动力学、结构和输运性质建模。",
+    "scope_note": "已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "提出BAMBOO预测性机器学习力场，用于液体锂电电解液的分子动力学、结构和输运性质建模。",
+        "basis": "https://www.nature.com/articles/s42256-025-01009-7",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://www.nature.com/articles/s42256-025-01009-7"
+      ]
+    }
+  },
+  {
+    "id": "exp20261028_10_1039_d5dd00508f",
+    "title": "DBMLFF: linear scaling machine learning force fields via electron density decomposition for molecular electrolytes",
+    "authors": [
+      "Jie Shen",
+      "Chenyu Wang",
+      "Libin Chen",
+      "Shaoqin Jiang",
+      "Jianhui Chen",
+      "Cuilian Wen",
+      "Bo Wu",
+      "Baisheng Sa",
+      "Lin-Wang Wang"
+    ],
+    "year": 2026,
+    "journal": "Digital Discovery",
+    "document_type": "Article",
+    "doi": "10.1039/d5dd00508f",
+    "url": "https://doi.org/10.1039/d5dd00508f",
+    "role": "提出基于电子密度分解的线性尺度ML力场DBMLFF，用于多组分电解液的大规模MD。",
+    "systems": [
+      "multi-component molecular electrolytes relevant to battery transport and interfaces"
+    ],
+    "methods": [
+      "electron-density decomposition",
+      "linear-scaling machine-learning force field",
+      "multi-component electrolyte molecular dynamics"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "提出基于电子密度分解的线性尺度ML力场DBMLFF，用于多组分电解液的大规模MD。",
+    "scope_note": "已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "提出基于电子密度分解的线性尺度ML力场DBMLFF，用于多组分电解液的大规模MD。",
+        "basis": "https://pubs.rsc.org/en/content/articlehtml/2026/dd/d5dd00508f",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://pubs.rsc.org/en/content/articlehtml/2026/dd/d5dd00508f"
+      ]
+    }
+  },
+  {
+    "id": "exp20261028_10_1038_s41467_024_47070_5",
+    "title": "An integrated high-throughput robotic platform and active learning approach for accelerated discovery of optimal electrolyte formulations",
+    "authors": [
+      "Juran Noh",
+      "Hieu A. Doan",
+      "Heather Job",
+      "Lily A. Robertson",
+      "Lu Zhang",
+      "Rajeev S. Assary",
+      "Karl Mueller",
+      "Vijayakumar Murugesan",
+      "Yangang Liang"
+    ],
+    "year": 2024,
+    "journal": "Nature Communications",
+    "document_type": "Article",
+    "doi": "10.1038/s41467-024-47070-5",
+    "url": "https://doi.org/10.1038/s41467-024-47070-5",
+    "role": "将高通量机器人实验与主动学习结合，针对有机氧化还原液流电池电解液溶解度进行样本高效筛选。",
+    "systems": [
+      "redox-active organic molecules in organic solvents for redox-flow battery electrolytes"
+    ],
+    "methods": [
+      "high-throughput experimentation",
+      "robotic platform",
+      "active learning",
+      "solubility screening"
+    ],
+    "properties": [],
+    "tags_zh": [
+      "AI4S",
+      "近期论文"
+    ],
+    "summary": "将高通量机器人实验与主动学习结合，针对有机氧化还原液流电池电解液溶解度进行样本高效筛选。",
+    "scope_note": "已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+    "collection": "frontier",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "将高通量机器人实验与主动学习结合，针对有机氧化还原液流电池电解液溶解度进行样本高效筛选。",
+        "basis": "https://www.nature.com/articles/s41467-024-47070-5",
+        "strength": "moderate"
+      }
+    ],
+    "resources": [],
+    "verification": {
+      "doi": "verified_primary_2026-10-28",
+      "publisher": "verified_primary_2026-10-28",
+      "wos": "not_checked",
+      "sources": [
+        "https://www.nature.com/articles/s41467-024-47070-5"
+      ]
+    }
   }
 ]

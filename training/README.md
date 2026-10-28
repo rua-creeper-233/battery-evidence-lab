@@ -1,35 +1,49 @@
-# 本地问答小模型数据集
+# Local question-answering model data
 
-更新：2026-10-08。新增论文使用 `expand_dataset.py` 生成三路数据；计数、来源、哈希见 `expanded_manifest.json`、`../finetune/data/manifest.json` 和 [项目状态](../guides/PROJECT_STATUS.md)。旧二路数据保留为历史回归材料，不混入新版训练或测试。
+Updated 2026-10-28. The current generator, `expand_dataset.py`, creates train, validation, and test data from structured paper records and optional curated paper-insight cards. Counts, sources, hashes, and format version are recorded in `training/expanded_manifest.json`, `finetune/data/manifest.json`, and [project status](../guides/PROJECT_STATUS.md). The former two-way dataset remains historical regression material and must not be mixed with the current training or test split.
 
-这里是给个人电脑使用的、可审阅的电池材料计算问答数据层。它不是把论文全文塞进模型：生成器只读取 `data/papers.json`、`data/answer_guidance.json`、`data/answer_regression.json` 和 `data/search_training.json` 的结构化字段，不读取 PDF 或 `fulltext_chunks.jsonl`，因此不会把受版权保护的正文复制进训练集。
+This is a reviewable data layer for a personal computer. It does not put paper full text into the model. The generator reads structured fields from `data/papers.json`, `data/answer_guidance.json`, `data/answer_regression.json`, and `data/search_training.json`; it does not read PDFs or `fulltext_chunks.jsonl`.
 
-## 生成与检查
+## Generate and validate
 
-在仓库根目录运行：
+Run these commands from the repository root:
 
 ```powershell
-python training/expand_dataset.py
+python training/expand_dataset.py --insights data/paper_insights.json
 python training/validate_dataset.py --train finetune/data/train.jsonl --eval finetune/data/validation.jsonl --test finetune/data/test.jsonl
 ```
 
-脚本按规范化 DOI/来源论文组成连通分组，用 SHA-256 确定训练、验证、测试归属，目标约 80/10/10；整组分配使实际比例浮动。同一篇论文及其比较题不会跨分组。样本含 `messages`、`provenance`、DOI/URL、任务类别、引用要求和 `split`。引用题含结构化证据包和 `[P1]` 编号。验证器检查来源、DOI、重复答案和引用映射。输出为 `expanded_train.jsonl`、`expanded_eval.jsonl`、`expanded_test.jsonl`，同步到 `finetune/data/`。
+The optional `--insights data/paper_insights.json` input supplies curated, structured paper-insight cards. The generator uses their recorded sections and evidence references, preserves the DOI, and labels `reading_guide` entries as workflow guidance rather than reported findings. It does not copy PDF or full-text passages.
 
-四类训练文件分别是：事实问答 `qa_factual.jsonl`、复现/工作流 `qa_workflow.jsonl`、证据不足时的拒答与边界判断 `qa_refusal.jsonl`、检索—核验工具轨迹 `tool_traces.jsonl`。回答内容只来自结构化字段；没有页码时不会虚构页码。
+Rows are assigned by connected DOI/source-paper groups using SHA-256, with target proportions of about 80/10/10. Actual proportions can vary because whole groups are assigned together. A paper and its comparison questions cannot cross splits. Rows include `messages`, `provenance`, DOI or URL, task category, citation requirements, and `split`. Citation questions include structured evidence packets and `[P1]` identifiers. The validator checks sources, DOI values, duplicate answers, and citation mappings.
 
-## 怎样真正做一个“只用于问答”的本地模型
+The generated files are `expanded_train.jsonl`, `expanded_eval.jsonl`, and `expanded_test.jsonl`, with synchronized copies under `finetune/data/`. The four question families are factual Q&A (`qa_factual.jsonl`), reproduction and workflow (`qa_workflow.jsonl`), refusal and boundary judgments (`qa_refusal.jsonl`), and retrieval-validation tool traces (`tool_traces.jsonl`). Answers use structured fields; when no page number is available, the generator does not invent one.
 
-推荐先做 RAG，再考虑微调。用一个本地向量库保存论文标题、摘要、人工证据和允许使用的笔记；用户问题先检索，再把检索片段交给小模型回答，并强制返回 DOI/来源。这样更新论文只需更新索引，不必重新训练，也更适合本项目的版权和可追溯要求。`tool_traces.jsonl` 可用于测试检索—核验流程，不应被误解为真实工具执行日志。
+## Publication and provenance policy
 
-若已有 8–12 GB 显存，可在脱敏后的 `qa_*.jsonl` 上尝试 1B–3B 指令模型的 LoRA/QLoRA；16–24 GB 显存更适合 3B–7B 的 4-bit QLoRA。使用 Hugging Face Transformers、PEFT、TRL、bitsandbytes 或同类工具时，先固定模型许可证、版本和随机种子。训练集只教“如何回答、何时引用、何时拒答”，不要把事实库当作永久知识；事实更新仍走 RAG。没有合适显卡时，可只运行 RAG 或用 CPU 做小规模评估，不要把本机训练能力和模型质量混为一谈。
+The real train, validation, and test payloads remain local because their rows can carry provenance and source-group information that requires a rights and release review. Keep the corresponding source-group manifests, split manifests, and local provenance records with the local data. This policy also prevents blind test contamination and preserves the ability to audit which DOI-connected records were assigned together.
 
-## 最小评估清单
+This does not mean that every training dataset is inherently unpublishable. After explicit review, the repository may publish the generator, schema, aggregate status, and independently authored examples that do not expose restricted rows, private provenance, access records, or unpublished material. Public code and examples must still be checked against the repository publication rules.
 
-1. 只用 `finetune/data/train.jsonl` 拟合，验证集用于开发选择；测试集留到方案固定后评估。
-2. 检查 DOI 是否被正确引用、未知问题是否拒答、DFT/MD/力场边界是否保持。
-3. 记录 exact match/关键词命中、引用准确率、拒答准确率和人工抽样结果；不能只看训练 loss。
-4. 对每次数据或提示词改动保存 manifest、模型版本、评估结果和错误样例。
+## Building a local QLoRA model
 
-## 隐私与安全
+Start with RAG before fine-tuning. A local vector store can index paper titles, abstracts, authored evidence, and permitted notes. Retrieve relevant material for each question, then ask a small model to answer with DOI or source references. Updating the index then does not require retraining. `tool_traces.jsonl` can test the retrieval-validation workflow; it is not a record of real tool execution.
 
-所有生成步骤默认本地执行。不要把 Zotero 数据库、机构登录信息、API 密钥、私人 PDF 或未授权全文上传到训练平台或 GitHub。发布数据集前只保留公开 DOI、出版社 URL、人工撰写的短摘要和可公开的证据链接；如果要把自己的阅读笔记加入 RAG，先确认版权和机构政策。
+With 8–12 GB of VRAM, a 1B–3B instruction model may be practical for LoRA or QLoRA experiments on reviewed `qa_*.jsonl` data. With 16–24 GB, 3B–7B 4-bit QLoRA may be more practical. Before using Transformers, PEFT, TRL, bitsandbytes, or equivalent tools, fix the model license, versions, and random seed. The training data teaches answer structure, citation behavior, and refusal boundaries. It is not a permanent replacement for the evidence store; factual updates should continue through RAG.
+
+If no suitable GPU is available, run RAG or a small CPU evaluation. Do not treat local training capacity as evidence of model quality.
+
+## Minimum evaluation checklist
+
+1. Fit only on `finetune/data/train.jsonl`; use validation data for development choices and hold the test data until the approach is fixed.
+2. Check DOI citation, refusal of unsupported questions, and the boundaries between DFT, MD, and force fields.
+3. Record exact match or keyword hit rate, citation accuracy, refusal accuracy, and human-sample results. Training loss alone is insufficient.
+4. Save the manifest, model version, evaluation results, and error samples for every data or prompt change.
+5. Treat a newly generated split as a new version. Do not infer valid accuracy for an older model from the new split, and do not combine the new split with an older model evaluation without rerunning that evaluation.
+
+## Privacy and security
+
+Generation runs locally by default. Do not upload Zotero databases, institutional login information, API keys, private PDFs, or unauthorized full text to a training service or GitHub. Before publishing any dataset, review the exact rows and retain only material that is publicly usable, such as public DOI metadata, publisher URLs, authored short summaries, and approved evidence links.
+
+Keep real train, validation, and test files, source-group manifests, and provenance records local unless an explicit rights and provenance review approves a release. Public generators, schemas, and independently authored examples remain possible after that review. A new split is versioned data, not evidence that a model was trained or that its accuracy improved.
+

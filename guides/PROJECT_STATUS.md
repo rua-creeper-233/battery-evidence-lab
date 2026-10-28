@@ -1,26 +1,22 @@
-# 当前项目状态
+# Project status
 
-统计日期：2026-10-25。由 `update_project_status.py` 根据实际库、索引与数据集生成。
+As of 2026-10-28. Generated deterministically by `update_project_status.py`.
 
-| 项目 | 实际数量 |
+| Metric | Count |
 |---|---:|
-| 公开精选论文（唯一 DOI） | 247 |
-| 2023 年及以后论文 | 134 |
-| 已有 WOS UT | 16 |
-| QLoRA 训练样本 | 793 |
-| QLoRA 验证样本 | 78 |
-| QLoRA 测试样本 | 127 |
+| Curated papers (unique DOI) | 256 |
+| Papers from 2023 onward | 143 |
+| Web of Science records | 16 |
+| Training rows | 1323 |
+| Validation rows | 195 |
+| Test rows | 185 |
 
-结构化论文要点：28 篇，其中21篇含计算/实验条件或理论假设；逐条保留来源，区分文献事实与阅读建议。
+Structured paper insights: 45 cards, including 21 with conditions or hypotheses.
 
-专题科研问答：40 个，分基础知识、计算流程和常见问题，引用 17 篇库内论文及官方文档，附操作步骤和验收项。
+Research knowledge cards: 40; references 17 catalog papers.
 
-静态导读：247 篇论文 × 4 类，共 988 条；按公开目录整理研究主题、方法标签、范围与阅读路线。
+Static reading guide: 256 papers and 1024 rows, built from public catalog metadata.
 
-本版本未重新训练模型。训练/验证/测试按论文来源分组隔离；验证集用于选择方案，固定方案后再用测试集评估。
+No model retraining was performed for this release. Source-group splits keep a DOI and its connected records together.
 
-网页发布书目、教学资料与汇总统计；论文正文和 Zotero 私有记录保存在本机。
-
-- [AI 实施指南](AI_BATTERY_APPLICATIONS.md)
-- [未来研究方向](BATTERY_COMPUTATION_FUTURE_DIRECTIONS.md)
-- JSON 统计：`data/project_status.json`；训练来源与文件 SHA-256：`finetune/data/manifest.json`。
+Dataset SHA-256 (local payloads are not published): train: 517a83b2d4dbd2412b847cabd46e648f0e7d717fd81c970eafe9218bd095677b / validation: 318fd0bb0f3053212f937a663790d187dbc752605c1c9ff4016661ff626c37d8 / test: 3c9224f2a7e3743193468e9711966f207553e6382548a4e476009afdc5591154.

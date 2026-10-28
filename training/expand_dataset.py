@@ -31,6 +31,17 @@ def load_json(path: Path) -> list[dict[str, Any]]:
     return [item for item in value if isinstance(item, dict)]
 
 
+def load_insights(path: Path | None) -> dict[str, dict[str, Any]]:
+    """Load curated paper-insight cards without reading PDFs or full text."""
+    if path is None or not path.exists():
+        return {}
+    value = json.loads(path.read_text(encoding="utf-8"))
+    papers = value.get("papers", {}) if isinstance(value, dict) else {}
+    if not isinstance(papers, dict):
+        return {}
+    return {str(key): item for key, item in papers.items() if isinstance(item, dict)}
+
+
 def norm_doi(value: Any) -> str:
     text = str(value or "").strip().lower()
     for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
@@ -159,7 +170,66 @@ def row(row_id: str, category: str, question: str, answer: str, papers: list[dic
     }
 
 
-def build(papers: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def insight_rows(paper: dict[str, Any], insight: dict[str, Any]) -> list[dict[str, Any]]:
+    """Create DOI-cited QA from scoped, curated insight sections.
+
+    ``reading_guide`` entries are explicitly labelled as guidance so they are
+    not represented as reported findings or human validation.
+    """
+    doi = norm_doi(insight.get("doi") or paper.get("doi"))
+    sections = insight.get("sections") or {}
+    if not doi or not isinstance(sections, dict):
+        return []
+    source_by_id = {str(item.get("id")): item for item in insight.get("sources", []) if isinstance(item, dict)}
+    results: list[dict[str, Any]] = []
+    seen_answers: set[str] = set()
+    for section, raw_items in sorted(sections.items()):
+        if not isinstance(raw_items, list):
+            continue
+        entries = [item for item in raw_items if isinstance(item, dict) and str(item.get("text", "")).strip()]
+        if not entries:
+            continue
+        evidence_lines = []
+        evidence_refs = []
+        for item in entries:
+            kind = str(item.get("kind") or "reported")
+            label = "文献事实" if kind == "reported" else "阅读建议，不是论文已报告结果"
+            refs = [str(ref) for ref in item.get("source_refs", []) if str(ref) in source_by_id]
+            scopes = []
+            for ref in refs:
+                source = source_by_id[ref]
+                details = [str(source.get("scope") or "")]
+                if source.get("locator"):
+                    details.append("locator=" + str(source["locator"]))
+                if source.get("url"):
+                    details.append("url=" + str(source["url"]))
+                scopes.append("; ".join(x for x in details if x))
+            scope = " | ".join(x for x in scopes if x) or "curated paper-insight record"
+            evidence_lines.append(f"- [{label}; scope: {scope}] {str(item['text']).strip()}")
+            evidence_refs.append({"claim": str(item["text"]).strip(), "basis": scope, "strength": kind})
+        title = compact(paper.get("title") or paper.get("id") or doi, 220)
+        packet = "\n".join(evidence_lines)
+        question = f"根据 DOI {doi} 的限定证据，该文在“{section}”部分记录了什么？"
+        answer = (f"DOI {doi}（《{title}》）的结构化要点如下：\n{packet}\n"
+                  "这些内容来自限定范围的论文要点记录；未列出的参数不能据此补全。[P1]")
+        if answer in seen_answers:
+            continue
+        seen_answers.add(answer)
+        item = row(f"insight-{str(paper.get('id') or doi).replace('/', '_')}-{section}", "paper_insight", question, answer,
+                   [paper], ["title", "doi", "evidence"], ["title", "doi", "evidence"])
+        item["messages"][1]["content"] = (
+            "证据包(JSON，仅允许使用其中信息)：\n" + context([paper], ["title", "doi", "evidence"]) +
+            "\n\n论文要点证据（限定范围）：\n" + packet + "\n\n问题：" + question
+        )
+        item["provenance"]["source_fields"] = [f"paper_insights.sections.{section}"]
+        item["provenance"]["doi"] = [doi]
+        item["provenance"]["evidence_references"] = evidence_refs
+        item["provenance"]["evidence_scope"] = "; ".join(sorted({ref["basis"] for ref in evidence_refs}))
+        results.append(item)
+    return results
+
+
+def build(papers: list[dict[str, Any]], insights: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for paper in papers:
         pid = str(paper.get("id") or norm_doi(paper.get("doi")) or "paper")
@@ -184,6 +254,11 @@ def build(papers: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if resources:
             labels = "; ".join(f"{x['label'] or '公开资源'}: {x['url']}" for x in resources)
             rows.append(row(f"expanded-{pid}-resources", "source_access", f"《{title}》有哪些可核查的代码或数据入口？", f"仅可列出元数据中标记为公开且通过HTTPS链接的入口：{labels}。链接存在不等于数据已复现，仍需核对版本、许可证和内容。[P1]", [paper], ["title", "resources"], ["resources", "verification"]))
+        if insights:
+            card = insights.get(str(paper.get("id"))) or next(
+                (value for value in insights.values() if norm_doi(value.get("doi")) == norm_doi(paper.get("doi"))), None)
+            if card:
+                rows.extend(insight_rows(paper, card))
     # Pairwise comparison is based only on fields present in both records.
     for left, right in zip(papers[::2], papers[1::2]):
         lid = str(left.get("id") or norm_doi(left.get("doi")) or "left")
@@ -265,18 +340,22 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--papers", type=Path, default=ROOT / "data" / "papers.json")
     parser.add_argument("--expansion", type=Path, default=ROOT / "data" / "paper_expansion_20260920.json")
+    parser.add_argument("--insights", type=Path, help="Optional curated paper_insights.json input")
     parser.add_argument("--test-output", type=Path, default=ROOT / "training" / "expanded_test.jsonl")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     papers = merge_records(load_json(args.papers) + load_json(args.expansion))
-    rows = build(papers)
+    rows = build(papers, load_insights(args.insights))
     train, evaluation, test = split(rows)
     def relative_source(path: Path) -> str:
         try:
             return str(path.resolve().relative_to(ROOT)).replace("\\", "/")
         except ValueError:
             return path.name
-    counts = {"papers": len(papers), "rows": len(rows), "train": len(train), "eval": len(evaluation), "test": len(test), "seed": "sha256(source_group_id)", "sources": [relative_source(args.papers), relative_source(args.expansion)], "metadata_only": True}
+    sources = [relative_source(args.papers), relative_source(args.expansion)]
+    if args.insights:
+        sources.append(relative_source(args.insights))
+    counts = {"papers": len(papers), "rows": len(rows), "train": len(train), "eval": len(evaluation), "test": len(test), "seed": "sha256(source_group_id)", "sources": sources, "metadata_only": True, "insights_grounded": bool(args.insights)}
     print(json.dumps(counts, ensure_ascii=False, indent=2))
     if args.dry_run:
         return
@@ -287,7 +366,7 @@ def main() -> None:
     write(ROOT / "finetune" / "data" / "validation.jsonl", evaluation)
     write(ROOT / "finetune" / "data" / "test.jsonl", test)
     canonical = "".join(json.dumps(x, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n" for x in rows).encode("utf-8")
-    manifest = {**counts, "policy": "metadata_only_no_fulltext_or_pdf_text", "split_rule": "sha256(connected_source_group) bucket thresholds 80/10/10", "model_status": "not a trained model", "format_version": 2, "dataset_sha256": hashlib.sha256(canonical).hexdigest(), "source_group_ids": sorted({g for x in rows for g in x["provenance"].get("source_group_ids", [])})}
+    manifest = {**counts, "policy": "curated_metadata_and_paraphrased_insights_no_pdf_text", "content_policy": "Curated metadata plus paraphrased, scoped paper insights; no PDF or full-text passages.", "split_rule": "sha256(connected_source_group) bucket thresholds 80/10/10", "model_status": "not a trained model", "format_version": 2, "dataset_sha256": hashlib.sha256(canonical).hexdigest(), "source_group_ids": sorted({g for x in rows for g in x["provenance"].get("source_group_ids", [])})}
     manifest_text = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
     (ROOT / "training" / "expanded_manifest.json").write_text(manifest_text, encoding="utf-8")
     (ROOT / "finetune" / "data" / "manifest.json").write_text(manifest_text, encoding="utf-8")

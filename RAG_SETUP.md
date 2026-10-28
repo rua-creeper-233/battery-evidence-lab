@@ -1,47 +1,53 @@
-# 证据约束 RAG 使用说明
+# Evidence-constrained RAG setup
 
-更新：2026-10-08。QLoRA 适配器、证据预算和生成上限见 [接入说明](FINETUNE_INTEGRATION.md)；规模见 [当前状态](guides/PROJECT_STATUS.md)。新增全文后重建索引扩展检索，模型权重需另行训练。
+RAG is an optional local retrieval workflow. It searches the local catalogue and locally indexed PDFs, then sends selected metadata and short excerpts to the configured model endpoint. Static pages and deterministic rule-based answers do not require RAG.
 
-## 它怎样回答
+![RAG flow: local retrieval selects evidence before an optional model call, and citation checks can return to a deterministic answer.](static/assets/docs/system-overview.svg)
 
-本地服务先用标签、同义词和字段权重检索论文，再从本地合法取得的PDF索引中找短页码摘录。只有这批证据会被交给模型。模型必须使用 `[P1]`、`[P2]` 格式引用；程序会检查引用编号，缺少引用或引用不存在时自动放弃模型答案，回退到原来的可解释规则回答。
+## How an answer is produced
 
-PDF文件本身不会发送给模型。若填写远程模型地址，检索到的论文元数据、精选证据和短摘录会离开本机，因此不能把保密稿件或未公开数据交给不受信任的服务。
+1. The local service searches tags, synonyms, and weighted metadata fields.
+2. It searches the index built from locally obtained PDFs and selects short page-linked excerpts.
+3. Only the selected metadata and excerpts are supplied to the model, if a model endpoint is configured.
+4. The model must cite sources as `[P1]`, `[P2]`, and so on. The program checks citation identifiers and falls back to the deterministic answer when a citation is missing or unknown.
 
-## 最简单的启动方式
+The PDF files themselves are not sent as files to the model. If a remote endpoint is configured, selected metadata, evidence, and excerpts leave the computer. Do not send confidential manuscripts, unpublished data, or restricted text to an untrusted service.
 
-双击 `start-rag.bat`，依次输入：
+## Start with the batch file
 
-1. 完整的 OpenAI-compatible `chat-completions` 地址；
-2. 模型名称；
-3. API密钥。本地模型不需要密钥时直接回车。
+Double-click `start-rag.bat`. Enter, in order:
 
-密钥只存在于本次PowerShell进程的环境变量中，窗口结束后删除，不写入文件或Git。
+1. The complete OpenAI-compatible `chat-completions` URL.
+2. The model name.
+3. The API key. Press Enter when a local model does not require one.
 
-如果本机模型提供兼容接口，可填写类似：
+A local compatible service may use an address such as:
 
 ```text
 http://127.0.0.1:11434/v1/chat/completions
 ```
 
-具体模型名称和地址以你安装的模型服务为准。远程供应商也必须填写其明确提供的完整兼容端点，不要仅填写网站首页。
+Use the exact model name and complete endpoint exposed by the installed service. Do not enter only a provider's website URL.
 
-## 环境变量启动
+## Start from PowerShell
 
-也可以在当前PowerShell会话临时设置：
+These variables are temporary to the current PowerShell session:
 
 ```powershell
-$env:BATTERY_AGENT_LLM_ENDPOINT = "完整的chat-completions地址"
-$env:BATTERY_AGENT_LLM_MODEL = "模型名称"
-$env:BATTERY_AGENT_LLM_API_KEY = "本次密钥"
+$env:BATTERY_AGENT_LLM_ENDPOINT = "complete chat-completions URL"
+$env:BATTERY_AGENT_LLM_MODEL = "model name"
+$env:BATTERY_AGENT_LLM_API_KEY = "key for this session"
 .\start.ps1
 ```
 
-结束服务后关闭该PowerShell窗口，或主动删除这三个环境变量。
+Close the PowerShell window after use, or remove the three variables explicitly. The key is not written to a file or Git by this setup.
 
-## 当前边界
+## Local-data boundary
 
-- RAG负责组织和综合已有证据，不会替你运行VASP、Materials Studio或MD。
-- 引用编号正确不代表模型的每句话都科学正确，重要参数仍需打开原文对应页人工核对。
-- GitHub Pages静态版没有密钥，也不会直接调用模型；RAG只在你启动的本地后端或受控隧道后端工作。
-- 当前校验引用“是否存在”并对部分无证据数值主张回退；逐句科学蕴含仍需核对原文和目标体系。
+RAG does not run VASP, Materials Studio, or MD. It organizes and summarizes evidence that is already available to the local service. A valid citation identifier does not make every sentence scientifically correct. Check important parameters and interpretations against the cited page and target system.
+
+GitHub Pages has no API key and does not call a model directly. RAG runs only in the local backend or in a controlled tunnel to that backend. The backend's upload and indexing paths remain within the local or explicitly shared scope.
+
+Citation validation checks whether identifiers exist and can fall back for some unsupported numeric claims. It does not replace sentence-level scientific review.
+
+For temporary access by another person, follow the [sharing guide](SHARING_GUIDE.md). For the static/local/optional-model distinction, see the [README](README.md).

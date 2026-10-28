@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "as_of": "2026-10-25",
-  "catalog_count": 247,
-  "qa_count": 988,
-  "catalog_fingerprint": "0310c4f5fa5d978c0c99678fab50beb1aa4d7cb6ab6552034292df1710a3d9c3",
+  "catalog_count": 256,
+  "qa_count": 1024,
+  "catalog_fingerprint": "1eb8f874b3778bc1f219c5590c5b65ea02c8750c40ad28ccf77a42aab47b1a15",
   "static_extension": true,
   "evidence_level": "curated_metadata",
   "entries": [
@@ -15811,6 +15811,582 @@
           ],
           "source_urls": [
             "https://doi.org/10.1002/aenm.71291"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1002_advs_202504997",
+      "doi": "10.1002/advs.202504997",
+      "title": "Integrating Molecular Dynamics and Machine Learning for Solvation-Guided Electrolyte Optimization in Lithium Metal Batteries",
+      "title_zh": "分子动力学与机器学习结合的溶剂化引导锂金属电池电解液优化",
+      "qa_ids": [
+        "exp20261028_10_1002_advs_202504997:overview",
+        "exp20261028_10_1002_advs_202504997:methods",
+        "exp20261028_10_1002_advs_202504997:limitations",
+        "exp20261028_10_1002_advs_202504997:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1002_advs_202504997:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：将高通量分子动力学、机器学习和实验评价结合，用于锂金属电池混合电解液的溶剂化引导优化。。元数据摘要：将高通量分子动力学、机器学习和实验评价结合，用于锂金属电池混合电解液的溶剂化引导优化。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1002/advs.202504997"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1002_advs_202504997:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：high-throughput molecular dynamics、machine learning、descriptor benchmarking、experimental validation。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1002/advs.202504997"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1002_advs_202504997:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1002/advs.202504997"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1002_advs_202504997:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：将高通量分子动力学、机器学习和实验评价结合，用于锂金属电池混合电解液的溶剂化引导优化。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1002/advs.202504997"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1038_s42256_025_01173_w",
+      "doi": "10.1038/s42256-025-01173-w",
+      "title": "A unified predictive and generative solution for liquid electrolyte formulation",
+      "title_zh": "液体电解液配方的统一预测与生成方案",
+      "qa_ids": [
+        "exp20261028_10_1038_s42256_025_01173_w:overview",
+        "exp20261028_10_1038_s42256_025_01173_w:methods",
+        "exp20261028_10_1038_s42256_025_01173_w:limitations",
+        "exp20261028_10_1038_s42256_025_01173_w:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1038_s42256_025_01173_w:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：提出同时进行电解液性质预测与配方生成的统一框架，将文献、分子模拟和实验数据用于多条件约束的液体电解液设计。。元数据摘要：提出同时进行电解液性质预测与配方生成的统一框架，将文献、分子模拟和实验数据用于多条件约束的液体电解液设计。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s42256-025-01173-w"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s42256_025_01173_w:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：physics-informed predictive model、permutation-invariant architecture、inverse generative model、molecular simulation、experimental validation。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s42256-025-01173-w"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s42256_025_01173_w:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s42256-025-01173-w"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s42256_025_01173_w:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：提出同时进行电解液性质预测与配方生成的统一框架，将文献、分子模拟和实验数据用于多条件约束的液体电解液设计。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s42256-025-01173-w"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1039_d4ta00721b",
+      "doi": "10.1039/d4ta00721b",
+      "title": "Machine-learning assisted high-throughput discovery of solid-state electrolytes for Li-ion batteries",
+      "title_zh": "机器学习辅助的锂离子电池固态电解质高通量发现",
+      "qa_ids": [
+        "exp20261028_10_1039_d4ta00721b:overview",
+        "exp20261028_10_1039_d4ta00721b:methods",
+        "exp20261028_10_1039_d4ta00721b:limitations",
+        "exp20261028_10_1039_d4ta00721b:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1039_d4ta00721b:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：使用通用ML-IAP替代部分DFT进行大规模固态电解质筛选，并用分层流程复核可合成性、界面稳定性和Li+电导率。。元数据摘要：使用通用ML-IAP替代部分DFT进行大规模固态电解质筛选，并用分层流程复核可合成性、界面稳定性和Li+电导率。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d4ta00721b"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1039_d4ta00721b:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：high-throughput DFT/ML-IAP screening、ab initio molecular dynamics、tree-based machine learning、tiered validation workflow。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d4ta00721b"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1039_d4ta00721b:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d4ta00721b"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1039_d4ta00721b:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：使用通用ML-IAP替代部分DFT进行大规模固态电解质筛选，并用分层流程复核可合成性、界面稳定性和Li+电导率。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d4ta00721b"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1007_s40843_025_3346_4",
+      "doi": "10.1007/s40843-025-3346-4",
+      "title": "Accelerated discovery of solid-state battery properties enabled by active learning approaches",
+      "title_zh": "主动学习加速固态电池性质发现",
+      "qa_ids": [
+        "exp20261028_10_1007_s40843_025_3346_4:overview",
+        "exp20261028_10_1007_s40843_025_3346_4:methods",
+        "exp20261028_10_1007_s40843_025_3346_4:limitations",
+        "exp20261028_10_1007_s40843_025_3346_4:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1007_s40843_025_3346_4:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：用主动学习和多种回归模型进行锂基固态电解质高通量筛选，再用AIMD和实验验证高电导候选。。元数据摘要：用主动学习和多种回归模型进行锂基固态电解质高通量筛选，再用AIMD和实验验证高电导候选。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1007/s40843-025-3346-4"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1007_s40843_025_3346_4:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：active learning、high-throughput regression screening、ab initio molecular dynamics、experimental validation。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1007/s40843-025-3346-4"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1007_s40843_025_3346_4:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1007/s40843-025-3346-4"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1007_s40843_025_3346_4:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：用主动学习和多种回归模型进行锂基固态电解质高通量筛选，再用AIMD和实验验证高电导候选。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1007/s40843-025-3346-4"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1016_j_jechem_2025_06_072",
+      "doi": "10.1016/j.jechem.2025.06.072",
+      "title": "A large-scale on-the-fly machine learning molecular dynamics simulation to explore lithium metal battery interfaces",
+      "title_zh": "大规模即时机器学习分子动力学探索锂金属电池界面",
+      "qa_ids": [
+        "exp20261028_10_1016_j_jechem_2025_06_072:overview",
+        "exp20261028_10_1016_j_jechem_2025_06_072:methods",
+        "exp20261028_10_1016_j_jechem_2025_06_072:limitations",
+        "exp20261028_10_1016_j_jechem_2025_06_072:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1016_j_jechem_2025_06_072:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：开发大规模on-the-fly MLMD框架，研究锂金属—电解液界面副反应和电解液分解。。元数据摘要：开发大规模on-the-fly MLMD框架，研究锂金属—电解液界面副反应和电解液分解。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1016/j.jechem.2025.06.072"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1016_j_jechem_2025_06_072:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：on-the-fly machine-learning molecular dynamics、reactive interfacial simulation、large-scale atomistic modeling。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1016/j.jechem.2025.06.072"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1016_j_jechem_2025_06_072:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1016/j.jechem.2025.06.072"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1016_j_jechem_2025_06_072:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：开发大规模on-the-fly MLMD框架，研究锂金属—电解液界面副反应和电解液分解。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1016/j.jechem.2025.06.072"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1063_5_0288380",
+      "doi": "10.1063/5.0288380",
+      "title": "Machine learning-accelerated path integral molecular dynamics simulations of reactive organic electrolytes",
+      "title_zh": "机器学习加速反应性有机电解液路径积分分子动力学",
+      "qa_ids": [
+        "exp20261028_10_1063_5_0288380:overview",
+        "exp20261028_10_1063_5_0288380:methods",
+        "exp20261028_10_1063_5_0288380:limitations",
+        "exp20261028_10_1063_5_0288380:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1063_5_0288380:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：用DFT训练的机器学习势加速反应性有机电解液的路径积分分子动力学，面向量子核效应与输运机理研究。。元数据摘要：用DFT训练的机器学习势加速反应性有机电解液的路径积分分子动力学，面向量子核效应与输运机理研究。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1063/5.0288380"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1063_5_0288380:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：DFT-trained machine-learning potentials、path-integral molecular dynamics、reactive electrolyte simulation。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1063/5.0288380"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1063_5_0288380:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：方法迁移参考：原文研究氢键有机电解液中的质子输运，不能直接当作锂离子电池的验证结果。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1063/5.0288380"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1063_5_0288380:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：用DFT训练的机器学习势加速反应性有机电解液的路径积分分子动力学，面向量子核效应与输运机理研究。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1063/5.0288380"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1038_s42256_025_01009_7",
+      "doi": "10.1038/s42256-025-01009-7",
+      "title": "A predictive machine learning force-field framework for liquid electrolyte development",
+      "title_zh": "面向液体电解液开发的预测性机器学习力场框架",
+      "qa_ids": [
+        "exp20261028_10_1038_s42256_025_01009_7:overview",
+        "exp20261028_10_1038_s42256_025_01009_7:methods",
+        "exp20261028_10_1038_s42256_025_01009_7:limitations",
+        "exp20261028_10_1038_s42256_025_01009_7:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1038_s42256_025_01009_7:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：提出BAMBOO预测性机器学习力场，用于液体锂电电解液的分子动力学、结构和输运性质建模。。元数据摘要：提出BAMBOO预测性机器学习力场，用于液体锂电电解液的分子动力学、结构和输运性质建模。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s42256-025-01009-7"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s42256_025_01009_7:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：physics-inspired graph equivariant transformer、machine-learning force field、molecular dynamics、quantum-mechanical training data。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s42256-025-01009-7"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s42256_025_01009_7:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s42256-025-01009-7"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s42256_025_01009_7:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：提出BAMBOO预测性机器学习力场，用于液体锂电电解液的分子动力学、结构和输运性质建模。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s42256-025-01009-7"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1039_d5dd00508f",
+      "doi": "10.1039/d5dd00508f",
+      "title": "DBMLFF: linear scaling machine learning force fields via electron density decomposition for molecular electrolytes",
+      "title_zh": "DBMLFF：通过电子密度分解构建分子电解液线性尺度机器学习力场",
+      "qa_ids": [
+        "exp20261028_10_1039_d5dd00508f:overview",
+        "exp20261028_10_1039_d5dd00508f:methods",
+        "exp20261028_10_1039_d5dd00508f:limitations",
+        "exp20261028_10_1039_d5dd00508f:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1039_d5dd00508f:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：提出基于电子密度分解的线性尺度ML力场DBMLFF，用于多组分电解液的大规模MD。。元数据摘要：提出基于电子密度分解的线性尺度ML力场DBMLFF，用于多组分电解液的大规模MD。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5dd00508f"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1039_d5dd00508f:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：electron-density decomposition、linear-scaling machine-learning force field、multi-component electrolyte molecular dynamics。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5dd00508f"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1039_d5dd00508f:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5dd00508f"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1039_d5dd00508f:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：提出基于电子密度分解的线性尺度ML力场DBMLFF，用于多组分电解液的大规模MD。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5dd00508f"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "exp20261028_10_1038_s41467_024_47070_5",
+      "doi": "10.1038/s41467-024-47070-5",
+      "title": "An integrated high-throughput robotic platform and active learning approach for accelerated discovery of optimal electrolyte formulations",
+      "title_zh": "高通量机器人平台与主动学习加速最优电解液配方发现",
+      "qa_ids": [
+        "exp20261028_10_1038_s41467_024_47070_5:overview",
+        "exp20261028_10_1038_s41467_024_47070_5:methods",
+        "exp20261028_10_1038_s41467_024_47070_5:limitations",
+        "exp20261028_10_1038_s41467_024_47070_5:reading"
+      ],
+      "qas": [
+        {
+          "id": "exp20261028_10_1038_s41467_024_47070_5:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：将高通量机器人实验与主动学习结合，针对有机氧化还原液流电池电解液溶解度进行样本高效筛选。。元数据摘要：将高通量机器人实验与主动学习结合，针对有机氧化还原液流电池电解液溶解度进行样本高效筛选。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-024-47070-5"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s41467_024_47070_5:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：high-throughput experimentation、robotic platform、active learning、solubility screening。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-024-47070-5"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s41467_024_47070_5:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：已核验书目与所列来源；摘要级证据不提供完整计算参数。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-024-47070-5"
+          ]
+        },
+        {
+          "id": "exp20261028_10_1038_s41467_024_47070_5:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：将高通量机器人实验与主动学习结合，针对有机氧化还原液流电池电解液溶解度进行样本高效筛选。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-024-47070-5"
           ]
         }
       ]
