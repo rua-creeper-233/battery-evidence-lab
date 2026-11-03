@@ -32,13 +32,17 @@ test('assigned source CSS has no sub-12px visible text and SVG text is at least 
   assert.match(explorer, /\.battery-explorer__svg text[^}]*font-size:\s*12px/);
 });
 
-test('muted text meets AA contrast on paper and mint surfaces', () => {
-  const sources = [read('static/lab-ui.css'), ...authoredPages.map(read)];
-  const colors = sources.flatMap((source) => [...source.matchAll(/--muted\s*:\s*(#[0-9a-f]{6})/gi)].map((m) => m[1]));
-  assert.ok(colors.length >= 4, 'expected shared and authored muted tokens');
-  for (const color of new Set(colors)) {
-    assert.ok(contrast(color, '#fafbf8') >= 4.5, `${color} fails paper contrast`);
-    assert.ok(contrast(color, '#edf5ef') >= 4.5, `${color} fails mint contrast`);
+test('secondary text meets AA contrast on every light and dark surface', () => {
+  const source = read('static/lab-ui.css');
+  const themes = [...source.matchAll(/[^{}]+\{([^{}]*--text-secondary\s*:[^{}]*)\}/g)];
+  assert.ok(themes.length >= 2, 'expected light and dark design tokens');
+  for (const [, block] of themes) {
+    const tokens = Object.fromEntries([...block.matchAll(/--([\w-]+)\s*:\s*(#[0-9a-f]{6})\b/gi)].map(m => [m[1], m[2]]));
+    for (const surface of ['bg-canvas', 'bg-surface', 'bg-subtle']) {
+      assert.ok(tokens[surface], `theme lacks ${surface}`);
+      assert.ok(contrast(tokens['text-secondary'], tokens[surface]) >= 4.5, `${tokens['text-secondary']} fails ${surface} contrast`);
+      assert.ok(contrast(tokens['text-primary'], tokens[surface]) >= 4.5, `${tokens['text-primary']} fails ${surface} contrast`);
+    }
   }
 });
 

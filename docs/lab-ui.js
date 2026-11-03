@@ -59,5 +59,6 @@
     return [usefulRole, usefulSummary].filter(Boolean).join(' · ') || '内容摘录待补充';
   };
   window.LabUI = { ready, progressReady, escapeHtml, titleZh, paperTitleHtml, metadata, verificationLabel, paperSummary, get titles() { return map; } };
+  window.CitationTools?.install?.();
   window.labUIReady = ready;
 })();

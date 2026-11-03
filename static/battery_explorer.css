@@ -90,3 +90,22 @@
 @media (prefers-reduced-motion:reduce) {
   .battery-explorer__svg .be-layer { transition:none; }
 }
+
+/* Notebook token bridge for dark mode and shared card surfaces. */
+.battery-explorer { --be-forest:var(--brand-primary); --be-ink:var(--text-primary); --be-muted:var(--text-secondary); --be-line:var(--border-color); --be-paper:var(--bg-surface); }
+.battery-explorer__figure,.battery-explorer__panel { box-shadow:var(--shadow-card); }
+.battery-explorer__hotspot { border-color:var(--border-color); background:var(--bg-subtle); color:var(--brand-primary); }
+.battery-explorer__hotspot:hover,.battery-explorer__hotspot[aria-pressed="true"] { border-color:var(--brand-primary); background:var(--bg-subtle); }
+.battery-explorer__close-list { background:var(--bg-subtle); color:var(--brand-primary); }
+.battery-explorer__scope { border-color:var(--border-color); }
+.battery-explorer__paper { border-color:var(--border-color); background:var(--bg-surface); }
+.battery-explorer__empty,.battery-explorer__error { background:var(--bg-subtle); color:var(--text-secondary); }
+.battery-explorer__error { border-color:var(--border-color); }
+@media (prefers-color-scheme:dark) {
+  :root:not([data-theme]) .battery-explorer__svg text { fill:var(--text-primary); }
+  :root:not([data-theme]) .battery-explorer__svg .be-annotation text,:root:not([data-theme]) .battery-explorer__svg .be-annotation .be-scale-note { fill:var(--text-secondary); }
+  :root:not([data-theme]) .battery-explorer__svg .be-can-label { fill:var(--bg-subtle); }
+}
+:root[data-theme=dark] .battery-explorer__svg text { fill:var(--text-primary); }
+:root[data-theme=dark] .battery-explorer__svg .be-annotation text,:root[data-theme=dark] .battery-explorer__svg .be-annotation .be-scale-note { fill:var(--text-secondary); }
+:root[data-theme=dark] .battery-explorer__svg .be-can-label { fill:var(--bg-subtle); }

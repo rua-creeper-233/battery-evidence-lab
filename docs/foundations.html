@@ -5,100 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>基础地图 · Battery Evidence Lab</title>
   <style>
-    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,"Noto Sans SC","Microsoft YaHei",sans-serif}.shell{position:relative;max-width:1240px;margin:auto;padding:30px}.site-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 4px 16px;border-bottom:1px solid var(--line)}.brand{color:var(--ink);font:700 12px/1 ui-monospace,monospace;text-decoration:none}.site-nav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.site-nav-links a{padding:8px 12px;border-radius:999px;color:var(--muted);font-size:12px;text-decoration:none}.site-nav-links a:hover,.site-nav-links a:focus-visible{background:var(--mint);color:var(--green);outline:none}header{padding:44px 4px 25px;border-bottom:1px solid var(--line)}.eyebrow{color:var(--orange);font:700 12px/1.2 ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase}h1{max-width:880px;margin:12px 0 12px;font:680 clamp(32px,5vw,60px)/1.06 Georgia,"Noto Serif SC",serif;letter-spacing:-.04em}.lede{max-width:880px;color:var(--muted);line-height:1.8;margin:0}.notice{margin-top:18px;padding:13px 15px;border-left:3px solid var(--orange);background:#fff3e9;border-radius:4px 12px 12px 4px;color:#744324;font-size:13px;line-height:1.7}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.meta span{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12px;color:#526158}main{padding-top:25px}.controls{display:grid;grid-template-columns:minmax(240px,1fr) auto auto;gap:12px;align-items:center;margin-bottom:22px}.controls label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}input,select,button{font:inherit}input,select{width:100%;padding:12px 12px;border:1px solid #cbd6ce;border-radius:12px;background:#fff;color:var(--ink)}button{padding:12px 12px;border:1px solid #b9cec1;border-radius:12px;background:#fff;color:var(--green);cursor:pointer;font-weight:700}button:hover,button:focus-visible{background:var(--mint);outline:2px solid #94bba5;outline-offset:1px}.count{color:var(--muted);font-size:12px;white-space:nowrap}.group{margin:28px 0 0}.group h2{margin:0 0 7px;font:650 27px/1.25 Georgia,"Noto Serif SC",serif}.group-lede{margin:0 0 15px;color:var(--muted);font-size:13px;line-height:1.7}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.topic,.resource{background:var(--card);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);overflow:hidden}.topic[hidden],.resource[hidden]{display:none}.topic summary,.resource summary{display:block;cursor:pointer;padding:18px 20px;list-style:none}.topic summary::-webkit-details-marker,.resource summary::-webkit-details-marker{display:none}.topic summary:after,.resource summary:after{content:"＋";float:right;color:var(--green);font-weight:700}.topic[open] summary:after,.resource[open] summary:after{content:"−"}.topic summary:hover,.topic summary:focus-visible,.resource summary:hover,.resource summary:focus-visible{background:#f1f8f1;outline:none}.num{color:var(--orange);font:700 12px ui-monospace,monospace;letter-spacing:.08em}.topic h3,.resource h3{margin:7px 28px 0 0;font:650 19px/1.3 Georgia,"Noto Serif SC",serif}.terms{margin:4px 28px 0 0;color:var(--blue);font-size:12px}.topic-body,.resource-body{padding:0 20px 20px;border-top:1px solid #edf0ea}.topic-body p,.resource-body p{margin:13px 0 0;color:#526158;font-size:12px;line-height:1.7}.topic-body strong,.resource-body strong{color:var(--green)}.glossary{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:13px 0 0;padding:12px 12px;border:1px solid #d5e1d5;border-radius:12px;background:#fbfdf9;font-size:12px;line-height:1.5}.glossary dt{color:var(--green);font-weight:750}.glossary dd{margin:0;color:#526158}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px}.fact{padding:12px 12px;border:1px solid #d5e1d5;border-radius:12px;background:#fbfdf9}.fact b{display:block;color:var(--green);font-size:12px;margin-bottom:3px}.fact span{display:block;color:#526158;font-size:12px;line-height:1.55}.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}.links a{padding:6px 8px;border-radius:7px;background:#dcebdd;color:#1b5b41;font-size:12px;font-weight:750;text-decoration:none}.links a:hover{background:#c5dec9}.empty{display:none;margin:18px 0;padding:20px;border:1px dashed #c6d1c8;border-radius:12px;background:#fff;color:var(--muted);text-align:center}.empty.show{display:block}.resources{margin-top:31px;padding:24px;background:#18382e;color:#edf7ef;border:1px solid #2c5c49;border-radius:18px}.resources h2{margin:0 0 7px;color:#fff;font:650 27px Georgia,"Noto Serif SC",serif}.resources>p{margin:0;color:#c7ded0;line-height:1.7;font-size:13px}.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:17px}.resource{box-shadow:none;background:#f7fbf4;color:var(--ink)}.resource summary{padding:15px 17px}.resource-body{padding:0 17px 17px}.resource h3{font-size:16px}.resource .links a{background:#d9e9da}.footer{padding:26px 4px 7px;color:var(--muted);font-size:12px;line-height:1.7}.footer a{color:var(--green)}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--font-sans)}.shell{position:relative;max-width:1240px;margin:auto;padding:30px}.site-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 4px 16px;border-bottom:1px solid var(--line)}.brand{color:var(--ink);font:700 12px/1 var(--font-mono);text-decoration:none}.site-nav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.site-nav-links a{padding:8px 12px;border-radius:999px;color:var(--muted);font-size:12px;text-decoration:none}.site-nav-links a:hover,.site-nav-links a:focus-visible{background:var(--mint);color:var(--green);outline:none}header{padding:44px 4px 25px;border-bottom:1px solid var(--line)}.eyebrow{color:var(--orange);font:700 12px/1.2 var(--font-mono);letter-spacing:.13em;text-transform:uppercase}h1{max-width:880px;margin:12px 0 12px;font:680 clamp(32px,5vw,60px)/1.06 var(--font-serif);letter-spacing:-.04em}.lede{max-width:880px;color:var(--muted);line-height:1.8;margin:0}.notice{margin-top:18px;padding:13px 15px;border-left:3px solid var(--orange);background:var(--bg-subtle);border-radius:4px 12px 12px 4px;color:var(--text-secondary);font-size:13px;line-height:1.7}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.meta span{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--bg-surface);font-size:12px;color:var(--text-secondary)}main{padding-top:25px}.controls{display:grid;grid-template-columns:minmax(240px,1fr) auto auto;gap:12px;align-items:center;margin-bottom:22px}.controls label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}input,select,button{font:inherit}input,select{width:100%;padding:12px 12px;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-surface);color:var(--ink)}button{padding:12px 12px;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-surface);color:var(--green);cursor:pointer;font-weight:700}button:hover,button:focus-visible{background:var(--mint);outline:2px solid var(--border-color);outline-offset:1px}.count{color:var(--muted);font-size:12px;white-space:nowrap}.group{margin:28px 0 0}.group h2{margin:0 0 7px;font:650 27px/1.25 var(--font-serif)}.group-lede{margin:0 0 15px;color:var(--muted);font-size:13px;line-height:1.7}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.topic,.resource{background:var(--card);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);overflow:hidden}.topic[hidden],.resource[hidden]{display:none}.topic summary,.resource summary{display:block;cursor:pointer;padding:18px 20px;list-style:none}.topic summary::-webkit-details-marker,.resource summary::-webkit-details-marker{display:none}.topic summary:after,.resource summary:after{content:"＋";float:right;color:var(--green);font-weight:700}.topic[open] summary:after,.resource[open] summary:after{content:"−"}.topic summary:hover,.topic summary:focus-visible,.resource summary:hover,.resource summary:focus-visible{background:var(--bg-subtle);outline:none}.num{color:var(--orange);font:700 12px var(--font-mono);letter-spacing:.08em}.topic h3,.resource h3{margin:7px 28px 0 0;font:650 19px/1.3 var(--font-serif)}.terms{margin:4px 28px 0 0;color:var(--blue);font-size:12px}.topic-body,.resource-body{padding:0 20px 20px;border-top:1px solid var(--border-color)}.topic-body p,.resource-body p{margin:13px 0 0;color:var(--text-secondary);font-size:12px;line-height:1.7}.topic-body strong,.resource-body strong{color:var(--green)}.glossary{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:13px 0 0;padding:12px 12px;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-surface);font-size:12px;line-height:1.5}.glossary dt{color:var(--green);font-weight:750}.glossary dd{margin:0;color:var(--text-secondary)}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px}.fact{padding:12px 12px;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-surface)}.fact b{display:block;color:var(--green);font-size:12px;margin-bottom:3px}.fact span{display:block;color:var(--text-secondary);font-size:12px;line-height:1.55}.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}.links a{padding:6px 8px;border-radius:7px;background:var(--bg-subtle);color:var(--brand-primary);font-size:12px;font-weight:750;text-decoration:none}.links a:hover{background:var(--bg-subtle)}.empty{display:none;margin:18px 0;padding:20px;border:1px dashed var(--border-color);border-radius:12px;background:var(--bg-surface);color:var(--muted);text-align:center}.empty.show{display:block}.resources{margin-top:31px;padding:24px;background:var(--bg-subtle);color:var(--text-secondary);border:1px solid var(--border-color);border-radius:18px}.resources h2{margin:0 0 7px;color:var(--text-primary);font:650 27px var(--font-serif)}.resources>p{margin:0;color:var(--text-secondary);line-height:1.7;font-size:13px}.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:17px}.resource{box-shadow:none;background:var(--bg-surface);color:var(--ink)}.resource summary{padding:15px 17px}.resource-body{padding:0 17px 17px}.resource h3{font-size:16px}.resource .links a{background:var(--bg-subtle)}.footer{padding:26px 4px 7px;color:var(--muted);font-size:12px;line-height:1.7}.footer a{color:var(--green)}
     @media(max-width:760px){.shell{padding:18px}.site-nav{align-items:flex-start;flex-direction:column}.site-nav-links{justify-content:flex-start}header{padding-top:34px}.controls{grid-template-columns:1fr 1fr}.controls input{grid-column:1/-1}.count{grid-column:1/-1}.cards,.resource-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
   </style>
-  <style data-lab-ui-inline>/* Shared quiet visual baseline. Pages keep their existing structure/content. */
+  <style data-lab-ui-inline>/* Academic Research Notebook 2.0 shared design system. */
 :root {
-  --paper: #fafbf8;
-  --ink: #203029;
-  --muted: #5d6a63;
-  --card: #ffffff;
-  --line: #dbe3dc;
-  --green: #2e6b50;
-  --forest: #123f35;
-  --mint: #edf5ef;
-  --accent: #b26a31;
-  --orange: var(--accent);
-  --blue: #245a8d;
-  --shadow: none;
+  color-scheme: light;
+  --bg-canvas:#FBFBF8; --bg-surface:#FFFFFF; --bg-subtle:#F3F3ED; --border-color:#E5E5DE;
+  --text-primary:#1E2320; --text-secondary:#5C645E; --brand-primary:#245A48; --brand-hover:#1A4436; --accent-amber:#C87A3E;
+  --shadow-card:0 4px 16px rgba(0,0,0,.06); --transition-ui:.2s cubic-bezier(.16,1,.3,1);
+  --font-sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; --font-serif:Newsreader,Georgia,"Noto Serif SC",serif; --font-mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Consolas,monospace;
+  --on-brand:#FFFFFF; --accent-text:#94501F; --danger-text:#A23E2A; --modal-backdrop:rgba(30,35,32,.48); --focus-ring:var(--accent-amber); --modal-shadow-color:rgba(0,0,0,.16);
+  --paper:var(--bg-canvas); --ink:var(--text-primary); --muted:var(--text-secondary); --card:var(--bg-surface); --line:var(--border-color);
+  --green:var(--brand-primary); --forest:var(--brand-hover); --mint:var(--bg-subtle); --accent:var(--accent-amber); --orange:var(--accent-amber); --blue:#245A8D; --shadow:var(--shadow-card);
 }
-* { box-sizing: border-box; }
-html { scroll-padding-top: 90px; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; }
-a { color: var(--green); text-underline-offset: 3px; }
-button, input, select, textarea { font: inherit; }
-h1, h2, h3, h4 { font-family: inherit; }
-html body [hidden] { display: none; }
-.shell, .site-nav, .site-nav-links, .home-tabs { min-width: 0; }
-button, input, select, textarea, summary, a { outline-offset: 3px; }
-button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); }
-.shell { max-width: 1200px; margin: 0 auto; padding: 24px; }
-.site-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 0 16px; border-bottom: 1px solid var(--line); }
-.brand { color: var(--ink); font: 700 12px/1.4 ui-monospace, monospace; text-decoration: none; white-space: nowrap; }
-.site-nav-links, .home-tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
-.site-nav-links.overflow-left, .home-tabs.overflow-left { box-shadow: inset 2px 0 var(--line); }
-.site-nav-links.overflow-right, .home-tabs.overflow-right { border-inline-end: 2px solid var(--line); }
-@supports (mask-image: linear-gradient(to right, #000, transparent)) {
-  .overflow-left:not(.overflow-right) { mask-image: linear-gradient(to right, transparent, #000 18px); }
-  .overflow-right:not(.overflow-left) { mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent); }
-  .overflow-left.overflow-right { mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent); }
-  .overflow-focus, .site-nav-links:focus-within, .home-tabs:focus-within { mask-image: none; }
+@media (prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--bg-canvas:#121514;--bg-surface:#1A1F1D;--bg-subtle:#222926;--border-color:#2C3531;--text-primary:#EDEFEA;--text-secondary:#9EA7A0;--brand-primary:#3E856D;--brand-hover:#4E9B81;--accent-amber:#E09053}}
+:root[data-theme=dark]{color-scheme:dark;--bg-canvas:#121514;--bg-surface:#1A1F1D;--bg-subtle:#222926;--border-color:#2C3531;--text-primary:#EDEFEA;--text-secondary:#9EA7A0;--brand-primary:#3E856D;--brand-hover:#4E9B81;--accent-amber:#E09053}
+:root[data-theme=light]{color-scheme:light}
+*{box-sizing:border-box}html{scroll-padding-top:90px}body{min-width:320px;min-height:100vh;margin:0;display:flex;flex-direction:column;background:var(--bg-canvas);color:var(--text-primary);font-family:var(--font-sans);font-size:.9375rem;line-height:1.6;transition:background-color var(--transition-ui),color var(--transition-ui)}
+a{color:var(--brand-primary);text-underline-offset:3px}a:hover{color:var(--brand-hover)}button,input,select,textarea{font:inherit}h1,h2,h3,h4{font-family:inherit;color:var(--text-primary)}h1{font-size:2.25rem;font-weight:700;line-height:1.2}h2{font-size:1.5rem;font-weight:600;line-height:1.3}h3{font-size:1.125rem;font-weight:600;line-height:1.4}code,pre,kbd,samp{font-family:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Consolas,monospace}html body [hidden]{display:none}
+button,input,select,textarea,summary,a{outline-offset:3px}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent-amber);outline-offset:3px}
+.shell,.site-nav,.site-nav-links,.home-tabs{min-width:0}.shell{max-width:1200px;margin:0 auto;padding:24px}.site-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:48px;padding:10px 0;border-bottom:1px solid var(--border-color)}.brand{flex:0 0 auto;color:var(--text-primary);font:700 12px/1.4 "JetBrains Mono","Fira Code",ui-monospace,monospace;text-decoration:none;white-space:nowrap}.site-nav-links,.home-tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.site-nav-links> .home-tabs{flex:0 0 auto;width:auto;overflow:visible;margin:0}.site-nav-links a,.home-tabs a,.home-tabs button{display:inline-flex;align-items:center;min-height:44px;padding:8px 10px;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--text-secondary);font-size:13px;font-weight:650;text-decoration:none;cursor:pointer;transition:background-color var(--transition-ui),color var(--transition-ui),border-color var(--transition-ui)}.site-nav-links a:hover,.site-nav-links a[aria-current=page],.home-tabs a:hover,.home-tabs a[aria-selected=true],.home-tabs button:hover,.home-tabs button[aria-selected=true]{background:var(--bg-subtle);color:var(--brand-hover)}.site-nav-links a[aria-current=page],.home-tabs a[aria-current=page],.home-tabs button[aria-selected=true]{border-color:var(--border-color)}
+.theme-toggle{display:inline-grid;place-items:center;flex:0 0 auto;width:40px;height:40px;min-height:40px;padding:8px;border:1px solid var(--border-color);border-radius:50%;background:var(--bg-surface);color:var(--text-secondary);cursor:pointer;transition:background-color var(--transition-ui),color var(--transition-ui),border-color var(--transition-ui),transform var(--transition-ui)}.theme-toggle:hover{background:var(--bg-subtle);color:var(--brand-hover);transform:translateY(-1px)}.theme-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.theme-toggle .icon-moon{display:none}:root[data-theme=dark] .theme-toggle .icon-sun{display:none}:root[data-theme=dark] .theme-toggle .icon-moon{display:block}@media(prefers-color-scheme:dark){:root:not([data-theme]) .theme-toggle .icon-sun{display:none}:root:not([data-theme]) .theme-toggle .icon-moon{display:block}}
+.panel,.card,.topic,.resource,.paper-card,.e-card,.future-section,.band,.code-section,.tutorials,.future-teaser,.modal-card,.roadmap,.roadmap-item{border:1px solid var(--border-color);border-radius:8px;background:var(--bg-surface);box-shadow:var(--shadow-card);transition:background-color var(--transition-ui),border-color var(--transition-ui),box-shadow var(--transition-ui),transform var(--transition-ui)}.panel:hover,.card:hover,.paper-card:hover,.e-card:hover,.future-card:hover,.topic:hover,.resource:hover{box-shadow:0 6px 20px rgba(0,0,0,.08)}.future-section,.band{background:var(--bg-subtle);border-color:var(--border-color);color:var(--text-primary)}.future-card,.step{border:1px solid var(--border-color);border-radius:7px;background:var(--bg-surface)}.notice{background:var(--bg-subtle);border-left-color:var(--brand-primary);color:var(--text-secondary)}.filter-chip,.chip,.stat,.future-meta span,.meta span{border-radius:5px}.future-meta span{color:var(--text-secondary);border-color:var(--border-color)}.future-bottom,.future-lede,.band p,.future-card p,.step p{color:var(--text-secondary)}.project-progress,.title-map-notice,.scope-note{color:var(--text-secondary);font-size:12px;line-height:1.5}.service-details{max-width:330px;color:var(--text-secondary);font-size:12px;text-align:right}.service-details summary,.scope-note summary,summary{cursor:pointer}.service-details .stats{margin-top:10px;gap:6px}.workspace .empty{min-height:240px}.workspace .empty .mark{transform:none;width:52px;height:52px;border-radius:8px}.examples,.paper-tags{gap:6px}.agent-trace{max-height:120px;overflow:auto}.scope-note{margin-top:14px}.route-shortcuts{margin:14px 0 0;padding:12px 14px;border:1px solid var(--border-color);background:var(--bg-surface);border-radius:8px;font-size:12px}.route-shortcuts summary{color:var(--brand-primary)}.route-shortcuts p{color:var(--text-secondary);line-height:1.6}.route-shortcuts .links{display:flex;flex-wrap:wrap;gap:9px 16px}.site-footer,footer{color:var(--text-secondary);font-size:12px;line-height:1.6}.site-footer{display:flex;flex-wrap:wrap;gap:12px 24px;max-width:1200px;margin:28px auto 0;padding:20px 24px;border-top:1px solid var(--border-color)}.page-sources{margin-top:18px;padding-top:14px;border-top:1px solid var(--border-color);color:var(--text-secondary);font-size:12px;line-height:1.6}.page-sources a{color:var(--brand-primary)}
+.citation-copy{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 9px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-subtle);color:var(--text-secondary);font-size:12px}.citation-copy button{min-height:30px;padding:4px 8px;border:1px solid var(--border-color);border-radius:5px;background:var(--bg-surface);color:var(--brand-primary);font-size:12px;cursor:pointer}.citation-copy [role=status],.citation-copy-status{color:var(--text-secondary);font-size:12px}.doi,[data-doi],a[href*="doi.org"] code{font-family:"JetBrains Mono","Fira Code",ui-monospace,monospace;font-size:12px;letter-spacing:.01em}
+.method-flow{display:grid;gap:18px;padding:0;margin:18px 0}.method-flow__heading{margin-bottom:4px}.method-flow__heading h2{margin:4px 0}.method-flow__nodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;margin:0;padding:0;counter-reset:method-step}.method-flow__nodes>li{position:relative;min-width:0;counter-increment:method-step}.method-flow__node{display:block;height:100%;padding:18px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-surface);box-shadow:var(--shadow-card);color:var(--text-primary);text-decoration:none;transition:background-color var(--transition-ui),border-color var(--transition-ui),box-shadow var(--transition-ui),transform var(--transition-ui)}.method-flow__node:hover{border-color:var(--brand-primary);box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px)}.method-flow__index{display:block;color:var(--accent-amber);font:700 12px/1.2 "JetBrains Mono","Fira Code",ui-monospace,monospace;letter-spacing:.08em}.method-flow__node h3{margin:8px 0 6px}.method-flow__node p{margin:0;color:var(--text-secondary);font-size:13px;line-height:1.6}.method-flow__node dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:14px 0 0;font-size:12px}.method-flow__node dt{color:var(--brand-primary);font-weight:650}.method-flow__node dd{margin:0;color:var(--text-secondary)}.method-flow__nodes>li:not(:last-child)::after{content:"→";position:absolute;z-index:1;right:-23px;top:50%;color:var(--brand-primary);font-size:20px;transform:translateY(-50%)}.method-flow__note{margin:12px 0 0;color:var(--text-secondary);font-size:12px;line-height:1.6}
+@media(max-width:1000px){.site-nav{align-items:flex-start;flex-direction:column}.site-nav-links{max-width:100%;justify-content:flex-start}}@media(max-width:700px){.method-flow__nodes{grid-template-columns:1fr;gap:18px}.method-flow__nodes>li:not(:last-child)::after{content:"↓";right:auto;top:auto;bottom:-24px;left:50%;transform:translateX(-50%)}}@media(max-width:620px){.shell{padding:16px}.site-nav-links,.home-tabs{width:100%;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:thin}.site-nav-links a,.home-tabs a,.home-tabs button{flex:0 0 auto;white-space:nowrap}.site-nav-links .theme-toggle{margin-left:auto}h1{font-size:1.875rem}.site-footer{padding-inline:16px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* Final semantic overrides consumed by generated page styles. */
+body .shell h1,body .shell h2,body .shell h3{font-family:var(--font-serif)}body .shell h1{font-size:2.25rem}body .shell h2{font-size:1.5rem}body .shell h3{font-size:1.125rem}code,pre,kbd,samp{font-family:var(--font-mono)}
+@media(hover:hover) and (pointer:fine){.card:hover,.paper-card:hover,.e-card:hover,.future-card:hover,.topic:hover,.resource:hover{transform:translateY(-2px)}}
+.citation-actions{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:36px}.citation-button{min-height:30px!important}.citation-actions textarea,[data-citation-manual]{min-height:60px;width:min(100%,32rem);padding:7px 9px;border:1px solid var(--border-color);border-radius:5px;background:var(--bg-surface);color:var(--text-primary);font:12px/1.5 var(--font-mono)}
+@media(max-width:620px){body .shell h1{font-size:2rem}.site-nav{min-height:48px}}
+
+:root[data-theme=dark]{--on-brand:#121514;--accent-text:#E09053;--danger-text:#F0A18C;--modal-backdrop:rgba(0,0,0,.64);--focus-ring:#E09053;--modal-shadow-color:rgba(0,0,0,.42)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--on-brand:#121514;--accent-text:#E09053;--danger-text:#F0A18C;--modal-backdrop:rgba(0,0,0,.64);--focus-ring:#E09053;--modal-shadow-color:rgba(0,0,0,.42)}}
+
+/* Shared chrome geometry is identical on each page, including narrow screens. */
+body > .shell { width: 100%; flex: 1 0 auto; }
+.shell .site-nav {
+  position: sticky; top: 0; z-index: 6; display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 40px;
+  align-items: center; gap: 12px; min-height: 68px; padding: 10px 0;
+  background: color-mix(in srgb, var(--bg-canvas) 96%, transparent);
+  backdrop-filter: blur(12px);
 }
-.site-nav-links > .home-tabs { flex: 0 0 auto; width: auto; overflow: visible; margin: 0; }
-.site-nav-links a, .home-tabs a, .home-tabs button { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--muted); font-size: 13px; font-weight: 650; text-decoration: none; cursor: pointer; }
-.site-nav-links a:hover, .site-nav-links a[aria-current="page"], .home-tabs a:hover, .home-tabs a[aria-selected="true"], .home-tabs button:hover, .home-tabs button[aria-selected="true"] { background: var(--mint); color: var(--forest); }
-.site-nav-links a[aria-current="page"], .home-tabs a[aria-current="page"], .home-tabs button[aria-selected="true"] { border-color: var(--line); }
-header { align-items: flex-start; }
-header h1, .future-section h1 { font-size: clamp(28px, 4vw, 36px); }
-.panel, .card, .topic, .resource, .paper-card, .e-card, .future-section, .band, .code-section, .tutorials, .future-teaser, .modal-card, .roadmap, .roadmap-item { border-radius: 8px; box-shadow: none; }
-.future-section, .band { background: #f0f5f0; border-color: var(--line); color: var(--ink); }
-.future-section h1, .future-section h2, .band h2, .future-section .eyebrow { color: var(--green); }
-.future-lede, .band p, .future-card p, .step p { color: var(--muted); }
-.future-card, .step { border: 1px solid var(--line); border-radius: 7px; background: var(--card); }
-.future-card.featured { background: #f4f8f4; }
-.filter-chip, .chip, .stat, .future-meta span, .meta span { border-radius: 5px; }
-.future-meta span { color: var(--muted); border-color: var(--line); }
-.future-bottom { color: var(--muted); }
-.future-bottom a { color: var(--green); }
-.notice { background: #f3f7f3; border-left-color: var(--green); color: #52655b; }
-button { min-height: 44px; border-radius: 6px; }
-summary { min-height: 32px; }
-.stat { padding: 7px 9px; font-size: 12px; }
-.paper-title-en, .paper-title-zh { display: block; }
-.paper-title-zh { margin-top: 3px; color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.45; }
-.project-progress, .title-map-notice, .scope-note { color: var(--muted); font-size: 12px; line-height: 1.5; }
-.project-progress { margin: 10px 0 0; }
-.title-map-notice { margin: 5px 0 0; }
-.service-details { max-width: 330px; color: var(--muted); font-size: 12px; text-align: right; }
-.service-details summary, .scope-note summary { cursor: pointer; }
-.service-details .stats { margin-top: 10px; gap: 6px; }
-.workspace .empty { min-height: 240px; }
-.workspace .empty .mark { transform: none; width: 52px; height: 52px; border-radius: 8px; }
-.examples, .paper-tags { gap: 6px; }
-.agent-trace { max-height: 120px; overflow: auto; }
-.scope-note { margin-top: 14px; }
-.route-shortcuts { margin: 14px 0 0; padding: 12px 14px; border: 1px solid var(--line); background: var(--card); border-radius: 8px; font-size: 12px; }
-.route-shortcuts summary { cursor: pointer; color: var(--green); }
-.route-shortcuts p { color: var(--muted); line-height: 1.6; }
-.route-shortcuts .links { display: flex; flex-wrap: wrap; gap: 9px 16px; }
-.site-footer { display: flex; flex-wrap: wrap; gap: 12px 24px; max-width: 1200px; margin: 28px auto 0; padding: 20px 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
-.answer-mode { color: var(--muted); font-size: 13px; }
-.page-sources { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
-.page-sources a { color: var(--green); }
-@media (max-width: 1000px) { .site-nav { align-items: flex-start; flex-direction: column; } .site-nav-links { max-width: 100%; } }
-@media (max-width: 700px) { .shell { padding: 16px; } }
+.site-nav .theme-toggle { grid-column: 3; margin: 0; }
+.site-nav .site-nav-links { width: 100%; flex-wrap: nowrap; overflow-x: auto; }
+.shell .site-nav .brand { letter-spacing: .04em; text-transform: none; }
+body > .site-footer {
+  width: 100%; min-height: 80px; align-items: center;
+  margin: auto auto 0; padding: 20px 24px;
+}
+body .shell h1 { font-weight: 700; line-height: 1.2; }
+body .shell h2, body .shell h3 { font-weight: 600; }
+.theme-toggle svg { flex-shrink: 0; }
+.method-flow__heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; }
+.method-flow__label { color: var(--text-secondary); font: 12px/1.6 var(--font-mono); white-space: nowrap; }
+.method-flow__node:hover { color: var(--text-primary); }
+.citation-actions .citation-button {
+  min-height: 32px; padding: 6px 9px; border: 1px solid var(--border-color);
+  border-radius: 5px; background: var(--bg-subtle); color: var(--text-primary);
+  font: 500 12px/1.5 var(--font-mono); cursor: pointer;
+}
+.citation-actions .citation-button:hover { border-color: var(--brand-primary); background: var(--bg-surface); }
+.citation-status:empty { display: none; }
+.citation-status {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  z-index: 30; width: max-content; max-width: calc(100vw - 32px); padding: 10px 16px;
+  border: 1px solid var(--border-color); border-radius: 8px;
+  background: var(--bg-surface); color: var(--text-primary); box-shadow: var(--shadow-card);
+  font-size: 13px;
+}
+[data-citation-manual] {
+  position: fixed; z-index: 31; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: min(36rem, calc(100vw - 32px)); max-height: 80vh; overflow: auto;
+  padding: 20px; border-radius: 10px; box-shadow: 0 12px 60px var(--modal-shadow-color);
+}
+[data-citation-manual] > div { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+[data-citation-manual] textarea {
+  width: 100%; min-height: 220px; margin-top: 12px; padding: 12px;
+  background: var(--bg-subtle); color: var(--text-primary); font: 13px/1.6 var(--font-mono);
+}
+input::placeholder, textarea::placeholder { color: var(--text-secondary); opacity: 1; }
+@media (max-width: 1100px) {
+  .shell .site-nav { grid-template-columns: minmax(0, 1fr) 40px; gap: 6px 12px; min-height: 112px; }
+  .site-nav .brand { grid-column: 1; grid-row: 1; }
+  .site-nav .theme-toggle { grid-column: 2; grid-row: 1; }
+  .site-nav .site-nav-links { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; }
+}
+@media (max-width: 700px) { .method-flow__heading { display: block; } }
 @media (max-width: 620px) {
-  .site-nav-links, .home-tabs { width: 100%; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: thin; }
-  .site-nav-links a, .home-tabs a, .home-tabs button { flex: 0 0 auto; white-space: nowrap; }
+  body > .site-footer { padding-inline: 16px; }
+  .shell .site-nav .brand { font-size: 12px; }
 }
+
+/* Domain accents stay legible without changing the requested brand palette. */
+:root { --link-color: var(--brand-primary); }
+:root[data-theme=dark] { --link-color: #8CCCB5; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) { --link-color: #8CCCB5; } }
+a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
+.theme-toggle { color: var(--text-secondary); }
+.topic, .resource { align-self: start; }
+.topic-body, .resource-body { border-color: var(--border-color); }
+.paper-title-en, .paper-title-zh { display: block; }
+.paper-title-zh { margin-top: 4px; color: var(--text-secondary); font: 400 13px/1.5 var(--font-sans); }
+.paper-insight-source, .paper-insight-kind { font-size: 12px; }
+.paper-insight-kind { color: var(--accent-text); }
 </style>
 <script src="./lab-ui.js"></script>
-<meta name="description" content="电池材料计算需要的数学、物理、DFT、MD 与电化学基础及参考书目。"><meta property="og:title" content="基础地图 · Battery Evidence Lab"><meta property="og:description" content="电池材料计算需要的数学、物理、DFT、MD 与电化学基础及参考书目。"><meta property="og:type" content="website"><meta property="og:url" content="https://rua-creeper-233.github.io/battery-evidence-lab/foundations.html"><meta property="og:image" content="https://rua-creeper-233.github.io/battery-evidence-lab/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://rua-creeper-233.github.io/battery-evidence-lab/foundations.html"><link rel="icon" type="image/svg+xml" href="./favicon.svg"></head>
+<script id="lab-theme-bootstrap">(() => {
+  try {
+    const key = 'battery-lab-theme';
+    const stored = localStorage.getItem(key);
+    const mode = stored === 'light' || stored === 'dark' ? stored :
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.dataset.theme = mode;
+  } catch (_) {}
+})();</script><meta name="description" content="电池材料计算需要的数学、物理、DFT、MD 与电化学基础及参考书目。"><meta property="og:title" content="基础地图 · Battery Evidence Lab"><meta property="og:description" content="电池材料计算需要的数学、物理、DFT、MD 与电化学基础及参考书目。"><meta property="og:type" content="website"><meta property="og:url" content="https://rua-creeper-233.github.io/battery-evidence-lab/foundations.html"><meta property="og:image" content="https://rua-creeper-233.github.io/battery-evidence-lab/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://rua-creeper-233.github.io/battery-evidence-lab/foundations.html"><link rel="icon" type="image/svg+xml" href="./favicon.svg"></head>
 <body><div class="shell">
-  <nav class="site-nav" aria-label="页面导航"><a class="brand" href="./index.html#research-question">Battery Evidence Lab</a><div class="site-nav-links"><a href="./index.html#research-question">证据问答</a><a href="./index.html#library">论文库</a><a href="./index.html#tutorials">教程</a><a href="./future-directions.html">未来方向</a><a href="./ai-battery-applications.html">AI 应用</a><a href="./foundations.html" aria-current="page">基础地图</a><a href="./learning-route.html">学习路线</a><a href="./domestic-papers.html">国内论文</a></div></nav>
+  <nav class="site-nav" aria-label="页面导航"><a class="brand" href="./index.html#research-question">Battery Evidence Lab</a><div class="site-nav-links"><a href="./index.html#research-question">证据问答</a><a href="./index.html#library">论文库</a><a href="./index.html#tutorials">教程</a><a href="./future-directions.html">未来方向</a><a href="./ai-battery-applications.html">AI 应用</a><a href="./foundations.html" aria-current="page">基础地图</a><a href="./learning-route.html">学习路线</a><a href="./domestic-papers.html">国内论文</a></div><button class="theme-toggle" type="button" data-theme-toggle title="切换为深色模式" aria-label="切换为深色模式" aria-pressed="false"><svg class="theme-icon-sun icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 15.4A8.5 8.5 0 0 1 8.6 3.2 8.5 8.5 0 1 0 20.8 15.4Z"/></svg></button></nav>
   <header><div class="eyebrow">基础概念地图</div><h1>从“不会量子力学”到能读懂电池模拟</h1><p class="lede">面向材料、聚合物或电子信息背景的初学者。每张卡只要求一个小台阶，配一个最小公式和一个练习；按需要打开阅读。</p><div class="notice"><strong>边界先说清：</strong>VASP 是否可用取决于课题组许可证与集群环境；LoRA 是语言模型微调，不等于 MLIP；自扩散系数不是自动等于电导率；NEB 给的是一条路径上的势垒候选，不是唯一反应速率；U 不是“通用准确性”按钮。</div><div class="meta"><span>20 个主题卡</span><span>8 本书 · 8 篇基础/综述论文</span><span>中文/English 搜索</span><span>默认折叠，键盘可操作</span></div><p class="group-lede"><strong>前两周实践：</strong>第 1 周学 01–04：单位换算、NumPy 小矩阵、Python CSV→JSON；第 2 周学 13–15：用合成轨迹练 PBC、unwrap 和 MSD。这里只是程序与方法练习，不是电池扩散计算结果。</p><p class="project-progress" data-project-progress>256 篇论文 · 更新于 2026-10-28</p></header>
-  <main><div class="controls"><label for="search">搜索知识与资源</label><input id="search" type="search" placeholder="搜索：波函数 / wavefunction / NEB / diffusion…" autocomplete="off"><label for="category">筛选分类</label><select id="category"><option value="all">全部分类</option><option value="workflow">工作流与数学</option><option value="physics">物理基础</option><option value="dft">DFT / VASP</option><option value="md">MD / 输运</option><option value="electrochem">电化学 / AI</option></select><button id="expand" type="button">展开可见卡</button><button id="collapse" type="button">折叠可见卡</button><span class="count" id="count" role="status" aria-live="polite">显示 20 个主题 + 16 个资源 / 36 张卡</span></div><div class="empty" id="empty">没有匹配的主题。试试中文、English、缩短关键词，或清除筛选。</div>
+  <main><section class="method-flow" data-method-flow aria-labelledby="method-flow-title">
+      <div class="method-flow__heading"><div><p class="eyebrow">计算方法 · 从基准到采样</p><h2 id="method-flow-title">精度、尺度与算力，怎样取舍？</h2></div><span class="method-flow__label">DFT → AIMD → MLIP</span></div>
+      <ol class="method-flow__nodes">
+        <li><a class="method-flow__node" href="./foundations.html#topic-ks"><span class="method-flow__index">01 / 电子结构</span><h3>DFT</h3><p>求解电子结构，为能量、力与应力建立参考。</p><dl><dt>尺度</dt><dd>局部结构与静态基准</dd><dt>算力</dt><dd>每次求力成本较高</dd><dt>检查</dt><dd>泛函、截断能与 k 点收敛</dd></dl></a></li>
+        <li><a class="method-flow__node" href="./foundations.html#topic-md"><span class="method-flow__index">02 / 有限温度</span><h3>AIMD</h3><p>逐步计算第一性原理力，观察原子热运动。</p><dl><dt>尺度</dt><dd>有限体系与有限轨迹</dd><dt>算力</dt><dd>逐步求力，采样代价累积</dd><dt>检查</dt><dd>步长、系综与统计采样</dd></dl></a></li>
+        <li><a class="method-flow__node" href="./foundations.html#topic-mlip"><span class="method-flow__index">03 / 扩展采样</span><h3>MLIP</h3><p>学习参考势能面，将计算预算用于更长、更大尺度的 MD。</p><dl><dt>尺度</dt><dd>更大体系与更长轨迹</dd><dt>算力</dt><dd>标注与训练投入，推断较快</dd><dt>检查</dt><dd>目标域误差与分布外验证</dd></dl></a></li>
+      </ol>
+      <p class="method-flow__note">箭头表示工作流衔接。AIMD 的力可来自 DFT；MLIP 的可信范围取决于参考方法、训练覆盖和目标域验证，计算尺度扩大并不自动提高精度。</p>
+    </section><div class="controls"><label for="search">搜索知识与资源</label><input id="search" type="search" placeholder="搜索：波函数 / wavefunction / NEB / diffusion…" autocomplete="off"><label for="category">筛选分类</label><select id="category"><option value="all">全部分类</option><option value="workflow">工作流与数学</option><option value="physics">物理基础</option><option value="dft">DFT / VASP</option><option value="md">MD / 输运</option><option value="electrochem">电化学 / AI</option></select><button id="expand" type="button">展开可见卡</button><button id="collapse" type="button">折叠可见卡</button><span class="count" id="count" role="status" aria-live="polite">显示 20 个主题 + 16 个资源 / 36 张卡</span></div><div class="empty" id="empty">没有匹配的主题。试试中文、English、缩短关键词，或清除筛选。</div>
     <section class="group" data-group="workflow" aria-labelledby="workflow-title"><h2 id="workflow-title">一、工作流与数学语言</h2><p class="group-lede">先学会把问题、输入、单位和验证写清楚；这会让后面的公式变成工具，而不是门槛。</p><div class="cards">
       <details class="topic" id="topic-question" data-category="workflow" data-search="研究问题 research question workflow reproducibility 可复现"><summary><span class="num">01 · 工作流</span><h3>把研究问题写成可验证的计算</h3><div class="terms">Research question · input / output · reproducibility</div></summary><div class="topic-body"><dl class="glossary"><dt>Research question / 研究问题</dt><dd>可被输入、输出和基线检验的问题。</dd><dt>Reproducibility / 可复现</dt><dd>别人能用相同输入重跑并解释差异。</dd></dl><p><strong>为什么有用：</strong>避免“跑一个很大的模型”却不知道要支持哪条主张。先写材料、状态、观测量和比较基线。</p><div class="facts"><div class="fact"><b>前置</b><span>能读图表；知道长度、时间、温度单位。</span></div><div class="fact"><b>最小例子</b><span>问“升温是否加快 Li 扩散？”输入 T/K，输出 D/m²·s⁻¹。</span></div><div class="fact"><b>练习</b><span>把“找好电解质”改写成一个带测试集的句子。</span></div><div class="fact"><b>常见坑 / 完成</b><span>坑：把相关性叫因果。完成：一页纸含假设、输入、输出、基线、验收。</span></div></div><p><strong>选读：</strong>Python Tutorial；Trefethen &amp; Bau（数值语言）。</p><div class="links"><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noreferrer">官方 Python</a></div></div></details>
       <details class="topic" id="topic-linear-algebra" data-category="workflow" data-search="线性代数 linear algebra vector matrix eigenvalue QR 条件数"><summary><span class="num">02 · 数学</span><h3>线性代数：向量、矩阵与特征值</h3><div class="terms">Vector 向量 · matrix 矩阵 · eigenvalue 特征值</div></summary><div class="topic-body"><dl class="glossary"><dt>Eigenvalue / 特征值</dt><dd>矩阵作用后只改变大小、不改变方向的数。</dd><dt>Conditioning / 条件数</dt><dd>输入小误差可能被放大的敏感度。</dd></dl><p><strong>为什么有用：</strong>量子态、拟合参数和结构坐标都用向量表示；许多计算就是稳定地解矩阵问题。</p><div class="facts"><div class="fact"><b>前置</b><span>高中代数；会读坐标和求和符号。</span></div><div class="fact"><b>公式 / 单位</b><span>A v = λv；λ 的单位随 A 决定。</span></div><div class="fact"><b>练习</b><span>用 NumPy 求 2×2 矩阵的特征值并检查 Av−λv。</span></div><div class="fact"><b>常见坑 / 完成</b><span>坑：显式求逆放大误差。完成：解释条件数为何影响结果。</span></div></div><p><strong>选读：</strong>Trefethen &amp; Bau 的 QR、conditioning、eigen 章节。</p><div class="links"><a href="https://numpy.org/doc/stable/user/absolute_beginners.html" target="_blank" rel="noreferrer">NumPy 入门</a><a href="https://epubs.siam.org/doi/10.1137/1.9781611977165" target="_blank" rel="noreferrer">SIAM 书页</a></div></div></details>
@@ -173,4 +209,4 @@ summary { min-height: 32px; }
     window.foundationsPage={applyFilters,normalize};
   }());
 </script>
-<footer class="site-footer" data-site-footer><span>Battery Evidence Lab</span><a href="./guides/PROJECT_STATUS.md">项目记录</a><a href="https://github.com/rua-creeper-233/battery-evidence-lab" target="_blank" rel="noopener noreferrer">GitHub</a></footer><script src="./nav-overflow.js" defer></script></body></html>
+<footer class="site-footer" data-site-footer><span>Battery Evidence Lab</span><a href="./guides/PROJECT_STATUS.md">项目记录</a><a href="https://github.com/rua-creeper-233/battery-evidence-lab" target="_blank" rel="noopener noreferrer">GitHub</a></footer><script src="./nav-overflow.js" defer></script><script src="./citation-tools.js" defer></script><script src="./notebook.js" defer></script></body></html>

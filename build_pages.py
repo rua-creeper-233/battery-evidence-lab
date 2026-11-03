@@ -9,6 +9,7 @@ import shutil
 from pathlib import Path
 import publication_safety
 from site_chrome import PAGES, PUBLIC_BASE, prepare_chrome
+from method_flow import prepare_method_flow
 
 
 ROOT = Path(__file__).resolve().parent
@@ -20,7 +21,7 @@ GUIDE_NAMES = (
     "PROJECT_STATUS.md", "RELEASE_NOTES.md", "LEARNING_ROUTE_20261014.md",
 )
 PAGE_NAMES = ("index.html", "future-directions.html", "ai-battery-applications.html", "foundations.html")
-ASSET_NAMES = ("favicon.svg", "share-card.png", "nav-overflow.js", "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css", "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css", "battery_explorer.js", "paper_insights.js", "paper_insights.css", "home.css", "home.js", "tutorials.js", "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js")
+ASSET_NAMES = ("favicon.svg", "share-card.png", "nav-overflow.js", "notebook.js", "citation-tools.js", "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css", "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css", "battery_explorer.js", "paper_insights.js", "paper_insights.css", "home.css", "home.js", "tutorials.js", "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js")
 DATA_NAMES = ("papers.json", "paper_tags.json", "search_config.json", "project_status.json", "learning_route.json", "paper_titles_zh.json", "domestic_papers.json", "static_qa.json", "research_knowledge.json", "battery_components.json", "paper_insights.json")
 
 
@@ -48,7 +49,7 @@ def prepare_page(source: str, status_text: str, shared_css: str = "", page: str 
         source, flags=re.S,
     )
     if page:
-        return prepare_chrome(source, page, shared_css)
+        return prepare_chrome(prepare_method_flow(source, page), page, shared_css)
     if shared_css:
         css = re.sub(r"</style", lambda _: r"<\/style", shared_css, flags=re.I)
         source = source.replace("</head>", f'<style data-lab-ui-inline>{css}</style></head>', 1)

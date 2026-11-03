@@ -5,97 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI 应用 · Battery Evidence Lab</title>
   <style>
-    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,"Noto Sans SC","Microsoft YaHei",sans-serif}.shell{position:relative;max-width:1240px;margin:auto;padding:30px}.site-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 4px 16px;border-bottom:1px solid var(--line)}.brand{color:var(--ink);font:700 12px/1 ui-monospace,monospace;text-decoration:none}.site-nav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.site-nav-links a{padding:8px 12px;border-radius:999px;color:var(--muted);font-size:12px;text-decoration:none}.site-nav-links a:hover{background:var(--mint);color:var(--green)}header{padding:48px 4px 28px;border-bottom:1px solid var(--line)}.eyebrow{color:var(--orange);font:700 12px/1.2 ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase}h1{max-width:850px;margin:12px 0 12px;font:680 clamp(32px,5vw,62px)/1.05 Georgia,"Noto Serif SC",serif;letter-spacing:-.04em}.lede{max-width:820px;color:var(--muted);line-height:1.8;margin:0}.notice{margin-top:18px;padding:13px 15px;border-left:3px solid var(--orange);background:#fff3e9;border-radius:4px 12px 12px 4px;color:#744324;font-size:13px;line-height:1.65}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:21px}.meta span{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12px;color:#526158}main{padding-top:26px}.section-title{margin:0 0 7px;font:650 29px/1.2 Georgia,"Noto Serif SC",serif}.section-lede{margin:0 0 19px;color:var(--muted);line-height:1.7;font-size:14px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{display:flex;flex-direction:column;padding:21px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.card.featured{grid-column:1/-1;background:#e7f2e8}.index{color:var(--orange);font:700 12px ui-monospace,monospace;letter-spacing:.08em}.card h3{margin:8px 0 7px;font:650 20px/1.3 Georgia,"Noto Serif SC",serif}.card p{margin:0;color:#526158;font-size:13px;line-height:1.72}.card .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}.mini{padding:12px 12px;border:1px solid #cadbc9;border-radius:12px;background:#fbfdf9}.mini b{display:block;color:var(--green);font-size:12px;margin-bottom:4px}.mini span{color:#526158;font-size:12px;line-height:1.55}.links{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:16px}.links a{padding:6px 8px;border-radius:7px;background:#d9e9da;color:#1b5b41;font-size:12px;font-weight:750;text-decoration:none}.links a:hover{background:#c5dec9}.band{margin-top:26px;padding:25px;background:#18382e;color:#edf7ef;border:1px solid #2c5c49;border-radius:18px}.band h2{margin:0 0 8px;color:#fff;font:650 27px Georgia,"Noto Serif SC",serif}.band p{color:#c7ded0;line-height:1.75;font-size:13px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.step{padding:14px;background:#f7fbf4;color:var(--ink);border-radius:12px}.step b{color:var(--orange);font:700 12px ui-monospace,monospace}.step h3{margin:7px 0 5px;font-size:15px}.step p{margin:0;color:#526158;font-size:12px;line-height:1.6}.code-section{margin-top:26px;padding:23px;background:#fff;border:1px solid var(--line);border-radius:16px}.code-section h2{margin:0 0 12px;font:650 25px Georgia,"Noto Serif SC",serif}.code-section p{color:var(--muted);font-size:13px;line-height:1.7}.code{overflow:auto;padding:16px;border-radius:12px;background:#14241e;color:#d8f1df;font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}code{padding:2px 5px;border-radius:5px;background:#edf3ee;color:#294b3c}.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}.check{padding:13px;border:1px solid var(--line);border-radius:12px;background:#fbfcf8}.check b{font-size:12px;color:var(--green)}.check p{margin:5px 0 0;font-size:12px;line-height:1.55;color:var(--muted)}footer{padding:27px 4px 8px;color:var(--muted);font-size:12px;line-height:1.7}a{color:var(--green)}@media(max-width:760px){.shell{padding:18px}.site-nav{align-items:flex-start;flex-direction:column}.site-nav-links{justify-content:flex-start}header{padding-top:35px}.cards{grid-template-columns:1fr}.card.featured{grid-column:auto}.card .row,.checks{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}@media(max-width:450px){.steps{grid-template-columns:1fr}}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--font-sans)}.shell{position:relative;max-width:1240px;margin:auto;padding:30px}.site-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 4px 16px;border-bottom:1px solid var(--line)}.brand{color:var(--ink);font:700 12px/1 var(--font-mono);text-decoration:none}.site-nav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.site-nav-links a{padding:8px 12px;border-radius:999px;color:var(--muted);font-size:12px;text-decoration:none}.site-nav-links a:hover{background:var(--mint);color:var(--green)}header{padding:48px 4px 28px;border-bottom:1px solid var(--line)}.eyebrow{color:var(--orange);font:700 12px/1.2 var(--font-mono);letter-spacing:.13em;text-transform:uppercase}h1{max-width:850px;margin:12px 0 12px;font:680 clamp(32px,5vw,62px)/1.05 var(--font-serif);letter-spacing:-.04em}.lede{max-width:820px;color:var(--muted);line-height:1.8;margin:0}.notice{margin-top:18px;padding:13px 15px;border-left:3px solid var(--orange);background:var(--bg-subtle);border-radius:4px 12px 12px 4px;color:var(--text-secondary);font-size:13px;line-height:1.65}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:21px}.meta span{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--bg-surface);font-size:12px;color:var(--text-secondary)}main{padding-top:26px}.section-title{margin:0 0 7px;font:650 29px/1.2 var(--font-serif)}.section-lede{margin:0 0 19px;color:var(--muted);line-height:1.7;font-size:14px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{display:flex;flex-direction:column;padding:21px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.card.featured{grid-column:1/-1;background:var(--bg-subtle)}.index{color:var(--orange);font:700 12px var(--font-mono);letter-spacing:.08em}.card h3{margin:8px 0 7px;font:650 20px/1.3 var(--font-serif)}.card p{margin:0;color:var(--text-secondary);font-size:13px;line-height:1.72}.card .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}.mini{padding:12px 12px;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-surface)}.mini b{display:block;color:var(--green);font-size:12px;margin-bottom:4px}.mini span{color:var(--text-secondary);font-size:12px;line-height:1.55}.links{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:16px}.links a{padding:6px 8px;border-radius:7px;background:var(--bg-subtle);color:var(--brand-primary);font-size:12px;font-weight:750;text-decoration:none}.links a:hover{background:var(--bg-subtle)}.band{margin-top:26px;padding:25px;background:var(--bg-subtle);color:var(--text-secondary);border:1px solid var(--border-color);border-radius:18px}.band h2{margin:0 0 8px;color:var(--text-primary);font:650 27px var(--font-serif)}.band p{color:var(--text-secondary);line-height:1.75;font-size:13px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.step{padding:14px;background:var(--bg-surface);color:var(--ink);border-radius:12px}.step b{color:var(--orange);font:700 12px var(--font-mono)}.step h3{margin:7px 0 5px;font-size:15px}.step p{margin:0;color:var(--text-secondary);font-size:12px;line-height:1.6}.code-section{margin-top:26px;padding:23px;background:var(--bg-surface);border:1px solid var(--line);border-radius:16px}.code-section h2{margin:0 0 12px;font:650 25px var(--font-serif)}.code-section p{color:var(--muted);font-size:13px;line-height:1.7}.code{overflow:auto;padding:16px;border-radius:12px;background:var(--bg-subtle);color:var(--text-secondary);font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}code{padding:2px 5px;border-radius:5px;background:var(--bg-subtle);color:var(--text-secondary)}.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}.check{padding:13px;border:1px solid var(--line);border-radius:12px;background:var(--bg-surface)}.check b{font-size:12px;color:var(--green)}.check p{margin:5px 0 0;font-size:12px;line-height:1.55;color:var(--muted)}footer{padding:27px 4px 8px;color:var(--muted);font-size:12px;line-height:1.7}a{color:var(--green)}@media(max-width:760px){.shell{padding:18px}.site-nav{align-items:flex-start;flex-direction:column}.site-nav-links{justify-content:flex-start}header{padding-top:35px}.cards{grid-template-columns:1fr}.card.featured{grid-column:auto}.card .row,.checks{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}@media(max-width:450px){.steps{grid-template-columns:1fr}}
   </style>
-  <style data-lab-ui-inline>/* Shared quiet visual baseline. Pages keep their existing structure/content. */
+  <style data-lab-ui-inline>/* Academic Research Notebook 2.0 shared design system. */
 :root {
-  --paper: #fafbf8;
-  --ink: #203029;
-  --muted: #5d6a63;
-  --card: #ffffff;
-  --line: #dbe3dc;
-  --green: #2e6b50;
-  --forest: #123f35;
-  --mint: #edf5ef;
-  --accent: #b26a31;
-  --orange: var(--accent);
-  --blue: #245a8d;
-  --shadow: none;
+  color-scheme: light;
+  --bg-canvas:#FBFBF8; --bg-surface:#FFFFFF; --bg-subtle:#F3F3ED; --border-color:#E5E5DE;
+  --text-primary:#1E2320; --text-secondary:#5C645E; --brand-primary:#245A48; --brand-hover:#1A4436; --accent-amber:#C87A3E;
+  --shadow-card:0 4px 16px rgba(0,0,0,.06); --transition-ui:.2s cubic-bezier(.16,1,.3,1);
+  --font-sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; --font-serif:Newsreader,Georgia,"Noto Serif SC",serif; --font-mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Consolas,monospace;
+  --on-brand:#FFFFFF; --accent-text:#94501F; --danger-text:#A23E2A; --modal-backdrop:rgba(30,35,32,.48); --focus-ring:var(--accent-amber); --modal-shadow-color:rgba(0,0,0,.16);
+  --paper:var(--bg-canvas); --ink:var(--text-primary); --muted:var(--text-secondary); --card:var(--bg-surface); --line:var(--border-color);
+  --green:var(--brand-primary); --forest:var(--brand-hover); --mint:var(--bg-subtle); --accent:var(--accent-amber); --orange:var(--accent-amber); --blue:#245A8D; --shadow:var(--shadow-card);
 }
-* { box-sizing: border-box; }
-html { scroll-padding-top: 90px; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; }
-a { color: var(--green); text-underline-offset: 3px; }
-button, input, select, textarea { font: inherit; }
-h1, h2, h3, h4 { font-family: inherit; }
-html body [hidden] { display: none; }
-.shell, .site-nav, .site-nav-links, .home-tabs { min-width: 0; }
-button, input, select, textarea, summary, a { outline-offset: 3px; }
-button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); }
-.shell { max-width: 1200px; margin: 0 auto; padding: 24px; }
-.site-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 0 16px; border-bottom: 1px solid var(--line); }
-.brand { color: var(--ink); font: 700 12px/1.4 ui-monospace, monospace; text-decoration: none; white-space: nowrap; }
-.site-nav-links, .home-tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
-.site-nav-links.overflow-left, .home-tabs.overflow-left { box-shadow: inset 2px 0 var(--line); }
-.site-nav-links.overflow-right, .home-tabs.overflow-right { border-inline-end: 2px solid var(--line); }
-@supports (mask-image: linear-gradient(to right, #000, transparent)) {
-  .overflow-left:not(.overflow-right) { mask-image: linear-gradient(to right, transparent, #000 18px); }
-  .overflow-right:not(.overflow-left) { mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent); }
-  .overflow-left.overflow-right { mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent); }
-  .overflow-focus, .site-nav-links:focus-within, .home-tabs:focus-within { mask-image: none; }
+@media (prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--bg-canvas:#121514;--bg-surface:#1A1F1D;--bg-subtle:#222926;--border-color:#2C3531;--text-primary:#EDEFEA;--text-secondary:#9EA7A0;--brand-primary:#3E856D;--brand-hover:#4E9B81;--accent-amber:#E09053}}
+:root[data-theme=dark]{color-scheme:dark;--bg-canvas:#121514;--bg-surface:#1A1F1D;--bg-subtle:#222926;--border-color:#2C3531;--text-primary:#EDEFEA;--text-secondary:#9EA7A0;--brand-primary:#3E856D;--brand-hover:#4E9B81;--accent-amber:#E09053}
+:root[data-theme=light]{color-scheme:light}
+*{box-sizing:border-box}html{scroll-padding-top:90px}body{min-width:320px;min-height:100vh;margin:0;display:flex;flex-direction:column;background:var(--bg-canvas);color:var(--text-primary);font-family:var(--font-sans);font-size:.9375rem;line-height:1.6;transition:background-color var(--transition-ui),color var(--transition-ui)}
+a{color:var(--brand-primary);text-underline-offset:3px}a:hover{color:var(--brand-hover)}button,input,select,textarea{font:inherit}h1,h2,h3,h4{font-family:inherit;color:var(--text-primary)}h1{font-size:2.25rem;font-weight:700;line-height:1.2}h2{font-size:1.5rem;font-weight:600;line-height:1.3}h3{font-size:1.125rem;font-weight:600;line-height:1.4}code,pre,kbd,samp{font-family:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Consolas,monospace}html body [hidden]{display:none}
+button,input,select,textarea,summary,a{outline-offset:3px}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent-amber);outline-offset:3px}
+.shell,.site-nav,.site-nav-links,.home-tabs{min-width:0}.shell{max-width:1200px;margin:0 auto;padding:24px}.site-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:48px;padding:10px 0;border-bottom:1px solid var(--border-color)}.brand{flex:0 0 auto;color:var(--text-primary);font:700 12px/1.4 "JetBrains Mono","Fira Code",ui-monospace,monospace;text-decoration:none;white-space:nowrap}.site-nav-links,.home-tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.site-nav-links> .home-tabs{flex:0 0 auto;width:auto;overflow:visible;margin:0}.site-nav-links a,.home-tabs a,.home-tabs button{display:inline-flex;align-items:center;min-height:44px;padding:8px 10px;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--text-secondary);font-size:13px;font-weight:650;text-decoration:none;cursor:pointer;transition:background-color var(--transition-ui),color var(--transition-ui),border-color var(--transition-ui)}.site-nav-links a:hover,.site-nav-links a[aria-current=page],.home-tabs a:hover,.home-tabs a[aria-selected=true],.home-tabs button:hover,.home-tabs button[aria-selected=true]{background:var(--bg-subtle);color:var(--brand-hover)}.site-nav-links a[aria-current=page],.home-tabs a[aria-current=page],.home-tabs button[aria-selected=true]{border-color:var(--border-color)}
+.theme-toggle{display:inline-grid;place-items:center;flex:0 0 auto;width:40px;height:40px;min-height:40px;padding:8px;border:1px solid var(--border-color);border-radius:50%;background:var(--bg-surface);color:var(--text-secondary);cursor:pointer;transition:background-color var(--transition-ui),color var(--transition-ui),border-color var(--transition-ui),transform var(--transition-ui)}.theme-toggle:hover{background:var(--bg-subtle);color:var(--brand-hover);transform:translateY(-1px)}.theme-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.theme-toggle .icon-moon{display:none}:root[data-theme=dark] .theme-toggle .icon-sun{display:none}:root[data-theme=dark] .theme-toggle .icon-moon{display:block}@media(prefers-color-scheme:dark){:root:not([data-theme]) .theme-toggle .icon-sun{display:none}:root:not([data-theme]) .theme-toggle .icon-moon{display:block}}
+.panel,.card,.topic,.resource,.paper-card,.e-card,.future-section,.band,.code-section,.tutorials,.future-teaser,.modal-card,.roadmap,.roadmap-item{border:1px solid var(--border-color);border-radius:8px;background:var(--bg-surface);box-shadow:var(--shadow-card);transition:background-color var(--transition-ui),border-color var(--transition-ui),box-shadow var(--transition-ui),transform var(--transition-ui)}.panel:hover,.card:hover,.paper-card:hover,.e-card:hover,.future-card:hover,.topic:hover,.resource:hover{box-shadow:0 6px 20px rgba(0,0,0,.08)}.future-section,.band{background:var(--bg-subtle);border-color:var(--border-color);color:var(--text-primary)}.future-card,.step{border:1px solid var(--border-color);border-radius:7px;background:var(--bg-surface)}.notice{background:var(--bg-subtle);border-left-color:var(--brand-primary);color:var(--text-secondary)}.filter-chip,.chip,.stat,.future-meta span,.meta span{border-radius:5px}.future-meta span{color:var(--text-secondary);border-color:var(--border-color)}.future-bottom,.future-lede,.band p,.future-card p,.step p{color:var(--text-secondary)}.project-progress,.title-map-notice,.scope-note{color:var(--text-secondary);font-size:12px;line-height:1.5}.service-details{max-width:330px;color:var(--text-secondary);font-size:12px;text-align:right}.service-details summary,.scope-note summary,summary{cursor:pointer}.service-details .stats{margin-top:10px;gap:6px}.workspace .empty{min-height:240px}.workspace .empty .mark{transform:none;width:52px;height:52px;border-radius:8px}.examples,.paper-tags{gap:6px}.agent-trace{max-height:120px;overflow:auto}.scope-note{margin-top:14px}.route-shortcuts{margin:14px 0 0;padding:12px 14px;border:1px solid var(--border-color);background:var(--bg-surface);border-radius:8px;font-size:12px}.route-shortcuts summary{color:var(--brand-primary)}.route-shortcuts p{color:var(--text-secondary);line-height:1.6}.route-shortcuts .links{display:flex;flex-wrap:wrap;gap:9px 16px}.site-footer,footer{color:var(--text-secondary);font-size:12px;line-height:1.6}.site-footer{display:flex;flex-wrap:wrap;gap:12px 24px;max-width:1200px;margin:28px auto 0;padding:20px 24px;border-top:1px solid var(--border-color)}.page-sources{margin-top:18px;padding-top:14px;border-top:1px solid var(--border-color);color:var(--text-secondary);font-size:12px;line-height:1.6}.page-sources a{color:var(--brand-primary)}
+.citation-copy{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 9px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-subtle);color:var(--text-secondary);font-size:12px}.citation-copy button{min-height:30px;padding:4px 8px;border:1px solid var(--border-color);border-radius:5px;background:var(--bg-surface);color:var(--brand-primary);font-size:12px;cursor:pointer}.citation-copy [role=status],.citation-copy-status{color:var(--text-secondary);font-size:12px}.doi,[data-doi],a[href*="doi.org"] code{font-family:"JetBrains Mono","Fira Code",ui-monospace,monospace;font-size:12px;letter-spacing:.01em}
+.method-flow{display:grid;gap:18px;padding:0;margin:18px 0}.method-flow__heading{margin-bottom:4px}.method-flow__heading h2{margin:4px 0}.method-flow__nodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;margin:0;padding:0;counter-reset:method-step}.method-flow__nodes>li{position:relative;min-width:0;counter-increment:method-step}.method-flow__node{display:block;height:100%;padding:18px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-surface);box-shadow:var(--shadow-card);color:var(--text-primary);text-decoration:none;transition:background-color var(--transition-ui),border-color var(--transition-ui),box-shadow var(--transition-ui),transform var(--transition-ui)}.method-flow__node:hover{border-color:var(--brand-primary);box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px)}.method-flow__index{display:block;color:var(--accent-amber);font:700 12px/1.2 "JetBrains Mono","Fira Code",ui-monospace,monospace;letter-spacing:.08em}.method-flow__node h3{margin:8px 0 6px}.method-flow__node p{margin:0;color:var(--text-secondary);font-size:13px;line-height:1.6}.method-flow__node dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:14px 0 0;font-size:12px}.method-flow__node dt{color:var(--brand-primary);font-weight:650}.method-flow__node dd{margin:0;color:var(--text-secondary)}.method-flow__nodes>li:not(:last-child)::after{content:"→";position:absolute;z-index:1;right:-23px;top:50%;color:var(--brand-primary);font-size:20px;transform:translateY(-50%)}.method-flow__note{margin:12px 0 0;color:var(--text-secondary);font-size:12px;line-height:1.6}
+@media(max-width:1000px){.site-nav{align-items:flex-start;flex-direction:column}.site-nav-links{max-width:100%;justify-content:flex-start}}@media(max-width:700px){.method-flow__nodes{grid-template-columns:1fr;gap:18px}.method-flow__nodes>li:not(:last-child)::after{content:"↓";right:auto;top:auto;bottom:-24px;left:50%;transform:translateX(-50%)}}@media(max-width:620px){.shell{padding:16px}.site-nav-links,.home-tabs{width:100%;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:thin}.site-nav-links a,.home-tabs a,.home-tabs button{flex:0 0 auto;white-space:nowrap}.site-nav-links .theme-toggle{margin-left:auto}h1{font-size:1.875rem}.site-footer{padding-inline:16px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* Final semantic overrides consumed by generated page styles. */
+body .shell h1,body .shell h2,body .shell h3{font-family:var(--font-serif)}body .shell h1{font-size:2.25rem}body .shell h2{font-size:1.5rem}body .shell h3{font-size:1.125rem}code,pre,kbd,samp{font-family:var(--font-mono)}
+@media(hover:hover) and (pointer:fine){.card:hover,.paper-card:hover,.e-card:hover,.future-card:hover,.topic:hover,.resource:hover{transform:translateY(-2px)}}
+.citation-actions{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:36px}.citation-button{min-height:30px!important}.citation-actions textarea,[data-citation-manual]{min-height:60px;width:min(100%,32rem);padding:7px 9px;border:1px solid var(--border-color);border-radius:5px;background:var(--bg-surface);color:var(--text-primary);font:12px/1.5 var(--font-mono)}
+@media(max-width:620px){body .shell h1{font-size:2rem}.site-nav{min-height:48px}}
+
+:root[data-theme=dark]{--on-brand:#121514;--accent-text:#E09053;--danger-text:#F0A18C;--modal-backdrop:rgba(0,0,0,.64);--focus-ring:#E09053;--modal-shadow-color:rgba(0,0,0,.42)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--on-brand:#121514;--accent-text:#E09053;--danger-text:#F0A18C;--modal-backdrop:rgba(0,0,0,.64);--focus-ring:#E09053;--modal-shadow-color:rgba(0,0,0,.42)}}
+
+/* Shared chrome geometry is identical on each page, including narrow screens. */
+body > .shell { width: 100%; flex: 1 0 auto; }
+.shell .site-nav {
+  position: sticky; top: 0; z-index: 6; display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 40px;
+  align-items: center; gap: 12px; min-height: 68px; padding: 10px 0;
+  background: color-mix(in srgb, var(--bg-canvas) 96%, transparent);
+  backdrop-filter: blur(12px);
 }
-.site-nav-links > .home-tabs { flex: 0 0 auto; width: auto; overflow: visible; margin: 0; }
-.site-nav-links a, .home-tabs a, .home-tabs button { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--muted); font-size: 13px; font-weight: 650; text-decoration: none; cursor: pointer; }
-.site-nav-links a:hover, .site-nav-links a[aria-current="page"], .home-tabs a:hover, .home-tabs a[aria-selected="true"], .home-tabs button:hover, .home-tabs button[aria-selected="true"] { background: var(--mint); color: var(--forest); }
-.site-nav-links a[aria-current="page"], .home-tabs a[aria-current="page"], .home-tabs button[aria-selected="true"] { border-color: var(--line); }
-header { align-items: flex-start; }
-header h1, .future-section h1 { font-size: clamp(28px, 4vw, 36px); }
-.panel, .card, .topic, .resource, .paper-card, .e-card, .future-section, .band, .code-section, .tutorials, .future-teaser, .modal-card, .roadmap, .roadmap-item { border-radius: 8px; box-shadow: none; }
-.future-section, .band { background: #f0f5f0; border-color: var(--line); color: var(--ink); }
-.future-section h1, .future-section h2, .band h2, .future-section .eyebrow { color: var(--green); }
-.future-lede, .band p, .future-card p, .step p { color: var(--muted); }
-.future-card, .step { border: 1px solid var(--line); border-radius: 7px; background: var(--card); }
-.future-card.featured { background: #f4f8f4; }
-.filter-chip, .chip, .stat, .future-meta span, .meta span { border-radius: 5px; }
-.future-meta span { color: var(--muted); border-color: var(--line); }
-.future-bottom { color: var(--muted); }
-.future-bottom a { color: var(--green); }
-.notice { background: #f3f7f3; border-left-color: var(--green); color: #52655b; }
-button { min-height: 44px; border-radius: 6px; }
-summary { min-height: 32px; }
-.stat { padding: 7px 9px; font-size: 12px; }
-.paper-title-en, .paper-title-zh { display: block; }
-.paper-title-zh { margin-top: 3px; color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.45; }
-.project-progress, .title-map-notice, .scope-note { color: var(--muted); font-size: 12px; line-height: 1.5; }
-.project-progress { margin: 10px 0 0; }
-.title-map-notice { margin: 5px 0 0; }
-.service-details { max-width: 330px; color: var(--muted); font-size: 12px; text-align: right; }
-.service-details summary, .scope-note summary { cursor: pointer; }
-.service-details .stats { margin-top: 10px; gap: 6px; }
-.workspace .empty { min-height: 240px; }
-.workspace .empty .mark { transform: none; width: 52px; height: 52px; border-radius: 8px; }
-.examples, .paper-tags { gap: 6px; }
-.agent-trace { max-height: 120px; overflow: auto; }
-.scope-note { margin-top: 14px; }
-.route-shortcuts { margin: 14px 0 0; padding: 12px 14px; border: 1px solid var(--line); background: var(--card); border-radius: 8px; font-size: 12px; }
-.route-shortcuts summary { cursor: pointer; color: var(--green); }
-.route-shortcuts p { color: var(--muted); line-height: 1.6; }
-.route-shortcuts .links { display: flex; flex-wrap: wrap; gap: 9px 16px; }
-.site-footer { display: flex; flex-wrap: wrap; gap: 12px 24px; max-width: 1200px; margin: 28px auto 0; padding: 20px 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
-.answer-mode { color: var(--muted); font-size: 13px; }
-.page-sources { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
-.page-sources a { color: var(--green); }
-@media (max-width: 1000px) { .site-nav { align-items: flex-start; flex-direction: column; } .site-nav-links { max-width: 100%; } }
-@media (max-width: 700px) { .shell { padding: 16px; } }
+.site-nav .theme-toggle { grid-column: 3; margin: 0; }
+.site-nav .site-nav-links { width: 100%; flex-wrap: nowrap; overflow-x: auto; }
+.shell .site-nav .brand { letter-spacing: .04em; text-transform: none; }
+body > .site-footer {
+  width: 100%; min-height: 80px; align-items: center;
+  margin: auto auto 0; padding: 20px 24px;
+}
+body .shell h1 { font-weight: 700; line-height: 1.2; }
+body .shell h2, body .shell h3 { font-weight: 600; }
+.theme-toggle svg { flex-shrink: 0; }
+.method-flow__heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; }
+.method-flow__label { color: var(--text-secondary); font: 12px/1.6 var(--font-mono); white-space: nowrap; }
+.method-flow__node:hover { color: var(--text-primary); }
+.citation-actions .citation-button {
+  min-height: 32px; padding: 6px 9px; border: 1px solid var(--border-color);
+  border-radius: 5px; background: var(--bg-subtle); color: var(--text-primary);
+  font: 500 12px/1.5 var(--font-mono); cursor: pointer;
+}
+.citation-actions .citation-button:hover { border-color: var(--brand-primary); background: var(--bg-surface); }
+.citation-status:empty { display: none; }
+.citation-status {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  z-index: 30; width: max-content; max-width: calc(100vw - 32px); padding: 10px 16px;
+  border: 1px solid var(--border-color); border-radius: 8px;
+  background: var(--bg-surface); color: var(--text-primary); box-shadow: var(--shadow-card);
+  font-size: 13px;
+}
+[data-citation-manual] {
+  position: fixed; z-index: 31; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: min(36rem, calc(100vw - 32px)); max-height: 80vh; overflow: auto;
+  padding: 20px; border-radius: 10px; box-shadow: 0 12px 60px var(--modal-shadow-color);
+}
+[data-citation-manual] > div { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+[data-citation-manual] textarea {
+  width: 100%; min-height: 220px; margin-top: 12px; padding: 12px;
+  background: var(--bg-subtle); color: var(--text-primary); font: 13px/1.6 var(--font-mono);
+}
+input::placeholder, textarea::placeholder { color: var(--text-secondary); opacity: 1; }
+@media (max-width: 1100px) {
+  .shell .site-nav { grid-template-columns: minmax(0, 1fr) 40px; gap: 6px 12px; min-height: 112px; }
+  .site-nav .brand { grid-column: 1; grid-row: 1; }
+  .site-nav .theme-toggle { grid-column: 2; grid-row: 1; }
+  .site-nav .site-nav-links { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; }
+}
+@media (max-width: 700px) { .method-flow__heading { display: block; } }
 @media (max-width: 620px) {
-  .site-nav-links, .home-tabs { width: 100%; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: thin; }
-  .site-nav-links a, .home-tabs a, .home-tabs button { flex: 0 0 auto; white-space: nowrap; }
+  body > .site-footer { padding-inline: 16px; }
+  .shell .site-nav .brand { font-size: 12px; }
 }
+
+/* Domain accents stay legible without changing the requested brand palette. */
+:root { --link-color: var(--brand-primary); }
+:root[data-theme=dark] { --link-color: #8CCCB5; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) { --link-color: #8CCCB5; } }
+a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
+.theme-toggle { color: var(--text-secondary); }
+.topic, .resource { align-self: start; }
+.topic-body, .resource-body { border-color: var(--border-color); }
+.paper-title-en, .paper-title-zh { display: block; }
+.paper-title-zh { margin-top: 4px; color: var(--text-secondary); font: 400 13px/1.5 var(--font-sans); }
+.paper-insight-source, .paper-insight-kind { font-size: 12px; }
+.paper-insight-kind { color: var(--accent-text); }
 </style>
 <script src="./lab-ui.js"></script>
-<meta name="description" content="AI 在电池材料模拟中的应用场景、论文进展、数据与实现路径。"><meta property="og:title" content="AI 应用 · Battery Evidence Lab"><meta property="og:description" content="AI 在电池材料模拟中的应用场景、论文进展、数据与实现路径。"><meta property="og:type" content="website"><meta property="og:url" content="https://rua-creeper-233.github.io/battery-evidence-lab/ai-battery-applications.html"><meta property="og:image" content="https://rua-creeper-233.github.io/battery-evidence-lab/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://rua-creeper-233.github.io/battery-evidence-lab/ai-battery-applications.html"><link rel="icon" type="image/svg+xml" href="./favicon.svg"></head>
+<script id="lab-theme-bootstrap">(() => {
+  try {
+    const key = 'battery-lab-theme';
+    const stored = localStorage.getItem(key);
+    const mode = stored === 'light' || stored === 'dark' ? stored :
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.dataset.theme = mode;
+  } catch (_) {}
+})();</script><meta name="description" content="AI 在电池材料模拟中的应用场景、论文进展、数据与实现路径。"><meta property="og:title" content="AI 应用 · Battery Evidence Lab"><meta property="og:description" content="AI 在电池材料模拟中的应用场景、论文进展、数据与实现路径。"><meta property="og:type" content="website"><meta property="og:url" content="https://rua-creeper-233.github.io/battery-evidence-lab/ai-battery-applications.html"><meta property="og:image" content="https://rua-creeper-233.github.io/battery-evidence-lab/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://rua-creeper-233.github.io/battery-evidence-lab/ai-battery-applications.html"><link rel="icon" type="image/svg+xml" href="./favicon.svg"></head>
 <body><div class="shell">
-  <nav class="site-nav" aria-label="页面导航"><a class="brand" href="./index.html#research-question">Battery Evidence Lab</a><div class="site-nav-links"><a href="./index.html#research-question">证据问答</a><a href="./index.html#library">论文库</a><a href="./index.html#tutorials">教程</a><a href="./future-directions.html">未来方向</a><a href="./ai-battery-applications.html" aria-current="page">AI 应用</a><a href="./foundations.html">基础地图</a><a href="./learning-route.html">学习路线</a><a href="./domestic-papers.html">国内论文</a></div></nav>
+  <nav class="site-nav" aria-label="页面导航"><a class="brand" href="./index.html#research-question">Battery Evidence Lab</a><div class="site-nav-links"><a href="./index.html#research-question">证据问答</a><a href="./index.html#library">论文库</a><a href="./index.html#tutorials">教程</a><a href="./future-directions.html">未来方向</a><a href="./ai-battery-applications.html" aria-current="page">AI 应用</a><a href="./foundations.html">基础地图</a><a href="./learning-route.html">学习路线</a><a href="./domestic-papers.html">国内论文</a></div><button class="theme-toggle" type="button" data-theme-toggle title="切换为深色模式" aria-label="切换为深色模式" aria-pressed="false"><svg class="theme-icon-sun icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 15.4A8.5 8.5 0 0 1 8.6 3.2 8.5 8.5 0 1 0 20.8 15.4Z"/></svg></button></nav>
   <header><div class="eyebrow">应用场景与验收标准</div><h1>AI 在电池材料模拟中的应用</h1><p class="lede">一个可执行的 AI 课题需要明确物理量、一致的标签、目标域留出测试，以及 DFT、实验或机制指标复核。下面的应用场景是研究设计。</p><div class="notice"><strong>两类训练用途不同：</strong>QLoRA 微调语言模型，适合把文献、输入输出和拒答规则做成科研助手；MLIP 训练原子间力场，学习能量/力/应力以运行结构优化或 MD。它们的模型、标签、损失和验收标准不同，不能互相替代。随机留出可测 IID 泛化；相关轨迹、材料或时间组应按组切分，部署到未见相/组成时另设领域测试。</div><div class="meta"><span>代表性选读截止：2026-10-08</span><span>先确定要验证的主张，再选模型</span><span>按部署域设计留出测试</span><span>RTX 3060 6GB：适合小演示与分析</span></div><p class="project-progress" data-project-progress>256 篇论文 · 更新于 2026-10-28</p></header>
   <main><section aria-labelledby="applications"><h2 id="applications" class="section-title">六个能落地的应用切口</h2><p class="section-lede">每张卡都写清楚输入、模型角色、输出和最小验收。论文链接只用于支持方法方向；卡片中的具体课题是本站的可执行设计。</p><div class="cards">
     <article class="card featured"><div class="index">01 · 固态电解质</div><h3>固态电解质扩散：MLIP 延长 AIMD 的时间尺度</h3><p>先用一致的 DFT 能量、力、应力标签训练或适配 MLIP，再在更大超胞中做 MLMD，分析 Li 位移、温度依赖和扩散机制。目标不是“模型 MAE 最低”，而是目标温度、缺陷和结构相上的动力学是否可信。</p><div class="row"><div class="mini"><b>输入 → 输出</b><span>结构 + DFT E/F/σ → 势能、优化结构、轨迹、MSD、Arrhenius 活化能。</span></div><div class="mini"><b>必须检查</b><span>标签参数一致；按化学环境/温度留出；区分 tracer conductivity 与 correlated conductivity。</span></div></div><div class="links"><a href="https://doi.org/10.1038/s41524-025-01747-7" target="_blank" rel="noreferrer">LiFSI-DME/硫化物主动学习 · 2025</a><a href="https://doi.org/10.1038/s42256-023-00716-3" target="_blank" rel="noreferrer">CHGNet · 2023</a><a href="https://doi.org/10.1063/5.0297006" target="_blank" rel="noreferrer">MACE-MP · 2025</a><a href="https://doi.org/10.1038/s41524-025-01764-6" target="_blank" rel="noreferrer">DPA-SSE · 2025</a></div></article>
@@ -117,4 +145,4 @@ python examples/ai_battery/msd_from_csv.py examples/ai_battery/example_trajector
 # D 是候选值；高 R² 不证明扩散。电导还需要浓度与相关性定义。</code></pre><div class="checks"><div class="check"><b>输入检查</b><p>晶胞、元素、周期边界、初始电荷/自旋和模型权重均有记录；结构无意外重叠。</p></div><div class="check"><b>输出检查</b><p>能量/力无 NaN；优化必须报告收敛状态。MSD 输出为候选 D，高 R² 不证明扩散；检查时间窗、独立轨迹和误差。</p></div><div class="check"><b>验收检查</b><p>与小规模 DFT 或公开数据做数量级/趋势比较；注明 tracer 与 collective/correlated conductivity 不同。</p></div></div></section>
   <section class="code-section" aria-labelledby="benchmarks"><h2 id="benchmarks">从真实数据开始：三个可复现切口</h2><p>先建立可信基线，再讨论创新；以下是建议路径。<a href="./guides/REPRODUCIBLE_BATTERY_AI_20261008.md">数据入口、步骤与验收清单 →</a></p><div class="cards"><article class="card"><span class="index">CPU · LiTraj</span><h3>迁移势垒基准</h3><p>从小规模 BVSE 数据练习分组、基线和误差；再对比 DFT-NEB。代理标签精度不能叫作 DFT 精度。</p><div class="links"><a href="https://doi.org/10.1038/s41524-025-01571-z" target="_blank" rel="noreferrer">论文 DOI</a><a href="https://github.com/AIRI-Institute/LiTraj" target="_blank" rel="noreferrer">数据与工具</a></div></article><article class="card"><span class="index">小型 GPU · SevenNet</span><h3>液态电解液的领域偏差</h3><p>先单分子、密度和溶剂化，再输运与微调。数据全集约 39.7 GB，先查文件列表按需取用。</p><div class="links"><a href="https://doi.org/10.1039/D5DD00025D" target="_blank" rel="noreferrer">论文 DOI</a><a href="https://zenodo.org/records/15205477" target="_blank" rel="noreferrer">脚本与数据</a></div></article><article class="card featured"><span class="index">进阶 · Domain-UMIP</span><h3>领域通用势与并发学习</h3><p>从已覆盖的电解液配方做基线，再检验未见配方并补一致 DFT 标签。正式卷年 2026、在线日期 2025-12-31，不从 DOI 后缀猜年份。</p><div class="links"><a href="https://doi.org/10.1038/s41467-025-67982-0" target="_blank" rel="noreferrer">论文 DOI</a><a href="https://doi.org/10.12463/AI4EC/QZCYP1" target="_blank" rel="noreferrer">作者模型/数据</a></div></article></div></section></main>
   <section class="page-sources">证据日期截至 2026-10-08；工具、模型和数据许可请以官方文档及实际环境为准。<a href="https://mace-docs.readthedocs.io/en/latest/guide/ase.html" target="_blank" rel="noreferrer">MACE ASE 官方接口</a> · <a href="./guides/AI_BATTERY_APPLICATIONS.md">完整指南 →</a></section>
-</div><footer class="site-footer" data-site-footer><span>Battery Evidence Lab</span><a href="./guides/PROJECT_STATUS.md">项目记录</a><a href="https://github.com/rua-creeper-233/battery-evidence-lab" target="_blank" rel="noopener noreferrer">GitHub</a></footer><script src="./nav-overflow.js" defer></script></body></html>
+</div><footer class="site-footer" data-site-footer><span>Battery Evidence Lab</span><a href="./guides/PROJECT_STATUS.md">项目记录</a><a href="https://github.com/rua-creeper-233/battery-evidence-lab" target="_blank" rel="noopener noreferrer">GitHub</a></footer><script src="./nav-overflow.js" defer></script><script src="./citation-tools.js" defer></script><script src="./notebook.js" defer></script></body></html>

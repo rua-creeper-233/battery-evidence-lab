@@ -28,6 +28,16 @@ NAV = (
     ("domestic-papers.html", "国内论文", ""),
 )
 
+THEME_BOOTSTRAP = """(() => {
+  try {
+    const key = 'battery-lab-theme';
+    const stored = localStorage.getItem(key);
+    const mode = stored === 'light' || stored === 'dark' ? stored :
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.dataset.theme = mode;
+  } catch (_) {}
+})();"""
+
 
 def navigation(page: str) -> str:
     home = page == "index.html"
@@ -44,10 +54,14 @@ def navigation(page: str) -> str:
             current = ' aria-current="page"' if target == page else ""
             links.append(f'<a href="./{target}"{current}>{label}</a>')
     tab_group = '<div class="home-tabs" role="tablist" aria-label="首页工具">' + "".join(tabs) + "</div>" if home else ""
+    theme = ('<button class="theme-toggle" type="button" data-theme-toggle '
+             'title="切换为深色模式" aria-label="切换为深色模式" aria-pressed="false">'
+             '<svg class="theme-icon-sun icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>'
+             '<svg class="theme-icon-moon icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 15.4A8.5 8.5 0 0 1 8.6 3.2 8.5 8.5 0 1 0 20.8 15.4Z"/></svg></button>')
     return (
         '<nav class="site-nav" aria-label="页面导航">'
         '<a class="brand" href="./index.html#research-question">Battery Evidence Lab</a>'
-        f'<div class="site-nav-links">{tab_group}{"".join(links)}</div></nav>'
+        f'<div class="site-nav-links">{tab_group}{"".join(links)}</div>{theme}</nav>'
     )
 
 
@@ -84,6 +98,9 @@ def prepare_chrome(source: str, page: str, shared_css: str) -> str:
     _AuthorStyleValidator().feed(source)
     css = re.sub(r"</style", lambda _: r"<\/style", shared_css, flags=re.I)
     style = f'<style data-lab-ui-inline>{css}</style>'
+    source = re.sub(r'<style\b[^>]*data-lab-ui-inline[^>]*>.*?</style>', '', source, flags=re.S)
+    source = re.sub(r'<script\b[^>]*id=["\']lab-theme-bootstrap["\'][^>]*>.*?</script>', '', source, flags=re.S)
+    source = source.replace('</head>', f'<script id="lab-theme-bootstrap">{THEME_BOOTSTRAP}</script></head>', 1)
     # Replace (rather than also request) the shared stylesheet, retaining order
     # before the home and battery-specific assets.
     shared_link = r'<link\b(?=[^>]*href=[\"\']\./lab-ui\.css[\"\'])[^>]*>'
@@ -126,6 +143,8 @@ def prepare_chrome(source: str, page: str, shared_css: str) -> str:
         '</footer>'
     )
     source = re.sub(r'<script\b[^>]*src="\./nav-overflow\.js"[^>]*></script>', '', source)
-    source = source.replace("</body>", footer + '<script src="./nav-overflow.js" defer></script></body>', 1)
+    source = re.sub(r'<script\b[^>]*src=["\']\./notebook\.js["\'][^>]*></script>', '', source)
+    source = re.sub(r'<script\b[^>]*src=["\']\./citation-tools\.js["\'][^>]*></script>', '', source)
+    source = source.replace("</body>", footer + '<script src="./nav-overflow.js" defer></script><script src="./citation-tools.js" defer></script><script src="./notebook.js" defer></script></body>', 1)
     parts = re.split(r"(<script\b[^>]*>.*?</script>|<pre\b[^>]*>.*?</pre>)", source, flags=re.S)
     return "".join(part if i % 2 else re.sub(r"(?m)^[ \t]+(?=\r?$)", "", part) for i, part in enumerate(parts))
