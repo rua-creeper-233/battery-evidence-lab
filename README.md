@@ -35,7 +35,7 @@ The public site is a static browser experience. It cannot run Python, read your 
 
 ## Current status
 
-Generated counts, dataset hashes, and validation dates are maintained in [PROJECT_STATUS.md](guides/PROJECT_STATUS.md). Historical release notes remain available from the [guides directory](guides/). The status file, not this overview, is the source of current inventory numbers.
+Generated counts, dataset hashes, and validation dates are maintained in [PROJECT_STATUS.md](guides/PROJECT_STATUS.md). Historical updates are consolidated in [Release notes](guides/RELEASE_NOTES.md). The status file, not this overview, is the source of current inventory numbers.
 
 ## Startup
 

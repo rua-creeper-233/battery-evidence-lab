@@ -17,17 +17,7 @@ GUIDE_NAMES = (
     "AGENT_IMPLEMENTATION_GUIDE.md", "BATTERY_RESEARCH_ROADMAP_20260918.md",
     "AGENT_STATUS_20260920.md", "BATTERY_COMPUTATION_FUTURE_DIRECTIONS.md",
     "AI_BATTERY_APPLICATIONS.md", "REPRODUCIBLE_BATTERY_AI_20261008.md",
-    "PROJECT_STATUS.md", "RELEASE_20261008.md", "RELEASE_20261008_CONTINUATION.md",
-    "RELEASE_20261008_FOUNDATIONS.md", "LEARNING_ROUTE_20261014.md",
-    "RELEASE_20261014_LEARNING_ROUTE.md",
-    "RELEASE_20261014_FRONTEND.md",
-    "RELEASE_20261018_REFERENCES.md",
-    "RELEASE_20261020_SEARCH_HOME.md",
-    "RELEASE_20261020_RESEARCH_KNOWLEDGE.md",
-    "RELEASE_20261021_BATTERY_MAP.md",
-    "RELEASE_20261021_CLARITY.md",
-    "RELEASE_20261021_MIGRATION.md",
-    "RELEASE_20261025_COMPONENTS_INSIGHTS.md",
+    "PROJECT_STATUS.md", "RELEASE_NOTES.md", "LEARNING_ROUTE_20261014.md",
 )
 PAGE_NAMES = ("index.html", "future-directions.html", "ai-battery-applications.html", "foundations.html")
 ASSET_NAMES = ("favicon.svg", "share-card.png", "nav-overflow.js", "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css", "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css", "battery_explorer.js", "paper_insights.js", "paper_insights.css", "home.css", "home.js", "tutorials.js", "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js")
@@ -156,6 +146,10 @@ def main() -> None:
         copy(ROOT / "examples" / "ai_battery" / example, DOCS / "examples" / "ai_battery" / example)
     for guide in GUIDE_NAMES:
         copy(ROOT / "guides" / guide, DOCS / "guides" / guide)
+    # Remove retired release notes from previously generated bundles.
+    for guide in (DOCS / "guides").glob("RELEASE_*.md"):
+        if guide.name not in GUIDE_NAMES:
+            guide.unlink()
     for name in DATA_NAMES:
         copy(ROOT / "data" / name, DOCS / "data" / name)
     for name in ("project_status.json", "paper_titles_zh.json", "static_qa.json", "research_knowledge.json", "battery_components.json", "paper_insights.json"):
