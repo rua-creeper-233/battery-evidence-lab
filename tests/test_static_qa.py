@@ -49,11 +49,11 @@ class StaticQATest(unittest.TestCase):
     data = json.loads((ROOT / "data" / "static_qa.json").read_text(encoding="utf-8"))
     papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
     self.assertTrue(build_static_qa.validate(data, papers))
-    self.assertEqual(len(data["entries"]), 256)
-    self.assertEqual(sum(len(e["qas"]) for e in data["entries"]), 1024)
-    self.assertEqual(len({e["doi"] for e in data["entries"]}), 256)
+    self.assertEqual(len(data["entries"]), len(papers))
+    self.assertEqual(sum(len(e["qas"]) for e in data["entries"]), len(papers) * 4)
+    self.assertEqual(len({e["doi"] for e in data["entries"]}), len(papers))
     self.assertTrue(all(q["source_urls"] == [f"https://doi.org/{e['doi']}"] for e in data["entries"] for q in e["qas"]))
-    self.assertEqual(data["as_of"], "2026-10-25")
+    self.assertEqual(data["as_of"], "2026-11-05")
 
 
   def test_answers_use_concise_metadata_boundaries(self):

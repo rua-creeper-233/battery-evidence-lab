@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-28",
+  "as_of": "2026-11-05",
   "policy": "baseline 是科研中反复查验的常备参考。每篇论文有唯一主阶段，也可被多个专题引用；实验与验证按研究主张选择。",
   "evidence_basis": "按题名、方法记录和人工摘要安排阅读顺序。",
   "stages": [
@@ -651,7 +651,9 @@
         "collector2024_3390_batteries10100369",
         "collector2024_1038_s41529_024_00453_x",
         "collector2025_1149_1945_7111_ada641",
-        "collector2024_1002_cssc_202400164"
+        "collector2024_1002_cssc_202400164",
+        "hajibabaei2021_universal_solid_electrolytes",
+        "wang2020_cathode_coating_on_the_fly"
       ]
     },
     {
@@ -931,7 +933,8 @@
         "cn_he2022_halide_cation",
         "cn_xu2024_big_data_design",
         "exp20261028_10_1039_d4ta00721b",
-        "exp20261028_10_1007_s40843_025_3346_4"
+        "exp20261028_10_1007_s40843_025_3346_4",
+        "hajibabaei2021_universal_solid_electrolytes"
       ]
     },
     {
@@ -1034,7 +1037,8 @@
         "cn_shen2021_si_graphene",
         "collector2026_1039_d6ta00180g",
         "collector2026_1002_aenm_71291",
-        "exp20261028_10_1016_j_jechem_2025_06_072"
+        "exp20261028_10_1016_j_jechem_2025_06_072",
+        "wang2020_cathode_coating_on_the_fly"
       ]
     },
     {
@@ -1526,7 +1530,9 @@
         "bosoni2024_dft_precision_workflows",
         "cn_aps2025_liquid",
         "cn_aps2026_ml_dft",
-        "cn_chen2024_mlmd_nucleation"
+        "cn_chen2024_mlmd_nucleation",
+        "hajibabaei2021_universal_solid_electrolytes",
+        "wang2020_cathode_coating_on_the_fly"
       ]
     },
     {
@@ -3198,6 +3204,22 @@
         "ai_screening_and_uq"
       ],
       "rationale": "将高通量机器人实验与主动学习结合，针对有机氧化还原液流电池电解液溶解度进行样本高效筛选。"
+    },
+    "hajibabaei2021_universal_solid_electrolytes": {
+      "stage": "intermediate",
+      "frontiers": [
+        "mlip_transport_and_sse",
+        "mlip_reliability_and_data_efficiency"
+      ],
+      "rationale": "先理解 AIMD、SGPR 与在线采样，再比较专用势和组合势的迁移范围；对目标晶体的扩散与参考力误差分别做验证。"
+    },
+    "wang2020_cathode_coating_on_the_fly": {
+      "stage": "intermediate",
+      "frontiers": [
+        "interfaces_sei_and_dendrites",
+        "mlip_reliability_and_data_efficiency"
+      ],
+      "rationale": "从正极包覆的慢扩散采样问题入手，学习在线 MTP 与 DFT 回退的配合，再区分体相输运、界面稳定性和实际涂层性能。"
     }
   },
   "candidates": [],

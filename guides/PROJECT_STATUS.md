@@ -1,10 +1,10 @@
 # Project status
 
-As of 2026-10-28. Generated deterministically by `update_project_status.py`.
+As of 2026-11-05. Generated deterministically by `update_project_status.py`.
 
 | Metric | Count |
 |---|---:|
-| Curated papers (unique DOI) | 256 |
+| Curated papers (unique DOI) | 258 |
 | Papers from 2023 onward | 143 |
 | Web of Science records | 16 |
 | Training rows | 1323 |
@@ -15,7 +15,7 @@ Structured paper insights: 45 cards, including 21 with conditions or hypotheses.
 
 Research knowledge cards: 40; references 17 catalog papers.
 
-Static reading guide: 256 papers and 1024 rows, built from public catalog metadata.
+Static reading guide: 258 papers and 1032 rows, built from public catalog metadata.
 
 No model retraining was performed for this release. Source-group splits keep a DOI and its connected records together.
 

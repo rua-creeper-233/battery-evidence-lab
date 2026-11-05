@@ -19655,5 +19655,164 @@
         "https://www.nature.com/articles/s41467-024-47070-5"
       ]
     }
+  },
+  {
+    "id": "hajibabaei2021_universal_solid_electrolytes",
+    "title": "Universal Machine Learning Interatomic Potentials: Surveying Solid Electrolytes",
+    "authors": [
+      "Amir Hajibabaei",
+      "Kwang S. Kim"
+    ],
+    "author_details": [
+      {
+        "given": "Amir",
+        "family": "Hajibabaei"
+      },
+      {
+        "given": "Kwang S.",
+        "family": "Kim"
+      }
+    ],
+    "year": 2021,
+    "journal": "The Journal of Physical Chemistry Letters",
+    "volume": "12",
+    "issue": "33",
+    "pages": "8115-8120",
+    "document_type": "Letter",
+    "doi": "10.1021/acs.jpclett.1c01605",
+    "url": "https://doi.org/10.1021/acs.jpclett.1c01605",
+    "role": "用在线学习与稀疏高斯过程势筛选固态电解质，并研究跨晶体模型的组合与迁移。",
+    "systems": [
+      "Li-containing ternary solid electrolytes",
+      "Li-P-S",
+      "Li-Sb-S",
+      "Li-Ge-P-S"
+    ],
+    "methods": [
+      "DFT",
+      "AIMD",
+      "machine-learning molecular dynamics",
+      "on-the-fly learning",
+      "sparse Gaussian process regression (SGPR)",
+      "interatomic potential model combination"
+    ],
+    "properties": [
+      "lithium diffusivity",
+      "ionic transport",
+      "potential transferability"
+    ],
+    "tags_zh": [
+      "固态电解质",
+      "机器学习势",
+      "MD",
+      "DFT",
+      "在线学习",
+      "模型迁移"
+    ],
+    "summary": "以 AIMD 参考和在线 SGPR 学习研究三元晶体中的锂扩散，再组合已训练模型，检验同元素体系及更复杂组分中的势模型复用。适合比较专用势、组合势与目标域验证的关系。",
+    "scope_note": "题名中的 universal 指文中考察体系的模型组合与迁移，不代表覆盖所有元素和构型的现成通用基础势。迁移到新组分、相态或缺陷环境时仍需独立验证，不能仅凭训练误差推断输运准确性。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "论文将在线 SGPR 势学习用于固态电解质锂扩散筛选，并展示已有模型的组合与迁移。",
+        "basis": "论文摘要与正文第 8115 页",
+        "strength": "strong"
+      }
+    ],
+    "relations": [],
+    "resources": [],
+    "verification": {
+      "doi": "verified_crossref_fulltext_2026-11-05",
+      "publisher": "verified_publisher_fulltext_2026-11-05",
+      "wos": "not_checked",
+      "sources": [
+        "https://api.crossref.org/works/10.1021/acs.jpclett.1c01605",
+        "https://pubs.acs.org/doi/10.1021/acs.jpclett.1c01605"
+      ]
+    }
+  },
+  {
+    "id": "wang2020_cathode_coating_on_the_fly",
+    "title": "Lithium Ion Conduction in Cathode Coating Materials from On-the-Fly Machine Learning",
+    "authors": [
+      "Chuhong Wang",
+      "Koutarou Aoyagi",
+      "Pandu Wisesa",
+      "Tim Mueller"
+    ],
+    "author_details": [
+      {
+        "given": "Chuhong",
+        "family": "Wang"
+      },
+      {
+        "given": "Koutarou",
+        "family": "Aoyagi"
+      },
+      {
+        "given": "Pandu",
+        "family": "Wisesa"
+      },
+      {
+        "given": "Tim",
+        "family": "Mueller"
+      }
+    ],
+    "year": 2020,
+    "journal": "Chemistry of Materials",
+    "volume": "32",
+    "issue": "9",
+    "pages": "3741-3752",
+    "document_type": "Article",
+    "doi": "10.1021/acs.chemmater.9b04663",
+    "url": "https://doi.org/10.1021/acs.chemmater.9b04663",
+    "role": "用在线学习矩张量势扩展正极包覆材料的锂离子输运采样。",
+    "systems": [
+      "lithium-ion conducting cathode coating materials",
+      "solid-state battery interfacial coatings"
+    ],
+    "methods": [
+      "DFT",
+      "molecular dynamics",
+      "on-the-fly machine learning",
+      "moment tensor potentials (MTP)"
+    ],
+    "properties": [
+      "lithium-ion conductivity",
+      "migration activation energy",
+      "ionic diffusion"
+    ],
+    "tags_zh": [
+      "正极包覆",
+      "固态电池",
+      "机器学习势",
+      "MD",
+      "DFT",
+      "在线学习",
+      "离子输运"
+    ],
+    "summary": "针对锂迁移较慢、直接 AIMD 采样成本高的包覆材料，将矩张量势与在线 DFT 参考计算结合，延长可访问的动力学时间尺度，并评估迁移活化能与候选包覆材料。",
+    "scope_note": "输运结果依赖所研究组分、温度、缺陷与采样范围。体相锂传导不能单独证明实际涂层的界面稳定性、接触质量或电池寿命；文中计算加速也不能无条件外推到其他体系。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "evidence": [
+      {
+        "claim": "论文使用在线学习矩张量势研究正极包覆材料中的锂离子传导，减少直接 AIMD 对慢扩散采样的限制。",
+        "basis": "论文摘要与正文第 3741 页",
+        "strength": "strong"
+      }
+    ],
+    "relations": [],
+    "resources": [],
+    "verification": {
+      "doi": "verified_crossref_fulltext_2026-11-05",
+      "publisher": "verified_publisher_fulltext_2026-11-05",
+      "wos": "not_checked",
+      "sources": [
+        "https://api.crossref.org/works/10.1021/acs.chemmater.9b04663",
+        "https://pubs.acs.org/doi/10.1021/acs.chemmater.9b04663"
+      ]
+    }
   }
 ]

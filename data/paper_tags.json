@@ -11,14 +11,14 @@
     "观点": "Perspective/Opinion 类观点文章；不等同于系统综述"
   },
   "counts": {
-    "DFT": 107,
-    "MD": 84,
+    "DFT": 109,
+    "MD": 86,
     "MS": 8,
     "VASP": 32,
     "方法论文": 69,
     "综述": 30,
     "观点": 5,
-    "进展论文": 187
+    "进展论文": 189
   },
   "papers": {
     "tan2026_pemd": {
@@ -309,8 +309,8 @@
       ],
       "tag_basis": {
         "DFT": [
-          "ab initio",
           "Ab initio",
+          "ab initio",
           "DFT"
         ]
       },
@@ -1067,8 +1067,8 @@
         ],
         "MD": [
           "AIMD",
-          "Molecular Dynamics",
-          "molecular dynamics"
+          "molecular dynamics",
+          "Molecular Dynamics"
         ],
         "VASP": [
           "VASP"
@@ -1192,8 +1192,8 @@
           "DFT"
         ],
         "MD": [
-          "Molecular Dynamics",
-          "molecular dynamics"
+          "molecular dynamics",
+          "Molecular Dynamics"
         ]
       },
       "tag_policy": "curated_metadata_v1"
@@ -3728,8 +3728,8 @@
       ],
       "tag_basis": {
         "MD": [
-          "Molecular Dynamics",
-          "molecular dynamics"
+          "molecular dynamics",
+          "Molecular Dynamics"
         ]
       },
       "tag_policy": "curated_metadata_v1"
@@ -3862,6 +3862,50 @@
         "进展论文"
       ],
       "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "hajibabaei2021_universal_solid_electrolytes": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "DFT",
+        "MD"
+      ],
+      "display_tags": [
+        "进展论文",
+        "DFT",
+        "MD"
+      ],
+      "tag_basis": {
+        "DFT": [
+          "DFT"
+        ],
+        "MD": [
+          "AIMD",
+          "molecular dynamics"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "wang2020_cathode_coating_on_the_fly": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "DFT",
+        "MD"
+      ],
+      "display_tags": [
+        "进展论文",
+        "DFT",
+        "MD"
+      ],
+      "tag_basis": {
+        "DFT": [
+          "DFT"
+        ],
+        "MD": [
+          "AIMD",
+          "molecular dynamics"
+        ]
+      },
       "tag_policy": "curated_metadata_v1"
     }
   }

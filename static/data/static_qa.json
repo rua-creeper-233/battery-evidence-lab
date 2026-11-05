@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-25",
-  "catalog_count": 256,
-  "qa_count": 1024,
-  "catalog_fingerprint": "1eb8f874b3778bc1f219c5590c5b65ea02c8750c40ad28ccf77a42aab47b1a15",
+  "as_of": "2026-11-05",
+  "catalog_count": 258,
+  "qa_count": 1032,
+  "catalog_fingerprint": "60651c6296a4f7bf0112be58c957cb0e20859bf973afd85bcbd9de060c6a260c",
   "static_extension": true,
   "evidence_level": "curated_metadata",
   "entries": [
@@ -16387,6 +16387,134 @@
           ],
           "source_urls": [
             "https://doi.org/10.1038/s41467-024-47070-5"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "hajibabaei2021_universal_solid_electrolytes",
+      "doi": "10.1021/acs.jpclett.1c01605",
+      "title": "Universal Machine Learning Interatomic Potentials: Surveying Solid Electrolytes",
+      "title_zh": "通用机器学习原子间势：固态电解质筛选",
+      "qa_ids": [
+        "hajibabaei2021_universal_solid_electrolytes:overview",
+        "hajibabaei2021_universal_solid_electrolytes:methods",
+        "hajibabaei2021_universal_solid_electrolytes:limitations",
+        "hajibabaei2021_universal_solid_electrolytes:reading"
+      ],
+      "qas": [
+        {
+          "id": "hajibabaei2021_universal_solid_electrolytes:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：用在线学习与稀疏高斯过程势筛选固态电解质，并研究跨晶体模型的组合与迁移。。元数据摘要：以 AIMD 参考和在线 SGPR 学习研究三元晶体中的锂扩散，再组合已训练模型，检验同元素体系及更复杂组分中的势模型复用。适合比较专用势、组合势与目标域验证的关系。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acs.jpclett.1c01605"
+          ]
+        },
+        {
+          "id": "hajibabaei2021_universal_solid_electrolytes:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：DFT、AIMD、machine-learning molecular dynamics、on-the-fly learning、sparse Gaussian process regression (SGPR)、interatomic potential model combination。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acs.jpclett.1c01605"
+          ]
+        },
+        {
+          "id": "hajibabaei2021_universal_solid_electrolytes:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：题名中的 universal 指文中考察体系的模型组合与迁移，不代表覆盖所有元素和构型的现成通用基础势。迁移到新组分、相态或缺陷环境时仍需独立验证，不能仅凭训练误差推断输运准确性。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acs.jpclett.1c01605"
+          ]
+        },
+        {
+          "id": "hajibabaei2021_universal_solid_electrolytes:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：进阶。理由：先理解 AIMD、SGPR 与在线采样，再比较专用势和组合势的迁移范围；对目标晶体的扩散与参考力误差分别做验证。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acs.jpclett.1c01605"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "wang2020_cathode_coating_on_the_fly",
+      "doi": "10.1021/acs.chemmater.9b04663",
+      "title": "Lithium Ion Conduction in Cathode Coating Materials from On-the-Fly Machine Learning",
+      "title_zh": "基于在线机器学习的正极包覆材料锂离子传导研究",
+      "qa_ids": [
+        "wang2020_cathode_coating_on_the_fly:overview",
+        "wang2020_cathode_coating_on_the_fly:methods",
+        "wang2020_cathode_coating_on_the_fly:limitations",
+        "wang2020_cathode_coating_on_the_fly:reading"
+      ],
+      "qas": [
+        {
+          "id": "wang2020_cathode_coating_on_the_fly:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：用在线学习矩张量势扩展正极包覆材料的锂离子输运采样。。元数据摘要：针对锂迁移较慢、直接 AIMD 采样成本高的包覆材料，将矩张量势与在线 DFT 参考计算结合，延长可访问的动力学时间尺度，并评估迁移活化能与候选包覆材料。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acs.chemmater.9b04663"
+          ]
+        },
+        {
+          "id": "wang2020_cathode_coating_on_the_fly:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：DFT、molecular dynamics、on-the-fly machine learning、moment tensor potentials (MTP)。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acs.chemmater.9b04663"
+          ]
+        },
+        {
+          "id": "wang2020_cathode_coating_on_the_fly:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：输运结果依赖所研究组分、温度、缺陷与采样范围。体相锂传导不能单独证明实际涂层的界面稳定性、接触质量或电池寿命；文中计算加速也不能无条件外推到其他体系。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acs.chemmater.9b04663"
+          ]
+        },
+        {
+          "id": "wang2020_cathode_coating_on_the_fly:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：进阶。理由：从正极包覆的慢扩散采样问题入手，学习在线 MTP 与 DFT 回退的配合，再区分体相输运、界面稳定性和实际涂层性能。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acs.chemmater.9b04663"
           ]
         }
       ]
