@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def main():
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parents[1]
     canvas = Image.new('RGB', (1200, 630), '#fafbf8')
     draw = ImageDraw.Draw(canvas)
     fonts = Path(os.environ.get('WINDIR', 'C:/Windows')) / 'Fonts'

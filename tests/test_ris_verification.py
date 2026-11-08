@@ -1,5 +1,5 @@
 import unittest
-from export_ris import render
+from maintenance.export_ris import render
 
 class RisVerificationTests(unittest.TestCase):
     def test_doi_only_paper_is_not_claimed_wos_verified(self):

@@ -2,7 +2,7 @@
 
 The public site is static. Uploads, local full-text retrieval, keyword extraction, and optional model calls require a backend running on your computer. The backend can be exposed temporarily through an HTTPS tunnel.
 
-![Sharing boundary: a browser loads public GitHub Pages assets and, only with a temporary key, calls the local backend through an HTTPS tunnel.](static/assets/docs/local-data-boundary.svg)
+![Sharing boundary: a browser loads public GitHub Pages assets and, only with a temporary key, calls the local backend through an HTTPS tunnel.](../static/assets/docs/local-data-boundary.svg)
 
 ## Two separate parts
 

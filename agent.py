@@ -378,6 +378,62 @@ class BatteryResearchAgent:
         """Return page-level hits from locally downloaded PDFs only."""
         if not self.fulltext_chunks:
             return []
+        query_dois = _extract_dois(query)
+        doi_residual = re.sub(r"doi\s*[:：]", " ", DOI_RE.sub(" ", query), flags=re.I)
+        doi_only = bool(query_dois) and not re.search(r"[\w]", doi_residual, flags=re.UNICODE)
+        # Treat a bare DOI prefix (for example ``10.1016``) as an exact DOI
+        # lookup too.  Otherwise its numeric token can spuriously match an
+        # unrelated PDF chunk.
+        doi_prefix_only = (
+            not query_dois
+            and bool(re.fullmatch(
+                r"\s*(?:(?:https?://(?:dx\.)?doi\.org/|doi\s*[:：])\s*)?10\.\d{4,9}\s*[,.;:!?]?[\s]*",
+                query,
+                flags=re.I,
+            ))
+        )
+        if doi_only or doi_prefix_only:
+            paper_dois = {
+                str(paper.get("id")): _normalize_doi(str(paper.get("doi", "")))
+                for paper in self.papers
+            }
+            matched_dois = set(query_dois)
+            scored: list[tuple[float, dict[str, Any]]] = []
+            for row in self.fulltext_chunks:
+                paper_id = str(row.get("paper_id"))
+                owner_doi = paper_dois.get(paper_id, "")
+                row_doi = _normalize_doi(str(row.get("doi", "")))
+                if owner_doi and row_doi and owner_doi != row_doi:
+                    continue
+                match_doi = owner_doi or row_doi
+                if match_doi not in matched_dois:
+                    continue
+                # DOI metadata identifies the paper even when PDF extraction
+                # omitted the DOI from the page text. Prefer substantive body
+                # text and an early page for the one-hit-per-paper result.
+                section = str(row.get("section", "")).lower()
+                section_bonus = 2.0 if section == "body" else -1.0 if section == "references" else 0.0
+                page = max(int(row.get("page", 1) or 1), 1)
+                score = 100.0 + section_bonus - page * 0.01
+                hit = {key: value for key, value in row.items() if key != "text"}
+                if owner_doi and not row_doi:
+                    hit["doi"] = owner_doi
+                hit["score"] = round(score, 4)
+                hit["excerpt"] = self._short_excerpt(row.get("text", ""), set())
+                hit["local_pdf_url"] = f"/local-pdf/{row['paper_id']}.pdf#page={row.get('page', 1)}"
+                scored.append((score, hit))
+            scored.sort(key=lambda pair: pair[0], reverse=True)
+            selected: list[dict[str, Any]] = []
+            per_paper: set[str] = set()
+            for _, hit in scored:
+                paper_id = str(hit.get("paper_id"))
+                if paper_id in per_paper:
+                    continue
+                selected.append(hit)
+                per_paper.add(paper_id)
+                if len(selected) >= limit:
+                    break
+            return selected
         expanded = self._expanded_query(query)
         query_counts = Counter(_tokens(expanded))
         query_set = set(query_counts)

@@ -21,7 +21,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PAPERS_PATH = ROOT / "data" / "papers.json"
 MANIFEST_PATH = ROOT / "literature" / "manifest.json"
 REPORT_PATH = ROOT / "private" / "ZOTERO_IMPORT_AUDIT.md"

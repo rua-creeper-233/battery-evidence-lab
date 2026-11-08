@@ -13,13 +13,13 @@ GIT = os.environ.get("PUBLICATION_GIT_EXE", "git")
 
 
 def git(root: Path, *args: str) -> str:
-    result = subprocess.run([GIT, *args], cwd=root, text=True, capture_output=True, check=True)
+    result = subprocess.run([GIT, *args], cwd=root, text=True, encoding="utf-8", capture_output=True, check=True)
     return result.stdout.strip()
 
 
 class HistorySafetyTests(unittest.TestCase):
     def make_repo(self) -> Path:
-        folder = Path(tempfile.mkdtemp())
+        folder = Path(self.enterContext(tempfile.TemporaryDirectory(prefix="battery-history-test-")))
         git(folder, "init", "-b", "main")
         git(folder, "config", "user.email", "fixture" + chr(64) + "example.invalid")
         git(folder, "config", "user.name", "Fixture")

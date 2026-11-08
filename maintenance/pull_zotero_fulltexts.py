@@ -9,18 +9,13 @@ from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import url2pathname
 
-import import_zotero_library as zotero
-from fetch_literature import MANIFEST_PATH, PAPERS_PATH, PDF_DIR, load_json, save_json, validate_pdf
+from maintenance import import_zotero_library as zotero
+from fetch_literature import MANIFEST_PATH, PAPERS_PATH, PDF_DIR, load_json, save_json, validate_pdf, acceptable_main_pdf
 
 
 def is_matching_main_article(check: dict) -> bool:
     """Accept readable main articles only when the first pages identify the title."""
-    return (
-        check.get('valid_pdf') is True
-        and check.get('document_kind') == 'article'
-        and int(check.get('first_pages_text_chars') or 0) >= 500
-        and float(check.get('title_token_match') or 0) >= 0.35
-    )
+    return acceptable_main_pdf(check)
 
 
 def main():
@@ -69,7 +64,7 @@ def main():
         else:
             print(paper['id'], 'no_validated_local_main_PDF')
     save_json(MANIFEST_PATH, manifest)
-    print('Copied', copied, 'PDFs; run audit_library.py before publication')
+    print('Copied', copied, 'PDFs; run python -m maintenance.audit_library before publication')
 
 
 if __name__ == '__main__':

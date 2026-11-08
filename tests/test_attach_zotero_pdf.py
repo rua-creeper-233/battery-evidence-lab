@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock
 
-from attach_zotero_pdf import LocalZoteroWriter, pdf_attachment_state
+from maintenance.attach_zotero_pdf import LocalZoteroWriter, pdf_attachment_state
 
 
 class ZoteroAttachmentRecoveryTests(unittest.TestCase):

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from pull_zotero_fulltexts import is_matching_main_article
+from maintenance.pull_zotero_fulltexts import is_matching_main_article
 
 
 class ZoteroFulltextIdentityTests(unittest.TestCase):
@@ -12,6 +12,7 @@ class ZoteroFulltextIdentityTests(unittest.TestCase):
             "document_kind": "article",
             "first_pages_text_chars": 5000,
             "title_token_match": 0.75,
+            "identity_valid": True,
         }))
 
     def test_rejects_unrelated_readable_attachment(self) -> None:
@@ -20,6 +21,7 @@ class ZoteroFulltextIdentityTests(unittest.TestCase):
             "document_kind": "article",
             "first_pages_text_chars": 5000,
             "title_token_match": 0.0,
+            "identity_valid": False,
         }))
 
     def test_rejects_supplement_or_nearly_empty_text(self) -> None:
@@ -28,12 +30,14 @@ class ZoteroFulltextIdentityTests(unittest.TestCase):
             "document_kind": "supplementary",
             "first_pages_text_chars": 5000,
             "title_token_match": 1.0,
+            "identity_valid": True,
         }))
         self.assertFalse(is_matching_main_article({
             "valid_pdf": True,
             "document_kind": "article",
             "first_pages_text_chars": 100,
             "title_token_match": 1.0,
+            "identity_valid": False,
         }))
 
 

@@ -245,7 +245,7 @@ def _git_executable() -> str:
 def scan_staged_snapshot(root: Path) -> list[Finding]:
     """Scan exactly the complete index snapshot, without printing values."""
     git = _git_executable()
-    safe_root = str(root.resolve())
+    safe_root = root.resolve().as_posix()
     result = subprocess.run([git, "-c", f"safe.directory={safe_root}", "ls-files", "-s", "-z"], cwd=root, text=False, capture_output=True, check=False)
     if result.returncode:
         raise PublicationSafetyError("unable to enumerate the staged publication snapshot")
@@ -269,7 +269,7 @@ def scan_revision_snapshot(root: Path, revision: str) -> list[Finding]:
     if not _FULL_OBJECT_ID.fullmatch(revision):
         raise PublicationSafetyError("revision must be a full 40- or 64-character object id")
     git = _git_executable()
-    safe_root = str(root.resolve())
+    safe_root = root.resolve().as_posix()
     resolved = subprocess.run(
         [git, "-c", f"safe.directory={safe_root}", "rev-parse", "--verify", "--end-of-options", f"{revision}^{{commit}}"],
         cwd=root, text=False, capture_output=True, check=False,

@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PAPERS_PATH = ROOT / "data" / "papers.json"
 FULLTEXT_PATH = ROOT / "data" / "fulltext_chunks.jsonl"
 OUTPUT_PATH = ROOT / "private" / "method_evidence.auto.json"

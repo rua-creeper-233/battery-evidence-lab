@@ -4,9 +4,9 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-import expand_library as library
-import expand_recent_library as recent
-from expand_recent_library import enrich_record
+import maintenance.expand_library as library
+import maintenance.expand_recent_library as recent
+from maintenance.expand_recent_library import enrich_record
 
 
 class RecentMetadataTests(unittest.TestCase):

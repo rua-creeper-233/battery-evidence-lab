@@ -6,7 +6,7 @@ import json
 import unittest
 from pathlib import Path
 
-from import_zotero_library import build_zotero_item
+from maintenance.import_zotero_library import build_zotero_item
 
 
 ROOT = Path(__file__).parents[1]

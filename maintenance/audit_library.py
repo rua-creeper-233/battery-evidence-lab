@@ -18,10 +18,11 @@ from fetch_literature import (
     save_json,
     utc_now,
     validate_pdf,
+    acceptable_main_pdf,
 )
 
 
-REPORT_PATH = ROOT / "FULLTEXT_AUDIT.md"
+REPORT_PATH = ROOT / "private" / "FULLTEXT_AUDIT.md"
 
 
 def sha256(path: Path) -> str:
@@ -68,6 +69,8 @@ def main() -> int:
             raise SystemExit(f"invalid PDF: {path}")
         if validation.get("document_kind") != "article":
             raise SystemExit(f"non-article in main library: {path}")
+        if not acceptable_main_pdf(validation):
+            raise SystemExit(f"PDF needs manual identity review: {path}")
         digest = sha256(path)
         duplicate_hashes.setdefault(digest, []).append(paper["id"])
         entry.update(
@@ -159,6 +162,7 @@ def main() -> int:
             "",
         ]
     )
+    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.write_text(report, encoding="utf-8")
     print(f"Audited {downloaded}/{len(papers)} local main-text PDFs; {chunks} chunks")
     print(REPORT_PATH)

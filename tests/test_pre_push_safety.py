@@ -15,12 +15,11 @@ class RevisionSnapshotSafetyTests(unittest.TestCase):
         fixture_email = "fixture" + "@" + "example.invalid"
         env.update({"GIT_AUTHOR_NAME": "Fixture", "GIT_AUTHOR_EMAIL": fixture_email,
                     "GIT_COMMITTER_NAME": "Fixture", "GIT_COMMITTER_EMAIL": fixture_email})
-        result = subprocess.run(["git", *args], cwd=root, text=True, capture_output=True, check=True, env=env)
+        result = subprocess.run(["git", *args], cwd=root, text=True, encoding="utf-8", capture_output=True, check=True, env=env)
         return result.stdout.strip()
 
     def make_repo(self) -> Path:
-        root = Path(tempfile.mkdtemp(prefix=".publication-test-", dir=Path.cwd()))
-        self.addCleanup(shutil.rmtree, root, ignore_errors=True)
+        root = Path(self.enterContext(tempfile.TemporaryDirectory(prefix="battery-publication-test-")))
         self.git(root, "init", "-b", "main")
         (root / "README.md").write_text("safe\n", encoding="utf-8")
         self.git(root, "add", "README.md")

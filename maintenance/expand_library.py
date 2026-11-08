@@ -12,7 +12,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PAPERS = ROOT / "data" / "papers.json"
 CATALOG = ROOT / "data" / "paper_expansion_20260920.json"
 RECENT_CATALOG = ROOT / "data" / "paper_expansion_20261008.json"

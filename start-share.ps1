@@ -1,4 +1,4 @@
-param(
+﻿param(
     [int]$Port = 8765
 )
 
@@ -24,7 +24,18 @@ if (-not $cloudflaredCommand) {
     exit 1
 }
 
-$accessKey = [Convert]::ToHexString([Security.Cryptography.RandomNumberGenerator]::GetBytes(24)).ToLowerInvariant()
+function New-ShareAccessKey {
+    $bytes = New-Object byte[] 24
+    $generator = [Security.Cryptography.RandomNumberGenerator]::Create()
+    try {
+        $generator.GetBytes($bytes)
+        return [BitConverter]::ToString($bytes).Replace("-", "").ToLowerInvariant()
+    } finally {
+        $generator.Dispose()
+    }
+}
+
+$accessKey = New-ShareAccessKey
 $serviceUrl = "http://127.0.0.1:$Port"
 $previousAccessKey = $env:BATTERY_AGENT_ACCESS_TOKEN
 $env:BATTERY_AGENT_ACCESS_TOKEN = $accessKey

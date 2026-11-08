@@ -17,6 +17,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
@@ -27,6 +28,7 @@ PAPERS_PATH = ROOT / "data" / "papers.json"
 LIBRARY_ROOT = ROOT / "literature"
 PDF_DIR = LIBRARY_ROOT / "pdfs"
 SUPPLEMENTARY_DIR = LIBRARY_ROOT / "supplementary"
+QUARANTINE_DIR = LIBRARY_ROOT / "quarantine"
 TEXT_DIR = LIBRARY_ROOT / "text"
 MANIFEST_PATH = LIBRARY_ROOT / "manifest.json"
 GLOBAL_INDEX = ROOT / "data" / "fulltext_chunks.jsonl"
@@ -125,7 +127,7 @@ PUBLIC_PDF_OVERRIDES: dict[str, list[str]] = {
         "https://arxiv.org/pdf/2202.02450",
     ],
     "henkelman2000_cineb": [
-        "https://theory.cm.utexas.edu/henkelman/pubs/henkelman00_9978.pdf",
+        "https://hj.hi.is/papers/paperCI-NEB.pdf",
     ],
     "leung2010_sei_aimd": [
         "https://arxiv.org/pdf/1009.4154",
@@ -210,6 +212,68 @@ PUBLIC_PDF_OVERRIDES: dict[str, list[str]] = {
     ],
     "shen2024_pymatgen_defects": [
         "https://joss.theoj.org/papers/10.21105/joss.05941.pdf",
+    ],
+    # Public author/preprint copies for MLIP reviews. The publisher responses
+    # can be truncated by some networks; these sources remain auditable and
+    # are retained only after the normal PDF/DOI/title validation.
+    "mishin2021_mlip_review": [
+        "https://physics.gmu.edu/~ymishin/resources/ML_Potentials_Acta_2021.pdf",
+        "https://arxiv.org/pdf/2102.06163",
+    ],
+    "unke2021_mlff_review": [
+        "https://arxiv.org/pdf/2010.07067",
+        "https://www.ideals.illinois.edu/items/129108/bitstreams/430845/data.pdf",
+    ],
+    "kresse1996_vasp_efficiency": [
+        "https://www.ims.ut.ee/images/e/e6/Comp-Mat-Sci_1996_6_15_Kresse_VASP-methos.pdf",
+    ],
+    "blochl1994_paw": [
+        "https://inldigitallibrary.inl.gov/sites/sti/sti/Sort_74827.pdf",
+    ],
+    "perdew1996_pbe": [
+        "https://www.chem.uci.edu/~kieron/dft/pubs/PBE96.pdf",
+        "https://scispace.com/pdf/generalized-gradient-approximation-made-simple-4eiy7s66p1.pdf",
+    ],
+    "heyd2003_hse": [
+        "https://citeseerx.ist.psu.edu/document?doi=963fd20373a545ca4c335a5fa73292ec3a075ed7&repid=rep1&type=pdf",
+    ],
+    "monkhorst1976_kpoints": [
+        "https://moodle2.units.it/pluginfile.php/770015/mod_folder/content/0/Important%20papers/MonkhorstPack-PhysRevB1976.pdf?forcedownload=1",
+    ],
+    "henkelman2000_neb_tangent": [
+        "https://www.math.pku.edu.cn/teachers/litj/notes/stoch_topics2017/lect02/ImproveNEB.pdf",
+    ],
+    "henkelman2006_bader": [
+        "https://theory.cm.utexas.edu/henkelman/code/bader/download/henkelman06_354.pdf",
+    ],
+    # Additional exact-title copies surfaced from author, institutional, or
+    # open-access repositories.  They are retained only after the PDF audit
+    # below confirms that the response is a readable article rather than an
+    # HTML login/paywall page.
+    "behler2007_nnp": [
+        "https://aiichironakano.github.io/cs653/Behler-NNPES-PRL07.pdf",
+    ],
+    "deringer2019_mlip_review": [
+        "https://acris.aalto.fi/ws/portalfiles/portal/37301944/ELEC_Deringer_etal_Machine_Learning_Interatomic_AdvSci_2019_1902765_acceptedauthormanuscript.pdf",
+    ],
+    "mueller2020_mlip_models": [
+        "https://aip.scitation.org/doi/pdf/10.1063/1.5126336",
+    ],
+    "kang2006_li_mobility": [
+        "https://web.mit.edu/ceder/publications/published.pdf",
+    ],
+    "muy2015_high_throughput_sse": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6581664/pdf/",
+        "https://www.cell.com/iscience/pdf/S2589-0042(19)30173-7.pdf",
+    ],
+    "qi2024_lgps_ml_aimd": [
+        "https://pdfs.semanticscholar.org/69a2/8b300ab99d071240b9771c9102fd1345d0a1.pdf",
+        "https://www.mdpi.com/1996-1944/17/8/1810/pdf",
+    ],
+    "behler2011_symmetry_functions": [
+    ],
+    "peled2017_sei_review": [
+        "https://pdfs.semanticscholar.org/738d/e8dc40c0d9b355d7425979e15060cb206a07.pdf",
     ],
 }
 
@@ -392,9 +456,7 @@ def candidate_sources(paper: dict[str, Any], allow_publisher: bool) -> tuple[dic
 
 def download_pdf(url: str, destination: Path) -> dict[str, Any]:
     destination.parent.mkdir(parents=True, exist_ok=True)
-    part = destination.with_suffix(".pdf.part")
-    if part.exists():
-        part.unlink()
+    part = destination.with_name(f"{destination.name}.{uuid.uuid4().hex}.part")
     digest = hashlib.sha256()
     size = 0
     try:
@@ -414,7 +476,6 @@ def download_pdf(url: str, destination: Path) -> dict[str, Any]:
         with part.open("rb") as handle:
             magic = handle.read(5)
         if magic != b"%PDF-":
-            part.unlink(missing_ok=True)
             return {
                 "ok": False,
                 "reason": "response_is_not_pdf",
@@ -431,9 +492,25 @@ def download_pdf(url: str, destination: Path) -> dict[str, Any]:
             "sha256": digest.hexdigest(),
         }
     except (OSError, ValueError, urllib.error.URLError, urllib.error.HTTPError) as exc:
-        part.unlink(missing_ok=True)
         code = getattr(exc, "code", None)
         return {"ok": False, "reason": type(exc).__name__, "http_status": code, "detail": str(exc)[:300]}
+    finally:
+        part.unlink(missing_ok=True)
+
+
+def quarantine_pdf(path: Path, paper_id: str) -> Path:
+    QUARANTINE_DIR.mkdir(parents=True, exist_ok=True)
+    target = QUARANTINE_DIR / f"{paper_id}.{uuid.uuid4().hex}.pdf"
+    path.replace(target)
+    return target
+
+
+def supplementary_target(paper_id: str) -> Path:
+    SUPPLEMENTARY_DIR.mkdir(parents=True, exist_ok=True)
+    target = SUPPLEMENTARY_DIR / f"{paper_id}_supplementary.pdf"
+    if target.exists():
+        target = SUPPLEMENTARY_DIR / f"{paper_id}_supplementary.{uuid.uuid4().hex}.pdf"
+    return target
 
 
 def validate_pdf(path: Path, title: str) -> dict[str, Any]:
@@ -442,6 +519,9 @@ def validate_pdf(path: Path, title: str) -> dict[str, Any]:
     try:
         reader = PdfReader(path)
         pages = len(reader.pages)
+        if pages < 1:
+            return {"valid_pdf": False, "validation_error": "pdf_has_no_pages"}
+        first_page = reader.pages[0].extract_text() or ""
         preview = " ".join((reader.pages[i].extract_text() or "") for i in range(min(3, pages)))
         title_tokens = [x for x in re.findall(r"[a-z0-9]+", title.lower()) if len(x) >= 4]
         preview_lower = preview.lower()
@@ -464,17 +544,51 @@ def validate_pdf(path: Path, title: str) -> dict[str, Any]:
             or "in the format provided by the authors and unedited" in first_text
             else "article"
         )
+        title_match = round(matched / denominator, 3)
+        substantive_text = len(re.sub(r"\s+", "", preview)) >= 400
+        # Look for identity on the opening page, rather than in references or
+        # a later chapter that happens to discuss the requested paper.
+        frontmatter = re.sub(r"\s+", " ", first_page.lower())[:2500]
+        thesis_signals = sum(
+            marker in frontmatter
+            for marker in ("doctoral thesis", "phd thesis", "ph.d. thesis", "dissertation", "master's thesis")
+        )
+        presentation = any(marker in frontmatter for marker in ("presentation slides", "lecture notes", "slide deck", "workshop presentation"))
+        article_structure = bool(re.search(r"\b(?:abstract|introduction|references|bibliography)\b|\b10\.\d{4,9}/", preview_lower))
+        if title_tokens:
+            identity_valid = sum(token in frontmatter for token in set(title_tokens)) / len(set(title_tokens)) >= 0.8
+        else:
+            compact_title = re.sub(r"\W+", "", title.lower())
+            identity_valid = bool(compact_title and compact_title in re.sub(r"\W+", "", frontmatter))
         return {
             "valid_pdf": True,
             "pages": pages,
             "encrypted": bool(reader.is_encrypted),
             "first_pages_text_chars": len(preview),
-            "title_token_match": round(matched / denominator, 3),
+            "title_token_match": title_match,
+            "first_page_text_chars": len(first_page),
+            "identity_valid": bool(substantive_text and identity_valid and article_structure and not thesis_signals and not presentation),
+            "identity_rejection_reason": (
+                "thesis_or_dissertation" if thesis_signals
+                else "presentation_or_notes" if presentation
+                else "insufficient_text" if not substantive_text
+                else "document_identity_mismatch" if not identity_valid
+                else "article_structure_missing" if not article_structure
+                else ""
+            ),
             "document_kind": document_kind,
             "supplementary_signals": supplementary_signals,
         }
     except Exception as exc:  # damaged/encrypted PDFs should remain visible in the audit
         return {"valid_pdf": False, "validation_error": f"{type(exc).__name__}: {exc}"[:400]}
+
+
+def acceptable_main_pdf(validation: dict[str, Any]) -> bool:
+    return bool(
+        validation.get("valid_pdf")
+        and validation.get("identity_valid")
+        and validation.get("document_kind") == "article"
+    )
 
 
 def chunk_text(text: str, target: int = 1800, overlap: int = 250) -> list[str]:
@@ -587,7 +701,7 @@ def main() -> int:
     parser.add_argument("--metadata-only", action="store_true", help="discover sources without downloading")
     parser.add_argument("--delay", type=float, default=1.0, help="seconds between papers")
     parser.add_argument("--vetted-only", action="store_true", help="use only curated public PDF sources; no source discovery")
-    parser.add_argument("--skip-index", action="store_true", help="defer indexing to a subsequent audit_library.py run")
+    parser.add_argument("--skip-index", action="store_true", help="defer indexing to a subsequent python -m maintenance.audit_library run")
     args = parser.parse_args()
 
     papers: list[dict[str, Any]] = load_json(PAPERS_PATH, [])
@@ -629,49 +743,73 @@ def main() -> int:
             candidates = []
 
         destination = PDF_DIR / f"{paper['id']}.pdf"
-        if destination.exists() and not args.refresh:
+        prior_entry = dict(entry)
+        had_existing = destination.exists()
+        if destination.exists() and not args.refresh and not args.metadata_only:
             existing_validation = validate_pdf(destination, paper["title"])
-            if existing_validation.get("document_kind") == "supplementary":
-                SUPPLEMENTARY_DIR.mkdir(parents=True, exist_ok=True)
-                supplementary = SUPPLEMENTARY_DIR / f"{paper['id']}_supplementary.pdf"
+            if existing_validation.get("valid_pdf") and existing_validation.get("document_kind") == "supplementary":
+                supplementary = supplementary_target(paper["id"])
                 destination.replace(supplementary)
                 entry["supplementary_pdf"] = str(supplementary.relative_to(ROOT)).replace("\\", "/")
                 entry.pop("local_pdf", None)
                 entry["status"] = "supplementary_only"
-        if destination.exists() and not args.refresh:
+            elif not acceptable_main_pdf(existing_validation):
+                quarantined = quarantine_pdf(destination, paper["id"])
+                entry["quarantined_pdf"] = str(quarantined.relative_to(ROOT)).replace("\\", "/")
+                for key in ("local_pdf", "sha256", "bytes", "source_url", "validation", "access_basis"):
+                    entry.pop(key, None)
+        if args.metadata_only:
+            if not had_existing:
+                entry["status"] = "metadata_only"
+        elif destination.exists() and not args.refresh:
             entry["status"] = "downloaded"
             entry["local_pdf"] = str(destination.relative_to(ROOT)).replace("\\", "/")
-            entry["validation"] = validate_pdf(destination, paper["title"])
+            if not args.metadata_only:
+                entry["validation"] = validate_pdf(destination, paper["title"])
         elif not args.metadata_only:
             attempts: list[dict[str, Any]] = []
             for source in candidates:
-                result = download_pdf(source["url"], destination)
-                attempts.append({**source, **result, "attempted_at": utc_now()})
-                if result.get("ok"):
-                    validation = validate_pdf(destination, paper["title"])
-                    if validation.get("document_kind") == "supplementary":
-                        SUPPLEMENTARY_DIR.mkdir(parents=True, exist_ok=True)
-                        supplementary = SUPPLEMENTARY_DIR / f"{paper['id']}_supplementary.pdf"
-                        destination.replace(supplementary)
-                        entry["supplementary_pdf"] = str(supplementary.relative_to(ROOT)).replace("\\", "/")
-                        attempts[-1]["accepted_as_main_text"] = False
-                        attempts[-1]["rejection_reason"] = "supplementary_material"
-                        continue
-                    entry["status"] = "downloaded"
-                    entry["access_basis"] = source["basis"]
-                    entry["source_url"] = result["final_url"]
-                    entry["local_pdf"] = str(destination.relative_to(ROOT)).replace("\\", "/")
-                    entry["sha256"] = result["sha256"]
-                    entry["bytes"] = result["bytes"]
-                    entry["validation"] = validation
-                    attempts[-1]["accepted_as_main_text"] = True
-                    break
+                candidate = PDF_DIR / f".{paper['id']}.{uuid.uuid4().hex}.candidate.pdf"
+                try:
+                    try:
+                        result = download_pdf(source["url"], candidate)
+                    except Exception as exc:
+                        result = {"ok": False, "reason": type(exc).__name__, "detail": str(exc)[:300]}
+                    attempts.append({**source, **result, "attempted_at": utc_now()})
+                    if result.get("ok"):
+                        validation = validate_pdf(candidate, paper["title"])
+                        if validation.get("document_kind") == "supplementary":
+                            supplementary = supplementary_target(paper["id"])
+                            candidate.replace(supplementary)
+                            entry["supplementary_pdf"] = str(supplementary.relative_to(ROOT)).replace("\\", "/")
+                            attempts[-1]["supplementary_pdf"] = entry["supplementary_pdf"]
+                            attempts[-1]["accepted_as_main_text"] = False
+                            attempts[-1]["rejection_reason"] = "supplementary_material"
+                            continue
+                        if not acceptable_main_pdf(validation):
+                            attempts[-1]["accepted_as_main_text"] = False
+                            attempts[-1]["rejection_reason"] = validation.get("identity_rejection_reason") or "invalid_pdf"
+                            continue
+                        candidate.replace(destination)
+                        entry["status"] = "downloaded"
+                        entry["access_basis"] = source["basis"]
+                        entry["source_url"] = result["final_url"]
+                        entry["local_pdf"] = str(destination.relative_to(ROOT)).replace("\\", "/")
+                        entry["sha256"] = result["sha256"]
+                        entry["bytes"] = result["bytes"]
+                        entry["validation"] = validation
+                        attempts[-1]["accepted_as_main_text"] = True
+                        break
+                finally:
+                    candidate.unlink(missing_ok=True)
             else:
-                entry["status"] = "not_downloaded"
-                entry.pop("local_pdf", None)
+                if args.refresh and had_existing:
+                    entry.clear()
+                    entry.update(prior_entry)
+                else:
+                    entry["status"] = "not_downloaded"
+                    entry.pop("local_pdf", None)
             entry["attempts"] = attempts
-        else:
-            entry["status"] = "metadata_only"
         save_json(MANIFEST_PATH, manifest)
         if index < len(papers_to_process):
             time.sleep(max(args.delay, 0))
@@ -679,7 +817,7 @@ def main() -> int:
     if not args.skip_index:
         rebuild_fulltext_index(papers, manifest)
     else:
-        print("Index not rebuilt; run audit_library.py before publishing.")
+        print("Index not rebuilt; run python -m maintenance.audit_library before publishing.")
     manifest["updated_at"] = utc_now()
     save_json(MANIFEST_PATH, manifest)
     downloaded = sum(1 for row in entries.values() if row.get("status") == "downloaded")

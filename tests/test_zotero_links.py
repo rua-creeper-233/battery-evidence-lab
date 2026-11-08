@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-from sync_zotero_links import collect_links, normalize_doi
+from maintenance.sync_zotero_links import collect_links, normalize_doi
 
 
 ROOT = Path(__file__).resolve().parents[1]

@@ -12,13 +12,13 @@ import json
 from pathlib import Path
 from typing import Any
 
-import import_zotero_library as zotero
-from repair_library_metadata import REPAIRS
+from maintenance import import_zotero_library as zotero
+from maintenance.repair_library_metadata import REPAIRS
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PAPERS = ROOT / "data" / "papers.json"
-REPORT = ROOT / "ZOTERO_METADATA_REPAIR_20260920.md"
+REPORT = ROOT / "private" / "ZOTERO_METADATA_REPAIR.md"
 
 OLD_TO_NEW = {
     "10.1016/0010-4655(96)00008-0": "10.1016/0927-0256(96)00008-0",
@@ -159,6 +159,7 @@ def main() -> int:
         if args.apply:
             _put_item(key, _updated_data(item, paper), server_id, api_key)
     mode = "已执行" if args.apply else "计划"
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text(
         "# Zotero 元数据修复\n\n"
         f"- 模式：{mode}\n"

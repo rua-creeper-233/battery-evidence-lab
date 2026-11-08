@@ -42,7 +42,7 @@ def _resolve_commit(root: Path, ref: str) -> str:
     """Resolve a user ref to exactly one commit object before inventorying it."""
     ref = _validate_ref(ref)
     git = _git_executable()
-    safe_root = str(root.resolve())
+    safe_root = root.resolve().as_posix()
     command = [
         git,
         "-c",
@@ -76,7 +76,7 @@ def _reachable_forbidden_paths(root: Path, ref: str) -> set[str]:
     """Return forbidden paths reachable from *ref*, without blob reads."""
     commit = _resolve_commit(root, ref)
     git = _git_executable()
-    safe_root = str(root.resolve())
+    safe_root = root.resolve().as_posix()
     command = [git, "-c", f"safe.directory={safe_root}", "rev-list", "--format=%T", "--no-commit-header", commit]
     try:
         result = subprocess.run(command, cwd=root, text=False, capture_output=True, check=False)

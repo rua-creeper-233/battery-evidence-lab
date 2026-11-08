@@ -5,7 +5,7 @@ import unittest
 import tempfile
 from pathlib import Path
 
-from extract_method_evidence import OUTPUT_PATH, REPORT_PATH, REVIEW_STATUS, extract
+from maintenance.extract_method_evidence import OUTPUT_PATH, REPORT_PATH, REVIEW_STATUS, extract
 
 
 ROOT = Path(__file__).resolve().parents[1]

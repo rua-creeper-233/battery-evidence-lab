@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from agent import BatteryResearchAgent  # noqa: E402
-from import_wos import merge_records, parse_wos_text  # noqa: E402
+from maintenance.import_wos import merge_records, parse_wos_text  # noqa: E402
 
 
 class AgentTests(unittest.TestCase):

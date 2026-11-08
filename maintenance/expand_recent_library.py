@@ -17,7 +17,7 @@ from typing import Any
 from urllib.request import Request, urlopen
 from urllib.parse import quote
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "paper_expansion_20261008.json"
 PAPERS = ROOT / "data" / "papers.json"
 CATALOG_OLD = ROOT / "data" / "paper_expansion_20260920.json"

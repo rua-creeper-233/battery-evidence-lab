@@ -10,7 +10,7 @@ from typing import Any
 from agent import BatteryResearchAgent, DEFAULT_SEARCH_WEIGHTS
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 TRAINING = ROOT / "data" / "search_training.json"
 OUTPUT = ROOT / "data" / "search_config.json"
 

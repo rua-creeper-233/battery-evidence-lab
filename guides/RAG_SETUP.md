@@ -2,7 +2,7 @@
 
 RAG is an optional local retrieval workflow. It searches the local catalogue and locally indexed PDFs, then sends selected metadata and short excerpts to the configured model endpoint. Static pages and deterministic rule-based answers do not require RAG.
 
-![RAG flow: local retrieval selects evidence before an optional model call, and citation checks can return to a deterministic answer.](static/assets/docs/system-overview.svg)
+![RAG flow: local retrieval selects evidence before an optional model call, and citation checks can return to a deterministic answer.](../static/assets/docs/system-overview.svg)
 
 ## How an answer is produced
 
@@ -50,4 +50,4 @@ GitHub Pages has no API key and does not call a model directly. RAG runs only in
 
 Citation validation checks whether identifiers exist and can fall back for some unsupported numeric claims. It does not replace sentence-level scientific review.
 
-For temporary access by another person, follow the [sharing guide](SHARING_GUIDE.md). For the static/local/optional-model distinction, see the [README](README.md).
+For temporary access by another person, follow the [sharing guide](SHARING_GUIDE.md). For the static/local/optional-model distinction, see the [README](../README.md).

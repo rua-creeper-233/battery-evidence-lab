@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "exports" / "battery_materials_16_verified.ris"
 
 

@@ -128,7 +128,7 @@ def main() -> None:
     imported = parse_wos_text(source.read_text(encoding="utf-8-sig", errors="replace"))
     output = Path(args.output)
     if not output.is_absolute():
-        output = Path(__file__).resolve().parent / output
+        output = Path(__file__).resolve().parents[1] / output
     records = imported
     if args.merge:
         seed_path = Path(args.merge)

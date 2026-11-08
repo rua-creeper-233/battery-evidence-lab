@@ -1,4 +1,4 @@
-param([int]$Port = 8765)
+﻿param([int]$Port = 8765)
 
 $projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $endpoint = Read-Host "模型的完整 chat-completions 地址（例如本机 http://127.0.0.1:11434/v1/chat/completions）"

@@ -18,10 +18,10 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urljoin
 from urllib.request import Request, urlopen
 
-import import_zotero_library as zotero
+from maintenance import import_zotero_library as zotero
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 BASE = "http://127.0.0.1:23119"
 APP_NAME = "Battery Evidence Lab"
 

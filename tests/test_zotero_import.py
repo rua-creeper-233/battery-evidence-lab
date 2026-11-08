@@ -7,7 +7,7 @@ from inspect import signature
 from pathlib import Path
 from unittest.mock import patch
 
-from import_zotero_library import (
+from maintenance.import_zotero_library import (
     COMMON_TAG,
     build_zotero_item,
     normalize_doi,
@@ -17,7 +17,7 @@ from import_zotero_library import (
 
 class ZoteroImportTests(unittest.TestCase):
     def test_personal_import_report_stays_private_and_creates_parent(self) -> None:
-        import import_zotero_library as module
+        import maintenance.import_zotero_library as module
         self.assertEqual(module.REPORT_PATH.parent, module.ROOT / "private")
         with tempfile.TemporaryDirectory() as tmp:
             report = Path(tmp) / "private" / "audit.md"
@@ -111,7 +111,7 @@ class ZoteroImportTests(unittest.TestCase):
         self.assertIsNone(params["attachment_title"].default)
         self.assertEqual(params["attachment_title"].kind, params["attachment_title"].KEYWORD_ONLY)
 
-    @patch("import_zotero_library._request")
+    @patch("maintenance.import_zotero_library._request")
     def test_attachment_title_is_used_when_supplied(self, request) -> None:
         request.return_value = (200, b"", {})
         paper = {"title": "A paper", "doi": "10.1000/test"}

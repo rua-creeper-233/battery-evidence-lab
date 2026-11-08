@@ -14,8 +14,9 @@ The repository and website expose selected bibliographic metadata, guides, and g
 | --- | --- |
 | Browse the public static site | [Battery Evidence Lab](https://rua-creeper-233.github.io/battery-evidence-lab/) |
 | Run the local site | [Startup](#startup) |
-| Configure optional retrieval-augmented generation | [RAG setup](RAG_SETUP.md) |
-| Share a temporary local backend | [Sharing guide](SHARING_GUIDE.md) |
+| Configure optional retrieval-augmented generation | [RAG setup](guides/RAG_SETUP.md) |
+| Share a temporary local backend | [Sharing guide](guides/SHARING_GUIDE.md) |
+| Maintain the local catalogue and integrations | [Maintenance commands](guides/MAINTENANCE.md) |
 | Read the current generated counts and hashes | [Project status](guides/PROJECT_STATUS.md) |
 | Connect an adapter or local model | [Fine-tuning integration](FINETUNE_INTEGRATION.md) |
 
@@ -29,7 +30,7 @@ The repository and website expose selected bibliographic metadata, guides, and g
 - Optional OpenAI-compatible language-model access. The model endpoint is not required for static browsing or deterministic local workflows.
 - Optional QLoRA training for organizing research answers, citations, and evidence limits. QLoRA is separate from retrieval and from MLIP training; after generating a reviewed dataset, train and evaluate a local adapter before drawing conclusions about model quality.
 
-The public site is a static browser experience. It cannot run Python, read your local PDFs, access Zotero, or call a local model by itself. The local backend adds retrieval, uploads, keyword extraction, and optional model calls. See the [RAG setup](RAG_SETUP.md) and [sharing guide](SHARING_GUIDE.md) for the boundary.
+The public site is a static browser experience. It cannot run Python, read your local PDFs, access Zotero, or call a local model by itself. The local backend adds retrieval, uploads, keyword extraction, and optional model calls. See the [RAG setup](guides/RAG_SETUP.md) and [sharing guide](guides/SHARING_GUIDE.md) for the boundary.
 
 ![Local-data boundary: public assets may be published, while PDFs, private metadata, credentials, and weights remain in local storage.](static/assets/docs/local-data-boundary.svg)
 
@@ -38,6 +39,18 @@ The public site is a static browser experience. It cannot run Python, read your 
 Generated counts, dataset hashes, and validation dates are maintained in [PROJECT_STATUS.md](guides/PROJECT_STATUS.md). Historical updates are consolidated in [Release notes](guides/RELEASE_NOTES.md). The status file, not this overview, is the source of current inventory numbers.
 
 ## Startup
+
+The repository is organized by purpose:
+
+| Directory | Contents |
+| --- | --- |
+| `data/` | Structured research catalogue and learning data |
+| `static/`, `docs/` | Authored web assets and generated GitHub Pages bundle |
+| `maintenance/` | Library import, Zotero, audit, export, and search-tuning tools |
+| `guides/` | Usage guides, evidence policy, and consolidated release notes |
+| `training/`, `finetune/` | Dataset preparation, training, and model evaluation |
+| `tests/`, `examples/` | Regression checks and reproducible teaching examples |
+| `literature/`, `private/` | Local papers, indexes, and private integration records |
 
 On Windows, double-click `start.bat`, or run this from the repository root:
 
@@ -55,18 +68,18 @@ Typical maintenance commands are:
 
 ```powershell
 python fetch_literature.py --try-publisher
-python audit_library.py
-python extract_method_evidence.py
+python -m maintenance.audit_library
+python -m maintenance.extract_method_evidence
 python build_paper_tags.py
 ```
 
-The downloader uses sources available to the operator and validates PDF identity, title, body or supplement, page count, and SHA-256 where possible. Failed items retain their DOI entry. Automated method signals help locate evidence; calculation parameters still require checking against the target system and the original paper. See [full-text audit](FULLTEXT_AUDIT.md), [method evidence audit](METHOD_EVIDENCE_AUDIT.md), and [paper audit](PAPER_AUDIT.md).
+The downloader uses sources available to the operator and validates PDF identity, title, body or supplement, page count, and SHA-256 where possible. Failed items retain their DOI entry. Automated method signals help locate evidence; calculation parameters still require checking against the target system and the original paper. See the [evidence policy](guides/EVIDENCE_POLICY.md) and [maintenance commands](guides/MAINTENANCE.md).
 
 To import existing bibliography records into local Zotero:
 
 ```powershell
-python import_zotero_library.py --apply
-python sync_zotero_links.py
+python -m maintenance.import_zotero_library --apply
+python -m maintenance.sync_zotero_links
 ```
 
 ## QLoRA and model boundaries
