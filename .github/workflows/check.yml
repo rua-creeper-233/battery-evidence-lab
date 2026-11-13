@@ -41,7 +41,7 @@ jobs:
       - name: Scan the deployable files
         run: python publication_safety.py --public-bundle
       - name: Reject forbidden paths anywhere in candidate history
-        run: python history_safety.py --no-baseline --full-inventory
+        run: python history_safety.py --no-baseline --full-inventory --scan-content
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

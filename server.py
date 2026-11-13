@@ -50,6 +50,14 @@ ZOTERO_LINKS = ROOT / "private" / "zotero-links.local.json"
 DEFAULT_ALLOWED_ORIGIN = "https://rua-creeper-233.github.io"
 AGENT = BatteryResearchAgent()
 AGENT_LOCK = threading.RLock()
+# Headers added by tunnels and reverse proxies.  Their presence means the
+# loopback peer is relaying a remote client, whatever the Host header says.
+PROXY_HEADERS = ("Cf-Connecting-IP", "Cf-Ray", "X-Forwarded-For", "X-Forwarded-Host", "X-Real-IP", "Forwarded")
+LOCAL_ORIGIN_RE = re.compile(r"^http://(?:127\.0\.0\.1|localhost|\[::1\]):(\d{1,5})$")
+REQUEST_TIMEOUT_SECONDS = 30
+MAX_CONCURRENT_REQUESTS = 16
+# Response fields that describe this workstation rather than the public catalogue.
+REMOTE_PROVENANCE_FIELDS = ("data_file", "fulltext_file", "fulltext_paper_count", "fulltext_chunk_count")
 
 
 def _load_json(path: Path, fallback: Any) -> Any:
@@ -77,10 +85,31 @@ class BatteryHTTPServer(ThreadingHTTPServer):
     public_api: bool = False
     access_token: str = ""
     allowed_origins: set[str]
+    daemon_threads = True
+    request_slots = threading.BoundedSemaphore(MAX_CONCURRENT_REQUESTS)
+
+    def process_request(self, request, client_address):  # type: ignore[override]
+        # Bound the worker count so slow clients cannot exhaust threads.
+        if not self.request_slots.acquire(blocking=False):
+            try:
+                request.sendall(b"HTTP/1.1 503 Service Unavailable\r\nContent-Length: 0\r\nConnection: close\r\n\r\n")
+            except OSError:
+                pass
+            self.shutdown_request(request)
+            return
+        super().process_request(request, client_address)
+
+    def process_request_thread(self, request, client_address):  # type: ignore[override]
+        try:
+            super().process_request_thread(request, client_address)
+        finally:
+            self.request_slots.release()
 
 
 class Handler(BaseHTTPRequestHandler):
     server_version = "BatteryEvidenceLab/0.2"
+    # Socket timeout: a stalled client cannot hold a worker forever.
+    timeout = REQUEST_TIMEOUT_SECONDS
 
     @property
     def config(self) -> BatteryHTTPServer:
@@ -93,14 +122,35 @@ class Handler(BaseHTTPRequestHandler):
         host = self.headers.get("Host", "").split(":", 1)[0].strip("[]").lower()
         return host in {"127.0.0.1", "localhost", "::1"}
 
+    def _own_port(self) -> int | None:
+        try:
+            return int(self.server.server_address[1])  # type: ignore[attr-defined]
+        except (AttributeError, IndexError, TypeError, ValueError):
+            return None
+
+    def _origin_is_self(self, origin: str) -> bool:
+        # Only this server's own pages count as local, not other dev servers
+        # that happen to run on localhost.
+        match = LOCAL_ORIGIN_RE.match(origin)
+        own_port = self._own_port()
+        return bool(match) and (own_port is None or int(match.group(1)) == own_port)
+
+    def _proxied(self) -> bool:
+        return any(self.headers.get(name) for name in PROXY_HEADERS)
+
     def _is_local_request(self) -> bool:
         origin = self._origin()
-        local_origin = not origin or origin.startswith("http://127.0.0.1:") or origin.startswith("http://localhost:")
-        return self.client_address[0] in {"127.0.0.1", "::1"} and self._host_is_local() and local_origin
+        local_origin = not origin or self._origin_is_self(origin)
+        return (
+            self.client_address[0] in {"127.0.0.1", "::1"}
+            and self._host_is_local()
+            and local_origin
+            and not self._proxied()
+        )
 
     def _origin_allowed(self) -> bool:
         origin = self._origin()
-        return not origin or origin in self.config.allowed_origins or origin.startswith("http://127.0.0.1:") or origin.startswith("http://localhost:")
+        return not origin or origin in self.config.allowed_origins or self._origin_is_self(origin)
 
     def _send_cors(self) -> None:
         origin = self._origin()
@@ -258,6 +308,8 @@ class Handler(BaseHTTPRequestHandler):
         length = int(self.headers.get("Content-Length", "0"))
         if length < 0 or length > limit:
             raise ValueError("request too large")
+        if length and not self.headers.get("Content-Type", "").lower().startswith("application/json"):
+            raise ValueError("请求需要 Content-Type: application/json。")
         payload = json.loads(self.rfile.read(length) or b"{}")
         if not isinstance(payload, dict):
             raise ValueError("JSON body must be an object")
@@ -308,10 +360,19 @@ class Handler(BaseHTTPRequestHandler):
                 payload = self._read_json_body(100_000)
                 question = str(payload.get("question", "")).strip()
                 limit = min(max(int(payload.get("limit", 5)), 1), 10)
-                use_rag = payload.get("use_rag", True) is not False
+                local = self._is_local_request()
+                # Remote callers never trigger the model: its answer is built
+                # from private full-text excerpts and spends provider budget.
+                use_rag = local and payload.get("use_rag", True) is not False
                 result = AGENT.answer(question, limit=limit, use_rag=use_rag)
-                if not self._is_local_request():
+                if not local:
                     result["fulltext_hits"] = []
+                    result["rag"] = {key: value for key, value in result.get("rag", {}).items()
+                                     if key not in {"source_provenance", "fulltext_sources"}}
+                    provenance = result.get("provenance")
+                    if isinstance(provenance, dict):
+                        for key in REMOTE_PROVENANCE_FIELDS:
+                            provenance.pop(key, None)
                     result["answer_markdown"] = re.sub(
                         r"\n### 本地全文命中.*?(?=\n### 边界与下一步)",
                         "",
@@ -331,6 +392,8 @@ class Handler(BaseHTTPRequestHandler):
                 payload = self._read_json_body(300_000)
                 text = str(payload.get("text", ""))
                 paper_id = str(payload.get("paper_id", "")).strip()
+                if paper_id and not self._is_local_request():
+                    raise ValueError("paper_id 仅允许本机调用；远程请求请直接提供 text。")
                 if paper_id:
                     paper = next((row for row in AGENT.papers if row["id"] == paper_id), None)
                     chunks = [row.get("text", "") for row in AGENT.fulltext_chunks if row.get("paper_id") == paper_id]
@@ -348,7 +411,7 @@ class Handler(BaseHTTPRequestHandler):
             # uploads build concurrently, a slower older snapshot could finish
             # last and roll the global agent back to stale data.
             with AGENT_LOCK:
-                result = ingest_pdf(pdf_bytes, filename, fields)
+                result = ingest_pdf(pdf_bytes, filename, fields, allow_attach_to_existing=self._is_local_request())
                 refreshed = BatteryResearchAgent()
                 AGENT = refreshed
             self._json(result, HTTPStatus.CREATED if result.get("created") else HTTPStatus.OK)

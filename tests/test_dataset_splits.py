@@ -35,7 +35,7 @@ class DatasetSplitTests(unittest.TestCase):
   def test_public_resource_sanitizer_rejects_credentials_sensitive_queries_and_private_visibility(self):
     paper = {"resources": [
       {"label": "credential", "url": "https://user:secret@github.com/org/repo"},
-      {"label": "token", "url": "https://github.com/org/repo?access_token=secret"},
+      {"label": "token", "url": "https://github.com/org/repo?" + "access_token=secret"},
       {"label": "private", "url": "https://github.com/org/private", "visibility": "private"},
       {"label": "public", "url": "https://github.com/org/repo", "visibility": "public"},
       {"label": "legacy", "url": "https://github.com/org/legacy"},

@@ -497,10 +497,27 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
       };
     }
     const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
-    const inline = text => escapeHtml(text)
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>');
+    // Server and model payloads are untrusted: numbers must be integers and
+    // local PDF links must stay on this origin's /local-pdf/ path.
+    const safeInt = value => Number.isInteger(Number(value)) && String(value).trim() !== '' ? String(Number(value)) : '';
+    const safeLocalPdfUrl = value => /^\/local-pdf\/[A-Za-z0-9._%-]+\.pdf(?:#page=\d+)?$/.test(String(value ?? '')) ? String(value) : '';
+    // Links are extracted before emphasis so `*` inside a URL cannot inject
+    // markup into the href.  Only https:// or a single leading "/" is allowed;
+    // "//host" (protocol-relative) is rejected.
+    const inline = text => {
+      const links = [];
+      const withTokens = String(text ?? '').replace(/\[([^\]]+)\]\(((?:https:\/\/|\/(?!\/))[^)\s]+)\)/g, (_, label, url) => {
+        links.push([label, url]);
+        return `\u0000${links.length - 1}\u0000`;
+      });
+      return escapeHtml(withTokens)
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\u0000(\d+)\u0000/g, (_, index) => {
+          const [label, url] = links[Number(index)];
+          return `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${escapeHtml(label)}</a>`;
+        });
+    };
     function markdown(text) {
       const lines = text.split('\n'); let html = '', list = null;
       const close = () => { if (list) { html += `</${list}>`; list = null; } };
@@ -523,7 +540,7 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
       const record = zoteroRecord(p);
       const localRecord = state.literature[p.id] || {};
       const localPdf = localMode && localRecord.status === 'downloaded'
-        ? `<a class="local-pdf" target="_blank" rel="noreferrer" href="/local-pdf/${encodeURIComponent(p.id)}.pdf">打开本地 PDF${localRecord.pages ? ` · ${localRecord.pages}页` : ''}</a>`
+        ? `<a class="local-pdf" target="_blank" rel="noreferrer" href="/local-pdf/${encodeURIComponent(p.id)}.pdf">打开本地 PDF${safeInt(localRecord.pages) ? ` · ${safeInt(localRecord.pages)}页` : ''}</a>`
         : '';
       const zotero = record?.attachment_key
         ? `<a class="zotero" href="zotero://open-pdf/library/items/${encodeURIComponent(record.attachment_key)}">在 Zotero 打开原文</a>`
@@ -534,7 +551,7 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
       const wos = p.wos_uid
         ? `<a class="wos" target="_blank" rel="noreferrer" href="https://www.webofscience.com/wos/woscc/full-record/${encodeURIComponent(p.wos_uid)}">${wosLabel}</a>`
         : p.doi
-          ? `<button class="wos" onclick="openWos('${escapeHtml(p.doi)}')">${wosLabel}</button>`
+          ? `<button class="wos" type="button" data-wos-doi="${escapeHtml(p.doi)}">${wosLabel}</button>`
           : `<span class="wos">待补 DOI / WOS</span>`;
       const doi = p.doi ? `<a class="doi-link" target="_blank" rel="noreferrer" href="https://doi.org/${encodeURIComponent(p.doi)}">出版社 / DOI</a>` : '';
       return `<div class="paper-actions">${localPdf}${zotero}${wos}${doi}${citationButtons(p)}</div>`;
@@ -545,6 +562,16 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
       alert(`DOI 已复制：${doi}\n请在 WOS 基本检索中选择“DOI”字段后粘贴。`);
     }
     window.openWos = openWos;
+    // Delegated handler replaces the inline onclick: HTML escaping does not
+    // protect a JS string inside an attribute, because the browser decodes
+    // &#39; back to ' before running the handler.
+    if (document.addEventListener) document.addEventListener('click', event => {
+      const button = event.target.closest?.('[data-wos-doi]');
+      if (!button) return;
+      event.preventDefault();
+      event.stopPropagation();
+      openWos(button.dataset.wosDoi);
+    });
     function paperTagPills(p) {
       const ordinary = (p.display_tags || []).map(tag => {
         const kind = ['方法论文','进展论文','综述'].includes(tag) ? 'kind' : 'method';
@@ -565,7 +592,7 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
     function paperCard(p) {
       const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(p, p.title || p.role) : `<span class="paper-title-en">${escapeHtml(p.title || p.role)}</span>`;
       const summary = window.LabUI?.paperSummary?.(p) || p.summary || p.role || '';
-      return `<article class="e-card" data-paper-id="${escapeHtml(p.id)}"><span class="year">${p.year} · ${escapeHtml(p.journal)}</span><div class="paper-tags">${paperTagPills(p)}</div><h4>${titleHtml}</h4><p>${escapeHtml(summary)}</p>${linkButtons(p)}</article>`;
+      return `<article class="e-card" data-paper-id="${escapeHtml(p.id)}"><span class="year">${safeInt(p.year)} · ${escapeHtml(p.journal)}</span><div class="paper-tags">${paperTagPills(p)}</div><h4>${titleHtml}</h4><p>${escapeHtml(summary)}</p>${linkButtons(p)}</article>`;
     }
     function renderList(filter='') {
       const typed = String(filter || '').trim();
@@ -576,7 +603,7 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
       const papers = query
         ? window.BatteryBrowserAgent.searchDetailed(query, state.papers, state.papers.length, state.searchConfig).results
         : state.papers;
-      document.querySelector('#paperList').innerHTML = papers.map(p => { const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(p) : `<span class="paper-title-en">${escapeHtml(p.title)}</span>`; return `<div class="paper" data-id="${escapeHtml(p.id)}"><span class="meta">${p.year} · ${escapeHtml(p.journal)}</span>${p.difficulty ? `<span class="level">${escapeHtml(p.difficulty)}</span>` : ''}<div class="paper-tags">${paperTagPills(p)}</div><h3>${titleHtml}</h3><p>${escapeHtml(p.role)}</p>${citationButtons(p)}</div>`; }).join('') || '<div class="notice">没有满足当前关键词和标签的论文。</div>';
+      document.querySelector('#paperList').innerHTML = papers.map(p => { const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(p) : `<span class="paper-title-en">${escapeHtml(p.title)}</span>`; return `<div class="paper" data-id="${escapeHtml(p.id)}"><span class="meta">${safeInt(p.year)} · ${escapeHtml(p.journal)}</span>${p.difficulty ? `<span class="level">${escapeHtml(p.difficulty)}</span>` : ''}<div class="paper-tags">${paperTagPills(p)}</div><h3>${titleHtml}</h3><p>${escapeHtml(p.role)}</p>${citationButtons(p)}</div>`; }).join('') || '<div class="notice">没有满足当前关键词和标签的论文。</div>';
       document.querySelector('#listCount').textContent = `当前 ${papers.length}/${state.papers.length} 篇`;
       document.querySelectorAll('.paper').forEach(el => el.onclick = () => showPaper(el.dataset.id));
     }
@@ -599,12 +626,14 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
       }).map(r => `<li><a target="_blank" rel="noopener noreferrer" href="${escapeHtml(r.url)}">${escapeHtml(r.label)}</a></li>`).join('');
       const learningBlock = `${p.scope_note ? `<h3>适用范围与迁移边界</h3><p>${escapeHtml(p.scope_note)}</p>` : ''}${resources ? `<h3>代码、数据与复现入口</h3><ul>${resources}</ul>` : ''}`;
       const local = state.literature[p.id] || {};
-      const localStatus = localMode && state.backendConnected ? (local.status === 'downloaded' ? `本地全文：${local.pages ? `${local.pages} 页` : '已下载'}${local.text_chunks ? ` · ${local.text_chunks} 个检索片段` : ''}` : '本地全文：未记录') : '';
+      const localStatus = localMode && state.backendConnected ? (local.status === 'downloaded' ? `本地全文：${safeInt(local.pages) ? `${safeInt(local.pages)} 页` : '已下载'}${safeInt(local.text_chunks) ? ` · ${safeInt(local.text_chunks)} 个检索片段` : ''}` : '本地全文：未记录') : '';
       const methodRecord = state.methods[p.id] || {};
       const methods = (methodRecord.evidence || []).slice(0, 12).map(item => {
         const locator = localMode && local.status === 'downloaded'
-          ? `<a target="_blank" rel="noreferrer" href="${escapeHtml(item.local_pdf_url)}">PDF p.${item.page}</a>`
-          : `p.${item.page}`;
+          ? (safeLocalPdfUrl(item.local_pdf_url)
+            ? `<a target="_blank" rel="noreferrer" href="${escapeHtml(safeLocalPdfUrl(item.local_pdf_url))}">PDF p.${safeInt(item.page)}</a>`
+            : `PDF p.${safeInt(item.page)}`)
+          : `p.${safeInt(item.page)}`;
         return `<li><strong>${escapeHtml(item.label_zh)}</strong> · ${locator} · <code>${escapeHtml(item.signal)}</code></li>`;
       }).join('');
       const methodBlock = methods
@@ -612,7 +641,7 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
       const verification = window.LabUI?.verificationLabel?.(p.verification?.doi) || '书目核验状态待补充';
       const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(p) : `<span class="paper-title-en">${escapeHtml(p.title)}</span>`;
       const paperInsights = window.PaperInsights?.renderHtml(p.id) || '';
-      document.querySelector('#detail').innerHTML = `<div class="eyebrow">${p.year} · ${escapeHtml(p.journal)} · ${escapeHtml(p.document_type)}${p.difficulty ? ` · ${escapeHtml(p.difficulty)}` : ''}</div><h2>${titleHtml}</h2><p>${escapeHtml(authorLine)}</p><p>${escapeHtml(window.LabUI?.paperSummary?.(p) || p.summary || '')}</p><div>${tags}</div>${linkButtons(p)}${learningBlock}${protocolBlock}${evidence && !paperInsights ? `<h3>论文要点</h3><ul>${evidence}</ul>` : ''}${relations && !paperInsights ? `<h3>知识关系</h3>${relations}` : ''}${paperInsights}${methodBlock}<p class="paper-meta">${escapeHtml(verification)}${p.wos_uid ? ' · WOS 记录已核验' : ''}${localStatus ? ` · ${escapeHtml(localStatus)}` : ''}</p>`;
+      document.querySelector('#detail').innerHTML = `<div class="eyebrow">${safeInt(p.year)} · ${escapeHtml(p.journal)} · ${escapeHtml(p.document_type)}${p.difficulty ? ` · ${escapeHtml(p.difficulty)}` : ''}</div><h2>${titleHtml}</h2><p>${escapeHtml(authorLine)}</p><p>${escapeHtml(window.LabUI?.paperSummary?.(p) || p.summary || '')}</p><div>${tags}</div>${linkButtons(p)}${learningBlock}${protocolBlock}${evidence && !paperInsights ? `<h3>论文要点</h3><ul>${evidence}</ul>` : ''}${relations && !paperInsights ? `<h3>知识关系</h3>${relations}` : ''}${paperInsights}${methodBlock}<p class="paper-meta">${escapeHtml(verification)}${p.wos_uid ? ' · WOS 记录已核验' : ''}${localStatus ? ` · ${escapeHtml(localStatus)}` : ''}</p>`;
       document.querySelector('#modal').classList.add('open');
     }
     let askGeneration = 0;
@@ -757,7 +786,7 @@ a, .method-flow__node dt, .route-shortcuts summary { color: var(--link-color); }
         const payload = await response.json();
         const keywords = (payload.keywords || []).map(row => `<span class="tag">${escapeHtml(row.term)}</span>`).join('');
         const titleHtml = window.LabUI?.paperTitleHtml ? window.LabUI.paperTitleHtml(payload.paper) : `<span class="paper-title-en">${escapeHtml(payload.paper.title)}</span>`;
-        resultBox.innerHTML = `<strong>${payload.created ? '已新增论文' : '已补充现有条目'}</strong><br>${titleHtml}<br>${payload.paper.doi ? `DOI：${escapeHtml(payload.paper.doi)}<br>` : ''}PDF：${payload.pdf.pages} 页，已加入全文索引。<div style="margin-top:8px">${keywords || '未提取到关键词'}</div>`;
+        resultBox.innerHTML = `<strong>${payload.created ? '已新增论文' : '已补充现有条目'}</strong><br>${titleHtml}<br>${payload.paper.doi ? `DOI：${escapeHtml(payload.paper.doi)}<br>` : ''}PDF：${safeInt(payload.pdf.pages)} 页，已加入全文索引。<div style="margin-top:8px">${keywords || '未提取到关键词'}</div>`;
         state.backendConnected = true;
         updateApiStat();
         await loadData();
