@@ -163,7 +163,7 @@ class PublicationSafetyTests(unittest.TestCase):
         sources += [root / "static/data/zotero-links.json"]
         sources += [root / "examples/ai_battery" / name for name in ("relax_mace.py", "msd_from_csv.py", "example_trajectory.csv")]
         sources += [root / "data" / name for name in (*build_pages.DATA_NAMES, "method_evidence.auto.json")]
-        for kind in ("zotero", "method", "catalog", "titles", "shared_asset", "domestic_asset", "domestic_registry", "domestic_private", "route", "guide"):
+        for kind in ("zotero", "method", "catalog", "titles", "shared_asset", "domestic_asset", "guide_style", "domestic_registry", "domestic_private", "route", "guide"):
             with self.subTest(source=kind), tempfile.TemporaryDirectory() as folder:
                 target_root = Path(folder)
                 for source in sources:
@@ -200,6 +200,10 @@ class PublicationSafetyTests(unittest.TestCase):
                 elif kind == "domestic_asset":
                     target = target_root / "static/domestic-papers.js"
                     target.write_text("const leaked = 'sk-proj-" + "a" * 24 + "';", encoding="utf-8")
+                    value = None
+                elif kind == "guide_style":
+                    target = target_root / "static/guide.css"
+                    target.write_text("/* sk-proj-" + "a" * 24 + " */", encoding="utf-8")
                     value = None
                 elif kind == "domestic_registry":
                     target = target_root / "data/domestic_papers.json"

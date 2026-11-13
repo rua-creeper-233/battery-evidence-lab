@@ -125,6 +125,13 @@ class ServerSecurityTests(unittest.TestCase):
                 with urlopen(f"http://127.0.0.1:{port}/guides/{name}", timeout=5) as response:
                     self.assertEqual(response.status, 200)
                     self.assertGreater(len(response.read()), 100)
+            for page in ("agent-guide.html", "research-roadmap.html"):
+                with urlopen(f"http://127.0.0.1:{port}/{page}", timeout=5) as response:
+                    self.assertEqual(response.status, 200)
+                    self.assertIn("text/html", response.headers["Content-Type"])
+                    self.assertIn('class="guide-content"', response.read().decode("utf-8"))
+            with urlopen(f"http://127.0.0.1:{port}/guide.css", timeout=5) as response:
+                self.assertEqual(response.status, 200)
             import json
             from urllib.error import HTTPError
 

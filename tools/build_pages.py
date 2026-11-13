@@ -10,6 +10,7 @@ from pathlib import Path
 import tools.publication_safety as publication_safety
 from tools.site_chrome import PAGES, PUBLIC_BASE, prepare_chrome
 from tools.method_flow import prepare_method_flow
+from tools.build_guides import GUIDE_PAGES, build as render_guide, rewrite_guide_links
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,7 +22,7 @@ GUIDE_NAMES = (
     "PROJECT_STATUS.md", "RELEASE_NOTES.md", "LEARNING_ROUTE_20261014.md",
 )
 PAGE_NAMES = ("index.html", "future-directions.html", "ai-battery-applications.html", "foundations.html")
-ASSET_NAMES = ("favicon.svg", "share-card.png", "nav-overflow.js", "notebook.js", "citation-tools.js", "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css", "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css", "battery_explorer.js", "paper_insights.js", "paper_insights.css", "home.css", "home.js", "tutorials.js", "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js")
+ASSET_NAMES = ("guide.css", "favicon.svg", "share-card.png", "nav-overflow.js", "notebook.js", "citation-tools.js", "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css", "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css", "battery_explorer.js", "paper_insights.js", "paper_insights.css", "home.css", "home.js", "tutorials.js", "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js")
 DATA_NAMES = ("papers.json", "paper_tags.json", "search_config.json", "project_status.json", "learning_route.json", "paper_titles_zh.json", "domestic_papers.json", "static_qa.json", "research_knowledge.json", "battery_components.json", "paper_insights.json")
 
 
@@ -43,6 +44,8 @@ def progress_text(status: dict) -> str:
 
 def prepare_page(source: str, status_text: str, shared_css: str = "", page: str = "") -> str:
     """Pre-render progress and shared styles; keep authored scripts unchanged."""
+    if page not in GUIDE_PAGES:
+        source = rewrite_guide_links(source)
     source = re.sub(
         r"(<p\b[^>]*\bdata-project-progress[^>]*>).*?(</p>)",
         lambda match: match[1] + html.escape(status_text) + match[2],
@@ -122,6 +125,9 @@ def main() -> None:
         route=route,
     ), status_text, shared_css, "domestic-papers.html")
     rendered["domestic-papers.html"] = domestic_html
+    for page, guide_name in GUIDE_PAGES.items():
+        guide_source = (ROOT / "guides" / guide_name).read_text(encoding="utf-8")
+        rendered[page] = prepare_page(render_guide(guide_source, page), status_text, shared_css, page)
     for name, content in rendered.items():
         publication_safety.assert_clean(publication_safety.scan_text(content, f"docs/{name}"))
     planned = [

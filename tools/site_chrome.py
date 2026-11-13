@@ -16,6 +16,8 @@ PAGES = {
     "foundations.html": ("基础地图 · Battery Evidence Lab", "电池材料计算需要的数学、物理、DFT、MD 与电化学基础及参考书目。"),
     "learning-route.html": ("学习路线 · Battery Evidence Lab", "按 baseline、入门、进阶和前沿专题查阅论文与科研练习。"),
     "domestic-papers.html": ("国内论文 · Battery Evidence Lab", "分别查阅中文论文与中国团队的英文论文，以及对应的材料计算学习路线。"),
+    "agent-guide.html": ("工具 Agent 使用指南 · Battery Evidence Lab", "从启动、提问到核验工具记录，了解工具 Agent 的使用方法、证据链和访问边界。"),
+    "research-roadmap.html": ("电池研究路线图 · Battery Evidence Lab", "按基础和算力选择电池材料计算起点，完成基准复现、收敛验证与研究问题设计。"),
 }
 NAV = (
     ("index.html#research-question", "证据问答", "research-question"),

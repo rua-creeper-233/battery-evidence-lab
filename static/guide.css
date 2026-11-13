@@ -1,0 +1,42 @@
+/* Reading surface for the public guides. Colors come from lab-ui.css tokens. */
+.guide-page { max-width: 1180px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+.guide-hero { padding: 1rem 0 2rem; border-bottom: 1px solid var(--border-color); }
+.guide-kicker { color: var(--brand-primary); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.guide-hero h1 { max-width: 900px; margin: .45rem 0 1rem; line-height: 1.15; }
+.guide-meta { display: flex; flex-wrap: wrap; gap: .65rem 1.2rem; font-size: .92rem; }
+.guide-meta a, .guide-content a { color: var(--brand-primary); text-decoration-thickness: .08em; text-underline-offset: .15em; }
+.guide-layout { display: grid; grid-template-columns: minmax(180px, 235px) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+.guide-toc { position: sticky; top: 5.25rem; max-height: calc(100vh - 6rem); overflow: auto; padding: 1.25rem 0; }
+.guide-toc p { margin: 0 0 .55rem; color: var(--text-primary); font-weight: 700; }
+.guide-toc summary { cursor: pointer; margin-bottom: .55rem; font-weight: 700; }
+.guide-toc ol { margin: 0; padding-left: 1.1rem; }
+.guide-toc li { margin: .35rem 0; font-size: .9rem; }
+.guide-toc .toc-level-3, .guide-toc .toc-level-4 { margin-left: .8rem; font-size: .84rem; }
+.guide-content { min-width: 0; padding: 1.25rem 0; color: var(--text-primary); line-height: 1.72; }
+.guide-content h2, .guide-content h3, .guide-content h4 { scroll-margin-top: 6rem; line-height: 1.3; margin: 2.2em 0 .65em; }
+.guide-content h2 { border-bottom: 1px solid var(--border-color); padding-bottom: .3em; }
+.guide-content p { margin: 0 0 1em; }
+.guide-content ul, .guide-content ol { margin: .4em 0 1.1em; padding-left: 1.5rem; }
+.guide-content li + li { margin-top: .3em; }
+.guide-content blockquote { margin: 1.25rem 0; padding: .75rem 1rem; border-left: 4px solid var(--brand-primary); background: var(--bg-surface); color: var(--text-secondary); }
+.guide-content blockquote p:last-child { margin-bottom: 0; }
+.guide-content code { padding: .12em .32em; border-radius: .25rem; background: var(--bg-surface); font-size: .9em; }
+.guide-content pre { overflow-x: auto; margin: 1.25rem 0; padding: 1rem 1.1rem; border: 1px solid var(--border-color); border-radius: .45rem; background: var(--bg-surface); line-height: 1.5; }
+.guide-content pre code { padding: 0; background: transparent; white-space: pre; }
+.guide-table-wrap { overflow-x: auto; margin: 1.25rem 0; }
+.guide-content table { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: .94em; }
+.guide-content th, .guide-content td { padding: .55rem .7rem; border: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+.guide-content th { background: var(--bg-surface); color: var(--text-primary); }
+.guide-content a:focus-visible, .guide-toc a:focus-visible, .guide-meta a:focus-visible { outline: 3px solid var(--brand-primary); outline-offset: 3px; border-radius: 2px; }
+@media (max-width: 860px) { .guide-layout { grid-template-columns: 1fr; gap: 0; } .guide-toc { position: static; max-height: none; padding: 1rem 0; border-bottom: 1px solid var(--border-color); } .guide-toc ol { columns: 2; } }
+@media (max-width: 560px) { .guide-page { padding: 1.2rem .9rem 3rem; } .guide-toc ol { columns: 1; } .guide-content table { min-width: 28rem; } }
+@media print { .site-nav, .guide-toc, .guide-meta { display: none !important; } .guide-page { max-width: none; padding: 0; } .guide-content { color: #000; } .guide-content a { color: #000; text-decoration: underline; } .guide-content pre, .guide-content blockquote { border-color: #999; background: transparent; } }
+
+/* Comfortable long-form reading and bounded mobile contents. */
+.guide-content{font-size:16px;line-height:1.9}
+.guide-toc ol{list-style:none;padding-left:0}
+.guide-toc li{break-inside:avoid}
+.guide-toc a{display:block;padding:.15rem 0;color:var(--text-secondary);line-height:1.65;text-decoration:none}
+.guide-toc a:hover{color:var(--brand-primary);text-decoration:underline}
+.guide-table-wrap:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
+@media(max-width:560px){.guide-toc details[open] ol{max-height:16rem;overflow-y:auto;padding-right:.5rem}}

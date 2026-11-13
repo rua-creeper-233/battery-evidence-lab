@@ -73,3 +73,13 @@ main > [data-home-panel].is-active { display: block; }
   .e-card { overflow-wrap: anywhere; }
   .site-footer { padding-inline: 16px; }
 }
+
+/* Reading guides are full pages, reachable without the local service. */
+.guide-entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 26px}
+.guide-entry{display:block;padding:22px;border:1px solid var(--border-color);border-radius:10px;background:var(--bg-surface);color:var(--text-primary);text-decoration:none;min-width:0}
+.guide-entry h3{margin:8px 0 10px;font-size:20px;line-height:1.4}
+.guide-entry p{margin:0 0 18px;color:var(--text-secondary);font-size:14px;line-height:1.8}
+.guide-entry-action{color:var(--brand-primary);font-size:14px;font-weight:600}
+.guide-entry:hover{border-color:var(--brand-primary);box-shadow:var(--shadow-card)}
+.guide-entry:focus-visible{outline:3px solid var(--focus-ring);outline-offset:4px}
+@media(max-width:620px){.guide-entry-grid{grid-template-columns:1fr}.guide-entry{padding:18px}}
