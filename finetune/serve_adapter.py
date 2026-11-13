@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -70,8 +71,35 @@ def load_model(args: argparse.Namespace):
     return model, tokenizer, device, dtype
 
 
+LOOPBACK_HOSTS = {"127.0.0.1", "localhost", "::1"}
+
+
+def request_rejection(headers: Any, access_token: str = "") -> str:
+    """Return a reason to refuse a generation request, or "" to allow it.
+
+    The adapter listens on loopback, but any web page the user opens can still
+    send a cross-site "simple" POST to it, and DNS rebinding can read the
+    reply.  Requiring a loopback Host, no browser Origin and a JSON body closes
+    both paths; the optional token guards against other local processes.
+    """
+    host = str(headers.get("Host", "")).rsplit(":", 1)[0].strip("[]").lower() if headers.get("Host") else ""
+    if host not in LOOPBACK_HOSTS:
+        return "Host must be a loopback address"
+    if headers.get("Origin"):
+        return "browser cross-origin requests are not accepted"
+    if not str(headers.get("Content-Type", "")).lower().startswith("application/json"):
+        return "Content-Type must be application/json"
+    if access_token:
+        import hmac
+        if not hmac.compare_digest(str(headers.get("Authorization", "")), f"Bearer {access_token}"):
+            return "missing or wrong bearer token"
+    return ""
+
+
 class Handler(BaseHTTPRequestHandler):
     model: Any = None
+    access_token: str = ""
+    timeout = 30
     tokenizer: Any = None
     device: str = "cpu"
     model_name: str = "battery-qwen-lora"
@@ -97,6 +125,10 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self) -> None:  # noqa: N802
         if self.path != "/v1/chat/completions":
             self._json({"error": "not found"}, 404)
+            return
+        rejection = request_rejection(self.headers, getattr(self, "access_token", ""))
+        if rejection:
+            self._json({"error": {"message": rejection, "type": "forbidden"}}, 403)
             return
         try:
             size = int(self.headers.get("Content-Length", "0"))
@@ -148,6 +180,8 @@ def main() -> None:
     args = build_parser().parse_args()
     model, tokenizer, device, _dtype = load_model(args)
     Handler.model, Handler.tokenizer, Handler.device = model, tokenizer, device
+    # Optional shared secret; rag.py sends BATTERY_AGENT_LLM_API_KEY as a bearer token.
+    Handler.access_token = os.environ.get("BATTERY_ADAPTER_TOKEN", "").strip()
     Handler.model_name, Handler.max_new_tokens, Handler.max_input_tokens, Handler.temperature = args.model, min(max(args.max_new_tokens, 1), 2048), min(max(args.max_input_tokens, 1), 8192), args.temperature
     server = ThreadingHTTPServer((args.host, args.port), Handler)
     print(f"adapter server listening on http://{args.host}:{args.port}; model={args.model}; device={device}")

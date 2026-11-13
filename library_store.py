@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from fetch_literature import rebuild_fulltext_index, save_json, validate_pdf
+from fetch_literature import acceptable_main_pdf, rebuild_fulltext_index, save_json, validate_pdf
 
 
 ROOT = Path(__file__).resolve().parent
@@ -72,13 +72,28 @@ def normalize_doi(value: str | None) -> str:
     return text.rstrip(".,;:) ]}")
 
 
+class LibraryStateError(RuntimeError):
+    """A private library file exists but cannot be read safely."""
+
+
 def _read_json(path: Path, default: Any) -> Any:
+    """Read a library file; a missing file yields ``default``.
+
+    A file that exists but cannot be parsed raises instead of returning an
+    empty value.  Callers write the result back, so silently treating a
+    damaged file as empty would erase the whole private library.
+    """
     if not path.exists():
         return default
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return default
+    except (OSError, json.JSONDecodeError) as exc:
+        raise LibraryStateError(f"无法读取 {path.name}，已停止写入以免覆盖：{type(exc).__name__}") from exc
+
+
+def _backup(path: Path) -> None:
+    if path.is_file():
+        path.with_suffix(path.suffix + ".bak").write_bytes(path.read_bytes())
 
 
 def load_library_papers(
@@ -170,19 +185,23 @@ def _save_user_paper(paper: dict[str, Any]) -> None:
     rows = _read_json(USER_PAPERS, [])
     by_id = {str(row.get("id")): row for row in rows if isinstance(row, dict)}
     by_id[paper["id"]] = paper
-    USER_PAPERS.parent.mkdir(parents=True, exist_ok=True)
-    USER_PAPERS.write_text(
-        json.dumps(list(by_id.values()), ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    _backup(USER_PAPERS)
+    # save_json writes a temporary file and replaces atomically.
+    save_json(USER_PAPERS, list(by_id.values()))
 
 
 def ingest_pdf(
     pdf_bytes: bytes,
     filename: str,
     fields: dict[str, str] | None = None,
+    allow_attach_to_existing: bool = True,
 ) -> dict[str, Any]:
-    """Validate, index, and add a PDF to the local private library."""
+    """Validate, index, and add a PDF to the local private library.
+
+    ``allow_attach_to_existing`` is False for tunnelled callers: they may add
+    new user papers but cannot attach a PDF to an already catalogued paper,
+    whose full text would then feed every later answer.
+    """
     fields = fields or {}
     if not pdf_bytes.startswith(b"%PDF-"):
         raise ValueError("上传文件不是有效的 PDF。")
@@ -223,6 +242,8 @@ def ingest_pdf(
             None,
         )
         is_new = existing is None
+        if existing and not allow_attach_to_existing:
+            raise ValueError("远程上传不能为已收录论文补充 PDF；请在本机操作。")
         if existing:
             paper = dict(existing)
         else:
@@ -260,6 +281,11 @@ def ingest_pdf(
             raise ValueError(f"PDF 解析失败：{validation.get('validation_error', '未知错误')}")
         if validation.get("document_kind") != "article":
             raise ValueError("检测到的文件更像补充材料，请上传论文正文 PDF。")
+        if existing and not acceptable_main_pdf(validation):
+            # Matching a DOI or title in the form is not proof of identity:
+            # the PDF's own front page must name the catalogued paper.
+            reason = validation.get("identity_rejection_reason") or "document_identity_mismatch"
+            raise ValueError(f"PDF 首页与已收录论文不一致（{reason}），未挂接。")
 
         PDF_DIR.mkdir(parents=True, exist_ok=True)
         destination = PDF_DIR / f"{paper['id']}.pdf"
@@ -275,6 +301,7 @@ def ingest_pdf(
             _save_user_paper(paper)
 
         manifest = _read_json(MANIFEST, {"schema_version": 1, "papers": {}})
+        _backup(MANIFEST)
         entry = manifest.setdefault("papers", {}).setdefault(paper["id"], {})
         entry.update(
             {

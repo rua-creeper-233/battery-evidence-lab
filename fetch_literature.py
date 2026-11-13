@@ -308,12 +308,48 @@ def save_json(path: Path, value: Any) -> None:
     temporary.replace(path)
 
 
+def _is_public_https_url(url: str) -> bool:
+    """Allow only https URLs whose host resolves to public addresses.
+
+    URLs come from OpenAlex records and publisher landing pages, which this
+    script does not control.  Without this check a record could point the
+    fetcher at file://, ftp://, or a service on the local network.
+    """
+    import ipaddress
+    import socket
+
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+        return False
+    try:
+        infos = socket.getaddrinfo(parsed.hostname, parsed.port or 443, proto=socket.IPPROTO_TCP)
+    except OSError:
+        return False
+    for info in infos:
+        address = ipaddress.ip_address(info[4][0].split("%", 1)[0])
+        if not address.is_global:
+            return False
+    return True
+
+
+class _PublicHttpsRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):  # type: ignore[override]
+        if not _is_public_https_url(newurl):
+            raise urllib.error.URLError(f"redirect to non-public or non-https URL blocked: {newurl[:120]}")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+_OPENER = urllib.request.build_opener(_PublicHttpsRedirectHandler)
+
+
 def request(url: str, accept: str = "*/*", timeout: int = 45):
+    if not _is_public_https_url(url):
+        raise urllib.error.URLError(f"blocked non-public or non-https URL: {url[:120]}")
     req = urllib.request.Request(
         url,
         headers={"User-Agent": USER_AGENT, "Accept": accept},
     )
-    return urllib.request.urlopen(req, timeout=timeout)
+    return _OPENER.open(req, timeout=timeout)
 
 
 def openalex_record(doi: str) -> dict[str, Any]:
@@ -352,7 +388,7 @@ def discover_pdf_links(landing_url: str) -> list[str]:
     for candidate in candidates:
         absolute = urllib.parse.urljoin(final_url, html.unescape(candidate))
         if (
-            absolute.startswith(("http://", "https://"))
+            absolute.startswith("https://")
             and not looks_like_supplement_url(absolute)
             and absolute not in result
         ):

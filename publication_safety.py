@@ -26,7 +26,10 @@ FORBIDDEN_PATH = re.compile(
     r"(?:^|/)finetune/data/(?:(?:[^/]+/)*[^/]+\.jsonl|manifest\.json)$|"
     r"(?:^|/)(?:local[_-](?:auth|authentication|logs?)|(?:\.?)auth|(?:\.?)logs?)(?:/|$)|"
     r"(?:^|/)\.env(?:[./]|$)|(?:^|/)(?:fulltext_chunks\.jsonl|old_manifest\.json|zotero-links\.local\.json|SECURITY_PRIVACY_AUDIT_[^/]+\.md)$|"
-    r"(?:^|/)literature/manifest\.json$|(?:\.(?:pdf|safetensors|gguf|bin|pt|pth|zip|7z|sqlite)(?:-shm|-wal)?$)", re.I
+    r"(?:^|/)literature/manifest\.json$|(?:\.(?:pdf|safetensors|gguf|bin|pt|pth|zip|7z|sqlite)(?:-shm|-wal)?$)|"
+    # Key material, reference-manager/WoS exports, databases and office documents.
+    r"(?:\.(?:pem|key|p12|pfx|jks|keystore|ris|ciw|enw|nbib|db|sqlite3|docx?|xlsx?|pptx?)$)|"
+    r"(?:^|/)(?:id_(?:rsa|dsa|ecdsa|ed25519)(?:\.pub)?|\.netrc|\.pypirc|\.npmrc|credentials(?:\.json)?)$", re.I
 )
 _INSTITUTION_TRACE_SUBJECTS = ("华南" + "师范大学", "华" + "师", "西安" + "交通大学", "西" + "交")
 _INSTITUTION_TRACE_EVENTS = (("机构" + "会话"), ("校内" + "授权"), ("授权" + "下载"))
@@ -34,12 +37,21 @@ _INSTITUTION_TRACE_PATTERN = rf"(?:{'|'.join(map(re.escape, _INSTITUTION_TRACE_S
 _PERSONAL_LIBRARY_TRACE_PATTERN = "(?:本地" + "尚未保存全文|本机" + "全文可用性|用户已自行" + r"加入\s*Zotero)"
 CONTENT_RULES = (
     ("personal_library_status", re.compile(_PERSONAL_LIBRARY_TRACE_PATTERN, re.I)),
-    ("credential_format", re.compile(r"(?:AKIA[0-9A-Z]{16}|-----BEGIN (?:RSA|OPENSSH|EC|DSA) PRIVATE KEY-----|Bearer\s+(?!test[-_]|example[-_]|placeholder[-_])[A-Za-z0-9._-]{20,}|\bgh[pousr]_[A-Za-z0-9]{20,}|\bgithub_pat_[A-Za-z0-9_]{20,}|\bsk-(?:proj-|ant-)?[A-Za-z0-9_-]{20,})", re.I)),
-    ("signed_url", re.compile(r"https?://[^\s\"']+(?:[?&](?:sig|signature|x-amz-signature|token|expires|x-goog-signature)=|drive\.usercontent\.google\.com/download\?id=)[^\s\"']*", re.I)),
+    ("credential_format", re.compile(r"(?:AKIA[0-9A-Z]{16}|-----BEGIN (?:(?:RSA|OPENSSH|EC|DSA|ENCRYPTED|PGP) )?PRIVATE KEY(?: BLOCK)?-----|"
+                                     # A placeholder prefix is accepted only when nothing long follows it.
+                                     r"Bearer\s+(?!(?:test|example|placeholder)[-_][A-Za-z0-9-]{0,24}(?![A-Za-z0-9._]))[A-Za-z0-9._-]{20,}|"
+                                     r"\bAIza[0-9A-Za-z_-]{35}\b|\bhf_[A-Za-z0-9]{30,}\b|\bxox[abprs]-[A-Za-z0-9-]{10,}|\bglpat-[A-Za-z0-9_-]{20,}|\bgh[pousr]_[A-Za-z0-9]{20,}|\bgithub_pat_[A-Za-z0-9_]{20,}|\bsk-(?:proj-|ant-)?[A-Za-z0-9_-]{20,})", re.I)),
+    ("signed_url", re.compile(r"https?://[^\s\"']+(?:[?&](?:sig|signature|x-amz-signature|token|access_token|expires|x-goog-signature|policy|key-pair-id)=|drive\.usercontent\.google\.com/download\?id=)[^\s\"']*", re.I)),
     ("zotero_private_key", re.compile(r"zotero://(?:items/|(?:open-pdf|select)/(?:library|groups/\d+)/items/)[A-Z0-9]{8}(?=[/?#\s\"']|$)", re.I)),
-    ("windows_user_path", re.compile(r"(?:[A-Za-z]:[\\/]Users[\\/](?![<\[(])[^\\/\s<>'\"]+|/mnt/[a-z]/Users/(?![<\[(])[^/\s<>'\"]+|/home/(?![<\[(])[^/\s<>'\"]+)", re.I)),
-    ("email_address", re.compile(r"(?<![A-Za-z0-9._%+:/-])[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?![A-Za-z0-9.-])")),
-    ("phone_number", re.compile(r"(?:\+\d[\d ()-]{8,}\d|\b\d{3}[- )]\d{3}[- ]\d{4}\b)")),
+    # Also JSON-escaped Windows home paths and macOS home paths.
+    ("windows_user_path", re.compile(r"(?:[A-Za-z]:(?:\\\\|[\\/])Users(?:\\\\|[\\/])(?![<\[(])[^\\/\s<>'\"]+|/mnt/[a-z]/Users/(?![<\[(])[^/\s<>'\"]+|/home/(?![<\[(])[^/\s<>'\"]+|(?<![\w.])/Users/(?![<\[(]|Shared/)[^/\s<>'\"]+)", re.I)),
+    # A drive path containing CJK characters is a workstation folder.
+    ("local_drive_path", re.compile(r"(?<![A-Za-z])[A-Za-z]:(?:\\\\|[\\/])[^\\/\s\"'<>]*[\u4e00-\u9fff]")),
+    # mailto: addresses are personal contact data too; other URL-embedded "@" are not.
+    ("email_address", re.compile(r"(?:(?<=mailto:)|(?<![A-Za-z0-9._%+:/-]))[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?![A-Za-z0-9.-])", re.I)),
+    ("phone_number", re.compile(r"(?:\+\d[\d ()-]{8,}\d|\b\d{3}[- )]\d{3}[- ]\d{4}\b|(?<![\w.\-/+])1[3-9]\d(?:\d{8}|-\d{4}-\d{4}|\s\d{4}\s\d{4})(?![\w-]))")),
+    # Secret-looking assignments in env files, shell scripts and docs.
+    ("secret_assignment", re.compile(r"^\s*(?:export\s+|set\s+|\$env:)?[A-Z][A-Z0-9_]*(?:TOKEN|SECRET|PASSWORD|PASSWD|API_KEY|ACCESS_KEY|PRIVATE_KEY)\s*=\s*['\"]?(?![<$%{])[A-Za-z0-9/+_.=-]{16,}")),
     ("fulltext_verification", re.compile(r"verified_local_pdf[_-]\d{4}-\d{2}-\d{2}", re.I)),
     ("personal_access_trace", re.compile(
         r"(?:verified_institution_session[_-]\d{4}-\d{2}-\d{2}|"
@@ -59,6 +71,9 @@ PRIVATE_DATA_FIELDS = {
     "api_key", "apikey", "access_token", "bearer_token", "password", "client_secret", "private_key",
     "access_basis", "institution_access_trace", "download_authorization", "authorization_code",
     "oauth_download_code", "user_session_id", "specific_user_session",
+    # Workstation paths and upload provenance from the local library.
+    "local_pdf", "original_filename", "data_file", "fulltext_file", "fulltext_chunk_count",
+    "token", "secret", "refresh_token", "session_token",
 }
 
 
