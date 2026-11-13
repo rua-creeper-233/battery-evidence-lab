@@ -11,7 +11,7 @@ import re
 from pathlib import Path
 from urllib.parse import quote, urlsplit
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "data" / "domestic_papers.json"
 PAPERS_PATH = ROOT / "data" / "papers.json"
 TITLE_PATH = ROOT / "data" / "paper_titles_zh.json"

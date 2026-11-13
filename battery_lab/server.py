@@ -21,18 +21,18 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import unquote, urlparse
 
-from agent import BatteryResearchAgent
-from library_store import KEYWORDS, MAX_PDF_BYTES, ingest_pdf
-from tool_agent import run_tool_agent
+from battery_lab.agent import BatteryResearchAgent
+from battery_lab.library_store import KEYWORDS, MAX_PDF_BYTES, ingest_pdf
+from battery_lab.tool_agent import run_tool_agent
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 STATIC = ROOT / "static"
 GUIDES = ROOT / "guides"
 PUBLIC_GUIDES = {
     "AGENT_IMPLEMENTATION_GUIDE.md",
     "BATTERY_RESEARCH_ROADMAP_20260918.md",
-    "AGENT_STATUS_20260920.md",
+    "FINETUNE_INTEGRATION.md",
     "BATTERY_COMPUTATION_FUTURE_DIRECTIONS.md",
     "AI_BATTERY_APPLICATIONS.md",
     "REPRODUCIBLE_BATTERY_AI_20261008.md",

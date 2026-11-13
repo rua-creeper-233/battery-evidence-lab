@@ -105,7 +105,7 @@ def validate(dataset: Any, papers: Any) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("dataset", type=Path)
-    parser.add_argument("papers", type=Path, nargs="?", default=Path(__file__).parent / "data" / "papers.json")
+    parser.add_argument("papers", type=Path, nargs="?", default=Path(__file__).resolve().parents[1] / "data" / "papers.json")
     args = parser.parse_args()
     data = json.loads(args.dataset.read_text(encoding="utf-8"))
     papers = json.loads(args.papers.read_text(encoding="utf-8"))

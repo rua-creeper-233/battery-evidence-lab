@@ -6,7 +6,7 @@ import zlib
 from pathlib import Path
 from unittest.mock import patch
 
-from publication_safety import (
+from tools.publication_safety import (
     PublicationSafetyError,
     assert_clean,
     sanitize_method_evidence,
@@ -37,12 +37,12 @@ class PublicationSafetyTests(unittest.TestCase):
         return b"\x89PNG\r\n\x1a\n" + b"".join(chunks) + trailing
 
     def test_generated_share_card_png_is_validated(self):
-        from publication_safety import scan_files
+        from tools.publication_safety import scan_files
         root = Path(__file__).resolve().parents[1]
         self.assertEqual(scan_files([root / "static" / "share-card.png"], root), [])
 
     def test_share_card_png_rejects_metadata_trailing_and_wrong_size(self):
-        from publication_safety import PublicationSafetyError, scan_files
+        from tools.publication_safety import PublicationSafetyError, scan_files
         cases = (self._png_bytes(metadata=True), self._png_bytes(trailing=b"junk"), self._png_bytes(dimensions=(1, 1)))
         for payload in cases:
             with self.subTest(payload=payload[:24]):
@@ -55,13 +55,13 @@ class PublicationSafetyTests(unittest.TestCase):
                         scan_files([target], root)
 
     def test_arbitrary_binary_inputs_still_fail_closed(self):
-        from publication_safety import PublicationSafetyError, scan_files
+        from tools.publication_safety import PublicationSafetyError, scan_files
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             target = root / "static" / "other.bin"
             target.parent.mkdir()
             target.write_bytes(b"not a publication text file")
-            from publication_safety import assert_clean
+            from tools.publication_safety import assert_clean
             self.assertRaises(PublicationSafetyError, assert_clean, scan_files([target], root))
             target = root / "static" / "other.dat"
             target.write_bytes(b"\xff\xfe")
@@ -123,7 +123,7 @@ class PublicationSafetyTests(unittest.TestCase):
         self.assertTrue(scan_text(json.dumps({"indexed_chunks": 1}), "fixture.json"))
 
     def test_private_paths_and_credential_shapes_are_redacted(self):
-        from publication_safety import FORBIDDEN_PATH
+        from tools.publication_safety import FORBIDDEN_PATH
         for path in (
             "data/fulltext_chunks.jsonl", "literature/manifest.json", "private/result.json", "model.gguf",
             ".env.backup", "data/zotero-links.local.json", "distill/cache.json", ".codex/state.json",
@@ -153,14 +153,14 @@ class PublicationSafetyTests(unittest.TestCase):
 
     def test_build_rejects_bad_sources_before_any_docs_mutation(self):
         import shutil
-        import build_pages
-        import build_learning_route
+        import tools.build_pages as build_pages
+        import tools.build_learning_route as build_learning_route
 
         root = Path(__file__).resolve().parents[1]
         assets = (*build_pages.PAGE_NAMES, *build_pages.ASSET_NAMES)
         sources = [root / "static" / name for name in assets]
         sources += [root / "guides" / name for name in build_pages.GUIDE_NAMES]
-        sources += [root / "FINETUNE_INTEGRATION.md", root / "static/data/zotero-links.json"]
+        sources += [root / "static/data/zotero-links.json"]
         sources += [root / "examples/ai_battery" / name for name in ("relax_mace.py", "msd_from_csv.py", "example_trajectory.csv")]
         sources += [root / "data" / name for name in (*build_pages.DATA_NAMES, "method_evidence.auto.json")]
         for kind in ("zotero", "method", "catalog", "titles", "shared_asset", "domestic_asset", "domestic_registry", "domestic_private", "route", "guide"):

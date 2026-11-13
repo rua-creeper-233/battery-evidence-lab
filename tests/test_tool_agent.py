@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 from types import SimpleNamespace
 
-from tool_agent import ToolAgent
+from battery_lab.tool_agent import ToolAgent
 
 
 class FakeProvider:

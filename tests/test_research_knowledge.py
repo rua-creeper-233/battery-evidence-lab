@@ -1,7 +1,7 @@
 import copy
 import unittest
 
-from validate_research_knowledge import KnowledgeValidationError, validate
+from tools.validate_research_knowledge import KnowledgeValidationError, validate
 
 
 PAPERS = [{"id": "p1", "doi": "10.1000/ABC"}, {"id": "p2", "doi": "10.1000/DEF"}]

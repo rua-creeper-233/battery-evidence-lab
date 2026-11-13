@@ -9,7 +9,7 @@ from unittest.mock import MagicMock, patch
 from pypdf import PdfWriter
 from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
 
-import fetch_literature as fetch
+import battery_lab.fetch_literature as fetch
 from maintenance import audit_library, pull_zotero_fulltexts
 
 

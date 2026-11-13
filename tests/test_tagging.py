@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from paper_tagging import classify_paper  # noqa: E402
+from battery_lab.paper_tagging import classify_paper  # noqa: E402
 
 
 class TaggingTests(unittest.TestCase):

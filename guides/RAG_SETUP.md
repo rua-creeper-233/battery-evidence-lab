@@ -15,7 +15,7 @@ The PDF files themselves are not sent as files to the model. If a remote endpoin
 
 ## Start with the batch file
 
-Double-click `start-rag.bat`. Enter, in order:
+Run `start.bat rag` from the repository root. Enter, in order:
 
 1. The complete OpenAI-compatible `chat-completions` URL.
 2. The model name.
@@ -37,7 +37,7 @@ These variables are temporary to the current PowerShell session:
 $env:BATTERY_AGENT_LLM_ENDPOINT = "complete chat-completions URL"
 $env:BATTERY_AGENT_LLM_MODEL = "model name"
 $env:BATTERY_AGENT_LLM_API_KEY = "key for this session"
-.\start.ps1
+.\scripts\start.ps1
 ```
 
 Close the PowerShell window after use, or remove the three variables explicitly. The key is not written to a file or Git by this setup.

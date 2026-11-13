@@ -1,6 +1,6 @@
 # 怎样把Battery Evidence Lab做成真正有工具的科研Agent
 
-> 更新：2026-10-08。当前实现仍以本地证据检索、引用约束回答和受限工具循环为基础。AI 应用及可执行示例见 [AI_BATTERY_APPLICATIONS.md](AI_BATTERY_APPLICATIONS.md)，本地 QLoRA 接入见项目根目录的 `FINETUNE_INTEGRATION.md`。数据集三路切分与数量见 [PROJECT_STATUS.md](PROJECT_STATUS.md)；数据扩充不等于模型训练或真实问答性能提升。
+> 更新：2026-10-08。当前实现仍以本地证据检索、引用约束回答和受限工具循环为基础。AI 应用及可执行示例见 [AI_BATTERY_APPLICATIONS.md](AI_BATTERY_APPLICATIONS.md)，本地 QLoRA 接入见 [FINETUNE_INTEGRATION.md](FINETUNE_INTEGRATION.md)。数据集三路切分与数量见 [PROJECT_STATUS.md](PROJECT_STATUS.md)；数据扩充不等于模型训练或真实问答性能提升。
 
 ## 1. 先分清三个层次
 
@@ -22,7 +22,7 @@
 
 1. 先确认本地启动的是 `battery_materials_agent` 项目；运行 `start.bat`，查看页面的论文数量、本地连接和模型状态。默认启动端口可与旧会话不同，以窗口输出为准，不要把另一个服务当成本项目。
 2. 选择本地或远程模型。模型须提供本项目兼容的聊天接口；本项目暂不负责安装模型或购买服务。GitHub Copilot/Nodus账号能用不代表它自动提供这里可用的API。
-3. 双击 `start-rag.bat`，填写供应商明确提供的完整接口地址、模型名称与密钥。本地模型不需密钥时留空。密钥只在本次进程中，不要写进HTML、GitHub仓库或截图。
+3. 在项目目录运行 `start.bat rag`，填写供应商明确提供的完整接口地址、模型名称与密钥。本地模型不需密钥时留空。密钥只在本次进程中，不要写进HTML、GitHub仓库或截图。
 4. 远程模型会收到问题、选中的元数据及短摘录。先确认版权、保密和供应商数据政策；未公开课题、企业配方、私人笔记不要默认上传。需要不出机时使用可信本地模型。
 5. 确认网页显示模型已配置，选择“工具Agent”。试问“帮我找聚合物电解质MD的可复现工作，比较其输入、输出和缺少的信息”。
 6. 检查动作记录：是否搜索、是否读取相关证据、最终引用是否来自实际读取的条目。如果只是输出漂亮段落而没有相关证据，不能算通过。

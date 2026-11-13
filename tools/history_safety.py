@@ -15,7 +15,7 @@ import subprocess
 from pathlib import Path
 from typing import Iterable
 
-from publication_safety import FORBIDDEN_PATH, PublicationSafetyError, _git_executable, _scan_blob
+from tools.publication_safety import FORBIDDEN_PATH, PublicationSafetyError, _git_executable, _scan_blob
 
 
 class HistorySafetyError(ValueError):

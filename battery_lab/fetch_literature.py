@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PAPERS_PATH = ROOT / "data" / "papers.json"
 LIBRARY_ROOT = ROOT / "literature"
 PDF_DIR = LIBRARY_ROOT / "pdfs"

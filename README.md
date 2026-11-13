@@ -18,7 +18,7 @@ The repository and website expose selected bibliographic metadata, guides, and g
 | Share a temporary local backend | [Sharing guide](guides/SHARING_GUIDE.md) |
 | Maintain the local catalogue and integrations | [Maintenance commands](guides/MAINTENANCE.md) |
 | Read the current generated counts and hashes | [Project status](guides/PROJECT_STATUS.md) |
-| Connect an adapter or local model | [Fine-tuning integration](FINETUNE_INTEGRATION.md) |
+| Connect an adapter or local model | [Fine-tuning integration](guides/FINETUNE_INTEGRATION.md) |
 
 ## What is included
 
@@ -32,7 +32,7 @@ The repository and website expose selected bibliographic metadata, guides, and g
 
 The public site is a static browser experience. It cannot run Python, read your local PDFs, access Zotero, or call a local model by itself. The local backend adds retrieval, uploads, keyword extraction, and optional model calls. See the [RAG setup](guides/RAG_SETUP.md) and [sharing guide](guides/SHARING_GUIDE.md) for the boundary.
 
-![Local-data boundary: public assets may be published, while PDFs, private metadata, credentials, and weights remain in local storage.](static/assets/docs/local-data-boundary.svg)
+![Local-data boundary: public assets may be published, while PDFs, private metadata, credentials, and weights stay in local storage.](static/assets/docs/local-data-boundary.svg)
 
 ## Current status
 
@@ -45,8 +45,11 @@ The repository is organized by purpose:
 | Directory | Contents |
 | --- | --- |
 | `data/` | Structured research catalogue and learning data |
+| `battery_lab/` | Runtime service, retrieval, agent, and library modules |
+| `tools/` | Build, validation, status, and publication commands |
 | `static/`, `docs/` | Authored web assets and generated GitHub Pages bundle |
 | `maintenance/` | Library import, Zotero, audit, export, and search-tuning tools |
+| `scripts/` | PowerShell launchers used by `start.bat` |
 | `guides/` | Usage guides, evidence policy, and consolidated release notes |
 | `training/`, `finetune/` | Dataset preparation, training, and model evaluation |
 | `tests/`, `examples/` | Regression checks and reproducible teaching examples |
@@ -55,22 +58,22 @@ The repository is organized by purpose:
 On Windows, double-click `start.bat`, or run this from the repository root:
 
 ```powershell
-.\start.ps1
+.\start.bat
 ```
 
-Open `http://127.0.0.1:8765`. `start-rag.bat` starts the optional model-backed workflow. `start-share.bat` starts a temporary HTTPS sharing flow. The public GitHub Pages site remains independently browseable.
+Open `http://127.0.0.1:8765`. Use `start.bat rag` for the optional model-backed workflow or `start.bat share` for temporary HTTPS sharing. The public GitHub Pages site remains independently browseable.
 
 ## Data and evidence maintenance
 
 `data/papers.json` is the public curated bibliography. It contains bibliographic and method metadata, not private acquisition records. Full-text downloads, local manifests, and Zotero deep links remain in ignored or local-only paths.
 
-Typical maintenance commands are:
+The complete maintenance, import, training, build, and release command reference is in [MAINTENANCE.md](guides/MAINTENANCE.md). The main literature workflow is:
 
 ```powershell
-python fetch_literature.py --try-publisher
+python -m battery_lab.fetch_literature --try-publisher
 python -m maintenance.audit_library
 python -m maintenance.extract_method_evidence
-python build_paper_tags.py
+python -m tools.build_paper_tags
 ```
 
 The downloader uses sources available to the operator and validates PDF identity, title, body or supplement, page count, and SHA-256 where possible. Failed items retain their DOI entry. Automated method signals help locate evidence; calculation parameters still require checking against the target system and the original paper. See the [evidence policy](guides/EVIDENCE_POLICY.md) and [maintenance commands](guides/MAINTENANCE.md).
@@ -82,6 +85,8 @@ python -m maintenance.import_zotero_library --apply
 python -m maintenance.sync_zotero_links
 ```
 
+These commands update the local library only.
+
 ## QLoRA and model boundaries
 
 The QLoRA dataset tools create separated train, validation, and test files from selected metadata and authored summaries:
@@ -91,9 +96,11 @@ python training/expand_dataset.py --insights data/paper_insights.json
 python training/validate_dataset.py --train finetune/data/train.jsonl --eval finetune/data/validation.jsonl --test finetune/data/test.jsonl
 ```
 
+The complete RTX 3060 workflow is in the [fine-tuning integration guide](guides/FINETUNE_INTEGRATION.md).
+
 This project keeps its generated train, validation, test and provenance payloads local. Reviewed public data releases would require a separate source-rights and evaluation review. Public releases may contain generators, schemas, and independently authored examples that do not expose that material. `finetune/data/manifest.json` records the local dataset counts, sources, and hashes. New data does not mean that a model has been retrained.
 
-QLoRA targets research-answer organization, citation use, and responses when evidence is insufficient. MLIP training targets energies, forces, and stresses for atomistic simulation. They have different labels, validation criteria, and failure modes. See [fine-tuning integration](FINETUNE_INTEGRATION.md) and the [RTX 3060 guide](training/README_RTX3060.md).
+QLoRA targets research-answer organization, citation use, and responses when evidence is insufficient. MLIP training targets energies, forces, and stresses for atomistic simulation. They have different labels, validation criteria, and failure modes. Follow the [fine-tuning integration guide](guides/FINETUNE_INTEGRATION.md) before using either workflow.
 
 ## Stable API surface
 
@@ -115,15 +122,17 @@ Uploaded papers stay in the local private library. Remote requests use a tempora
 python -m unittest discover -s tests
 $tests = Get-ChildItem tests/test_*.mjs | ForEach-Object { $_.FullName }
 node --test $tests
-python validate_research_knowledge.py data/research_knowledge.json
-python validate_battery_components.py
-python build_static_qa.py
-python update_project_status.py --date 2026-10-21
-python build_pages.py
-python publication_safety.py --public-bundle
-python publication_safety.py --staged
-python history_safety.py --no-baseline
+python -m tools.validate_research_knowledge data/research_knowledge.json
+python -m tools.validate_battery_components
+python -m tools.build_static_qa
+python -m tools.update_project_status --date 2026-11-13
+python -m tools.build_pages
+python -m tools.publication_safety --public-bundle
+python -m tools.publication_safety --staged
+python -m tools.history_safety --no-baseline --full-inventory --scan-content
 ```
+
+The same validation and release checklist is maintained in [MAINTENANCE.md](guides/MAINTENANCE.md) for routine use.
 
 GitHub Actions checks `main` and deploys the generated `docs/` site. Before publishing, run the public-bundle, staged-snapshot, and history checks. Enable the local push hooks after cloning:
 
@@ -132,4 +141,3 @@ git config core.hooksPath .githooks
 ```
 
 See [AGENTS.md](AGENTS.md) for the repository publication rules.
-

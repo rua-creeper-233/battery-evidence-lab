@@ -7,7 +7,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PRIVATE_STATUS = ROOT / "private" / "project_status.local.json"
 
 
@@ -78,7 +78,7 @@ def build_status(date: str, smoke_output: Path | None = None) -> dict:
     paper_insights = None
     insights_path = ROOT / "data/paper_insights.json"
     if insights_path.exists():
-        from validate_paper_insights import validate as validate_insights
+        from tools.validate_paper_insights import validate as validate_insights
         insights = read_json(insights_path, {})
         errors = validate_insights(insights, papers)
         if errors:
@@ -87,14 +87,14 @@ def build_status(date: str, smoke_output: Path | None = None) -> dict:
         paper_insights = {"cards": len(records), "condition_cards": sum(bool(r["sections"].get("conditions")) for r in records.values())}
     knowledge_path = ROOT / "data/research_knowledge.json"
     if knowledge_path.exists():
-        from validate_research_knowledge import validate as validate_knowledge
+        from tools.validate_research_knowledge import validate as validate_knowledge
         knowledge = validate_knowledge(read_json(knowledge_path, {}), papers)
         research_knowledge = {"cards":len(knowledge['cards']),
                               "by_kind":dict(Counter(card['kind'] for card in knowledge['cards'])),
                               "reference_papers":len({source['paper_id'] for card in knowledge['cards'] for source in card['sources']})}
     static_qa_path = ROOT / "data/static_qa.json"
     if static_qa_path.exists():
-        from build_static_qa import validate
+        from tools.build_static_qa import validate
         data = read_json(static_qa_path, {})
         validate(data, papers, read_json(ROOT / "data/learning_route.json", {}),
                  read_json(ROOT / "data/paper_titles_zh.json", {}))

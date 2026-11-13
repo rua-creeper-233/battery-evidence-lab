@@ -7,16 +7,16 @@ import json
 import re
 import shutil
 from pathlib import Path
-import publication_safety
-from site_chrome import PAGES, PUBLIC_BASE, prepare_chrome
-from method_flow import prepare_method_flow
+import tools.publication_safety as publication_safety
+from tools.site_chrome import PAGES, PUBLIC_BASE, prepare_chrome
+from tools.method_flow import prepare_method_flow
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 GUIDE_NAMES = (
     "AGENT_IMPLEMENTATION_GUIDE.md", "BATTERY_RESEARCH_ROADMAP_20260918.md",
-    "AGENT_STATUS_20260920.md", "BATTERY_COMPUTATION_FUTURE_DIRECTIONS.md",
+    "FINETUNE_INTEGRATION.md", "BATTERY_COMPUTATION_FUTURE_DIRECTIONS.md",
     "AI_BATTERY_APPLICATIONS.md", "REPRODUCIBLE_BATTERY_AI_20261008.md",
     "PROJECT_STATUS.md", "RELEASE_NOTES.md", "LEARNING_ROUTE_20261014.md",
 )
@@ -71,7 +71,7 @@ def main() -> None:
     papers = json.loads(papers_path.read_text(encoding="utf-8"))
     insights_path = ROOT / "data" / "paper_insights.json"
     if insights_path.is_file():
-        from validate_paper_insights import validate as validate_paper_insights
+        from tools.validate_paper_insights import validate as validate_paper_insights
         insights = json.loads(insights_path.read_text(encoding="utf-8"))
         errors = validate_paper_insights(insights, papers)
         if errors:
@@ -87,19 +87,19 @@ def main() -> None:
 
     # Validate every planned source and render the route in memory before any
     # output write. This keeps a bad guide/catalog/route from partially mutating docs.
-    from build_learning_route import build as render_route, validate as validate_route
-    from paper_titles import load_titles
-    from build_domestic_papers import build as render_domestic
+    from tools.build_learning_route import build as render_route, validate as validate_route
+    from battery_lab.paper_titles import load_titles
+    from tools.build_domestic_papers import build as render_domestic
     route = json.loads((ROOT / "data" / "learning_route.json").read_text(encoding="utf-8"))
     route_catalog = validate_route(route, papers)
     titles = load_titles(papers, ROOT / "data" / "paper_titles_zh.json")
-    from build_static_qa import validate as validate_static_qa
+    from tools.build_static_qa import validate as validate_static_qa
     static_qa = json.loads((ROOT / "data" / "static_qa.json").read_text(encoding="utf-8"))
     validate_static_qa(static_qa, papers, route, titles)
-    from validate_research_knowledge import validate as validate_knowledge
+    from tools.validate_research_knowledge import validate as validate_knowledge
     knowledge = json.loads((ROOT / "data/research_knowledge.json").read_text(encoding="utf-8"))
     validate_knowledge(knowledge, papers)
-    from validate_battery_components import validate as validate_components
+    from tools.validate_battery_components import validate as validate_components
     validate_components(json.loads((ROOT / "data/battery_components.json").read_text(encoding="utf-8")), papers)
     status = json.loads((ROOT / "data" / "project_status.json").read_text(encoding="utf-8"))
     status_text = progress_text(status)
@@ -126,7 +126,7 @@ def main() -> None:
         publication_safety.assert_clean(publication_safety.scan_text(content, f"docs/{name}"))
     planned = [
         ROOT / "static" / name for name in (*PAGE_NAMES, *ASSET_NAMES)
-    ] + [ROOT / "FINETUNE_INTEGRATION.md"]
+    ]
     planned += [ROOT / "examples" / "ai_battery" / name for name in ("relax_mace.py", "msd_from_csv.py", "example_trajectory.csv")]
     planned += [ROOT / "guides" / name for name in GUIDE_NAMES]
     planned += [ROOT / "data" / name for name in DATA_NAMES]
@@ -142,11 +142,15 @@ def main() -> None:
         write_utf8(ROOT / "static" / name, content)
     for asset in ASSET_NAMES:
         copy(ROOT / "static" / asset, DOCS / asset)
-    copy(ROOT / "FINETUNE_INTEGRATION.md", DOCS / "FINETUNE_INTEGRATION.md")
+    write_utf8(DOCS / "FINETUNE_INTEGRATION.md", "# Fine-tuning integration\n\nSee the [fine-tuning guide](guides/FINETUNE_INTEGRATION.md).\n")
     for example in ("relax_mace.py", "msd_from_csv.py", "example_trajectory.csv"):
         copy(ROOT / "examples" / "ai_battery" / example, DOCS / "examples" / "ai_battery" / example)
     for guide in GUIDE_NAMES:
         copy(ROOT / "guides" / guide, DOCS / "guides" / guide)
+    # Remove retired generated guides; authored source stays outside docs.
+    retired_status = DOCS / "guides" / "AGENT_STATUS_20260920.md"
+    if retired_status.is_file():
+        retired_status.unlink()
     # Remove retired release notes from previously generated bundles.
     for guide in (DOCS / "guides").glob("RELEASE_*.md"):
         if guide.name not in GUIDE_NAMES:

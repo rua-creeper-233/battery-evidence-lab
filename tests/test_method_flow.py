@@ -2,7 +2,7 @@
 
 import unittest
 
-from method_flow import method_flow, prepare_method_flow
+from tools.method_flow import method_flow, prepare_method_flow
 
 
 class MethodFlowTests(unittest.TestCase):

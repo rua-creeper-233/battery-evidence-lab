@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 from urllib.request import url2pathname
 
 from maintenance import import_zotero_library as zotero
-from fetch_literature import MANIFEST_PATH, PAPERS_PATH, PDF_DIR, load_json, save_json, validate_pdf, acceptable_main_pdf
+from battery_lab.fetch_literature import MANIFEST_PATH, PAPERS_PATH, PDF_DIR, load_json, save_json, validate_pdf, acceptable_main_pdf
 
 
 def is_matching_main_article(check: dict) -> bool:

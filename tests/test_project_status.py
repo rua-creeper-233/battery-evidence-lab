@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-import update_project_status as status
+import tools.update_project_status as status
 
 
 class ProjectStatusTests(unittest.TestCase):

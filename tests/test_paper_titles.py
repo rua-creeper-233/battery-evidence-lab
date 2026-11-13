@@ -7,8 +7,8 @@ import json
 import unittest
 from pathlib import Path
 
-from paper_titles import load_titles, validate_titles
-from publication_safety import PublicationSafetyError
+from battery_lab.paper_titles import load_titles, validate_titles
+from tools.publication_safety import PublicationSafetyError
 
 
 ROOT = Path(__file__).parents[1]

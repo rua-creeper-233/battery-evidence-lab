@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from publication_safety import PublicationSafetyError, assert_clean, scan_revision_snapshot
+from tools.publication_safety import PublicationSafetyError, assert_clean, scan_revision_snapshot
 
 
 class RevisionSnapshotSafetyTests(unittest.TestCase):
@@ -57,8 +57,10 @@ class RevisionSnapshotSafetyTests(unittest.TestCase):
             self.skipTest("POSIX shell unavailable; hook is also exercised in Linux CI")
         root = self.make_repo()
         project = Path(__file__).resolve().parents[1]
-        for name in ("publication_safety.py", "history_safety.py"):
-            shutil.copyfile(project / name, root / name)
+        tools_target = root / "tools"
+        tools_target.mkdir()
+        for name in ("__init__.py", "publication_safety.py", "history_safety.py"):
+            shutil.copyfile(project / "tools" / name, tools_target / name)
         hook = root / "pre-push"
         shutil.copyfile(project / ".githooks" / "pre-push", hook)
         clean = self.git(root, "rev-parse", "HEAD")

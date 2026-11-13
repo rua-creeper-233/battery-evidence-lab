@@ -5,9 +5,9 @@ import json
 import re
 from pathlib import Path
 
-from publication_safety import PublicationSafetyError
+from tools.publication_safety import PublicationSafetyError
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 TITLE_PATH = ROOT / "data" / "paper_titles_zh.json"
 
 

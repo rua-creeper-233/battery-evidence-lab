@@ -28,7 +28,7 @@ This mode cannot upload papers, read newly added private literature, or use loca
 
 ## Scenario 2: temporary upload and local retrieval
 
-Double-click `start-share.bat`, or run the sharing script from the repository root. Keep the terminal open for the whole session.
+Run `start.bat share`, or run the sharing script from the repository root. Keep the terminal open for the whole session.
 
 ### First-time setup
 
@@ -51,13 +51,13 @@ Close and reopen PowerShell so that `cloudflared` is on the command search path.
 1. Run:
 
    ```powershell
-   .\start-share.ps1
+   .\scripts\start-share.ps1
    ```
 
    If PowerShell blocks script execution, use:
 
    ```powershell
-   powershell -NoProfile -ExecutionPolicy Bypass -File .\start-share.ps1
+   powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\start-share.ps1
    ```
 
 2. Copy the temporary access key shown in the terminal and wait for an address such as `https://random-name.trycloudflare.com`.

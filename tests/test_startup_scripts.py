@@ -21,7 +21,9 @@ class StartupScriptTests(unittest.TestCase):
 
     def test_launchers_parse_with_windows_powershell_51(self):
         self.run_powershell("""
-Get-ChildItem -Filter 'start*.ps1' | ForEach-Object {
+$scripts=Get-ChildItem -LiteralPath scripts -Filter '*.ps1'
+if ($scripts.Count -lt 4) { throw 'Expected launchers and shared Python resolver' }
+$scripts | ForEach-Object {
     $tokens=$null; $errors=$null
     [System.Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$tokens,[ref]$errors) > $null
     if ($errors.Count) { throw ($_.Name + ': ' + ($errors.Message -join '; ')) }
@@ -31,7 +33,7 @@ Get-ChildItem -Filter 'start*.ps1' | ForEach-Object {
     def test_share_key_generation_works_without_starting_service(self):
         self.run_powershell("""
 $tokens=$null; $errors=$null
-$ast=[System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD 'start-share.ps1'),[ref]$tokens,[ref]$errors)
+$ast=[System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD 'scripts/start-share.ps1'),[ref]$tokens,[ref]$errors)
 $function=$ast.Find({param($node) $node -is [System.Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -eq 'New-ShareAccessKey'},$true)
 if (-not $function) { throw 'Share key function missing' }
 Invoke-Expression $function.Extent.Text

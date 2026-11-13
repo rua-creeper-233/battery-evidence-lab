@@ -34,14 +34,14 @@ jobs:
           done
       - name: Rebuild and verify the publication bundle
         run: |
-          python build_pages.py
+          python -m tools.build_pages
           git diff --exit-code -- docs static
       - name: Scan the complete staged snapshot
-        run: python publication_safety.py --staged
+        run: python -m tools.publication_safety --staged
       - name: Scan the deployable files
-        run: python publication_safety.py --public-bundle
+        run: python -m tools.publication_safety --public-bundle
       - name: Reject forbidden paths anywhere in candidate history
-        run: python history_safety.py --no-baseline --full-inventory --scan-content
+        run: python -m tools.history_safety --no-baseline --full-inventory --scan-content
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

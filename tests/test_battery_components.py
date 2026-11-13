@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import unittest
 
-from validate_battery_components import ComponentValidationError, validate
+from tools.validate_battery_components import ComponentValidationError, validate
 
 
 ROOT = Path(__file__).resolve().parents[1]

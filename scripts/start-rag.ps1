@@ -1,6 +1,7 @@
 ﻿param([int]$Port = 8765)
 
-$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$projectRoot = Split-Path -Parent $scriptRoot
 $endpoint = Read-Host "模型的完整 chat-completions 地址（例如本机 http://127.0.0.1:11434/v1/chat/completions）"
 $model = Read-Host "模型名称"
 if (-not $endpoint -or -not $model) {
@@ -26,7 +27,7 @@ try {
     $env:BATTERY_AGENT_LLM_ENDPOINT = $endpoint
     $env:BATTERY_AGENT_LLM_MODEL = $model
     $env:BATTERY_AGENT_LLM_API_KEY = $plainKey
-    & (Join-Path $projectRoot "start.ps1") -Port $Port
+    & (Join-Path $scriptRoot "start.ps1") -Port $Port
 } finally {
     if ($pointer -ne [IntPtr]::Zero) { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($pointer) }
     Remove-Item Env:BATTERY_AGENT_LLM_ENDPOINT -ErrorAction SilentlyContinue

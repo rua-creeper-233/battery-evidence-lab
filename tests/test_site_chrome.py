@@ -1,7 +1,7 @@
 import re
 import unittest
 
-from site_chrome import NAV, PAGES, prepare_chrome
+from tools.site_chrome import NAV, PAGES, prepare_chrome
 
 
 class SiteChromeTests(unittest.TestCase):

@@ -1,9 +1,5 @@
-import importlib.util
 import unittest
-from pathlib import Path
-
-spec = importlib.util.spec_from_file_location("validator", Path(__file__).parents[1] / "validate_paper_insights.py")
-validator = importlib.util.module_from_spec(spec); spec.loader.exec_module(validator)
+from tools import validate_paper_insights as validator
 
 def good():
     return {"schema_version":1,"as_of":"2026-10-25","methodology":{"reference_title":"Cai et al.","reference_url":"https://doi.org/10.1234/ref","implemented_layers":"L1-L4","note":"Public reading aid."},"papers":{"cai-2024":{"paper_id":"cai-2024","doi":"10.1234/example","sources":[{"id":"s1","url":"https://doi.org/10.1234/example","scope":"article","locator":"Abstract"}],"sections":{"findings":[{"text":"A reported finding.","source_refs":["s1"],"kind":"reported"}]},"relations":[]}}}

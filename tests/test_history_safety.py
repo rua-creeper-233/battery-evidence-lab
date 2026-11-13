@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-import history_safety
+import tools.history_safety as history_safety
 
 
 GIT = os.environ.get("PUBLICATION_GIT_EXE", "git")
@@ -119,7 +119,7 @@ class HistorySafetyTests(unittest.TestCase):
     def test_cli_outputs_json_without_object_ids(self):
         root = self.make_repo()
         result = subprocess.run(
-            [os.fspath(Path(os.sys.executable)), "history_safety.py", "--root", os.fspath(root), "--no-baseline"],
+            [os.fspath(Path(os.sys.executable)), "-m", "tools.history_safety", "--root", os.fspath(root), "--no-baseline"],
             cwd=Path(__file__).parents[1], text=True, capture_output=True,
         )
         self.assertEqual(result.returncode, 0)

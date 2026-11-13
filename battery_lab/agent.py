@@ -15,12 +15,12 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from library_store import USER_PAPERS, load_library_papers
-from paper_tagging import attach_tags
-from rag import EvidenceRAG
+from battery_lab.library_store import USER_PAPERS, load_library_papers
+from battery_lab.paper_tagging import attach_tags
+from battery_lab.rag import EvidenceRAG
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATA = ROOT / "data" / "papers.json"
 DEFAULT_FULLTEXT = ROOT / "data" / "fulltext_chunks.jsonl"
 DEFAULT_SEARCH_CONFIG = ROOT / "data" / "search_config.json"

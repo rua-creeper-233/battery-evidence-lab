@@ -11,10 +11,10 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-import library_store  # noqa: E402
-from fetch_literature import _is_public_https_url, request  # noqa: E402
-from publication_safety import FORBIDDEN_PATH, scan_text  # noqa: E402
-from server import Handler  # noqa: E402
+import battery_lab.library_store as library_store  # noqa: E402
+from battery_lab.fetch_literature import _is_public_https_url, request  # noqa: E402
+from tools.publication_safety import FORBIDDEN_PATH, scan_text  # noqa: E402
+from battery_lab.server import Handler  # noqa: E402
 
 
 class _Config:
@@ -76,7 +76,7 @@ class ServerTunnelTests(unittest.TestCase):
     def test_remote_chat_never_uses_rag_and_drops_workstation_fields(self) -> None:
         agent = FakeAgent()
         handler = remote_post("/api/chat", {"question": "q", "use_rag": True})
-        with patch("server.AGENT", agent):
+        with patch("battery_lab.server.AGENT", agent):
             handler.do_POST()
         payload, status = handler.response
         self.assertEqual(status, 200)
@@ -89,7 +89,7 @@ class ServerTunnelTests(unittest.TestCase):
 
     def test_remote_keywords_cannot_read_private_fulltext_by_paper_id(self) -> None:
         handler = remote_post("/api/keywords", {"paper_id": "p1"})
-        with patch("server.AGENT", FakeAgent()):
+        with patch("battery_lab.server.AGENT", FakeAgent()):
             handler.do_POST()
         self.assertEqual(handler.response[1], 400)
         self.assertIn("paper_id", handler.response[0]["error"])
@@ -109,7 +109,7 @@ class ServerTunnelTests(unittest.TestCase):
     def test_json_endpoints_require_json_content_type(self) -> None:
         handler = remote_post("/api/chat", {"question": "q"})
         handler.headers.replace_header("Content-Type", "text/plain")
-        with patch("server.AGENT", FakeAgent()):
+        with patch("battery_lab.server.AGENT", FakeAgent()):
             handler.do_POST()
         self.assertEqual(handler.response[1], 400)
 
@@ -135,9 +135,9 @@ class LibraryStoreTests(unittest.TestCase):
                 patch.object(library_store, "USER_PAPERS", folder / "user.json"), \
                 patch.object(library_store, "MANIFEST", folder / "manifest.json"), \
                 patch.object(library_store, "PDF_DIR", folder / "pdfs"), \
-                patch("library_store._first_pages_text", return_value=("text", 3, {})), \
-                patch("library_store.validate_pdf", return_value=validation), \
-                patch("library_store.rebuild_fulltext_index"):
+                patch("battery_lab.library_store._first_pages_text", return_value=("text", 3, {})), \
+                patch("battery_lab.library_store.validate_pdf", return_value=validation), \
+                patch("battery_lab.library_store.rebuild_fulltext_index"):
             return library_store.ingest_pdf(b"%PDF-1.7 fake", "x.pdf", {"doi": "10.1000/core", "year": "2020"},
                                             allow_attach_to_existing=allow)
 

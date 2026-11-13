@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from agent import BatteryResearchAgent, DEFAULT_SEARCH_WEIGHTS
+from battery_lab.agent import BatteryResearchAgent, DEFAULT_SEARCH_WEIGHTS
 
 
 ROOT = Path(__file__).resolve().parents[1]

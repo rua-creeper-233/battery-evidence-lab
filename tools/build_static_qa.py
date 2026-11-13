@@ -11,7 +11,7 @@ import re
 from datetime import date
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PAPERS = ROOT / "data" / "papers.json"
 TITLES = ROOT / "data" / "paper_titles_zh.json"
 ROUTE = ROOT / "data" / "learning_route.json"

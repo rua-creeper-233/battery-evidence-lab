@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 import unittest
 
-from agent import BatteryResearchAgent
-from rag import EvidenceRAG
+from battery_lab.agent import BatteryResearchAgent
+from battery_lab.rag import EvidenceRAG
 
 
 class FakeProvider:

@@ -1,6 +1,6 @@
 # 扩展训练集与接入本地 Agent
 
-更新：2026-10-08。当前数据为训练/验证/测试三路，数量与哈希见 [当前状态](guides/PROJECT_STATUS.md) 和 `finetune/data/manifest.json`。下面的数据生成步骤不会自动更新模型权重。
+更新：2026-10-08。当前数据为训练/验证/测试三路，数量与哈希见 [当前状态](PROJECT_STATUS.md) 和 `finetune/data/manifest.json`。下面的数据生成步骤不会自动更新模型权重。
 
 ## 1. 重新生成元数据训练集
 
@@ -79,7 +79,7 @@ curl http://127.0.0.1:8766/v1/chat/completions \
 
 ## 4. 接入现有 Agent 的 RAG
 
-现有 `rag.py` 使用 OpenAI-compatible endpoint。启动 Agent 前设置：
+现有 `battery_lab/rag.py` 使用 OpenAI-compatible endpoint。启动 Agent 前设置：
 
 ```bash
 export BATTERY_AGENT_LLM_ENDPOINT=http://127.0.0.1:8766/v1/chat/completions
@@ -89,7 +89,7 @@ export BATTERY_AGENT_LLM_TIMEOUT=120
 export BATTERY_AGENT_LLM_MAX_EVIDENCE_CHARS=4000
 # 控制每次生成长度；先用 256，回答需要更长时再改为 512。
 export BATTERY_AGENT_LLM_MAX_TOKENS=256
-python server.py
+python -m battery_lab.server
 ```
 
 若同时启用证据检索，模型只负责根据 Agent 注入的证据组织回答；新增 LoRA

@@ -9,7 +9,7 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
-from fetch_literature import (
+from battery_lab.fetch_literature import (
     MANIFEST_PATH,
     PAPERS_PATH,
     ROOT,

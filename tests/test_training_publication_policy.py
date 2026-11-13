@@ -4,9 +4,9 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from publication_safety import FORBIDDEN_PATH, scan_text
+from tools.publication_safety import FORBIDDEN_PATH, scan_text
 from training.expand_dataset import build, split
-import update_project_status as status
+import tools.update_project_status as status
 
 
 class TrainingPublicationPolicyTests(unittest.TestCase):

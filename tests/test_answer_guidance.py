@@ -1,7 +1,7 @@
 import json
 import unittest
 from pathlib import Path
-from agent import BatteryResearchAgent
+from battery_lab.agent import BatteryResearchAgent
 
 ROOT = Path(__file__).resolve().parents[1]
 

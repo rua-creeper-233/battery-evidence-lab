@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from build_pages import write_utf8
+from tools.build_pages import write_utf8
 
 
 class BuildPortabilityTests(unittest.TestCase):

@@ -1,6 +1,6 @@
 # RTX 3060 Laptop 6 GB：本地 QLoRA 入门
 
-更新：2026-10-08。已跑通的 Qwen2.5-1.5B 路线与新输出目录见 [训练与 Agent 接入](../FINETUNE_INTEGRATION.md)。本页 Qwen3-0.6B 是保守备选，显存占用依赖模型、序列长度、量化和环境。新版三路数据见 [项目状态](../guides/PROJECT_STATUS.md)；下方旧 `training/train_qlora.py` 默认读旧二路数据，若沿用它须先配置正确的数据路径。
+更新：2026-10-08。已跑通的 Qwen2.5-1.5B 路线与新输出目录见 [训练与 Agent 接入](../guides/FINETUNE_INTEGRATION.md)。本页 Qwen3-0.6B 是保守备选，显存占用依赖模型、序列长度、量化和环境。新版三路数据见 [项目状态](../guides/PROJECT_STATUS.md)；下方旧 `training/train_qlora.py` 默认读旧二路数据，若沿用它须先配置正确的数据路径。
 
 这条路径只训练“如何回答”，不把论文全文写进模型。事实仍由现有 RAG/证据库提供。脚本只读取 `split=train`，明确排除 `training/eval.jsonl`。
 

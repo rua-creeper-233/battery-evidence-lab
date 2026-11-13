@@ -13,10 +13,10 @@ import re
 from pathlib import Path
 from urllib.parse import quote, urlsplit
 
-from paper_titles import load_titles
+from battery_lab.paper_titles import load_titles
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 ROUTE_PATH = ROOT / "data" / "learning_route.json"
 PAPERS_PATH = ROOT / "data" / "papers.json"
 OUT_PATH = ROOT / "static" / "learning-route.html"

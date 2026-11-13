@@ -16,10 +16,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from fetch_literature import acceptable_main_pdf, rebuild_fulltext_index, save_json, validate_pdf
+from battery_lab.fetch_literature import acceptable_main_pdf, rebuild_fulltext_index, save_json, validate_pdf
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 SEED_PAPERS = ROOT / "data" / "papers.json"
 USER_PAPERS = ROOT / "private" / "user-papers.local.json"
 MANIFEST = ROOT / "literature" / "manifest.json"

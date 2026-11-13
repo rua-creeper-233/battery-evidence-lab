@@ -11,7 +11,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote
 
-import build_learning_route as route_builder
+import tools.build_learning_route as route_builder
 
 
 ROOT = Path(__file__).parents[1]

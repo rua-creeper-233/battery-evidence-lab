@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from pypdf import PdfWriter
 
-import library_store
+import battery_lab.library_store as library_store
 
 
 class KeywordApiTests(unittest.TestCase):

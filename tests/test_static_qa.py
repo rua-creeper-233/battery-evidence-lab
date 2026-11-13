@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-import build_static_qa
+import tools.build_static_qa as build_static_qa
 
 
 ROOT = Path(__file__).resolve().parents[1]

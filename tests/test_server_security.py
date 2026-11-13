@@ -6,7 +6,7 @@ from email.message import Message
 from urllib.request import urlopen
 from unittest.mock import patch
 
-from server import BatteryHTTPServer, Handler, _load_method_evidence
+from battery_lab.server import BatteryHTTPServer, Handler, _load_method_evidence
 
 
 class _Config:
@@ -40,9 +40,9 @@ class ServerSecurityTests(unittest.TestCase):
             public, local = root / "public.json", root / "local.json"
             public.write_text(json.dumps({"papers": {}}), encoding="utf-8")
             local.write_text(json.dumps({"papers": {"example": {"evidence_count": 1}}}), encoding="utf-8")
-            with patch("server.METHOD_EVIDENCE", public), patch("server.PRIVATE_METHOD_EVIDENCE", local):
+            with patch("battery_lab.server.METHOD_EVIDENCE", public), patch("battery_lab.server.PRIVATE_METHOD_EVIDENCE", local):
                 self.assertIn("example", _load_method_evidence()["papers"])
-            with patch("server.METHOD_EVIDENCE", public), patch("server.PRIVATE_METHOD_EVIDENCE", root / "absent.json"):
+            with patch("battery_lab.server.METHOD_EVIDENCE", public), patch("battery_lab.server.PRIVATE_METHOD_EVIDENCE", root / "absent.json"):
                 self.assertEqual(_load_method_evidence()["papers"], {})
 
     def test_authenticated_remote_requests_do_not_reveal_local_holdings(self) -> None:
@@ -51,7 +51,7 @@ class ServerSecurityTests(unittest.TestCase):
                 handler = make_handler("demo.trycloudflare.com", "https://rua-creeper-233.github.io", "Bearer test-access-token-123456")
                 handler.path = path
                 handler._json = lambda payload, status=200: setattr(handler, "response", (payload, status))
-                with patch("server._load_method_evidence", side_effect=AssertionError("private evidence must not be read")), patch("server._load_json", side_effect=AssertionError("private manifest must not be read")):
+                with patch("battery_lab.server._load_method_evidence", side_effect=AssertionError("private evidence must not be read")), patch("battery_lab.server._load_json", side_effect=AssertionError("private manifest must not be read")):
                     handler.do_GET()
                 expected = 403 if path.startswith("/api/methods/") else 200
                 self.assertEqual(handler.response[1], expected)
@@ -61,7 +61,7 @@ class ServerSecurityTests(unittest.TestCase):
         handler = make_handler("demo.trycloudflare.com", "https://rua-creeper-233.github.io")
         handler.path = "/api/health"
         handler._json = lambda payload, status=200: setattr(handler, "response", (payload, status))
-        with patch("server._load_json", return_value={"papers": {}}), patch("server._load_method_evidence", return_value={"papers": {}}):
+        with patch("battery_lab.server._load_json", return_value={"papers": {}}), patch("battery_lab.server._load_method_evidence", return_value={"papers": {}}):
             handler.do_GET()
         for key in ("downloaded_pdfs", "fulltext_papers", "fulltext_chunks", "method_evidence_signals"):
             self.assertNotIn(key, handler.response[0])
@@ -106,7 +106,7 @@ class ServerSecurityTests(unittest.TestCase):
         handler.path = "/api/agent"
         handler.requestline = "POST /api/agent HTTP/1.1"
         handler._json = lambda payload, status=200: setattr(handler, "response", (payload, status))
-        with patch("server.run_tool_agent", side_effect=AssertionError("provider must not run")):
+        with patch("battery_lab.server.run_tool_agent", side_effect=AssertionError("provider must not run")):
             handler.do_POST()
         self.assertEqual(handler.response[1], 403)
         self.assertIn("回环", handler.response[0]["error"])

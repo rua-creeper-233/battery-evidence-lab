@@ -6,10 +6,10 @@ import json
 from collections import Counter
 from pathlib import Path
 
-from paper_tagging import classify_paper
+from battery_lab.paper_tagging import classify_paper
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def main() -> None:

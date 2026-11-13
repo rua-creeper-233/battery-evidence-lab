@@ -92,9 +92,9 @@ def validate(data, papers):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("dataset", type=Path, nargs="?", default=Path(__file__).parent / "data/battery_components.json")
+    parser.add_argument("dataset", type=Path, nargs="?", default=Path(__file__).resolve().parents[1] / "data/battery_components.json")
     args = parser.parse_args()
-    root = Path(__file__).parent
+    root = Path(__file__).resolve().parents[1]
     data = validate(json.loads(args.dataset.read_text(encoding="utf-8")),
                     json.loads((root / "data/papers.json").read_text(encoding="utf-8")))
     refs = [row for component in data["components"] for row in component["papers"]]

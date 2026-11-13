@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
-import build_domestic_papers as builder
+import tools.build_domestic_papers as builder
 
 
 def fixture():

@@ -6,8 +6,8 @@ import json
 import re
 from typing import Any
 
-from agent import BatteryResearchAgent
-from rag import unsupported_parameter_claims
+from battery_lab.agent import BatteryResearchAgent
+from battery_lab.rag import unsupported_parameter_claims
 
 MAX_CALLS = 4
 MAX_QUERY = 4000
