@@ -69,7 +69,7 @@ class LearningRouteTests(unittest.TestCase):
     }
     assert sum(stage_counts.values()) == len(CATALOG)
     assert [stage_counts[sid] for sid in
-            ("baseline", "beginner", "intermediate", "frontier")] == [28, 39, 101, 90]
+            ("baseline", "beginner", "intermediate", "frontier")] == [28, 39, 112, 94]
     assert len(ROUTE["frontiers"]) == 8
     assert all(len(f["paper_ids"]) > 0 for f in ROUTE["frontiers"])
 

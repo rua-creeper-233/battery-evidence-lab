@@ -11,14 +11,14 @@
     "观点": "Perspective/Opinion 类观点文章；不等同于系统综述"
   },
   "counts": {
-    "DFT": 109,
-    "MD": 86,
+    "DFT": 111,
+    "MD": 88,
     "MS": 8,
     "VASP": 32,
     "方法论文": 69,
-    "综述": 30,
-    "观点": 5,
-    "进展论文": 189
+    "综述": 32,
+    "观点": 6,
+    "进展论文": 204
   },
   "papers": {
     "tan2026_pemd": {
@@ -1067,8 +1067,8 @@
         ],
         "MD": [
           "AIMD",
-          "molecular dynamics",
-          "Molecular Dynamics"
+          "Molecular Dynamics",
+          "molecular dynamics"
         ],
         "VASP": [
           "VASP"
@@ -1192,8 +1192,8 @@
           "DFT"
         ],
         "MD": [
-          "molecular dynamics",
-          "Molecular Dynamics"
+          "Molecular Dynamics",
+          "molecular dynamics"
         ]
       },
       "tag_policy": "curated_metadata_v1"
@@ -3728,8 +3728,8 @@
       ],
       "tag_basis": {
         "MD": [
-          "molecular dynamics",
-          "Molecular Dynamics"
+          "Molecular Dynamics",
+          "molecular dynamics"
         ]
       },
       "tag_policy": "curated_metadata_v1"
@@ -3906,6 +3906,172 @@
           "molecular dynamics"
         ]
       },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "recent_10_1002_batt_202500294": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文",
+        "观点"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "recent_10_1021_acs_jpclett_6c01037": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "arxiv_2607_04633": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "arxiv_2609_31743": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "MD"
+      ],
+      "display_tags": [
+        "进展论文",
+        "MD"
+      ],
+      "tag_basis": {
+        "MD": [
+          "Molecular Dynamics"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "recent_10_1039_d6ra06417e": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文",
+        "综述"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "chemrxiv_15009216": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "recent_10_1021_acs_chemmater_3c02726": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "DFT"
+      ],
+      "display_tags": [
+        "进展论文",
+        "DFT"
+      ],
+      "tag_basis": {
+        "DFT": [
+          "DFT"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "zhao2025_dynamic_electrochemical_stability_briefing": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "chen2022_predicting_electrolyte_esw": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "DFT"
+      ],
+      "display_tags": [
+        "进展论文",
+        "综述",
+        "DFT"
+      ],
+      "tag_basis": {
+        "DFT": [
+          "DFT"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "nakamura2026_open_electrolyte_database": {
+      "paper_kind": "进展论文",
+      "method_tags": [
+        "MD"
+      ],
+      "display_tags": [
+        "进展论文",
+        "MD"
+      ],
+      "tag_basis": {
+        "MD": [
+          "molecular dynamics"
+        ]
+      },
+      "tag_policy": "curated_metadata_v1"
+    },
+    "gudla2021_ion_pair_lifetime_polymer_electrolytes": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "shao2024_ion_transport_polymer_electrolytes": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "shao2022_transference_number_reference_frame": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "hargreaves2023_lithium_sse_conductivity_database": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
+      "tag_policy": "curated_metadata_v1"
+    },
+    "yang2026_aris_autonomous_research_harness": {
+      "paper_kind": "进展论文",
+      "method_tags": [],
+      "display_tags": [
+        "进展论文"
+      ],
+      "tag_basis": {},
       "tag_policy": "curated_metadata_v1"
     }
   }

@@ -19814,5 +19814,838 @@
         "https://pubs.acs.org/doi/10.1021/acs.chemmater.9b04663"
       ]
     }
+  },
+  {
+    "id": "recent_10_1002_batt_202500294",
+    "title": "Fabrication and Reporting Guidelines and Transference Number Correction in Composite Polymer Electrolyte-Based Lithium-Ion Batteries",
+    "authors": [
+      "Rajan Jose",
+      "Chun-Chen Yang"
+    ],
+    "year": 2025,
+    "journal": "Batteries & Supercaps",
+    "volume": "8",
+    "document_type": "Perspective",
+    "doi": "10.1002/batt.202500294",
+    "url": "https://doi.org/10.1002/batt.202500294",
+    "role": "为复合聚合物电解质全固态电池的制备、测试和报告提供标准化建议，并讨论平均电导率/迁移数与局部离子输运之间的偏差。",
+    "systems": [
+      "复合聚合物电解质",
+      "全固态锂离子电池",
+      "无机填料-聚合物电解质"
+    ],
+    "methods": [
+      "实验表征",
+      "离子输运分析",
+      "数学模型"
+    ],
+    "properties": [
+      "离子电导率",
+      "锂离子迁移数",
+      "局部离子输运",
+      "循环稳定性"
+    ],
+    "tags_zh": [
+      "固态电池",
+      "聚合物电解质",
+      "离子输运",
+      "实验规范",
+      "观点"
+    ],
+    "summary": "文章提出复合聚合物电解质全固态电池的制备、测试和报告建议，并指出用平均电导率和迁移数代表局部输运可能造成性能高估。适合作为实验数据可比性和迁移数解释的检查清单。",
+    "scope_note": "观点文章中的规范建议和模型讨论不能替代目标配方、界面和电池条件下的独立测量。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1002/batt.202500294"
+      ]
+    },
+    "pages": "e202500294"
+  },
+  {
+    "id": "recent_10_1021_acs_jpclett_6c01037",
+    "title": "Prediction and Experimental Verification of Electrolyte Solvation Structure from an OMol25-Trained Interatomic Potential",
+    "authors": [
+      "Nitesh Kumar",
+      "Jianwei Lai",
+      "Casey S. Mezerkor",
+      "Jiaqi Wang",
+      "Kamila M. Wiaderek",
+      "J. David Bazak",
+      "Samuel M. Blau",
+      "Ethan J. Crumlin"
+    ],
+    "year": 2026,
+    "journal": "Journal of Physical Chemistry Letters",
+    "volume": "17",
+    "pages": "9073-9084",
+    "document_type": "Article",
+    "doi": "10.1021/acs.jpclett.6c01037",
+    "url": "https://doi.org/10.1021/acs.jpclett.6c01037",
+    "role": "用 OMol25 训练的 UMA-OMol 原子势预测钠离子电池电解液的溶剂化结构，并以实验密度和 X 射线结构因子验证。",
+    "systems": [
+      "钠离子电池液态电解液",
+      "glyme 电解液",
+      "盐-溶剂体系"
+    ],
+    "methods": [
+      "MLIP",
+      "UMA-OMol",
+      "OMol25",
+      "MD",
+      "实验验证",
+      "X射线散射"
+    ],
+    "properties": [
+      "密度",
+      "X射线结构因子",
+      "溶剂化结构",
+      "离子相关",
+      "接触离子对"
+    ],
+    "tags_zh": [
+      "液态电解液",
+      "机器学习势",
+      "MD",
+      "溶剂化",
+      "实验验证"
+    ],
+    "summary": "文章将 OMol25 训练的 UMA-OMol 用于不同钠盐、阴离子、浓度和溶剂拓扑的电解液分子动力学，并以实验密度和 X 射线结构因子检验结构预测。结果强调温度、溶剂拓扑和接触离子对对溶剂化结构的影响。",
+    "scope_note": "实验一致性支持文中钠离子电解液范围内的结构判断；迁移到锂盐、不同元素覆盖或电化学反应需重新验证。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1021/acs.jpclett.6c01037"
+      ]
+    }
+  },
+  {
+    "id": "arxiv_2607_04633",
+    "title": "Differentiable OPLS Force Field Parameterization for Ionic Electrolytes and High-Throughput Application to Lithium-ion Batteries",
+    "authors": [
+      "Haichao Huang",
+      "Zilin Chen",
+      "Qi Liu",
+      "Tianqi Zhao",
+      "Yunpei Liu",
+      "Guotao Qiu",
+      "Jianhui Chen",
+      "Zhen Li",
+      "Wenshuo Liang",
+      "Minsung Cho",
+      "Manxue Zhang",
+      "Feiyu Kang",
+      "Xiaolong Zou",
+      "Yidan Cao",
+      "Xushan Zhao",
+      "Ziqi Cheng",
+      "Ye Mei"
+    ],
+    "year": 2026,
+    "journal": "arXiv",
+    "document_type": "Preprint",
+    "doi": "10.48550/arXiv.2607.04633",
+    "url": "https://arxiv.org/abs/2607.04633",
+    "role": "用可微参数化和 DMFF 优化 OPLS-AA 离子电解液力场，并进行高通量锂电解液分子动力学筛选。",
+    "systems": [
+      "锂离子电池液态电解液",
+      "有机溶剂",
+      "锂盐"
+    ],
+    "methods": [
+      "MD",
+      "OPLS-AA",
+      "DMFF",
+      "可微参数化",
+      "高通量模拟"
+    ],
+    "properties": [
+      "密度",
+      "介电常数",
+      "黏度",
+      "扩散系数",
+      "离子电导率"
+    ],
+    "tags_zh": [
+      "液态电解液",
+      "分子动力学",
+      "力场参数化",
+      "高通量",
+      "机器学习"
+    ],
+    "summary": "预印本提出面向离子电解液的自动化可微 OPLS-AA 参数化流程，以实验密度拟合并用离子电导率独立验证，随后对大量溶剂和锂盐组合进行高通量 MD。",
+    "scope_note": "这是 arXiv v2 预印本；力场和高通量数据的可迁移性需按盐、溶剂、浓度和温度重新验收，不能把数据集覆盖范围等同于普适准确性。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://arxiv.org/abs/2607.04633"
+      ]
+    }
+  },
+  {
+    "id": "arxiv_2609_31743",
+    "title": "ElectrolyteMD-Bench: How Well Do AI Agents Conduct Molecular Dynamics Studies across Electrolyte Solvation Regimes?",
+    "authors": [
+      "Shukai Wu",
+      "Shuo Niu",
+      "Zhaoming Xu",
+      "Yan Luo",
+      "Wentao Lin"
+    ],
+    "year": 2026,
+    "journal": "arXiv",
+    "document_type": "Preprint",
+    "doi": "10.48550/arXiv.2609.31743",
+    "url": "https://arxiv.org/abs/2609.31743",
+    "role": "评测 AI agent 在稀溶液、高浓度和局部高浓度电解液中自主完成 MD 研究的科学可靠性。",
+    "systems": [
+      "稀电解液",
+      "高浓度电解液",
+      "局部高浓度电解液"
+    ],
+    "methods": [
+      "MD",
+      "AI agent",
+      "基准测试",
+      "溶剂化分析",
+      "输运分析"
+    ],
+    "properties": [
+      "配位结构",
+      "离子缔合",
+      "自扩散",
+      "集体输运",
+      "证据完整性"
+    ],
+    "tags_zh": [
+      "液态电解液",
+      "MD",
+      "AI4S",
+      "基准测试",
+      "科研自动化"
+    ],
+    "summary": "预印本提出 ElectrolyteMD-Bench，沿系统构建、平衡、生产采样、性质分析和跨体系解释评测 agent 的 MD 研究能力，并将模拟有效性、分析有效性、证据完整性和结论校准分开审计。",
+    "scope_note": "这是 arXiv v1 预印本，评测结论依赖其 agent、harness 和测试体系；不能直接代表所有模型或实际电解液研究的成功率。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://arxiv.org/abs/2609.31743"
+      ]
+    }
+  },
+  {
+    "id": "recent_10_1039_d6ra06417e",
+    "title": "Reliable characterization of polymer electrolytes for next-generation energy storage: misinterpretations, challenges, and methodological solutions",
+    "authors": [
+      "Vipin Cyriac",
+      "Dhanush P. C.",
+      "Kuldeep Mishra",
+      "Aniruddha Kundu",
+      "Surjit Sahoo",
+      "Vinodkumar Etacheri"
+    ],
+    "year": 2026,
+    "journal": "RSC Advances",
+    "volume": "16",
+    "pages": "52148-52202",
+    "document_type": "Review",
+    "doi": "10.1039/d6ra06417e",
+    "url": "https://doi.org/10.1039/d6ra06417e",
+    "role": "系统梳理聚合物电解质的结构、热、形貌、表面和力学表征误读及交叉验证方法。",
+    "systems": [
+      "聚合物电解质",
+      "锂/钠离子电池",
+      "超级电容器",
+      "复合聚合物电解质"
+    ],
+    "methods": [
+      "XRD",
+      "FTIR",
+      "DSC",
+      "TGA",
+      "SEM/FESEM",
+      "AFM",
+      "XPS",
+      "力学测试"
+    ],
+    "properties": [
+      "结晶度",
+      "离子解离",
+      "热转变",
+      "降解",
+      "形貌",
+      "表面化学",
+      "力学完整性"
+    ],
+    "tags_zh": [
+      "聚合物电解质",
+      "表征",
+      "实验规范",
+      "固态电池",
+      "综述"
+    ],
+    "summary": "综述聚合物基电解质中结晶、盐-聚合物配位、增塑剂、无机填料和数据处理带来的解释歧义，强调仪器校准、透明处理、统计数据和结构-输运-电化学性能的互证。",
+    "scope_note": "综述提供方法学边界和检查项，不替代具体配方中对温度、含水量、界面和测试协议的原始记录。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1039/d6ra06417e"
+      ]
+    }
+  },
+  {
+    "id": "chemrxiv_15009216",
+    "title": "Not comparing like with like: a measurement-conditions audit of the solid polymer electrolyte literature",
+    "authors": [
+      "Om Chaudhari"
+    ],
+    "year": 2026,
+    "journal": "ChemRxiv",
+    "document_type": "Preprint",
+    "doi": "10.26434/chemrxiv.15009216/v1",
+    "url": "https://doi.org/10.26434/chemrxiv.15009216/v1",
+    "role": "审计固态聚合物电解质文献的电导率测量条件，评估不同体系和温度条件混合比较造成的数据偏差。",
+    "systems": [
+      "固态聚合物电解质",
+      "无溶剂聚合物电解质",
+      "分子溶剂/离子液体对照"
+    ],
+    "methods": [
+      "文献元数据审计",
+      "测量条件标注",
+      "温度序列拟合",
+      "数据质量分析"
+    ],
+    "properties": [
+      "离子电导率",
+      "温度依赖",
+      "膜厚",
+      "电极面积",
+      "平衡时间",
+      "残余水含量"
+    ],
+    "tags_zh": [
+      "聚合物电解质",
+      "离子电导率",
+      "数据质量",
+      "测量规范",
+      "预印本"
+    ],
+    "summary": "预印本对固态聚合物电解质文献的测量条件进行逐篇标注，指出将非聚合物体系、不同温度和不完整实验条件合并会系统性扭曲电导率比较。",
+    "scope_note": "这是 ChemRxiv v1 未经同行评审的预印本；其审计结论和数据标注应以原文及后续正式版本复核。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.26434/chemrxiv.15009216/v1"
+      ]
+    }
+  },
+  {
+    "id": "recent_10_1021_acs_chemmater_3c02726",
+    "title": "Mechanism of Charge Transport in Lithium Thiophosphate",
+    "authors": [
+      "Lorenzo Gigli",
+      "Davide Tisi",
+      "Federico Grasselli",
+      "Michele Ceriotti"
+    ],
+    "year": 2024,
+    "journal": "Chemistry of Materials",
+    "volume": "36",
+    "pages": "1482-1496",
+    "document_type": "Article",
+    "doi": "10.1021/acs.chemmater.3c02726",
+    "url": "https://doi.org/10.1021/acs.chemmater.3c02726",
+    "role": "用面向 DFT 的机器学习势研究 Li3PS4 多晶型中的超离子输运机制、PS4 翻转和离子动力学关联。",
+    "systems": [
+      "α-Li3PS4",
+      "β-Li3PS4",
+      "γ-Li3PS4",
+      "锂硫代磷酸盐固态电解质"
+    ],
+    "methods": [
+      "DFT",
+      "PBEsol",
+      "r2SCAN",
+      "PBE0",
+      "MLIP",
+      "MD",
+      "电导率分析"
+    ],
+    "properties": [
+      "锂离子扩散",
+      "活化能",
+      "电导率",
+      "PS4翻转",
+      "离子动力学关联"
+    ],
+    "tags_zh": [
+      "固态电解质",
+      "机器学习势",
+      "MD",
+      "DFT",
+      "锂硫代磷酸盐",
+      "离子输运"
+    ],
+    "summary": "文章为 Li3PS4 的 α、β、γ 相构建针对不同 DFT 参考的机器学习势，分析 PS4 翻转、Li 位点可用性和离子关联对超离子行为及电导率的影响，并检验 Nernst-Einstein 近似的局限。",
+    "scope_note": "机制和 DFT 参考依赖 Li3PS4 多晶型及所用势模型；不能把该体系的相变、活化能或电导结论直接推广到其他硫化物。",
+    "collection": "core",
+    "difficulty": "进阶",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1021/acs.chemmater.3c02726"
+      ]
+    }
+  },
+  {
+    "id": "zhao2025_dynamic_electrochemical_stability_briefing",
+    "title": "Dynamically expanding the electrochemical stability window during charging",
+    "authors": [
+      "Chang-Xin Zhao",
+      "Chunsheng Wang"
+    ],
+    "year": 2025,
+    "journal": "Nature Energy",
+    "volume": "10",
+    "pages": "804-805",
+    "document_type": "Research briefing",
+    "doi": "10.1038/s41560-025-01802-z",
+    "url": "https://doi.org/10.1038/s41560-025-01802-z",
+    "role": "研究简报：介绍自适应电解液在充电时通过盐浓度诱导相分离，动态扩展电化学稳定窗口。",
+    "systems": [
+      "水系锌金属电池",
+      "非水系锂金属电池",
+      "自适应电解液"
+    ],
+    "methods": [
+      "电化学测试",
+      "光谱分析",
+      "电解液相分离"
+    ],
+    "properties": [
+      "电化学稳定窗口",
+      "库仑效率",
+      "快速充电稳定性"
+    ],
+    "tags_zh": [
+      "电解液",
+      "电化学稳定窗口",
+      "锂金属电池",
+      "锌金属电池",
+      "快速充电"
+    ],
+    "summary": "研究简报总结了自适应电解液的设计思路：充电形成盐浓度梯度并诱发溶剂空间分离，使耐氧化和耐还原溶剂分别富集于正负极附近，从而动态扩大稳定窗口。该文件是对另一篇研究论文的简报，不能替代原始论文的实验细节。",
+    "scope_note": "本文件明确标为 Research briefing，正文总结的原始研究 DOI 是 10.1038/s41560-025-01801-0；定量结论和配方细节应回到原始研究论文核对。",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1038/s41560-025-01802-z"
+      ]
+    }
+  },
+  {
+    "id": "chen2022_predicting_electrolyte_esw",
+    "title": "Progress on predicting the electrochemical stability window of electrolytes",
+    "authors": [
+      "Ming Chen",
+      "Jinkai Zhang",
+      "Xiangyu Ji",
+      "Jiaping Fu",
+      "Guang Feng"
+    ],
+    "year": 2022,
+    "journal": "Current Opinion in Electrochemistry",
+    "volume": "34",
+    "pages": "101030",
+    "document_type": "Review Article",
+    "doi": "10.1016/j.coelec.2022.101030",
+    "url": "https://doi.org/10.1016/j.coelec.2022.101030",
+    "role": "综述从分子/离子、溶剂化到电极-电解液界面模型梳理电解液电化学稳定窗口预测。",
+    "systems": [
+      "液态电解液",
+      "电极-电解液界面",
+      "电化学储能器件"
+    ],
+    "methods": [
+      "DFT",
+      "MD",
+      "原子模拟",
+      "界面建模"
+    ],
+    "properties": [
+      "电化学稳定窗口",
+      "氧化稳定性",
+      "还原稳定性",
+      "界面结构"
+    ],
+    "tags_zh": [
+      "综述",
+      "电解液",
+      "DFT",
+      "MD",
+      "电化学稳定窗口",
+      "界面"
+    ],
+    "summary": "综述比较从孤立分子/离子到溶剂化结构和电极界面的稳定窗口预测模型，强调不同模型的适用边界与界面效应。",
+    "scope_note": "这是方法综述，不能把其中列举的计算模型精度或稳定窗口直接当作某一具体电解液的实验结果。",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1016/j.coelec.2022.101030"
+      ]
+    }
+  },
+  {
+    "id": "nakamura2026_open_electrolyte_database",
+    "title": "Open electrolyte database generated via an automated molecular dynamics simulation framework",
+    "authors": [
+      "Kou Nakamura",
+      "Norio Takenaka",
+      "Masatoshi Hanai",
+      "Yuna Oikawa",
+      "Ryo Tamura",
+      "Koji Tsuda",
+      "Masanobu Nakayama",
+      "Junichiro Shiomi",
+      "Atsuo Yamada"
+    ],
+    "year": 2026,
+    "journal": "npj Computational Materials",
+    "volume": "12",
+    "pages": "215",
+    "document_type": "Article",
+    "doi": "10.1038/s41524-026-02093-y",
+    "url": "https://doi.org/10.1038/s41524-026-02093-y",
+    "role": "用自动化高通量 MD 生成开放电解液数据库，连接配方、溶液结构与电解液级物性。",
+    "systems": [
+      "液态电解液",
+      "盐-溶剂组合",
+      "电池电解液数据库"
+    ],
+    "methods": [
+      "MD",
+      "自动化工作流",
+      "高通量模拟",
+      "数据集构建"
+    ],
+    "properties": [
+      "离子电导率",
+      "黏度",
+      "密度",
+      "扩散系数",
+      "电解液结构描述符"
+    ],
+    "tags_zh": [
+      "电解液",
+      "MD",
+      "高通量",
+      "数据库",
+      "机器学习数据"
+    ],
+    "summary": "论文介绍 Open Electrolyte Database for Batteries，使用自动化高通量分子动力学覆盖多种盐、溶剂和浓度，并提供电解液级结构与物性描述符及网页接口。",
+    "scope_note": "数据库数值依赖其模拟协议、力场和验证范围；使用时应核对配方、温度、采样和实验对照，不能把数据库条目等同于普适实验真值。",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1038/s41524-026-02093-y"
+      ]
+    }
+  },
+  {
+    "id": "gudla2021_ion_pair_lifetime_polymer_electrolytes",
+    "title": "Importance of the Ion-Pair Lifetime in Polymer Electrolytes",
+    "authors": [
+      "Harish Gudla",
+      "Yunqi Shao",
+      "Supho Phunnarungsi",
+      "Daniel Brandell",
+      "Chao Zhang"
+    ],
+    "year": 2021,
+    "journal": "The Journal of Physical Chemistry Letters",
+    "volume": "12",
+    "pages": "8460-8464",
+    "document_type": "Article",
+    "doi": "10.1021/acs.jpclett.1c02474",
+    "url": "https://doi.org/10.1021/acs.jpclett.1c02474",
+    "role": "用分子动力学研究聚合物电解质离子对寿命与离子输运相关性的动力学机制。",
+    "systems": [
+      "PEO-LiTFSI 聚合物电解质"
+    ],
+    "methods": [
+      "MD",
+      "全原子分子动力学",
+      "离子相关函数"
+    ],
+    "properties": [
+      "离子对寿命",
+      "离子电导率",
+      "阳离子-阴离子 distinct conductivity"
+    ],
+    "tags_zh": [
+      "聚合物电解质",
+      "MD",
+      "离子对",
+      "离子输运",
+      "电导率"
+    ],
+    "summary": "论文构造不同溶剂极性的 PEO-LiTFSI 模型，研究离子对寿命与阳离子-阴离子 distinct conductivity 的关系，指出长寿命离子对在特定动力学区间可能对总输运产生负贡献。",
+    "scope_note": "结论基于所研究的 PEO-LiTFSI 模型和模拟定义；离子对判据、参考系和力场会影响与实验电导率的比较。",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1021/acs.jpclett.1c02474"
+      ]
+    }
+  },
+  {
+    "id": "shao2024_ion_transport_polymer_electrolytes",
+    "title": "Ion Transport in Polymer Electrolytes: Building New Bridges between Experiment and Molecular Simulation",
+    "authors": [
+      "Yunqi Shao",
+      "Harish Gudla",
+      "Jonas Mindemark",
+      "Daniel Brandell",
+      "Chao Zhang"
+    ],
+    "year": 2024,
+    "journal": "Accounts of Chemical Research",
+    "volume": "57",
+    "pages": "1123-1134",
+    "document_type": "Account",
+    "doi": "10.1021/acs.accounts.3c00791",
+    "url": "https://doi.org/10.1021/acs.accounts.3c00791",
+    "role": "综述实验与分子模拟之间的聚合物电解质离子输运桥接方法。",
+    "systems": [
+      "PEO-LiTFSI 聚合物电解质",
+      "多组分聚合物电解质"
+    ],
+    "methods": [
+      "MD",
+      "Onsager 理论",
+      "浓溶液理论",
+      "实验-模拟比较"
+    ],
+    "properties": [
+      "Li+ 自扩散",
+      "离子电导率",
+      "阳离子迁移数",
+      "玻璃化转变温度"
+    ],
+    "tags_zh": [
+      "聚合物电解质",
+      "综述",
+      "MD",
+      "离子输运",
+      "迁移数",
+      "实验验证"
+    ],
+    "summary": "Account 讨论用玻璃化转变温度和归一化温度比较实验与 MD 自扩散，使用 Onsager 理论和参考系变换解释迁移数，并总结时间尺度、离子缔合和力场准确性问题。",
+    "scope_note": "这是 Account/综述性文章，提供方法框架和限制讨论；其中案例主要围绕 PEO-LiTFSI，不能直接视为所有聚合物电解质的定量规律。",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1021/acs.accounts.3c00791"
+      ]
+    }
+  },
+  {
+    "id": "shao2022_transference_number_reference_frame",
+    "title": "Transference Number in Polymer Electrolytes: Mind the Reference-Frame Gap",
+    "authors": [
+      "Yunqi Shao",
+      "Harish Gudla",
+      "Daniel Brandell",
+      "Chao Zhang"
+    ],
+    "year": 2022,
+    "journal": "Journal of the American Chemical Society",
+    "volume": "144",
+    "pages": "7583-7587",
+    "document_type": "Communication",
+    "doi": "10.1021/jacs.2c02389",
+    "url": "https://doi.org/10.1021/jacs.2c02389",
+    "role": "分析实验与分子动力学迁移数所处参考系不同造成的比较偏差。",
+    "systems": [
+      "PEO-LiTFSI 聚合物电解质"
+    ],
+    "methods": [
+      "MD",
+      "Onsager 理论",
+      "参考系变换",
+      "浓溶液理论"
+    ],
+    "properties": [
+      "阳离子迁移数",
+      "离子相关",
+      "离子输运系数"
+    ],
+    "tags_zh": [
+      "聚合物电解质",
+      "MD",
+      "迁移数",
+      "参考系",
+      "实验验证"
+    ],
+    "summary": "论文指出实验常用溶剂固定参考系，而线性响应 MD 常在质心参考系中计算迁移数；对参考系进行转换后可改善实验与模拟的比较，并讨论阴离子质量和阴离子相关。",
+    "scope_note": "迁移数依赖参考系和测量定义；不能把不同实验方法或不同模拟参考系所得数值直接比较。",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1021/jacs.2c02389"
+      ]
+    }
+  },
+  {
+    "id": "hargreaves2023_lithium_sse_conductivity_database",
+    "title": "A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning",
+    "authors": [
+      "Cameron J. Hargreaves",
+      "Michael W. Gaultois",
+      "Luke M. Daniels",
+      "Emma J. Watts",
+      "Vitaliy A. Kurlin",
+      "Michael Moran",
+      "Yun Dang",
+      "Rhun Morris",
+      "Alexandra Morscher",
+      "Kate Thompson",
+      "Matthew A. Wright",
+      "Beluvalli-Eshwarappa Prasad",
+      "Frédéric Blanc",
+      "Chris M. Collins",
+      "Catriona A. Crawford",
+      "Benjamin B. Duff",
+      "Jae Evans",
+      "Jacinthe Gamon",
+      "Guopeng Han",
+      "Bernhard T. Leube",
+      "Hongjun Niu",
+      "Arnaud J. Perez",
+      "Aris Robinson",
+      "Oliver Rogan",
+      "Paul M. Sharp",
+      "Elvis Shoko",
+      "Manel Sonni",
+      "William J. Thomas",
+      "Andrij Vasylenko",
+      "Lu Wang",
+      "Matthew J. Rosseinsky",
+      "Matthew S. Dyer"
+    ],
+    "year": 2023,
+    "journal": "npj Computational Materials",
+    "volume": "9",
+    "pages": "9",
+    "document_type": "Article",
+    "doi": "10.1038/s41524-022-00951-z",
+    "url": "https://doi.org/10.1038/s41524-022-00951-z",
+    "role": "整理实验测量的锂固态电解质电导率数据，并用机器学习评估组成与高低电导率分类。",
+    "systems": [
+      "锂固态电解质",
+      "锂离子导体",
+      "无机晶体材料"
+    ],
+    "methods": [
+      "机器学习",
+      "CrabNet",
+      "无监督学习",
+      "Element Movers Distance",
+      "实验数据整理"
+    ],
+    "properties": [
+      "离子电导率",
+      "组成-性能分类",
+      "结构标签"
+    ],
+    "tags_zh": [
+      "固态电解质",
+      "机器学习",
+      "数据库",
+      "离子电导率",
+      "数据质量"
+    ],
+    "summary": "论文构建包含实验锂离子电导率和结构标签的专家整理数据库，并用组成分类器和无监督方法评估材料空间，为固态电解质候选筛选提供数据基础。",
+    "scope_note": "实验电导率受温度、测量方法、样品致密度和文献报告质量影响；数据集用于筛选和建模，不等于统一条件下的测量基准。",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://doi.org/10.1038/s41524-022-00951-z"
+      ]
+    }
+  },
+  {
+    "id": "yang2026_aris_autonomous_research_harness",
+    "title": "ARIS: Autonomous Research via Adversarial Multi-Agent Collaboration",
+    "authors": [
+      "Ruofeng Yang",
+      "Yongcan Li",
+      "Shuai Li"
+    ],
+    "year": 2026,
+    "journal": "arXiv",
+    "document_type": "Preprint",
+    "doi": "10.48550/arXiv.2605.03042",
+    "url": "https://arxiv.org/abs/2605.03042",
+    "role": "预印本技术报告：提出面向自主机器学习研究的多智能体执行、审阅和证据核验框架。",
+    "systems": [
+      "自主机器学习研究工作流",
+      "多智能体协作",
+      "电池研究可迁移工作流"
+    ],
+    "methods": [
+      "多智能体系统",
+      "对抗式审阅",
+      "证据完整性核验",
+      "自动化研究工作流"
+    ],
+    "properties": [
+      "工作流可靠性",
+      "证据-结论对应",
+      "研究自动化"
+    ],
+    "tags_zh": [
+      "预印本",
+      "自主科研",
+      "多智能体",
+      "证据核验",
+      "AI工作流"
+    ],
+    "summary": "ARIS 技术报告描述由执行模型、异模型审阅和证据审计组成的自主科研 harness，覆盖研究规划、实验执行、论文写作与反驳回复，并强调将结论映射回原始证据。",
+    "scope_note": "这是 arXiv v1 预印本和技术报告，不是经过期刊同行评审的电池材料研究；其工作流能力不能直接证明科学结论质量。",
+    "verification": {
+      "doi": "verified_bibliographic_identity_2026-11-13",
+      "publisher": "citation_metadata_checked",
+      "sources": [
+        "https://arxiv.org/abs/2605.03042"
+      ]
+    }
   }
 ]

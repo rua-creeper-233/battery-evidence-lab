@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-05",
+  "as_of": "2026-11-13",
   "policy": "baseline 是科研中反复查验的常备参考。每篇论文有唯一主阶段，也可被多个专题引用；实验与验证按研究主张选择。",
   "evidence_basis": "按题名、方法记录和人工摘要安排阅读顺序。",
   "stages": [
@@ -653,7 +653,18 @@
         "collector2025_1149_1945_7111_ada641",
         "collector2024_1002_cssc_202400164",
         "hajibabaei2021_universal_solid_electrolytes",
-        "wang2020_cathode_coating_on_the_fly"
+        "wang2020_cathode_coating_on_the_fly",
+        "recent_10_1002_batt_202500294",
+        "arxiv_2607_04633",
+        "recent_10_1039_d6ra06417e",
+        "chemrxiv_15009216",
+        "recent_10_1021_acs_chemmater_3c02726",
+        "zhao2025_dynamic_electrochemical_stability_briefing",
+        "chen2022_predicting_electrolyte_esw",
+        "gudla2021_ion_pair_lifetime_polymer_electrolytes",
+        "shao2024_ion_transport_polymer_electrolytes",
+        "shao2022_transference_number_reference_frame",
+        "hargreaves2023_lithium_sse_conductivity_database"
       ]
     },
     {
@@ -839,7 +850,11 @@
         "exp20261028_10_1063_5_0288380",
         "exp20261028_10_1038_s42256_025_01009_7",
         "exp20261028_10_1039_d5dd00508f",
-        "exp20261028_10_1038_s41467_024_47070_5"
+        "exp20261028_10_1038_s41467_024_47070_5",
+        "recent_10_1021_acs_jpclett_6c01037",
+        "arxiv_2609_31743",
+        "nakamura2026_open_electrolyte_database",
+        "yang2026_aris_autonomous_research_harness"
       ]
     }
   ],
@@ -934,7 +949,10 @@
         "cn_xu2024_big_data_design",
         "exp20261028_10_1039_d4ta00721b",
         "exp20261028_10_1007_s40843_025_3346_4",
-        "hajibabaei2021_universal_solid_electrolytes"
+        "hajibabaei2021_universal_solid_electrolytes",
+        "recent_10_1002_batt_202500294",
+        "recent_10_1021_acs_chemmater_3c02726",
+        "hargreaves2023_lithium_sse_conductivity_database"
       ]
     },
     {
@@ -1038,7 +1056,8 @@
         "collector2026_1039_d6ta00180g",
         "collector2026_1002_aenm_71291",
         "exp20261028_10_1016_j_jechem_2025_06_072",
-        "wang2020_cathode_coating_on_the_fly"
+        "wang2020_cathode_coating_on_the_fly",
+        "chen2022_predicting_electrolyte_esw"
       ]
     },
     {
@@ -1142,7 +1161,18 @@
         "exp20261028_10_1063_5_0288380",
         "exp20261028_10_1038_s42256_025_01009_7",
         "exp20261028_10_1039_d5dd00508f",
-        "exp20261028_10_1038_s41467_024_47070_5"
+        "exp20261028_10_1038_s41467_024_47070_5",
+        "recent_10_1021_acs_jpclett_6c01037",
+        "arxiv_2607_04633",
+        "arxiv_2609_31743",
+        "recent_10_1039_d6ra06417e",
+        "chemrxiv_15009216",
+        "zhao2025_dynamic_electrochemical_stability_briefing",
+        "chen2022_predicting_electrolyte_esw",
+        "nakamura2026_open_electrolyte_database",
+        "gudla2021_ion_pair_lifetime_polymer_electrolytes",
+        "shao2024_ion_transport_polymer_electrolytes",
+        "shao2022_transference_number_reference_frame"
       ]
     },
     {
@@ -1337,7 +1367,12 @@
         "exp20261028_10_1063_5_0288380",
         "exp20261028_10_1038_s42256_025_01009_7",
         "exp20261028_10_1039_d5dd00508f",
-        "exp20261028_10_1038_s41467_024_47070_5"
+        "exp20261028_10_1038_s41467_024_47070_5",
+        "arxiv_2607_04633",
+        "arxiv_2609_31743",
+        "chemrxiv_15009216",
+        "nakamura2026_open_electrolyte_database",
+        "hargreaves2023_lithium_sse_conductivity_database"
       ]
     },
     {
@@ -1424,7 +1459,12 @@
         "recent_10_1038_s41524-025-01735-x",
         "recent_10_1016_j_cej_2025_163801",
         "cn_10_19799_j_cnki_2095-4239_2022_0504",
-        "cn_10_19799_j_cnki_2095-4239_2024_0586"
+        "cn_10_19799_j_cnki_2095-4239_2024_0586",
+        "zhao2025_dynamic_electrochemical_stability_briefing",
+        "gudla2021_ion_pair_lifetime_polymer_electrolytes",
+        "shao2024_ion_transport_polymer_electrolytes",
+        "shao2022_transference_number_reference_frame",
+        "yang2026_aris_autonomous_research_harness"
       ]
     },
     {
@@ -1532,7 +1572,9 @@
         "cn_aps2026_ml_dft",
         "cn_chen2024_mlmd_nucleation",
         "hajibabaei2021_universal_solid_electrolytes",
-        "wang2020_cathode_coating_on_the_fly"
+        "wang2020_cathode_coating_on_the_fly",
+        "recent_10_1021_acs_jpclett_6c01037",
+        "recent_10_1021_acs_chemmater_3c02726"
       ]
     },
     {
@@ -1624,7 +1666,8 @@
         "wilkinson2016_fair_principles",
         "cn_10_19799_j_cnki_2095-4239_2022_0051",
         "cn_aps2026_ml_dft",
-        "cn_xu2024_big_data_design"
+        "cn_xu2024_big_data_design",
+        "yang2026_aris_autonomous_research_harness"
       ]
     }
   ],
@@ -3220,6 +3263,124 @@
         "mlip_reliability_and_data_efficiency"
       ],
       "rationale": "从正极包覆的慢扩散采样问题入手，学习在线 MTP 与 DFT 回退的配合，再区分体相输运、界面稳定性和实际涂层性能。"
+    },
+    "recent_10_1002_batt_202500294": {
+      "stage": "intermediate",
+      "frontiers": [
+        "mlip_transport_and_sse"
+      ],
+      "rationale": "先建立电导率、迁移数和局部输运的实验定义，再进入固态电解质模拟与跨方法对照。"
+    },
+    "recent_10_1021_acs_jpclett_6c01037": {
+      "stage": "frontier",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "mlip_reliability_and_data_efficiency"
+      ],
+      "rationale": "在液态电解液中学习大规模预训练势的结构验证，再比较化学空间、浓度和温度外推。"
+    },
+    "arxiv_2607_04633": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "ai_screening_and_uq"
+      ],
+      "rationale": "先复现参数化目标和输运定义，再检查高通量数据的配方、温度和模型适用域。"
+    },
+    "arxiv_2609_31743": {
+      "stage": "frontier",
+      "frontiers": [
+        "ai_screening_and_uq",
+        "liquid_and_polymer_electrolytes"
+      ],
+      "rationale": "把 agent 运行成功与物理、统计和证据正确区分，作为本地自动化电解液 MD 的审计框架。"
+    },
+    "recent_10_1039_d6ra06417e": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes"
+      ],
+      "rationale": "在解读聚合物电解质输运和结构数据前，先建立多技术交叉验证与可复现实验记录。"
+    },
+    "chemrxiv_15009216": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "ai_screening_and_uq"
+      ],
+      "rationale": "将测量条件和数据质量作为后续数据库建模与跨论文比较的前置筛选。"
+    },
+    "recent_10_1021_acs_chemmater_3c02726": {
+      "stage": "intermediate",
+      "frontiers": [
+        "mlip_transport_and_sse",
+        "mlip_reliability_and_data_efficiency"
+      ],
+      "rationale": "以 Li3PS4 多晶型作为固态电解质 MLIP 输运基线，区分单离子扩散、离子关联和集体电导。"
+    },
+    "zhao2025_dynamic_electrochemical_stability_briefing": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "multiscale_and_validation"
+      ],
+      "rationale": "先理解电解液相行为与电极局部环境，再把简报中的设计原则与原始研究论文及可复现实验区分开。"
+    },
+    "chen2022_predicting_electrolyte_esw": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "interfaces_sei_and_dendrites"
+      ],
+      "rationale": "用模型层级建立电解液稳定窗口的基础框架，再进入界面与反应性验证。"
+    },
+    "nakamura2026_open_electrolyte_database": {
+      "stage": "frontier",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "ai_screening_and_uq"
+      ],
+      "rationale": "在掌握电解液 MD 物性与验证后，用开放数据库开展配方筛选并保留不确定性核查。"
+    },
+    "gudla2021_ion_pair_lifetime_polymer_electrolytes": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "multiscale_and_validation"
+      ],
+      "rationale": "先掌握离子对动力学和相关函数，再处理聚合物电解质输运与实验量的对应关系。"
+    },
+    "shao2024_ion_transport_polymer_electrolytes": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "multiscale_and_validation"
+      ],
+      "rationale": "用实验量与模拟输运系数的对应框架校准聚合物电解质计算。"
+    },
+    "shao2022_transference_number_reference_frame": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "multiscale_and_validation"
+      ],
+      "rationale": "把参考系定义作为实验-模拟输运比较的必查项。"
+    },
+    "hargreaves2023_lithium_sse_conductivity_database": {
+      "stage": "intermediate",
+      "frontiers": [
+        "mlip_transport_and_sse",
+        "ai_screening_and_uq"
+      ],
+      "rationale": "在固态电解质输运建模前先学习实验数据的异质性、标签质量和组成筛选边界。"
+    },
+    "yang2026_aris_autonomous_research_harness": {
+      "stage": "frontier",
+      "frontiers": [
+        "autonomous_workflows",
+        "multiscale_and_validation"
+      ],
+      "rationale": "作为自主科研工作流案例阅读，重点检查证据审计、结果复核和与电池模拟管线的边界。"
     }
   },
   "candidates": [],

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-05",
-  "papers": 258,
-  "recent_2023_onward": 143,
+  "as_of": "2026-11-13",
+  "papers": 273,
+  "recent_2023_onward": 155,
   "publication_years": {
     "1964": 1,
     "1965": 1,
@@ -34,23 +34,27 @@
     "2018": 8,
     "2019": 7,
     "2020": 13,
-    "2021": 14,
-    "2022": 18,
-    "2023": 21,
-    "2024": 41,
-    "2025": 56,
-    "2026": 25
+    "2021": 15,
+    "2022": 20,
+    "2023": 22,
+    "2024": 43,
+    "2025": 58,
+    "2026": 32
   },
   "publication_types": {
-    "Article": 68,
+    "Account": 1,
+    "Article": 73,
     "Commentary": 2,
+    "Communication": 1,
     "Letter": 2,
     "Mini Review": 1,
     "Paper": 131,
-    "Perspective": 5,
+    "Perspective": 6,
+    "Preprint": 4,
     "Protocol": 1,
-    "Review": 27,
-    "Review Article": 2,
+    "Research briefing": 1,
+    "Review": 28,
+    "Review Article": 3,
     "Software Article": 11,
     "Theoretical Article": 5,
     "Viewpoint": 1,
@@ -58,14 +62,14 @@
   },
   "wos_records": 16,
   "tags": {
-    "DFT": 109,
-    "MD": 86,
+    "DFT": 111,
+    "MD": 88,
     "MS": 8,
     "VASP": 32,
     "方法论文": 69,
-    "综述": 30,
-    "观点": 5,
-    "进展论文": 189
+    "综述": 32,
+    "观点": 6,
+    "进展论文": 204
   },
   "datasets": {
     "train": {
@@ -113,8 +117,8 @@
   },
   "dataset_rows": 1703,
   "static_qa": {
-    "catalog_papers": 258,
-    "rows": 1032,
+    "catalog_papers": 273,
+    "rows": 1092,
     "evidence_level": "curated_metadata"
   },
   "research_knowledge": {

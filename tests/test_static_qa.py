@@ -53,7 +53,7 @@ class StaticQATest(unittest.TestCase):
     self.assertEqual(sum(len(e["qas"]) for e in data["entries"]), len(papers) * 4)
     self.assertEqual(len({e["doi"] for e in data["entries"]}), len(papers))
     self.assertTrue(all(q["source_urls"] == [f"https://doi.org/{e['doi']}"] for e in data["entries"] for q in e["qas"]))
-    self.assertEqual(data["as_of"], "2026-11-05")
+    self.assertEqual(data["as_of"], "2026-11-13")
 
 
   def test_answers_use_concise_metadata_boundaries(self):

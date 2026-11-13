@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-05",
+  "as_of": "2026-11-13",
   "notice": "英文原文附中文参考译名；中文原文保留原题、不重复显示同名译文。引用以出版时原题和DOI为准。",
   "papers": {
     "tan2026_pemd": {
@@ -1292,6 +1292,81 @@
       "title": "Lithium Ion Conduction in Cathode Coating Materials from On-the-Fly Machine Learning",
       "title_zh": "基于在线机器学习的正极包覆材料锂离子传导研究",
       "doi": "10.1021/acs.chemmater.9b04663"
+    },
+    "recent_10_1002_batt_202500294": {
+      "title": "Fabrication and Reporting Guidelines and Transference Number Correction in Composite Polymer Electrolyte-Based Lithium-Ion Batteries",
+      "title_zh": "复合聚合物电解质锂离子电池的制备、报告指南与迁移数修正",
+      "doi": "10.1002/batt.202500294"
+    },
+    "recent_10_1021_acs_jpclett_6c01037": {
+      "title": "Prediction and Experimental Verification of Electrolyte Solvation Structure from an OMol25-Trained Interatomic Potential",
+      "title_zh": "基于 OMol25 训练原子势的电解液溶剂化结构预测与实验验证",
+      "doi": "10.1021/acs.jpclett.6c01037"
+    },
+    "arxiv_2607_04633": {
+      "title": "Differentiable OPLS Force Field Parameterization for Ionic Electrolytes and High-Throughput Application to Lithium-ion Batteries",
+      "title_zh": "离子电解液可微 OPLS 力场参数化及其锂电池高通量应用",
+      "doi": "10.48550/arXiv.2607.04633"
+    },
+    "arxiv_2609_31743": {
+      "title": "ElectrolyteMD-Bench: How Well Do AI Agents Conduct Molecular Dynamics Studies across Electrolyte Solvation Regimes?",
+      "title_zh": "ElectrolyteMD-Bench：AI agent 跨电解液溶剂化状态开展分子动力学研究的能力",
+      "doi": "10.48550/arXiv.2609.31743"
+    },
+    "recent_10_1039_d6ra06417e": {
+      "title": "Reliable characterization of polymer electrolytes for next-generation energy storage: misinterpretations, challenges, and methodological solutions",
+      "title_zh": "面向下一代储能的聚合物电解质可靠表征：误读、挑战与方法学解决方案",
+      "doi": "10.1039/d6ra06417e"
+    },
+    "chemrxiv_15009216": {
+      "title": "Not comparing like with like: a measurement-conditions audit of the solid polymer electrolyte literature",
+      "title_zh": "不能把不同条件当作同类比较：固态聚合物电解质文献的测量条件审计",
+      "doi": "10.26434/chemrxiv.15009216/v1"
+    },
+    "recent_10_1021_acs_chemmater_3c02726": {
+      "title": "Mechanism of Charge Transport in Lithium Thiophosphate",
+      "title_zh": "硫代磷酸锂中的电荷输运机制",
+      "doi": "10.1021/acs.chemmater.3c02726"
+    },
+    "zhao2025_dynamic_electrochemical_stability_briefing": {
+      "title": "Dynamically expanding the electrochemical stability window during charging",
+      "title_zh": "充电过程中动态扩展电化学稳定窗口",
+      "doi": "10.1038/s41560-025-01802-z"
+    },
+    "chen2022_predicting_electrolyte_esw": {
+      "title": "Progress on predicting the electrochemical stability window of electrolytes",
+      "title_zh": "电解液电化学稳定窗口预测进展",
+      "doi": "10.1016/j.coelec.2022.101030"
+    },
+    "nakamura2026_open_electrolyte_database": {
+      "title": "Open electrolyte database generated via an automated molecular dynamics simulation framework",
+      "title_zh": "基于自动化分子动力学框架生成的开放电解液数据库",
+      "doi": "10.1038/s41524-026-02093-y"
+    },
+    "gudla2021_ion_pair_lifetime_polymer_electrolytes": {
+      "title": "Importance of the Ion-Pair Lifetime in Polymer Electrolytes",
+      "title_zh": "聚合物电解质中离子对寿命的重要性",
+      "doi": "10.1021/acs.jpclett.1c02474"
+    },
+    "shao2024_ion_transport_polymer_electrolytes": {
+      "title": "Ion Transport in Polymer Electrolytes: Building New Bridges between Experiment and Molecular Simulation",
+      "title_zh": "聚合物电解质中的离子输运：连接实验与分子模拟",
+      "doi": "10.1021/acs.accounts.3c00791"
+    },
+    "shao2022_transference_number_reference_frame": {
+      "title": "Transference Number in Polymer Electrolytes: Mind the Reference-Frame Gap",
+      "title_zh": "聚合物电解质中的迁移数：注意参考系差异",
+      "doi": "10.1021/jacs.2c02389"
+    },
+    "hargreaves2023_lithium_sse_conductivity_database": {
+      "title": "A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning",
+      "title_zh": "实验锂固态电解质电导率数据库及机器学习评估",
+      "doi": "10.1038/s41524-022-00951-z"
+    },
+    "yang2026_aris_autonomous_research_harness": {
+      "title": "ARIS: Autonomous Research via Adversarial Multi-Agent Collaboration",
+      "title_zh": "ARIS：通过对抗式多智能体协作实现自主科研",
+      "doi": "10.48550/arXiv.2605.03042"
     }
   }
 }
