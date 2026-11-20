@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "as_of": "2026-11-13",
-  "catalog_count": 273,
-  "qa_count": 1092,
-  "catalog_fingerprint": "27fae8d8467c39c1bcb493cf16f83d8a1a7f6812c499d96afeb11dd42955d893",
+  "catalog_count": 285,
+  "qa_count": 1140,
+  "catalog_fingerprint": "a87e970b7a8e2cec4da8be909e2038166f447852a1ef5b7e1d30bdae689ba09b",
   "static_extension": true,
   "evidence_level": "curated_metadata",
   "entries": [
@@ -17475,6 +17475,774 @@
           ],
           "source_urls": [
             "https://doi.org/10.48550/arXiv.2605.03042"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "lian2025_chgnet_neb",
+      "doi": "10.1039/d5ta05355b",
+      "title": "High-throughput NEB for Li-ion conductor discovery via fine-tuned CHGNet potential",
+      "title_zh": "基于微调 CHGNet 势的高通量 NEB 锂离子导体筛选",
+      "qa_ids": [
+        "lian2025_chgnet_neb:overview",
+        "lian2025_chgnet_neb:methods",
+        "lian2025_chgnet_neb:limitations",
+        "lian2025_chgnet_neb:reading"
+      ],
+      "qas": [
+        {
+          "id": "lian2025_chgnet_neb:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：检验高能构型微调能否缓解通用 MLIP 对迁移势垒的低估，并用于离子导体筛选。。元数据摘要：用迁移路径上的 DFT 标注微调 CHGNet，并在 ASE 中串联 NEB 与 MD。LATP 的 MD 拟合活化能与同文 AIMD 结果接近，随后用工作流筛选低势垒导体。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ta05355b"
+          ]
+        },
+        {
+          "id": "lian2025_chgnet_neb:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：DFT、NEB、AIMD、MLIP、CHGNet、VASP、ASE。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ta05355b"
+          ]
+        },
+        {
+          "id": "lian2025_chgnet_neb:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：低 NEB 势垒本身无法说明载流子数量充足；新候选的掺杂与电导预测需要独立实验验证。数据需向作者申请。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ta05355b"
+          ]
+        },
+        {
+          "id": "lian2025_chgnet_neb:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：复现时先复核 LATP 的温度序列和 MSD 拟合窗口，再比较预训练、微调和 AIMD 的误差。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ta05355b"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "li2025_interaction_motif",
+      "doi": "10.1038/s41467-025-59955-0",
+      "title": "A path towards high lithium-metal electrode coulombic efficiency based on electrolyte interaction motif descriptor",
+      "title_zh": "用电解液相互作用描述符提高锂金属电极的库仑效率",
+      "qa_ids": [
+        "li2025_interaction_motif:overview",
+        "li2025_interaction_motif:methods",
+        "li2025_interaction_motif:limitations",
+        "li2025_interaction_motif:reading"
+      ],
+      "qas": [
+        {
+          "id": "li2025_interaction_motif:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：检验电解液离子—溶剂作用的描述符能否指导形成保护性界面并提高锂金属可逆性。。元数据摘要：经典 MD 与电子结构模拟用于分析电解液微结构及界面反应；提出的 TMOS 配方在 Li||Cu 电池中获得较高的沉积/剥离库仑效率。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-025-59955-0"
+          ]
+        },
+        {
+          "id": "li2025_interaction_motif:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：MD、AIMD、DFT、LAMMPS、CP2K、VASP、Moltemplate、PACKMOL。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-025-59955-0"
+          ]
+        },
+        {
+          "id": "li2025_interaction_motif:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：经典 MD 的结构统计依赖力场和缩放电荷；电化学效率是实测结果。适用条件包括具体配方、温度和测试电流密度。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-025-59955-0"
+          ]
+        },
+        {
+          "id": "li2025_interaction_motif:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：分开核对经典 MD 的溶剂化统计、AIMD 的反应线索和 Li||Cu 电化学验收，确保比较使用相同测试协议。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-025-59955-0"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "kottarathil2025_huckel_lis",
+      "doi": "10.1039/d5cp02052b",
+      "title": "Hückel anion based concentrated electrolytes for lithium–sulfur batteries",
+      "title_zh": "基于 Hückel 阴离子的锂硫电池浓电解液",
+      "qa_ids": [
+        "kottarathil2025_huckel_lis:overview",
+        "kottarathil2025_huckel_lis:methods",
+        "kottarathil2025_huckel_lis:limitations",
+        "kottarathil2025_huckel_lis:reading"
+      ],
+      "qas": [
+        {
+          "id": "kottarathil2025_huckel_lis:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：比较三种 Hückel 型锂盐对溶剂化、离子缔合与锂硫电池多硫化物演化的影响。。元数据摘要：用 LAMMPS 计算醚系电解液的配位，结合拉曼、黏度和电导实验。Li⁺ 在所研究配方中优先配位 DME，高浓度下三种锂盐均以接触离子对为主。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5cp02052b"
+          ]
+        },
+        {
+          "id": "kottarathil2025_huckel_lis:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：MD、LAMMPS、Raman 光谱、COSMO-RS。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5cp02052b"
+          ]
+        },
+        {
+          "id": "kottarathil2025_huckel_lis:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：电导是整体电解液性质，不能据此给出单独的 Li⁺ 迁移数。非极化力场的固定电荷缩放与 15 ns 轨迹限制了对慢过程的外推。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5cp02052b"
+          ]
+        },
+        {
+          "id": "kottarathil2025_huckel_lis:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：进阶。理由：并列复查相同浓度的 RDF/配位数、拉曼峰拆分与实测电导，区分结构证据和传输数据。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5cp02052b"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "wang2025_interfacial_reaction_electrolyte",
+      "doi": "10.1038/s41565-025-01935-y",
+      "title": "Application-driven design of non-aqueous electrolyte solutions through quantification of interfacial reactions in lithium metal batteries",
+      "title_zh": "通过定量分析界面反应设计锂金属电池非水电解液",
+      "qa_ids": [
+        "wang2025_interfacial_reaction_electrolyte:overview",
+        "wang2025_interfacial_reaction_electrolyte:methods",
+        "wang2025_interfacial_reaction_electrolyte:limitations",
+        "wang2025_interfacial_reaction_electrolyte:reading"
+      ],
+      "qas": [
+        {
+          "id": "wang2025_interfacial_reaction_electrolyte:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：用反应物和产物的定量数据解释醚系电解液在锂金属电池中的失效，并据此选择盐浓度。。元数据摘要：滴定质谱和色谱用于定量界面反应。固定电极 LAMMPS 模型解释电解液的近界面分布，DFT 模型另行分析可能的反应路径。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41565-025-01935-y"
+          ]
+        },
+        {
+          "id": "wang2025_interfacial_reaction_electrolyte:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：MD、DFT、NEB、LAMMPS、VASP、Gaussian 09、COMSOL、T-DEMS、色谱定量。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41565-025-01935-y"
+          ]
+        },
+        {
+          "id": "wang2025_interfacial_reaction_electrolyte:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：固定电极、非反应性经典 MD 只描述溶剂化和空间分布，不能直接给出法拉第反应速率或寿命。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41565-025-01935-y"
+          ]
+        },
+        {
+          "id": "wang2025_interfacial_reaction_electrolyte:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：分别核对近界面分布、反应路径和电解液消耗的数据来源，再判断定量结果能否迁移到不同电芯。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41565-025-01935-y"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "wang2025_sei_transport_pmf",
+      "doi": "10.1002/smll.202503340",
+      "title": "Unraveling Lithium-Ion Transport in Solid Electrolyte Interphase: from Composition to Interface Dynamics via Molecular Dynamics Simulations",
+      "title_zh": "用分子动力学解析固体电解质界面膜中的锂离子传输，从组成到界面动力学",
+      "qa_ids": [
+        "wang2025_sei_transport_pmf:overview",
+        "wang2025_sei_transport_pmf:methods",
+        "wang2025_sei_transport_pmf:limitations",
+        "wang2025_sei_transport_pmf:reading"
+      ],
+      "qas": [
+        {
+          "id": "wang2025_sei_transport_pmf:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：比较 Li⁺ 在电解液、有机与无机 SEI 内部和跨相界面的传输障碍。。元数据摘要：GROMACS 经典 MD 和伞形采样将体相扩散与跨相传输分开。去溶剂化使有机/无机 SEI 界面的计算势垒高于电解液/有机 SEI 界面。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1002/smll.202503340"
+          ]
+        },
+        {
+          "id": "wang2025_sei_transport_pmf:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：MD、GROMACS、Gaussian 09、PACKMOL、伞形采样、WHAM、PMF。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1002/smll.202503340"
+          ]
+        },
+        {
+          "id": "wang2025_sei_transport_pmf:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：有机 SEI 的转化率和无机 SEI 的组成都理想化处理，未包含 Li₂CO₃ 和 LiOH；结果不能直接套用到其他配方或 SEI 组成。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1002/smll.202503340"
+          ]
+        },
+        {
+          "id": "wang2025_sei_transport_pmf:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：进阶。理由：复现时分别评估每个伞形窗口收敛与 PMF 的初末态一贯性，并将跨界面自由能和体相 Arrhenius 活化能分开报告。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1002/smll.202503340"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "he2026_argyrodite_li_mlmd",
+      "doi": "10.1016/j.est.2026.122769",
+      "title": "Insights into interfacial reactions between Li-argyrodite solid electrolyte and lithium metal via machine learning-based molecular dynamics",
+      "title_zh": "用机器学习分子动力学解析硫银锗矿型固态电解质与金属锂的界面反应",
+      "qa_ids": [
+        "he2026_argyrodite_li_mlmd:overview",
+        "he2026_argyrodite_li_mlmd:methods",
+        "he2026_argyrodite_li_mlmd:limitations",
+        "he2026_argyrodite_li_mlmd:reading"
+      ],
+      "qas": [
+        {
+          "id": "he2026_argyrodite_li_mlmd:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：描述锂与硫银锗矿型 Li₆PS₅Cl 接触后，早期界面反应和锂迁移如何随时间发展。。元数据摘要：作者用 VASP AIMD 训练机器学习势，再用 DeePMD/LAMMPS 模拟对称界面。300 K 下约 0.2 ns 后进入扩散斜率较稳定的阶段。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1016/j.est.2026.122769"
+          ]
+        },
+        {
+          "id": "he2026_argyrodite_li_mlmd:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：AIMD、MLIP、MLMD、VASP、DeePMD-kit、LAMMPS、QEq。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1016/j.est.2026.122769"
+          ]
+        },
+        {
+          "id": "he2026_argyrodite_li_mlmd:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：文中援引的实验区间为 6.0×10⁻⁵ 至 1.1×10⁻³ S/cm，模拟电导高于该区间。早期对称平面模型只覆盖纳秒内演化及无外场条件。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1016/j.est.2026.122769"
+          ]
+        },
+        {
+          "id": "he2026_argyrodite_li_mlmd:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：复现时先核对 Fig. 4(d) 的 MSD 分段，再比对导电区取样、电荷模型和相应实验区间。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1016/j.est.2026.122769"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "pires2026_polyester_sspe",
+      "doi": "10.1021/acsaem.6c02051",
+      "title": "Weakly Coordinating Polyester Enables High Performance Semi-solid Polymer Electrolyte for Li–Metal Batteries",
+      "title_zh": "弱配位聚酯半固态电解质用于锂金属电池",
+      "qa_ids": [
+        "pires2026_polyester_sspe:overview",
+        "pires2026_polyester_sspe:methods",
+        "pires2026_polyester_sspe:limitations",
+        "pires2026_polyester_sspe:reading"
+      ],
+      "qas": [
+        {
+          "id": "pires2026_polyester_sspe:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：比较聚酯与聚醚基体如何改变塑化剂富集体系的实际锂配位与离子传输。。元数据摘要：DFT 比较局域结合，MD 比较实际配位结构，输运由实验测量。相同 SN/聚合物比例下，PCLDA 的 Li⁺ 第一溶剂化壳层更偏向 SN，25 °C 电导也高于 PEGDA 对照。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acsaem.6c02051"
+          ]
+        },
+        {
+          "id": "pires2026_polyester_sspe:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：DFT、MD、FTIR、NMR、电导实验。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acsaem.6c02051"
+          ]
+        },
+        {
+          "id": "pires2026_polyester_sspe:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：结论与 SN 塑化剂、LiTFSI 和添加剂体系有关。主文用于比较机制，独立复现需读补充材料的参数；此记录仅登记主文明确的方法。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acsaem.6c02051"
+          ]
+        },
+        {
+          "id": "pires2026_polyester_sspe:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：进阶。理由：复现时把孤立配位簇的 DFT 结合能与凝聚相配位数分开，分别检查聚合物几何约束和实测电导。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1021/acsaem.6c02051"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "burov2026_ga_llzo_transfer",
+      "doi": "10.1103/mttl-2jq2",
+      "title": "Charge-transfer mechanisms at Li/Ga-doped Li₇La₃Zr₂O₁₂ (LLZO) interfaces from machine learning assisted molecular dynamics",
+      "title_zh": "机器学习分子动力学揭示 Li/掺 Ga 石榴石界面的电荷转移机制",
+      "qa_ids": [
+        "burov2026_ga_llzo_transfer:overview",
+        "burov2026_ga_llzo_transfer:methods",
+        "burov2026_ga_llzo_transfer:limitations",
+        "burov2026_ga_llzo_transfer:reading"
+      ],
+      "qas": [
+        {
+          "id": "burov2026_ga_llzo_transfer:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：区分固态电解质中的空位迁移与跨 Li/Ga-LLZO 界面的真实电荷转移，估算理想接触的内禀阻力。。元数据摘要：用 DFT 参考数据训练 MTP，再在 LAMMPS 中模拟 Li/Ga-LLZO；用驻留时间阈值排除跨界面附近的往返涨落，提取转移活化能。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1103/mttl-2jq2"
+          ]
+        },
+        {
+          "id": "burov2026_ga_llzo_transfer:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：DFT、MLIP、MLMD、MTP、VASP、LAMMPS。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1103/mttl-2jq2"
+          ]
+        },
+        {
+          "id": "burov2026_ga_llzo_transfer:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：这是理想接触界面的内禀阻力和零过电位模型；并未覆盖多晶表面、接触孔隙、反应层及外加极化。引用量化结果时区分作者稿的页码与期刊题录。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1103/mttl-2jq2"
+          ]
+        },
+        {
+          "id": "burov2026_ga_llzo_transfer:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：先复现驻留时间下限对 Arrhenius 拟合的影响，再对比真实界面的实验阻抗，不把模型内禀电阻等同于样品总阻抗。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1103/mttl-2jq2"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "yin2026_concentrated_edl",
+      "doi": "10.1038/s41467-026-75999-2",
+      "title": "Nonmonotonic Screening and Solvation Dynamics of the Electrical Double Layer in Concentrated Lithium Salt Electrolytes",
+      "title_zh": "浓锂盐电解液双电层的非单调屏蔽与溶剂化动力学",
+      "qa_ids": [
+        "yin2026_concentrated_edl:overview",
+        "yin2026_concentrated_edl:methods",
+        "yin2026_concentrated_edl:limitations",
+        "yin2026_concentrated_edl:reading"
+      ],
+      "qas": [
+        {
+          "id": "yin2026_concentrated_edl:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：盐浓度改变时，石墨/醚系电解液界面的屏蔽和溶剂化交换如何变化？。元数据摘要：用恒电势经典 MD、机器学习 MD 与原位光谱区分界面双电层和体相配位动力学。高盐配方的阴离子交换与较可逆的石墨嵌入相联系。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-026-75999-2"
+          ]
+        },
+        {
+          "id": "yin2026_concentrated_edl:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：MD、MLMD、MLIP、LAMMPS、原位间隙增强拉曼、恒电势模拟。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-026-75999-2"
+          ]
+        },
+        {
+          "id": "yin2026_concentrated_edl:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：配位分数受轨迹长度、定义与力场偏差影响。论文把实验容量与多种界面机制相联系，MD 只提供分子层面的证据。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-026-75999-2"
+          ]
+        },
+        {
+          "id": "yin2026_concentrated_edl:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：复现时分别跟踪溶剂/阴离子驻留时间、界面采样厚度和实际电化学倍率。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1038/s41467-026-75999-2"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "fang2026_negative_li_transference",
+      "doi": "10.1039/d5ta05739f",
+      "title": "Molecular origin of negative lithium transference in electrolytes with star-shaped multivalent anions",
+      "title_zh": "星形多价阴离子电解液中锂迁移数为负的分子起源",
+      "qa_ids": [
+        "fang2026_negative_li_transference:overview",
+        "fang2026_negative_li_transference:methods",
+        "fang2026_negative_li_transference:limitations",
+        "fang2026_negative_li_transference:reading"
+      ],
+      "qas": [
+        {
+          "id": "fang2026_negative_li_transference:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：体积较大的星形多价阴离子为何没有提高 Li⁺ 的溶剂参考系迁移数？。元数据摘要：GROMACS 计算 Onsager 输运系数并与既有实验比较。Li⁺ 与多价阴离子关联较强，使迁移数在多数浓度约为 −1，在 0.4 M 左右接近零。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ta05739f"
+          ]
+        },
+        {
+          "id": "fang2026_negative_li_transference:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：MD、GROMACS、Gaussian、Onsager 输运系数、离子关联。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ta05739f"
+          ]
+        },
+        {
+          "id": "fang2026_negative_li_transference:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：参考系严格定义的迁移数不可用仅基于自扩散的理想比值或稳态电流分数替代。实验点是该文从前期研究重绘的数据。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ta05739f"
+          ]
+        },
+        {
+          "id": "fang2026_negative_li_transference:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：进阶。理由：复现时保留溶剂参考系及关联项符号，并把 MD 统计误差和既有实验误差单独报告。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ta05739f"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "nguyen2025_libo2_vacancy_coatings",
+      "doi": "10.1039/d5ma00458f",
+      "title": "Vacancy-induced modification of the electronic band structure of LiBO₂ materials as cathode surface coatings for lithium-ion batteries",
+      "title_zh": "空位对锂离子电池正极 LiBO₂ 涂层材料电子能带的影响",
+      "qa_ids": [
+        "nguyen2025_libo2_vacancy_coatings:overview",
+        "nguyen2025_libo2_vacancy_coatings:methods",
+        "nguyen2025_libo2_vacancy_coatings:limitations",
+        "nguyen2025_libo2_vacancy_coatings:reading"
+      ],
+      "qas": [
+        {
+          "id": "nguyen2025_libo2_vacancy_coatings:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：区分相同种类的晶格空位对单斜相与四方相 LiBO₂ 电子能带的影响。。元数据摘要：WIEN2k/PBE 计算表明缺陷对能带的影响依赖晶型。单斜相 B 空位模型出现缺陷带，作者由其带顶到导带底估算能量差。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ma00458f"
+          ]
+        },
+        {
+          "id": "nguyen2025_libo2_vacancy_coatings:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：DFT、WIEN2k、FP-LAPW。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ma00458f"
+          ]
+        },
+        {
+          "id": "nguyen2025_libo2_vacancy_coatings:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：晶胞模型属于高缺陷浓度，PBE 会低估绝对带隙，且计算不含完整正极/涂层界面。约 2 eV 是特定激发路径的估计。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ma00458f"
+          ]
+        },
+        {
+          "id": "nguyen2025_libo2_vacancy_coatings:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：进阶。理由：复现时把本征带隙、缺陷体系的带间间距与缺陷带到导带底的估计分别报告。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1039/d5ma00458f"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "koester2026_naco2_phase_dynamics",
+      "doi": "10.1103/1n3w-5q5n",
+      "title": "Computational studies on O2-P2 phase-transition dynamics in layered-oxide sodium-ion cathode materials",
+      "title_zh": "层状氧化物钠离子正极 O2→P2 相变动力学的计算研究",
+      "qa_ids": [
+        "koester2026_naco2_phase_dynamics:overview",
+        "koester2026_naco2_phase_dynamics:methods",
+        "koester2026_naco2_phase_dynamics:limitations",
+        "koester2026_naco2_phase_dynamics:reading"
+      ],
+      "qas": [
+        {
+          "id": "koester2026_naco2_phase_dynamics:overview",
+          "intent": "overview",
+          "question": "这篇论文在目录中的定位和主题是什么？",
+          "answer": "目录定位：区分层状钠正极 O2→P2 的静态滑移势垒与动态相变活化能，并分析堆叠变化对 Na 扩散的影响。。元数据摘要：作者用 DFT 数据拟合经典势，在 LAMMPS 中模拟层滑移与钠扩散。正极的 O2→P2 相变在模型中逐层发生，P2 堆叠阶段的 Na 扩散更快。。",
+          "source_fields": [
+            "role",
+            "summary"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1103/1n3w-5q5n"
+          ]
+        },
+        {
+          "id": "koester2026_naco2_phase_dynamics:methods",
+          "intent": "methods",
+          "question": "目录记录了哪些方法或工具？",
+          "answer": "目录列出的方法/工具标签：DFT、MD、VASP、LAMMPS、经典势拟合。",
+          "source_fields": [
+            "methods"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1103/1n3w-5q5n"
+          ]
+        },
+        {
+          "id": "koester2026_naco2_phase_dynamics:limitations",
+          "intent": "limitations",
+          "question": "从公开元数据看，这篇论文有哪些范围限制或需要核对之处？",
+          "answer": "范围提示：经典势针对 NaₓCoO₂ 固定组分动力学拟合，未考虑不同 Na 含量间的氧化能，不能据此模拟完整电化学充放电。",
+          "source_fields": [
+            "scope_note"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1103/1n3w-5q5n"
+          ]
+        },
+        {
+          "id": "koester2026_naco2_phase_dynamics:reading",
+          "intent": "reading",
+          "question": "这篇论文在学习路线中应如何阅读，为什么？",
+          "answer": "阅读路线：前沿。理由：先用同一 Na 含量核对静态层滑移路径与动态时间尺度，再按每段堆叠拟合 MSD，不对整条跨相轨迹使用单一斜率。",
+          "source_fields": [
+            "learning_route.stage",
+            "learning_route.rationale"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1103/1n3w-5q5n"
           ]
         }
       ]

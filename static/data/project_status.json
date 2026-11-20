@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-13",
-  "papers": 273,
-  "recent_2023_onward": 155,
+  "as_of": "2026-11-21",
+  "papers": 285,
+  "recent_2023_onward": 167,
   "publication_years": {
     "1964": 1,
     "1965": 1,
@@ -38,15 +38,15 @@
     "2022": 20,
     "2023": 22,
     "2024": 43,
-    "2025": 58,
-    "2026": 32
+    "2025": 64,
+    "2026": 38
   },
   "publication_types": {
     "Account": 1,
-    "Article": 73,
+    "Article": 84,
     "Commentary": 2,
     "Communication": 1,
-    "Letter": 2,
+    "Letter": 3,
     "Mini Review": 1,
     "Paper": 131,
     "Perspective": 6,
@@ -62,14 +62,14 @@
   },
   "wos_records": 16,
   "tags": {
-    "DFT": 111,
-    "MD": 88,
+    "DFT": 118,
+    "MD": 97,
     "MS": 8,
-    "VASP": 32,
+    "VASP": 38,
     "方法论文": 69,
     "综述": 32,
     "观点": 6,
-    "进展论文": 204
+    "进展论文": 216
   },
   "datasets": {
     "train": {
@@ -117,8 +117,8 @@
   },
   "dataset_rows": 1703,
   "static_qa": {
-    "catalog_papers": 273,
-    "rows": 1092,
+    "catalog_papers": 285,
+    "rows": 1140,
     "evidence_level": "curated_metadata"
   },
   "research_knowledge": {
@@ -131,8 +131,8 @@
     "reference_papers": 17
   },
   "paper_insights": {
-    "cards": 45,
-    "condition_cards": 21
+    "cards": 57,
+    "condition_cards": 33
   },
   "training_smoke": null,
   "model_status": "Prepared QA datasets retained; no model retraining performed for this release.",

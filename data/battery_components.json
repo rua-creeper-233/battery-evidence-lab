@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-25",
+  "as_of": "2026-11-21",
   "note": "结构以常见石墨负极、液态电解液锂离子电池为例，非按比例；文献也覆盖其他电极、聚合物/无机固态电解质及钠体系，并不都采用图中结构。分类根据已核验题录与库内简述人工选读，不代替逐篇全文审阅；跨部位论文不重复计入主库。",
   "sources": [
     {
@@ -65,6 +65,18 @@
           "doi": "10.7498/aps.70.20210227",
           "relation": "direct",
           "reason": "中文原文：稀土掺杂磷酸铁锂的电子结构与性能机制。"
+        },
+        {
+          "paper_id": "nguyen2025_libo2_vacancy_coatings",
+          "doi": "10.1039/d5ma00458f",
+          "relation": "related",
+          "reason": "WIEN2k/PBE 计算表明缺陷对能带的影响依赖晶型。单斜相 B 空位模型出现缺陷带，作者由其带顶到导带底估算能量差。"
+        },
+        {
+          "paper_id": "koester2026_naco2_phase_dynamics",
+          "doi": "10.1103/1n3w-5q5n",
+          "relation": "direct",
+          "reason": "作者用 DFT 数据拟合经典势，在 LAMMPS 中模拟层滑移与钠扩散。正极的 O2→P2 相变在模型中逐层发生，P2 堆叠阶段的 Na 扩散更快。"
         }
       ]
     },
@@ -209,6 +221,66 @@
           "doi": "10.7498/aps.71.20221050",
           "relation": "direct",
           "reason": "中文原文：卤化物固态电解质的阳离子、缺陷与迁移。"
+        },
+        {
+          "paper_id": "lian2025_chgnet_neb",
+          "doi": "10.1039/d5ta05355b",
+          "relation": "direct",
+          "reason": "用迁移路径上的 DFT 标注微调 CHGNet，并在 ASE 中串联 NEB 与 MD。LATP 的 MD 拟合活化能与同文 AIMD 结果接近，随后用工作流筛选低势垒导体。"
+        },
+        {
+          "paper_id": "li2025_interaction_motif",
+          "doi": "10.1038/s41467-025-59955-0",
+          "relation": "direct",
+          "reason": "经典 MD 与电子结构模拟用于分析电解液微结构及界面反应；提出的 TMOS 配方在 Li||Cu 电池中获得较高的沉积/剥离库仑效率。"
+        },
+        {
+          "paper_id": "kottarathil2025_huckel_lis",
+          "doi": "10.1039/d5cp02052b",
+          "relation": "direct",
+          "reason": "用 LAMMPS 计算醚系电解液的配位，结合拉曼、黏度和电导实验。Li⁺ 在所研究配方中优先配位 DME，高浓度下三种锂盐均以接触离子对为主。"
+        },
+        {
+          "paper_id": "wang2025_interfacial_reaction_electrolyte",
+          "doi": "10.1038/s41565-025-01935-y",
+          "relation": "direct",
+          "reason": "滴定质谱和色谱用于定量界面反应。固定电极 LAMMPS 模型解释电解液的近界面分布，DFT 模型另行分析可能的反应路径。"
+        },
+        {
+          "paper_id": "wang2025_sei_transport_pmf",
+          "doi": "10.1002/smll.202503340",
+          "relation": "direct",
+          "reason": "GROMACS 经典 MD 和伞形采样将体相扩散与跨相传输分开。去溶剂化使有机/无机 SEI 界面的计算势垒高于电解液/有机 SEI 界面。"
+        },
+        {
+          "paper_id": "he2026_argyrodite_li_mlmd",
+          "doi": "10.1016/j.est.2026.122769",
+          "relation": "direct",
+          "reason": "作者用 VASP AIMD 训练机器学习势，再用 DeePMD/LAMMPS 模拟对称界面。300 K 下约 0.2 ns 后进入扩散斜率较稳定的阶段。"
+        },
+        {
+          "paper_id": "pires2026_polyester_sspe",
+          "doi": "10.1021/acsaem.6c02051",
+          "relation": "direct",
+          "reason": "DFT 比较局域结合，MD 比较实际配位结构，输运由实验测量。相同 SN/聚合物比例下，PCLDA 的 Li⁺ 第一溶剂化壳层更偏向 SN，25 °C 电导也高于 PEGDA 对照。"
+        },
+        {
+          "paper_id": "burov2026_ga_llzo_transfer",
+          "doi": "10.1103/mttl-2jq2",
+          "relation": "direct",
+          "reason": "用 DFT 参考数据训练 MTP，再在 LAMMPS 中模拟 Li/Ga-LLZO；用驻留时间阈值排除跨界面附近的往返涨落，提取转移活化能。"
+        },
+        {
+          "paper_id": "yin2026_concentrated_edl",
+          "doi": "10.1038/s41467-026-75999-2",
+          "relation": "direct",
+          "reason": "用恒电势经典 MD、机器学习 MD 与原位光谱区分界面双电层和体相配位动力学。高盐配方的阴离子交换与较可逆的石墨嵌入相联系。"
+        },
+        {
+          "paper_id": "fang2026_negative_li_transference",
+          "doi": "10.1039/d5ta05739f",
+          "relation": "direct",
+          "reason": "GROMACS 计算 Onsager 输运系数并与既有实验比较。Li⁺ 与多价阴离子关联较强，使迁移数在多数浓度约为 −1，在 0.4 M 左右接近零。"
         }
       ]
     },
@@ -407,6 +479,42 @@
           "doi": "10.19799/j.cnki.2095-4239.2024.0586",
           "relation": "direct",
           "reason": "中文综述：锂金属 SEI 的形成与生长。"
+        },
+        {
+          "paper_id": "li2025_interaction_motif",
+          "doi": "10.1038/s41467-025-59955-0",
+          "relation": "direct",
+          "reason": "经典 MD 与电子结构模拟用于分析电解液微结构及界面反应；提出的 TMOS 配方在 Li||Cu 电池中获得较高的沉积/剥离库仑效率。"
+        },
+        {
+          "paper_id": "wang2025_interfacial_reaction_electrolyte",
+          "doi": "10.1038/s41565-025-01935-y",
+          "relation": "direct",
+          "reason": "滴定质谱和色谱用于定量界面反应。固定电极 LAMMPS 模型解释电解液的近界面分布，DFT 模型另行分析可能的反应路径。"
+        },
+        {
+          "paper_id": "wang2025_sei_transport_pmf",
+          "doi": "10.1002/smll.202503340",
+          "relation": "direct",
+          "reason": "GROMACS 经典 MD 和伞形采样将体相扩散与跨相传输分开。去溶剂化使有机/无机 SEI 界面的计算势垒高于电解液/有机 SEI 界面。"
+        },
+        {
+          "paper_id": "he2026_argyrodite_li_mlmd",
+          "doi": "10.1016/j.est.2026.122769",
+          "relation": "direct",
+          "reason": "作者用 VASP AIMD 训练机器学习势，再用 DeePMD/LAMMPS 模拟对称界面。300 K 下约 0.2 ns 后进入扩散斜率较稳定的阶段。"
+        },
+        {
+          "paper_id": "burov2026_ga_llzo_transfer",
+          "doi": "10.1103/mttl-2jq2",
+          "relation": "direct",
+          "reason": "用 DFT 参考数据训练 MTP，再在 LAMMPS 中模拟 Li/Ga-LLZO；用驻留时间阈值排除跨界面附近的往返涨落，提取转移活化能。"
+        },
+        {
+          "paper_id": "yin2026_concentrated_edl",
+          "doi": "10.1038/s41467-026-75999-2",
+          "relation": "direct",
+          "reason": "用恒电势经典 MD、机器学习 MD 与原位光谱区分界面双电层和体相配位动力学。高盐配方的阴离子交换与较可逆的石墨嵌入相联系。"
         }
       ]
     },

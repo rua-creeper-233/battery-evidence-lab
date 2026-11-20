@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-28",
+  "as_of": "2026-11-21",
   "methodology": {
     "reference_title": "面向AI_for_Science的科技文献数据集体系构建研究——以有机太阳能电池领域为例",
     "reference_url": "https://link.cnki.net/urlid/10.1478.G2.20260303.1619.002",
@@ -4503,6 +4503,798 @@
         ]
       },
       "relations": []
+    },
+    "lian2025_chgnet_neb": {
+      "paper_id": "lian2025_chgnet_neb",
+      "doi": "10.1039/d5ta05355b",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://pubs.rsc.org/en/content/articlepdf/2025/ta/d5ta05355b",
+          "scope": "article",
+          "locator": "印刷页 34925，§4 Methods；印刷页 34919，§2.1、图 1"
+        },
+        {
+          "id": "results",
+          "url": "https://pubs.rsc.org/en/content/articlepdf/2025/ta/d5ta05355b",
+          "scope": "article",
+          "locator": "印刷页 34923–34924，§§2.4–2.5、图 5(d)；低势垒筛选见表 S3"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "VASP 使用 PAW/PBE 产生 DFT 标注；ASE 调用 CHGNet 做 NEB 与 NVT MD，CHGNet MD 的时间步长为 1 fs，参考 AIMD 为 2 fs。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "文章用微调 CHGNet 估得 LATP 扩散活化能 0.21 eV，同文 AIMD 为 0.22 eV；筛选识别了 66 个预测迁移势垒低于 0.5 eV 的化合物。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "低 NEB 势垒本身无法说明载流子数量充足；新候选的掺杂与电导预测需要独立实验验证。数据需向作者申请。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时先复核 LATP 的温度序列和 MSD 拟合窗口，再比较预训练、微调和 AIMD 的误差。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "LATP 对比基于多温度扩散系数的 Arrhenius 拟合，高温和低温轨迹的采样充分性都影响外推。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "li2025_interaction_motif": {
+      "paper_id": "li2025_interaction_motif",
+      "doi": "10.1038/s41467-025-59955-0",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://www.nature.com/articles/s41467-025-59955-0.pdf",
+          "scope": "article",
+          "locator": "PDF 第 11–12 页，Methods，Classical molecular dynamics 与 Ab initio molecular dynamics"
+        },
+        {
+          "id": "results",
+          "url": "https://www.nature.com/articles/s41467-025-59955-0.pdf",
+          "scope": "article",
+          "locator": "PDF 第 6–7 页，Li metal reversibility and battery performance、图 4(a)"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "用 LAMMPS 和 OPLS-AA 统计结构，DME 与 TMOS 系列各使用经过比较的离子电荷缩放；Drude 极化 MD、VASP 和 CP2K AIMD 分析不同问题。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "LiFSI/TMOS/1,3,5-三氟苯配方在图 4(a) 所示测试中的锂沉积/剥离库仑效率约为 99.75%。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "经典 MD 的结构统计依赖力场和缩放电荷；电化学效率是实测结果。适用条件包括具体配方、温度和测试电流密度。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "分开核对经典 MD 的溶剂化统计、AIMD 的反应线索和 Li||Cu 电化学验收，确保比较使用相同测试协议。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "经典 MD 在 298 K 生产采样。效率来自 25 °C、0.5 mA cm⁻² 的 Li||Cu 电池改良 Aurbach 测试。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "kottarathil2025_huckel_lis": {
+      "paper_id": "kottarathil2025_huckel_lis",
+      "doi": "10.1039/d5cp02052b",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://research.chalmers.se/publication/548101/file/548101_Fulltext.pdf",
+          "scope": "article",
+          "locator": "Chalmers 存档 PDF 第 4 页（含封面），Molecular simulations；补充材料第 2 页"
+        },
+        {
+          "id": "results",
+          "url": "https://research.chalmers.se/publication/548101/file/548101_Fulltext.pdf",
+          "scope": "article",
+          "locator": "Chalmers 存档 PDF 第 5–6 页（含封面），图 2–4 及离子缔合讨论"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "OPLS-AA 体系经 800 K 采样后降至 300 K 平衡，随后运行 15 ns 的 NVT 生产轨迹，用 PPPM 处理长程静电。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "LiHDI 配方在所比较浓度下均以接触离子对为主，拉曼解析得到约六成；各盐的电导与黏度随浓度和温度变化。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "电导是整体电解液性质，不能据此给出单独的 Li⁺ 迁移数。非极化力场的固定电荷缩放与 15 ns 轨迹限制了对慢过程的外推。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "并列复查相同浓度的 RDF/配位数、拉曼峰拆分与实测电导，区分结构证据和传输数据。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "经典 MD 比较 0.3、0.6、1.0 和 2.0 M；拉曼离子缔合分数来自光谱峰拟合，不能当成轨迹统计。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "wang2025_interfacial_reaction_electrolyte": {
+      "paper_id": "wang2025_interfacial_reaction_electrolyte",
+      "doi": "10.1038/s41565-025-01935-y",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://www.nature.com/articles/s41565-025-01935-y.pdf",
+          "scope": "article",
+          "locator": "PDF 附后 Methods，MD simulation 与 Computational chemistry simulations；补充图 12"
+        },
+        {
+          "id": "results",
+          "url": "https://www.nature.com/articles/s41565-025-01935-y.pdf",
+          "scope": "article",
+          "locator": "印刷页 1034 摘要；正文图 1–3 的消耗定量与界面反应分析"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "两片固定 Li(100) 电极间构建 LiFSI/DME/TTE，经典 MD 采用 OPLS-AA 和 313 K NVT 恒电势模拟；DFT 表面反应计算由 VASP 完成。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者将持续的 LiFSI 分解与电解液离子耗竭联系起来；改进配方的薄锂/NMC811 单层软包实测 483 圈后容量保留约 77%。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "固定电极、非反应性经典 MD 只描述溶剂化和空间分布，不能直接给出法拉第反应速率或寿命。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "分别核对近界面分布、反应路径和电解液消耗的数据来源，再判断定量结果能否迁移到不同电芯。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "MD 盒的电极间距 144 Å，电极电势设为 −5 和 +5 V。软包循环在 25 °C、0.2 C 充电与 1 C 放电条件下测量。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "wang2025_sei_transport_pmf": {
+      "paper_id": "wang2025_sei_transport_pmf",
+      "doi": "10.1002/smll.202503340",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/smll.202503340",
+          "scope": "article",
+          "locator": "PDF 第 6 页，Experimental Section，GROMACS 2024 与伞形采样设置"
+        },
+        {
+          "id": "results",
+          "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/smll.202503340",
+          "scope": "article",
+          "locator": "PDF 第 4 页图 3（体相扩散）、第 5 页图 4(a–b)（跨相传输）"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "用 GAFF、OPLS-AA 和 RESP2 参数化，构建体相及跨相模型；用 GROMACS 的伞形采样和 WHAM 构建 PMF。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "从基准电解液进入 30% 转化有机 SEI 需要约 3 kcal/mol，从该有机 SEI 进入非晶 Li₂O 需要约 10 kcal/mol。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "有机 SEI 的转化率和无机 SEI 的组成都理想化处理，未包含 Li₂CO₃ 和 LiOH；结果不能直接套用到其他配方或 SEI 组成。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时分别评估每个伞形窗口收敛与 PMF 的初末态一贯性，并将跨界面自由能和体相 Arrhenius 活化能分开报告。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "体相 300 K、1 bar 生产轨迹为 100 ns；两类界面分别使用 100 个伞形窗口。基准电解液为 EC:DMC=3:7、1.04 m LiPF₆。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "he2026_argyrodite_li_mlmd": {
+      "paper_id": "he2026_argyrodite_li_mlmd",
+      "doi": "10.1016/j.est.2026.122769",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://discovery.ucl.ac.uk/id/eprint/10226358/1/Luo%202026%20JES%20MLMD.pdf",
+          "scope": "article",
+          "locator": "UCL 公开版 PDF 第 6–7 页，§§3.1.1–3.1.3"
+        },
+        {
+          "id": "results",
+          "url": "https://discovery.ucl.ac.uk/id/eprint/10226358/1/Luo%202026%20JES%20MLMD.pdf",
+          "scope": "article",
+          "locator": "UCL 公开版 PDF 第 3 页准稳态讨论、第 6 页图 4(d)"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "VASP AIMD 为 Li、Li₆PS₅Cl 和界面构型提供参考；用 DeePMD-kit 与 LAMMPS 运行 5289 原子对称体系，QEq 估计局部电荷。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "300 K 后段准稳态，论文报告 Li 扩散系数为 1.13×10⁻⁶ cm²/s，对应模拟电导率 8.47×10⁻³ S/cm。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "文中援引的实验区间为 6.0×10⁻⁵ 至 1.1×10⁻³ S/cm，模拟电导高于该区间。早期对称平面模型只覆盖纳秒内演化及无外场条件。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时先核对 Fig. 4(d) 的 MSD 分段，再比对导电区取样、电荷模型和相应实验区间。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "模拟设置 300 或 350 K、NVT、1 fs 步长，使用三维周期边界，模型无外加电场。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "pires2026_polyester_sspe": {
+      "paper_id": "pires2026_polyester_sspe",
+      "doi": "10.1021/acsaem.6c02051",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3ac34213-373d-4dea-908f-400d62face69/content",
+          "scope": "article",
+          "locator": "ETH 存档 PDF 第 3–4 页（含封面），图 1(d) 及 DFT/MD 配位讨论；补充说明 2"
+        },
+        {
+          "id": "results",
+          "url": "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3ac34213-373d-4dea-908f-400d62face69/content",
+          "scope": "article",
+          "locator": "ETH 存档 PDF 第 4–5 页（含封面），Transport Properties 与图 2(a)"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "用 DFT 比较 Li⁺ 配位簇，并用 MD 统计配位数。计算复现所需的具体 MD 设置见补充说明 2。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "PCLDA–SN 的测量电导约 2 mS/cm，PEGDA–SN 约 0.3 mS/cm。MD 对 PCLDA–SN 得到的 SN 配位数为 1.57，PCL 片段为 0.54。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "结论与 SN 塑化剂、LiTFSI 和添加剂体系有关。主文用于比较机制，独立复现需读补充材料的参数；此记录仅登记主文明确的方法。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时把孤立配位簇的 DFT 结合能与凝聚相配位数分开，分别检查聚合物几何约束和实测电导。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "比较 PCLDA–SN 与 PEGDA–SN 时保持 SN/聚合物质量比一致；所列两项电导均为 25 °C 实测。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "burov2026_ga_llzo_transfer": {
+      "paper_id": "burov2026_ga_llzo_transfer",
+      "doi": "10.1103/mttl-2jq2",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://arxiv.org/pdf/2606.07772v2",
+          "scope": "article",
+          "locator": "作者 arXiv v2 PDF 第 11–12 页，DFT、MTP 与 MLMD 方法"
+        },
+        {
+          "id": "results",
+          "url": "https://arxiv.org/pdf/2606.07772v2",
+          "scope": "article",
+          "locator": "作者 arXiv v2 PDF 第 6–7、9–10 页，表 I、图 7–8"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "VASP/PBE 提供 DFT 参考，训练矩张量势后用 LAMMPS 运行 MLMD，改变跨界面驻留时间门槛并检查活化能收敛。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "作者稿的 Li/Ga-LLZO 活化能为 167 ± 18 meV，低于同文 Ga-LLZO 体相空位迁移活化能约 200 meV。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "这是理想接触界面的内禀阻力和零过电位模型；并未覆盖多晶表面、接触孔隙、反应层及外加极化。引用量化结果时区分作者稿的页码与期刊题录。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先复现驻留时间下限对 Arrhenius 拟合的影响，再对比真实界面的实验阻抗，不把模型内禀电阻等同于样品总阻抗。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "理想 Li/Ga-LLZO 单一取向，计算采用恒电荷、零过电位；驻留时间阈值增加至 2.8 ns 检查收敛。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "yin2026_concentrated_edl": {
+      "paper_id": "yin2026_concentrated_edl",
+      "doi": "10.1038/s41467-026-75999-2",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://publications.rwth-aachen.de/record/1040588/files/1040588.pdf",
+          "scope": "article",
+          "locator": "RWTH 公开版 PDF 第 9–11 页，Calculation methods / Simulation Protocol"
+        },
+        {
+          "id": "results",
+          "url": "https://publications.rwth-aachen.de/record/1040588/files/1040588.pdf",
+          "scope": "article",
+          "locator": "RWTH 公开版 PDF 第 7–8 页，图 4(f–g) 与循环结果"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "用 LAMMPS 做恒电势经典 MD 和独立的 MLMD。经典界面模拟使用 300 K、2 fs 步长，电极电荷随构型调整。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "LiFSI:G4 = 1:1 的石墨||Li 电池在所给循环条件下 100 圈后实测脱锂容量约 320 mAh/g；低盐对照的可逆容量显著较低。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "配位分数受轨迹长度、定义与力场偏差影响。论文把实验容量与多种界面机制相联系，MD 只提供分子层面的证据。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时分别跟踪溶剂/阴离子驻留时间、界面采样厚度和实际电化学倍率。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "经典界面先在 0 V 平衡 10 ns，再在不同电势各取 10 ns 轨迹；电极设定势 0、0.5、1.0 V 对应模型电池电压 0、1、2 V。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "fang2026_negative_li_transference": {
+      "paper_id": "fang2026_negative_li_transference",
+      "doi": "10.1039/d5ta05739f",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://www.osti.gov/pages/servlets/purl/3012718",
+          "scope": "article",
+          "locator": "OSTI 收录 PDF，Computational methods，分子模型及 GROMACS 2022 生产模拟"
+        },
+        {
+          "id": "results",
+          "url": "https://www.osti.gov/pages/servlets/purl/3012718",
+          "scope": "article",
+          "locator": "OSTI 收录 PDF，Cation transference，图 3(a–b)"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "用粗粒化 POSS 核与全原子侧链的混合表示，在 GROMACS 2022 中于 303 K、1 bar 运行 100 ns 生产轨迹，每个浓度有四次独立模拟。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "图 3 所比较的多数浓度下，溶剂参考系 Li⁺ 迁移数约为 −1；0.4 M 附近接近零，模拟和文章援引的实验均出现该趋势。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "参考系严格定义的迁移数不可用仅基于自扩散的理想比值或稳态电流分数替代。实验点是该文从前期研究重绘的数据。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时保留溶剂参考系及关联项符号，并把 MD 统计误差和既有实验误差单独报告。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "迁移数使用溶剂速度参考系；0.4 M 及 0.1–0.8 M 范围指 Li⁺ 摩尔浓度。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "nguyen2025_libo2_vacancy_coatings": {
+      "paper_id": "nguyen2025_libo2_vacancy_coatings",
+      "doi": "10.1039/d5ma00458f",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://pubs.rsc.org/en/content/articlepdf/2025/ma/d5ma00458f",
+          "scope": "article",
+          "locator": "RSC 出版 PDF，§2 Computational methods，图 1 与计算方法"
+        },
+        {
+          "id": "results",
+          "url": "https://pubs.rsc.org/en/content/articlepdf/2025/ma/d5ma00458f",
+          "scope": "article",
+          "locator": "RSC 出版 PDF，§3.2，图 3(a,c)"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "对本征和单一中性空位晶胞做全电子 FP-LAPW 计算，比较单斜和四方晶型的高对称路径能带。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "本征单斜 LiBO₂ 的 PBE 直接带隙为 5.8 eV；B 空位单斜结构中，作者估算从缺陷带顶到导带底约为 2 eV。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "晶胞模型属于高缺陷浓度，PBE 会低估绝对带隙，且计算不含完整正极/涂层界面。约 2 eV 是特定激发路径的估计。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "复现时把本征带隙、缺陷体系的带间间距与缺陷带到导带底的估计分别报告。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "每个 1×1×1 超胞只取一个中性空位；B 空位模型的组成参数 y=0.25，属于高缺陷浓度。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
+    },
+    "koester2026_naco2_phase_dynamics": {
+      "paper_id": "koester2026_naco2_phase_dynamics",
+      "doi": "10.1103/1n3w-5q5n",
+      "sources": [
+        {
+          "id": "methods",
+          "url": "https://journals.aps.org/prb/pdf/10.1103/1n3w-5q5n",
+          "scope": "article",
+          "locator": "出版 PDF 印刷页 134101-2 至 134101-6，§II，特别是 §II.F"
+        },
+        {
+          "id": "results",
+          "url": "https://journals.aps.org/prb/pdf/10.1103/1n3w-5q5n",
+          "scope": "article",
+          "locator": "出版 PDF 印刷页 134101-10 至 134101-12，图 7–8"
+        }
+      ],
+      "sections": {
+        "methods": [
+          {
+            "text": "用 VASP 生成参考数据并拟合 Coulomb–Buckingham 势。用 LAMMPS 运行 2112 原子超胞、1 bar NPT 分子动力学，使用 2 fs 步长。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "findings": [
+          {
+            "text": "Na₀.₆₇CoO₂ 的动态 O2→P2 活化能约 0.32 eV；300 K 长轨迹最终纯 P 堆叠的 Na 扩散系数为 3.92×10⁻⁷ cm²/s。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ],
+        "limits": [
+          {
+            "text": "经典势针对 NaₓCoO₂ 固定组分动力学拟合，未考虑不同 Na 含量间的氧化能，不能据此模拟完整电化学充放电。",
+            "source_refs": [
+              "results"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "reproduction": [
+          {
+            "text": "先用同一 Na 含量核对静态层滑移路径与动态时间尺度，再按每段堆叠拟合 MSD，不对整条跨相轨迹使用单一斜率。",
+            "source_refs": [
+              "methods"
+            ],
+            "kind": "reading_guide"
+          }
+        ],
+        "conditions": [
+          {
+            "text": "425–700 K 的相变速率用于 Arrhenius 拟合；室温层滑移与传输结果来自 300 K、1 bar、1 μs 轨迹。",
+            "source_refs": [
+              "methods",
+              "results"
+            ],
+            "kind": "reported"
+          }
+        ]
+      }
     }
   }
 }

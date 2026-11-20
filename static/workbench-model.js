@@ -7,7 +7,7 @@
   else root.WorkbenchModel = factory();
 })(typeof window !== 'undefined' ? window : globalThis, function () {
   const METHODS = ['DFT', 'AIMD', 'NEB', 'MD', 'MLIP'];
-  const SOFTWARE = ['MS', 'VASP', 'LAMMPS', 'GROMACS', 'CP2K', 'CASTEP', 'ABINIT', 'Quantum ESPRESSO', 'ORCA', 'VASPKIT', 'DMol3', 'COMSOL', 'PACKMOL'];
+  const SOFTWARE = ['MS', 'VASP', 'LAMMPS', 'GROMACS', 'CP2K', 'CASTEP', 'ABINIT', 'Quantum ESPRESSO', 'ORCA', 'VASPKIT', 'DMol3', 'COMSOL', 'PACKMOL', 'ASE', 'WIEN2k', 'Gaussian', 'DeePMD-kit'];
   const COMPONENTS = ['cathode', 'anode', 'electrolyte', 'separator', 'interface', 'collectors'];
   const text = value => value == null ? '' : Array.isArray(value) ? value.map(text).join(' ') : typeof value === 'object' ? Object.values(value).map(text).join(' ') : String(value);
   const list = value => Array.isArray(value) ? value : value == null ? [] : [value];
@@ -17,7 +17,7 @@
   function safeLink(value) {
     if (typeof value !== 'string' || !value.trim()) return null;
     const raw = value.trim();
-    if (raw.includes('\\') || raw.startsWith('//')) return null;
+    if (raw.includes('\\') || raw.startsWith('//') || /[\u0000-\u001F\u007F]/.test(raw)) return null;
     if (raw.startsWith('/') || raw.startsWith('./') || raw.startsWith('../') || raw.startsWith('#')) return raw;
     try {
       const url = new URL(raw);
@@ -90,6 +90,19 @@
     }).map(metric => ({ label: String(metric.label).trim(), value: metric.value, ...(metric.unit != null ? { unit: String(metric.unit) } : {}), ...(metric.conditions != null ? { conditions: metric.conditions } : {}), ...(metric.comparison != null ? { comparison: metric.comparison } : {}), source: String(metric.source).trim(), locator: String(metric.locator).trim() }));
   }
 
+  function evidenceCoverage(insight, metrics) {
+    const articleSources = new Set(list(insight?.sources).filter(source =>
+      source?.scope === 'article' && typeof source.id === 'string' &&
+      typeof source.locator === 'string' && source.locator.trim() &&
+      /^https:\/\//i.test(safeLink(source.url) || '')
+    ).map(source => source.id));
+    const article = Object.values(insight?.sections || {}).some(items => list(items).some(item =>
+      item?.kind === 'reported' && typeof item.text === 'string' && item.text.trim() &&
+      list(item.source_refs).some(id => articleSources.has(id))
+    ));
+    return { article, quantitative: metrics.length > 0 };
+  }
+
   function create(options = {}) {
     const inputPapers = list(options.papers);
     const tagSource = options.tags || {};
@@ -110,7 +123,9 @@
       const component = component_ids[0] || null;
       const tags = unique(list(tagRecord.display_tags).concat(list(original.display_tags), list(tagRecord.tags), list(original.tags_zh)));
       const links = unique([original.url, original.doi ? `https://doi.org/${original.doi}` : '', ...list(original.resources).map(x => x && x.url), ...list(original.links).map(x => typeof x === 'string' ? x : x?.url)]).map(safeLink).filter(Boolean);
-      return { ...original, id, title_zh: original.title_zh || titleRecord.title_zh || titleRecord.title || '', display_tags: tags, methods_normalized: ms.methods, software_normalized: ms.software, component, component_ids, region: region.value, region_label: region.label, region_reason: region.reason, paper_type: paperTypes[0], paper_types: paperTypes, links, insight };
+      const metrics = validMetrics(original.evidence_card);
+      const evidence = evidenceCoverage(insight, metrics);
+      return { ...original, id, title_zh: original.title_zh || titleRecord.title_zh || titleRecord.title || '', display_tags: tags, methods_normalized: ms.methods, software_normalized: ms.software, component, component_ids, region: region.value, region_label: region.label, region_reason: region.reason, paper_type: paperTypes[0], paper_types: paperTypes, evidence_coverage: evidence, links, insight };
     }).filter(p => p.id);
     const byId = new Map(normalized.map(p => [p.id, p]));
     const facet = (values, labels = {}) => unique(values).map(value => ({ value, label: labels[value] || value, count: normalized.filter(p => valuesFor(p, value)).length }));
@@ -119,14 +134,18 @@
       methods: facet(METHODS), software: facet(SOFTWARE),
       types: facet(normalized.flatMap(p => p.paper_types)),
       years: facet(normalized.map(p => p.year).filter(Boolean).sort((a, b) => b - a).map(String)),
-      regions: facet(['domestic', 'international', 'unknown'], { domestic: '国内团队', international: '国际', unknown: '未知地区' })
+      regions: facet(['domestic', 'international', 'unknown'], { domestic: '国内团队', international: '国际', unknown: '未知地区' }),
+      evidence: [
+        { value: 'article', label: '正文定位', count: normalized.filter(p => p.evidence_coverage.article).length },
+        { value: 'quantitative', label: '结构化定量', count: normalized.filter(p => p.evidence_coverage.quantitative).length },
+      ]
     };
     function valuesFor(p, value) { return p.component_ids.includes(value) || p.methods_normalized.includes(value) || p.software_normalized.includes(value) || p.paper_types.includes(value) || String(p.year) === String(value) || p.region === value; }
     function query(state = {}) {
       const q = state.q ?? state.query ?? '';
       const clean = String(q).trim().toLowerCase();
       const selected = key => unique(list(state[key] ?? state[`${key}s`])).map(String);
-      const components = selected('component'), methods = selected('method'), software = selected('software'), types = selected('type'), regions = selected('region');
+      const components = selected('component'), methods = selected('method'), software = selected('software'), types = selected('type'), regions = selected('region'), evidence = selected('evidence');
       const agent = options.searchAgent || (typeof globalThis !== 'undefined' && globalThis.BatteryBrowserAgent);
       let rows;
       let expandedTerms = unique(list(state.expandedTerms || state.expanded_terms));
@@ -138,7 +157,7 @@
         rows = normalized.slice();
         if (clean) rows = rows.filter(p => text([p.title, p.title_zh, p.summary, p.role, p.systems, p.properties, p.display_tags]).toLowerCase().includes(clean));
       }
-      rows = rows.filter(p => (!components.length || components.some(x => p.component_ids.includes(x))) && (!methods.length || methods.every(x => p.methods_normalized.includes(x))) && (!software.length || software.every(x => p.software_normalized.includes(x))) && (!types.length || types.some(x => p.paper_types.includes(x))) && (!regions.length || regions.includes(p.region)) && (!state.year || String(p.year) === String(state.year)));
+      rows = rows.filter(p => (!components.length || components.some(x => p.component_ids.includes(x))) && (!methods.length || methods.every(x => p.methods_normalized.includes(x))) && (!software.length || software.every(x => p.software_normalized.includes(x))) && (!types.length || types.some(x => p.paper_types.includes(x))) && (!regions.length || regions.includes(p.region)) && evidence.every(x => p.evidence_coverage[x] === true) && (!state.year || String(p.year) === String(state.year)));
       const sort = state.sort || (clean ? 'relevance' : 'year-desc');
       if (!(clean && sort === 'relevance' && rows.some(p => p.retrieval))) rows.sort((a, b) => {
         if (sort === 'year-asc' || sort === 'oldest') return (a.year || 0) - (b.year || 0);

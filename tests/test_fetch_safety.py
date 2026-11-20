@@ -110,6 +110,12 @@ class FetchSafetyTests(unittest.TestCase):
         self.assertEqual({chunk["paper_id"] for chunk in chunks}, {"paper"})
         self.assertEqual(list(self.pdf_dir.glob("*.candidate.pdf")), [])
 
+    def test_repository_cover_listing_dissertations_is_not_a_thesis(self):
+        cover = " Repository contents include journal articles, dissertations, and other research outputs."
+        result = self.run_fetch(self.download_text(TITLE + cover + BODY), "--skip-index")
+        self.assertTrue(result["attempts"][0]["accepted_as_main_text"])
+        self.assertEqual(result["status"], "downloaded")
+
     def test_zotero_and_audit_use_the_same_article_identity_check(self):
         write_pdf(self.destination, "Unrelated botanical investigation" + BODY)
         validation = fetch.validate_pdf(self.destination, TITLE)

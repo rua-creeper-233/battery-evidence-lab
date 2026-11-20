@@ -31,5 +31,22 @@ class PaperInsightsValidationTests(unittest.TestCase):
         value=good(); value["papers"]["cai-2024"]["sources"][0]["id"]=[]; value["papers"]["cai-2024"]["sources"][0]["locator"]=""; self.assertTrue(validator.validate(value))
     def test_methodology_private_field(self):
         value=good(); value["methodology"]["private_path"]="secret"; self.assertTrue(validator.validate(value))
+    def test_optional_catalog_metrics_accept_zero_and_display_values(self):
+        catalog = [{"id": "cai-2024", "doi": "10.1234/example", "evidence_card": {"metrics": [
+            {"label": "Barrier", "value": 0, "source": "https://doi.org/10.1234/example", "locator": "Fig. 2"},
+            {"label": "Range", "value": "below detection", "unit": "S cm-1", "conditions": "300 K", "comparison": "reported", "source": "author table", "locator": "Table 1"},
+        ]}}]
+        self.assertEqual(validator.validate(good(), catalog), [])
+
+    def test_optional_catalog_metrics_reject_malformed_values(self):
+        catalog = [{"id": "cai-2024", "doi": "10.1234/example", "evidence_card": {"metrics": [
+            {"label": "", "value": True, "source": "", "locator": ""},
+        ]}}]
+        errors = validator.validate(good(), catalog)
+        self.assertTrue(any("evidence_card.metrics[0]" in error for error in errors))
+
+    def test_optional_catalog_metrics_require_a_list(self):
+        catalog = [{"id": "cai-2024", "doi": "10.1234/example", "evidence_card": {"metrics": {}}}]
+        self.assertTrue(validator.validate(good(), catalog))
 
 if __name__ == "__main__": unittest.main()

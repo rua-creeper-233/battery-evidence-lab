@@ -62,14 +62,15 @@ class LearningRouteTests(unittest.TestCase):
       self.assertTrue(set(str(pid) for pid in group["paper_ids"]) <= set(CATALOG))
     self.assertEqual(ROUTE.get("candidates", []), [])
 
-  def test_catalog_stage_and_primary_frontier_counts_are_exact(self):
+  def test_catalog_stage_and_frontier_counts_cover_current_catalog(self):
     stage_counts = {
         s["id"]: len(s["paper_ids"])
         for s in ROUTE["stages"]
     }
     assert sum(stage_counts.values()) == len(CATALOG)
-    assert [stage_counts[sid] for sid in
-            ("baseline", "beginner", "intermediate", "frontier")] == [28, 39, 112, 94]
+    for stage_id, count in stage_counts.items():
+        assert count == sum(mapping["stage"] == stage_id for mapping in ROUTE["papers"].values())
+        assert count > 0
     assert len(ROUTE["frontiers"]) == 8
     assert all(len(f["paper_ids"]) > 0 for f in ROUTE["frontiers"])
 

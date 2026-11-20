@@ -1,6 +1,6 @@
 """Fail-closed validator for the optional public paper-insights dataset."""
 from __future__ import annotations
-import json, re, sys
+import json, math, re, sys
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
@@ -35,6 +35,8 @@ def validate(data, papers=None):
         try: date.fromisoformat(data["as_of"])
         except ValueError: errors.append("root.as_of: YYYY-MM-DD required")
     catalog = {str(p.get("id")): p for p in (papers or []) if isinstance(p, dict) and p.get("id")}
+    for paper in catalog.values():
+        _validate_evidence_card(paper.get("evidence_card"), f"catalog.{paper['id']}", errors)
     for key, paper in data["papers"].items():
         label = f"papers.{key}"
         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:-]{1,127}", str(key)): errors.append(f"{label}: invalid canonical id")
@@ -77,6 +79,42 @@ def validate(data, papers=None):
                 if not isinstance(item.get(field), str) or not item[field].strip(): errors.append(f"{label}.relations[{i}].{field}: required")
             _validate_refs(item, f"{label}.relations[{i}]", ids, errors)
     return errors
+
+
+def _validate_evidence_card(card, label, errors):
+    """Validate the optional source-located metrics attached to a catalog paper."""
+    if card is None:
+        return
+    if not isinstance(card, dict):
+        errors.append(f"{label}.evidence_card: expected object")
+        return
+    if "metrics" not in card:
+        return
+    metrics = card["metrics"]
+    if not isinstance(metrics, list):
+        errors.append(f"{label}.evidence_card.metrics: expected list")
+        return
+    for index, metric in enumerate(metrics):
+        metric_label = f"{label}.evidence_card.metrics[{index}]"
+        if not isinstance(metric, dict):
+            errors.append(f"{metric_label}: expected object")
+            continue
+        for field in ("label", "source", "locator"):
+            value = metric.get(field)
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f"{metric_label}.{field}: nonempty string required")
+        value = metric.get("value")
+        if type(value) is int:
+            valid_number = abs(value) <= sys.float_info.max
+        else:
+            valid_number = isinstance(value, float) and math.isfinite(value)
+        valid_display = isinstance(value, str) and value.strip()
+        if not (valid_number or valid_display):
+            errors.append(f"{metric_label}.value: finite number or nonempty display string required")
+        for field in ("unit", "conditions", "comparison"):
+            if field in metric and not isinstance(metric[field], str):
+                errors.append(f"{metric_label}.{field}: expected string")
+
 
 def _validate_refs(item, label, ids, errors):
     refs = item.get("source_refs")

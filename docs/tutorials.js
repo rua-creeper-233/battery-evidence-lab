@@ -33,7 +33,8 @@
   glossary.md=[['力场','由原子构型计算能量与力的模型，需要验证适用域。'],['MSD','均方位移，用于分析合适时间区间内的扩散。'],['RDF','径向分布函数，描述空间结构而非直接给出扩散。'],['生产段','平衡后用于计算统计量的轨迹区间。']];
   glossary.dft=[['电子密度','空间中单位体积的电子数，积分得到总电子数。'],['泛函','以函数为输入的映射，例如由密度分布得到能量。'],['SCF','固定原子时求解电子自洽；不同于结构优化。'],['AIMD','用第一性原理计算得到的力推进分子动力学。']];
   let saved={};try{const value=JSON.parse(localStorage.getItem('battery-tutorial-progress-v1')||'{}');if(value&&typeof value==='object'&&!Array.isArray(value))saved=value;}catch(_){}
-  let course='ms', step=0;
+  const requestedCourse = new URLSearchParams(location.search).get('course');
+  let course=['dft','ms','vasp','md'].includes(requestedCourse) ? requestedCourse : 'ms', step=0;
   function save(){try{localStorage.setItem('battery-tutorial-progress-v1',JSON.stringify(saved));}catch(_){}}
   function download(name,text){const url=URL.createObjectURL(new Blob([text+'\n'],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   function render(){

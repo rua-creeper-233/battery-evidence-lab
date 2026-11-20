@@ -17,8 +17,10 @@ assert.deepEqual(Array.from(api.componentIds), ['cathode', 'anode', 'electrolyte
 const resolved = api.resolve(data, papers);
 assert.equal(resolved.ok, true, resolved.errors?.join('; '));
 assert.equal(resolved.components.length, 6);
-assert.equal(resolved.components.flatMap((c) => c.papers).length, 76);
-assert.equal(new Set(resolved.components.flatMap((c) => c.papers).map((r) => r.paper_id)).size, 74);
+for (const component of data.components) {
+  const matched = resolved.components.find(c => c.id === component.id);
+  assert.deepEqual(Array.from(matched.papers, ref => ref.paper_id), component.papers.map(ref => ref.paper_id));
+}
 assert.equal(resolved.components.find(c => c.id === 'separator').papers.length, 19);
 assert.equal(resolved.components.find(c => c.id === 'collectors').papers.length, 18);
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-13",
+  "as_of": "2026-11-21",
   "notice": "英文原文附中文参考译名；中文原文保留原题、不重复显示同名译文。引用以出版时原题和DOI为准。",
   "papers": {
     "tan2026_pemd": {
@@ -1367,6 +1367,66 @@
       "title": "ARIS: Autonomous Research via Adversarial Multi-Agent Collaboration",
       "title_zh": "ARIS：通过对抗式多智能体协作实现自主科研",
       "doi": "10.48550/arXiv.2605.03042"
+    },
+    "lian2025_chgnet_neb": {
+      "title": "High-throughput NEB for Li-ion conductor discovery via fine-tuned CHGNet potential",
+      "title_zh": "基于微调 CHGNet 势的高通量 NEB 锂离子导体筛选",
+      "doi": "10.1039/d5ta05355b"
+    },
+    "li2025_interaction_motif": {
+      "title": "A path towards high lithium-metal electrode coulombic efficiency based on electrolyte interaction motif descriptor",
+      "title_zh": "用电解液相互作用描述符提高锂金属电极的库仑效率",
+      "doi": "10.1038/s41467-025-59955-0"
+    },
+    "kottarathil2025_huckel_lis": {
+      "title": "Hückel anion based concentrated electrolytes for lithium–sulfur batteries",
+      "title_zh": "基于 Hückel 阴离子的锂硫电池浓电解液",
+      "doi": "10.1039/d5cp02052b"
+    },
+    "wang2025_interfacial_reaction_electrolyte": {
+      "title": "Application-driven design of non-aqueous electrolyte solutions through quantification of interfacial reactions in lithium metal batteries",
+      "title_zh": "通过定量分析界面反应设计锂金属电池非水电解液",
+      "doi": "10.1038/s41565-025-01935-y"
+    },
+    "wang2025_sei_transport_pmf": {
+      "title": "Unraveling Lithium-Ion Transport in Solid Electrolyte Interphase: from Composition to Interface Dynamics via Molecular Dynamics Simulations",
+      "title_zh": "用分子动力学解析固体电解质界面膜中的锂离子传输，从组成到界面动力学",
+      "doi": "10.1002/smll.202503340"
+    },
+    "he2026_argyrodite_li_mlmd": {
+      "title": "Insights into interfacial reactions between Li-argyrodite solid electrolyte and lithium metal via machine learning-based molecular dynamics",
+      "title_zh": "用机器学习分子动力学解析硫银锗矿型固态电解质与金属锂的界面反应",
+      "doi": "10.1016/j.est.2026.122769"
+    },
+    "pires2026_polyester_sspe": {
+      "title": "Weakly Coordinating Polyester Enables High Performance Semi-solid Polymer Electrolyte for Li–Metal Batteries",
+      "title_zh": "弱配位聚酯半固态电解质用于锂金属电池",
+      "doi": "10.1021/acsaem.6c02051"
+    },
+    "burov2026_ga_llzo_transfer": {
+      "title": "Charge-transfer mechanisms at Li/Ga-doped Li₇La₃Zr₂O₁₂ (LLZO) interfaces from machine learning assisted molecular dynamics",
+      "title_zh": "机器学习分子动力学揭示 Li/掺 Ga 石榴石界面的电荷转移机制",
+      "doi": "10.1103/mttl-2jq2"
+    },
+    "yin2026_concentrated_edl": {
+      "title": "Nonmonotonic Screening and Solvation Dynamics of the Electrical Double Layer in Concentrated Lithium Salt Electrolytes",
+      "title_zh": "浓锂盐电解液双电层的非单调屏蔽与溶剂化动力学",
+      "doi": "10.1038/s41467-026-75999-2"
+    },
+    "fang2026_negative_li_transference": {
+      "title": "Molecular origin of negative lithium transference in electrolytes with star-shaped multivalent anions",
+      "title_zh": "星形多价阴离子电解液中锂迁移数为负的分子起源",
+      "doi": "10.1039/d5ta05739f"
+    },
+    "nguyen2025_libo2_vacancy_coatings": {
+      "title": "Vacancy-induced modification of the electronic band structure of LiBO₂ materials as cathode surface coatings for lithium-ion batteries",
+      "title_zh": "空位对锂离子电池正极 LiBO₂ 涂层材料电子能带的影响",
+      "doi": "10.1039/d5ma00458f"
+    },
+    "koester2026_naco2_phase_dynamics": {
+      "title": "Computational studies on O2-P2 phase-transition dynamics in layered-oxide sodium-ion cathode materials",
+      "title_zh": "层状氧化物钠离子正极 O2→P2 相变动力学的计算研究",
+      "doi": "10.1103/1n3w-5q5n"
     }
   }
 }

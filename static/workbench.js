@@ -7,7 +7,7 @@
   const componentLabels = {cathode:'正极',anode:'负极',electrolyte:'电解质',separator:'隔膜',interface:'界面',collectors:'集流体'};
   const facetDefs = [
     ['component','组件','components'], ['region','团队地区','regions'], ['method','方法','methods'],
-    ['software','软件','software'], ['type','论文类型','types'], ['year','年份','years'],
+    ['software','软件','software'], ['type','论文类型','types'], ['year','年份','years'], ['evidence','证据覆盖','evidence'],
   ];
   const routeKeys = ['q', ...facetDefs.map(([key]) => key), 'sort'];
   const sourceFiles = {
@@ -127,6 +127,8 @@
   function badges(paper) {
     return domainBadges(paper) +
       [paper.region_label, ...list(paper.paper_types)].filter(Boolean).map(value => `<span class="badge">${e(value)}</span>`).join('') +
+      (paper.evidence_coverage?.article ? '<span class="badge badge-evidence">正文定位</span>' : '') +
+      (paper.evidence_coverage?.quantitative ? '<span class="badge badge-evidence">结构化定量</span>' : '') +
       [...list(paper.methods_normalized), ...list(paper.software_normalized)].map(value => `<span class="badge badge-method">${e(value)}</span>`).join('');
   }
   function compareButton(id) {
@@ -175,6 +177,11 @@
   const section = (title, body) => body ? `<section class="evidence-section"><h3>${title}</h3>${body}</section>` : '';
   const parameterModel = paper => joined([paper.functional, paper.force_field, paper.mlip_architecture].filter(Boolean));
   const metricValue = metric => [metric.value, metric.unit].filter(v => v != null && v !== '').join(' ');
+  const metricContext = metric => {
+    const conditions = [metric.conditions, metric.comparison].filter(Boolean).join(' · ');
+    const location = external(metric.source, metric.locator) || e([metric.source, metric.locator].join(' · '));
+    return `${conditions ? `<small>${e(conditions)}</small>` : ''}<small>${location}</small>`;
+  };
   const doiUrl = doi => doi ? `https://doi.org/${doi.split('/').map(encodeURIComponent).join('/')}` : '';
 
   function insights(paper, name) {
@@ -226,7 +233,13 @@
     if (!metrics.length) return '<p>暂无逐项定位的结构化数值。</p>';
     return `<table class="metric-table"><thead><tr><th scope="col">指标</th><th scope="col">数值</th><th scope="col">条件与来源</th></tr></thead>
       <tbody>${metrics.map(metric => `<tr><th scope="row">${e(metric.label)}</th><td class="mono">${e(metricValue(metric))}</td>
-      <td>${e([metric.conditions, metric.comparison].filter(Boolean).join(' · '))}<small>${external(metric.source, metric.source) || e(metric.source)} · ${e(metric.locator)}</small></td></tr>`).join('')}</tbody></table>`;
+      <td>${metricContext(metric)}</td></tr>`).join('')}</tbody></table>`;
+  }
+
+  function lammpsLessonLink(paper, software) {
+    const usesLammps = list(software).some(value => String(value).toUpperCase() === 'LAMMPS');
+    if (!usesLammps) return '';
+    return `<p><a href="./learn.html?course=md#tutorials">打开 MD / LAMMPS 学习课 →</a> · <a href="./library.html?software=LAMMPS&evidence=article">查看正文有定位的 LAMMPS 论文</a></p>`;
   }
 
   function evidenceHtml({paper, sections: s}) {
@@ -240,7 +253,7 @@
       section('要点与定量结论', `<p>${e(paper.summary)}</p>${insights(paper, 'findings')}${takeaway ? `<p class="metric">${e(takeaway.label)} · ${e(metricValue(takeaway))}</p>` : ''}`),
       section('材料体系与电池组件', domainBadges(paper) + plain(s.material.systems) + insights(paper, 'systems')),
       section('计算协议', `<div class="evidence-grid">${block('方法', joined(paper.methods))}${block('软件', joined(s.protocol.software))}${block('泛函、力场或模型', parameterModel(paper))}</div>` +
-        insights(paper, 'methods') + insights(paper, 'conditions') + plain(s.protocol.steps)),
+        lammpsLessonLink(paper, s.protocol.software) + insights(paper, 'methods') + insights(paper, 'conditions') + plain(s.protocol.steps)),
       section('观测量与基准', metricTable(metrics)),
       section('证据锚点与命中原因', anchors(paper, s.evidence.evidence)),
       section('局限与复现', (paper.scope_note ? `<p>${e(paper.scope_note)}</p>` : '') + insights(paper, 'limits') + insights(paper, 'reproduction') +
@@ -285,16 +298,19 @@
   function showComparison() {
     if (compare.length < 2) return;
     const cards = compare.map(id => model.card(id));
+    const cell = value => e(value || '暂无资料');
     const fields = [
-      ['材料体系', card => joined(card.sections.material.systems)],
-      ['方法与软件', card => joined([...list(card.paper.methods), ...card.sections.protocol.software])],
-      ['泛函、力场或模型', card => parameterModel(card.paper)],
-      ['关键指标', card => card.sections.observables.metrics.map(m => `${m.label} · ${metricValue(m)} · ${m.locator}`).join('\n')],
-      ['局限性', card => joined([card.paper.scope_note, ...list(card.paper.insight?.sections?.limits).map(item => item.text)].filter(Boolean))],
+      ['材料体系', card => cell(joined(card.sections.material.systems))],
+      ['方法与软件', card => cell(joined([...new Set([...list(card.paper.methods), ...card.sections.protocol.software])]))],
+      ['泛函、力场或模型', card => cell(parameterModel(card.paper))],
+      ['关键指标与条件', card => items(card.sections.observables.metrics, metric =>
+        `<strong>${e(metric.label)}</strong> <code>${e(metricValue(metric))}</code>${metricContext(metric)}`
+      ) || '暂无资料'],
+      ['局限性', card => cell(joined([...new Set([card.paper.scope_note, ...list(card.paper.insight?.sections?.limits).map(item => item.text)].filter(Boolean))]))],
     ];
     $('#compare-body').innerHTML = `<table class="compare-table"><thead><tr><th scope="col">比较维度</th>
       ${cards.map(card => `<th scope="col">${e(card.paper.title_zh || card.paper.title)}</th>`).join('')}</tr></thead>
-      <tbody>${fields.map(([label, value]) => `<tr><th scope="row">${label}</th>${cards.map(card => `<td>${e(value(card) || '暂无资料').replace(/\n/g, '<br>')}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+      <tbody>${fields.map(([label, value]) => `<tr><th scope="row">${label}</th>${cards.map(card => `<td>${value(card)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
     matrix.showModal();
   }
 

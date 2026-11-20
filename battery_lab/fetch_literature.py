@@ -585,9 +585,10 @@ def validate_pdf(path: Path, title: str) -> dict[str, Any]:
         # Look for identity on the opening page, rather than in references or
         # a later chapter that happens to discuss the requested paper.
         frontmatter = re.sub(r"\s+", " ", first_page.lower())[:2500]
-        thesis_signals = sum(
-            marker in frontmatter
-            for marker in ("doctoral thesis", "phd thesis", "ph.d. thesis", "dissertation", "master's thesis")
+        # Repository cover sheets may list supported document types in the plural.
+        thesis_signals = re.search(
+            r"\b(?:doctoral thesis|phd thesis|ph\.d\. thesis|dissertation|master's thesis)\b",
+            frontmatter,
         )
         presentation = any(marker in frontmatter for marker in ("presentation slides", "lecture notes", "slide deck", "workshop presentation"))
         article_structure = bool(re.search(r"\b(?:abstract|introduction|references|bibliography)\b|\b10\.\d{4,9}/", preview_lower))

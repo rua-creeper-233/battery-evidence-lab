@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-13",
+  "as_of": "2026-11-21",
   "policy": "baseline 是科研中反复查验的常备参考。每篇论文有唯一主阶段，也可被多个专题引用；实验与验证按研究主张选择。",
   "evidence_basis": "按题名、方法记录和人工摘要安排阅读顺序。",
   "stages": [
@@ -664,7 +664,12 @@
         "gudla2021_ion_pair_lifetime_polymer_electrolytes",
         "shao2024_ion_transport_polymer_electrolytes",
         "shao2022_transference_number_reference_frame",
-        "hargreaves2023_lithium_sse_conductivity_database"
+        "hargreaves2023_lithium_sse_conductivity_database",
+        "kottarathil2025_huckel_lis",
+        "wang2025_sei_transport_pmf",
+        "pires2026_polyester_sspe",
+        "fang2026_negative_li_transference",
+        "nguyen2025_libo2_vacancy_coatings"
       ]
     },
     {
@@ -854,7 +859,14 @@
         "recent_10_1021_acs_jpclett_6c01037",
         "arxiv_2609_31743",
         "nakamura2026_open_electrolyte_database",
-        "yang2026_aris_autonomous_research_harness"
+        "yang2026_aris_autonomous_research_harness",
+        "lian2025_chgnet_neb",
+        "li2025_interaction_motif",
+        "wang2025_interfacial_reaction_electrolyte",
+        "he2026_argyrodite_li_mlmd",
+        "burov2026_ga_llzo_transfer",
+        "yin2026_concentrated_edl",
+        "koester2026_naco2_phase_dynamics"
       ]
     }
   ],
@@ -952,7 +964,10 @@
         "hajibabaei2021_universal_solid_electrolytes",
         "recent_10_1002_batt_202500294",
         "recent_10_1021_acs_chemmater_3c02726",
-        "hargreaves2023_lithium_sse_conductivity_database"
+        "hargreaves2023_lithium_sse_conductivity_database",
+        "lian2025_chgnet_neb",
+        "he2026_argyrodite_li_mlmd",
+        "burov2026_ga_llzo_transfer"
       ]
     },
     {
@@ -1057,7 +1072,14 @@
         "collector2026_1002_aenm_71291",
         "exp20261028_10_1016_j_jechem_2025_06_072",
         "wang2020_cathode_coating_on_the_fly",
-        "chen2022_predicting_electrolyte_esw"
+        "chen2022_predicting_electrolyte_esw",
+        "li2025_interaction_motif",
+        "wang2025_interfacial_reaction_electrolyte",
+        "wang2025_sei_transport_pmf",
+        "he2026_argyrodite_li_mlmd",
+        "burov2026_ga_llzo_transfer",
+        "yin2026_concentrated_edl",
+        "nguyen2025_libo2_vacancy_coatings"
       ]
     },
     {
@@ -1172,7 +1194,14 @@
         "nakamura2026_open_electrolyte_database",
         "gudla2021_ion_pair_lifetime_polymer_electrolytes",
         "shao2024_ion_transport_polymer_electrolytes",
-        "shao2022_transference_number_reference_frame"
+        "shao2022_transference_number_reference_frame",
+        "li2025_interaction_motif",
+        "kottarathil2025_huckel_lis",
+        "wang2025_interfacial_reaction_electrolyte",
+        "wang2025_sei_transport_pmf",
+        "pires2026_polyester_sspe",
+        "yin2026_concentrated_edl",
+        "fang2026_negative_li_transference"
       ]
     },
     {
@@ -1264,7 +1293,9 @@
         "cn_aps2024_vs2",
         "cn_shi2023_oxygen_vacancy_clusters",
         "cn_zhong2021_rare_earth_lfp",
-        "cn_wang2022_ligand_field"
+        "cn_wang2022_ligand_field",
+        "nguyen2025_libo2_vacancy_coatings",
+        "koester2026_naco2_phase_dynamics"
       ]
     },
     {
@@ -1372,7 +1403,8 @@
         "arxiv_2609_31743",
         "chemrxiv_15009216",
         "nakamura2026_open_electrolyte_database",
-        "hargreaves2023_lithium_sse_conductivity_database"
+        "hargreaves2023_lithium_sse_conductivity_database",
+        "lian2025_chgnet_neb"
       ]
     },
     {
@@ -1464,7 +1496,8 @@
         "gudla2021_ion_pair_lifetime_polymer_electrolytes",
         "shao2024_ion_transport_polymer_electrolytes",
         "shao2022_transference_number_reference_frame",
-        "yang2026_aris_autonomous_research_harness"
+        "yang2026_aris_autonomous_research_harness",
+        "wang2025_interfacial_reaction_electrolyte"
       ]
     },
     {
@@ -1574,7 +1607,9 @@
         "hajibabaei2021_universal_solid_electrolytes",
         "wang2020_cathode_coating_on_the_fly",
         "recent_10_1021_acs_jpclett_6c01037",
-        "recent_10_1021_acs_chemmater_3c02726"
+        "recent_10_1021_acs_chemmater_3c02726",
+        "lian2025_chgnet_neb",
+        "burov2026_ga_llzo_transfer"
       ]
     },
     {
@@ -3381,6 +3416,101 @@
         "multiscale_and_validation"
       ],
       "rationale": "作为自主科研工作流案例阅读，重点检查证据审计、结果复核和与电池模拟管线的边界。"
+    },
+    "lian2025_chgnet_neb": {
+      "stage": "frontier",
+      "frontiers": [
+        "mlip_transport_and_sse",
+        "ai_screening_and_uq",
+        "mlip_reliability_and_data_efficiency"
+      ],
+      "rationale": "复现时先复核 LATP 的温度序列和 MSD 拟合窗口，再比较预训练、微调和 AIMD 的误差。"
+    },
+    "li2025_interaction_motif": {
+      "stage": "frontier",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes",
+        "interfaces_sei_and_dendrites"
+      ],
+      "rationale": "分开核对经典 MD 的溶剂化统计、AIMD 的反应线索和 Li||Cu 电化学验收，确保比较使用相同测试协议。"
+    },
+    "kottarathil2025_huckel_lis": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes"
+      ],
+      "rationale": "并列复查相同浓度的 RDF/配位数、拉曼峰拆分与实测电导，区分结构证据和传输数据。"
+    },
+    "wang2025_interfacial_reaction_electrolyte": {
+      "stage": "frontier",
+      "frontiers": [
+        "interfaces_sei_and_dendrites",
+        "liquid_and_polymer_electrolytes",
+        "multiscale_and_validation"
+      ],
+      "rationale": "分别核对近界面分布、反应路径和电解液消耗的数据来源，再判断定量结果能否迁移到不同电芯。"
+    },
+    "wang2025_sei_transport_pmf": {
+      "stage": "intermediate",
+      "frontiers": [
+        "interfaces_sei_and_dendrites",
+        "liquid_and_polymer_electrolytes"
+      ],
+      "rationale": "复现时分别评估每个伞形窗口收敛与 PMF 的初末态一贯性，并将跨界面自由能和体相 Arrhenius 活化能分开报告。"
+    },
+    "he2026_argyrodite_li_mlmd": {
+      "stage": "frontier",
+      "frontiers": [
+        "interfaces_sei_and_dendrites",
+        "mlip_transport_and_sse"
+      ],
+      "rationale": "复现时先核对 Fig. 4(d) 的 MSD 分段，再比对导电区取样、电荷模型和相应实验区间。"
+    },
+    "pires2026_polyester_sspe": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes"
+      ],
+      "rationale": "复现时把孤立配位簇的 DFT 结合能与凝聚相配位数分开，分别检查聚合物几何约束和实测电导。"
+    },
+    "burov2026_ga_llzo_transfer": {
+      "stage": "frontier",
+      "frontiers": [
+        "interfaces_sei_and_dendrites",
+        "mlip_transport_and_sse",
+        "mlip_reliability_and_data_efficiency"
+      ],
+      "rationale": "先复现驻留时间下限对 Arrhenius 拟合的影响，再对比真实界面的实验阻抗，不把模型内禀电阻等同于样品总阻抗。"
+    },
+    "yin2026_concentrated_edl": {
+      "stage": "frontier",
+      "frontiers": [
+        "interfaces_sei_and_dendrites",
+        "liquid_and_polymer_electrolytes"
+      ],
+      "rationale": "复现时分别跟踪溶剂/阴离子驻留时间、界面采样厚度和实际电化学倍率。"
+    },
+    "fang2026_negative_li_transference": {
+      "stage": "intermediate",
+      "frontiers": [
+        "liquid_and_polymer_electrolytes"
+      ],
+      "rationale": "复现时保留溶剂参考系及关联项符号，并把 MD 统计误差和既有实验误差单独报告。"
+    },
+    "nguyen2025_libo2_vacancy_coatings": {
+      "stage": "intermediate",
+      "frontiers": [
+        "cathodes_defects_and_redox",
+        "interfaces_sei_and_dendrites"
+      ],
+      "rationale": "复现时把本征带隙、缺陷体系的带间间距与缺陷带到导带底的估计分别报告。"
+    },
+    "koester2026_naco2_phase_dynamics": {
+      "stage": "frontier",
+      "frontiers": [
+        "cathodes_defects_and_redox"
+      ],
+      "rationale": "先用同一 Na 含量核对静态层滑移路径与动态时间尺度，再按每段堆叠拟合 MSD，不对整条跨相轨迹使用单一斜率。"
     }
   },
   "candidates": [],

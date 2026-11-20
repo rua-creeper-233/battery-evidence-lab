@@ -600,6 +600,7 @@ body > .shell { max-width: 1440px; }
 .card-top > .mono { color: var(--wb-muted); font-size: 12px; }
 .badge { font-size: 12px; border: 1px solid transparent; }
 .badge-method { border-color: var(--wb-line); background: var(--wb-surface); }
+.badge-evidence { border-color: color-mix(in srgb, var(--wb-teal) 40%, var(--wb-line)); background: color-mix(in srgb, var(--wb-teal) 10%, var(--wb-surface)); color: var(--wb-teal-dark); }
 .domain-cathode { color: var(--domain-cathode); background: var(--domain-cathode-bg); }
 .domain-anode { color: var(--domain-anode); background: var(--domain-anode-bg); }
 .domain-electrolyte { color: var(--domain-electrolyte); background: var(--domain-electrolyte-bg); }
