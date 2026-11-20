@@ -5,7 +5,7 @@ const html=fs.readFileSync(new URL('../static/index.html',import.meta.url),'utf8
 const code=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).join('\n');
 const nodes=new Map();
 const node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',value:'',classList:{add(){},remove(){}},addEventListener(){}});return nodes.get(id);};
-const ctx=vm.createContext({URL,console,location:{protocol:'https:',hostname:'example.github.io'},localStorage:{getItem(){return '';}},sessionStorage:{getItem(){return '';}},window:{},document:{querySelector:node,querySelectorAll(){return [];}}});
+const ctx=vm.createContext({URL,URLSearchParams,console,location:{protocol:'https:',hostname:'example.github.io',search:''},localStorage:{getItem(){return '';}},sessionStorage:{getItem(){return '';}},window:{},document:{querySelector:node,querySelectorAll(){return [];}}});
 ctx.window.LabUI={ready:Promise.resolve(),paperTitleHtml(p){return '<span class="paper-title-en">'+p.title+'</span><span class="paper-title-zh">中文题名</span>';}};
 // Prevent fetching real data: test the rendering functions with controlled input.
 vm.runInContext(code.replace(/\n\s*loadData\(\);\s*$/, '\n'),ctx);

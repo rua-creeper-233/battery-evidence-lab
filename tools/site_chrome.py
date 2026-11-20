@@ -11,6 +11,9 @@ PUBLIC_BASE = "https://rua-creeper-233.github.io/battery-evidence-lab/"
 REPOSITORY_URL = "https://github.com/rua-creeper-233/battery-evidence-lab"
 PAGES = {
     "index.html": ("Battery Evidence Lab", "检索电池材料计算论文，查阅 DFT、MD、机器学习势的知识、操作流程与来源。"),
+    "library.html": ("论文工作台 · Battery Evidence Lab", "筛选、核对和对比电池材料计算论文的证据、方法与复现条件。"),
+    "learn.html": ("学习与路线 · Battery Evidence Lab", "从 DFT、MS、VASP 与 MD 小课堂进入基础地图、复现路线和证据工具指南。"),
+    "frontiers.html": ("前沿与 AI · Battery Evidence Lab", "围绕电解质、反应界面、机器学习势与材料筛选查找研究切口和论文。"),
     "future-directions.html": ("未来方向 · Battery Evidence Lab", "从电池材料计算综述中选择研究问题，查看对应论文、复现任务与验证方法。"),
     "ai-battery-applications.html": ("AI 应用 · Battery Evidence Lab", "AI 在电池材料模拟中的应用场景、论文进展、数据与实现路径。"),
     "foundations.html": ("基础地图 · Battery Evidence Lab", "电池材料计算需要的数学、物理、DFT、MD 与电化学基础及参考书目。"),
@@ -20,42 +23,27 @@ PAGES = {
     "research-roadmap.html": ("电池研究路线图 · Battery Evidence Lab", "按基础和算力选择电池材料计算起点，完成基准复现、收敛验证与研究问题设计。"),
 }
 NAV = (
-    ("index.html#research-question", "证据问答", "research-question"),
-    ("index.html#library", "论文库", "library"),
-    ("index.html#tutorials", "教程", "tutorials"),
-    ("future-directions.html", "未来方向", ""),
-    ("ai-battery-applications.html", "AI 应用", ""),
-    ("foundations.html", "基础地图", ""),
-    ("learning-route.html", "学习路线", ""),
-    ("domestic-papers.html", "国内论文", ""),
+    ("index.html#research-question", "证据问答", {"index.html"}),
+    ("library.html", "论文库", {"library.html", "domestic-papers.html"}),
+    ("learn.html", "学习与路线", {"learn.html", "foundations.html", "learning-route.html", "agent-guide.html", "research-roadmap.html"}),
+    ("frontiers.html", "前沿与 AI", {"frontiers.html", "future-directions.html", "ai-battery-applications.html"}),
 )
 
 THEME_BOOTSTRAP = """(() => {
   try {
     const key = 'battery-lab-theme';
     const stored = localStorage.getItem(key);
-    const mode = stored === 'light' || stored === 'dark' ? stored :
-      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const mode = stored === 'dark' ? 'dark' : 'light';
     document.documentElement.dataset.theme = mode;
   } catch (_) {}
 })();"""
 
 
 def navigation(page: str) -> str:
-    home = page == "index.html"
-    tabs, links = [], []
-    for target, label, panel in NAV:
-        if home and panel:
-            selected = panel == "research-question"
-            tabs.append(
-                f'<a href="#{panel}" id="tab-{panel}" role="tab" '
-                f'aria-controls="{panel}" aria-selected="{str(selected).lower()}" '
-                f'tabindex="{0 if selected else -1}" data-home-tab="{panel}">{label}</a>'
-            )
-        else:
-            current = ' aria-current="page"' if target == page else ""
-            links.append(f'<a href="./{target}"{current}>{label}</a>')
-    tab_group = '<div class="home-tabs" role="tablist" aria-label="首页工具">' + "".join(tabs) + "</div>" if home else ""
+    links = []
+    for target, label, pages in NAV:
+        current = ' aria-current="page"' if page == target.split('#', 1)[0] else ' aria-current="location"' if page in pages else ""
+        links.append(f'<a href="./{target}"{current}>{label}</a>')
     theme = ('<button class="theme-toggle" type="button" data-theme-toggle '
              'title="切换为深色模式" aria-label="切换为深色模式" aria-pressed="false">'
              '<svg class="theme-icon-sun icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>'
@@ -63,7 +51,7 @@ def navigation(page: str) -> str:
     return (
         '<nav class="site-nav" aria-label="页面导航">'
         '<a class="brand" href="./index.html#research-question">Battery Evidence Lab</a>'
-        f'<div class="site-nav-links">{tab_group}{"".join(links)}</div>{theme}</nav>'
+        f'<div class="site-nav-links">{"".join(links)}</div>{theme}</nav>'
     )
 
 
@@ -112,10 +100,10 @@ def prepare_chrome(source: str, page: str, shared_css: str) -> str:
         source = source.replace("</head>", style + "</head>", 1)
     source = re.sub(r'<nav\b[^>]*class="site-nav"[^>]*>.*?</nav>', lambda _: navigation(page), source, count=1, flags=re.S)
     if page == "index.html":
+        # Old hashes still address the home panels, without references to the retired tabs.
         source = re.sub(
             r'<(section|aside)\b([^>]*\bdata-home-panel="(research-question|library|tutorials)"[^>]*)>',
-            lambda m: f'<{m[1]}' + re.sub(r'\s+(?:role|aria-labelledby|tabindex)="[^"]*"', '', m[2])
-            + f' role="tabpanel" aria-labelledby="tab-{m[3]}" tabindex="0">',
+            lambda m: f'<{m[1]}' + re.sub(r'\s+role="tabpanel"|\s+aria-labelledby="tab-[^"]*"', '', m[2]) + '>',
             source,
         )
     title, description = PAGES[page]

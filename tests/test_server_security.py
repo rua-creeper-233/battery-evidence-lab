@@ -135,12 +135,22 @@ class ServerSecurityTests(unittest.TestCase):
             import json
             from urllib.error import HTTPError
 
+            for page in ("library.html", "learn.html", "frontiers.html"):
+                with urlopen(f"http://127.0.0.1:{port}/{page}", timeout=5) as response:
+                    self.assertEqual(response.status, 200)
+                    self.assertIn("text/html", response.headers["Content-Type"])
+            for name in ("papers", "paper_tags", "search_config", "domestic_papers",
+                         "paper_titles_zh", "battery_components", "paper_insights"):
+                with urlopen(f"http://127.0.0.1:{port}/data/{name}.json", timeout=5) as response:
+                    self.assertEqual(response.status, 200)
+                    self.assertTrue(json.loads(response.read()))
             with urlopen(f"http://127.0.0.1:{port}/data/learning_route.json", timeout=5) as response:
                 route = json.loads(response.read())
                 self.assertEqual(len(route["papers"]),
                                  sum(len(stage["paper_ids"]) for stage in route["stages"]))
                 self.assertEqual(len(route["frontiers"]), 8)
-            for blocked in ("data/fulltext_chunks.jsonl", "private/method_evidence.auto.json"):
+            for blocked in ("data/fulltext_chunks.jsonl", "data/method_evidence.auto.json",
+                            "private/method_evidence.auto.json"):
                 with self.assertRaises(HTTPError) as raised:
                     urlopen(f"http://127.0.0.1:{port}/{blocked}", timeout=5)
                 self.assertEqual(raised.exception.code, 404)

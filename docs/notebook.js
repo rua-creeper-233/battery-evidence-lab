@@ -6,14 +6,12 @@
 
   const THEME_KEY = 'battery-lab-theme';
   const root = document.documentElement;
-  const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-  const prefersDark = () => !!media?.matches;
   const readTheme = () => {
     try { const value = localStorage.getItem(THEME_KEY); return ['light', 'dark'].includes(value) ? value : null; } catch (_) { return null; }
   };
   const writeTheme = (value) => { try { localStorage.setItem(THEME_KEY, value); } catch (_) {} };
   const applyTheme = (value) => {
-    const theme = value === 'dark' || value === 'light' ? value : (prefersDark() ? 'dark' : 'light');
+    const theme = value === 'dark' ? 'dark' : 'light';
     root.dataset.theme = theme;
     document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
       const next = theme === 'dark' ? 'light' : 'dark';
@@ -22,17 +20,14 @@
       button.setAttribute('aria-pressed', String(theme === 'dark'));
     });
   };
-  let preference = readTheme();
-  applyTheme(preference);
+  applyTheme(readTheme());
   document.addEventListener('click', (event) => {
     const button = event.target.closest?.('[data-theme-toggle]');
     if (!button) return;
     const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    preference = next; writeTheme(next); applyTheme(next);
+    writeTheme(next);
+    applyTheme(next);
   });
-  const onSystemTheme = () => { if (!preference) applyTheme(); };
-  if (media?.addEventListener) media.addEventListener('change', onSystemTheme);
-  else media?.addListener?.(onSystemTheme);
 
   const canPrefetch = () => {
     const connection = navigator.connection;
@@ -40,7 +35,7 @@
   };
   const prefetched = new Set();
   const base = new URL('./', location.href);
-  const knownPages = new Set(['', 'index.html', 'future-directions.html', 'ai-battery-applications.html', 'foundations.html', 'learning-route.html', 'domestic-papers.html'].map(page => new URL(page, base).pathname));
+  const knownPages = new Set(['', 'index.html', 'library.html', 'learn.html', 'frontiers.html'].map(page => new URL(page, base).pathname));
   const prefetch = (anchor) => {
     if (!canPrefetch() || !anchor?.href || anchor.target || anchor.hasAttribute('download')) return;
     let url;

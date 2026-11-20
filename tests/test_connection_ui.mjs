@@ -7,7 +7,7 @@ const source = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)[1].rep
 const nodes = new Map();
 function node(id) {
   if (!nodes.has(id)) nodes.set(id, {value:'', innerHTML:'', textContent:'', disabled:false, checked:false,
-    classList:{add(){},remove(){},toggle(){}},addEventListener(){}});
+    classList:{add(){},remove(){},toggle(){}},setAttribute(){},focus(){},addEventListener(){}});
   return nodes.get(id);
 }
 const stored = new Map([['battery-agent-api-token', 'legacy-fixture']]);

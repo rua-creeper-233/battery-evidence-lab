@@ -1,0 +1,81 @@
+.hub-intro {
+  padding: clamp(32px, 5vw, 72px) 0 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+.hub-intro h1 { margin: 0 0 12px; }
+.hub-intro p { max-width: 66ch; margin: 0; color: var(--text-secondary); }
+.learn-layout {
+  display: grid;
+  grid-template-columns: minmax(10rem, 12rem) minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 48px);
+  align-items: start;
+  padding-block: 24px 48px;
+}
+.hub-index {
+  position: sticky;
+  top: 86px;
+  display: grid;
+  margin: 0;
+  padding: 0 12px 4px 0;
+  border-right: 1px solid var(--border-color);
+}
+.hub-index a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.hub-index a:hover, .hub-index a:focus-visible {
+  background: var(--bg-subtle);
+  color: var(--brand-hover);
+}
+.learn-content .tutorials {
+  min-width: 0;
+  margin: 0;
+  padding: clamp(12px, 2.4vw, 28px);
+}
+.learn-content .tutorials h2 { margin-top: 0; }
+.learn-content .tutorial-switch button {
+  padding: 4px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.learn-content .tutorial-switch button[aria-pressed=true] { color: var(--on-brand); }
+.hub-section { margin: 30px 0; }
+.hub-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 12px;
+}
+.hub-section-heading h2 { margin: 0; }
+.hub-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.hub-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: clamp(14px, 2.5vw, 24px);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-surface);
+}
+.hub-card h3, .hub-card p { margin: 0; }
+.hub-card p { color: var(--text-secondary); }
+.hub-card a, .hub-section-heading > a { width: fit-content; font-weight: 600; }
+@media (max-width: 760px) {
+  .learn-layout { grid-template-columns: 1fr; padding-top: 14px; }
+  .hub-index { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); border-right: 0; padding: 0; }
+}
+@media (max-width: 540px) {
+  .hub-cards { grid-template-columns: 1fr; }
+}

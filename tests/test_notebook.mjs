@@ -37,37 +37,34 @@ function loadNotebook({ pathname = '/battery-evidence-lab/index.html', storage =
 
 function eventTarget(element) { return { closest(selector) { return selector === 'summary' ? element : null; } }; }
 
-test('theme falls back safely when storage is unavailable and follows system changes', () => {
+test('light is the default and the explicit dark preference persists', () => {
   const env = loadNotebook({ storageThrows: true, prefersDark: true });
-  assert.equal(env.root.dataset.theme, 'dark');
-  env.context.window.NotebookRuntime.applyTheme('light');
   assert.equal(env.root.dataset.theme, 'light');
-  env.media.matches = false;
-  env.media.change();
-  assert.equal(env.root.dataset.theme, 'light', 'explicit theme should survive system changes');
-  const system = loadNotebook({ storageThrows: true, prefersDark: true });
-  system.media.matches = false;
-  system.media.change();
-  assert.equal(system.root.dataset.theme, 'light');
+  const storage = {};
+  const saved = loadNotebook({ storage, prefersDark: false });
+  saved.listeners.get('click')[0]({ target: { closest: () => ({}) } });
+  assert.equal(saved.root.dataset.theme, 'dark');
+  assert.equal(storage['battery-lab-theme'], 'dark');
+  assert.equal(loadNotebook({ storage }).root.dataset.theme, 'dark');
 });
 
 test('prefetch is scoped to the deployed project base and filters unsafe or irrelevant links', () => {
   const env = loadNotebook();
   const prefetch = env.context.window.NotebookRuntime.prefetch;
   const anchor = (href, extra = {}) => ({ href, target: '', hasAttribute: () => false, ...extra });
-  prefetch(anchor('https://lab.test/battery-evidence-lab/future-directions.html'));
-  prefetch(anchor('https://lab.test/future-directions.html'));
-  prefetch(anchor('https://lab.test/battery-evidence-lab/future-directions.html?utm_source=x'));
-  prefetch(anchor('https://user:pass@lab.test/battery-evidence-lab/future-directions.html'));
-  prefetch(anchor('https://evil.test/battery-evidence-lab/future-directions.html'));
+  prefetch(anchor('https://lab.test/battery-evidence-lab/library.html'));
+  prefetch(anchor('https://lab.test/library.html'));
+  prefetch(anchor('https://lab.test/battery-evidence-lab/library.html?utm_source=x'));
+  prefetch(anchor('https://user:pass@lab.test/battery-evidence-lab/library.html'));
+  prefetch(anchor('https://evil.test/battery-evidence-lab/library.html'));
   prefetch(anchor('https://lab.test/battery-evidence-lab/index.html'));
-  prefetch(anchor('https://lab.test/battery-evidence-lab/future-directions.html', { target: '_blank' }));
-  prefetch(anchor('https://lab.test/battery-evidence-lab/future-directions.html', { hasAttribute: (name) => name === 'download' }));
-  prefetch(anchor('https://lab.test/battery-evidence-lab/future-directions.html'));
+  prefetch(anchor('https://lab.test/battery-evidence-lab/library.html', { target: '_blank' }));
+  prefetch(anchor('https://lab.test/battery-evidence-lab/library.html', { hasAttribute: (name) => name === 'download' }));
+  prefetch(anchor('https://lab.test/battery-evidence-lab/library.html'));
   assert.equal(env.links.length, 1);
-  assert.equal(env.links[0].href, 'https://lab.test/battery-evidence-lab/future-directions.html');
+  assert.equal(env.links[0].href, 'https://lab.test/battery-evidence-lab/library.html');
   const offline = loadNotebook({ online: false });
-  offline.context.window.NotebookRuntime.prefetch(anchor('https://lab.test/battery-evidence-lab/foundations.html'));
+  offline.context.window.NotebookRuntime.prefetch(anchor('https://lab.test/battery-evidence-lab/learn.html'));
   assert.equal(offline.links.length, 0);
 });
 

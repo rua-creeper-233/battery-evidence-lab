@@ -16,6 +16,16 @@
   const SOURCE_HOSTS = new Set(['energy.gov', 'www.energy.gov', 'anl.gov', 'www.anl.gov', 'publications.anl.gov']);
   const NOTICE = '该图是结构示意，不按比例绘制；以石墨/液态电解液为例，不代表所有电池架构。';
   const PLAIN = '—';
+  // These descriptions deliberately distinguish the liquid reference drawing from
+  // solid-state work.  They are UI metadata, not claims added to the paper map.
+  const COMPONENT_GUIDANCE = {
+    cathode: { task: '电压、相稳定性、缺陷与嵌离子', model: '复合正极活性层' },
+    anode: { task: '扩散、容量、体积变化与相变', model: '石墨负极活性层' },
+    electrolyte: { task: 'AIMD/MD 扩散、电导、溶剂化与稳定窗口', model: '液态孔隙相；固态电解质为独立体相，不等同于液体' },
+    separator: { task: '孔结构、润湿、热稳定与枝晶风险', model: '液态电池中的多孔电子绝缘隔层；固态体系不强行套用' },
+    interface: { task: 'SEI/CEI 形成、分解、接触与界面迁移', model: '正极侧 CEI、负极侧 SEI；界面不是均一厚膜' },
+    collectors: { task: '电子接触、成核/沉积与集流体腐蚀', model: '正极侧铝、负极侧铜（常见液态 Li-ion 参考）' }
+  };
 
   function exact(value, keys) {
     return !!value && typeof value === 'object' && !Array.isArray(value) &&
@@ -117,7 +127,7 @@
       <path d="M418 181Q443 169 470 177V498Q444 514 418 500Z" fill="url(#be-particles)" opacity=".93"/>
       <g class="be-fluid-traces" fill="#7fc5c1"><circle cx="425" cy="204" r="3"/><circle cx="462" cy="248" r="3"/><circle cx="433" cy="341" r="3"/><circle cx="467" cy="416" r="3"/><circle cx="436" cy="477" r="3"/></g>
     </g>
-    <g class="be-layer be-interface--cathode" data-component="interface" aria-label="正极界面反应区域">
+    <g class="be-layer be-interface--cathode" data-component="interface" data-interface-kind="cei" aria-label="正极侧 CEI 界面反应区域">
       <path d="M477 166L483 167V509L477 511Z" fill="#e7c76b" stroke="#b49949"/>
       <path d="M480 183V494" stroke="#fff4b0" stroke-width="2" stroke-dasharray="5 8"/>
     </g>
@@ -130,7 +140,7 @@
       <path d="M499 166Q506 162 513 168V514Q506 518 499 513Z" fill="#f4efdc" stroke="#bcb390" stroke-width="1.5"/>
       <path d="M501 177H511V503H501Z" fill="url(#be-separator)"/>
     </g>
-    <g class="be-layer be-interface--anode" data-component="interface" aria-label="负极SEI反应区域">
+    <g class="be-layer be-interface--anode" data-component="interface" data-interface-kind="sei" aria-label="负极侧 SEI 界面反应区域">
       <path d="M516 168L522 166V511L516 514Z" fill="#dfbc63" stroke="#a58c47"/>
       <path d="M519 180V501" stroke="#fff2a0" stroke-width="2" stroke-dasharray="4 7"/>
     </g>
@@ -214,15 +224,20 @@
         const pin = make('button', 'battery-explorer__pin'); pin.type = 'button'; pin.dataset.component = component.id; pin.style.left = pinPositions[component.id][0]; pin.style.top = pinPositions[component.id][1]; pin.setAttribute('aria-label', component.label + '：' + component.label_en); pin.setAttribute('aria-pressed', component.id === selected ? 'true' : 'false');
         pin.appendChild(make('span', 'battery-explorer__pin-number', String(index + 1))); pin.appendChild(make('span', 'battery-explorer__pin-tooltip', component.label));
         on(pin, 'click', () => select(component.id));
-        on(pin, 'mouseenter', () => svgWrap.querySelector('.battery-explorer__svg').classList.add('is-hovering-' + component.id));
-        on(pin, 'mouseleave', () => svgWrap.querySelector('.battery-explorer__svg').classList.remove('is-hovering-' + component.id));
-        on(pin, 'focus', () => svgWrap.querySelector('.battery-explorer__svg').classList.add('is-hovering-' + component.id));
-        on(pin, 'blur', () => svgWrap.querySelector('.battery-explorer__svg').classList.remove('is-hovering-' + component.id));
+        on(pin, 'mouseenter', () => { svgWrap.querySelector('.battery-explorer__svg').classList.add('is-hovering-' + component.id); showGuidance(component.id); });
+        on(pin, 'mouseleave', () => { svgWrap.querySelector('.battery-explorer__svg').classList.remove('is-hovering-' + component.id); clearGuidance(); });
+        on(pin, 'focus', () => { svgWrap.querySelector('.battery-explorer__svg').classList.add('is-hovering-' + component.id); showGuidance(component.id); });
+        on(pin, 'blur', () => { svgWrap.querySelector('.battery-explorer__svg').classList.remove('is-hovering-' + component.id); clearGuidance(); });
         pins.appendChild(pin);
       });
       svgWrap.appendChild(pins);
       const controls = make('div', 'battery-explorer__controls');
-      controls.appendChild(make('div', 'battery-explorer__controls-label', '鼠标移到圆点可放大部位；点击圆点后，下方才会出现论文。窄屏可横向滑动示意图。'));
+      const guidance = make('div', 'battery-explorer__guidance');
+      guidance.setAttribute('role', 'status'); guidance.setAttribute('aria-live', 'polite');
+      guidance.appendChild(make('span', 'battery-explorer__guidance-label', '悬停或聚焦部位以查看任务；点击可浏览已核验论文'));
+      const guidanceDetail = make('span', 'battery-explorer__guidance-detail', '');
+      guidance.appendChild(guidanceDetail); controls.appendChild(guidance);
+      controls.appendChild(make('div', 'battery-explorer__controls-label', '示意按常见石墨/液态电解液电芯绘制；固态电解质与固–固界面请按各自研究对象解读。'));
       current.components.forEach((component, index) => {
         const item = make('span', 'battery-explorer__legend-item');
         item.appendChild(make('span', 'battery-explorer__hotspot-label', `${index + 1} ${component.label}`));
@@ -280,7 +295,24 @@
         current.components.forEach(component => svg.classList.toggle('is-selected-' + component.id, component.id === id));
         [pins, controls].forEach(group => group.querySelectorAll('[data-component]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.component === id))));
         renderPanel();
+        if (id && typeof opts.onBrowse === 'function') opts.onBrowse(id);
       }
+      function showGuidance(id) {
+        const component = current.components.find(c => c.id === id);
+        if (!component) { guidanceDetail.textContent = ''; return; }
+        const hint = COMPONENT_GUIDANCE[id] || { task: component.scope, model: '' };
+        guidanceDetail.textContent = ` · ${component.label}：${component.papers.length} 篇 · 典型任务：${hint.task}`;
+        guidance.setAttribute('aria-label', `${component.label}，${component.papers.length} 篇已核验论文；${hint.task}。${hint.model}`);
+      }
+      function clearGuidance() {
+        guidanceDetail.textContent = '';
+        guidance.setAttribute('aria-label', '悬停或聚焦部位以查看任务；点击可浏览已核验论文');
+      }
+      current.components.forEach(component => {
+        const hint = COMPONENT_GUIDANCE[component.id];
+        const group = svg.querySelector('[data-component="' + component.id + '"]');
+        if (group && hint) { group.setAttribute('data-reference-model', hint.model); group.setAttribute('data-typical-task', hint.task); }
+      });
       current.components.forEach(component => { const group = svg.querySelector('[data-component="' + component.id + '"]'); if (group) group.setAttribute('aria-label', component.label); });
     }
     render();

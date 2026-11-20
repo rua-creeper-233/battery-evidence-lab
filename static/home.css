@@ -8,6 +8,19 @@ body { background: var(--paper); }
 .site-nav-links { gap: 3px; }
 .site-nav-links a { color: var(--muted); font-weight: 700; }
 .site-nav-links a[aria-current="page"] { color: #fff; background: var(--home-accent); }
+.status-pill { border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-secondary); cursor: pointer; }
+.status-pill:hover { color: var(--brand-primary); border-color: var(--brand-primary); }
+.status-pill #paperCount:empty { display: inline-block; width: 2.4rem; height: .85em; border-radius: 8px; background: var(--bg-subtle); }
+.query-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.query-pills .chip { font-family: var(--font-mono); }
+.evidence-link { display: inline-flex; padding: 7px 10px; border-radius: 7px; background: var(--bg-subtle); font-size: 12px; font-weight: 700; text-decoration: none; }
+.settings-drawer { place-items: stretch end; padding: 0; background: var(--modal-backdrop); }
+.modal:not(.settings-drawer) { place-items: stretch end; padding: 0; }
+.modal:not(.settings-drawer) .modal-card { width: min(850px, 100vw); height: 100vh; max-height: none; border-radius: 18px 0 0 18px; }
+.settings-drawer .modal-card { width: min(680px, 100vw); height: 100vh; max-height: none; border-radius: 18px 0 0 18px; padding: 32px; overflow: auto; animation: drawer-in .2s ease-out; }
+.settings-drawer[aria-hidden="true"] { pointer-events: none; }
+@keyframes drawer-in { from { transform: translateX(24px); opacity: .7; } to { transform: translateX(0); opacity: 1; } }
+@media (max-width: 620px) { .settings-drawer .modal-card { width: 100vw; border-radius: 0; padding: 22px 18px; } }
 .home-tabs { justify-content: flex-start; gap: 4px; margin: 0; }
 .home-tabs a, .home-tabs button { min-height: 44px; }
 .home-tabs a[aria-selected="true"], .home-tabs button[aria-selected="true"] { color: #fff; background: var(--home-accent); }

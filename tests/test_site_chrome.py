@@ -29,8 +29,11 @@ class SiteChromeTests(unittest.TestCase):
             with self.subTest(page=page):
                 result = prepare_chrome(self.source(), page, ':root{--ink:black}')
                 nav = re.search(r'<nav.*?</nav>', result).group()
-                for _, label, _ in NAV:
-                    self.assertIn('>' + label + '</a>', nav)
+                for target, label, hub in NAV:
+                    current = ' aria-current="page"' if page == target.split('#', 1)[0] else ' aria-current="location"' if page in hub else ""
+                    self.assertIn(f'<a href="./{target}"{current}>{label}</a>', nav)
+                self.assertEqual(nav.count(' aria-current='), 1)
+                self.assertEqual(nav.count('</a>'), 5)
                 self.assertEqual(result.count('data-site-footer'), 1)
                 self.assertEqual(result.count('rel="canonical"'), 1)
                 self.assertEqual(result.count('name="description"'), 1)
@@ -39,7 +42,6 @@ class SiteChromeTests(unittest.TestCase):
                 self.assertIn('content="summary_large_image"', result)
                 self.assertEqual(result.count('src="./nav-overflow.js"'), 1)
                 self.assertIn('Source links', result)
-                self.assertIn('role="tablist"', nav) if page == 'index.html' else self.assertNotIn('role="tab"', nav)
 
     def test_idempotent(self):
         css = ':root {--green:#2e6b50} .site-nav {display:flex}'
@@ -47,10 +49,11 @@ class SiteChromeTests(unittest.TestCase):
             first = prepare_chrome(self.source(), page, css)
             self.assertEqual(prepare_chrome(first, page, css), first)
 
-    def test_home_tabs_have_matching_panels(self):
-        result = prepare_chrome(self.source(), 'index.html', ':root{}')
-        self.assertIn('role="tabpanel" aria-labelledby="tab-library"', result)
-        self.assertIn('id="tab-library" role="tab" aria-controls="library"', result)
+    def test_home_preserves_legacy_hashes_and_retires_tab_references(self):
+        legacy = self.source().replace('data-home-panel="library"', 'data-home-panel="library" role="tabpanel" aria-labelledby="tab-library"')
+        result = prepare_chrome(legacy, 'index.html', ':root{}')
+        self.assertIn('<section id="library" data-home-panel="library">', result)
+        self.assertNotIn('tab-library', result)
 
     def test_blank_lines_are_cleaned_without_rewriting_code(self):
         fragment = '<script>const text = `a\n   \nb`;</script><pre>code\n   \n</pre>'

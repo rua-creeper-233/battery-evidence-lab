@@ -19,10 +19,17 @@ GUIDE_NAMES = (
     "AGENT_IMPLEMENTATION_GUIDE.md", "BATTERY_RESEARCH_ROADMAP_20260918.md",
     "FINETUNE_INTEGRATION.md", "BATTERY_COMPUTATION_FUTURE_DIRECTIONS.md",
     "AI_BATTERY_APPLICATIONS.md", "REPRODUCIBLE_BATTERY_AI_20261008.md",
-    "PROJECT_STATUS.md", "RELEASE_NOTES.md", "LEARNING_ROUTE_20261014.md",
+    "PROJECT_STATUS.md", "RELEASE_NOTES.md", "LEARNING_ROUTE_20261014.md", "WORKBENCH_DATA.md",
 )
-PAGE_NAMES = ("index.html", "future-directions.html", "ai-battery-applications.html", "foundations.html")
-ASSET_NAMES = ("guide.css", "favicon.svg", "share-card.png", "nav-overflow.js", "notebook.js", "citation-tools.js", "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css", "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css", "battery_explorer.js", "paper_insights.js", "paper_insights.css", "home.css", "home.js", "tutorials.js", "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js")
+PAGE_NAMES = ("index.html", "library.html", "learn.html", "frontiers.html", "future-directions.html", "ai-battery-applications.html", "foundations.html")
+ASSET_NAMES = (
+    "guide.css", "favicon.svg", "share-card.png", "nav-overflow.js", "notebook.js", "citation-tools.js",
+    "learning-route.css", "learning-route.js", "domestic-papers.css", "domestic-papers.js", "lab-ui.css",
+    "lab-ui.js", "browser_agent.js", "static_qa.js", "research_knowledge.js", "battery_explorer.css",
+    "battery_explorer.js", "paper_insights.js", "paper_insights.css", "home.css", "home.js", "tutorials.js",
+    "tutorials.css", "dft_lessons.js", "beginner_lessons.js", "md_lessons.js", "hubs.css",
+    "workbench.css", "workbench-model.js", "workbench.js",
+)
 DATA_NAMES = ("papers.json", "paper_tags.json", "search_config.json", "project_status.json", "learning_route.json", "paper_titles_zh.json", "domestic_papers.json", "static_qa.json", "research_knowledge.json", "battery_components.json", "paper_insights.json")
 
 

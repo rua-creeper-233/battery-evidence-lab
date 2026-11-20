@@ -1,5 +1,5 @@
 /* Battery explorer: quiet, editorial palette shared with the landing page. */
-.battery-explorer { --be-forest:#123f35; --be-ink:#213a32; --be-muted:#5d6a63; --be-line:#d7e1d7; --be-paper:#fffefa; margin:34px auto 12px; color:var(--be-ink); }
+.battery-explorer { --be-forest:#123f35; --be-ink:#213a32; --be-muted:#5d6a63; --be-line:#d7e1d7; --be-paper:#fffefa; --be-teal:#0F766E; --be-teal-hover:#115E59; --be-slate:#475569; --be-canvas:#F8FAFC; --be-hairline:#E2E8F0; margin:34px auto 12px; color:var(--be-ink); }
 .battery-explorer__heading { margin-bottom:18px; }
 .battery-explorer__eyebrow { color:#9a5a2a; font-size:12px; font-weight:800; letter-spacing:.11em; }
 .battery-explorer h2 { margin:4px 0 5px; color:var(--be-forest); font-size:clamp(22px,3vw,30px); }
@@ -29,6 +29,8 @@
 .battery-explorer__svg.is-selected-electrolyte .be-layer[data-component="electrolyte"],.battery-explorer__svg.is-selected-separator .be-layer[data-component="separator"] { transform:translateY(-2px) scale(1.04); }
 .battery-explorer__svg.is-hovering-interface .be-layer[data-component="interface"] { transform:scale(1.16); filter:drop-shadow(0 7px 5px #274f3d33); }
 .battery-explorer__svg.is-selected-interface .be-layer[data-component="interface"] { transform:scale(1.09); }
+.battery-explorer__svg .be-interface--cathode { stroke:#8B5CF6; }
+.battery-explorer__svg .be-interface--anode { stroke:#0F766E; }
 .battery-explorer__svg.is-hovering-collectors .be-layer[data-component="collectors"] { transform:translateY(-3px) scale(1.025); filter:drop-shadow(0 7px 5px #274f3d33); }
 .battery-explorer__svg.is-selected-collectors .be-layer[data-component="collectors"] { transform:translateY(-2px) scale(1.015); }
 .battery-explorer__svg.is-hovering-electrolyte .be-fluid-traces { opacity:1; filter:drop-shadow(0 0 4px #4faaa5); }
@@ -47,6 +49,9 @@
 .battery-explorer__controls { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:6px; margin-top:2px; }
 .battery-explorer__legend-item { padding:10px 6px; border-top:1px solid var(--be-line); }
 .battery-explorer__controls-label { grid-column:1/-1; color:var(--be-muted); font-size:12px; margin:2px 0 3px; }
+.battery-explorer__guidance { grid-column:1/-1; display:flex; flex-wrap:wrap; gap:4px; align-items:baseline; min-height:25px; padding:8px 10px; border-left:3px solid var(--be-teal); background:var(--be-canvas); color:var(--be-slate); font-size:12px; line-height:1.55; }
+.battery-explorer__guidance-label { font-weight:750; color:var(--be-teal-hover); }
+.battery-explorer__guidance-detail { color:var(--be-slate); }
 .battery-explorer__hotspot,.battery-explorer__paper-open { font:inherit; cursor:pointer; }
 .battery-explorer__hotspot { min-height:50px; padding:7px 5px; border:1px solid #cbdacf; border-radius:9px; background:#f6faf5; color:var(--be-forest); text-align:left; }
 .battery-explorer__hotspot:hover,.battery-explorer__hotspot[aria-pressed="true"] { border-color:#799e88; background:#e8f2e9; }
@@ -76,6 +81,8 @@
 .battery-explorer__sources { margin-top:10px; color:var(--be-muted); font-size:12px; line-height:1.6; }
 .battery-explorer__sources a { color:var(--be-forest); text-decoration:underline; text-underline-offset:2px; }
 .battery-explorer button:focus-visible { outline:3px solid #dc8a3d; outline-offset:2px; }
+.battery-explorer__pin-number { background:var(--be-teal); }
+.battery-explorer__pin:hover .battery-explorer__pin-number,.battery-explorer__pin:focus-visible .battery-explorer__pin-number,.battery-explorer__pin[aria-pressed="true"] .battery-explorer__pin-number { background:var(--be-teal-hover); }
 @media (max-width:760px) {
   .battery-explorer__layout { grid-template-columns:1fr; }
   .battery-explorer__svg-wrap { min-width:720px; }

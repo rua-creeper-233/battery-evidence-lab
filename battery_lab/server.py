@@ -39,7 +39,13 @@ PUBLIC_GUIDES = {
     "PROJECT_STATUS.md",
     "RELEASE_NOTES.md",
     "LEARNING_ROUTE_20261014.md",
+    "WORKBENCH_DATA.md",
 }
+# Publicly published catalog inputs that are stored beside the local index.
+PUBLIC_CATALOG_FILES = frozenset({
+    "data/papers.json", "data/paper_tags.json", "data/search_config.json",
+    "data/domestic_papers.json", "data/learning_route.json",
+})
 LITERATURE = ROOT / "literature"
 PDF_DIR = LITERATURE / "pdfs"
 MANIFEST = LITERATURE / "manifest.json"
@@ -426,10 +432,11 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_error(HTTPStatus.NOT_FOUND)
                 return
             target = (GUIDES / guide_name).resolve()
-        elif relative == "data/learning_route.json":
-            # Exact allowlist entry: never expose the rest of data/ (which
-            # includes a local full-text index) through the static handler.
-            target = (ROOT / "data" / "learning_route.json").resolve()
+        elif relative in PUBLIC_CATALOG_FILES:
+            target = (ROOT / relative).resolve()
+            if target.parent != (ROOT / "data").resolve():
+                self.send_error(HTTPStatus.FORBIDDEN)
+                return
         else:
             target = (STATIC / relative).resolve()
             if STATIC.resolve() not in target.parents and target != STATIC.resolve():
